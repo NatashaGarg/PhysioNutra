@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Tarun's PhysioNutra Clinic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Dr. Tarun's PhysioNutra Clinic</h1>
+    </header>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#process">Our Process</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#appointment">Appointment</a>
+    </nav>
+    <div class="container">
+        <div class="carousel">
+            <img src="image1.jpg" alt="Image 1" class="active">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <p>We offer a range of physiotherapy services to help you recover and stay healthy.</p>
+        </section>
+        <section id="process" class="process">
+            <h2>Our Physiotherapy Process</h2>
+            <div class="process-step">
+                <h3>1. Initial Assessment</h3>
+                <p>Our physiotherapists will conduct a thorough assessment to understand your condition and medical history.</p>
+            </div>
+            <div class="process-step">
+                <h3>2. Personalized Treatment Plan</h3>
+                <p>Based on the assessment, we will create a personalized treatment plan tailored to your specific needs.</p>
+            </div>
+            <div class="process-step">
+                <h3>3. Treatment Sessions</h3>
+                <p>You will undergo regular treatment sessions which may include exercises, manual therapy, and other modalities.</p>
+            </div>
+            <div class="process-step">
+                <h3>4. Progress Monitoring</h3>
+                <p>We will continuously monitor your progress and adjust the treatment plan as needed to ensure optimal recovery.</p>
+            </div>
+            <div class="process-step">
+                <h3>5. Home Exercise Program</h3>
+                <p>We will provide you with a home exercise program to maintain and enhance your recovery.</p>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>Our team of professional physiotherapists is dedicated to providing the best care for our patients.</p>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to schedule an appointment, please contact us on WhatsApp.</p>
+            <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">Contact Us on WhatsApp</a>
+        </section>
+        <section id="appointment" class="appointment">
+            <h2>Book an Appointment</h2>
+            <form id="appointment-form" action="https://docs.google.com/forms/d/e/your-form-id/formResponse" method="POST" target="_blank">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="entry.your-name-field-id" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="entry.your-email-field-id" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="entry.your-phone-field-id" required>
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="entry.your-date-field-id" required>
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="entry.your-time-field-id" required>
+                <button type="submit">Book Appointment</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Dr. Tarun's PhysioNutra Clinic. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
