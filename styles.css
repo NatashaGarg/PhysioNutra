@@ -375,6 +375,24 @@ footer {
     }
 }
 
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+    transition: opacity 1s;
+}
+
+.carousel img.active {
+    display: block;
+    opacity: 1;
+}
+
 /* Floating Buttons */
 .floating-button {
     position: fixed;
