@@ -22,6 +22,12 @@ header {
     padding: 10px 20px;
     background: rgba(68, 68, 68, 0.9); /* Semi-transparent background */
     z-index: 1000;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+.header.scrolled {
+    background: rgba(68, 68, 68, 1); /* Solid background */
+    padding: 5px 20px; /* Reduced padding */
 }
 
 .header-content {
