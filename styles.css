@@ -3,12 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #fff;
 }
 
 body {
     font-family: 'Open Sans', Arial, sans-serif;
-    background: #f4f4f4;
+    background: #fff; /* Background color of the body */
 }
 
 header {
@@ -108,15 +107,14 @@ nav {
     }
 }
 
-.introduction {
+.introduction, .services, .about, .contact, .appointment, .process {
     padding: 40px 20px;
-    background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff; /* Match background color to the body */
     margin: 40px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 5px;
 }
 
 .intro-text {
@@ -138,14 +136,6 @@ nav {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
-}
-
-.services, .about, .contact, .appointment, .process {
-    margin: 20px 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .services h2, .about h2, .contact h2, .appointment h2, .process h2 {
