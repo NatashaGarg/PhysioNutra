@@ -317,9 +317,9 @@ footer {
 .hamburger {
     display: none;
     flex-direction: column;
-    justify-content: center; /* Center align the spans vertically */
+    justify-content: space-around; 
     width: 30px;
-    height: 30px;
+    height: 24px; /* Adjusted height to make it more compact */
     background: transparent;
     border: none;
     cursor: pointer;
@@ -386,6 +386,7 @@ footer {
     }
 
     .header-content {
+        flex-direction: row; /* Ensure the header content is in a row */
         align-items: center;
         justify-content: space-between;
     }
