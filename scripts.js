@@ -20,6 +20,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const callButton = document.getElementById("call-button");
     const phonePopup = document.getElementById("phone-popup");
     const closePopup = document.getElementById("close-popup");
+    const header = document.querySelector(".header");
+
+    function toggleHeaderClass() {
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", toggleHeaderClass);
 
     hamburger.addEventListener("click", function() {
         hamburger.classList.toggle("active");
