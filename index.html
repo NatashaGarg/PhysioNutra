@@ -113,12 +113,17 @@
             </section>
         </div>
         <!-- Floating Buttons -->
-        <a href="tel:+1234567890" class="floating-button call">
+        <a href="javascript:void(0);" class="floating-button call" id="call-button">
             <i class="fas fa-phone-alt"></i>
         </a>
         <a href="https://wa.me/1234567890" class="floating-button whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
+        <!-- Popup for Phone Number -->
+        <div id="phone-popup" class="phone-popup">
+            <p>Call us at: +1234567890</p>
+            <button id="close-popup">Close</button>
+        </div>
     </div>
     <footer>
         <p>&copy; 2025 Dr. Tarun's PhysioNutra Clinic. All rights reserved.| Designed by NG</p>
