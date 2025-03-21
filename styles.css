@@ -24,6 +24,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1001; /* Ensure the top bar is above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow for subtle separation */
 }
 
 .top-bar-content {
@@ -67,6 +68,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow for subtle separation */
     z-index: 1000;
     transition: background-color 0.3s, padding 0.3s;
 }
@@ -317,7 +319,7 @@ footer {
 .hamburger {
     display: none;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center; /* Center align the spans vertically */
     width: 30px;
     height: 30px;
     background: transparent;
@@ -386,7 +388,9 @@ footer {
     }
 
     .header-content {
-        flex-direction: column;
+        flex-direction: row; /* Ensure the header content is in a row */
+        align-items: center;
+        justify-content: space-between;
     }
 
     .nav-options {
