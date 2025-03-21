@@ -142,6 +142,18 @@ nav {
     line-height: 1.6;
 }
 
+.intro-text h3 {
+    margin-bottom: 10px; /* Adds a gap below each h3 within the spaced class */
+}
+
+.intro-text h2 {
+    margin-bottom: 10px; /* Adds a gap below each h2 within the spaced class */
+}
+
+.intro-text p {
+    margin-bottom: 10px; /* Adds a gap below each p within the spaced class */
+}
+
 .intro-image {
     flex: 1;
     max-width: 50%; /* Ensure the image does not consume more than 50% of the space */
