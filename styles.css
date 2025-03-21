@@ -19,13 +19,17 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Ensure the top bar is above other elements */
 }
 
 .top-bar-content {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    flex-wrap: wrap;
 }
 
 .contact-info {
@@ -56,7 +60,7 @@ header {
     color: #fff;
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 50px; /* Adjust to make room for the top bar */
     left: 0;
     display: flex;
     justify-content: space-between;
@@ -113,7 +117,7 @@ nav {
 }
 
 .container {
-    padding-top: 80px; /* Adjust padding to account for fixed header */
+    padding-top: 130px; /* Adjust padding to account for fixed top bar and header */
 }
 
 .hero-image {
@@ -379,6 +383,7 @@ footer {
 
     header {
         flex-direction: column;
+        top: 70px; /* Adjust to make room for the top bar */
     }
 
     .header-content {
@@ -484,38 +489,4 @@ footer {
 
 .floating-button:hover {
     transform: scale(1.1);
-}
-
-/* Phone Number Popup */
-.phone-popup {
-    display: none;
-    position: fixed;
-    bottom: 100px; /* Adjust based on the call button position */
-    right: 20px;
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 2001;
-}
-
-.phone-popup p {
-    margin: 0;
-    font-size: 16px;
-}
-
-.phone-popup button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #34b7f1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.phone-popup button:hover {
-    background-color: #1e90ff;
 }
