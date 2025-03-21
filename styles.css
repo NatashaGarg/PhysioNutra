@@ -107,7 +107,7 @@ nav {
     }
 }
 
-.introduction, .services, .about, .contact, .appointment, .process {
+.introduction, .services, .about, .process {
     padding: 40px 20px;
     background: #fff; /* Match background color to the body */
     margin: 40px 0;
@@ -117,32 +117,36 @@ nav {
     border-radius: 5px;
 }
 
-.intro-text {
-    flex: 1;
-    padding-right: 20px;
-    text-align: left;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-}
-
-.intro-image {
-    flex: 1;
-    text-align: center;
-}
-
-.intro-image img {
-    max-width: 100%;
-    height: auto;
+.contact-appointment-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background: #e0f7fa; /* Light blueish background color */
     border-radius: 5px;
+    margin: 40px 0;
 }
 
-.services h2, .about h2, .contact h2, .appointment h2, .process h2 {
+.contact, .appointment {
+    flex: 1;
+    margin: 0 10px; /* Add some margin between the sections */
+    background: #fff; /* White background for contact and appointment sections */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.contact h2, .appointment h2 {
     margin-bottom: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     color: #333;
+}
+
+.contact p, .appointment p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
 }
 
 .contact .whatsapp-button {
