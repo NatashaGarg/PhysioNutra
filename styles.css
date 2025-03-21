@@ -143,6 +143,7 @@ nav {
     animation: moveText 2s ease-out forwards;
     white-space: nowrap;
     overflow: hidden;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
 }
 
 @keyframes moveText {
@@ -309,6 +310,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    position: fixed;
     width: 100%;
     bottom: 0;
 }
@@ -415,6 +417,11 @@ footer {
 
     .hero-text {
         padding: 0 20px;
+    }
+
+    .animated-text {
+        font-size: 1.5em; /* Adjust the font size for mobile view */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adjust text shadow for better visibility */
     }
 
     .introduction {
