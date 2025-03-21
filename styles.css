@@ -420,7 +420,7 @@ footer {
     }
 
     .animated-text {
-        font-size: 1.5em; /* Adjust the font size for mobile view */
+        font-size: 1.75em; /* Adjust the font size for mobile view */
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adjust text shadow for better visibility */
     }
 
