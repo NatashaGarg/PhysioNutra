@@ -406,3 +406,37 @@ footer {
 .floating-button:hover {
     transform: scale(1.1);
 }
+
+/* Phone Number Popup */
+.phone-popup {
+    display: none;
+    position: fixed;
+    bottom: 100px; /* Adjust based on the call button position */
+    right: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 2001;
+}
+
+.phone-popup p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.phone-popup button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #34b7f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.phone-popup button:hover {
+    background-color: #1e90ff;
+}
