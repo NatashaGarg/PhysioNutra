@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background: #fff; /* Background color of the body */
+}
+
 /* Top Bar */
 .top-bar {
     background-color: #333;
@@ -20,10 +25,21 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .contact-info span {
     margin-right: 20px;
+}
+
+.social-media-icons {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .social-media-icons a {
@@ -34,11 +50,6 @@
 
 .social-media-icons a:hover {
     color: #ff9800;
-}
-
-body {
-    font-family: 'Open Sans', Arial, sans-serif;
-    background: #fff; /* Background color of the body */
 }
 
 header {
@@ -357,6 +368,15 @@ footer {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-info {
+        margin-bottom: 10px;
+    }
+
     header {
         flex-direction: column;
     }
