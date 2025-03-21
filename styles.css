@@ -5,6 +5,37 @@
     box-sizing: border-box;
 }
 
+/* Top Bar */
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-info span {
+    margin-right: 20px;
+}
+
+.social-media-icons a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.social-media-icons a:hover {
+    color: #ff9800;
+}
+
 body {
     font-family: 'Open Sans', Arial, sans-serif;
     background: #fff; /* Background color of the body */
