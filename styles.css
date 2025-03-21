@@ -130,6 +130,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     border-radius: 5px;
+    flex-wrap: wrap;
 }
 
 .intro-text {
@@ -180,6 +181,7 @@ nav {
     background: #e0f7fa; /* Light blueish background color */
     border-radius: 5px;
     margin: 40px 0;
+    flex-wrap: wrap;
 }
 
 .contact, .appointment {
@@ -263,4 +265,42 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .nav-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-text {
+        padding: 0 20px;
+    }
+
+    .introduction {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        padding-right: 0;
+    }
+
+    .contact-appointment-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact, .appointment {
+        margin: 10px 0;
+    }
 }
