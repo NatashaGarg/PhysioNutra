@@ -45,12 +45,7 @@ nav {
     list-style-type: none;
     display: flex;
     gap: 15px;
-    margin: 0; /* Remove default padding and margin */
     padding: 0;
-}
-
-.nav-options li {
-    margin: 0; /* Remove default padding and margin */
 }
 
 .nav-options a {
