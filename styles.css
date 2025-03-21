@@ -24,7 +24,6 @@ body {
     left: 0;
     width: 100%;
     z-index: 1001; /* Ensure the top bar is above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow for subtle separation */
 }
 
 .top-bar-content {
@@ -68,7 +67,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow for subtle separation */
     z-index: 1000;
     transition: background-color 0.3s, padding 0.3s;
 }
