@@ -117,6 +117,28 @@ nav {
     border-radius: 5px;
 }
 
+.intro-text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.intro-image {
+    flex: 1;
+    max-width: 50%; /* Ensure the image does not consume more than 50% of the space */
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
 .contact-appointment-container {
     display: flex;
     justify-content: space-between;
