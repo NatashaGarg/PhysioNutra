@@ -1,12 +1,27 @@
+/* Reset some default browser styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background: #fff;
 }
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     background: #f4f4f4;
+}
+
+header {
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(68, 68, 68, 0.8); /* Semi-transparent background */
 }
 
 .header-content {
@@ -24,35 +39,48 @@ body {
 
 nav {
     display: flex;
-    justify-content: center;
-    background: rgba(68, 68, 68, 0.8); /* Semi-transparent background */
-    padding: 10px 0;
-    position: relative;
 }
-nav a {
+
+.nav-options {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-options li {
+    display: inline;
+}
+
+.nav-options a {
     color: #fff;
-    padding: 14px 20px;
+    padding: 10px 15px;
     text-decoration: none;
-    display: block;
     font-size: 16px;
-    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+    border-radius: 4px;
 }
-nav a:hover {
+
+.nav-options a:hover {
     background: #fff;
     color: #333;
+    border-radius: 4px;
 }
+
 .container {
-    padding: 0;
+    padding: 0; /* Remove padding */
 }
+
 .hero-image {
     background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
-    position: relative;
+    height: 400px;
     width: 100vw; /* Full viewport width */
     margin-left: calc(-50vw + 50%); /* Center the element */
-    height: 400px;
+    position: relative;
 }
+
 .hero-text {
     text-align: center;
     position: absolute;
@@ -83,24 +111,30 @@ nav a:hover {
 }
 
 .introduction {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background: #fff;
-    margin: 40px 0;
+    padding: 40px 20px;
+    background: #f9f9f9;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .intro-text {
-    flex: 1 1 50%;
+    flex: 1;
     padding-right: 20px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
 }
 
 .intro-image {
-    flex: 1 1 50%;
-    text-align: right;
+    flex: 1;
+    text-align: center;
 }
 
 .intro-image img {
@@ -111,10 +145,19 @@ nav a:hover {
 
 .services, .about, .contact, .appointment, .process {
     margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .services h2, .about h2, .contact h2, .appointment h2, .process h2 {
     margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #333;
 }
+
 .contact .whatsapp-button {
     display: inline-block;
     background-color: #25D366;
@@ -123,20 +166,30 @@ nav a:hover {
     border-radius: 5px;
     text-decoration: none;
 }
+
 .contact .whatsapp-button:hover {
     background-color: #22BB55;
 }
+
 #appointment-form {
     display: flex;
     flex-direction: column;
 }
+
 #appointment-form label {
     margin: 5px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #555;
 }
+
 #appointment-form input, #appointment-form button {
     padding: 10px;
     margin: 5px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
+
 .process-step {
     background: #fff;
     padding: 10px;
@@ -144,6 +197,7 @@ nav a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
 footer {
     background: #333;
     color: #fff;
