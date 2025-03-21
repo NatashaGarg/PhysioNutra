@@ -388,7 +388,6 @@ footer {
     }
 
     .header-content {
-        flex-direction: row; /* Ensure the header content is in a row */
         align-items: center;
         justify-content: space-between;
     }
