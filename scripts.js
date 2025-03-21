@@ -10,6 +10,16 @@ function showNextImage() {
 setInterval(showNextImage, 3000);
 
 document.getElementById('appointment-form').addEventListener('submit', function(event) {
-    alert('Appointment booked successfully!');
+    alert('You will get a call on your number!');
     // The form will be submitted to Google Forms
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", function() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
 });
