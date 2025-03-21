@@ -278,6 +278,7 @@ footer {
     border: none;
     cursor: pointer;
     padding: 0;
+    z-index: 2000;
 }
 
 .hamburger span {
@@ -350,4 +351,63 @@ footer {
 
     .nav-menu.active {
         display: block;
-   
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-text {
+        padding: 0 20px;
+    }
+
+    .introduction {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        padding-right: 0;
+    }
+
+    .contact-appointment-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact, .appointment {
+        margin: 10px 0;
+    }
+}
+
+/* Floating Buttons */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 2000;
+}
+
+.floating-button.call {
+    bottom: 80px; /* Adjust position to prevent overlap with WhatsApp button */
+    background-color: #34b7f1; /* Call blue */
+}
+
+.floating-button i {
+    font-size: 20px;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+}
