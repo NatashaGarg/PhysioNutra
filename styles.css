@@ -63,6 +63,26 @@ nav a:hover {
     color: white;
 }
 
+.animated-text {
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    animation: moveText 2s ease-out forwards;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 .introduction {
     display: flex;
     align-items: center;
