@@ -521,6 +521,10 @@ footer {
         padding-right: 0;
     }
 
+    .intro-text, .intro-image {
+        margin-bottom: 20px; /* Add gap between intro-text and intro-image */
+    }
+
     .contact-appointment-container {
         flex-direction: column;
         text-align: center;
