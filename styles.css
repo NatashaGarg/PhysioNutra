@@ -404,6 +404,10 @@ footer {
     box-sizing: border-box;
     padding: 20px;
     text-align: center;
+    border: 1px solid #ddd; /* Add border to review */
+    margin: 0 10px; /* Add margin between reviews */
+    border-radius: 5px; /* Add border radius to review */
+    background: #fff; /* Add background color to review */
 }
 
 .review img {
@@ -431,24 +435,25 @@ footer {
     color: #333;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+/* Dots Navigation */
+.carousel-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carousel-dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
     border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
+.carousel-dots .dot.active {
+    background-color: #333;
 }
 
 /* Media Queries for Responsiveness */
