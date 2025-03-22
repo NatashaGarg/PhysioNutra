@@ -50,8 +50,14 @@ document.addEventListener("DOMContentLoaded", function() {
         showSlide(currentSlide);
     }
 
+    function autoRotateSlides() {
+        moveSlide(1);
+    }
+
     document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
     document.querySelector('.next').addEventListener('click', () => moveSlide(1));
 
     showSlide(currentSlide);
+
+    setInterval(autoRotateSlides, 5000); // Change slide every 5 seconds
 });
