@@ -299,6 +299,8 @@ nav {
 
 #appointment-form button {
     background-color: #007bff; /* Changed to blue */
+    border-radius: 5px;
+    padding: 10px 20px;
 }
 
 #appointment-form button:hover {
