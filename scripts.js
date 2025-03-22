@@ -37,11 +37,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Reviews Carousel
     const slides = document.querySelectorAll('.carousel-slide .review');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
     let currentSlide = 0;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.style.display = i === index ? 'block' : 'none';
+            slide.style.display = (i >= index && i < index + 2) ? 'block' : 'none'; // Display two reviews at a time
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === Math.floor(index / 2));
         });
     }
 
@@ -51,11 +55,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function autoRotateSlides() {
-        moveSlide(1);
+        moveSlide(2); // Move by 2 to show the next set of two reviews
     }
 
-    document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
-    document.querySelector('.next').addEventListener('click', () => moveSlide(1));
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            moveSlide(index * 2 - currentSlide);
+        });
+    });
 
     showSlide(currentSlide);
 
