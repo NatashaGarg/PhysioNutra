@@ -400,15 +400,28 @@ footer {
 }
 
 .review {
-    min-width: 100%;
+    flex: 0 0 50%; /* Display two reviews at a time */
     box-sizing: border-box;
     padding: 20px;
+    text-align: center;
+}
+
+.review img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
 }
 
 .review p {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     color: #666;
+    margin-bottom: 10px;
+}
+
+.review .stars {
+    color: #ff9800;
     margin-bottom: 10px;
 }
 
