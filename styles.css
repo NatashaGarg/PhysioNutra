@@ -297,6 +297,14 @@ nav {
     font-size: 16px;
 }
 
+#appointment-form button {
+    background-color: #007bff; /* Changed to blue */
+}
+
+#appointment-form button:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+}
+
 .process-step {
     background: #fff;
     padding: 10px;
