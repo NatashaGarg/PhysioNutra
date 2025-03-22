@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
     const callButton = document.getElementById("call-button");
-    const phonePopup = document.getElementById("phone-popup");
-    const closePopup = document.getElementById("close-popup");
     const header = document.querySelector(".header");
 
     function toggleHeaderClass() {
@@ -37,18 +35,23 @@ document.addEventListener("DOMContentLoaded", function() {
         navMenu.classList.toggle("active");
     });
 
-    callButton.addEventListener("click", function() {
-        phonePopup.style.display = "block";
-    });
+    // Reviews Carousel
+    const slides = document.querySelectorAll('.carousel-slide .review');
+    let currentSlide = 0;
 
-    closePopup.addEventListener("click", function() {
-        phonePopup.style.display = "none";
-    });
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+        });
+    }
 
-    // Close the popup when clicking outside of it
-    window.addEventListener("click", function(event) {
-        if (event.target == phonePopup) {
-            phonePopup.style.display = "none";
-        }
-    });
+    function moveSlide(n) {
+        currentSlide = (currentSlide + n + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
+    document.querySelector('.next').addEventListener('click', () => moveSlide(1));
+
+    showSlide(currentSlide);
 });
