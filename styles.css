@@ -298,6 +298,7 @@ nav {
 }
 
 #appointment-form button {
+    display: inline-block;
     background-color: #007bff; /* Changed to blue */
     border-radius: 5px;
     padding: 10px 20px;
