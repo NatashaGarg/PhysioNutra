@@ -535,7 +535,7 @@ footer {
 
     header {
         flex-direction: column;
-        top: 70px; /* Adjust to make room for the top bar */
+        top: 90px; /* Adjust to make room for the top bar */
     }
 
     .header-content {
