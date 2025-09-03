@@ -1,0 +1,19 @@
+name: publish
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"  # Runs daily at midnight
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r7kamura/weneedfeed-action@v3
+        with:
+          base_url: https://natashagarg.github.io/PhysioNutra
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: output
