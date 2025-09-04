@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://natashagarg.github.io/PhysioNutra/sitemap.xml
+Sitemap: https://physionutraclinic.com/sitemap.xml
