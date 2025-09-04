@@ -40,11 +40,91 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
     <script type="application/ld+json">{
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://natashagarg.github.io/PhysioNutra",
-        "name": "Dr. Tarun's PhysioNutra Clinic",
-        "description": "We are skilled and experienced team of Physiotherapists. Providing best personalized home care and clinical services in tricity at best rates."
+        "@graph": [
+        {
+            "@type": "MedicalClinic",
+            "@id": "https://physionutraclinic.com/#clinic",
+            "name": "Dr Tarun's PhysioNutra Clinic",
+            "url": "https://physionutraclinic.com/",
+            "medicalSpecialty":{
+                "@type": "MedicalSpecialty",
+                "name": "Physiotherapy"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Gazipur Rd",
+                "addressLocality": "Zirakpur",
+                "addressRegion": "Punjab",
+                "postalCode": "140603",
+                "addressCountry": "IN"
+            },
+            "telephone": "+919417791833",
+            "openingHours": "Su-Sa 09:00-19:00"
+        },
+        {
+            "@type": "Organization",
+            "@id": "https://physionutraclinic.com/#organization",
+            "name": "Dr. Tarun's PhysioNutra Clinic",
+            "url": "https://physionutraclinic.com",
+            "logo": {
+                "@type": "ImageObject",
+                "@id": "https://physionutraclinic.com/#logo",
+                "url": "https://physionutraclinic.com/images/logo.png",
+                "contentUrl": "https://physionutraclinic.com/images/logo.png",
+                "caption": "Dr. Tarun's PhysioNutra Clinic",
+                "inLanguage": "en-US",
+                "width": "150",
+                "height": "66"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://physionutraclinic.com/#website",
+            "url": "https://physionutraclinic.com/",
+            "name": "Dr. Tarun's PhysioNutra Clinic",
+            "description": "We are skilled and experienced team of Physiotherapists. Providing best personalized home care and clinical services in tricity at best rates.",
+            "publisher": {
+                "@id": "https://physionutraclinic.com/#publisher"
+            },
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "ImageObject",
+            "@id": "https://physionutraclinic.com/#image",
+            "url": "https://physionutraclinic.com/images/logo.png",
+            "width": "200",
+            "height": "200",
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://physionutraclinic.com/#webpage",
+            "url": "https://physionutraclinic.com",
+            "name": "Physiotherapist service near me | Best Home and Clinic Physiotherapy",
+            "datePublished": "2025-03-15T12:09:57+00:00",
+            "dateModified": "2025-09-03T12:09:57+00:00",
+            "about": {
+                "@id": "https://physionutraclinic.com/#organization"
+            },
+            "isPartOf": {
+                "@id": "https://physionutraclinic.com/#website"
+            },
+            "primaryImageOfPage": {
+                "@id": "https://physionutraclinic.com/images/conditions/CERVICAL_PAIN.jpg"
+            },
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "Person",
+            "@id": "https://physionutraclinic.com/#physiotherapist1",
+            "name": "Dr Tarun Garg",
+            "jobTitle": "Physiotherapist",
+            "worksFor": {
+                "@id": "https://physionutraclinic.com/#clinic"
+            }
         }
+    ]
+    }
     </script>
 </head>
 <body>
