@@ -572,9 +572,6 @@ footer {
         font-size: 13px;
         padding: 6px 10px;
     }
-    .container {
-        padding-top: 75px; /* 35px + 40px on mobile */
-    }
 
     .nav-menu.active {
         display: block;
