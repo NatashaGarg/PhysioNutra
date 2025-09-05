@@ -22,6 +22,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    height: 50px; /* Explicit height */
     width: 100%;
     z-index: 1001; /* Ensure the top bar is above other elements */
 }
