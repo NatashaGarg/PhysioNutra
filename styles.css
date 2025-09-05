@@ -85,7 +85,7 @@ header {
 }
 
 .logo {
-    height: 70px; /* Adjust logo height */
+    height: 55px; /* Adjust logo height */
     margin-right: 20px;
 }
 
@@ -102,9 +102,9 @@ nav {
 
 .nav-options a {
     color: #333; /* Changed font color to dark */
-    padding: 10px 15px;
+    padding: 8px 12px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
     border-radius: 4px;
@@ -117,7 +117,7 @@ nav {
 }
 
 .container {
-    padding-top: 130px; /* Adjust padding to account for fixed top bar and header */
+    padding-top: 95px; /* Adjust padding to account for fixed top bar and header */
 }
 
 .hero-image {
@@ -533,6 +533,9 @@ footer {
     .top-bar {
         flex-direction: column;
         align-items: flex-start;
+        height: 35px;
+        padding: 5px 15px;
+        font-size: 12px;
     }
 
     .contact-info {
@@ -541,7 +544,8 @@ footer {
 
     header {
         flex-direction: column;
-        top: 90px; /* Adjust to make room for the top bar */
+        top: 35px;
+        padding: 6px 15px;
     }
 
     .header-content {
@@ -561,9 +565,15 @@ footer {
         text-align: center;
     }
 
-    .nav-options {
-        flex-direction: column;
-        gap: 10px;
+    .logo {
+        height: 40px;
+    }
+    .nav-options a {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    .container {
+        padding-top: 75px; /* 35px + 40px on mobile */
     }
 
     .nav-menu.active {
@@ -614,6 +624,7 @@ footer {
         width: 100%;
         max-width: 300px;
     }
+    
 }
 
 /* Carousel */
