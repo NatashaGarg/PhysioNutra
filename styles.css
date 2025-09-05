@@ -137,6 +137,79 @@ nav {
     color: white;
 }
 
+hero-section {
+  display: flex;
+  gap: 40px;
+  padding: 40px 20px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: url('images/hero-background.jpg') no-repeat center center/cover; /* Optional background */
+  color: #222;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hero-left, .hero-right {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hero-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff9800;
+}
+
+.hero-left p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.hero-right h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.hero-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hero-right label {
+  font-weight: 600;
+  color: #555;
+}
+
+.hero-right input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline-color: #ff9800;
+}
+
+.hero-right button {
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-right button:hover {
+  background-color: #e07a00;
+}
+
 .animated-text {
     font-size: 2.5em;
     font-family: 'Roboto', sans-serif;
@@ -583,6 +656,20 @@ footer {
 
     .hero-text {
         padding: 0 20px;
+    }
+    .hero-section {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+    .hero-left, .hero-right {
+    width: 100%;
+    padding: 20px;
+    }
+    .hero-left h1 {
+    font-size: 1.8rem;
+    }
+    .hero-right h2 {
+    font-size: 1.6rem;
     }
 
     .animated-text {
