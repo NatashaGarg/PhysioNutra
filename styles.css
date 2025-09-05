@@ -140,10 +140,9 @@ nav {
 .hero-section {
   display: flex;
   gap: 40px;
-  padding: 40px 20px;
+  padding: 40px 0;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
   margin: 0;
   background: url('images/hero.jpg'); /* Optional background */
   color: #222;
