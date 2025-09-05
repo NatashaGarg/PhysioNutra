@@ -1,0 +1,32 @@
+name: Minify CSS to styles.min.css
+
+on:
+  push:
+    paths:
+      - 'styles.css'   # Run only when styles.css changes
+
+jobs:
+  minify-css:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install csso-cli (CSS minifier)
+      run: npm install -g csso-cli
+
+    - name: Minify styles.css to styles.min.css
+      run: |
+        csso styles.css --output styles.min.css
+
+    - name: Commit and push minified CSS
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore: add/update styles.min.css"
+        file_pattern: 'styles.min.css'
