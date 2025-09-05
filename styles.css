@@ -161,7 +161,7 @@ nav {
 .hero-left h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ff9800;
+  color: #15a43a;
 }
 
 .hero-left p {
@@ -192,13 +192,13 @@ nav {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  outline-color: #ff9800;
+  outline-color: #15a43a;
 }
 
 .hero-right button {
   padding: 12px;
   font-size: 1.1rem;
-  background-color: #ff9800;
+  background-color: #15a43a;
   border: none;
   border-radius: 5px;
   color: white;
@@ -230,7 +230,7 @@ nav {
 
 .hero-button {
     display: inline-block;
-    background-color: #ff9800;
+    background-color: #15a43a;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
