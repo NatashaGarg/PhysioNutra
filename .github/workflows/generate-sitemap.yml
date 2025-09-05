@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '*.html'
 jobs:
   sitemap:
     runs-on: ubuntu-latest
