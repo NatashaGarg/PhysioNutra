@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Repeat the <url> block for each video -->
+  <url>
+    <loc>https://physionutraclinic.com</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Neck Pain and Back Pain Relief Journey</video:title>
+      <video:description>A patient's journey to relief from neck and back pain with expert physiotherapy.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=3CoZkshKZZI</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/3CoZkshKZZI</video:player_loc>
+      <video:duration>78</video:duration> <!-- Duration in seconds -->
+      <video:publication_date>2025-08-10T08:00:00+00:00</video:publication_date>
+      <video:family_friendly>true</video:family_friendly>
+      <video:view_count>234</video:view_count>
+      <video:tag>physiotherapy</video:tag>
+      <video:tag>rehabilitation</video:tag>
+      <video:tag>pain relief</video:tag>
+      <video:tag>neck pain treatment</video:tag>
+      <video:tag>back pain relief</video:tag>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://physionutraclinic.com</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/oVuxXsN_hFg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Shoulder and Back Pain Relief Journey</video:title>
+      <video:description>Effective physiotherapy solutions for shoulder and back pain recovery.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=oVuxXsN_hFg</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/oVuxXsN_hFg</video:player_loc>
+      <video:duration>51</video:duration> <!-- Duration in seconds -->
+      <video:publication_date>2025-08-07T08:00:00+00:00</video:publication_date>
+      <video:family_friendly>true</video:family_friendly>
+      <video:view_count>115</video:view_count>
+      <video:tag>physiotherapy</video:tag>
+      <video:tag>rehabilitation</video:tag>
+      <video:tag>pain relief</video:tag>
+      <video:tag>back pain relief</video:tag>
+      <video:tag>shoulder pain therapy</video:tag>
+      <!-- Add more tags if relevant -->
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://physionutraclinic.com</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/hFU2q-VN-Dc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Ankle Fracture Recovery</video:title>
+      <video:description>Physiotherapy rehabilitation after an ankle fracture.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=hFU2q-VN-Dc</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/hFU2q-VN-Dc</video:player_loc>
+      <video:duration>150</video:duration> <!-- Duration in seconds -->
+      <video:publication_date>2025-08-15T08:00:00+00:00</video:publication_date>
+      <video:family_friendly>true</video:family_friendly>
+      <video:view_count>48</video:view_count>
+      <video:tag>physiotherapy</video:tag>
+      <video:tag>rehabilitation</video:tag>
+      <video:tag>pain relief</video:tag>
+      <video:tag>ankle fracture recovery</video:tag>
+      <!-- Add more tags if relevant -->
+    </video:video>
+  </url>
+
+</urlset>
