@@ -144,7 +144,7 @@ nav {
   align-items: center;
   justify-content: center;
   margin: 0;
-  background: url('images/hero.jpg'); /* Optional background */
+  background: url('images/hero.jpg') no-repeat center center/cover; /* Optional background */
   color: #222;
   border-radius: 10px;
 }
