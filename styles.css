@@ -144,11 +144,10 @@ nav {
   align-items: center;
   justify-content: center;
   max-width: 1200px;
-  margin: 0 auto;
-  background: url('images/hero.jpg') no-repeat center center/cover; /* Optional background */
+  margin: 0;
+  background: url('images/hero.jpg'); /* Optional background */
   color: #222;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .hero-left, .hero-right {
