@@ -293,6 +293,15 @@ nav {
     border-radius: 5px;
 }
 
+.section-heading {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #15a43a; /* Primary green */
+  margin-bottom: 30px;
+}
+
 .video-section {
   max-width: 1200px;
   margin: 40px auto;
