@@ -11,7 +11,7 @@ jobs:
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url-path: https://natashagarg.github.io/PhysioNutra
+          base-url-path: https://physionutraclinic.com
           sitemap-format: xml
       - name: Commit sitemap if changed
         run: |
