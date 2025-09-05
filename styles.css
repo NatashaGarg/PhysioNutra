@@ -14,7 +14,7 @@ body {
 .top-bar {
     background-color: #fff; /* Changed background to white */
     color: #333; /* Changed font color to dark */
-    padding: 10px 20px;
+    padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,7 +22,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 50px; /* Explicit height */
+    height: 40px; /* Explicit height */
     width: 100%;
     z-index: 1001; /* Ensure the top bar is above other elements */
 }
@@ -62,12 +62,12 @@ header {
     width: 100%;
     background: #fff; /* Changed background to white */
     position: fixed;
-    top: 50px; /* Adjust to make room for the top bar */
+    top: 40px; /* Adjust to make room for the top bar */
     left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 8px 20px;
     z-index: 1000;
     transition: background-color 0.3s, padding 0.3s;
 }
