@@ -354,7 +354,7 @@ nav {
 /* #appointment-form {
     display: flex;
     flex-direction: column;
-}
+} 
 
 #appointment-form label {
     margin: 5px 0;
@@ -373,7 +373,7 @@ nav {
 #appointment-form button {
     display: inline-block;
     background-color: #007bff; /* Changed to blue */
-    border-radius: 5px;
+/*  border-radius: 5px;
     padding: 10px 20px;
     color: white;
     text-decoration: none;
@@ -383,7 +383,7 @@ nav {
 
 #appointment-form button:hover {
     background-color: #0056b3; /* Darker blue for hover effect */
-} */
+/* } */
 
 .process-step {
     background: #fff;
