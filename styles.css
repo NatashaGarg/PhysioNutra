@@ -352,7 +352,7 @@ nav {
     border-radius: 5px;
 }
 
-#appointment-form {
+/* #appointment-form {
     display: flex;
     flex-direction: column;
 }
@@ -384,7 +384,7 @@ nav {
 
 #appointment-form button:hover {
     background-color: #0056b3; /* Darker blue for hover effect */
-}
+} */
 
 .process-step {
     background: #fff;
