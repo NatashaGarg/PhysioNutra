@@ -137,7 +137,7 @@ nav {
     color: white;
 }
 
-hero-section {
+.hero-section {
   display: flex;
   gap: 40px;
   padding: 40px 20px;
