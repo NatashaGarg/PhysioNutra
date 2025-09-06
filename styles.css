@@ -379,7 +379,7 @@ nav {
 
 .faq-section details[open] {
   background-color: #e8f4fd;
-  border-color: #2a8df6;
+  border-color: #15a43a;
   box-shadow: 2px 2px 8px rgba(42,141,246,0.25);
 }
 
@@ -403,7 +403,7 @@ nav {
   left: 0;
   top: 0;
   font-size: 1rem;
-  color: #2a8df6;
+  color: #15a43a;
   transition: transform 0.3s ease;
 }
 
@@ -597,7 +597,7 @@ footer {
 .reviews-carousel h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
-    color: #333;
+    color: #15a43a;
     margin-bottom: 20px;
 }
 
