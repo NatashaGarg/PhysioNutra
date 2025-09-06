@@ -348,6 +348,78 @@ nav {
   background-color: #7ad16c; /* lighter green */
 }
 
+.faq-section {
+  max-width: 750px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafafa;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #34495e;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.faq-section details {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+}
+
+.faq-section details[open] {
+  background-color: #e8f4fd;
+  border-color: #2a8df6;
+  box-shadow: 2px 2px 8px rgba(42,141,246,0.25);
+}
+
+.faq-section summary {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  outline: none;
+  list-style: none;
+  padding-left: 20px;
+  position: relative;
+}
+
+.faq-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-section summary::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  color: #2a8df6;
+  transition: transform 0.3s ease;
+}
+
+.faq-section details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.faq-section div {
+  margin-top: 12px;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-left: 20px;
+}
+
+
 .contact-appointment-container {
     display: flex;
     justify-content: space-between;
