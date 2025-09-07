@@ -452,6 +452,28 @@ nav {
     line-height: 1.6;
 }
 
+.addresses ul {
+    list-style: none;            /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    max-width: 400px;
+}
+
+.addresses ul li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+.addresses ul li:last-child {
+    border-bottom: none;
+}
+
+.contact p, .contact h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
 .contact .whatsapp-button {
     display: inline-block;
     background-color: #25D366;
