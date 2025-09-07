@@ -741,6 +741,7 @@ footer {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     color: #666;
+    margin-bottom: 10px;
 }
 
 .condition-item:hover {
