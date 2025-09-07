@@ -360,7 +360,7 @@ nav {
 
 .faq-section h2 {
   text-align: center;
-  color: #34495e;
+  color: #15a43a;
   margin-bottom: 25px;
   font-weight: 700;
   font-size: 2rem;
@@ -442,7 +442,7 @@ nav {
     margin-bottom: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
-    color: #333;
+    color: #15a43a;
 }
 
 .contact p, .appointment p {
@@ -680,7 +680,7 @@ footer {
 .conditions h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
-    color: #333;
+    color: #15a43a;
     margin-bottom: 20px;
 }
 
