@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background: #2e86c1;
+  background: #15a43a;
   color: white;
   text-align: center;
   padding: 2rem 0 1rem 0;
@@ -48,7 +48,7 @@ main {
 .blog-title {
   font-size: 2rem;
   margin: 0 0 0.5rem 0;
-  color: #2e86c1;
+  color: #15a43a;
 }
 
 .blog-meta {
@@ -63,7 +63,7 @@ main {
 
 /* Footer styles */
 footer {
-  background: #2e86c1;
+  background: #15a43a;
   color: white;
   display: flex;
   justify-content: space-between;
