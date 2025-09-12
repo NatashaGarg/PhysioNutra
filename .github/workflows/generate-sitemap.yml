@@ -15,6 +15,8 @@ jobs:
         with:
           base-url-path: https://physionutraclinic.com
           sitemap-format: xml
+      - name: Remove .html extensions from sitemap
+        run: sed -i 's/\.html//g' sitemap.xml
       - name: Commit sitemap if changed
         run: |
           git config --global user.name "github-actions"
