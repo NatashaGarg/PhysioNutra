@@ -9,7 +9,11 @@ jobs:
   sitemap:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout the repo with full history # Added descriptive name
+        uses: actions/checkout@v4
+        with:
+          # THIS IS THE CRITICAL LINE TO FIX THE LASTMOD DATE ISSUE
+          fetch-depth: 0 
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1
         with:
