@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Physiotherapy Services & Rehabilitation | PhysioNutra Clinic</title>
+    <style>
+        /* CSS is unchanged */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 55px; /* Adjust logo height */
+            margin-right: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7ad16c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: #555;
+        }
+
+        .content-section a {
+            color: #7ad16c;
+            text-decoration: underline;
+        }
+
+        /* Key Benefits Cards */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #7ad16c;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(122, 209, 108, 0.2);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #7ad16c, #5ab04a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Location Links Grid Styling (New Section) */
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .location-card {
+            padding: 1.5rem;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #7ad16c;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .location-card:hover {
+            background-color: #e8f5e9;
+            transform: translateY(-3px);
+        }
+
+        .location-card a {
+            text-decoration: none;
+            color: #5ab04a;
+            font-weight: bold;
+            display: block;
+            font-size: 1.1rem;
+        }
+        
+        /* The rest of the CSS remains unchanged for consistency */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.8);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Key Factors Section */
+        .factors-section {
+            background: #1a1a1a;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .factors-section h2 {
+            color: #7ad16c;
+        }
+
+        .factors-list {
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .factor-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #7ad16c;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .factor-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .factor-item h3 {
+            color: #7ad16c;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .factor-item p {
+            color: #ddd;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #1a1a1a;
+            color: #7ad16c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            background: #2a2a2a;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: #e8f5e9;
+            border-left: 5px solid #7ad16c;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .info-banner h3 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-banner p {
+            color: #555;
+            margin: 0;
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .phone-btn {
+            background: #7ad16c;
+        }
+
+        .location-btn {
+            background: #1a1a1a;
+        }
+
+        .floating-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 70px;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #7ad16c;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #ddd;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #7ad16c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .content-section p {
+                text-align: left;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+            }
+
+            .floating-btn::before {
+                display: none;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="description" content="Explore PhysioNutra Clinic's full range of physiotherapy services: orthopedic, sports, neuro, and chronic pain management. Your journey to mobility and wellness begins here.">
+    
+    <link rel="canonical" href="https://physionutraclinic.com/physiotherapy/">
+    <link rel="alternate" hreflang="en-us" href="https://physionutraclinic.com/physiotherapy/" />
+    <link rel="alternate" hreflang="x-default" href="https://physionutraclinic.com/physiotherapy/" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta property="og:description" content="Explore PhysioNutra Clinic's full range of physiotherapy services: orthopedic, sports, neuro, and chronic pain management. Your journey to mobility and wellness begins here.">
+    <meta property="og:title" content="Comprehensive Physiotherapy Services & Rehabilitation | PhysioNutra Clinic">
+    <meta property="og:url" content="https://physionutraclinic.com/physiotherapy/">
+    <meta name="twitter:title" content="Comprehensive Physiotherapy Services & Rehabilitation | PhysioNutra Clinic">
+    <meta name="twitter:description" content="Explore PhysioNutra Clinic's full range of physiotherapy services: orthopedic, sports, neuro, and chronic pain management. Your journey to mobility and wellness begins here.">
+    <link rel="shortlink" href="https://physionutraclinic.com/physiotherapy/">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="PhysioNutra Clinic Logo - Physiotherapy and Nutrition" class="logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blogs/">Blogs</a></li>
+                        <li><a href="/physiotherapy/">Physiotherapy Services</a></li> 
+                        <li><a href="/testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Comprehensive Physiotherapy & Holistic Wellness</h1>
+            <p class="hero-subtitle">Restoring Your Movement, Optimizing Your Health</p>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">"Your trusted specialists for pain relief, injury recovery, and enhanced quality of life through personalized physical therapy."</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="content-section fade-in">
+                <h2>The Foundation of Wellness: What is Physiotherapy?</h2>
+                <p>Physiotherapy is a healthcare profession dedicated to helping people maintain or restore their physical function, movement, and well-being. At PhysioNutra Clinic, we employ a scientific, evidence-based approach that includes movement assessment, therapeutic exercise, manual therapy, and patient education. Our goal is to empower you to take an active role in your recovery, minimizing reliance on medication and avoiding unnecessary surgery. This foundational approach is consistent across all our locations, ensuring high-quality care whether you are in Zirakpur or Panchkula.</p>
+            </div>
+
+            <div class="content-section fade-in">
+                <h2>Our Specialized Areas of Expertise</h2>
+                <p>We believe true recovery requires specialized knowledge. Our highly qualified team offers focused treatment across several key areas:</p>
+            </div>
+            
+            <div class="benefits-grid fade-in">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🦴</div>
+                    <h3>Orthopedic Rehab</h3>
+                    <p>Treatment for joint and muscle injuries, fractures, post-operative conditions (e.g., knee/hip replacement), and arthritis management.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏅</div>
+                    <h3>Sports Injury Recovery</h3>
+                    <p>Targeted rehabilitation for athletes and active individuals, focusing on rapid recovery, performance enhancement, and injury prevention.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Neurological Physiotherapy</h3>
+                    <p>Specialized care for conditions like stroke, Parkinson's disease, and spinal cord injuries to improve balance, coordination, and strength.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚶</div>
+                    <h3>Chronic Pain Management</h3>
+                    <p>Holistic strategies and manual techniques to address long-standing pain issues like chronic back pain and fibromyalgia, restoring function.</p>
+                </div>
+            </div>
+            
+            <div class="content-section fade-in">
+                <h2>Physiotherapy Clinics Near You: Serving the Chandigarh Tricity Region</h2>
+                <p>We understand that convenience is key to consistent recovery. PhysioNutra Clinic operates multiple, state-of-the-art facilities across the Chandigarh Tricity. Please select your nearest location to view specific contact details, directions, and locally focused services:</p>
+                
+                <div class="location-grid">
+                    <div class="location-card">
+                        <a href="/physiotherapy/physiotherapy-near-me">📍 Physiotherapist Near Me</a>
+                    </div>
+                    <div class="location-card">
+                        <a href="/physiotherapy/physiotherapy-near-me">📍 Zirakpur</a>
+                    </div>
+                    <div class="location-card">
+                        <a href="/physiotherapy/physiotherapy-panchkula">📍 Panchkula</a>
+                    </div>
+                    <div class="location-card">
+                        <a href="/physiotherapy/physiotherapy-near-me">📍 Mohali</a>
+                    </div>
+                    <div class="location-card">
+                        <a href="/physiotherapy/physiotherapy-near-me">📍 Chandigarh</a>
+                    </div>
+                    <div class="location-card">
+                        <a href="/physiotherapy/physiotherapy-near-me">📍 Kharar </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-banner fade-in">
+                <h3>💡 The PhysioNutra Difference</h3>
+                <p>We seamlessly integrate physical therapy with nutritional counseling, a unique approach that addresses inflammation and recovery from within, accelerating your results and promoting long-term health.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="factors-section">
+        <div class="container">
+            <div class="content-section">
+                <h2 style="text-align: center;">Our Commitment to Excellence</h2>
+                <p style="text-align: center; color: #ddd;">Choosing a physiotherapy provider is an important decision. We ensure the highest standards by focusing on these key factors:</p>
+            </div>
+
+            <div class="factors-list">
+                <div class="factor-item fade-in">
+                    <h3>Personalized Treatment Plans</h3>
+                    <p>Every recovery journey is unique. We conduct detailed assessments to create a therapy plan tailored exactly to your diagnosis, lifestyle, and goals, not a one-size-fits-all solution.</p>
+                </div>
+
+                <div class="factor-item fade-in">
+                    <h3>Certified & Experienced Therapists</h3>
+                    <p>Our team consists of certified professionals with extensive experience and post-graduate training in various specialty areas of rehabilitation, ensuring expert care.</p>
+                </div>
+
+                <div class="factor-item fade-in">
+                    <h3>Focus on Patient Education</h3>
+                    <p>We empower you with the knowledge and home exercise programs necessary to manage your condition independently and prevent future recurrence, leading to long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Ready to Move Better and Live Pain-Free?</h2>
+            <p>Take the first step toward a healthier, more active life. Contact us today to schedule your initial consultation and assessment at one of our convenient Tricity locations.</p>
+            <a href="tel:+919417791833" class="cta-button">Book Your Consultation Now</a>
+        </div>
+    </section>
+
+    <div class="floating-buttons">
+        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20PhysioNutra%20Clinic." class="floating-btn whatsapp-btn" data-tooltip="WhatsApp Us" target="_blank">
+            📱
+        </a>
+        <a href="tel:+919417791833" class="floating-btn phone-btn" data-tooltip="Call Now">
+            📞
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PhysioNutra Clinic</h3>
+                    <p>Your trusted physiotherapy and wellness center in Chandigarh Tricity, providing comprehensive rehabilitation and preventive care services.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Core Services</h3>
+                    <ul>
+                        <li>Sports Physiotherapy</li>
+                        <li>Orthopedic Rehabilitation</li>
+                        <li>Pain Management</li>
+                        <li>Neurological Rehab</li>
+                        <li>Nutritional Counseling</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📍 Multiple Services areas across Chandigarh Tricity</p>
+                    <p>📞 +91 94177 91833</p>
+                    <p>✉️ physionutraclinic@gmail.com</p>
+                    <p>🕒 Mon-Sat: 9:00 AM - 7:00 PM</p>
+                    <p>🕒 Sun: 10:00 AM - 2:00 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Service Areas</h3>
+                    <ul>
+                        <li><a href="/physiotherapy/physiotherapy-near-me">Physiotherapy near me</a></li>
+                        <li><a href="/physiotherapy/physiotherapy-near-me">Zirakpur</a></li>
+                        <li><a href="/physiotherapy/physiotherapy-chandigarh">Chandigarh</a></li>
+                        <li><a href="/physiotherapy/physiotherapy-near-me">Mohali</a></li>
+                        <li><a href="/physiotherapy/physiotherapy-panchkula">Panchkula</a></li>
+                        <li><a href="/physiotherapy/physiotherapy-near-me">Kharar</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Dr. Tarun's PhysioNutra Clinic. All rights reserved. <br> Designed with ❤️ for Better Health in Zirakpur, Chandigarh, Mohali, Panchkula & Kharar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Track button clicks
+        document.querySelectorAll('.floating-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.classList.contains('whatsapp-btn') ? 'WhatsApp' : 
+                                this.classList.contains('phone-btn') ? 'Phone' : 'Location';
+                console.log(`User initiated ${action} contact`);
+            });
+        });
+
+        // Add scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+        });
+    </script>
+</body>
+</html>
