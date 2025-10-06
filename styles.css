@@ -829,6 +829,10 @@ nav {
     color: #15a43a;
     margin: 10px 0;
 }
+.condition-item h3 a {
+  color: inherit;       /* Changes the link color to match the parent text (usually black or the default heading color) */
+  text-decoration: none; /* Removes the underline */
+}
 
 .condition-item p {
     font-family: 'Open Sans', sans-serif;
