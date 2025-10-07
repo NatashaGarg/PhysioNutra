@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Physiotherapy Sessions in Zirakpur | Physio at Home Chandigarh Tricity</title> 
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 55px; /* Adjust logo height */
+            margin-right: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7ad16c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: #555;
+        }
+
+        .content-section a {
+            color: #7ad16c;
+            text-decoration: underline;
+        }
+
+        /* Key Benefits Cards */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #7ad16c;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(122, 209, 108, 0.2);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #7ad16c, #5ab04a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.8);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Key Factors Section */
+        .factors-section {
+            background: #1a1a1a;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .factors-section h2 {
+            color: #7ad16c;
+        }
+
+        .factors-list {
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .factor-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #7ad16c;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .factor-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .factor-item h3 {
+            color: #7ad16c;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .factor-item p {
+            color: #ddd;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #1a1a1a;
+            color: #7ad16c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            background: #2a2a2a;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: #e8f5e9;
+            border-left: 5px solid #7ad16c;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .info-banner h3 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-banner p {
+            color: #555;
+            margin: 0;
+        }
+        
+        /* FAQ Schema Section Styling */
+        .faq-section {
+            padding: 40px 0;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .faq-item {
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            background-color: #f5f5f5;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .faq-question:hover {
+            background-color: #eee;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            color: #555;
+        }
+        
+        .faq-answer p {
+            padding: 15px 0;
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Large enough for content */
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .phone-btn {
+            background: #7ad16c;
+        }
+
+        .location-btn {
+            background: #1a1a1a;
+        }
+
+        .floating-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 70px;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #7ad16c;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #ddd;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #7ad16c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .content-section p {
+                text-align: left;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+            }
+
+            .floating-btn::before {
+                display: none;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which areas do you cover for Home Physiotherapy in Chandigarh Tricity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PhysioNutra Clinic provides expert home physiotherapy services across Zirakpur, Chandigarh, Mohali, Panchkula, Kharar, Derabassi, Peer Muchalla, and Baltana. Contact us to confirm availability in your specific locality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is a home physiotherapy session different from a clinic session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The treatment quality is the same, but the setting is different. Home sessions offer personalized care in the comfort of your home, eliminating travel and making it ideal for post-operative, elderly, or immobile patients. Your physiotherapist will bring all necessary portable equipment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What conditions can be treated with physiotherapy at home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We treat a wide range of conditions at home, including post-surgical rehabilitation (TKR, THR), neurological conditions (stroke, paralysis), back pain, knee pain, chronic pain management, and specialized elderly care."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="description" content="Get expert Home Physiotherapy in Zirakpur and Chandigarh Tricity. Personalized physio sessions at home for post-surgery, stroke, and pain relief. Book your visit!">
+    
+    <link rel="canonical" href="https://physionutraclinic.com/physiotherapy/home-physiotherapy-sessions/"> 
+    <link rel="alternate" hreflang="en-us" href="https://physionutraclinic.com/physiotherapy/home-physiotherapy-sessions/" />
+    <link rel="alternate" hreflang="x-default" href="https://physionutraclinic.com/physiotherapy/home-physiotherapy-sessions/" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta property="og:description" content="Personalized Home Physiotherapy in Zirakpur, Chandigarh, Mohali & Panchkula. Expert care for recovery and mobility in the comfort of your home.">
+    <meta property="og:title" content="Home Physiotherapy Sessions in Zirakpur | Physio at Home Chandigarh Tricity">
+    <meta property="og:url" content="https://physionutraclinic.com/physiotherapy/home-physiotherapy-sessions">
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../../images/logo.png" alt="PhysioNutra Clinic Logo - Home Physiotherapy Zirakpur" class="logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blogs/">Blogs</a></li>
+                        <li><a href="/physiotherapy/">Clinic Services</a></li> 
+                        <li><a href="/testimonials/">Testimonials</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Expert Home Physiotherapy in Zirakpur & Chandigarh Tricity</h1> 
+            <p class="hero-subtitle">Personalized Physiotherapy and Rehabilitation in the Comfort of Your Home</p>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">"Receive the highest standard of care from PhysioNutra Clinic's experienced physiotherapists, without the hassle of travel."</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="content-section fade-in">
+                <h2>Why Choose Physiotherapy at Home (Physio at Home) in Zirakpur?</h2> 
+                <p>For many patients—including the elderly, those recovering from a major surgery like a **Total Knee Replacement (TKR)**, or individuals with limited mobility due to stroke—visiting a clinic can be a significant challenge. Our **home physiotherapy sessions** are designed to deliver world-class rehabilitation directly to your residence across **Zirakpur, Chandigarh, Mohali, and Panchkula.** We provide focused, one-on-one attention, using your familiar environment to enhance comfort and speed up recovery.</p>
+            </div>
+
+            <div class="content-section fade-in">
+                <h2>Ideal Candidates for Home Physiotherapy Sessions</h2>
+                <p>Our specialized 'Physio at Home' service is perfect for patients requiring consistent, comfortable, and convenient care. This includes:</p>
+                <ul>
+                    <li>**Post-Operative Rehabilitation:** Patients recovering from surgeries (e.g., knee, hip, spine) who need intensive but gentle care.</li>
+                    <li>**Elderly & Geriatric Care:** Safe, consistent mobility exercises for seniors who face difficulty traveling.</li>
+                    <li>**Neurological Conditions:** Stroke, Parkinson's, or paralysis recovery requiring long-term, familiar environment support.</li>
+                    <li>**Chronic Pain Management:** Individuals with chronic back, neck, or joint pain who prefer a relaxed setting.</li>
+                    <li>**Pediatric Physiotherapy:** Specialized sessions for children in a setting where they are most comfortable.</li>
+                </ul>
+            </div>
+
+            <div class="benefits-grid fade-in">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏠</div>
+                    <h3>Ultimate Convenience</h3>
+                    <p>Eliminate painful travel and waiting times. Our **Physiotherapist at Home** comes to you in **Zirakpur** and the wider Tricity area.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Focused 1-on-1 Care</h3>
+                    <p>Receive the therapist's undivided attention for the entire session, ensuring a highly personalized and effective recovery plan.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧘</div>
+                    <h3>Familiar Environment</h3>
+                    <p>Rehabilitate in your own home, making exercises more relevant and comfortable for daily activities.</p>
+                </div>
+            </div>
+            
+            <div class="info-banner fade-in">
+                <h3>🛠️ What Equipment Do We Bring for a Home Session?</h3>
+                <p>Our expert physiotherapists come fully equipped with portable therapeutic tools, including Ultrasound (if necessary), TENS/IFT machines, exercise bands, resistance weights, and specialized manual therapy instruments, ensuring you get clinic-quality treatment at your location.</p>
+            </div>
+
+            <div class="image-gallery fade-in">
+                <div class="gallery-item">
+                    🚶
+                    <div class="gallery-caption">Gait & Balance Training</div>
+                </div>
+                <div class="gallery-item">
+                    🧳
+                    <div class="gallery-caption">Portable Electrotherapy</div>
+                </div>
+                <div class="gallery-item">
+                    👵
+                    <div class="gallery-caption">Dedicated Geriatric Care</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="factors-section">
+        <div class="container">
+            <div class="content-section">
+                <h2 style="text-align: center;">How to Book Your Home Physiotherapy Session in Chandigarh Tricity</h2>
+                <p style="text-align: center; color: #ddd;">Securing expert care from PhysioNutra Clinic is simple. We follow a clear process to ensure seamless and effective treatment from day one:</p>
+            </div>
+
+            <div class="factors-list">
+                <div class="factor-item fade-in">
+                    <h3>1. Initial Consultation & Inquiry</h3>
+                    <p>Call us at <strong>+91 94177 91833</strong> or use the WhatsApp button to discuss your condition, location in Zirakpur/Tricity, and availability. We note down your primary concerns and medical history.</p>
+                </div>
+
+                <div class="factor-item fade-in">
+                    <h3>2. Expert Assessment & Plan</h3>
+                    <p>Your dedicated physiotherapist visits your home for a comprehensive assessment. Based on your needs (post-op, stroke, chronic pain), we create a tailored treatment protocol.</p>
+                </div>
+
+                <div class="factor-item fade-in">
+                    <h3>3. Starting Your Sessions</h3>
+                    <p>We begin regular, scheduled **Physio at Home** sessions, bringing all the necessary equipment. Consistency is key to quick recovery, and we work around your schedule.</p>
+                </div>
+
+                <div class="factor-item fade-in">
+                    <h3>4. Ongoing Progress Tracking</h3>
+                    <p>Your therapist tracks progress, adapts the plan, and provides continuous education on home exercises and injury prevention for lasting results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions About Physio at Home</h2>
+            <div id="faq-list">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Which areas do you cover for Home Physiotherapy in Chandigarh Tricity?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>PhysioNutra Clinic provides expert home physiotherapy services across Zirakpur, Chandigarh, Mohali, Panchkula, Kharar, Derabassi, Peer Muchalla, and Baltana. Contact us to confirm availability in your specific locality.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>How is a home physiotherapy session different from a clinic session?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The treatment quality is the same, but the setting is different. Home sessions offer personalized care in the comfort of your home, eliminating travel and making it ideal for post-operative, elderly, or immobile patients. Your physiotherapist will bring all necessary portable equipment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>What conditions can be treated with physiotherapy at home?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We treat a wide range of conditions at home, including post-surgical rehabilitation (TKR, THR), neurological conditions (stroke, paralysis), back pain, knee pain, chronic pain management, and specialized elderly care.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Ready to Book Your Home Physiotherapy Session?</h2>
+            <p>Don't let pain or limited mobility hold you back. Start your convenient and effective recovery journey today with an experienced physiotherapist in your own home in Zirakpur and Chandigarh Tricity.</p>
+            <a href="tel:+919417791833" class="cta-button">Call to Book Your First Home Visit Now</a>
+        </div>
+    </section>
+
+    <div class="floating-buttons">
+        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20home%20physiotherapy%20session%20in%20Zirakpur." class="floating-btn whatsapp-btn" data-tooltip="WhatsApp for Home Visit" target="_blank">
+            📱
+        </a>
+        <a href="tel:+919417791833" class="floating-btn phone-btn" data-tooltip="Call Now for Home Physio">
+            📞
+        </a>
+        <a href="https://www.google.com/maps/place/Dr+Tarun's+PhysioNutra+Clinic/data=!4m2!3m1!1s0x0:0xa36a96efddac2ccc?sa=X&ved=1t:2428&hl=en-GB&ictx=111" class="floating-btn location-btn" data-tooltip="Clinic Directions" target="_blank">
+            📍
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PhysioNutra Clinic</h3>
+                    <p>Your trusted physiotherapy and wellness center in Chandigarh Tricity, providing comprehensive clinic and **Home Physiotherapy** services.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">**Home Physiotherapy**</a></li>
+                        <li><a href="#">Orthopedic Rehabilitation</a></li>
+                        <li><a href="#">Pain Management</a></li>
+                        <li><a href="#">Post-Surgical Recovery</a></li>
+                        <li><a href="#">Nutritional Counseling</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📍 SCO 12, Ananta Square, Zirakpur, Gazipur Rd</p>
+                    <p>📍 Sector 20, Panchkula</p>
+                    <p>📞 +91 94177 91833</p>
+                    <p>✉️ physionutraclinic@gmail.com</p>
+                    <p>🕒 Mon-Sat: 9:00 AM - 7:00 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Service Areas</h3>
+                    <ul>
+                        <li><a href="/physiotherapy/home-physiotherapy-sessions/">**Home Physiotherapy Zirakpur**</a></li>
+                        <li><a href="/physiotherapy/home-physiotherapy-sessions/">Chandigarh Home Physio</a></li>
+                        <li><a href="/physiotherapy/home-physiotherapy-sessions/">Mohali Home Physio</a></li>
+                        <li><a href="/physiotherapy/physiotherapy-panchkula/">Panchkula Home Physio</a></li>
+                        <li><a href="/physiotherapy/">Kharar</a></li>
+                        <li><a href="/physiotherapy/">Derabassi</a></li>
+                        <li><a href="/physiotherapy/">Peer Muchalla</a></li>
+                        <li><a href="/physiotherapy/">Baltana</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Dr. Tarun's PhysioNutra Clinic. All rights reserved. | Professional Physiotherapy & **Home Service** in Chandigarh Tricity</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links (kept)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll (kept)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Track button clicks (Good for GA/GTM integration)
+        document.querySelectorAll('.floating-btn, .cta-button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.classList.contains('whatsapp-btn') ? 'WhatsApp' : 
+                                this.classList.contains('phone-btn') ? 'Phone' : 
+                                this.classList.contains('cta-button') ? 'CTA_Home_Book' : 'Location';
+                // Use dataLayer.push for GTM tracking here instead of console.log
+                // if (window.dataLayer) {
+                //     window.dataLayer.push({
+                //         'event': 'conversion_click',
+                //         'conversion_type': action
+                //     });
+                // }
+                console.log(`User initiated ${action} contact`);
+            });
+        });
+
+        // New script for FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.closest('.faq-item');
+                const answer = item.querySelector('.faq-answer');
+                
+                // Toggle active class on the clicked item
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = 0;
+                } else {
+                    // Close all other open items
+                    document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+                        activeItem.classList.remove('active');
+                        activeItem.querySelector('.faq-answer').style.maxHeight = 0;
+                    });
+                    
+                    // Open the clicked item
+                    item.classList.add('active');
+                    // Set maxHeight to the scrollHeight for smooth transition
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
