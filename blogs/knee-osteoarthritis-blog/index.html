@@ -51,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NHVSMWD6');</script>
 <!-- End Google Tag Manager -->
     <!-- Schema Markup -->
-    <script type="application/ld+json">
+    <script type="application/ld+json">[
     {
       "@context": "https://schema.org",
       "@type": "MedicalWebPage",
@@ -61,7 +61,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "@type": "MedicalBusiness",
         "name": "PhysioNutra Clinic"
       }
-    }
+    },
+		{
+			"@context": "https://schema.org",
+			"@type": "MedicalCondition",
+			"name": "Knee Osteoarthritis",
+			"alternateName": ["Knee OA", "Degenerative Joint Disease"],
+			"potentialTreatment": {
+				"@type": "MedicalTherapy",
+				"name": ["Physiotherapy", "Strength Training", "Pain Management", "Joint Mobilization"]
+			}
+		}
+    ]
     </script>
 
     <style>
