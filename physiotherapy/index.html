@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprehensive Physiotherapy Services & Rehabilitation | PhysioNutra Clinic</title>
     <style>
-        /* CSS is unchanged */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +24,6 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             background: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -42,7 +40,7 @@
         }
 
         .logo {
-            height: 55px; /* Adjust logo height */
+            height: 55px;
             margin-right: 20px;
         }
 
@@ -63,7 +61,6 @@
             color: #7ad16c;
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
             color: white;
@@ -84,7 +81,6 @@
             opacity: 0.95;
         }
 
-        /* Main Content */
         .main-content {
             background: white;
             padding: 60px 0;
@@ -114,7 +110,6 @@
             text-decoration: underline;
         }
 
-        /* Key Benefits Cards */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -155,7 +150,6 @@
             margin-bottom: 0.5rem;
         }
         
-        /* Location Links Grid Styling (New Section) */
         .location-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -184,46 +178,82 @@
             display: block;
             font-size: 1.1rem;
         }
-        
-        /* The rest of the CSS remains unchanged for consistency */
-        .image-gallery {
+
+        .services-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #7ad16c;
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            background: #e8f5e9;
+            transform: translateX(5px);
+        }
+
+        .service-item h4 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .service-item a {
+            color: #5ab04a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
+            margin: 2rem 0;
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
+        .blog-card {
+            background: white;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            transition: transform 0.3s;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(122, 209, 108, 0.3);
         }
 
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(26, 26, 26, 0.8);
-            color: white;
-            padding: 0.5rem;
-            font-size: 0.9rem;
-            text-align: center;
+        .blog-card-content {
+            padding: 1.5rem;
         }
 
-        /* Key Factors Section */
+        .blog-card h4 {
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .blog-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .blog-card a {
+            color: #5ab04a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         .factors-section {
             background: #1a1a1a;
             padding: 60px 0;
@@ -265,7 +295,6 @@
             font-size: 1rem;
         }
 
-        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
             color: white;
@@ -305,7 +334,6 @@
             background: #2a2a2a;
         }
 
-        /* Info Banner */
         .info-banner {
             background: #e8f5e9;
             border-left: 5px solid #7ad16c;
@@ -324,7 +352,6 @@
             margin: 0;
         }
 
-        /* Floating Buttons */
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -347,7 +374,6 @@
             font-size: 1.8rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
-            animation: float 3s ease-in-out infinite;
         }
 
         .floating-btn:hover {
@@ -363,36 +389,6 @@
             background: #7ad16c;
         }
 
-        .location-btn {
-            background: #1a1a1a;
-        }
-
-        .floating-btn::before {
-            content: attr(data-tooltip);
-            position: absolute;
-            right: 70px;
-            background: #333;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .floating-btn:hover::before {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Footer */
         footer {
             background: #1a1a1a;
             color: white;
@@ -438,7 +434,6 @@
             color: #999;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -471,18 +466,12 @@
                 width: 55px;
                 height: 55px;
             }
-
-            .floating-btn::before {
-                display: none;
-            }
         }
 
-        /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Fade In Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -506,8 +495,8 @@
     <meta property="og:title" content="Comprehensive Physiotherapy Services & Rehabilitation | PhysioNutra Clinic">
     <meta property="og:url" content="https://physionutraclinic.com/physiotherapy/">
     <meta property="og:image" content="https://physionutraclinic.com/images/logo.png">
-	<meta property="og:image:width" content="100">
-	<meta property="og:image:height" content="100">
+    <meta property="og:image:width" content="100">
+    <meta property="og:image:height" content="100">
     <meta name="twitter:title" content="Comprehensive Physiotherapy Services & Rehabilitation | PhysioNutra Clinic">
     <meta name="twitter:description" content="Explore PhysioNutra Clinic's full range of physiotherapy services: orthopedic, sports, neuro, and chronic pain management. Your journey to mobility and wellness begins here.">
     <link rel="shortlink" href="https://physionutraclinic.com/physiotherapy/">
@@ -517,13 +506,14 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="../images/logo.png" alt="PhysioNutra Clinic Logo - Physiotherapy and Nutrition" class="logo">
+                    <a href="/"><img src="../images/logo.png" alt="PhysioNutra Clinic Logo - Physiotherapy and Nutrition" class="logo"></a>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/services/">Services</a></li>
                         <li><a href="/blogs/">Blogs</a></li>
-                        <li><a href="/physiotherapy/">Physiotherapy Services</a></li> 
                         <li><a href="/testimonials/">Testimonials</a></li>
                         <li><a href="/contact/">Contact</a></li>
                     </ul>
@@ -544,7 +534,7 @@
         <div class="container">
             <div class="content-section fade-in">
                 <h2>The Foundation of Wellness: What is Physiotherapy?</h2>
-                <p>Physiotherapy is a healthcare profession dedicated to helping people maintain or restore their physical function, movement, and well-being. At PhysioNutra Clinic, we employ a scientific, evidence-based approach that includes movement assessment, therapeutic exercise, manual therapy, and patient education. Our goal is to empower you to take an active role in your recovery, minimizing reliance on medication and avoiding unnecessary surgery. This foundational approach is consistent across all our locations, ensuring high-quality care whether you are in Zirakpur or Panchkula.</p>
+                <p>Physiotherapy is a healthcare profession dedicated to helping people maintain or restore their physical function, movement, and well-being. At PhysioNutra Clinic, we employ a scientific, evidence-based approach that includes movement assessment, therapeutic exercise, <a href="/services/manual-therapy/">manual therapy</a>, and patient education. Our goal is to empower you to take an active role in your recovery, minimizing reliance on medication and avoiding unnecessary surgery. This foundational approach is consistent across all our locations, ensuring high-quality care whether you are in <a href="/physiotherapy/zirakpur/">Zirakpur</a> or <a href="/physiotherapy/panchkula/">Panchkula</a>.</p>
             </div>
 
             <div class="content-section fade-in">
@@ -555,23 +545,63 @@
             <div class="benefits-grid fade-in">
                 <div class="benefit-card">
                     <div class="benefit-icon">🦴</div>
-                    <h3>Orthopedic Rehab</h3>
-                    <p>Treatment for joint and muscle injuries, fractures, post-operative conditions (e.g., knee/hip replacement), and arthritis management.</p>
+                    <h3><a href="/services/orthopedic-rehabilitation/" style="text-decoration: none; color: inherit;">Orthopedic Rehab</a></h3>
+                    <p>Treatment for joint and muscle injuries, fractures, post-operative conditions (e.g., knee/hip replacement), and <a href="/blogs/arthritis-management/">arthritis management</a>.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🏅</div>
-                    <h3>Sports Injury Recovery</h3>
-                    <p>Targeted rehabilitation for athletes and active individuals, focusing on rapid recovery, performance enhancement, and injury prevention.</p>
+                    <h3><a href="/services/sports-injury-treatment/" style="text-decoration: none; color: inherit;">Sports Injury Recovery</a></h3>
+                    <p>Targeted rehabilitation for athletes and active individuals, focusing on rapid recovery, performance enhancement, and injury prevention. Learn more about <a href="/blogs/sports-physiotherapy/">sports physiotherapy</a>.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🧠</div>
-                    <h3>Neurological Physiotherapy</h3>
-                    <p>Specialized care for conditions like stroke, Parkinson's disease, and spinal cord injuries to improve balance, coordination, and strength.</p>
+                    <h3><a href="/services/neurological-rehabilitation/" style="text-decoration: none; color: inherit;">Neurological Physiotherapy</a></h3>
+                    <p>Specialized care for conditions like <a href="/blogs/stroke-rehabilitation/">stroke</a>, Parkinson's disease, and spinal cord injuries to improve balance, coordination, and strength.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🚶</div>
-                    <h3>Chronic Pain Management</h3>
-                    <p>Holistic strategies and manual techniques to address long-standing pain issues like chronic back pain and fibromyalgia, restoring function.</p>
+                    <h3><a href="/blogs/pain-management-physiotherapy/" style="text-decoration: none; color: inherit;">Chronic Pain Management</a></h3>
+                    <p>Holistic strategies and manual techniques to address long-standing pain issues like <a href="/blogs/chronic-back-pain-management/">chronic back pain</a> and fibromyalgia, restoring function.</p>
+                </div>
+            </div>
+
+            <div class="content-section fade-in">
+                <h2>Our Comprehensive Service Range</h2>
+                <p>PhysioNutra Clinic offers a wide array of specialized physiotherapy services to address various conditions and promote overall wellness:</p>
+                
+                <div class="services-list">
+                    <div class="service-item">
+                        <h4>🩺 <a href="/services/dry-needling/">Dry Needling</a></h4>
+                        <p>Advanced technique for muscle pain relief and trigger point therapy</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>⚡ <a href="/services/electrotherapy/">Electrotherapy</a></h4>
+                        <p>Modern therapeutic modalities for pain management and tissue healing</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>👴 <a href="/services/geriatric-physiotherapy/">Geriatric Physiotherapy</a></h4>
+                        <p>Specialized care for elderly patients focusing on mobility and independence</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>👶 <a href="/services/pediatric-physiotherapy/">Pediatric Physiotherapy</a></h4>
+                        <p>Child-focused therapy for developmental and growth-related conditions</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>👩 <a href="/services/women-health-physiotherapy/">Women's Health Physiotherapy</a></h4>
+                        <p>Specialized care for pregnancy, postpartum, and pelvic health</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>❤️ <a href="/services/cardiac-rehabilitation/">Cardiac Rehabilitation</a></h4>
+                        <p>Recovery programs for heart patients and cardiovascular wellness</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>🫁 <a href="/services/respiratory-physiotherapy/">Respiratory Physiotherapy</a></h4>
+                        <p>Breathing exercises and techniques for lung health</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>🏠 <a href="/services/home-physiotherapy-zirakpur/">Home Physiotherapy</a></h4>
+                        <p>Professional therapy services in the comfort of your home</p>
+                    </div>
                 </div>
             </div>
             
@@ -596,23 +626,79 @@
                         <a href="/physiotherapy/chandigarh/">📍 Chandigarh</a>
                     </div>
                     <div class="location-card">
-                        <a href="/physiotherapy/physiotherapy-near-me/">📍 Kharar </a>
+                        <a href="/physiotherapy/kharar/">📍 Kharar</a>
                     </div>
                     <div class="location-card">
-                        <a href="/physiotherapy/physiotherapy-near-me/">📍 Dera Bassi </a>
+                        <a href="/physiotherapy/dera-bassi/">📍 Dera Bassi</a>
                     </div>
                     <div class="location-card">
-                        <a href="/physiotherapy/physiotherapy-near-me/">📍 Baltana </a>
+                        <a href="/physiotherapy/baltana/">📍 Baltana</a>
                     </div>
                     <div class="location-card">
-                        <a href="/physiotherapy/physiotherapy-near-me/">📍 Peer Muchalla </a>
+                        <a href="/physiotherapy/peer-muchalla/">📍 Peer Muchalla</a>
+                    </div>
+                    <div class="location-card">
+                        <a href="/physiotherapy/pinjore/">📍 Pinjore</a>
+                    </div>
+                    <div class="location-card">
+                        <a href="/physiotherapy/dhakoli/">📍 Dhakoli</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in">
+                <h2>Expert Insights: Our Physiotherapy Blog</h2>
+                <p>Stay informed with our comprehensive guides on various conditions, treatments, and wellness tips. Our expert physiotherapists share valuable insights to help you understand your condition better:</p>
+                
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-card-content">
+                            <h4>Sciatica Pain Relief</h4>
+                            <p>Learn effective treatment strategies for sciatica and nerve pain management.</p>
+                            <a href="/blogs/sciatica-pain-relief/">Read More →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card-content">
+                            <h4>Frozen Shoulder Treatment</h4>
+                            <p>Comprehensive guide to treating and recovering from frozen shoulder.</p>
+                            <a href="/blogs/frozen-shoulder-treatment-chandigarh/">Read More →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card-content">
+                            <h4>Slip Disc Treatment</h4>
+                            <p>Understanding disc herniation and effective non-surgical treatment options.</p>
+                            <a href="/blogs/slip-disc-treatment/">Read More →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card-content">
+                            <h4>ACL Tear Rehabilitation</h4>
+                            <p>Complete recovery protocol for ACL injuries and post-surgical care.</p>
+                            <a href="/blogs/acl-tear-rehabilitation/">Read More →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card-content">
+                            <h4>Cervical Pain Management</h4>
+                            <p>Effective strategies for neck pain relief and cervical spondylosis.</p>
+                            <a href="/blogs/cervical-pain-management/">Read More →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card-content">
+                            <h4>When to See a Physiotherapist</h4>
+                            <p>Know the signs and symptoms that indicate you need professional help.</p>
+                            <a href="/blogs/when-to-see-a-physiotherapist/">Read More →</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="info-banner fade-in">
                 <h3>💡 The PhysioNutra Difference</h3>
-                <p>We seamlessly integrate physical therapy with nutritional counseling, a unique approach that addresses inflammation and recovery from within, accelerating your results and promoting long-term health.</p>
+                <p>We seamlessly integrate physical therapy with nutritional counseling, a unique approach that addresses inflammation and recovery from within, accelerating your results and promoting long-term health. Explore our <a href="/faqs/">frequently asked questions</a> to learn more.</p>
             </div>
         </div>
     </section>
@@ -652,10 +738,10 @@
     </section>
 
     <div class="floating-buttons">
-        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20PhysioNutra%20Clinic." class="floating-btn whatsapp-btn" data-tooltip="WhatsApp Us" target="_blank">
+        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20PhysioNutra%20Clinic." class="floating-btn whatsapp-btn" target="_blank" aria-label="WhatsApp">
             📱
         </a>
-        <a href="tel:+919417791833" class="floating-btn phone-btn" data-tooltip="Call Now">
+        <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call Now">
             📞
         </a>
     </div>
@@ -670,21 +756,33 @@
                 <div class="footer-section">
                     <h3>Our Core Services</h3>
                     <ul>
-                        <li><a href="/blogs/sports-physiotherapy">Sports Physiotherapy</a></li>
-                        <li>Orthopedic Rehabilitation</li>
-                        <li><a href="/blogs/pain-management-physiotherapy">Pain Management</li>
-                        <li>Neurological Rehab</li>
-                        <li>Nutritional Counseling</li>
+                        <li><a href="/services/sports-injury-treatment/">Sports Physiotherapy</a></li>
+                        <li><a href="/services/orthopedic-rehabilitation/">Orthopedic Rehabilitation</a></li>
+                        <li><a href="/blogs/pain-management-physiotherapy/">Pain Management</a></li>
+                        <li><a href="/services/neurological-rehabilitation/">Neurological Rehab</a></li>
+                        <li><a href="/services/manual-therapy/">Manual Therapy</a></li>
+                        <li><a href="/services/dry-needling/">Dry Needling</a></li>
                     </ul>
-                    <h3><a href="/faqs/">FAQs</a></h3>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Treatments</h3>
+                    <ul>
+                        <li><a href="/blogs/sciatica-pain-relief/">Sciatica Pain Relief</a></li>
+                        <li><a href="/blogs/frozen-shoulder-treatment-chandigarh/">Frozen Shoulder</a></li>
+                        <li><a href="/blogs/slip-disc-treatment/">Slip Disc Treatment</a></li>
+                        <li><a href="/blogs/acl-tear-rehabilitation/">ACL Rehabilitation</a></li>
+                        <li><a href="/blogs/spondylitis-treatment/">Spondylitis Care</a></li>
+                        <li><a href="/blogs/vertigo-treatment/">Vertigo Treatment</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p>📍 Multiple Services areas across Chandigarh Tricity</p>
-                    <p>📞 +91 94177 91833</p>
-                    <p>✉️ physionutraclinic@gmail.com</p>
+                    <p>📍 Multiple Service areas across Chandigarh Tricity</p>
+                    <p>📞 <a href="tel:+919417791833">+91 94177 91833</a></p>
+                    <p>✉️ <a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a></p>
                     <p>🕒 Mon-Sat: 9:00 AM - 7:00 PM</p>
                     <p>🕒 Sun: 10:00 AM - 2:00 PM</p>
+                    <p style="margin-top: 1rem;"><a href="/faqs/">FAQs</a> | <a href="/about/">About Us</a></p>
                 </div>
                 <div class="footer-section">
                     <h3>Our Service Areas</h3>
@@ -694,12 +792,21 @@
                         <li><a href="/physiotherapy/chandigarh/">Chandigarh</a></li>
                         <li><a href="/physiotherapy/mohali/">Mohali</a></li>
                         <li><a href="/physiotherapy/panchkula/">Panchkula</a></li>
-                        <li><a href="/physiotherapy/physiotherapy-near-me/">Kharar</a></li>
+                        <li><a href="/physiotherapy/kharar/">Kharar</a></li>
+                        <li><a href="/physiotherapy/baltana/">Baltana</a></li>
+                        <li><a href="/physiotherapy/pinjore/">Pinjore</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Dr. Tarun's PhysioNutra Clinic. All rights reserved. <br> Designed with ❤️ for Better Health in Zirakpur, Chandigarh, Mohali, Panchkula & Kharar</p>
+                <p>© 2025 Dr. Tarun's PhysioNutra Clinic. All rights reserved.</p>
+                <p style="margin-top: 0.5rem;">Designed with ❤️ for Better Health in Zirakpur, Chandigarh, Mohali, Panchkula & Kharar</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    <a href="/blogs/">Blog</a> | 
+                    <a href="/testimonials/">Testimonials</a> | 
+                    <a href="/services/">All Services</a> | 
+                    <a href="/contact/">Contact</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -738,20 +845,12 @@
             observer.observe(element);
         });
 
-        // Track button clicks
+        // Track button clicks for analytics
         document.querySelectorAll('.floating-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                const action = this.classList.contains('whatsapp-btn') ? 'WhatsApp' : 
-                                this.classList.contains('phone-btn') ? 'Phone' : 'Location';
+                const action = this.classList.contains('whatsapp-btn') ? 'WhatsApp' : 'Phone';
                 console.log(`User initiated ${action} contact`);
             });
-        });
-
-        // Add scroll progress indicator
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
         });
     </script>
 </body>
