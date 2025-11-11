@@ -66,7 +66,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Enhanced Local Business Schema with ContactPoint -->
+    <!-- Enhanced Local Business Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -121,30 +121,12 @@
         }
       ],
       "areaServed": [
-        {
-          "@type": "City",
-          "name": "Zirakpur"
-        },
-        {
-          "@type": "City",
-          "name": "Chandigarh"
-        },
-        {
-          "@type": "City",
-          "name": "Mohali"
-        },
-        {
-          "@type": "City",
-          "name": "Panchkula"
-        },
-        {
-          "@type": "City",
-          "name": "Kharar"
-        },
-        {
-          "@type": "City",
-          "name": "Derabassi"
-        }
+        {"@type": "City", "name": "Zirakpur"},
+        {"@type": "City", "name": "Chandigarh"},
+        {"@type": "City", "name": "Mohali"},
+        {"@type": "City", "name": "Panchkula"},
+        {"@type": "City", "name": "Kharar"},
+        {"@type": "City", "name": "Derabassi"}
       ],
       "sameAs": [
         "https://www.facebook.com/tarun.aggarwal.7528",
@@ -348,20 +330,85 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 0;
             align-items: center;
+        }
+
+        nav > ul > li {
+            position: relative;
         }
 
         nav a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
-            transition: color 0.3s;
+            padding: 10px 20px;
+            display: block;
+            transition: all 0.3s;
         }
 
-        nav a:hover,
-        nav a.active {
+        nav > ul > li > a:hover,
+        nav > ul > li > a.active {
             color: #7ad16c;
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown > a::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 250px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            padding: 10px 0;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a {
+            padding: 12px 20px;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f9f9f9;
+            color: #7ad16c;
+            padding-left: 25px;
+        }
+
+        .dropdown-menu a i {
+            width: 20px;
+            color: #7ad16c;
+            margin-right: 8px;
         }
 
         .cta-button {
@@ -372,6 +419,7 @@
             border-radius: 25px;
             font-weight: bold;
             transition: all 0.3s;
+            margin-left: 10px;
         }
 
         .cta-button:hover {
@@ -680,31 +728,101 @@
             margin-bottom: 2rem;
         }
 
-        .areas-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .areas-list li {
+        .area-card {
             background: linear-gradient(135deg, #7ad16c, #5ab04a);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: 600;
+            padding: 20px;
+            border-radius: 12px;
             transition: all 0.3s;
         }
 
-        .areas-list li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(122, 209, 108, 0.3);
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(122, 209, 108, 0.4);
+        }
+
+        .area-card a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .popular-services {
+            background: #f9f9f9;
+            padding: 60px;
+            border-radius: 15px;
+            margin-bottom: 80px;
+        }
+
+        .popular-services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #7ad16c;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .service-card a {
+            color: #7ad16c;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+
+        .service-card a:hover {
+            gap: 10px;
         }
 
         .faq-section {
-            background: #f9f9f9;
+            background: white;
             padding: 60px;
             border-radius: 15px;
             margin-bottom: 80px;
@@ -724,10 +842,10 @@
         }
 
         .faq-item {
-            background: white;
+            background: #f9f9f9;
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #7ad16c;
             transition: all 0.3s;
         }
 
@@ -745,6 +863,16 @@
         .faq-answer {
             color: #666;
             line-height: 1.8;
+        }
+
+        .faq-answer a {
+            color: #7ad16c;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .faq-answer a:hover {
+            text-decoration: underline;
         }
 
         .cta-section-contact {
@@ -950,6 +1078,10 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .areas-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -973,6 +1105,15 @@
                 display: flex;
             }
 
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                padding-left: 20px;
+            }
+
             .page-header h1 {
                 font-size: 2rem;
             }
@@ -988,8 +1129,13 @@
             }
 
             .service-areas,
-            .faq-section {
+            .faq-section,
+            .popular-services {
                 padding: 40px 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1044,7 +1190,17 @@
                         <ul id="mainMenu">
                             <li><a href="/">Home</a></li>
                             <li><a href="/about/">About Us</a></li>
-                            <li><a href="/physiotherapy/">Service Areas</a></li>
+                            <li class="has-dropdown">
+                                <a href="/physiotherapy/">Service Areas</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
+                                    <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
+                                    <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
+                                    <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
+                                    <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+                                    <li><a href="/physiotherapy/home-physiotherapy-sessions/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+                                </ul>
+                            </li>
                             <li><a href="/blogs/">Blog</a></li>
                             <li><a href="/testimonials/">Testimonials</a></li>
                             <li><a href="/contact/" class="active">Contact</a></li>
@@ -1190,21 +1346,82 @@
             </section>
         </div>
 
-        <!-- Service Areas -->
+        <!-- Service Areas with Links -->
         <div class="container">
             <section class="service-areas">
                 <h2>Proudly Serving the Tricity Region</h2>
                 <p>We provide expert physiotherapy services to patients across multiple locations in Punjab and Haryana</p>
-                <ul class="areas-list">
-                    <li>Zirakpur</li>
-                    <li>Chandigarh</li>
-                    <li>Mohali</li>
-                    <li>Panchkula</li>
-                    <li>Kharar</li>
-                    <li>Derabassi</li>
-                    <li>Dhakoli</li>
-                    <li>Peer Muchalla</li>
-                </ul>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <a href="/physiotherapy/zirakpur/">Zirakpur</a>
+                    </div>
+                    <div class="area-card">
+                        <a href="/physiotherapy/chandigarh/">Chandigarh</a>
+                    </div>
+                    <div class="area-card">
+                        <a href="/physiotherapy/mohali/">Mohali</a>
+                    </div>
+                    <div class="area-card">
+                        <a href="/physiotherapy/panchkula/">Panchkula</a>
+                    </div>
+                    <div class="area-card">
+                        <a href="/physiotherapy/kharar/">Kharar</a>
+                    </div>
+                    <div class="area-card">
+                        <a href="/physiotherapy/dera-bassi/">Derabassi</a>
+                    </div>
+                    <div class="area-card">
+                        <a href="/physiotherapy/dhakoli/">Dhakoli</a>
+                    </div>
+                    <div class="area-card">
+                        <a href="/physiotherapy/peer-muchalla/">Peer Muchalla</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Popular Services with Internal Links -->
+        <div class="container">
+            <section class="popular-services">
+                <h2>Our Most Popular Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-running"></i>
+                        <h3>Sports Physiotherapy</h3>
+                        <p>Specialized treatment for athletes and sports-related injuries to get you back in the game faster.</p>
+                        <a href="/blogs/sports-physiotherapy/">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-procedures"></i>
+                        <h3>Post-Surgical Rehabilitation</h3>
+                        <p>Comprehensive recovery programs after surgery to restore mobility and strength.</p>
+                        <a href="/blogs/post-surgical-physiotherapy/">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Pain Management</h3>
+                        <p>Effective, drug-free solutions for chronic and acute pain relief.</p>
+                        <a href="/blogs/pain-management-physiotherapy/">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-home"></i>
+                        <h3>Home Physiotherapy</h3>
+                        <p>Professional physiotherapy services delivered at your doorstep for maximum convenience.</p>
+                        <a href="/services/home-physiotherapy-zirakpur/">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Neurological Rehabilitation</h3>
+                        <p>Specialized care for stroke, Parkinson's, and other neurological conditions.</p>
+                        <a href="/services/neurological-rehabilitation/">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-bone"></i>
+                        <h3>Orthopedic Rehabilitation</h3>
+                        <p>Expert treatment for bone, joint, and muscle disorders.</p>
+                        <a href="/services/orthopedic-rehabilitation/">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -1235,12 +1452,22 @@
 
                     <div class="faq-item">
                         <div class="faq-question">Do you provide home physiotherapy services?</div>
-                        <div class="faq-answer">Yes! We offer professional home physiotherapy services across Zirakpur, Chandigarh, Mohali, Panchkula, and surrounding areas. Contact us to discuss your requirements and schedule a home visit.</div>
+                        <div class="faq-answer">Yes! We offer professional <a href="/services/home-physiotherapy-zirakpur/">home physiotherapy services</a> across Zirakpur, Chandigarh, Mohali, Panchkula, and surrounding areas. Contact us to discuss your requirements and schedule a home visit.</div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">What payment methods do you accept?</div>
                         <div class="faq-answer">We accept cash, UPI, credit/debit cards, and digital payment methods. Insurance claims assistance is also available for eligible patients.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Do I need a doctor's referral for physiotherapy?</div>
+                        <div class="faq-answer">While a doctor's referral is helpful, it's not always necessary. Our expert physiotherapists can assess your condition and create a treatment plan. However, for insurance claims, a referral may be required.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What conditions do you treat?</div>
+                        <div class="faq-answer">We treat a wide range of conditions including back pain, neck pain, sports injuries, arthritis, post-surgical recovery, stroke rehabilitation, and more. Visit our <a href="/blogs/">blog section</a> for detailed information on specific conditions.</div>
                     </div>
                 </div>
             </section>
@@ -1294,22 +1521,24 @@
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about/">About Us</a></li>
-                        <li><a href="/physiotherapy/">Service Areas</a></li>
-                        <li><a href="/blogs/">Blog</a></li>
-                        <li><a href="/testimonials/">Testimonials</a></li>
-                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/services/">Our Services</a></li>
+                        <li><a href="/blogs/">Blog & Resources</a></li>
+                        <li><a href="/testimonials/">Patient Testimonials</a></li>
+                        <li><a href="/faqs/">FAQs</a></li>
+                        <li><a href="/contact/">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Our Services</h3>
+                    <h3>Popular Treatments</h3>
                     <ul class="footer-links">
                         <li><a href="/blogs/sports-physiotherapy/">Sports Physiotherapy</a></li>
                         <li><a href="/blogs/pain-management-physiotherapy/">Pain Management</a></li>
                         <li><a href="/blogs/post-surgical-physiotherapy/">Post-Surgical Recovery</a></li>
-                        <li>Orthopedic Rehabilitation</li>
-                        <li>Neurological Rehabilitation</li>
-                        <li>Home Physiotherapy</li>
+                        <li><a href="/blogs/slip-disc-treatment/">Slip Disc Treatment</a></li>
+                        <li><a href="/blogs/sciatica-pain-relief/">Sciatica Pain Relief</a></li>
+                        <li><a href="/blogs/frozen-shoulder-treatment-chandigarh/">Frozen Shoulder</a></li>
+                        <li><a href="/blogs/knee-osteoarthritis-blog/">Knee Osteoarthritis</a></li>
                     </ul>
                 </div>
 
@@ -1335,18 +1564,21 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 <a href="/">PhysioNutra Clinic</a>. All Rights Reserved.</p>
+                <p>&copy; 2025 <a href="/">PhysioNutra Clinic</a>. All Rights Reserved. | <a href="/faqs/">FAQs</a> | <a href="/testimonials/">Reviews</a></p>
                 <p style="margin-top: 0.5rem;">Best Physiotherapy Clinic in Zirakpur | Serving Chandigarh, Mohali, Panchkula & Tricity</p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const toggleButton = document.querySelector('.mobile-menu-toggle');
             const navMenu = document.getElementById('mainMenu');
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.querySelector('.form-submit-btn');
 
+            // Mobile menu toggle
             if (toggleButton && navMenu) {
                 toggleButton.addEventListener('click', function() {
                     navMenu.classList.toggle('active');
@@ -1365,8 +1597,7 @@
                 });
             }
 
-            // Form validation
-            const contactForm = document.getElementById('contactForm');
+            // Form validation and submission
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
@@ -1379,6 +1610,12 @@
                         return false;
                     }
 
+                    // Add loading state
+                    if (submitBtn) {
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                        submitBtn.disabled = true;
+                    }
+
                     // Track form submission
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'form_submit', {
@@ -1387,8 +1624,14 @@
                         });
                     }
 
-                    alert('Thank you for contacting us! We will get back to you shortly.');
-                    contactForm.reset();
+                    setTimeout(() => {
+                        alert('Thank you for contacting us! We will get back to you shortly.');
+                        contactForm.reset();
+                        if (submitBtn) {
+                            submitBtn.innerHTML = 'Send Message';
+                            submitBtn.disabled = false;
+                        }
+                    }, 1500);
                 });
             }
 
@@ -1405,17 +1648,237 @@
                 });
             });
 
-            // Smooth scroll
+            // Track service area and internal link clicks
+            document.querySelectorAll('.area-card a, .service-card a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'internal_link_click', {
+                            'event_category': 'Navigation',
+                            'event_label': this.textContent.trim()
+                        });
+                    }
+                });
+            });
+
+            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
+
+            // Animation on scroll for cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.service-card, .area-card, .faq-item').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Handle dropdown menu for mobile
+            const hasDropdown = document.querySelectorAll('.has-dropdown');
+            hasDropdown.forEach(item => {
+                const link = item.querySelector('a');
+                const dropdown = item.querySelector('.dropdown-menu');
+                
+                if (window.innerWidth <= 768 && link && dropdown) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                    });
+                }
+            });
+
+            // Lazy load iframe
+            const iframe = document.querySelector('.map-container iframe');
+            if (iframe && 'IntersectionObserver' in window) {
+                const iframeObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const src = iframe.getAttribute('src');
+                            if (src) {
+                                iframe.setAttribute('src', src);
+                                iframeObserver.unobserve(iframe);
+                            }
+                        }
+                    });
+                });
+                iframeObserver.observe(iframe);
+            }
+
+            // Form field focus effects
+            const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'translateX(5px)';
+                    this.parentElement.style.transition = 'transform 0.3s ease';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Add active state to floating buttons
+            const floatingBtns = document.querySelectorAll('.floating-btn');
+            floatingBtns.forEach(btn => {
+                btn.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.95)';
+                });
+                
+                btn.addEventListener('mouseup', function() {
+                    this.style.transform = 'scale(1.1)';
+                });
+            });
+
+            // Track scroll depth
+            let scrollTracked = {
+                '25': false,
+                '50': false,
+                '75': false,
+                '100': false
+            };
+
+            window.addEventListener('scroll', function() {
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                
+                Object.keys(scrollTracked).forEach(key => {
+                    if (scrollPercent >= parseInt(key) && !scrollTracked[key]) {
+                        scrollTracked[key] = true;
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'scroll_depth', {
+                                'event_category': 'Engagement',
+                                'event_label': key + '%'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Handle window resize for mobile menu
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth > 768 && navMenu) {
+                        navMenu.classList.remove('active');
+                        navMenu.style.display = '';
+                    }
+                }, 250);
+            });
+
+            // Preload critical images
+            const criticalImages = ['/images/logo.png'];
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+
+            // Console log for debugging
+            console.log('PhysioNutra Contact Page Loaded Successfully');
+            console.log('Google Analytics:', typeof gtag !== 'undefined' ? 'Active' : 'Not Found');
+            console.log('Mobile Device:', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
         });
+    </script>
+
+    <!-- Additional Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Contact PhysioNutra Clinic Zirakpur",
+      "description": "Contact information and appointment booking for PhysioNutra Clinic in Zirakpur. Expert physiotherapy services serving Chandigarh Tricity.",
+      "url": "https://physionutraclinic.com/contact/",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://physionutraclinic.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://physionutraclinic.com/contact/"
+          }
+        ]
+      },
+      "mainEntity": {
+        "@type": "MedicalBusiness",
+        "name": "PhysioNutra Clinic"
+      }
+    }
+    </script>
+
+    <!-- Services List Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "PhysioNutra Services",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Sports Physiotherapy",
+          "url": "https://physionutraclinic.com/blogs/sports-physiotherapy/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Post-Surgical Rehabilitation",
+          "url": "https://physionutraclinic.com/blogs/post-surgical-physiotherapy/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pain Management",
+          "url": "https://physionutraclinic.com/blogs/pain-management-physiotherapy/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Home Physiotherapy",
+          "url": "https://physionutraclinic.com/services/home-physiotherapy-zirakpur/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Neurological Rehabilitation",
+          "url": "https://physionutraclinic.com/services/neurological-rehabilitation/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Orthopedic Rehabilitation",
+          "url": "https://physionutraclinic.com/services/orthopedic-rehabilitation/"
+        }
+      ]
+    }
     </script>
 </body>
 </html>
