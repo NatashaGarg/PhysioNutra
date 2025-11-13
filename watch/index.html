@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Watch real patient recovery stories and physiotherapy treatment videos from PhysioNutra Clinic Zirakpur. See the transformation and results achieved through expert care.">
-    <title>Watch Patient Recovery Videos | PhysioNutra Clinic Zirakpur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Watch real patient recovery stories and physiotherapy treatment videos from PhysioNutra Clinic Zirakpur. See vertigo cure, sports injury recovery, and back pain relief transformations achieved through expert care.">
+    <title>Watch Patient Recovery Videos & Treatment Success Stories | PhysioNutra Clinic Zirakpur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" href="/favicon.png" type="image/png" />
     
@@ -24,14 +24,26 @@
       "@context": "https://schema.org",
       "@type": "VideoGallery",
       "name": "PhysioNutra Clinic Patient Recovery Videos",
-      "description": "Watch authentic patient testimonials and recovery journey videos from PhysioNutra Clinic",
+      "description": "Watch authentic patient testimonials and recovery journey videos from PhysioNutra Clinic showing real treatment results",
       "provider": {
         "@type": "MedicalBusiness",
         "name": "PhysioNutra Clinic",
-        "url": "https://physionutraclinic.com"
+        "url": "https://physionutraclinic.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "SCO 12, Ananta Square, Gazipur Rd",
+          "addressLocality": "Zirakpur",
+          "addressRegion": "Punjab",
+          "postalCode": "140603",
+          "addressCountry": "IN"
+        },
+        "telephone": "+919417791833"
       }
     }
     </script>
+
+    <link rel="canonical" href="https://physionutraclinic.com/watch/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <style>
         * {
@@ -41,7 +53,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Open Sans', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background: #f9f9f9;
@@ -98,14 +110,14 @@
             gap: 1rem;
         }
 
-        .social-link {
+        .header-social a {
             color: #7ad16c;
             font-size: 1.2rem;
             text-decoration: none;
             transition: color 0.3s;
         }
 
-        .social-link:hover {
+        .header-social a:hover {
             color: #5ab04a;
         }
 
@@ -119,21 +131,8 @@
             align-items: center;
         }
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #7ad16c;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #1a1a1a;
+            height: 55px;
         }
 
         .tagline {
@@ -164,22 +163,6 @@
         nav a:hover,
         nav a.active {
             color: #7ad16c;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #7ad16c;
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
         }
 
         .mobile-menu-toggle {
@@ -243,6 +226,112 @@
 
         .main-content {
             padding: 60px 0;
+        }
+
+        /* Featured Video Section */
+        .featured-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #FF0000;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-section h2 {
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .featured-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .featured-video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .featured-video-wrapper {
+            position: relative;
+            padding-bottom: 177.78%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 10px;
+        }
+
+        .featured-video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .featured-info {
+            padding: 1rem;
+        }
+
+        .featured-highlights {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .featured-highlights li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .featured-highlights li::before {
+            content: '✓';
+            background: #7ad16c;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .watch-full-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #7ad16c;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .watch-full-btn:hover {
+            background: #5ab04a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(122, 209, 108, 0.3);
         }
 
         .filter-section {
@@ -481,12 +570,6 @@
             color: #ccc;
         }
 
-        .footer-contact-item i {
-            color: #7ad16c;
-            font-size: 1.2rem;
-            margin-top: 2px;
-        }
-
         .footer-links {
             list-style: none;
         }
@@ -499,9 +582,6 @@
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .footer-links a:hover {
@@ -511,6 +591,7 @@
         .footer-links a::before {
             content: '▸';
             color: #7ad16c;
+            margin-right: 0.5rem;
         }
 
         .footer-social {
@@ -596,6 +677,10 @@
             .video-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
+
+            .featured-video-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -644,11 +729,6 @@
                 gap: 1rem;
             }
 
-            .logo-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -678,15 +758,19 @@
             .filter-btn {
                 width: 100%;
             }
+
+            .featured-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .featured-section h2 {
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 480px) {
             .container {
                 padding: 0 15px;
-            }
-
-            .logo {
-                font-size: 1.5rem;
             }
 
             .page-header h1 {
@@ -717,8 +801,6 @@
             scroll-behavior: smooth;
         }
     </style>
-    <link rel="canonical" href="https://physionutraclinic.com/watch/">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 </head>
 <body>
     <!-- Header -->
@@ -734,14 +816,14 @@
                             ✉️ <a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a>
                         </div>
                         <div class="header-contact-item">
-                            🕒 Mon-Sat: 9:00 AM - 7:00 PM
+                            🕒 Mon-Sat: 9:00 AM - 7:00 PM | Sun: 10:00 AM - 2:00 PM
                         </div>
                     </div>
                     <div class="header-social">
-                        <a href="https://www.facebook.com/tarun.aggarwal.7528" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/physionutra" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://x.com/physionutra" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://youtube.com/@physionutra" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/tarun.aggarwal.7528" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/physionutra" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/physionutra" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@physionutra" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -750,7 +832,7 @@
         <div class="header-main">
             <div class="container">
                 <div class="header-main-content">
-                    <div class="logo-section">
+                    <div>
                         <a href="/"><img src="../images/logo.png" alt="PhysioNutra Clinic Logo" class="logo"></a>
                         <div class="tagline">Healing Through Movement & Nutrition</div>
                     </div>
@@ -759,7 +841,7 @@
                         <ul id="mainMenu">
                             <li><a href="/">Home</a></li>
                             <li><a href="/about/">About Us</a></li>
-                            <li><a href="/physiotherapy/">Services Areas</a></li>
+                            <li><a href="/physiotherapy/">Service Areas</a></li>
                             <li><a href="/blogs/">Blogs</a></li>
                             <li><a href="/testimonials/">Testimonials</a></li>
                             <li><a href="/contact/">Contact</a></li>
@@ -787,11 +869,43 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
+            <!-- Featured Video Section -->
+            <div class="featured-section">
+                <span class="featured-badge">🎬 FEATURED SUCCESS STORY</span>
+                <h2>Watch: How We Cured Chronic Vertigo Permanently</h2>
+                <p>Our most popular patient testimonial showing complete recovery from debilitating vertigo with actual treatment demonstration</p>
+                
+                <div class="featured-video-grid">
+                    <div class="featured-video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/1oObewJbSVQ" 
+                            title="Vertigo Treatment Success Story"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    
+                    <div class="featured-info">
+                        <h3 style="color: #1a1a1a; margin-bottom: 1rem;">Patient Success Highlights:</h3>
+                        <ul class="featured-highlights">
+                            <li>Complete relief from chronic vertigo</li>
+                            <li>Actual Epley maneuver treatment shown</li>
+                            <li>Vestibular rehabilitation demonstrated</li>
+                            <li>Before & after transformation</li>
+                            <li>Patient back to normal life</li>
+                        </ul>
+                        <a href="/watch/vertigo/" class="watch-full-btn">Watch Full Story & Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Filter Section -->
             <div class="filter-section">
                 <h2 class="filter-title">Browse by Treatment Category</h2>
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-category="all">All Videos</button>
+                    <button class="filter-btn" data-category="vertigo">Vertigo & Dizziness</button>
                     <button class="filter-btn" data-category="back-pain">Back Pain</button>
                     <button class="filter-btn" data-category="neck-pain">Neck Pain</button>
                     <button class="filter-btn" data-category="knee-pain">Knee Pain</button>
@@ -802,10 +916,27 @@
 
             <!-- Video Grid -->
             <div class="video-grid" id="videoGrid">
-                <!-- Video Card 1 -->
+                <!-- Video Card 1 - Vertigo -->
+                <div class="video-card" data-category="vertigo">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/1oObewJbSVQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Vertigo Treatment</span>
+                        <h3>Complete Recovery from Chronic Vertigo & BPPV</h3>
+                        <div class="video-meta">
+                            <span>👁️ 500+ views</span>
+                            <span>📅 Recent</span>
+                            <span>⏱️ 1:00</span>
+                        </div>
+                        <p class="video-description">Watch actual treatment demonstration and patient testimonial showing permanent cure from vertigo using Epley maneuver and vestibular rehabilitation.</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
                 <div class="video-card" data-category="neck-pain back-pain">
                     <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/3CoZkshKZZI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/3CoZkshKZZI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="video-info">
                         <span class="video-category">Neck & Back Pain</span>
@@ -819,8 +950,7 @@
                     </div>
                 </div>
 
-                <!-- Add more video cards here with the same structure -->
-                <!-- Copy from above comment to add more videos -->
+                <!-- Add more video cards here as needed -->
                 
             </div>
         </div>
@@ -874,7 +1004,7 @@
                         <a href="https://www.instagram.com/physionutra?igsh=MWJrMmx2czQ4NHlvcQ==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://x.com/physionutra" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="https://youtube.com/@physionutra?si=6RjUdvhft7Bv2akH" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/company/physionutra-clinic/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/company/physionutra-clinic/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
@@ -883,54 +1013,50 @@
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about/">About Us</a></li>
-                        <li><a href="/physiotherapy/">Our Services Areas</a></li>
+                        <li><a href="/physiotherapy/">Service Areas</a></li>
                         <li><a href="/blogs/">Blog & Articles</a></li>
+                        <li><a href="/watch/">Watch Videos</a></li>
                         <li><a href="/testimonials/">Testimonials</a></li>
                         <li><a href="/contact/">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Our Services</h3>
+                    <h3>Featured Videos</h3>
                     <ul class="footer-links">
+                        <li><a href="/watch/vertigo/">Vertigo Treatment Success</a></li>
+                        <li><a href="/blogs/vertigo-treatment/">Vertigo Treatment Guide</a></li>
                         <li><a href="/blogs/sports-physiotherapy/">Sports Physiotherapy</a></li>
-                        <li><a href="/services/orthopedic-rehabilitation/">Orthopedic Rehabilitation</a></li>
+                        <li><a href="/blogs/frozen-shoulder-treatment-chandigarh/">Frozen Shoulder</a></li>
                         <li><a href="/blogs/pain-management-physiotherapy/">Pain Management</a></li>
-                        <li><a href="/blogs/post-surgical-physiotherapy/">Post-Surgical Recovery</a></li>
-                        <li>Nutritional Counseling</li>
-                        <li><a href="/services/manual-therapy/">Manual Therapy</a></li>
-                        <li><a href="/services/electrotherapy/">Electrotherapy</a></li>
+                        <li><a href="/blogs/slip-disc-treatment/">Slip Disc Treatment</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h3>Contact Us</h3>
                     <div class="footer-contact-item">
-                        <i>📍</i>
                         <div>
-                            <strong>Our Addresses:</strong><br>
+                            <strong>📍 Our Addresses:</strong><br>
                             SCO 12, Ananta Square, Zirakpur, Gazipur Rd<br>
                             Sector 20, Panchkula
                         </div>
                     </div>
                     <div class="footer-contact-item">
-                        <i>📞</i>
                         <div>
-                            <strong>Phone:</strong><br>
+                            <strong>📞 Phone:</strong><br>
                             <a href="tel:+919417791833" style="color: #7ad16c;">+91 94177 91833</a>
                         </div>
                     </div>
                     <div class="footer-contact-item">
-                        <i>✉️</i>
                         <div>
-                            <strong>Email:</strong><br>
+                            <strong>✉️ Email:</strong><br>
                             <a href="mailto:physionutraclinic@gmail.com" style="color: #7ad16c;">physionutraclinic@gmail.com</a>
                         </div>
                     </div>
                     <div class="footer-contact-item">
-                        <i>🕒</i>
                         <div>
-                            <strong>Hours:</strong><br>
+                            <strong>🕒 Hours:</strong><br>
                             Mon-Sat: 9:00 AM - 7:00 PM<br>
                             Sunday: 10:00 AM - 2:00 PM
                         </div>
@@ -948,10 +1074,10 @@
     <!-- Floating Action Buttons -->
     <div class="floating-buttons">
         <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20PhysioNutra%20Clinic%20Zirakpur." class="floating-btn whatsapp-btn" aria-label="WhatsApp">
-            📱
+            <i class="fab fa-whatsapp"></i>
         </a>
         <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call">
-            📞
+            <i class="fas fa-phone-alt"></i>
         </a>
     </div>
 
@@ -990,19 +1116,21 @@
         });
 
         // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.getElementById('mainMenu').classList.toggle('active');
-        });
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainMenu = document.getElementById('mainMenu');
+        
+        if (menuToggle && mainMenu) {
+            menuToggle.addEventListener('click', function() {
+                mainMenu.classList.toggle('active');
+            });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const menu = document.getElementById('mainMenu');
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            
-            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-                menu.classList.remove('active');
-            }
-        });
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mainMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    mainMenu.classList.remove('active');
+                }
+            });
+        }
 
         // Add scroll effect to header
         window.addEventListener('scroll', function() {
@@ -1026,6 +1154,77 @@
                     });
                 }
             });
+        });
+
+        // Track video views
+        document.querySelectorAll('.video-wrapper iframe, .featured-video-wrapper iframe').forEach((iframe, index) => {
+            iframe.addEventListener('load', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'video_impression', {
+                        'event_category': 'engagement',
+                        'event_label': 'Watch Page Video ' + (index + 1)
+                    });
+                }
+            });
+        });
+
+        // Track CTA clicks
+        document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    const type = this.href.includes('wa.me') ? 'whatsapp' : 'phone';
+                    gtag('event', 'contact', {
+                        'event_category': type,
+                        'event_label': 'Watch Page',
+                        'event_source': 'video_gallery'
+                    });
+                }
+            });
+        });
+
+        // Track featured video watch full button
+        document.querySelectorAll('.watch-full-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'watch_full_click', {
+                        'event_category': 'engagement',
+                        'event_label': 'Vertigo Featured Video'
+                    });
+                }
+            });
+        });
+
+        // Track YouTube subscribe clicks
+        document.querySelectorAll('.youtube-subscribe').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'youtube_subscribe_click', {
+                        'event_category': 'engagement',
+                        'event_label': 'Watch Page Header'
+                    });
+                }
+            });
+        });
+
+        // Lazy load videos on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '50px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target.querySelector('iframe');
+                    if (iframe && !iframe.src) {
+                        iframe.src = iframe.dataset.src;
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.video-card, .featured-section').forEach(card => {
+            observer.observe(card);
         });
     </script>
 </body>
