@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45SFLN5B7J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-45SFLN5B7J');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHVSMWD6');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>FREE Lower Back Pain Assessment Quiz | Find Your Back Pain Cause in 3 Minutes | PhysioNutra</title>
+    <meta name="description" content="Suffering from lower back pain? Take our FREE 3-minute assessment quiz. Discover if you have slip disc, sciatica, muscle strain or spondylosis. Get instant personalized treatment plan. Expert back pain physiotherapy in Chandigarh Tricity. Call +91-9417791833">
+    <meta name="keywords" content="lower back pain assessment, back pain quiz online, slip disc test, lumbar pain assessment, back pain diagnosis quiz, back pain treatment Chandigarh, lower back pain physiotherapy Zirakpur, backache test">
+    <meta name="author" content="PhysioNutra Clinic">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://physionutraclinic.com/self-assessment/lower-back-pain/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.png" type="image/png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PhysioNutra Clinic">
+    <meta property="og:title" content="FREE Lower Back Pain Assessment - Find Out What's Wrong in 3 Minutes">
+    <meta property="og:description" content="Chronic back pain? Take our FREE assessment and get instant diagnosis + treatment recommendations. Used by 7000+ people!">
+    <meta property="og:url" content="https://physionutraclinic.com/self-assessment/lower-back-pain/">
+    <meta property="og:image" content="https://physionutraclinic.com/images/back-pain-assessment-share.jpg">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Lower Back Pain Self-Assessment Tool",
+      "description": "Interactive back pain assessment providing diagnosis for slip disc, sciatica, muscle strain, spondylosis and personalized treatment recommendations",
+      "url": "https://physionutraclinic.com/self-assessment/lower-back-pain/",
+      "about": {
+        "@type": "MedicalCondition",
+        "name": "Lower Back Pain"
+      },
+      "provider": {
+        "@type": "MedicalBusiness",
+        "name": "PhysioNutra Clinic",
+        "telephone": "+919417791833",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "SCO 12, Ananta Square, Gazipur Rd",
+          "addressLocality": "Zirakpur",
+          "addressRegion": "Punjab",
+          "postalCode": "140603",
+          "addressCountry": "IN"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .stats-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .assessment-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .question-section h2 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .option:hover {
+            background: #f0f0f0;
+            border-color: #f5576c;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            background: #fce4ec;
+            border-color: #f5576c;
+            box-shadow: 0 4px 12px rgba(245, 87, 108, 0.2);
+        }
+
+        .option-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #f5576c;
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .option.selected .option-checkbox::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: #f5576c;
+            border-radius: 50%;
+        }
+
+        .option-text {
+            flex: 1;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .multi-select-note {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-back {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-back:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-next:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .results-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .severity-badge {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .severity-emergency { background: #ff3b30; color: white; }
+        .severity-severe { background: #ff9500; color: white; }
+        .severity-moderate { background: #ffcc00; color: #333; }
+        .severity-mild { background: #34c759; color: white; }
+
+        .result-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .result-section h3 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .condition-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: #fce4ec;
+            color: #c2185b;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px 5px 5px 0;
+            border: 1px solid #f48fb1;
+        }
+
+        .red-flag-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .red-flag-box h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+
+        .benefit-item::before {
+            content: '✓';
+            color: #34c759;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cta-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .cta-btn {
+            padding: 16px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-phone {
+            background: #34c759;
+            color: white;
+        }
+
+        .cta-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .disclaimer h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer p {
+            color: #856404;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .restart-btn {
+            background: white;
+            color: #f5576c;
+            border: 2px solid #f5576c;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .restart-btn:hover {
+            background: #f5576c;
+            color: white;
+        }
+
+        .info-box {
+            background: #fce4ec;
+            border-left: 4px solid #f5576c;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .pain-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        .pain-scale-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .pain-scale-item:hover {
+            border-color: #f5576c;
+        }
+
+        .pain-scale-item.selected {
+            border-color: #f5576c;
+            background: #fce4ec;
+        }
+
+        .pain-scale-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f5576c;
+        }
+
+        .pain-scale-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .assessment-card, .results-card {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .question-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn-back {
+                order: 2;
+            }
+
+            .btn-next {
+                order: 1;
+            }
+
+            .stats-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pain-scale {
+                flex-wrap: wrap;
+            }
+
+            .pain-scale-item {
+                min-width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHVSMWD6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Lower Back Pain Assessment</h1>
+            <p>Discover what's causing your back pain in 3 minutes</p>
+            <div class="stats-badges">
+                <div class="stat-badge">🏥 Medically Accurate</div>
+                <div class="stat-badge">⏱️ 3-Minute Test</div>
+                <div class="stat-badge">✅ 7000+ Taken</div>
+            </div>
+        </div>
+
+        <div id="assessmentContainer"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                id: 'pain_intensity',
+                question: 'Rate your current back pain level (0 = No pain, 10 = Worst imaginable)',
+                type: 'scale',
+                options: [
+                    { value: '0', label: 'No pain', score: 0 },
+                    { value: '1-2', label: 'Mild', score: 1 },
+                    { value: '3-4', label: 'Moderate', score: 2 },
+                    { value: '5-6', label: 'Bad', score: 3 },
+                    { value: '7-8', label: 'Severe', score: 5 },
+                    { value: '9-10', label: 'Worst', score: 7 }
+                ]
+            },
+            {
+                id: 'pain_location',
+                question: 'Where exactly is your back pain located?',
+                type: 'multiple',
+                options: [
+                    { value: 'lower_back', label: '🔴 Lower back (lumbar region)', score: 3 },
+                    { value: 'buttock', label: '🔴 Buttock or hip area', score: 3 },
+                    { value: 'radiating_leg', label: '🔴 Radiating down to leg', score: 5 },
+                    { value: 'middle_back', label: '🔴 Middle back', score: 2 },
+                    { value: 'tailbone', label: '🔴 Tailbone (coccyx)', score: 2 }
+                ]
+            },
+            {
+                id: 'pain_type',
+                question: 'How would you describe your back pain?',
+                type: 'multiple',
+                options: [
+                    { value: 'sharp_shooting', label: 'Sharp, shooting pain', score: 5 },
+                    { value: 'dull_ache', label: 'Dull, constant aching', score: 2 },
+                    { value: 'burning', label: 'Burning sensation', score: 4 },
+                    { value: 'stiffness', label: 'Stiffness and tightness', score: 2 },
+                    { value: 'electric_shock', label: 'Electric shock-like pain', score: 6 },
+                    { value: 'numbness_tingling', label: 'Numbness or tingling', score: 5 }
+                ]
+            },
+            {
+                id: 'onset',
+                question: 'How did your back pain start?',
+                type: 'single',
+                options: [
+                    { value: 'sudden_injury', label: '💥 Sudden injury (lifting, twisting)', score: 4 },
+                    { value: 'gradual', label: '📈 Gradual onset (no specific cause)', score: 3 },
+                    { value: 'after_activity', label: '🏋️ After specific activity (gym, sports)', score: 3 },
+                    { value: 'woke_up', label: '🛏️ Woke up with it', score: 2 },
+                    { value: 'long_sitting', label: '💺 After long hours of sitting', score: 2 }
+                ]
+            },
+            {
+                id: 'duration',
+                question: 'How long have you had this back pain?',
+                type: 'single',
+                options: [
+                    { value: 'acute', label: 'Less than 2 weeks (Acute)', score: 1 },
+                    { value: 'subacute', label: '2 weeks to 3 months (Subacute)', score: 2 },
+                    { value: 'chronic', label: 'More than 3 months (Chronic)', score: 4 },
+                    { value: 'recurrent', label: 'Comes and goes (Recurrent)', score: 3 }
+                ]
+            },
+            {
+                id: 'aggravating_factors',
+                question: 'What makes your back pain worse?',
+                type: 'multiple',
+                options: [
+                    { value: 'sitting', label: '🪑 Sitting (especially long periods)', score: 3 },
+                    { value: 'standing', label: '🧍 Standing for long time', score: 2 },
+                    { value: 'bending_forward', label: '🔽 Bending forward', score: 4 },
+                    { value: 'twisting', label: '🌀 Twisting movements', score: 4 },
+                    { value: 'lifting', label: '🏋️ Lifting objects', score: 4 },
+                    { value: 'walking', label: '🚶 Walking', score: 2 },
+                    { value: 'coughing_sneezing', label: '🤧 Coughing or sneezing', score: 5 }
+                ]
+            },
+            {
+                id: 'relieving_factors',
+                question: 'What makes your back pain better?',
+                type: 'multiple',
+                options: [
+                    { value: 'rest', label: '🛏️ Rest and lying down', score: 0 },
+                    { value: 'movement', label: '🚶 Movement and walking', score: 0 },
+                    { value: 'heat', label: '🔥 Heat application', score: 0 },
+                    { value: 'stretching', label: '🧘 Stretching', score: 0 },
+                    { value: 'medication', label: '💊 Pain medication', score: 0 },
+                    { value: 'nothing', label: '❌ Nothing helps', score: 2 }
+                ]
+            },
+            {
+                id: 'red_flags',
+                question: 'Do you have any of these WARNING SIGNS? (Select if applicable)',
+                type: 'multiple',
+                options: [
+                    { value: 'leg_weakness', label: '⚠️ Leg weakness or foot drop', score: 10 },
+                    { value: 'bladder_bowel', label: '⚠️ Loss of bladder/bowel control', score: 15 },
+                    { value: 'numbness_saddle', label: '⚠️ Numbness in groin/inner thighs', score: 12 },
+                    { value: 'night_pain', label: '⚠️ Severe night pain disturbing sleep', score: 5 },
+                    { value: 'fever_weight', label: '⚠️ Fever or unexplained weight loss', score: 8 },
+                    { value: 'trauma', label: '⚠️ Recent major trauma (accident, fall)', score: 6 },
+                    { value: 'none', label: '✅ None of the above', score: 0 }
+                ]
+            },
+            {
+                id: 'functional_impact',
+                question: 'How much does back pain limit your daily activities?',
+                type: 'single',
+                options: [
+                    { value: 'minimal', label: '😊 Minimal - Can do most activities', score: 1 },
+                    { value: 'moderate', label: '😐 Moderate - Some activities difficult', score: 3 },
+                    { value: 'significant', label: '😣 Significant - Many activities limited', score: 5 },
+                    { value: 'severe', label: '😫 Severe - Cannot work or function normally', score: 7 }
+                ]
+            },
+            {
+                id: 'previous_episodes',
+                question: 'Have you had back pain episodes before?',
+                type: 'single',
+                options: [
+                    { value: 'first_time', label: 'First time experiencing this', score: 1 },
+                    { value: 'occasional', label: 'Yes, occasionally (1-2 times/year)', score: 2 },
+                    { value: 'frequent', label: 'Yes, frequently (3+ times/year)', score: 4 },
+                    { value: 'constant', label: 'Yes, almost constant problem', score: 5 }
+                ]
+            }
+        ];
+
+        let currentStep = 0;
+        let answers = {};
+
+        function render() {
+            const container = document.getElementById('assessmentContainer');
+            
+            if (currentStep < questions.length) {
+                container.innerHTML = renderQuestion();
+            } else {
+                container.innerHTML = renderResults();
+                trackEvent('assessment_completed', 'Back Pain Assessment', 'Completed');
+            }
+        }
+
+        function renderQuestion() {
+            const question = questions[currentStep];
+            const progress = ((currentStep + 1) / questions.length) * 100;
+            const isAnswered = answers[question.id] && 
+                (Array.isArray(answers[question.id]) ? answers[question.id].length > 0 : true);
+
+            if (question.type === 'scale') {
+                return renderScaleQuestion(question, progress, isAnswered);
+            }
+
+            return `
+                <div class="assessment-card">
+                    <div class="progress-text">
+                        <span>Question ${currentStep + 1} of ${questions.length}</span>
+                        <span>${Math.round(progress)}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${progress}%"></div>
+                    </div>
+
+                    <div class="question-section">
+                        <h2>${question.question}</h2>
+                        ${question.options.map(option => `
+                            <div class="option ${isOptionSelected(question.id, option.value) ? 'selected' : ''}" 
+                                 onclick="selectOption('${question.id}', '${option.value}', ${question.type === 'multiple'})">
+                                <div class="option-checkbox"></div>
+                                <div class="option-text">${option.label}</div>
+                            </div>
+                        `).join('')}
+                        ${question.type === 'multiple' ? '<p class="multi-select-note">Select all that apply</p>' : ''}
+                    </div>
+
+                    <div class="button-group">
+                        ${currentStep > 0 ? `
+                            <button class="btn btn-back" onclick="previousQuestion()">
+                                ← Back
+                            </button>
+                        ` : ''}
+                        <button class="btn btn-next" ${!isAnswered ? 'disabled' : ''} onclick="nextQuestion()">
+                            ${currentStep === questions.length - 1 ? 'See Results 🎯' : 'Next →'}
+                        </button>
+                    </div>
+
+                    ${currentStep === 7 ? `
+                        <div class="info-box">
+                            <p><strong>⚠️ Important:</strong> Red flag symptoms require immediate medical attention. If you have any of these, please consult a doctor urgently.</p>
+                        </div>
+                    ` : `
+                        <div class="info-box">
+                            <p><strong>💡 Did You Know?</strong> 80% of people experience back pain at some point. Early physiotherapy treatment can prevent chronic issues and surgery.</p>
+                        </div>
+                    `}
+                </div>
+            `;
+        }
+
+        function renderScaleQuestion(question, progress, isAnswered) {
+            return `
+                <div class="assessment-card">
+                    <div class="progress-text">
+                        <span>Question ${currentStep + 1} of ${questions.length}</span>
+                        <span>${Math.round(progress)}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${progress}%"></div>
+                    </div>
+
+                    <div class="question-section">
+                        <h2>${question.question}</h2>
+                        <div class="pain-scale">
+                            ${question.options.map(option => `
+                                <div class="pain-scale-item ${answers[question.id] === option.value ? 'selected' : ''}" 
+                                     onclick="selectOption('${question.id}', '${option.value}', false)">
+                                    <div class="pain-scale-number">${option.value}</div>
+                                    <div class="pain-scale-label">${option.label}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        ${currentStep > 0 ? `
+                            <button class="btn btn-back" onclick="previousQuestion()">
+                                ← Back
+                            </button>
+                        ` : ''}
+                        <button class="btn btn-next" ${!isAnswered ? 'disabled' : ''} onclick="nextQuestion()">
+                            Next →
+                        </button>
+                    </div>
+
+                    <div class="info-box">
+                        <p><strong>💡 Pain Scale Guide:</strong> 0 = No pain | 1-3 = Mild | 4-6 = Moderate | 7-8 = Severe | 9-10 = Worst pain imaginable</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderResults() {
+            const score = calculateScore();
+            const result = getResultInfo(score);
+            const possibleConditions = getPossibleConditions();
+            const hasRedFlags = checkRedFlags();
+
+            return `
+                <div class="results-card">
+                    <h1 style="text-align: center; color: #1a1a1a; margin-bottom: 10px;">
+                        Your Back Pain Assessment Results
+                    </h1>
+                    <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                        Based on your symptoms and responses
+                    </p>
+
+                    ${hasRedFlags ? `
+                        <div class="red-flag-box">
+                            <h4>🚨 RED FLAG ALERT - URGENT MEDICAL ATTENTION NEEDED</h4>
+                            <p style="color: #b71c1c; line-height: 1.8;">Your symptoms indicate serious conditions that require immediate medical evaluation. Please visit a doctor or emergency room TODAY. Do not delay.</p>
+                        </div>
+                    ` : ''}
+
+                    <div style="text-align: center;">
+                        <div class="severity-badge severity-${result.cssClass}">
+                            ${result.title}
+                        </div>
+                        <p style="font-size: 1rem; color: #666; margin-top: 10px;">
+                            Severity Score: ${score} points
+                        </p>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>🔍 Assessment Findings</h3>
+                        <p style="color: #555; line-height: 1.8; margin-bottom: 15px;">${result.description}</p>
+                        ${possibleConditions.length > 0 ? `
+                            <p style="margin-bottom: 10px; font-weight: 600;">Possible Conditions Based on Your Symptoms:</p>
+                            <div>
+                                ${possibleConditions.map(c => `<span class="condition-tag">${c}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    <div class="result-section">
+                        <h3>💡 Our Professional Recommendation</h3>
+                        <p style="color: #555; font-weight: 600; line-height: 1.8;">${result.recommendation}</p>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>✨ How PhysioNutra Treats Back Pain</h3>
+                        <div class="benefit-item">Advanced manual therapy to release tight muscles and joints</div>
+                        <div class="benefit-item">Spinal mobilization techniques for pain relief</div>
+                        <div class="benefit-item">Core strengthening to support your lower back</div>
+                        <div class="benefit-item">Postural correction and ergonomic advice</div>
+                        <div class="benefit-item">Dry needling, cupping, and electrotherapy for fast relief</div>
+                        <div class="benefit-item">Home exercise program to prevent recurrence</div>
+                        <div class="benefit-item">Lifestyle modifications for long-term spine health</div>
+                    </div>
+
+                    <div class="result-section" style="background: #e8f5e9;">
+                        <h3>📊 Your Personalized Treatment Timeline</h3>
+                        <p style="color: #555; margin-bottom: 15px;">${getTimelineEstimate(score)}</p>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="tel:+919417791833" class="cta-btn cta-phone" onclick="trackEvent('phone_click', 'Contact', 'Back Pain Results')">
+                            📞 Call: +91 94177 91833
+                        </a>
+                        <a href="https://wa.me/919417791833?text=Hi%2C%20I%20completed%20the%20back%20pain%20assessment.%20My%20score%20is%20${score}.%20I%27d%20like%20to%20book%20an%20appointment." 
+                           target="_blank" 
+                           rel="noopener"
+                           class="cta-btn cta-whatsapp" 
+                           onclick="trackEvent('whatsapp_click', 'Contact', 'Back Pain Results')">
+                            💬 WhatsApp Us
+                        </a>
+                    </div>
+
+                    <div style="text-align: center; margin: 30px 0; padding: 25px; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); border-radius: 15px;">
+                        <h3 style="color: #c2185b; margin-bottom: 15px;">🎁 Special Offer for Assessment Takers</h3>
+                        <p style="color: #880e4f; font-size: 1.1rem; font-weight: 600;">
+                            Book within 24 hours & Get 15% OFF
+                        </p>
+                        <p style="color: #ad1457; margin-top: 10px;">
+                            + FREE Posture Analysis + Home Exercise Guide
+                        </p>
+                    </div>
+
+                    <div style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                        <p style="font-size: 1.2rem; color: #333; margin-bottom: 10px;">
+                            <strong>📍 PhysioNutra Clinic - Back Pain Specialists</strong>
+                        </p>
+                        <p style="color: #666;">SCO 12, Ananta Square, Gazipur Road, Zirakpur</p>
+                        <p style="color: #f5576c; font-weight: 600; margin-top: 10px; font-size: 1.1rem;">+91 94177 91833</p>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 5px;">
+                            Mon-Sat: 9AM-7PM | Sun: 10AM-2PM
+                        </p>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">
+                            🏆 Rated 4.9/5 by 250+ patients | 🎯 15+ Years Experience
+                        </p>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>📚 Helpful Resources</h3>
+                        <div style="display: grid; gap: 10px;">
+                            <a href="/blogs/lower-back-pain-management/" style="color: #f5576c; text-decoration: none; font-weight: 600;">→ Complete Guide to Lower Back Pain Management</a>
+                            <a href="/blogs/slip-disc-treatment/" style="color: #f5576c; text-decoration: none; font-weight: 600;">→ Understanding Slip Disc & Treatment Options</a>
+                            <a href="/blogs/chronic-back-pain-management/" style="color: #f5576c; text-decoration: none; font-weight: 600;">→ Managing Chronic Back Pain Naturally</a>
+                            <a href="/blogs/backpain/" style="color: #f5576c; text-decoration: none; font-weight: 600;">→ Back Pain: Causes, Symptoms & Prevention</a>
+                        </div>
+                    </div>
+
+                    <div class="disclaimer">
+                        <h4>⚠️ Medical Disclaimer</h4>
+                        <p>This assessment tool is for educational purposes only and does not replace professional medical diagnosis. Results are based on self-reported symptoms and clinical patterns. Only a qualified physiotherapist or doctor can provide accurate diagnosis through physical examination and imaging if needed. If you have severe symptoms or red flags, please seek immediate medical attention.</p>
+                    </div>
+
+                    <button class="restart-btn" onclick="restartAssessment()">
+                        🔄 Take Assessment Again
+                    </button>
+                </div>
+            `;
+        }
+
+        function isOptionSelected(questionId, value) {
+            const answer = answers[questionId];
+            if (Array.isArray(answer)) {
+                return answer.includes(value);
+            }
+            return answer === value;
+        }
+
+        function selectOption(questionId, value, isMultiple) {
+            if (isMultiple) {
+                if (!answers[questionId]) {
+                    answers[questionId] = [];
+                }
+                const index = answers[questionId].indexOf(value);
+                if (index > -1) {
+                    answers[questionId].splice(index, 1);
+                } else {
+                    answers[questionId].push(value);
+                }
+            } else {
+                answers[questionId] = value;
+            }
+            render();
+            trackEvent('question_answered', 'Back Pain Assessment', `Q${currentStep + 1}`);
+        }
+
+        function nextQuestion() {
+            const question = questions[currentStep];
+            const isAnswered = answers[question.id] && 
+                (Array.isArray(answers[question.id]) ? answers[question.id].length > 0 : true);
+            
+            if (!isAnswered) return;
+
+            if (currentStep < questions.length - 1) {
+                currentStep++;
+                render();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                currentStep++;
+                render();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function previousQuestion() {
+            if (currentStep > 0) {
+                currentStep--;
+                render();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function calculateScore() {
+            let totalScore = 0;
+            Object.keys(answers).forEach(questionId => {
+                const question = questions.find(q => q.id === questionId);
+                const answer = answers[questionId];
+                
+                if (Array.isArray(answer)) {
+                    answer.forEach(val => {
+                        const option = question.options.find(o => o.value === val);
+                        if (option) totalScore += option.score;
+                    });
+                } else {
+                    const option = question.options.find(o => o.value === answer);
+                    if (option) totalScore += option.score;
+                }
+            });
+            return totalScore;
+        }
+
+        function checkRedFlags() {
+            if (!answers.red_flags) return false;
+            const redFlags = answers.red_flags;
+            return redFlags.includes('leg_weakness') || 
+                   redFlags.includes('bladder_bowel') || 
+                   redFlags.includes('numbness_saddle') ||
+                   redFlags.includes('fever_weight');
+        }
+
+        function getPossibleConditions() {
+            const conditions = [];
+            
+            // Sciatica indicators
+            if ((answers.pain_location && answers.pain_location.includes('radiating_leg')) ||
+                (answers.pain_type && (answers.pain_type.includes('sharp_shooting') || 
+                                      answers.pain_type.includes('electric_shock') ||
+                                      answers.pain_type.includes('numbness_tingling')))) {
+                conditions.push('Sciatica');
+            }
+            
+            // Slip disc (herniated disc) indicators
+            if ((answers.pain_location && answers.pain_location.includes('radiating_leg')) &&
+                (answers.aggravating_factors && (answers.aggravating_factors.includes('coughing_sneezing') ||
+                                                 answers.aggravating_factors.includes('bending_forward')))) {
+                conditions.push('Herniated Disc (Slip Disc)');
+            }
+            
+            // Muscle strain
+            if (answers.onset === 'sudden_injury' || 
+                answers.onset === 'after_activity') {
+                conditions.push('Muscle Strain/Sprain');
+            }
+            
+            // Spondylosis (arthritis)
+            if (answers.duration === 'chronic' || 
+                answers.previous_episodes === 'constant') {
+                conditions.push('Lumbar Spondylosis');
+            }
+            
+            // Facet joint pain
+            if ((answers.pain_type && answers.pain_type.includes('stiffness')) &&
+                (answers.aggravating_factors && answers.aggravating_factors.includes('standing'))) {
+                conditions.push('Facet Joint Syndrome');
+            }
+            
+            // Mechanical back pain
+            if (answers.onset === 'long_sitting' && 
+                (answers.aggravating_factors && answers.aggravating_factors.includes('sitting'))) {
+                conditions.push('Mechanical Back Pain');
+            }
+            
+            // Spinal stenosis
+            if ((answers.pain_location && answers.pain_location.includes('radiating_leg')) &&
+                (answers.aggravating_factors && answers.aggravating_factors.includes('walking'))) {
+                conditions.push('Spinal Stenosis');
+            }
+            
+            // Sacroiliac joint dysfunction
+            if ((answers.pain_location && answers.pain_location.includes('buttock')) &&
+                (answers.aggravating_factors && answers.aggravating_factors.includes('twisting'))) {
+                conditions.push('SI Joint Dysfunction');
+            }
+            
+            return [...new Set(conditions)];
+        }
+
+        function getTimelineEstimate(score) {
+            if (score <= 15) {
+                return '✅ Estimated Recovery: 2-4 weeks with proper physiotherapy treatment and home exercises.';
+            } else if (score <= 30) {
+                return '⚠️ Estimated Recovery: 4-8 weeks with comprehensive physiotherapy program including manual therapy and exercises.';
+            } else if (score <= 45) {
+                return '🔴 Estimated Recovery: 8-12 weeks with intensive physiotherapy treatment, possibly requiring multiple sessions per week initially.';
+            } else {
+                return '🚨 This condition requires urgent evaluation and comprehensive treatment. Timeline depends on diagnosis and may require imaging studies.';
+            }
+        }
+
+        function getResultInfo(score) {
+            const hasRedFlags = checkRedFlags();
+            
+            if (hasRedFlags) {
+                return {
+                    title: '🚨 URGENT - Red Flag Symptoms Present',
+                    description: 'Your symptoms include serious warning signs that could indicate nerve damage, cauda equina syndrome, or other serious spinal conditions. Immediate medical evaluation is required.',
+                    recommendation: 'URGENT: Visit emergency room or doctor TODAY. Do not delay. These symptoms require immediate investigation with possible imaging (MRI/CT scan).',
+                    cssClass: 'emergency'
+                };
+            }
+            
+            if (score <= 15) {
+                return {
+                    title: '✅ Mild Back Pain',
+                    description: 'Your symptoms suggest mild lower back pain, likely from muscle strain, poor posture, or minor mechanical issues. This is an excellent time to address it before it becomes chronic.',
+                    recommendation: 'Start physiotherapy within 1-2 weeks. Focus on posture correction, stretching, and core strengthening. Most cases resolve with conservative treatment.',
+                    cssClass: 'mild'
+                };
+            } else if (score <= 30) {
+                return {
+                    title: '⚠️ Moderate Back Pain',
+                    description: 'Your symptoms indicate moderate back pain that is affecting your daily life. This may involve disc issues, nerve irritation, or significant muscle dysfunction requiring professional intervention.',
+                    recommendation: 'Schedule physiotherapy assessment within 3-5 days. Treatment should include manual therapy, specific exercises, and pain management modalities. Early treatment prevents chronicity.',
+                    cssClass: 'moderate'
+                };
+            } else if (score <= 45) {
+                return {
+                    title: '🔴 Severe Back Pain',
+                    description: 'Your symptoms suggest severe back pain with possible disc herniation, significant nerve involvement, or advanced degenerative changes. This requires prompt professional treatment to prevent permanent damage.',
+                    recommendation: 'URGENT: Schedule physiotherapy within 1-2 days. May require imaging (MRI/X-ray). Comprehensive treatment plan including manual therapy, nerve mobilization, and progressive rehabilitation needed.',
+                    cssClass: 'severe'
+                };
+            } else {
+                return {
+                    title: '🚨 Critical - Severe Condition',
+                    description: 'Your symptoms are very severe and may indicate serious structural damage, advanced disc disease, or spinal instability. Immediate professional evaluation is essential.',
+                    recommendation: 'CRITICAL: See a physiotherapist or doctor within 24 hours. Imaging studies likely needed. May require intensive treatment or specialist referral. Do not attempt self-treatment.',
+                    cssClass: 'emergency'
+                };
+            }
+        }
+
+        function restartAssessment() {
+            currentStep = 0;
+            answers = {};
+            render();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            trackEvent('assessment_restarted', 'Back Pain Assessment', 'Restart');
+        }
+
+        function trackEvent(action, category, label) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    'event_category': category,
+                    'event_label': label
+                });
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            render();
+            trackEvent('assessment_started', 'Back Pain Assessment', 'Started');
+            
+            // Track time spent
+            const startTime = Date.now();
+            window.addEventListener('beforeunload', function() {
+                const timeSpent = Math.round((Date.now() - startTime) / 1000);
+                trackEvent('time_spent', 'Engagement', `${timeSpent}s`);
+            });
+        });
+    </script>
+</body>
+</html>
