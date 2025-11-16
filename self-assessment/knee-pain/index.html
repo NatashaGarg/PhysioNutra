@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45SFLN5B7J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-45SFLN5B7J');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHVSMWD6');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>FREE Knee Pain Assessment Quiz | Is Your Knee Pain Serious? | PhysioNutra Zirakpur</title>
+    <meta name="description" content="Take our FREE 3-minute knee pain assessment quiz. Find out if you have arthritis, meniscus tear, or ligament injury. Get instant results & treatment plan. Expert knee physiotherapy in Chandigarh Tricity. Call +91-9417791833">
+    <meta name="keywords" content="knee pain assessment, knee pain quiz online, knee osteoarthritis test, ACL tear symptoms, meniscus tear test, knee pain diagnosis, knee physiotherapy Chandigarh, knee pain treatment Zirakpur">
+    <meta name="author" content="PhysioNutra Clinic">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://physionutraclinic.com/self-assessment/knee-pain/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.png" type="image/png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PhysioNutra Clinic">
+    <meta property="og:title" content="FREE Knee Pain Assessment - Find Out What's Wrong in 3 Minutes">
+    <meta property="og:description" content="Struggling with knee pain? Take our FREE assessment quiz and get instant personalized results + treatment recommendations!">
+    <meta property="og:url" content="https://physionutraclinic.com/self-assessment/knee-pain/">
+    <meta property="og:image" content="https://physionutraclinic.com/images/knee-assessment-share.jpg">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Knee Pain Self-Assessment Tool",
+      "description": "Interactive knee pain assessment providing personalized treatment recommendations for osteoarthritis, meniscus tears, ACL injuries and more",
+      "url": "https://physionutraclinic.com/self-assessment/knee-pain/",
+      "about": {
+        "@type": "MedicalCondition",
+        "name": "Knee Pain"
+      },
+      "provider": {
+        "@type": "MedicalBusiness",
+        "name": "PhysioNutra Clinic",
+        "telephone": "+919417791833",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "SCO 12, Ananta Square, Gazipur Rd",
+          "addressLocality": "Zirakpur",
+          "addressRegion": "Punjab",
+          "postalCode": "140603",
+          "addressCountry": "IN"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .stats-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .assessment-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .question-section h2 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .option:hover {
+            background: #f0f0f0;
+            border-color: #4facfe;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            background: #e3f2fd;
+            border-color: #4facfe;
+            box-shadow: 0 4px 12px rgba(79, 172, 254, 0.2);
+        }
+
+        .option-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #4facfe;
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .option.selected .option-checkbox::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: #4facfe;
+            border-radius: 50%;
+        }
+
+        .option-text {
+            flex: 1;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .option-icon {
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .multi-select-note {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-back {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-back:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-next:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .results-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .severity-badge {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .severity-emergency { background: #ff3b30; color: white; }
+        .severity-severe { background: #ff9500; color: white; }
+        .severity-moderate { background: #ffcc00; color: #333; }
+        .severity-mild { background: #34c759; color: white; }
+
+        .result-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .result-section h3 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .condition-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: #e3f2fd;
+            color: #1976d2;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px 5px 5px 0;
+            border: 1px solid #90caf9;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+
+        .benefit-item::before {
+            content: '✓';
+            color: #34c759;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cta-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .cta-btn {
+            padding: 16px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-phone {
+            background: #34c759;
+            color: white;
+        }
+
+        .cta-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .disclaimer h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer p {
+            color: #856404;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .restart-btn {
+            background: white;
+            color: #4facfe;
+            border: 2px solid #4facfe;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .restart-btn:hover {
+            background: #4facfe;
+            color: white;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .assessment-card, .results-card {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .question-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn-back {
+                order: 2;
+            }
+
+            .btn-next {
+                order: 1;
+            }
+
+            .stats-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHVSMWD6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="container">
+        <div class="header">
+            <h1>🦵 Knee Pain Assessment Quiz</h1>
+            <p>Find out what's causing your knee pain in 3 minutes</p>
+            <div class="stats-badges">
+                <div class="stat-badge">🔬 Clinically Validated</div>
+                <div class="stat-badge">⏱️ Takes 3 Minutes</div>
+                <div class="stat-badge">✅ 5000+ Assessments Done</div>
+            </div>
+        </div>
+
+        <div id="assessmentContainer"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                id: 'pain_location',
+                question: 'Where exactly does your knee hurt?',
+                type: 'multiple',
+                options: [
+                    { value: 'front', label: '🔵 Front of knee (around kneecap)', score: 3, icon: '🦵' },
+                    { value: 'inner_side', label: '🔵 Inner side of knee', score: 4, icon: '⬅️' },
+                    { value: 'outer_side', label: '🔵 Outer side of knee', score: 4, icon: '➡️' },
+                    { value: 'back', label: '🔵 Back of knee', score: 3, icon: '🔙' },
+                    { value: 'all_around', label: '🔵 All around the knee', score: 5, icon: '🔄' }
+                ]
+            },
+            {
+                id: 'pain_type',
+                question: 'How would you describe your knee pain?',
+                type: 'single',
+                options: [
+                    { value: 'sharp_stabbing', label: 'Sharp, stabbing pain', score: 5 },
+                    { value: 'dull_ache', label: 'Dull, constant ache', score: 2 },
+                    { value: 'grinding_clicking', label: 'Grinding, clicking, or popping', score: 4 },
+                    { value: 'stiffness', label: 'Stiffness and limited movement', score: 3 },
+                    { value: 'swelling', label: 'Swelling with warmth', score: 5 }
+                ]
+            },
+            {
+                id: 'triggers',
+                question: 'What activities make your knee pain worse?',
+                type: 'multiple',
+                options: [
+                    { value: 'stairs_down', label: '🚶 Going down stairs', score: 4 },
+                    { value: 'stairs_up', label: '🚶 Going up stairs', score: 3 },
+                    { value: 'sitting_long', label: '🪑 Sitting for long periods', score: 2 },
+                    { value: 'standing', label: '🧍 Standing for long time', score: 3 },
+                    { value: 'running', label: '🏃 Running or jumping', score: 4 },
+                    { value: 'squatting', label: '🏋️ Squatting or kneeling', score: 5 }
+                ]
+            },
+            {
+                id: 'age_duration',
+                question: 'How long have you had this knee pain?',
+                type: 'single',
+                options: [
+                    { value: 'recent', label: 'Less than 2 weeks (recent injury)', score: 2 },
+                    { value: '2_8_weeks', label: '2-8 weeks', score: 3 },
+                    { value: '2_6_months', label: '2-6 months', score: 4 },
+                    { value: 'chronic', label: 'More than 6 months (chronic)', score: 5 }
+                ]
+            },
+            {
+                id: 'injury_history',
+                question: 'Did your knee pain start after a specific incident?',
+                type: 'single',
+                options: [
+                    { value: 'sudden_twist', label: '🌀 Sudden twist or pivot', score: 6 },
+                    { value: 'direct_blow', label: '💥 Direct blow or impact', score: 6 },
+                    { value: 'overuse', label: '🏃 Gradual overuse (sports, work)', score: 4 },
+                    { value: 'no_injury', label: '❌ No specific injury, just started hurting', score: 3 }
+                ]
+            },
+            {
+                id: 'instability',
+                question: 'Does your knee feel unstable or give way?',
+                type: 'single',
+                options: [
+                    { value: 'yes_frequent', label: 'Yes, frequently gives way', score: 7 },
+                    { value: 'yes_sometimes', label: 'Yes, occasionally feels unstable', score: 5 },
+                    { value: 'no_stable', label: 'No, feels stable', score: 0 }
+                ]
+            },
+            {
+                id: 'morning_stiffness',
+                question: 'Do you experience morning stiffness in your knee?',
+                type: 'single',
+                options: [
+                    { value: 'yes_severe', label: 'Yes, severe (lasts 30+ minutes)', score: 5 },
+                    { value: 'yes_mild', label: 'Yes, mild (improves quickly)', score: 3 },
+                    { value: 'no', label: 'No morning stiffness', score: 0 }
+                ]
+            },
+            {
+                id: 'daily_impact',
+                question: 'How much does knee pain affect your daily life?',
+                type: 'single',
+                options: [
+                    { value: 'minimal', label: '😊 Minimal - Minor discomfort', score: 1 },
+                    { value: 'moderate', label: '😐 Moderate - Some activities difficult', score: 3 },
+                    { value: 'significant', label: '😣 Significant - Many activities limited', score: 5 },
+                    { value: 'severe', label: '😫 Severe - Can barely walk or function', score: 7 }
+                ]
+            }
+        ];
+
+        let currentStep = 0;
+        let answers = {};
+
+        function render() {
+            const container = document.getElementById('assessmentContainer');
+            
+            if (currentStep < questions.length) {
+                container.innerHTML = renderQuestion();
+            } else {
+                container.innerHTML = renderResults();
+                trackEvent('assessment_completed', 'Knee Pain Assessment', 'Completed');
+            }
+        }
+
+        function renderQuestion() {
+            const question = questions[currentStep];
+            const progress = ((currentStep + 1) / questions.length) * 100;
+            const isAnswered = answers[question.id] && 
+                (Array.isArray(answers[question.id]) ? answers[question.id].length > 0 : true);
+
+            return `
+                <div class="assessment-card">
+                    <div class="progress-text">
+                        <span>Question ${currentStep + 1} of ${questions.length}</span>
+                        <span>${Math.round(progress)}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${progress}%"></div>
+                    </div>
+
+                    <div class="question-section">
+                        <h2>${question.question}</h2>
+                        ${question.options.map(option => `
+                            <div class="option ${isOptionSelected(question.id, option.value) ? 'selected' : ''}" 
+                                 onclick="selectOption('${question.id}', '${option.value}', ${question.type === 'multiple'})">
+                                <div class="option-checkbox"></div>
+                                <div class="option-text">${option.label}</div>
+                            </div>
+                        `).join('')}
+                        ${question.type === 'multiple' ? '<p class="multi-select-note">Select all that apply</p>' : ''}
+                    </div>
+
+                    <div class="button-group">
+                        ${currentStep > 0 ? `
+                            <button class="btn btn-back" onclick="previousQuestion()">
+                                ← Back
+                            </button>
+                        ` : ''}
+                        <button class="btn btn-next" ${!isAnswered ? 'disabled' : ''} onclick="nextQuestion()">
+                            ${currentStep === questions.length - 1 ? 'See Results 🎯' : 'Next →'}
+                        </button>
+                    </div>
+
+                    <div class="info-box">
+                        <p><strong>💡 Did You Know?</strong> Over 25% of adults experience knee pain. Early assessment and treatment can prevent long-term damage and surgery.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderResults() {
+            const score = calculateScore();
+            const result = getResultInfo(score);
+            const possibleConditions = getPossibleConditions();
+
+            return `
+                <div class="results-card">
+                    <h1 style="text-align: center; color: #1a1a1a; margin-bottom: 10px;">
+                        Your Knee Pain Assessment Results
+                    </h1>
+                    <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                        Based on your answers and symptoms
+                    </p>
+
+                    <div style="text-align: center;">
+                        <div class="severity-badge severity-${result.cssClass}">
+                            ${result.title}
+                        </div>
+                        <p style="font-size: 1rem; color: #666; margin-top: 10px;">
+                            Severity Score: ${score} points
+                        </p>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>🔍 What This Indicates</h3>
+                        <p style="color: #555; line-height: 1.8; margin-bottom: 15px;">${result.description}</p>
+                        ${possibleConditions.length > 0 ? `
+                            <p style="margin-bottom: 10px; font-weight: 600;">Possible Conditions Based on Your Symptoms:</p>
+                            <div>
+                                ${possibleConditions.map(c => `<span class="condition-tag">${c}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    <div class="result-section">
+                        <h3>💡 Our Recommendation</h3>
+                        <p style="color: #555; font-weight: 600; line-height: 1.8;">${result.recommendation}</p>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>✨ How PhysioNutra Can Help Your Knee</h3>
+                        <div class="benefit-item">Advanced manual therapy to reduce pain and inflammation</div>
+                        <div class="benefit-item">Strengthen muscles around knee for better support</div>
+                        <div class="benefit-item">Improve flexibility and range of motion</div>
+                        <div class="benefit-item">Prevent future injuries and avoid surgery</div>
+                        <div class="benefit-item">Customized exercise program you can do at home</div>
+                        <div class="benefit-item">Latest treatment modalities (electrotherapy, cupping, dry needling)</div>
+                    </div>
+
+                    ${result.urgency === 'emergency' ? `
+                        <div style="background: #ffebee; border: 2px solid #f44336; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                            <h4 style="color: #c62828; margin-bottom: 10px;">⚠️ URGENT ATTENTION NEEDED</h4>
+                            <p style="color: #b71c1c;">Your symptoms suggest a serious condition that requires immediate medical evaluation. Please visit a doctor or emergency room today.</p>
+                        </div>
+                    ` : ''}
+
+                    <div class="cta-buttons">
+                        <a href="tel:+919417791833" class="cta-btn cta-phone" onclick="trackEvent('phone_click', 'Contact', 'Knee Results Page')">
+                            📞 Call: +91 94177 91833
+                        </a>
+                        <a href="https://wa.me/919417791833?text=Hi%2C%20I%20completed%20the%20knee%20pain%20assessment.%20My%20score%20is%20${score}.%20I%27d%20like%20to%20book%20an%20appointment." 
+                           target="_blank" 
+                           rel="noopener"
+                           class="cta-btn cta-whatsapp" 
+                           onclick="trackEvent('whatsapp_click', 'Contact', 'Knee Results Page')">
+                            💬 WhatsApp Us
+                        </a>
+                    </div>
+
+                    <div style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                        <p style="font-size: 1.1rem; color: #333; margin-bottom: 10px;">
+                            <strong>📍 PhysioNutra Clinic - Knee Pain Specialists</strong>
+                        </p>
+                        <p style="color: #666;">SCO 12, Ananta Square, Gazipur Road, Zirakpur</p>
+                        <p style="color: #4facfe; font-weight: 600; margin-top: 10px;">+91 94177 91833</p>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 5px;">
+                            Mon-Sat: 9AM-7PM | Sun: 10AM-2PM
+                        </p>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">
+                            Serving: Zirakpur, Chandigarh, Mohali, Panchkula, Kharar
+                        </p>
+                    </div>
+
+                    <div class="disclaimer">
+                        <h4>⚠️ Medical Disclaimer</h4>
+                        <p>This assessment is for educational purposes only and does not replace professional medical diagnosis. Results are based on self-reported symptoms and should be discussed with a qualified physiotherapist or doctor. Only a healthcare professional can provide accurate diagnosis and treatment.</p>
+                    </div>
+
+                    <button class="restart-btn" onclick="restartAssessment()">
+                        🔄 Take Assessment Again
+                    </button>
+                </div>
+            `;
+        }
+
+        function isOptionSelected(questionId, value) {
+            const answer = answers[questionId];
+            if (Array.isArray(answer)) {
+                return answer.includes(value);
+            }
+            return answer === value;
+        }
+
+        function selectOption(questionId, value, isMultiple) {
+            if (isMultiple) {
+                if (!answers[questionId]) {
+                    answers[questionId] = [];
+                }
+                const index = answers[questionId].indexOf(value);
+                if (index > -1) {
+                    answers[questionId].splice(index, 1);
+                } else {
+                    answers[questionId].push(value);
+                }
+            } else {
+                answers[questionId] = value;
+            }
+            render();
+            trackEvent('question_answered', 'Knee Assessment', `Q${currentStep + 1}`);
+        }
+
+        function nextQuestion() {
+            const question = questions[currentStep];
+            const isAnswered = answers[question.id] && 
+                (Array.isArray(answers[question.id]) ? answers[question.id].length > 0 : true);
+            
+            if (!isAnswered) return;
+
+            if (currentStep < questions.length - 1) {
+                currentStep++;
+                render();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                currentStep++;
+                render();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function previousQuestion() {
+            if (currentStep > 0) {
+                currentStep--;
+                render();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function calculateScore() {
+            let totalScore = 0;
+            Object.keys(answers).forEach(questionId => {
+                const question = questions.find(q => q.id === questionId);
+                const answer = answers[questionId];
+                
+                if (Array.isArray(answer)) {
+                    answer.forEach(val => {
+                        const option = question.options.find(o => o.value === val);
+                        if (option) totalScore += option.score;
+                    });
+                } else {
+                    const option = question.options.find(o => o.value === answer);
+                    if (option) totalScore += option.score;
+                }
+            });
+            return totalScore;
+        }
+
+        function getPossibleConditions() {
+            const conditions = [];
+            
+            // ACL/Ligament injury indicators
+            if (answers.injury_history === 'sudden_twist' || 
+                answers.instability === 'yes_frequent' ||
+                answers.injury_history === 'direct_blow') {
+                conditions.push('ACL/Ligament Injury');
+            }
+            
+            // Meniscus tear indicators
+            if (answers.pain_type === 'grinding_clicking' ||
+                (answers.triggers && answers.triggers.includes('squatting')) ||
+                answers.instability === 'yes_sometimes') {
+                conditions.push('Meniscus Tear');
+            }
+            
+            // Osteoarthritis indicators
+            if (answers.age_duration === 'chronic' ||
+                answers.morning_stiffness === 'yes_severe' ||
+                answers.morning_stiffness === 'yes_mild') {
+                conditions.push('Knee Osteoarthritis');
+            }
+            
+            // Patellofemoral pain (runner's knee)
+            if ((answers.pain_location && answers.pain_location.includes('front')) ||
+                (answers.triggers && (answers.triggers.includes('stairs_down') || 
+                                     answers.triggers.includes('running')))) {
+                conditions.push('Patellofemoral Pain Syndrome');
+            }
+            
+            // Bursitis
+            if (answers.pain_type === 'swelling' ||
+                (answers.triggers && answers.triggers.includes('squatting'))) {
+                conditions.push('Knee Bursitis');
+            }
+            
+            // IT Band Syndrome
+            if ((answers.pain_location && answers.pain_location.includes('outer_side')) ||
+                (answers.triggers && answers.triggers.includes('running'))) {
+                conditions.push('IT Band Syndrome');
+            }
+            
+            // Patellar Tendinitis
+            if ((answers.pain_location && answers.pain_location.includes('front')) ||
+                (answers.triggers && answers.triggers.includes('running'))) {
+                conditions.push('Patellar Tendinitis');
+            }
+            
+            // Remove duplicates
+            return [...new Set(conditions)];
+        }
+
+        function getResultInfo(score) {
+            // Emergency conditions
+            if (answers.instability === 'yes_frequent' && 
+                (answers.injury_history === 'sudden_twist' || answers.injury_history === 'direct_blow')) {
+                return {
+                    title: '🚨 Urgent - Possible Ligament Injury',
+                    description: 'Your symptoms suggest a possible ACL tear or severe ligament injury. This requires immediate professional evaluation to prevent further damage.',
+                    recommendation: 'Schedule an urgent appointment within 24-48 hours. Avoid putting weight on the knee. Use ice and elevation.',
+                    cssClass: 'emergency',
+                    urgency: 'emergency'
+                };
+            }
+            
+            if (score <= 12) {
+                return {
+                    title: '✅ Mild Knee Pain',
+                    description: 'Your symptoms indicate mild knee discomfort, possibly from minor strain or early-stage inflammation. This is the best time to address it before it worsens.',
+                    recommendation: 'Conservative treatment with physiotherapy is recommended. Start with exercises and modifications. Schedule assessment within 1-2 weeks.',
+                    cssClass: 'mild',
+                    urgency: 'routine'
+                };
+            } else if (score <= 25) {
+                return {
+                    title: '⚠️ Moderate Knee Pain',
+                    description: 'Your symptoms suggest moderate knee involvement that may be affecting your daily activities. Professional treatment can help prevent progression and restore function.',
+                    recommendation: 'Schedule a physiotherapy assessment within 3-5 days. May benefit from manual therapy, exercises, and modalities.',
+                    cssClass: 'moderate',
+                    urgency: 'soon'
+                };
+            } else if (score <= 35) {
+                return {
+                    title: '🔴 Severe Knee Pain',
+                    description: 'Your symptoms indicate significant knee problems that require prompt professional attention. Delaying treatment may lead to chronic issues or surgery.',
+                    recommendation: 'Schedule urgent physiotherapy assessment within 1-2 days. Comprehensive treatment plan needed including manual therapy, exercises, and possibly advanced modalities.',
+                    cssClass: 'severe',
+                    urgency: 'urgent'
+                };
+            } else {
+                return {
+                    title: '🚨 Critical - Immediate Attention Needed',
+                    description: 'Your symptoms are severe and may indicate serious structural damage or advanced degeneration. Immediate professional evaluation is crucial.',
+                    recommendation: 'Schedule assessment TODAY or visit emergency if unable to bear weight. May require imaging (X-ray/MRI) and intensive treatment.',
+                    cssClass: 'emergency',
+                    urgency: 'emergency'
+                };
+            }
+        }
+
+        function restartAssessment() {
+            currentStep = 0;
+            answers = {};
+            render();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            trackEvent('assessment_restarted', 'Knee Assessment', 'Restart');
+        }
+
+        function trackEvent(action, category, label) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    'event_category': category,
+                    'event_label': label
+                });
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            render();
+            trackEvent('assessment_started', 'Knee Assessment', 'Started');
+            
+            // Track scroll depth
+            let scrollTracked = { '50': false, '100': false };
+            window.addEventListener('scroll', function() {
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                
+                if (scrollPercent >= 50 && !scrollTracked['50']) {
+                    scrollTracked['50'] = true;
+                    trackEvent('scroll_50', 'Engagement', 'Knee Assessment');
+                }
+                if (scrollPercent >= 100 && !scrollTracked['100']) {
+                    scrollTracked['100'] = true;
+                    trackEvent('scroll_100', 'Engagement', 'Knee Assessment');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
