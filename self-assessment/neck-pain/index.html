@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45SFLN5B7J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-45SFLN5B7J');
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHVSMWD6');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREE Neck Pain Assessment Quiz | Tech Neck Test | PhysioNutra</title>
+    <meta name="description" content="Suffering from neck pain or tech neck? Take our FREE 3-minute cervical pain assessment. Get instant diagnosis + treatment plan. Expert neck physiotherapy in Chandigarh Tricity.">
+    <link rel="canonical" href="https://physionutraclinic.com/self-assessment/neck-pain/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 20px 30px; color: white; }
+        .header h1 { font-size: 2.2rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .header p { font-size: 1.1rem; opacity: 0.95; }
+        .stats-badges { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .stat-badge { background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); padding: 10px 20px; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.3); }
+        .assessment-card, .results-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 40px; margin-bottom: 30px; }
+        .progress-bar { background: #e0e0e0; height: 8px; border-radius: 10px; margin-bottom: 30px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #fa709a 0%, #fee140 100%); height: 100%; border-radius: 10px; transition: width 0.4s ease; }
+        .progress-text { display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 10px; }
+        .question-section h2 { font-size: 1.5rem; color: #1a1a1a; margin-bottom: 25px; line-height: 1.4; }
+        .option { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 12px; padding: 15px 20px; margin-bottom: 12px; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 15px; }
+        .option:hover { background: #f0f0f0; border-color: #fa709a; transform: translateX(5px); }
+        .option.selected { background: #fff4e6; border-color: #fa709a; box-shadow: 0 4px 12px rgba(250, 112, 154, 0.2); }
+        .option-checkbox { width: 24px; height: 24px; border: 2px solid #fa709a; border-radius: 50%; flex-shrink: 0; position: relative; }
+        .option.selected .option-checkbox::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; background: #fa709a; border-radius: 50%; }
+        .option-text { flex: 1; font-size: 1rem; color: #333; }
+        .multi-select-note { font-size: 0.85rem; color: #666; font-style: italic; margin-top: 15px; }
+        .button-group { display: flex; gap: 15px; margin-top: 30px; }
+        .btn { padding: 14px 30px; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px; }
+        .btn-back { background: #e0e0e0; color: #333; }
+        .btn-next { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; flex: 1; justify-content: center; }
+        .btn-next:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(250, 112, 154, 0.4); }
+        .btn-next:disabled { opacity: 0.5; cursor: not-allowed; }
+        .severity-badge { display: inline-block; padding: 12px 30px; border-radius: 30px; font-size: 1.1rem; font-weight: bold; margin: 20px 0; }
+        .severity-emergency { background: #ff3b30; color: white; }
+        .severity-severe { background: #ff9500; color: white; }
+        .severity-moderate { background: #ffcc00; color: #333; }
+        .severity-mild { background: #34c759; color: white; }
+        .result-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .result-section h3 { color: #1a1a1a; margin-bottom: 15px; }
+        .condition-tag { display: inline-block; padding: 6px 14px; background: #fff4e6; color: #e65100; border-radius: 20px; font-size: 0.9rem; margin: 5px 5px 5px 0; border: 1px solid #ffb74d; }
+        .posture-alert { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .benefit-item { display: flex; align-items: start; gap: 12px; margin-bottom: 12px; padding-left: 10px; }
+        .benefit-item::before { content: '✓'; color: #34c759; font-weight: bold; font-size: 1.2rem; }
+        .cta-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .cta-btn { padding: 16px 24px; border-radius: 12px; text-decoration: none; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; }
+        .cta-phone { background: #34c759; color: white; }
+        .cta-whatsapp { background: #25D366; color: white; }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .disclaimer { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; border-radius: 10px; margin-top: 30px; }
+        .restart-btn { background: white; color: #fa709a; border: 2px solid #fa709a; padding: 12px 30px; border-radius: 10px; font-weight: 600; cursor: pointer; margin: 20px auto; display: block; transition: all 0.3s ease; }
+        .restart-btn:hover { background: #fa709a; color: white; }
+        .info-box { background: #fff4e6; border-left: 4px solid #fa709a; padding: 20px; border-radius: 10px; margin-top: 20px; }
+        @media (max-width: 768px) {
+            .assessment-card, .results-card { padding: 25px 20px; }
+            .header h1 { font-size: 1.6rem; }
+            .cta-buttons { grid-template-columns: 1fr; }
+            .button-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHVSMWD6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="container">
+        <div class="header">
+            <h1>📱 Neck Pain & Tech Neck Assessment</h1>
+            <p>Find out what's causing your neck pain in 3 minutes</p>
+            <div class="stats-badges">
+                <div class="stat-badge">💻 Perfect for IT Professionals</div>
+                <div class="stat-badge">⏱️ 3-Minute Test</div>
+                <div class="stat-badge">✅ Tech Neck Specialist</div>
+            </div>
+        </div>
+        <div id="assessmentContainer"></div>
+    </div>
+    <script>
+        const questions = [
+            { id: 'screen_time', question: 'How many hours do you spend on screens daily?', type: 'single', options: [
+                { value: 'less_2', label: 'Less than 2 hours', score: 0 },
+                { value: '2_4', label: '2-4 hours', score: 1 },
+                { value: '4_8', label: '4-8 hours (typical office job)', score: 3 },
+                { value: '8_12', label: '8-12 hours (IT professional)', score: 5 },
+                { value: 'more_12', label: 'More than 12 hours', score: 6 }
+            ]},
+            { id: 'pain_location', question: 'Where exactly do you feel neck pain?', type: 'multiple', options: [
+                { value: 'back_neck', label: '📍 Back of neck', score: 2 },
+                { value: 'side_neck', label: '📍 Side of neck', score: 2 },
+                { value: 'base_skull', label: '📍 Base of skull', score: 3 },
+                { value: 'shoulders', label: '📍 Upper shoulders', score: 2 },
+                { value: 'radiating_arm', label: '📍 Radiating to arm/hand', score: 5 }
+            ]},
+            { id: 'pain_type', question: 'How would you describe your neck symptoms?', type: 'multiple', options: [
+                { value: 'stiffness', label: 'Stiffness and limited movement', score: 2 },
+                { value: 'dull_ache', label: 'Dull, constant ache', score: 2 },
+                { value: 'sharp_pain', label: 'Sharp pain with movement', score: 4 },
+                { value: 'headaches', label: 'Frequent headaches', score: 3 },
+                { value: 'numbness', label: 'Numbness or tingling in arms', score: 6 },
+                { value: 'grinding', label: 'Grinding or clicking sounds', score: 3 }
+            ]},
+            { id: 'duration', question: 'How long have you had neck pain?', type: 'single', options: [
+                { value: 'recent', label: 'Less than 1 week', score: 1 },
+                { value: '1_4_weeks', label: '1-4 weeks', score: 2 },
+                { value: '1_3_months', label: '1-3 months', score: 3 },
+                { value: '3_6_months', label: '3-6 months', score: 4 },
+                { value: 'chronic', label: 'More than 6 months', score: 5 }
+            ]},
+            { id: 'aggravating_factors', question: 'What makes your neck pain worse?', type: 'multiple', options: [
+                { value: 'looking_down', label: '📱 Looking down at phone', score: 4 },
+                { value: 'computer_work', label: '💻 Computer work', score: 4 },
+                { value: 'turning_head', label: '🔄 Turning head', score: 3 },
+                { value: 'morning', label: '🌅 Worse in morning', score: 2 },
+                { value: 'end_day', label: '🌆 Worse at end of day', score: 3 },
+                { value: 'driving', label: '🚗 Driving', score: 2 }
+            ]},
+            { id: 'posture', question: 'How is your typical work posture?', type: 'single', options: [
+                { value: 'excellent', label: '✅ Excellent - Ergonomic setup', score: 0 },
+                { value: 'good', label: '😊 Good - Generally mindful', score: 1 },
+                { value: 'poor', label: '😐 Poor - Often slouching', score: 3 },
+                { value: 'terrible', label: '😫 Terrible - Poor desk setup', score: 5 }
+            ]},
+            { id: 'range_of_motion', question: 'Can you turn your head fully?', type: 'single', options: [
+                { value: 'yes_easy', label: 'Yes, easily without pain', score: 0 },
+                { value: 'yes_some_pain', label: 'Yes, but with pain', score: 2 },
+                { value: 'limited_one', label: 'Limited on one side', score: 4 },
+                { value: 'limited_both', label: 'Limited on both sides', score: 6 }
+            ]},
+            { id: 'nerve_symptoms', question: 'Do you have any arm/hand symptoms?', type: 'multiple', options: [
+                { value: 'arm_weakness', label: '⚠️ Arm weakness', score: 7 },
+                { value: 'hand_numbness', label: '⚠️ Hand numbness', score: 6 },
+                { value: 'grip_issues', label: '⚠️ Difficulty gripping', score: 7 },
+                { value: 'shooting_pain', label: '⚠️ Shooting pain down arm', score: 6 },
+                { value: 'none', label: '✅ None of the above', score: 0 }
+            ]},
+            { id: 'daily_impact', question: 'How much does neck pain affect your life?', type: 'single', options: [
+                { value: 'minimal', label: '😊 Minimal - Slight discomfort', score: 1 },
+                { value: 'moderate', label: '😐 Moderate - Affects concentration', score: 3 },
+                { value: 'significant', label: '😣 Significant - Hard to work', score: 5 },
+                { value: 'severe', label: '😫 Severe - Disrupts sleep', score: 7 }
+            ]},
+            { id: 'previous_treatment', question: 'Have you tried any treatments?', type: 'multiple', options: [
+                { value: 'nothing', label: 'No treatment yet', score: 0 },
+                { value: 'rest', label: 'Rest and self-care', score: 0 },
+                { value: 'medication', label: 'Pain medication', score: 0 },
+                { value: 'massage', label: 'Massage therapy', score: 0 },
+                { value: 'physio', label: 'Physiotherapy', score: 0 },
+                { value: 'nothing_helped', label: 'Nothing helped', score: 2 }
+            ]}
+        ];
+        let currentStep = 0, answers = {};
+        function render() {
+            const c = document.getElementById('assessmentContainer');
+            c.innerHTML = currentStep < questions.length ? renderQuestion() : renderResults();
+            if (currentStep >= questions.length) trackEvent('assessment_completed', 'Neck Pain', 'Done');
+        }
+        function renderQuestion() {
+            const q = questions[currentStep], prog = ((currentStep + 1) / questions.length) * 100;
+            const ans = answers[q.id] && (Array.isArray(answers[q.id]) ? answers[q.id].length > 0 : true);
+            return `<div class="assessment-card"><div class="progress-text"><span>Question ${currentStep + 1} of ${questions.length}</span><span>${Math.round(prog)}%</span></div><div class="progress-bar"><div class="progress-fill" style="width:${prog}%"></div></div><div class="question-section"><h2>${q.question}</h2>${q.options.map(o => `<div class="option ${isOptionSelected(q.id, o.value) ? 'selected' : ''}" onclick="selectOption('${q.id}', '${o.value}', ${q.type === 'multiple'})"><div class="option-checkbox"></div><div class="option-text">${o.label}</div></div>`).join('')}${q.type === 'multiple' ? '<p class="multi-select-note">Select all that apply</p>' : ''}</div><div class="button-group">${currentStep > 0 ? '<button class="btn btn-back" onclick="previousQuestion()">← Back</button>' : ''}<button class="btn btn-next" ${!ans ? 'disabled' : ''} onclick="nextQuestion()">${currentStep === questions.length - 1 ? 'See Results 🎯' : 'Next →'}</button></div><div class="info-box"><p><strong>💡 Tip:</strong> ${['Tech neck puts 60 lbs pressure on your neck!', '70% of IT pros have neck pain', 'Screen should be at eye level', 'Arm symptoms need urgent evaluation'][currentStep % 4]}</p></div></div>`;
+        }
+        function renderResults() {
+            const score = calculateScore(), r = getResultInfo(score), conds = getPossibleConditions();
+            const hasNerve = checkNerveSymptoms(), st = getScreenTimeWarning();
+            return `<div class="results-card"><h1 style="text-align:center;color:#1a1a1a">Your Neck Pain Assessment Results</h1><p style="text-align:center;color:#666;margin-bottom:20px">Based on your symptoms</p>${hasNerve ? '<div class="posture-alert" style="background:#ffebee;border-color:#f44336"><h4 style="color:#c62828">🚨 NERVE INVOLVEMENT DETECTED</h4><p style="color:#b71c1c">Requires professional evaluation within 48 hours.</p></div>' : ''}${st ? `<div class="posture-alert"><h4>⚠️ ${st.title}</h4><p>${st.message}</p></div>` : ''}<div style="text-align:center"><div class="severity-badge severity-${r.cssClass}">${r.title}</div><p style="color:#666;margin-top:10px">Score: ${score} points</p></div><div class="result-section"><h3>🔍 Findings</h3><p style="color:#555;line-height:1.8">${r.description}</p>${conds.length ? `<p style="margin-top:15px;font-weight:600">Possible Conditions:</p><div>${conds.map(c => `<span class="condition-tag">${c}</span>`).join('')}</div>` : ''}</div><div class="result-section"><h3>💡 Recommendation</h3><p style="color:#555;font-weight:600">${r.recommendation}</p></div><div class="result-section"><h3>✨ How We Treat Neck Pain</h3><div class="benefit-item">Cervical spine mobilization</div><div class="benefit-item">Posture correction training</div><div class="benefit-item">Strengthening exercises</div><div class="benefit-item">Manual therapy</div><div class="benefit-item">Dry needling</div><div class="benefit-item">Ergonomic assessment</div><div class="benefit-item">Home exercise program</div></div><div class="cta-buttons"><a href="tel:+919417791833" class="cta-btn cta-phone">📞 Call: +91 94177 91833</a><a href="https://wa.me/919417791833?text=Hi, I completed neck assessment. Score: ${score}. Book appointment." target="_blank" class="cta-btn cta-whatsapp">💬 WhatsApp</a></div><div style="text-align:center;margin:30px 0;padding:25px;background:linear-gradient(135deg,#fff4e6,#ffe0b2);border-radius:15px"><h3 style="color:#e65100">🎁 IT Professionals Special</h3><p style="color:#bf360c;font-size:1.1rem;font-weight:600">Book within 24hrs: 15% OFF + FREE Ergonomic Guide</p></div><div class="disclaimer"><h4>⚠️ Disclaimer</h4><p style="color:#856404;font-size:0.9rem">Educational purposes only. Not a substitute for professional diagnosis. Consult a physiotherapist for accurate assessment.</p></div><button class="restart-btn" onclick="restartAssessment()">🔄 Take Again</button></div>`;
+        }
+        function isOptionSelected(qid, val) { const a = answers[qid]; return Array.isArray(a) ? a.includes(val) : a === val; }
+        function selectOption(qid, val, multi) {
+            if (multi) {
+                if (!answers[qid]) answers[qid] = [];
+                const i = answers[qid].indexOf(val);
+                i > -1 ? answers[qid].splice(i, 1) : answers[qid].push(val);
+            } else answers[qid] = val;
+            render(); trackEvent('question_answered', 'Neck', `Q${currentStep + 1}`);
+        }
+        function nextQuestion() {
+            const q = questions[currentStep], ans = answers[q.id] && (Array.isArray(answers[q.id]) ? answers[q.id].length > 0 : true);
+            if (!ans) return;
+            currentStep++; render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function previousQuestion() { if (currentStep > 0) { currentStep--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }
+        function calculateScore() {
+            let s = 0;
+            Object.keys(answers).forEach(qid => {
+                const q = questions.find(x => x.id === qid), a = answers[qid];
+                if (Array.isArray(a)) a.forEach(v => { const o = q.options.find(x => x.value === v); if (o) s += o.score; });
+                else { const o = q.options.find(x => x.value === a); if (o) s += o.score; }
+            });
+            return s;
+        }
+        function checkNerveSymptoms() {
+            if (!answers.nerve_symptoms) return false;
+            return answers.nerve_symptoms.includes('arm_weakness') || answers.nerve_symptoms.includes('hand_numbness') || answers.nerve_symptoms.includes('grip_issues') || answers.nerve_symptoms.includes('shooting_pain');
+        }
+        function getScreenTimeWarning() {
+            const st = answers.screen_time;
+            if (st === '8_12' || st === 'more_12') return { title: 'High Screen Time Alert', message: 'Your screen time is a major contributor to tech neck. Ergonomic modifications critical.' };
+            if (st === '4_8') return { title: 'Moderate Screen Time', message: 'Typical for office workers. Proper ergonomics can prevent worsening.' };
+            return null;
+        }
+        function getPossibleConditions() {
+            const c = [];
+            if ((answers.screen_time === '4_8' || answers.screen_time === '8_12' || answers.screen_time === 'more_12') && answers.aggravating_factors && (answers.aggravating_factors.includes('looking_down') || answers.aggravating_factors.includes('computer_work'))) c.push('Tech Neck');
+            if (answers.duration === 'chronic' && answers.pain_type && answers.pain_type.includes('grinding')) c.push('Cervical Spondylosis');
+            if ((answers.pain_location && answers.pain_location.includes('radiating_arm')) || (answers.nerve_symptoms && !answers.nerve_symptoms.includes('none'))) c.push('Cervical Radiculopathy');
+            if (answers.duration === 'recent' || answers.duration === '1_4_weeks') c.push('Muscle Strain');
+            if (answers.pain_type && answers.pain_type.includes('headaches')) c.push('Cervicogenic Headaches');
+            if (answers.pain_location && answers.pain_location.includes('shoulders') && (answers.posture === 'poor' || answers.posture === 'terrible')) c.push('Upper Crossed Syndrome');
+            return [...new Set(c)];
+        }
+        function getResultInfo(score) {
+            if (checkNerveSymptoms()) return { title: '🚨 URGENT - Nerve Involvement', description: 'Symptoms include nerve-related signs suggesting cervical radiculopathy.', recommendation: 'Schedule appointment within 24-48 hours. May require imaging.', cssClass: 'emergency' };
+            if (score <= 15) return { title: '✅ Mild Neck Pain', description: 'Mild cervical strain or early tech neck. Best time to address it.', recommendation: 'Start physiotherapy within 1-2 weeks. Focus on ergonomics.', cssClass: 'mild' };
+            if (score <= 30) return { title: '⚠️ Moderate Neck Pain', description: 'Moderate involvement, possibly tech neck or muscle strain.', recommendation: 'Schedule within 3-5 days. Manual therapy and exercises needed.', cssClass: 'moderate' };
+            if (score <= 45) return { title: '🔴 Severe Neck Pain', description: 'Significant cervical problems requiring prompt intervention.', recommendation: 'URGENT: Schedule within 1-2 days. May need imaging.', cssClass: 'severe' };
+            return { title: '🚨 Critical Condition', description: 'Severe symptoms requiring immediate attention.', recommendation: 'See doctor TODAY. Imaging needed.', cssClass: 'emergency' };
+        }
+        function restartAssessment() { currentStep = 0; answers = {}; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); trackEvent('restart', 'Neck', 'Restart'); }
+        function trackEvent(a, c, l) { if (typeof gtag !== 'undefined') gtag('event', a, { event_category: c, event_label: l }); }
+        document.addEventListener('DOMContentLoaded', () => { render(); trackEvent('start', 'Neck', 'Started'); });
+    </script>
+</body>
+</html>
