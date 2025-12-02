@@ -938,6 +938,176 @@
             transform: scale(1.1);
         }
 
+        language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .lang-btn {
+            padding: 5px 12px;
+            background: #2a2a2a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: #7ad16c;
+            color: #1a1a1a;
+        }
+        
+        /* Trust Badges */
+        .trust-badges-section {
+            padding: 40px 0;
+            background: #f9f9f9;
+            border-top: 3px solid #7ad16c;
+        }
+        
+        .trust-badge {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe082 100%);
+            padding: 15px 20px;
+            text-align: center;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 2px 10px rgba(255, 193, 7, 0.3); }
+            50% { box-shadow: 0 4px 20px rgba(255, 193, 7, 0.6); }
+        }
+        
+        /* Sticky CTA Bar */
+        .sticky-cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
+            padding: 15px 20px;
+            text-align: center;
+            z-index: 1001;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            display: none;
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .sticky-cta-close {
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .whatsapp-message-preview {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
+            max-width: 280px;
+            display: none;
+            animation: slideInRight 0.5s ease;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #d32f2f;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: ping 1.5s infinite;
+        }
+        
+        @keyframes ping {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Booking Incentive */
+        .booking-incentive {
+            background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            margin: 60px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(122, 209, 108, 0.4);
+        }
+        
+        .booking-incentive-btn {
+            background: white;
+            color: #7ad16c;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .booking-incentive-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sticky-cta-bar {
+                padding: 10px;
+            }
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+            }
+            .booking-incentive {
+                padding: 30px 20px;
+            }
+        }
+        
         @media (max-width: 1024px) {
             .dropdown-menu {
                 position: static;
@@ -1029,12 +1199,20 @@
                             🕒 Mon-Sat: 9AM-7PM | Sun: 10AM-2PM
                         </div>
                     </div>
+                    <div style="display: flex; align-items: center; gap: 1.5rem;">
+                        <div class="language-switcher">
+                            <span>🌐</span>
+                            <a href="/" class="lang-btn active">English</a>
+                            <a href="/hi/" class="lang-btn">हिंदी</a>
+                            <a href="/pa/" class="lang-btn">ਪੰਜਾਬੀ</a>
+                        </div>
                     <div class="header-social">
                         <a href="https://www.facebook.com/tarun.aggarwal.7528" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://x.com/physionutra" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -1151,6 +1329,37 @@
         </div>
     </section>
 
+<!-- ADD THIS: Urgency Banner (After Hero) -->
+    <div class="urgency-banner">
+        <p>
+            🎯 <strong>Limited Slots Available!</strong> Book your free consultation today - Only 3 slots left this week!
+        </p>
+    </div>
+
+    <!-- ADD THIS: Trust Badges Section -->
+    <section class="trust-badges-section">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center;">
+                <div class="trust-badge">
+                    <i class="fas fa-certificate" style="font-size: 2rem; color: #7ad16c;"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Certified Physiotherapists</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt" style="font-size: 2rem; color: #7ad16c;"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">100% Safe Treatment</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-clock" style="font-size: 2rem; color: #7ad16c;"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Same Day Appointments</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-home" style="font-size: 2rem; color: #7ad16c;"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Home Visits Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Services Section -->
     <section class="services-section">
         <div class="container">
@@ -1215,6 +1424,17 @@
         </div>
     </section>
 
+    <section class="booking-incentive">
+        <div class="container">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">🎁 Special Offer for First-Time Patients</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Get your first consultation FREE + 10% off on your treatment package!</p>
+            <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1.5rem;">Valid for bookings made this month only</p>
+            <a href="tel:+919417791833" class="booking-incentive-btn">
+                Claim Your Free Consultation Now
+            </a>
+        </div>
+    </section>
+    
     <!-- Conditions We Treat -->
     <section class="conditions-section">
         <div class="container">
@@ -1433,6 +1653,23 @@
         </div>
     </section>
 
+    <section class="map-section" style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Visit Our Clinic</h2>
+            <p class="section-subtitle">Located in the heart of Zirakpur, easily accessible from Chandigarh, Mohali & Panchkula</p>
+            <div style="margin-top: 2rem; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.5!2d76.833101!3d30.638695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDM4JzE5LjMiTiA3NsKwNDknNTkuMiJF!5e0!3m2!1sen!2sin!4v1234567890" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1506,15 +1743,41 @@
         </div>
     </footer>
 
+    <div class="sticky-cta-bar">
+        <button class="sticky-cta-close" onclick="this.parentElement.style.display='none'">×</button>
+        <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <span style="color: white; font-weight: 600;">Get Expert Care Today!</span>
+            <a href="tel:+919417791833" style="background: white; color: #7ad16c; padding: 10px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">
+                📞 Call: +91 9417791833
+            </a>
+            <a href="https://wa.me/919417791833" style="background: #25D366; color: white; padding: 10px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">
+                💬 WhatsApp
+            </a>
+        </div>
+    </div>
+
     <!-- Floating Buttons -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="floating-btn whatsapp-btn" aria-label="WhatsApp">
+    <div class="whatsapp-float">
+        <div class="whatsapp-message-preview" id="whatsappPreview">
+            <p style="margin: 0; font-size: 0.9rem; color: #333;">
+                👋 Hi! Need help with your pain?<br>
+                <strong style="color: #25D366; display: block; margin-top: 5px;">Chat with us on WhatsApp!</strong>
+            </p>
+        </div>
+        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20help%20with%20physiotherapy" 
+           class="floating-btn whatsapp-btn" 
+           aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call">
-            <i class="fas fa-phone"></i>
+            <span class="notification-badge">1</span>
         </a>
     </div>
+
+    <!-- Phone Button (Existing) -->
+    <a href="tel:+919417791833" class="floating-btn phone-btn" 
+       style="position: fixed; bottom: 30px; right: 30px; z-index: 999;"
+       aria-label="Call">
+        <i class="fas fa-phone"></i>
+    </a>
 
     <script>
         // Mobile menu toggle
@@ -1692,6 +1955,50 @@
                 }, 0);
             });
         }
+
+        // Show sticky CTA bar after scrolling
+        window.addEventListener('scroll', function() {
+            const stickyCTA = document.querySelector('.sticky-cta-bar');
+            if (window.scrollY > 500 && stickyCTA) {
+                stickyCTA.style.display = 'block';
+            }
+        });
+
+        // WhatsApp message preview
+        setTimeout(function() {
+            const preview = document.getElementById('whatsappPreview');
+            if (preview) {
+                preview.style.display = 'block';
+                setTimeout(function() {
+                    preview.style.display = 'none';
+                }, 10000); // Hide after 10 seconds
+            }
+        }, 5000); // Show after 5 seconds
+
+        // Exit intent (simple version)
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 0 && !exitIntentShown && window.scrollY > 300) {
+                exitIntentShown = true;
+                if (confirm('Wait! Before you go...\n\n🎁 Get a FREE consultation worth ₹500!\n\nClick OK to call us now.')) {
+                    window.location.href = 'tel:+919417791833';
+                }
+            }
+        });
+
+        // Track conversions
+        document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    const type = this.href.includes('wa.me') ? 'whatsapp' : 'phone';
+                    gtag('event', 'conversion', {
+                        'event_category': type,
+                        'event_label': 'Contact Click',
+                        'value': 1
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
