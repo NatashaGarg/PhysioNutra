@@ -55,7 +55,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
+      "@type": "MedicalOrganization",
       "name": "PhysioNutra Clinic",
       "alternateName": "फिजियोन्यूट्रा क्लिनिक",
       "description": "ज़िरकपुर, चंडीगढ़, मोहाली और पंचकुला में विशेषज्ञ फिजियोथेरेपी सेवाएं",
@@ -89,15 +89,16 @@
           "closes": "14:00"
         }
       ],
-      "priceRange": "₹₹",
       "areaServed": [
         {"@type": "City", "name": "Zirakpur"},
         {"@type": "City", "name": "Chandigarh"},
         {"@type": "City", "name": "Mohali"},
         {"@type": "City", "name": "Panchkula"}
       ],
-      "medicalSpecialty": ["Physiotherapy", "Sports Medicine", "Pain Management", "Rehabilitation"],
-      "inLanguage": ["hi", "en", "pa"]
+      "medicalSpecialty": [
+        "https://schema.org/Physiotherapy"
+        ],
+      "knowsLanguage": ["hi", "en", "pa"]
     }
     </script>
 
