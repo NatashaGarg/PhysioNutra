@@ -428,17 +428,19 @@
             gap: 4rem;
             align-items: center;
         }
-
-        .location-image {
+        .location-image-container {
             width: 100%;
             height: 400px;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .location-image-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .location-content h2 {
@@ -960,10 +962,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .location-image {
-                height: 300px;
-            }
-
             .header-top-content {
                 flex-direction: column;
                 text-align: center;
@@ -1059,8 +1057,10 @@
         <section class="location-info">
             <div class="container">
                 <div class="location-grid">
-                    <div class="location-image" role="img" aria-label="PhysioNutra Clinic Zirakpur">
-                        🏥
+                    <div class="location-image-container">
+                        <img src="/images/best-physiotherapy-in-zirakpur.jpeg" 
+                             alt="PhysioNutra Clinic front view in Zirakpur - modern physiotherapy facility" 
+                             class="location-image-photo">
                     </div>
                     <div class="location-content">
                         <h2>PhysioNutra Clinic - Zirakpur</h2>
