@@ -19,8 +19,13 @@ jobs:
         with:
           base-url-path: https://physionutraclinic.com
           sitemap-format: xml
-      - name: Remove .html extensions from sitemap
-        run: sed -i 's/\.html//g' sitemap.xml
+      - name: Remove .html extensions and Add Stylesheet Link
+        run: |
+          # Remove .html extensions
+          sed -i 's/\.html//g' sitemap.xml
+          
+          # Inject the XSL stylesheet link on the second line
+          sed -i '2i <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>' sitemap.xml
       - name: Commit sitemap if changed
         run: |
           git config --global user.name "github-actions"
