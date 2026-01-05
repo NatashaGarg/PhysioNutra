@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://physionutraclinic.com/</loc>
@@ -6,7 +7,7 @@
 </url>
 <url>
 <loc>https://physionutraclinic.com/about/</loc>
-<lastmod>2026-01-03T15:24:02+05:30</lastmod>
+<lastmod>2026-01-05T14:32:36+05:30</lastmod>
 </url>
 <url>
 <loc>https://physionutraclinic.com/blogs/</loc>
