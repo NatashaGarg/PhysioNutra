@@ -2019,16 +2019,16 @@
             }
         }, 5000); // Show after 5 seconds
 
-        // Exit intent (simple version)
-        let exitIntentShown = false;
-        document.addEventListener('mouseleave', function(e) {
-            if (e.clientY < 0 && !exitIntentShown && window.scrollY > 300) {
-                exitIntentShown = true;
-                if (confirm('Wait! Before you go...\n\n🎁 Get a FREE consultation worth ₹500!\n\nClick OK to call us now.')) {
-                    window.location.href = 'tel:+919417791833';
-                }
-            }
-        });
+        // // Exit intent (simple version)
+        // let exitIntentShown = false;
+        // document.addEventListener('mouseleave', function(e) {
+        //     if (e.clientY < 0 && !exitIntentShown && window.scrollY > 300) {
+        //         exitIntentShown = true;
+        //         if (confirm('Wait! Before you go...\n\n🎁 Get a FREE consultation worth ₹500!\n\nClick OK to call us now.')) {
+        //             window.location.href = 'tel:+919417791833';
+        //         }
+        //     }
+        // });
 
         // Track conversions
         document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me"]').forEach(link => {
