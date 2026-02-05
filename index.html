@@ -1140,6 +1140,58 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .header-main {
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        
+            /* ADD THIS - Fix nav positioning */
+            nav {
+                position: static;
+            }
+        
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                gap: 0;
+                z-index: 999;  /* ADD THIS */
+            }
+        
+            nav ul.active {
+                display: flex;
+            }
+        
+            /* ADD THESE - Better list item styling */
+            nav li {
+                width: 100%;
+                border-bottom: 1px solid #eee;
+            }
+        
+            nav li:last-child {
+                border-bottom: none;
+            }
+        
+            nav a {
+                width: 100%;
+                padding: 1rem;
+                display: block;  /* ADD THIS */
+            }
+        
+            /* UPDATE THIS - Bigger logo */
+            .logo {
+                height: 55px;  /* Changed from 55px (was already correct) */
+            }
+
             .sticky-cta-bar {
                 padding: 10px;
             }
