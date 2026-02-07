@@ -200,947 +200,1461 @@
 
     <style>
         /* ===================================
-   IMPROVED RESPONSIVE CSS FOR HOME PAGE
-   Matching Careers Page Mobile Layout
-   =================================== */
-
-/* Keep all existing styles, just add/modify these responsive sections */
-
-/* ===================================
-   MOBILE RESPONSIVE IMPROVEMENTS
-   =================================== */
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-
-    /* ===== HEADER FIXES ===== */
-    .header-main {
-        position: relative; /* Critical for mobile menu positioning */
-    }
-
-    .header-top {
-        padding: 8px 0;
-    }
-
-    .header-top-content {
-        flex-direction: column;
-        gap: 0.8rem;
-        align-items: stretch;
-    }
-
-    /* Language Switcher - Make Compact on Mobile */
-    .language-switcher {
-        font-size: 0.85rem;
-    }
-
-    .lang-btn {
-        padding: 4px 10px;
-        font-size: 0.75rem;
-    }
-
-    .header-social a {
-        font-size: 1rem;
-    }
-
-    .mobile-menu-toggle {
-        display: block;
-    }
-
-    /* Fix nav positioning */
-    nav {
-        position: static;
-    }
-
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 1rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        gap: 0;
-        z-index: 999;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav li {
-        width: 100%;
-        border-bottom: 1px solid #eee;
-    }
-
-    nav li:last-child {
-        border-bottom: none;
-    }
-
-    nav a {
-        display: block;
-        padding: 1rem;
-    }
-
-    /* Dropdown menus on mobile */
-    .dropdown-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        padding-left: 20px;
-        display: none;
-        background: #f9f9f9;
-    }
-
-    .has-dropdown.active .dropdown-menu {
-        display: block;
-    }
-
-    .dropdown-menu a {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-
-    .logo {
-        height: 55px;
-    }
-
-    .tagline {
-        font-size: 0.75rem;
-    }
-
-    /* ===== HERO SECTION ===== */
-    .hero-section {
-        padding: 50px 0 40px;
-    }
-
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-        margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 0.8rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        width: 100%;
-        text-align: center;
-        padding: 12px 30px;
-        font-size: 0.95rem;
-    }
-
-    .hero-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        margin-top: 1.5rem;
-    }
-
-    .stat-number {
-        font-size: 1.8rem;
-    }
-
-    .stat-label {
-        font-size: 0.8rem;
-    }
-
-    /* ===== APPOINTMENT FORM ===== */
-    .appointment-form {
-        padding: 2rem 1.5rem;
-        margin-top: 1.5rem;
-    }
-
-    .appointment-form h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .form-group {
-        margin-bottom: 1.2rem;
-    }
-
-    .form-group input,
-    .form-group select {
-        padding: 10px;
-        font-size: 0.95rem;
-    }
-
-    .submit-btn {
-        padding: 12px;
-        font-size: 1rem;
-    }
-
-    /* ===== URGENCY BANNER ===== */
-    .urgency-banner {
-        padding: 12px 15px;
-        font-size: 0.9rem;
-        margin: 15px 0;
-    }
-
-    /* ===== TRUST BADGES ===== */
-    .trust-badges-section {
-        padding: 30px 0;
-    }
-
-    .trust-badges-section > div > div {
-        gap: 2rem !important;
-    }
-
-    .trust-badge i {
-        font-size: 1.5rem !important;
-    }
-
-    .trust-badge p {
-        font-size: 0.85rem;
-    }
-
-    /* ===== SECTION TITLES ===== */
-    .section-title {
-        font-size: 1.8rem;
-        line-height: 1.3;
-        margin-bottom: 1rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    /* ===== SERVICES SECTION ===== */
-    .services-section,
-    .conditions-section,
-    .why-choose-section,
-    .testimonials-section,
-    .reviews-section,
-    .cta-section {
-        padding: 50px 0;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .service-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .service-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .service-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .service-card p {
-        font-size: 0.95rem;
-        margin-bottom: 1.2rem;
-    }
-
-    /* ===== BOOKING INCENTIVE ===== */
-    .booking-incentive {
-        padding: 35px 20px;
-        margin: 40px 0;
-    }
-
-    .booking-incentive h3 {
-        font-size: 1.5rem !important;
-    }
-
-    .booking-incentive p {
-        font-size: 1rem !important;
-    }
-
-    .booking-incentive-btn {
-        padding: 14px 30px;
-        font-size: 0.95rem;
-    }
-
-    /* ===== CONDITIONS SECTION ===== */
-    .conditions-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .condition-image {
-        height: 180px;
-    }
-
-    .condition-content {
-        padding: 1.2rem;
-    }
-
-    .condition-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .condition-card p {
-        font-size: 0.9rem;
-    }
-
-    /* ===== WHY CHOOSE SECTION ===== */
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    .feature-card {
-        padding: 1.5rem;
-    }
-
-    .feature-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.8rem;
-    }
-
-    .feature-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.7rem;
-    }
-
-    .feature-card p {
-        font-size: 0.95rem;
-    }
-
-    /* ===== VIDEO TESTIMONIALS ===== */
-    .video-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    .video-card iframe {
-        height: 200px;
-    }
-
-    .video-info {
-        padding: 1.2rem;
-    }
-
-    .video-info h3 {
-        font-size: 1.1rem;
-    }
-
-    .video-info p {
-        font-size: 0.9rem;
-    }
-
-    /* ===== REVIEWS SECTION ===== */
-    .reviews-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    .review-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .quote-icon {
-        font-size: 2.5rem;
-    }
-
-    .review-text {
-        font-size: 0.95rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .author-avatar {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-    }
-
-    /* ===== CTA SECTION ===== */
-    .cta-content h2 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-        margin-bottom: 1rem;
-    }
-
-    .cta-content p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    /* ===== MAP SECTION ===== */
-    .map-section {
-        padding: 50px 0 !important;
-    }
-
-    .map-section iframe {
-        height: 300px !important;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-        padding: 40px 0 0;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .footer-section {
-        text-align: center;
-    }
-
-    .footer-section h3 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .footer-section p {
-        font-size: 0.9rem;
-    }
-
-    .footer-links {
-        text-align: left;
-    }
-
-    .footer-links li {
-        margin-bottom: 0.6rem;
-    }
-
-    .footer-links a {
-        font-size: 0.9rem;
-    }
-
-    .footer-social {
-        justify-content: center;
-    }
-
-    .footer-bottom {
-        padding: 1.5rem 0;
-        font-size: 0.9rem;
-    }
-
-    /* ===== FLOATING BUTTONS ===== */
-    .floating-buttons {
-        bottom: 20px;
-        right: 20px;
-        gap: 10px;
-    }
-
-    .floating-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-    }
-
-    /* ===== STICKY CTA BAR ===== */
-    .sticky-cta-bar {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-
-    .sticky-cta-bar a {
-        padding: 8px 20px !important;
-        font-size: 0.85rem !important;
-    }
-
-    /* ===== WHATSAPP FLOAT ===== */
-    .whatsapp-float {
-        bottom: 80px;
-        right: 20px;
-    }
-
-    .whatsapp-message-preview {
-        max-width: 220px;
-        padding: 12px 15px;
-        font-size: 0.85rem;
-    }
-
-    .notification-badge {
-        width: 20px;
-        height: 20px;
-        font-size: 11px;
-    }
-}
-
-/* ===================================
-   SMALL MOBILE (max-width: 480px)
-   =================================== */
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 12px;
-    }
-
-    .logo {
-        height: 50px;
-    }
-
-    .tagline {
-        display: none; /* Hide tagline on very small screens */
-    }
-
-    /* Hero Section */
-    .hero-content h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-content p {
-        font-size: 0.95rem;
-    }
-
-    .hero-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
-    }
-
-    .stat-number {
-        font-size: 1.5rem;
-    }
-
-    .stat-label {
-        font-size: 0.75rem;
-    }
-
-    /* Appointment Form */
-    .appointment-form {
-        padding: 1.5rem 1.2rem;
-    }
-
-    .appointment-form h2 {
-        font-size: 1.3rem;
-    }
-
-    /* Section Titles */
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .section-subtitle {
-        font-size: 0.95rem;
-    }
-
-    /* Service Cards */
-    .service-card {
-        padding: 1.5rem 1.2rem;
-    }
-
-    .service-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 1.8rem;
-    }
-
-    .service-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .service-card p {
-        font-size: 0.9rem;
-    }
-
-    /* Booking Incentive */
-    .booking-incentive h3 {
-        font-size: 1.3rem !important;
-    }
-
-    .booking-incentive p {
-        font-size: 0.95rem !important;
-    }
-
-    .booking-incentive-btn {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-    }
-
-    /* Condition Cards */
-    .condition-content {
-        padding: 1rem;
-    }
-
-    .condition-card h3 {
-        font-size: 1.1rem;
-    }
-
-    /* Feature Cards */
-    .feature-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
-    }
-
-    .feature-card h3 {
-        font-size: 1rem;
-    }
-
-    .feature-card p {
-        font-size: 0.9rem;
-    }
-
-    /* Video Cards */
-    .video-info {
-        padding: 1rem;
-    }
-
-    .video-info h3 {
-        font-size: 1rem;
-    }
-
-    /* Review Cards */
-    .review-card {
-        padding: 1.5rem 1.2rem;
-    }
-
-    .quote-icon {
-        font-size: 2rem;
-    }
-
-    .review-text {
-        font-size: 0.9rem;
-    }
-
-    .author-avatar {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-
-    /* CTA Section */
-    .cta-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .cta-content p {
-        font-size: 0.95rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        padding: 11px 25px;
-        font-size: 0.9rem;
-    }
-
-    /* Trust Badges */
-    .trust-badge i {
-        font-size: 1.3rem !important;
-    }
-
-    .trust-badge p {
-        font-size: 0.8rem;
-    }
-
-    /* Urgency Banner */
-    .urgency-banner {
-        padding: 10px 12px;
-        font-size: 0.85rem;
-    }
-
-    /* Language Switcher */
-    .language-switcher {
-        font-size: 0.75rem;
-    }
-
-    .lang-btn {
-        padding: 3px 8px;
-        font-size: 0.7rem;
-    }
-
-    /* Floating Buttons */
-    .floating-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-    }
-}
-
-/* ===================================
-   TABLET IMPROVEMENTS (min-width: 769px)
-   Keep desktop view for larger screens
-   =================================== */
-
-@media (min-width: 769px) {
-    /* Ensure dropdowns work properly on desktop */
-    .has-dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    /* Two-column layout for medium-sized grids */
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .conditions-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ===================================
-   DESKTOP (min-width: 1024px)
-   Full multi-column layouts
-   =================================== */
-
-@media (min-width: 1024px) {
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .conditions-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .features-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .video-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .reviews-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .hero-stats {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ===================================
-   MOBILE MENU DROPDOWN TOGGLE
-   =================================== */
-
-@media (max-width: 768px) {
-    /* Make dropdowns work on mobile */
-    .has-dropdown > a::after {
-        content: '\f107';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        margin-left: 5px;
-        font-size: 0.8rem;
-        transition: transform 0.3s;
-    }
-
-    .has-dropdown.active > a::after {
-        transform: rotate(180deg);
-    }
-}
-
-/* ===================================
-   LINK CURSOR STYLES
-   =================================== */
-
-a {
-    cursor: pointer;
-}
-
-a:hover {
-    cursor: pointer;
-}
-
-/* Ensure all clickable elements have pointer cursor */
-nav a,
-.breadcrumbs-list a,
-.cta-button,
-.btn-primary,
-.btn-secondary,
-.primary-btn,
-.service-link,
-button,
-.mobile-menu-toggle,
-.submit-btn,
-.booking-incentive-btn,
-.floating-btn,
-.lang-btn {
-    cursor: pointer;
-}
-
-/* ===================================
-   BREADCRUMBS STYLING
-   =================================== */
-
-.breadcrumbs {
-    background: #f0f0f0;
-    padding: 1rem 0;
-}
-
-.breadcrumbs-list {
-    display: flex;
-    list-style: none !important;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.breadcrumbs-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    list-style-type: none !important;
-}
-
-.breadcrumbs-list li::before {
-    content: none !important;
-}
-
-.breadcrumbs-list li::after {
-    content: '›';
-    color: #999;
-}
-
-.breadcrumbs-list li:last-child::after {
-    display: none;
-}
-
-.breadcrumbs-list a {
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.breadcrumbs-list a:hover {
-    color: #7ad16c;
-    text-decoration: underline;
-}
-
-.breadcrumbs-list .current {
-    color: #333;
-    font-weight: 500;
-}
-
-/* Mobile Breadcrumbs */
-@media (max-width: 768px) {
-    .breadcrumbs {
-        padding: 0.8rem 0;
-    }
-    
-    .breadcrumbs-list {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .breadcrumbs-list {
-        font-size: 0.85rem;
-    }
-}
-
-/* ===================================
-   CONTENT LINK COLORS
-   =================================== */
-
-/* Service card links */
-.service-link {
-    color: #7ad16c;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-.service-link:hover {
-    color: #5ab04a;
-    text-decoration: underline;
-}
-
-/* Condition card heading links */
-.condition-card h3 a {
-    color: #1a1a1a;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.condition-card h3 a:hover {
-    color: #7ad16c;
-}
-
-/* Content area links */
-.condition-content a,
-.video-info a,
-.review-text a,
-.section-subtitle a,
-.cta-content a {
-    color: #7ad16c;
-    text-decoration: none;
-}
-
-.condition-content a:hover,
-.video-info a:hover,
-.review-text a:hover,
-.section-subtitle a:hover,
-.cta-content a:hover {
-    text-decoration: underline;
-}
-
-/* Dropdown menu links */
-.dropdown-menu a {
-    color: #333;
-}
-
-.dropdown-menu a:hover {
-    color: #7ad16c;
-}
-
-/* Footer links maintain color */
-.footer-links a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #7ad16c;
-}
-
-.footer-bottom a {
-    color: #7ad16c;
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    text-decoration: underline;
-}
-
-.footer-section a {
-    cursor: pointer;
-}
+           GLOBAL STYLES
+           =================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===================================
+           HEADER STYLES
+           =================================== */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .header-contact-item a {
+            color: #7ad16c;
+            text-decoration: none;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn {
+            padding: 5px 12px;
+            background: transparent;
+            color: #ccc;
+            border: 1px solid #444;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: #7ad16c;
+            color: #fff;
+            border-color: #7ad16c;
+        }
+
+        .header-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header-social a {
+            color: #7ad16c;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .header-social a:hover {
+            color: #5ab04a;
+        }
+
+        .header-main {
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        .header-main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #7ad16c;
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            width: 100%;
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.2rem;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f0f0f0;
+            color: #7ad16c;
+        }
+
+        .dropdown-menu i {
+            width: 20px;
+            color: #7ad16c;
+        }
+
+        .cta-button {
+            padding: 10px 25px;
+            background: #7ad16c;
+            color: #fff !important;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #5ab04a;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* ===================================
+           HERO SECTION
+           =================================== */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(122, 209, 108, 0.05), rgba(90, 176, 74, 0.05));
+            padding: 80px 0 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #7ad16c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5ab04a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(122, 209, 108, 0.3);
+        }
+
+        .btn-secondary {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #7ad16c;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .appointment-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .appointment-form h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #7ad16c;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #7ad16c;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #5ab04a;
+            transform: translateY(-2px);
+        }
+
+        /* ===================================
+           URGENCY BANNER
+           =================================== */
+        .urgency-banner {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 600;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        /* ===================================
+           TRUST BADGES
+           =================================== */
+        .trust-badges-section {
+            padding: 40px 0;
+            background: white;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        /* ===================================
+           SECTION STYLES
+           =================================== */
+        .section-title {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .services-section,
+        .conditions-section,
+        .why-choose-section,
+        .testimonials-section,
+        .reviews-section,
+        .cta-section {
+            padding: 80px 0;
+        }
+
+        .services-section {
+            background: white;
+        }
+
+        .conditions-section {
+            background: #f9f9f9;
+        }
+
+        .why-choose-section {
+            background: white;
+        }
+
+        .testimonials-section {
+            background: #f9f9f9;
+        }
+
+        .reviews-section {
+            background: white;
+        }
+
+        /* ===================================
+           GRID LAYOUTS
+           =================================== */
+        .services-grid,
+        .conditions-grid,
+        .features-grid,
+        .video-grid,
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* ===================================
+           SERVICE CARDS
+           =================================== */
+        .service-card {
+            background: #f9f9f9;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #7ad16c;
+            box-shadow: 0 10px 30px rgba(122, 209, 108, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7ad16c, #5ab04a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: #7ad16c;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .service-link:hover {
+            color: #5ab04a;
+            text-decoration: underline;
+        }
+
+        /* ===================================
+           BOOKING INCENTIVE
+           =================================== */
+        .booking-incentive {
+            background: linear-gradient(135deg, #7ad16c, #5ab04a);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 60px 0;
+        }
+
+        .booking-incentive h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-incentive p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-incentive-btn {
+            padding: 15px 40px;
+            background: white;
+            color: #7ad16c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .booking-incentive-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* ===================================
+           CONDITION CARDS
+           =================================== */
+        .condition-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .condition-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .condition-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .condition-content {
+            padding: 1.5rem;
+        }
+
+        .condition-card h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+
+        .condition-card h3 a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .condition-card h3 a:hover {
+            color: #7ad16c;
+        }
+
+        .condition-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===================================
+           FEATURE CARDS
+           =================================== */
+        .feature-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #7ad16c, #5ab04a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===================================
+           VIDEO CARDS
+           =================================== */
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h3 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+
+        .video-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===================================
+           REVIEW CARDS
+           =================================== */
+        .review-card {
+            background: #f9f9f9;
+            padding: 2.5rem;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: #7ad16c;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .review-text {
+            margin: 2rem 0 1.5rem;
+            color: #333;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: #7ad16c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .stars {
+            color: #ffa500;
+            font-size: 1.1rem;
+        }
+
+        /* ===================================
+           CTA SECTION
+           =================================== */
+        .cta-section {
+            background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ===================================
+           MAP SECTION
+           =================================== */
+        .map-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        /* ===================================
+           FOOTER
+           =================================== */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #7ad16c;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #7ad16c;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #7ad16c;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: #7ad16c;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding: 2rem 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .footer-bottom a {
+            color: #7ad16c;
+            text-decoration: none;
+        }
+
+        /* ===================================
+           FLOATING BUTTONS
+           =================================== */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .phone-btn {
+            background: #7ad16c;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* ===================================
+           MOBILE RESPONSIVE (max-width: 768px)
+           =================================== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            /* HEADER FIXES */
+            .header-top {
+                display: none; /* Hide on mobile */
+            }
+
+            .header-main {
+                padding: 0.8rem 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                gap: 0;
+                z-index: 999;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                width: 100%;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem;
+            }
+
+            /* Dropdown menus on mobile */
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                padding-left: 20px;
+                display: none;
+                background: #f9f9f9;
+            }
+
+            .has-dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu a {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                height: 55px;
+            }
+
+            .tagline {
+                font-size: 0.75rem;
+            }
+
+            /* HERO SECTION */
+            .hero-section {
+                padding: 50px 0 40px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+                padding: 12px 30px;
+                font-size: 0.95rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            /* APPOINTMENT FORM */
+            .appointment-form {
+                padding: 2rem 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            .appointment-form h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.2rem;
+            }
+
+            .form-group input,
+            .form-group select {
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+
+            .submit-btn {
+                padding: 12px;
+                font-size: 1rem;
+            }
+
+            /* URGENCY BANNER */
+            .urgency-banner {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+                margin: 15px 0;
+            }
+
+            /* TRUST BADGES */
+            .trust-badges-section {
+                padding: 30px 0;
+            }
+
+            .trust-badge i {
+                font-size: 1.5rem !important;
+            }
+
+            .trust-badge p {
+                font-size: 0.85rem;
+            }
+
+            /* SECTION TITLES */
+            .section-title {
+                font-size: 1.8rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            /* SECTIONS */
+            .services-section,
+            .conditions-section,
+            .why-choose-section,
+            .testimonials-section,
+            .reviews-section,
+            .cta-section {
+                padding: 50px 0;
+            }
+
+            /* GRIDS */
+            .services-grid,
+            .conditions-grid,
+            .features-grid,
+            .video-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card,
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-icon,
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .service-card h3,
+            .feature-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .service-card p,
+            .feature-card p {
+                font-size: 0.95rem;
+                margin-bottom: 1.2rem;
+            }
+
+            /* BOOKING INCENTIVE */
+            .booking-incentive {
+                padding: 35px 20px;
+                margin: 40px 0;
+            }
+
+            .booking-incentive h3 {
+                font-size: 1.5rem !important;
+            }
+
+            .booking-incentive p {
+                font-size: 1rem !important;
+            }
+
+            .booking-incentive-btn {
+                padding: 14px 30px;
+                font-size: 0.95rem;
+            }
+
+            /* CONDITION CARDS */
+            .condition-image {
+                height: 180px;
+            }
+
+            .condition-content {
+                padding: 1.2rem;
+            }
+
+            .condition-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .condition-card p {
+                font-size: 0.9rem;
+            }
+
+            /* VIDEO TESTIMONIALS */
+            .video-card iframe {
+                height: 200px;
+            }
+
+            .video-info {
+                padding: 1.2rem;
+            }
+
+            .video-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .video-info p {
+                font-size: 0.9rem;
+            }
+
+            /* REVIEWS */
+            .review-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .quote-icon {
+                font-size: 2.5rem;
+            }
+
+            .review-text {
+                font-size: 0.95rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .author-avatar {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            /* CTA SECTION */
+            .cta-content h2 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .cta-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            /* MAP SECTION */
+            .map-section {
+                padding: 50px 0 !important;
+            }
+
+            .map-section iframe {
+                height: 300px !important;
+            }
+
+            /* FOOTER */
+            footer {
+                padding: 40px 0 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-section p {
+                font-size: 0.9rem;
+            }
+
+            .footer-links {
+                text-align: left;
+            }
+
+            .footer-links li {
+                margin-bottom: 0.6rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                padding: 1.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            /* FLOATING BUTTONS */
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+                gap: 10px;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+        }
+
+        /* ===================================
+           SMALL MOBILE (max-width: 480px)
+           =================================== */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .logo {
+                height: 50px;
+            }
+
+            .tagline {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            .appointment-form {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .appointment-form h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .service-card,
+            .feature-card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .service-icon,
+            .feature-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+
+            .service-card h3,
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .service-card p,
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+
+            .booking-incentive h3 {
+                font-size: 1.3rem !important;
+            }
+
+            .booking-incentive p {
+                font-size: 0.95rem !important;
+            }
+
+            .booking-incentive-btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+
+            .condition-content {
+                padding: 1rem;
+            }
+
+            .condition-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .review-card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .quote-icon {
+                font-size: 2rem;
+            }
+
+            .review-text {
+                font-size: 0.9rem;
+            }
+
+            .author-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-content p {
+                font-size: 0.95rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 11px 25px;
+                font-size: 0.9rem;
+            }
+
+            .floating-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===================================
+           TABLET (min-width: 769px)
+           =================================== */
+        @media (min-width: 769px) {
+            .services-grid,
+            .conditions-grid,
+            .features-grid,
+            .video-grid,
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ===================================
+           DESKTOP (min-width: 1024px)
+           =================================== */
+        @media (min-width: 1024px) {
+            .services-grid,
+            .conditions-grid,
+            .features-grid,
+            .video-grid,
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ===================================
+           MOBILE MENU DROPDOWN TOGGLE
+           =================================== */
+        @media (max-width: 768px) {
+            .has-dropdown > a::after {
+                content: '\f107';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                margin-left: 5px;
+                font-size: 0.8rem;
+                transition: transform 0.3s;
+            }
+
+            .has-dropdown.active > a::after {
+                transform: rotate(180deg);
+            }
+        }
+
+        /* ===================================
+           CURSOR STYLES
+           =================================== */
+        a,
+        button,
+        .mobile-menu-toggle,
+        .lang-btn {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -1153,7 +1667,7 @@ button,
         <div class="header-top">
             <div class="container">
                 <div class="header-top-content">
-                    <!-- <div class="header-contact">
+                    <div class="header-contact">
                         <div class="header-contact-item">
                             📞 <a href="tel:+919417791833">+91 94177 91833</a>
                         </div>
@@ -1163,7 +1677,7 @@ button,
                         <div class="header-contact-item">
                             🕒 Mon-Sat: 9AM-7PM | Sun: 10AM-2PM
                         </div>
-                    </div> -->
+                    </div>
                     <div style="display: flex; align-items: center; gap: 1.5rem;">
                         <div class="language-switcher">
                             <span>🌐</span>
@@ -1171,13 +1685,13 @@ button,
                             <a href="/hi/" class="lang-btn">हिंदी</a>
                             <a href="/pa/" class="lang-btn">ਪੰਜਾਬੀ</a>
                         </div>
-                    <div class="header-social">
-                        <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/physionutra" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                        <div class="header-social">
+                            <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/physionutra" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1294,14 +1808,14 @@ button,
         </div>
     </section>
 
-<!-- ADD THIS: Urgency Banner (After Hero) -->
+    <!-- Urgency Banner -->
     <div class="urgency-banner">
         <p>
             🎯 <strong>Limited Slots Available!</strong> Book your free consultation today - Only 3 slots left this week!
         </p>
     </div>
 
-    <!-- ADD THIS: Trust Badges Section -->
+    <!-- Trust Badges Section -->
     <section class="trust-badges-section">
         <div class="container">
             <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center;">
@@ -1391,8 +1905,8 @@ button,
 
     <section class="booking-incentive">
         <div class="container">
-            <h3 style="font-size: 2rem; margin-bottom: 1rem;">🎁 Special Offer for First-Time Patients</h3>
-            <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Get your first consultation FREE + 10% off on your treatment package!</p>
+            <h3>🎁 Special Offer for First-Time Patients</h3>
+            <p>Get your first consultation FREE + 10% off on your treatment package!</p>
             <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1.5rem;">Valid for bookings made this month only</p>
             <a href="tel:+919417791833" class="booking-incentive-btn">
                 Claim Your Free Consultation Now
@@ -1692,11 +2206,6 @@ button,
                         <li><a href="/physiotherapy/panchkula/">Panchkula</a></li>
                         <li><a href="/physiotherapy/baltana/">Baltana</a></li>
                         <li><a href="/physiotherapy/dera-bassi/">Dera Bassi</a></li>
-                        <li><a href="/physiotherapy/peer-muchalla/">Peer Muchalla</a></li>
-                        <li><a href="/physiotherapy/dhakoli/">Dhakoli</a></li>
-                        <li><a href="/physiotherapy/kharar/">Kharar</a></li>
-                        <li><a href="/physiotherapy/pinjore/">Pinjore</a></li>
-                        <li><a href="/physiotherapy/home-physiotherapy-sessions/">Home Physiotherapy Services</a></li>
                     </ul>
                 </div>
             </div>
@@ -1708,41 +2217,6 @@ button,
         </div>
     </footer>
 
-    <!-- <div class="sticky-cta-bar">
-        <button class="sticky-cta-close" onclick="this.parentElement.style.display='none'">×</button>
-        <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
-            <span style="color: white; font-weight: 600;">Get Expert Care Today!</span>
-            <a href="tel:+919417791833" style="background: white; color: #7ad16c; padding: 10px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">
-                📞 Call: +91 9417791833
-            </a>
-            <a href="https://wa.me/919417791833" style="background: #25D366; color: white; padding: 10px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">
-                💬 WhatsApp
-            </a>
-        </div>
-    </div> -->
-
-    <!-- <!-- Floating Buttons -->
-    <!-- <div class="whatsapp-float">
-        <div class="whatsapp-message-preview" id="whatsappPreview">
-            <p style="margin: 0; font-size: 0.9rem; color: #333;">
-                👋 Hi! Need help with your pain?<br>
-                <strong style="color: #25D366; display: block; margin-top: 5px;">Chat with us on WhatsApp!</strong>
-            </p>
-        </div>
-        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20help%20with%20physiotherapy" 
-           class="floating-btn whatsapp-btn" 
-           aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="notification-badge">1</span>
-        </a>
-    </div> -->
-
-    <!-- Phone Button (Existing) -->
-    <!-- <a href="tel:+919417791833" class="floating-btn phone-btn" 
-       style="position: fixed; bottom: 30px; right: 30px; z-index: 999;"
-       aria-label="Call">
-        <i class="fas fa-phone"></i>
-    </a> --> -->
     <div class="floating-buttons">
         <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20PhysioNutra%20Clinic." class="floating-btn whatsapp-btn" aria-label="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
@@ -1758,22 +2232,35 @@ button,
         const mainMenu = document.getElementById('mainMenu');
         
         if (menuToggle && mainMenu) {
-            menuToggle.addEventListener('click', function() {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
                 mainMenu.classList.toggle('active');
+                this.setAttribute('aria-expanded', mainMenu.classList.contains('active'));
             });
 
             // Close menu when clicking outside
             document.addEventListener('click', function(e) {
                 if (!mainMenu.contains(e.target) && !menuToggle.contains(e.target)) {
                     mainMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
                 }
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('#mainMenu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        mainMenu.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
             });
         }
 
         // Mobile dropdown toggle
         document.querySelectorAll('.has-dropdown > a').forEach(link => {
             link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 1024) {
+                if (window.innerWidth <= 768) {
                     e.preventDefault();
                     this.parentElement.classList.toggle('active');
                 }
@@ -1876,15 +2363,6 @@ button,
             }
         });
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.has-dropdown')) {
-                document.querySelectorAll('.has-dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                });
-            }
-        });
-
         // Lazy load images
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -1902,76 +2380,6 @@ button,
                 imageObserver.observe(img);
             });
         }
-
-        // Add structured data for services dynamically
-        const services = [
-            { name: 'Sports Physiotherapy', url: '/blogs/sports-physiotherapy/' },
-            { name: 'Pain Management', url: '/blogs/pain-management-physiotherapy/' },
-            { name: 'Sciatica Treatment', url: '/blogs/sciatica-pain-relief/' },
-            { name: 'Frozen Shoulder Treatment', url: '/blogs/frozen-shoulder-treatment-chandigarh/' }
-        ];
-
-        // Performance monitoring
-        if ('performance' in window) {
-            window.addEventListener('load', function() {
-                setTimeout(function() {
-                    const perfData = window.performance.timing;
-                    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-                    
-                    if (typeof gtag !== 'undefined' && pageLoadTime > 0) {
-                        gtag('event', 'timing_complete', {
-                            'name': 'load',
-                            'value': pageLoadTime,
-                            'event_category': 'Page Performance'
-                        });
-                    }
-                }, 0);
-            });
-        }
-
-        // Show sticky CTA bar after scrolling
-        window.addEventListener('scroll', function() {
-            const stickyCTA = document.querySelector('.sticky-cta-bar');
-            if (window.scrollY > 500 && stickyCTA) {
-                stickyCTA.style.display = 'block';
-            }
-        });
-
-        // WhatsApp message preview
-        setTimeout(function() {
-            const preview = document.getElementById('whatsappPreview');
-            if (preview) {
-                preview.style.display = 'block';
-                setTimeout(function() {
-                    preview.style.display = 'none';
-                }, 10000); // Hide after 10 seconds
-            }
-        }, 5000); // Show after 5 seconds
-
-        // // Exit intent (simple version)
-        // let exitIntentShown = false;
-        // document.addEventListener('mouseleave', function(e) {
-        //     if (e.clientY < 0 && !exitIntentShown && window.scrollY > 300) {
-        //         exitIntentShown = true;
-        //         if (confirm('Wait! Before you go...\n\n🎁 Get a FREE consultation worth ₹500!\n\nClick OK to call us now.')) {
-        //             window.location.href = 'tel:+919417791833';
-        //         }
-        //     }
-        // });
-
-        // Track conversions
-        document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me"]').forEach(link => {
-            link.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    const type = this.href.includes('wa.me') ? 'whatsapp' : 'phone';
-                    gtag('event', 'conversion', {
-                        'event_category': type,
-                        'event_label': 'Contact Click',
-                        'value': 1
-                    });
-                }
-            });
-        });
     </script>
 </body>
 </html>
