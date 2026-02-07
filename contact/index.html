@@ -209,6 +209,9 @@
     </script>
 
     <style>
+        /* ===================================
+           GLOBAL STYLES
+           =================================== */
         * {
             margin: 0;
             padding: 0;
@@ -220,6 +223,12 @@
             line-height: 1.6;
             color: #333;
             background: #f9f9f9;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         .skip-link {
@@ -243,6 +252,9 @@
             padding: 0 20px;
         }
 
+        /* ===================================
+           HEADER STYLES
+           =================================== */
         header {
             background: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -302,6 +314,7 @@
 
         .header-main {
             padding: 1rem 0;
+            position: relative;
         }
 
         .header-main-content {
@@ -317,7 +330,7 @@
         }
 
         .logo {
-            height: 55px;
+            height: 60px;
             width: auto;
         }
 
@@ -345,6 +358,7 @@
             padding: 10px 20px;
             display: block;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         nav > ul > li > a:hover,
@@ -377,6 +391,7 @@
             transform: translateY(10px);
             transition: all 0.3s;
             padding: 10px 0;
+            z-index: 1000;
         }
 
         .has-dropdown:hover .dropdown-menu {
@@ -433,8 +448,12 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: #333;
         }
 
+        /* ===================================
+           BREADCRUMBS
+           =================================== */
         .breadcrumbs {
             background: #f0f0f0;
             padding: 1rem 0;
@@ -471,6 +490,9 @@
             color: #7ad16c;
         }
 
+        /* ===================================
+           PAGE HEADER
+           =================================== */
         .page-header {
             background: linear-gradient(135deg, rgba(122, 209, 108, 0.95) 0%, rgba(90, 176, 74, 0.95) 100%);
             color: white;
@@ -491,6 +513,9 @@
             margin: 0 auto;
         }
 
+        /* ===================================
+           MAIN CONTENT
+           =================================== */
         .main-content {
             padding: 80px 0;
         }
@@ -620,6 +645,9 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
+        /* ===================================
+           FORM STYLES
+           =================================== */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -674,6 +702,9 @@
             box-shadow: 0 5px 15px rgba(122, 209, 108, 0.3);
         }
 
+        /* ===================================
+           MAP SECTION
+           =================================== */
         .map-section {
             margin-bottom: 80px;
         }
@@ -706,6 +737,9 @@
             border: 0;
         }
 
+        /* ===================================
+           SERVICE AREAS
+           =================================== */
         .service-areas {
             background: white;
             padding: 60px;
@@ -755,6 +789,9 @@
             display: block;
         }
 
+        /* ===================================
+           POPULAR SERVICES
+           =================================== */
         .popular-services {
             background: #f9f9f9;
             padding: 60px;
@@ -772,7 +809,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
@@ -821,6 +858,9 @@
             gap: 10px;
         }
 
+        /* ===================================
+           FAQ SECTION
+           =================================== */
         .faq-section {
             background: white;
             padding: 60px;
@@ -875,6 +915,9 @@
             text-decoration: underline;
         }
 
+        /* ===================================
+           CTA SECTION
+           =================================== */
         .cta-section-contact {
             background: linear-gradient(135deg, #7ad16c 0%, #5ab04a 100%);
             padding: 80px 0;
@@ -934,6 +977,9 @@
             transform: translateY(-2px);
         }
 
+        /* ===================================
+           FLOATING BUTTONS
+           =================================== */
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -970,6 +1016,9 @@
             transform: scale(1.1);
         }
 
+        /* ===================================
+           FOOTER
+           =================================== */
         footer {
             background: #1a1a1a;
             color: #fff;
@@ -978,7 +1027,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 3rem;
             margin-bottom: 3rem;
         }
@@ -1074,17 +1123,45 @@
             text-decoration: none;
         }
 
+        /* ===================================
+           RESPONSIVE (TABLET)
+           =================================== */
         @media (max-width: 992px) {
             .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .areas-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
+        /* ===================================
+           RESPONSIVE (MOBILE - max-width: 768px)
+           =================================== */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            /* HIDE HEADER TOP ON MOBILE */
+            .header-top {
+                display: none;
+            }
+
+            .header-main {
+                padding: 0.8rem 0;
+            }
+
             .mobile-menu-toggle {
                 display: block;
             }
@@ -1099,10 +1176,26 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                gap: 0;
+                z-index: 999;
             }
 
             nav ul.active {
                 display: flex;
+            }
+
+            nav li {
+                width: 100%;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem;
             }
 
             .dropdown-menu {
@@ -1112,35 +1205,315 @@
                 transform: none;
                 box-shadow: none;
                 padding-left: 20px;
+                display: none;
+                background: #f9f9f9;
+            }
+
+            .has-dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu a {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                height: 55px;
+            }
+
+            .tagline {
+                font-size: 0.75rem;
+            }
+
+            .page-header {
+                padding: 60px 0 40px;
             }
 
             .page-header h1 {
                 font-size: 2rem;
+                line-height: 1.2;
             }
 
-            .header-top-content {
-                flex-direction: column;
-                text-align: center;
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                padding: 50px 0;
+            }
+
+            .contact-grid {
+                gap: 2rem;
+                margin-bottom: 50px;
             }
 
             .contact-info-card,
             .contact-form-card {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-info-card h2,
+            .contact-form-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-detail-item {
+                gap: 1rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .contact-detail-item i {
+                font-size: 1.5rem;
+            }
+
+            .contact-detail-item strong {
+                font-size: 1.1rem;
+            }
+
+            .contact-detail-item p,
+            .contact-detail-item a {
+                font-size: 1rem;
+            }
+
+            .hours-list li {
+                font-size: 1rem;
+            }
+
+            .map-section {
+                margin-bottom: 50px;
+            }
+
+            .map-section h2,
+            .service-areas h2,
+            .popular-services h2,
+            .faq-section h2 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+
+            .map-subtitle,
+            .service-areas p {
+                font-size: 1rem;
+            }
+
+            .map-container {
+                height: 300px;
             }
 
             .service-areas,
-            .faq-section,
-            .popular-services {
+            .popular-services,
+            .faq-section {
                 padding: 40px 20px;
+                margin-bottom: 50px;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .service-card i {
+                font-size: 2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .service-card p {
+                font-size: 0.95rem;
+            }
+
+            .faq-item {
+                padding: 1.5rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
+
+            .faq-answer {
+                font-size: 0.95rem;
+            }
+
+            .cta-section-contact {
+                padding: 50px 0;
+            }
+
+            .cta-section-contact h2 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+
+            .cta-section-contact p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-links {
+                text-align: left;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                padding: 1.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+                gap: 10px;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .breadcrumbs-list {
+                font-size: 0.9rem;
             }
         }
 
-        html {
-            scroll-behavior: smooth;
+        /* ===================================
+           RESPONSIVE (SMALL MOBILE - max-width: 480px)
+           =================================== */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .logo {
+                height: 50px;
+            }
+
+            .tagline {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .page-header p {
+                font-size: 0.95rem;
+            }
+
+            .contact-info-card,
+            .contact-form-card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .contact-info-card h2,
+            .contact-form-card h2 {
+                font-size: 1.3rem;
+            }
+
+            .map-section h2,
+            .service-areas h2,
+            .popular-services h2,
+            .faq-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .map-subtitle,
+            .service-areas p {
+                font-size: 0.95rem;
+            }
+
+            .service-card {
+                padding: 1.2rem;
+            }
+
+            .service-card i {
+                font-size: 1.8rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .faq-item {
+                padding: 1.2rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+            }
+
+            .faq-answer {
+                font-size: 0.9rem;
+            }
+
+            .cta-section-contact h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-section-contact p {
+                font-size: 0.95rem;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                padding: 11px 25px;
+                font-size: 0.95rem;
+            }
+
+            .floating-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===================================
+           MOBILE MENU DROPDOWN TOGGLE
+           =================================== */
+        @media (max-width: 768px) {
+            .has-dropdown > a::after {
+                content: '\f107';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                margin-left: 5px;
+                font-size: 0.8rem;
+                transition: transform 0.3s;
+            }
+
+            .has-dropdown.active > a::after {
+                transform: rotate(180deg);
+            }
         }
     </style>
 </head>
@@ -1582,22 +1955,38 @@
 
             // Mobile menu toggle
             if (toggleButton && navMenu) {
-                toggleButton.addEventListener('click', function() {
+                toggleButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     navMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', navMenu.classList.contains('active'));
                 });
 
                 document.addEventListener('click', function(e) {
                     if (!toggleButton.contains(e.target) && !navMenu.contains(e.target)) {
                         navMenu.classList.remove('active');
+                        toggleButton.setAttribute('aria-expanded', 'false');
                     }
                 });
 
                 navMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
-                        navMenu.classList.remove('active');
+                        if (window.innerWidth <= 768) {
+                            navMenu.classList.remove('active');
+                            toggleButton.setAttribute('aria-expanded', 'false');
+                        }
                     });
                 });
             }
+
+            // Mobile dropdown toggle
+            document.querySelectorAll('.has-dropdown > a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
 
             // Form validation and submission
             if (contactForm) {
@@ -1694,193 +2083,7 @@
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
-
-            // Handle dropdown menu for mobile
-            const hasDropdown = document.querySelectorAll('.has-dropdown');
-            hasDropdown.forEach(item => {
-                const link = item.querySelector('a');
-                const dropdown = item.querySelector('.dropdown-menu');
-                
-                if (window.innerWidth <= 768 && link && dropdown) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                    });
-                }
-            });
-
-            // Lazy load iframe
-            const iframe = document.querySelector('.map-container iframe');
-            if (iframe && 'IntersectionObserver' in window) {
-                const iframeObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const src = iframe.getAttribute('src');
-                            if (src) {
-                                iframe.setAttribute('src', src);
-                                iframeObserver.unobserve(iframe);
-                            }
-                        }
-                    });
-                });
-                iframeObserver.observe(iframe);
-            }
-
-            // Form field focus effects
-            const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
-            formInputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    this.parentElement.style.transform = 'translateX(5px)';
-                    this.parentElement.style.transition = 'transform 0.3s ease';
-                });
-                
-                input.addEventListener('blur', function() {
-                    this.parentElement.style.transform = 'translateX(0)';
-                });
-            });
-
-            // Add active state to floating buttons
-            const floatingBtns = document.querySelectorAll('.floating-btn');
-            floatingBtns.forEach(btn => {
-                btn.addEventListener('mousedown', function() {
-                    this.style.transform = 'scale(0.95)';
-                });
-                
-                btn.addEventListener('mouseup', function() {
-                    this.style.transform = 'scale(1.1)';
-                });
-            });
-
-            // Track scroll depth
-            let scrollTracked = {
-                '25': false,
-                '50': false,
-                '75': false,
-                '100': false
-            };
-
-            window.addEventListener('scroll', function() {
-                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                
-                Object.keys(scrollTracked).forEach(key => {
-                    if (scrollPercent >= parseInt(key) && !scrollTracked[key]) {
-                        scrollTracked[key] = true;
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'scroll_depth', {
-                                'event_category': 'Engagement',
-                                'event_label': key + '%'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // Handle window resize for mobile menu
-            let resizeTimer;
-            window.addEventListener('resize', function() {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(function() {
-                    if (window.innerWidth > 768 && navMenu) {
-                        navMenu.classList.remove('active');
-                        navMenu.style.display = '';
-                    }
-                }, 250);
-            });
-
-            // Preload critical images
-            const criticalImages = ['/images/logo.png'];
-            criticalImages.forEach(src => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'image';
-                link.href = src;
-                document.head.appendChild(link);
-            });
-
-            // Console log for debugging
-            console.log('PhysioNutra Contact Page Loaded Successfully');
-            console.log('Google Analytics:', typeof gtag !== 'undefined' ? 'Active' : 'Not Found');
-            console.log('Mobile Device:', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
         });
-    </script>
-
-    <!-- Additional Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Contact PhysioNutra Clinic Zirakpur",
-      "description": "Contact information and appointment booking for PhysioNutra Clinic in Zirakpur. Expert physiotherapy services serving Chandigarh Tricity.",
-      "url": "https://physionutraclinic.com/contact/",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://physionutraclinic.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Contact",
-            "item": "https://physionutraclinic.com/contact/"
-          }
-        ]
-      },
-      "mainEntity": {
-        "@type": "MedicalBusiness",
-        "name": "PhysioNutra Clinic"
-      }
-    }
-    </script>
-
-    <!-- Services List Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "PhysioNutra Services",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Sports Physiotherapy",
-          "url": "https://physionutraclinic.com/blogs/sports-physiotherapy/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Post-Surgical Rehabilitation",
-          "url": "https://physionutraclinic.com/blogs/post-surgical-physiotherapy/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Pain Management",
-          "url": "https://physionutraclinic.com/blogs/pain-management-physiotherapy/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Home Physiotherapy",
-          "url": "https://physionutraclinic.com/services/home-physiotherapy-zirakpur/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "Neurological Rehabilitation",
-          "url": "https://physionutraclinic.com/services/neurological-rehabilitation/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Orthopedic Rehabilitation",
-          "url": "https://physionutraclinic.com/services/orthopedic-rehabilitation/"
-        }
-      ]
-    }
     </script>
 </body>
 </html>
