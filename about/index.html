@@ -166,7 +166,7 @@
     </script>
 
     <style>
-        /* ===================================
+       /* ===================================
    IMPROVED CSS FOR ABOUT PAGE
    Matching Careers Page Layout
    =================================== */
@@ -325,6 +325,52 @@ nav a.active {
 }
 
 /* ===================================
+   BREADCRUMBS
+   =================================== */
+
+.breadcrumbs {
+    background: #f0f0f0;
+    padding: 1rem 0;
+}
+
+.breadcrumbs-list {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.breadcrumbs-list li::after {
+    content: '›';
+    color: #999;
+}
+
+.breadcrumbs-list li:last-child::after {
+    display: none;
+}
+
+.breadcrumbs-list a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumbs-list a:hover {
+    color: #7ad16c;
+}
+
+.breadcrumbs-list .current {
+    color: #333;
+    font-weight: 500;
+}
+
+/* ===================================
    PAGE HEADER
    =================================== */
 
@@ -393,6 +439,17 @@ nav a.active {
     color: #555;
     margin-bottom: 1.5rem;
     line-height: 1.8;
+}
+
+.story-content a {
+    color: #7ad16c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.story-content a:hover {
+    color: #5ab04a;
+    text-decoration: underline;
 }
 
 /* ===================================
@@ -655,6 +712,19 @@ nav a.active {
     line-height: 1.7;
     margin-bottom: 1rem;
     font-size: 0.95rem;
+}
+
+.service-highlight-card a,
+.why-item a {
+    color: #7ad16c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.service-highlight-card a:hover,
+.why-item a:hover {
+    color: #5ab04a;
+    text-decoration: underline;
 }
 
 .location-icon {
@@ -1362,13 +1432,31 @@ html {
    LINK STYLES
    =================================== */
 
+/* General link defaults - only for elements without specific styling */
 a {
     cursor: pointer;
-    text-decoration: none;
 }
 
 a:hover {
     cursor: pointer;
+}
+
+/* Content area links (in paragraphs, service cards, etc.) */
+.story-content a,
+.service-highlight-card a,
+.why-item a,
+.team-info a,
+.cta-content a {
+    color: #7ad16c;
+    text-decoration: none;
+}
+
+.story-content a:hover,
+.service-highlight-card a:hover,
+.why-item a:hover,
+.team-info a:hover,
+.cta-content a:hover {
+    text-decoration: underline;
 }
 
 /* Ensure all clickable navigation items have pointer cursor */
@@ -1379,8 +1467,6 @@ nav a,
 .btn-secondary,
 .primary-btn,
 .secondary-btn,
-.apply-btn,
-.service-link,
 .location-card a,
 button,
 .mobile-menu-toggle {
