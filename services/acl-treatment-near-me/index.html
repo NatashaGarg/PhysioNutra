@@ -212,9 +212,7 @@ header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:fixed;top:0
 .header-contact-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem}
 .header-contact-item a{color:var(--green);text-decoration:none}
 .header-contact-item a:hover{text-decoration:underline}
-.language-switcher{display:flex;align-items:center;gap:.5rem;font-size:.85rem}
-.lang-btn{padding:3px 10px;background:transparent;color:#ccc;border:1px solid #444;border-radius:4px;text-decoration:none;font-size:.8rem;transition:all .3s;cursor:pointer}
-.lang-btn:hover,.lang-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+
 .header-social{display:flex;gap:.8rem}
 .header-social a{color:var(--green);font-size:1rem;text-decoration:none;transition:color .3s}
 .header-social a:hover{color:var(--green-dark)}
@@ -462,8 +460,7 @@ noscript .reveal,.reveal.noscript-visible{opacity:1!important;transform:none!imp
 @media(max-width:768px){
   :root{--header-h:105px}
   .header-contact .header-contact-item:nth-child(2),.header-contact .header-contact-item:nth-child(3){display:none}
-  .language-switcher{display:none}
-  .header-social{gap:.5rem}
+.header-social{gap:.5rem}
   .mobile-menu-toggle{display:block}
   nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}
   nav ul.active{display:flex}
@@ -516,13 +513,7 @@ noscript .reveal,.reveal.noscript-visible{opacity:1!important;transform:none!imp
           <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a></div>
           <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
         </div>
-        <!-- Right: language switcher + social (matches homepage) -->
         <div style="display:flex;align-items:center;gap:1.1rem">
-          <div class="language-switcher" aria-label="Language selector">
-            <a href="/services/acl-treatment-near-me/" class="lang-btn active" hreflang="en">EN</a>
-            <a href="/hi/services/acl-treatment-near-me/" class="lang-btn" hreflang="hi">HI</a>
-            <a href="/pa/services/acl-treatment-near-me/" class="lang-btn" hreflang="pa">PA</a>
-          </div>
           <div class="header-social" aria-label="Social media links">
             <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
