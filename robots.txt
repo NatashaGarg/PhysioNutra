@@ -1,4 +1,24 @@
 User-agent: *
 Disallow:
 
+# Allow all major crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://physionutraclinic.com/sitemap.xml
+Sitemap: https://physionutraclinic.com/video-sitemap.xml
