@@ -169,4 +169,4 @@ This clinic specializes in services commonly searched by Tricity residents:
 
 ---
 
-© 2025 PhysioNutra Clinic. All Rights Reserved. | Designed with ❤️ for Better Health in Zirakpur, Chandigarh, Mohali, Panchkula & Kharar
+© 2026 PhysioNutra Clinic. All Rights Reserved. | Designed with ❤️ for Better Health in Zirakpur, Chandigarh, Mohali, Panchkula & Kharar
