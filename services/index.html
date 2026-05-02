@@ -572,11 +572,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
 <div class="tabs-bar" role="navigation" aria-label="Service categories">
   <div class="container">
     <div class="tabs-inner">
-      <button class="tab-btn active" onclick="scrollTo('primary')" aria-label="Jump to Primary Care"><i class="fas fa-stethoscope"></i> Primary Care</button>
-      <button class="tab-btn" onclick="scrollTo('specialized')" aria-label="Jump to Specialized Techniques"><i class="fas fa-syringe"></i> Specialized Techniques</button>
-      <button class="tab-btn" onclick="scrollTo('home')" aria-label="Jump to Home Physiotherapy"><i class="fas fa-home"></i> Home Physio</button>
-      <button class="tab-btn" onclick="scrollTo('why')" aria-label="Jump to Why Choose Us"><i class="fas fa-award"></i> Why Us</button>
-      <button class="tab-btn" onclick="scrollTo('faq')" aria-label="Jump to FAQ"><i class="fas fa-question-circle"></i> FAQs</button>
+      <button class="tab-btn active" onclick="scrollToSection('primary')" aria-label="Jump to Primary Care"><i class="fas fa-stethoscope"></i> Primary Care</button>
+      <button class="tab-btn" onclick="scrollToSection('specialized')" aria-label="Jump to Specialized Techniques"><i class="fas fa-syringe"></i> Specialized Techniques</button>
+      <button class="tab-btn" onclick="scrollToSection('home')" aria-label="Jump to Home Physiotherapy"><i class="fas fa-home"></i> Home Physio</button>
+      <button class="tab-btn" onclick="scrollToSection('why')" aria-label="Jump to Why Choose Us"><i class="fas fa-award"></i> Why Us</button>
+      <button class="tab-btn" onclick="scrollToSection('faq')" aria-label="Jump to FAQ"><i class="fas fa-question-circle"></i> FAQs</button>
     </div>
   </div>
 </div>
@@ -1364,7 +1364,7 @@ if(tog&&menu){
 document.querySelectorAll('.has-dropdown>a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('active')}})});
 
 /* ── Tab scroll ── */
-function scrollTo(id){var el=document.getElementById(id);if(el){var offset=document.querySelector('.tabs-bar').offsetHeight+document.querySelector('header').offsetHeight;var top=el.getBoundingClientRect().top+window.scrollY-offset-10;window.scrollTo({top:top,behavior:'smooth'})}}
+function scrollToSection(id){var el=document.getElementById(id);if(el){var headerH=document.querySelector('header').offsetHeight;var tabsH=document.querySelector('.tabs-bar').offsetHeight;var top=el.getBoundingClientRect().top+window.pageYOffset-headerH-tabsH-10;window.scrollTo({top:top,behavior:'smooth'})}}
 document.querySelectorAll('.tab-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tab-btn').forEach(function(x){x.classList.remove('active')});this.classList.add('active')})});
 
 /* ── FAQ accordion ── */
@@ -1391,7 +1391,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 
 /* ── Active tab on scroll ── */
 var sections=['primary','specialized','home','why','faq'];
-window.addEventListener('scroll',function(){var scrollY=window.scrollY+200;sections.forEach(function(id,i){var el=document.getElementById(id);if(el&&scrollY>=el.offsetTop){document.querySelectorAll('.tab-btn').forEach(function(b,j){b.classList.toggle('active',j===i)})}})});
+window.addEventListener('scroll',function(){var scrollY=window.pageYOffset+200;sections.forEach(function(id,i){var el=document.getElementById(id);if(el&&scrollY>=el.offsetTop){document.querySelectorAll('.tab-btn').forEach(function(b,j){b.classList.toggle('active',j===i)})}})});
 </script>
 </body>
 </html>
