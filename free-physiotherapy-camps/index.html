@@ -1,362 +1,1060 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45SFLN5B7J"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-45SFLN5B7J');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <meta name="description" content="Join PhysioNutra Clinic's FREE Physiotherapy Health Camps in Zirakpur, Chandigarh & Panchkula. Free health assessments, posture analysis & expert consultation.">
-    <title>Free Physiotherapy Near Me | PhysioNutra Clinic Zirakpur</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="canonical" href="https://physionutraclinic.com/free-physiotherapy-camps/">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Free Physiotherapy Health Camp",
-      "startDate": "2026-02-15T10:00:00+05:30",
-      "location": {
-        "@type": "Place",
-        "name": "PhysioNutra Clinic",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Zirakpur",
-          "addressCountry": "IN"
-        }
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR"
-      }
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,shrink-to-fit=no">
+<meta name="theme-color" content="#7ad16c">
+<link rel="icon" href="/favicon.png" type="image/png">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .header-top { background: #1a1a1a; color: #fff; padding: 10px 0; }
-        .header-top-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-        .header-contact { display: flex; gap: 2rem; flex-wrap: wrap; }
-        .header-contact-item { display: flex; gap: 0.5rem; font-size: 0.9rem; }
-        .header-contact-item a { color: #7ad16c; text-decoration: none; }
-        .header-social { display: flex; gap: 1rem; }
-        .header-social a { color: #7ad16c; font-size: 1.2rem; }
-        .header-main { padding: 1rem 0; }
-        .header-main-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { height: 55px; }
-        nav ul { display: flex; list-style: none; gap: 2rem; }
-        nav a { text-decoration: none; color: #333; font-weight: 500; }
-        .cta-button { padding: 10px 25px; background: #7ad16c; color: #fff !important; border-radius: 25px; }
-        
-        .hero-section { background: linear-gradient(135deg, #7ad16c, #5ab04a); color: white; padding: 100px 0 60px; text-align: center; }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero-content p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
-        
-        .alert-banner { background: #fff; border: 3px solid #7ad16c; padding: 1.5rem; border-radius: 10px; text-align: center; margin: -40px auto 0; max-width: 900px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-        .alert-banner h3 { color: #7ad16c; font-size: 1.5rem; }
-        
-        .main-content { padding: 80px 0; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 1rem; }
-        .section-subtitle { text-align: center; color: #666; max-width: 700px; margin: 0 auto 3rem; }
-        
-        .camps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        .camp-card { background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border-top: 5px solid #7ad16c; transition: all 0.3s; }
-        .camp-card:hover { transform: translateY(-5px); }
-        .camp-badge { background: #ff9800; color: white; padding: 0.5rem 1rem; margin: 1rem; border-radius: 20px; display: inline-block; }
-        .camp-content { padding: 2rem; }
-        .camp-date { color: #7ad16c; font-weight: bold; margin-bottom: 1rem; }
-        .camp-title { font-size: 1.5rem; margin-bottom: 1rem; }
-        .camp-details { background: #f9f9f9; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; }
-        .camp-details ul { list-style: none; }
-        .camp-details li::before { content: '✓'; color: #7ad16c; margin-right: 0.5rem; }
-        .register-btn { display: block; width: 100%; padding: 15px; background: #7ad16c; color: white; text-align: center; border-radius: 30px; text-decoration: none; font-weight: bold; }
-        .register-btn:hover { background: #5ab04a; }
-        
-        .benefits-section { background: #f9f9f9; padding: 80px 0; }
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        .benefit-card { background: white; padding: 2rem; border-radius: 12px; text-align: center; box-shadow: 0 3px 15px rgba(0,0,0,0.1); }
-        .benefit-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #7ad16c, #5ab04a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: white; }
-        
-        .stats-section { background: white; padding: 80px 0; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #f9f9f9; border-radius: 10px; }
-        .stat-number { font-size: 3rem; color: #7ad16c; font-weight: bold; }
-        
-        .cta-section { background: linear-gradient(135deg, #7ad16c, #5ab04a); color: white; padding: 80px 0; text-align: center; }
-        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
-        .btn-primary { padding: 15px 40px; background: white; color: #7ad16c; border-radius: 50px; text-decoration: none; font-weight: bold; }
-        
-        footer { background: #1a1a1a; color: #fff; padding: 60px 0 0; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
-        .footer-section h3 { color: #7ad16c; margin-bottom: 1.5rem; }
-        .footer-links { list-style: none; }
-        .footer-links a { color: #ccc; text-decoration: none; }
-        .footer-bottom { border-top: 1px solid #333; padding: 2rem 0; text-align: center; }
-        
-        .floating-buttons { position: fixed; bottom: 30px; right: 30px; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
-        .floating-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2); text-decoration: none; }
-        .whatsapp-btn { background: #25D366; }
-        .phone-btn { background: #7ad16c; }
-        
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-            .camps-grid { grid-template-columns: 1fr; }
-            .stat-number { font-size: 2rem; }
-        }
-    </style>
+<!-- ═══ SEO: Title & Description ═══ -->
+<title>Free Physiotherapy Health Camp Chandigarh | PhysioNutra Clinic Zirakpur</title>
+<meta name="description" content="Attend PhysioNutra's FREE physiotherapy health camp in Zirakpur, Chandigarh, Mohali & Panchkula. Free health assessment, posture analysis, pain screening & expert consultation — worth ₹1,000. Limited slots. Call +91 94177 91833.">
+<meta name="keywords" content="free physiotherapy camp Chandigarh, free health camp Zirakpur, free physiotherapy near me, free posture check Mohali, free pain screening Panchkula, community health camp Tricity, PhysioNutra free camp">
+<meta name="language" content="en">
+<meta name="author" content="Dr. Tarun Aggarwal, PhysioNutra Clinic">
+
+<!-- ═══ Robots & Canonical ═══ -->
+<meta name="robots" content="index,follow,max-snippet:-1,max-video-preview:-1,max-image-preview:large">
+<link rel="canonical" href="https://physionutraclinic.com/free-physiotherapy-camps/">
+<link rel="alternate" hreflang="en" href="https://physionutraclinic.com/free-physiotherapy-camps/">
+<link rel="alternate" hreflang="x-default" href="https://physionutraclinic.com/free-physiotherapy-camps/">
+
+<!-- ═══ Open Graph ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://physionutraclinic.com/free-physiotherapy-camps/">
+<meta property="og:title" content="Free Physiotherapy Health Camp Chandigarh | PhysioNutra Clinic">
+<meta property="og:description" content="FREE health assessment, posture analysis & expert physiotherapy consultation — worth ₹1,000. Zirakpur, Chandigarh, Mohali & Panchkula. Limited slots!">
+<meta property="og:image" content="https://physionutraclinic.com/images/og-free-camp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="PhysioNutra Clinic">
+<meta property="og:locale" content="en_IN">
+
+<!-- ═══ Twitter Card ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@physionutra">
+<meta name="twitter:title" content="Free Physiotherapy Health Camp | PhysioNutra Clinic Chandigarh">
+<meta name="twitter:description" content="FREE health assessment & physiotherapy consultation — worth ₹1,000. Limited slots. Register now!">
+<meta name="twitter:image" content="https://physionutraclinic.com/images/og-free-camp.jpg">
+
+<!-- ═══ GEO Tags ═══ -->
+<meta name="geo.region" content="IN-PB">
+<meta name="geo.placename" content="Zirakpur, Punjab">
+<meta name="geo.position" content="30.638695;76.833101">
+<meta name="ICBM" content="30.638695,76.833101">
+
+<!-- ═══ GTM ═══ -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NHVSMWD6');</script>
+
+<!-- ═══ GA4 ═══ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-45SFLN5B7J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-45SFLN5B7J');</script>
+
+<!-- ═══ Schema: @graph — AEO / AIO / GEO ═══ -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {
+    "@type":"WebPage",
+    "@id":"https://physionutraclinic.com/free-physiotherapy-camps/#webpage",
+    "url":"https://physionutraclinic.com/free-physiotherapy-camps/",
+    "name":"Free Physiotherapy Health Camp Chandigarh | PhysioNutra Clinic Zirakpur",
+    "description":"FREE physiotherapy health camps in Zirakpur, Chandigarh, Mohali & Panchkula. Free health assessment, posture analysis, pain screening & expert consultation.",
+    "datePublished":"2025-01-01",
+    "dateModified":"2026-05-01",
+    "inLanguage":"en",
+    "isPartOf":{"@id":"https://physionutraclinic.com/#website"},
+    "breadcrumb":{"@id":"https://physionutraclinic.com/free-physiotherapy-camps/#breadcrumb"}
+  },
+  {
+    "@type":"WebSite",
+    "@id":"https://physionutraclinic.com/#website",
+    "url":"https://physionutraclinic.com/",
+    "name":"PhysioNutra Clinic",
+    "publisher":{"@id":"https://physionutraclinic.com/#clinic"}
+  },
+  {
+    "@type":"BreadcrumbList",
+    "@id":"https://physionutraclinic.com/free-physiotherapy-camps/#breadcrumb",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://physionutraclinic.com/"},
+      {"@type":"ListItem","position":2,"name":"Free Health Camps","item":"https://physionutraclinic.com/free-physiotherapy-camps/"}
+    ]
+  },
+  {
+    "@type":"MedicalBusiness",
+    "@id":"https://physionutraclinic.com/#clinic",
+    "name":"PhysioNutra Clinic",
+    "alternateName":"Dr Tarun's PhysioNutra Clinic",
+    "description":"Premier physiotherapy and nutritional wellness centre in Zirakpur serving Chandigarh, Mohali, and Panchkula with evidence-based, drug-free care.",
+    "url":"https://physionutraclinic.com/",
+    "logo":{"@type":"ImageObject","url":"https://physionutraclinic.com/images/logo.png","width":200,"height":200},
+    "address":{"@type":"PostalAddress","streetAddress":"SCO 12, Ananta Square, Gazipur Road","addressLocality":"Zirakpur","addressRegion":"Punjab","postalCode":"140603","addressCountry":"IN"},
+    "geo":{"@type":"GeoCoordinates","latitude":"30.638695","longitude":"76.833101"},
+    "telephone":"+919417791833",
+    "email":"physionutraclinic@gmail.com",
+    "priceRange":"₹₹",
+    "medicalSpecialty":"Physiotherapy",
+    "openingHoursSpecification":[
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"14:00"}
+    ],
+    "areaServed":["Zirakpur","Chandigarh","Mohali","Panchkula","Kharar","Dera Bassi","Baltana","Dhakoli","Peer Muchalla","Pinjore"],
+    "sameAs":["https://www.facebook.com/people/PhysioNutra/61570467073912/","https://www.instagram.com/physionutra","https://www.linkedin.com/company/physionutra-clinic/","https://youtube.com/@physionutra","https://x.com/physionutra"],
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"250","bestRating":"5","worstRating":"1"}
+  },
+  {
+    "@type":"Event",
+    "@id":"https://physionutraclinic.com/free-physiotherapy-camps/#event-jan",
+    "name":"Free Physiotherapy Health Camp — Zirakpur",
+    "description":"Free health assessment, posture analysis, pain screening, and expert physiotherapy consultation — worth ₹1,000. Open to all residents of Chandigarh Tricity.",
+    "startDate":"2026-01-05T10:00:00+05:30",
+    "endDate":"2026-01-05T16:00:00+05:30",
+    "eventStatus":"https://schema.org/EventScheduled",
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+    "location":{
+      "@type":"Place",
+      "name":"PhysioNutra Clinic — Main Clinic",
+      "address":{"@type":"PostalAddress","streetAddress":"SCO 12, Ananta Square, Gazipur Road","addressLocality":"Zirakpur","addressRegion":"Punjab","postalCode":"140603","addressCountry":"IN"}
+    },
+    "organizer":{"@id":"https://physionutraclinic.com/#clinic"},
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://physionutraclinic.com/free-physiotherapy-camps/"},
+    "image":"https://physionutraclinic.com/images/og-free-camp.jpg"
+  },
+  {
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Is the physiotherapy health camp really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — the PhysioNutra health camp is completely free of charge. You receive a health assessment, posture analysis, pain screening, and expert physiotherapy consultation worth ₹1,000 at no cost. There is no obligation to book any treatment. Call +91 94177 91833 to register."}},
+      {"@type":"Question","name":"What do I get at the free physiotherapy camp?","acceptedAnswer":{"@type":"Answer","text":"At the free camp you receive: a complete health and musculoskeletal assessment, posture and spine analysis, pain and injury screening, a personalised exercise and wellness plan, hands-on physiotherapy demonstrations, and an expert consultation with Dr. Tarun Aggarwal or a senior physiotherapist."}},
+      {"@type":"Question","name":"Where is the free physiotherapy camp held?","acceptedAnswer":{"@type":"Answer","text":"The main camp is held at PhysioNutra Clinic, SCO 12, Ananta Square, Gazipur Road, Zirakpur. We also periodically hold camps at our Sector 20 Panchkula branch and at community locations in Chandigarh and Mohali. Check our current schedule and call +91 94177 91833 to confirm the next location."}},
+      {"@type":"Question","name":"How do I register for the free physiotherapy camp?","acceptedAnswer":{"@type":"Answer","text":"To register for the free physiotherapy health camp, call +91 94177 91833 or WhatsApp us. Slots are limited — early registration is strongly advised. Walk-ins are accepted subject to availability, but pre-registration guarantees your slot."}},
+      {"@type":"Question","name":"Who should attend the free health camp?","acceptedAnswer":{"@type":"Answer","text":"The camp is open to everyone — from school children to senior citizens. It is especially beneficial if you experience back pain, neck pain, joint discomfort, sports injuries, postural problems, or want a general health screening. Athletes, office workers, senior citizens, and homemakers all benefit."}}
+    ]
+  }
+]}
+</script>
+
+<!-- ═══ Preconnect & Fonts ═══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></noscript>
+
+<style>
+/* ═══ RESET & BASE ═══ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:'DM Sans',Arial,sans-serif;line-height:1.7;color:#1a1a1a;background:#fafaf8;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;width:100%}
+img{max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+
+/* ═══ CSS VARIABLES ═══ */
+:root{
+  --green:#7ad16c;--green-dark:#5ab04a;--green-light:#eaf6e7;
+  --orange:#ff9800;--orange-light:#fff8f0;
+  --dark:#1a1a1a;--mid:#555;--muted:#888;--border:#e8e8e4;
+  --bg:#fafaf8;--white:#fff;
+  --radius:12px;--radius-lg:18px;
+  --shadow:0 4px 20px rgba(0,0,0,.07);--shadow-lg:0 10px 40px rgba(0,0,0,.12);
+  --header-h:120px;
+}
+
+/* ═══ SKIP LINK ═══ */
+.skip-link{position:absolute;top:-50px;left:0;background:var(--green);color:#fff;padding:10px 18px;font-weight:600;z-index:9999;border-radius:0 0 8px 0;transition:top .2s}
+.skip-link:focus{top:0}
+*:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+/* ═══ READING PROGRESS ═══ */
+#reading-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--green),var(--green-dark));z-index:9999;transition:width .15s}
+
+/* ═══ HEADER ═══ */
+header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;z-index:1000;width:100%}
+.header-top{background:#1a1a1a;color:#fff;padding:8px 0}
+.header-top-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.header-contact{display:flex;gap:1.5rem;flex-wrap:wrap}
+.header-contact-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem}
+.header-contact-item a{color:var(--green);text-decoration:none}
+.header-contact-item a:hover{text-decoration:underline}
+.header-social{display:flex;gap:.8rem}
+.header-social a{color:var(--green);font-size:1rem;text-decoration:none;transition:color .3s}
+.header-social a:hover{color:var(--green-dark)}
+.header-main{padding:.8rem 0;position:relative}
+.header-main-content{display:flex;justify-content:space-between;align-items:center}
+.logo-section{display:flex;align-items:center;gap:1rem}
+.logo{height:60px;width:auto}
+.tagline{font-size:.85rem;color:#666;font-style:italic}
+nav ul{display:flex;list-style:none;gap:1.5rem;align-items:center}
+nav a{text-decoration:none;color:#333;font-weight:500;transition:color .3s;cursor:pointer;font-size:.9rem}
+nav a:hover,nav a.active{color:var(--green)}
+.has-dropdown{position:relative}
+.dropdown-menu{position:absolute;top:100%;left:0;background:#fff;min-width:220px;box-shadow:0 4px 15px rgba(0,0,0,.15);border-radius:8px;padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s;z-index:1000;list-style:none}
+.has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown-menu a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;color:#333;font-size:.9rem}
+.dropdown-menu a:hover{background:#f0f0f0;color:var(--green)}
+.dropdown-menu i{width:18px;color:var(--green);font-size:.85rem}
+.cta-button{padding:9px 22px;background:var(--green);color:#fff!important;text-decoration:none;border-radius:25px;font-weight:bold;transition:all .3s;white-space:nowrap}
+.cta-button:hover{background:var(--green-dark);transform:translateY(-2px)}
+.mobile-menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#333;padding:4px}
+
+/* ═══ BREADCRUMBS ═══ */
+.breadcrumbs{background:#f0f0ea;padding:.7rem 0;border-bottom:1px solid var(--border);margin-top:var(--header-h)}
+.breadcrumbs-list{display:flex;list-style:none;gap:.4rem;flex-wrap:wrap;align-items:center}
+.breadcrumbs-list li::after{content:'›';color:var(--muted);margin-left:.4rem;font-size:.85rem}
+.breadcrumbs-list li:last-child::after{display:none}
+.breadcrumbs-list a{color:var(--mid);font-size:.82rem;transition:color .2s}
+.breadcrumbs-list a:hover{color:var(--green)}
+.breadcrumbs-list span{color:var(--muted);font-size:.82rem}
+
+/* ═══ HERO ═══ */
+.hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 55%,#3a7a32 100%);color:#fff;padding:72px 0 60px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:3rem;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(122,209,108,.15);border:1px solid rgba(122,209,108,.35);color:var(--green);padding:.35rem .9rem;border-radius:50px;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1rem}
+.free-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--orange);color:#fff;padding:.4rem 1rem;border-radius:50px;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.8rem;box-shadow:0 4px 12px rgba(255,152,0,.35)}
+.hero h1{font-family:'DM Serif Display',serif;font-size:2.9rem;line-height:1.18;color:#fff;margin-bottom:1rem;font-weight:400}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero-subtitle{font-size:1.05rem;color:rgba(255,255,255,.82);margin-bottom:1.8rem;line-height:1.75;max-width:480px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
+.stat-item{text-align:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:.9rem .5rem}
+.stat-num{display:block;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--green);line-height:1}
+.stat-label{font-size:.72rem;color:rgba(255,255,255,.72);margin-top:.3rem;display:block}
+.hero-buttons{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-call{display:inline-flex;align-items:center;gap:.5rem;padding:13px 28px;background:var(--green);color:#fff;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s}
+.btn-call:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(122,209,108,.35)}
+.btn-whatsapp{display:inline-flex;align-items:center;gap:.5rem;padding:13px 28px;background:#25D366;color:#fff;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s}
+.btn-whatsapp:hover{background:#1da851;transform:translateY(-2px)}
+
+/* ═══ HERO FORM CARD ═══ */
+.hero-form-card{background:#fff;border-radius:var(--radius-lg);padding:2rem;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.hero-form-card h2{font-family:'DM Serif Display',serif;font-size:1.55rem;color:var(--dark);margin-bottom:.3rem;text-align:center}
+.hero-form-card p{font-size:.82rem;color:var(--muted);text-align:center;margin-bottom:1.4rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--dark);margin-bottom:.35rem}
+.form-group input,.form-group select{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:8px;font-size:.93rem;font-family:inherit;transition:border-color .25s;background:#fff;color:var(--dark)}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(122,209,108,.12)}
+.submit-btn{width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:.3rem}
+.submit-btn:hover{background:var(--green-dark);transform:translateY(-2px)}
+.form-success{display:none;text-align:center;padding:1.2rem;background:var(--green-light);border-radius:var(--radius);color:#2d5a27;font-weight:600;margin-top:.8rem;font-size:.93rem}
+.spots-warning{background:var(--orange-light);border:1px solid var(--orange);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;font-weight:600;color:#b45309;text-align:center;margin-top:.8rem}
+
+/* ═══ TRUST STRIP ═══ */
+.trust-strip{background:#fff;border-bottom:1px solid var(--border);padding:24px 0}
+.trust-inner{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;align-items:center}
+.trust-item{display:flex;align-items:center;gap:.5rem;font-size:.84rem;font-weight:600;color:var(--dark)}
+.trust-item i{color:var(--green);font-size:1.1rem}
+
+/* ═══ ALERT BANNER ═══ */
+.alert-section{background:var(--green-light);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:1.5rem 0}
+.alert-inner{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;text-align:center}
+.alert-inner h3{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--green-dark);font-weight:400}
+.alert-inner p{color:var(--mid);font-size:.95rem}
+.alert-btn{display:inline-flex;align-items:center;gap:.4rem;padding:10px 22px;background:var(--orange);color:#fff;border-radius:50px;font-weight:700;font-size:.9rem;transition:all .3s}
+.alert-btn:hover{background:#e65100;transform:translateY(-2px)}
+
+/* ═══ SECTION HEADINGS ═══ */
+.section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.6rem}
+.section-title{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--dark);margin-bottom:.7rem;font-weight:400;line-height:1.25}
+.section-subtitle{color:var(--mid);font-size:1rem;max-width:620px;margin:0 auto 2.5rem;text-align:center;line-height:1.75}
+.text-center{text-align:center}
+
+/* ═══ INTRO / AIO ANSWER BLOCK ═══ */
+.intro-section{padding:60px 0;background:#fff}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.intro-content h2{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--dark);margin-bottom:1rem;font-weight:400;line-height:1.3}
+.intro-content p{color:var(--mid);line-height:1.85;margin-bottom:1rem;font-size:.96rem}
+.answer-box{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--radius) var(--radius) 0;padding:1.3rem 1.4rem;margin-top:1.4rem}
+.answer-box h3{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green-dark);margin-bottom:.5rem}
+.answer-box p{font-size:.93rem;color:#2d5a27;margin:0;line-height:1.7}
+.includes-list{list-style:none;margin:1rem 0}
+.includes-list li{padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)}
+.includes-list li:last-child{border-bottom:none}
+.includes-list i{color:var(--green);flex-shrink:0;margin-top:.15rem}
+
+/* ═══ CAMP CARDS ═══ */
+.camps-section{padding:60px 0;background:var(--bg)}
+.camps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.camp-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s;position:relative}
+.camp-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
+.camp-card-top{background:linear-gradient(135deg,#1a2e1a,#2d5a27);padding:1.5rem;position:relative}
+.camp-card-top.orange{background:linear-gradient(135deg,#7a3500,#e65100)}
+.camp-card-top.blue{background:linear-gradient(135deg,#1a2a4a,#1d4ed8)}
+.camp-badge-pill{display:inline-flex;align-items:center;gap:.3rem;background:var(--orange);color:#fff;padding:.3rem .8rem;border-radius:50px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.8rem}
+.camp-badge-pill.free{background:var(--green)}
+.camp-date-display{display:flex;align-items:center;gap:.6rem;color:rgba(255,255,255,.85);font-size:.88rem;margin-bottom:.5rem}
+.camp-card-title{font-family:'DM Serif Display',serif;font-size:1.4rem;color:#fff;font-weight:400;line-height:1.3}
+.camp-card-body{padding:1.5rem}
+.camp-meta{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem}
+.camp-meta-item{display:flex;align-items:flex-start;gap:.6rem;font-size:.86rem;color:var(--mid)}
+.camp-meta-item i{color:var(--green);flex-shrink:0;margin-top:.15rem;width:14px}
+.camp-includes{background:var(--bg);border-radius:var(--radius);padding:1rem;margin-bottom:1.2rem}
+.camp-includes h4{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green-dark);margin-bottom:.7rem}
+.camp-includes ul{list-style:none}
+.camp-includes li{font-size:.84rem;color:var(--mid);padding:.25rem 0;display:flex;align-items:flex-start;gap:.5rem}
+.camp-includes li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.camp-register-btn{display:block;width:100%;padding:12px;background:var(--green);color:#fff;border:none;border-radius:50px;font-weight:700;font-size:.9rem;text-align:center;cursor:pointer;transition:all .3s;font-family:inherit}
+.camp-register-btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+.camp-spots{text-align:center;font-size:.78rem;color:var(--orange);font-weight:600;margin-top:.6rem}
+.camp-card.upcoming .camp-register-btn{background:var(--mid);cursor:default}
+.camp-card.upcoming .camp-register-btn:hover{background:var(--mid);transform:none}
+
+/* ═══ BENEFITS ═══ */
+.benefits-section{padding:60px 0;background:#fff}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem}
+.benefit-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.7rem 1.5rem;transition:all .3s}
+.benefit-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);background:#fff}
+.benefit-icon{width:50px;height:50px;background:var(--green-light);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--green-dark);font-size:1.25rem;margin-bottom:1rem}
+.benefit-card h3{font-size:1rem;color:var(--dark);margin-bottom:.6rem;font-weight:600}
+.benefit-card p{color:var(--mid);font-size:.86rem;line-height:1.7}
+
+/* ═══ STATS ═══ */
+.stats-section{padding:60px 0;background:var(--bg)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2rem}
+.stat-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .3s}
+.stat-box:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.stat-number{font-family:'DM Serif Display',serif;font-size:2.8rem;color:var(--green);line-height:1;display:block;margin-bottom:.3rem}
+.stat-box p{color:var(--mid);font-size:.88rem}
+
+/* ═══ WHO SHOULD ATTEND ═══ */
+.audience-section{padding:60px 0;background:#fff}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem}
+.audience-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:all .3s}
+.audience-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);background:#fff}
+.audience-icon{width:46px;height:46px;background:linear-gradient(135deg,var(--green),var(--green-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;flex-shrink:0}
+.audience-card h3{font-size:.95rem;color:var(--dark);margin-bottom:.3rem;font-weight:600}
+.audience-card p{color:var(--mid);font-size:.82rem;line-height:1.6}
+
+/* ═══ FAQ ═══ */
+.faq-section{padding:60px 0;background:var(--bg)}
+.faq-inner{max-width:820px;margin:2rem auto 0}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.7rem;overflow:hidden;transition:border-color .25s}
+.faq-item.open{border-color:var(--green)}
+.faq-btn{width:100%;text-align:left;padding:1.1rem 1.3rem;background:none;border:none;cursor:pointer;font-size:.95rem;font-weight:600;color:var(--dark);display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:inherit}
+.faq-btn:hover{background:var(--bg)}
+.faq-icon{color:var(--green);font-size:1.1rem;flex-shrink:0;transition:transform .25s;font-style:normal;font-weight:700}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{display:none;padding:0 1.3rem 1.1rem;color:var(--mid);font-size:.91rem;line-height:1.75;border-top:1px solid var(--border)}
+.faq-item.open .faq-answer{display:block}
+
+/* ═══ RELATED ═══ */
+.related-section{padding:50px 0;background:#fff}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:1.5rem}
+.related-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;transition:all .3s;display:block}
+.related-card:hover{border-color:var(--green);transform:translateY(-3px);background:#fff}
+.related-card i{color:var(--green);font-size:1.2rem;margin-bottom:.6rem;display:block}
+.related-card h4{font-size:.9rem;font-weight:600;color:var(--dark);margin-bottom:.4rem}
+.related-card p{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* ═══ CTA BANNER ═══ */
+.cta-section{padding:60px 0;background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 60%,#3a7a32 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-section::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.cta-section h2{font-family:'DM Serif Display',serif;font-size:2.3rem;font-weight:400;margin-bottom:.8rem}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,.82);margin-bottom:2rem;line-height:1.7}
+.cta-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+
+/* ═══ CONTACT + MAP ═══ */
+.contact-section{padding:60px 0;background:#fff}
+.contact-map-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-top:2rem}
+.contact-details h3{font-size:1.2rem;font-weight:600;color:var(--green);margin-bottom:1rem}
+.contact-info-list{list-style:none}
+.contact-info-list li{display:flex;align-items:flex-start;gap:.7rem;padding:.7rem 0;border-bottom:1px solid var(--border);font-size:.9rem;color:var(--mid)}
+.contact-info-list li:last-child{border-bottom:none}
+.contact-info-list i{color:var(--green);flex-shrink:0;margin-top:.15rem;width:16px}
+.contact-info-list a{color:var(--green);font-weight:600}
+.contact-info-list a:hover{text-decoration:underline}
+.contact-cta-btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+.map-frame{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border)}
+.map-frame iframe{display:block;width:100%;height:360px;border:0}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--dark);color:#fff;padding:52px 0 0}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:2.5rem}
+.footer-section h3{color:var(--green);margin-bottom:1rem;font-size:.95rem;font-weight:600}
+.footer-section p{color:#ccc;line-height:1.8;font-size:.84rem}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:.45rem}
+.footer-links a{color:#ccc;font-size:.84rem;transition:color .2s}
+.footer-links a:hover{color:var(--green)}
+.footer-social{display:flex;gap:.6rem;margin-top:.9rem}
+.footer-social a{width:34px;height:34px;background:#2a2a2a;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--green);font-size:.82rem;transition:all .25s}
+.footer-social a:hover{background:var(--green);color:#fff}
+.footer-bottom{border-top:1px solid #333;padding:1.5rem 0;text-align:center;color:#888;font-size:.82rem}
+.footer-bottom a{color:var(--green)}
+
+/* ═══ FLOATING BUTTONS ═══ */
+.floating-buttons{position:fixed;bottom:24px;right:24px;z-index:999;display:flex;flex-direction:column;gap:10px}
+.floating-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:all .3s;text-decoration:none}
+.floating-btn:hover{transform:scale(1.1)}
+.whatsapp-btn{background:#25D366}
+.phone-btn{background:var(--green)}
+.back-to-top{position:fixed;bottom:24px;left:24px;width:40px;height:40px;background:#333;color:#fff;border:none;border-radius:50%;font-size:.9rem;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:999;transition:all .3s}
+.back-to-top.visible{display:flex}
+.back-to-top:hover{background:var(--green)}
+
+/* ═══ ANIMATIONS ═══ */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1023px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-form-card{max-width:500px}
+  .camps-grid{grid-template-columns:repeat(2,1fr)}
+  .benefits-grid,.audience-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .related-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-map-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+  .intro-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  :root{--header-h:105px}
+  .header-contact .header-contact-item:nth-child(2),.header-contact .header-contact-item:nth-child(3){display:none}
+  .header-social{gap:.5rem}
+  .mobile-menu-toggle{display:block}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}
+  nav ul.active{display:flex}
+  nav li{width:100%;border-bottom:1px solid #eee}
+  nav li:last-child{border-bottom:none}
+  nav a{display:block;padding:.85rem}
+  .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding-left:12px;display:none;background:#f9f9f9;border:none}
+  .has-dropdown.active .dropdown-menu{display:block}
+  .has-dropdown>a::after{content:' +';color:var(--green);font-weight:bold}
+  .has-dropdown.active>a::after{content:' −'}
+  .logo{height:48px}.tagline{font-size:.7rem}
+  .hero{padding:44px 0 36px}
+  .hero h1{font-size:1.75rem;line-height:1.3}
+  .hero-subtitle{font-size:.93rem}
+  .hero-stats{gap:.7rem}
+  .stat-num{font-size:1.6rem}
+  .hero-buttons{flex-direction:column}
+  .btn-call,.btn-whatsapp{width:100%;justify-content:center}
+  .camps-grid,.benefits-grid,.audience-grid,.stats-grid,.related-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .section-title{font-size:1.75rem}
+  .cta-section h2{font-size:1.8rem}
+  .cta-buttons{flex-direction:column;align-items:center}
+  .alert-inner{flex-direction:column;gap:.8rem}
+}
+@media(max-width:480px){
+  .container{padding:0 14px}
+  .logo{height:44px}.tagline{display:none}
+  .hero h1{font-size:1.5rem}
+  .footer-grid{grid-template-columns:1fr}
+  .header-contact .header-contact-item:nth-child(n+2){display:none}
+}
+</style>
 </head>
 <body>
-    <header>
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top-content">
-                    <div class="header-contact">
-                        <div class="header-contact-item">📞 <a href="tel:+919417791833">+91 94177 91833</a></div>
-                        <div class="header-contact-item">✉️ <a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a></div>
-                    </div>
-                    <div class="header-social">
-                        <a href="https://www.facebook.com/tarun.aggarwal.7528" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/physionutra" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="container">
-                <div class="header-main-content">
-                    <a href="/"><img src="/images/logo.png" alt="PhysioNutra Clinic" class="logo"></a>
-                    <nav>
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about/">About</a></li>
-                            <li><a href="/blogs/">Blog</a></li>
-                            <li><a href="tel:+919417791833" class="cta-button">Book Now</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHVSMWD6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Free Physiotherapy Health Camps</h1>
-                <p>Join our community health initiatives! Get FREE assessments, posture analysis & expert consultation.</p>
-            </div>
-        </div>
-    </section>
+<div id="reading-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
+<!-- ═══ HEADER ═══ -->
+<header role="banner">
+  <div class="header-top">
     <div class="container">
-        <div class="alert-banner">
-            <h3>🎉 Next Camp: February 15, 2026</h3>
-            <p>Limited slots - Register now!</p>
+      <div class="header-top-content">
+        <div class="header-contact">
+          <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
+          <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a></div>
+          <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
         </div>
+        <div style="display:flex;align-items:center;gap:1.1rem">
+          <div class="header-social" aria-label="Social media links">
+            <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <main class="main-content">
-        <div class="container">
-            <h2 class="section-title">Upcoming Health Camps</h2>
-            <p class="section-subtitle">Free health screenings in Zirakpur, Chandigarh & Panchkula</p>
-            
-            <div class="camps-grid">
-                <div class="camp-card">
-                    <div class="camp-badge">FEATURED</div>
-                    <div class="camp-content">
-                        <div class="camp-date">📅 January 05, 2026</div>
-                        <h3 class="camp-title">Zirakpur Health Camp</h3>
-                        <p>📍 PhysioNutra Clinic, Ananta Square</p>
-                        <p>🕒 10:00 AM - 4:00 PM</p>
-                        <div class="camp-details">
-                            <h4>What's Included:</h4>
-                            <ul>
-                                <li>Free Health Assessment</li>
-                                <li>Posture Analysis</li>
-                                <li>Pain Screening</li>
-                                <li>Expert Consultation</li>
-                                <li>Exercise Guidance</li>
-                            </ul>
-                        </div>
-                        <a href="tel:+919417791833" class="register-btn">Register Now</a>
-                        <p style="text-align: center; color: #ff5722; margin-top: 1rem; font-weight: bold;">Only 15 Spots Left!</p>
-                    </div>
-                </div>
-
-                <!-- <div class="camp-card">
-                    <div class="camp-content">
-                        <div class="camp-date">📅 March 10, 2026</div>
-                        <h3 class="camp-title">Panchkula Health Camp</h3>
-                        <p>📍 Sector 20, Panchkula</p>
-                        <p>🕒 10:00 AM - 4:00 PM</p>
-                        <div class="camp-details">
-                            <h4>What's Included:</h4>
-                            <ul>
-                                <li>Free Health Assessment</li>
-                                <li>Senior Citizen Screening</li>
-                                <li>Back Pain Evaluation</li>
-                                <li>Nutrition Counseling</li>
-                                <li>Home Exercise Plan</li>
-                            </ul>
-                        </div>
-                        <a href="tel:+919417791833" class="register-btn">Register Now</a>
-                    </div>
-                </div>
-
-                <div class="camp-card">
-                    <div class="camp-content">
-                        <div class="camp-date">📅 April 5, 2026</div>
-                        <h3 class="camp-title">Chandigarh Corporate Camp</h3>
-                        <p>📍 IT Park, Chandigarh</p>
-                        <p>🕒 2:00 PM - 6:00 PM</p>
-                        <div class="camp-details">
-                            <h4>What's Included:</h4>
-                            <ul>
-                                <li>Workplace Ergonomics</li>
-                                <li>Tech Neck Assessment</li>
-                                <li>Stress Management</li>
-                                <li>Desk Exercise Demo</li>
-                                <li>Health Q&A Session</li>
-                            </ul>
-                        </div>
-                        <a href="tel:+919417791833" class="register-btn">Register Now</a>
-                    </div>
-                </div> -->
-            </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <div class="header-main-content">
+        <div class="logo-section">
+          <a href="/" aria-label="PhysioNutra Clinic Home"><img src="/images/logo.png" alt="PhysioNutra Clinic — Free Physiotherapy Health Camp Zirakpur" class="logo" width="180" height="60" loading="eager"></a>
+          <div class="tagline">Dr Tarun's PhysioNutra Clinic</div>
         </div>
-    </main>
-
-    <section class="benefits-section">
-        <div class="container">
-            <h2 class="section-title">Why Attend Our Health Camps?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏥</div>
-                    <h3>Free Assessment</h3>
-                    <p>Complete health screening worth ₹1000 - absolutely free!</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">👨‍⚕️</div>
-                    <h3>Expert Team</h3>
-                    <p>Consultation with experienced physiotherapists</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">📋</div>
-                    <h3>Personalized Plan</h3>
-                    <p>Get customized exercise and health recommendations</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎓</div>
-                    <h3>Education</h3>
-                    <p>Learn about injury prevention and wellness</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💪</div>
-                    <h3>Hands-On Demo</h3>
-                    <p>Live demonstrations of exercises and stretches</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🤝</div>
-                    <h3>Community</h3>
-                    <p>Connect with health-conscious individuals</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats-section">
-        <div class="container">
-            <h2 class="section-title">Our Impact</h2>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number">25+</div>
-                    <div>Camps Organized</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">2000+</div>
-                    <div>People Screened</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">500+</div>
-                    <div>Treatments Given</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">98%</div>
-                    <div>Satisfaction Rate</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Join Us?</h2>
-            <p>Don't miss this opportunity for a FREE health assessment. Register today!</p>
-            <div class="cta-buttons">
-                <a href="tel:+919417791833" class="btn-primary">Call to Register</a>
-                <a href="https://wa.me/919417791833" class="btn-primary">WhatsApp Us</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>PhysioNutra Clinic</h3>
-                    <p>Premier physiotherapy center in Zirakpur</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about/">About</a></li>
-                        <li><a href="/blogs/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>📞 +91 94177 91833</p>
-                    <p>✉️ physionutraclinic@gmail.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 PhysioNutra Clinic. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="floating-buttons">
-        <a href="https://wa.me/919417791833" class="floating-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:+919417791833" class="floating-btn phone-btn"><i class="fas fa-phone"></i></a>
+        <nav role="navigation" aria-label="Main navigation">
+          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+          <ul id="mainMenu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li class="has-dropdown">
+              <a href="/services/">Services</a>
+              <ul class="dropdown-menu" aria-label="Services submenu">
+                <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
+                <li><a href="/services/women-health-physiotherapy/"><i class="fas fa-venus"></i>Women's Health</a></li>
+                <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
+                <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
+                <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
+                <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
+                <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="/physiotherapy/">Locations</a>
+              <ul class="dropdown-menu" aria-label="Locations submenu">
+                <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
+                <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
+                <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
+                <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
+                <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+                <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+              </ul>
+            </li>
+            <li><a href="/blogs/">Blog</a></li>
+            <li><a href="/testimonials/">Testimonials</a></li>
+            <li><a href="tel:+919417791833" class="cta-button">Book Now</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
+  </div>
+</header>
 
-    <script>
-        document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me"]').forEach(link => {
-            link.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'camp_registration_click', {
-                        'event_category': 'registration',
-                        'event_label': 'Free Camp Registration'
-                    });
-                }
-            });
-        });
-    </script>
+<!-- ═══ BREADCRUMBS ═══ -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumbs-list">
+      <li><a href="/">Home</a></li>
+      <li><span aria-current="page">Free Physiotherapy Health Camps</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="free-badge"><i class="fas fa-gift" aria-hidden="true"></i> 100% Free &mdash; No Obligation</div>
+        <div class="hero-badge"><i class="fas fa-calendar-check" aria-hidden="true"></i> Next Camp: 5 January 2026</div>
+        <h1 id="hero-h1">Free Physiotherapy <em>Health Camp</em> in Chandigarh Tricity</h1>
+        <p class="hero-subtitle">Get a FREE health assessment, posture analysis, pain screening &amp; expert physiotherapy consultation &mdash; worth &#8377;1,000. Open to all. Limited slots available at each camp.</p>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-num">25+</span><span class="stat-label">Camps Organised</span></div>
+          <div class="stat-item"><span class="stat-num">2000+</span><span class="stat-label">People Screened</span></div>
+          <div class="stat-item"><span class="stat-num">98%</span><span class="stat-label">Satisfaction Rate</span></div>
+        </div>
+        <div class="hero-buttons">
+          <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Register: +91 94177 91833</a>
+          <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp to Register</a>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <div class="hero-form-card" role="form" aria-labelledby="form-h2">
+        <h2 id="form-h2">Reserve Your Free Spot</h2>
+        <p>Limited slots per camp &mdash; register now to confirm</p>
+        <form id="appointment-form" action="https://docs.google.com/forms/d/e/1FAIpQLSecs0syQlexbviX2-GFRHL418tELcBVxDyLnHhORL47eXZscw/formResponse" method="POST" target="hidden_iframe" novalidate>
+          <div class="form-group">
+            <label for="f-name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="f-name" name="entry.1869350848" required placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="f-phone">Phone Number <span aria-hidden="true">*</span></label>
+            <input type="tel" id="f-phone" name="entry.1797725802" required placeholder="+91 00000 00000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email <span style="color:#999;font-weight:400">(optional)</span></label>
+            <input type="email" id="f-email" name="entry.350143632" placeholder="your@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="f-service">What concern would you like assessed?</label>
+            <select id="f-service" name="entry.2005620554">
+              <option value="">Select concern</option>
+              <option>Back or Neck Pain</option>
+              <option>Joint Pain (Knee / Hip / Shoulder)</option>
+              <option>Posture Problems</option>
+              <option>Sports Injury</option>
+              <option>General Health Screening</option>
+              <option>Senior Citizen Screening</option>
+              <option>Workplace / Desk Pain</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Reserve My Free Spot</button>
+        </form>
+        <div class="spots-warning"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Only 15 slots remaining for Jan 5 camp</div>
+        <div class="form-success" id="form-success" role="alert">
+          <i class="fas fa-check-circle" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"></i>
+          Your spot is reserved! We will call to confirm your time slot.
+        </div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Form submission target"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST STRIP ═══ -->
+<div class="trust-strip" aria-label="Trust indicators">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><i class="fas fa-gift" aria-hidden="true"></i> Completely Free</div>
+      <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
+      <div class="trust-item"><i class="fas fa-users" aria-hidden="true"></i> Open to All Ages</div>
+      <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
+      <div class="trust-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Tricity Coverage</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ALERT BANNER ═══ -->
+<div class="alert-section" role="alert" aria-label="Next camp announcement">
+  <div class="container">
+    <div class="alert-inner">
+      <div>
+        <h3>&#127881; Next Camp: 5 January 2026 &mdash; Zirakpur</h3>
+        <p>PhysioNutra Clinic, Ananta Square &nbsp;&middot;&nbsp; 10:00 AM &ndash; 4:00 PM &nbsp;&middot;&nbsp; FREE entry</p>
+      </div>
+      <a href="tel:+919417791833" class="alert-btn"><i class="fas fa-phone-alt" aria-hidden="true"></i> Register Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INTRO / AIO ANSWER BLOCK ═══ -->
+<section class="intro-section" aria-labelledby="intro-h2">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-content">
+        <span class="section-label">About the Camp</span>
+        <h2 id="intro-h2">What is PhysioNutra's Free Physiotherapy Health Camp?</h2>
+        <p>PhysioNutra Clinic organises regular free physiotherapy health camps across Chandigarh Tricity as a community health initiative. Each camp is led by Dr. Tarun Aggarwal and our senior physiotherapy team, offering residents of Zirakpur, Chandigarh, Mohali, and Panchkula a completely free health screening experience.</p>
+        <p>These camps are ideal for anyone experiencing pain, discomfort, or postural issues, or simply wanting a professional health assessment. There is no obligation to book any paid treatment. Our goal is to make expert physiotherapy accessible to the community.</p>
+
+        <!-- AIO Answer Box -->
+        <div class="answer-box" role="note" aria-label="Quick answer summary">
+          <h3>Quick Answer</h3>
+          <p>PhysioNutra Clinic holds free physiotherapy health camps in Zirakpur, Chandigarh, Mohali &amp; Panchkula. Each camp includes a free health assessment, posture analysis, pain screening, and expert consultation worth &#8377;1,000. Slots are limited. Register by calling +91 94177 91833 or via WhatsApp.</p>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-label">What's Included</span>
+        <h3 style="font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:1rem">Everything you receive at the camp &mdash; completely free</h3>
+        <ul class="includes-list" role="list">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Complete musculoskeletal health assessment</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Posture and spinal alignment analysis</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Pain and injury screening</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Expert one-on-one consultation with a physiotherapist</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Personalised exercise and wellness recommendations</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Hands-on physiotherapy technique demonstrations</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Injury prevention education and Q&amp;A session</li>
+        </ul>
+        <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><i class="fas fa-info-circle" style="color:var(--green)" aria-hidden="true"></i> &nbsp;Total value: <strong>&#8377;1,000</strong> &mdash; completely free of charge. No hidden fees, no obligation, no upselling. Pure community service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UPCOMING CAMPS ═══ -->
+<section class="camps-section" aria-labelledby="camps-h2">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Camp Schedule</span>
+      <h2 class="section-title" id="camps-h2">Upcoming Free Health Camps</h2>
+      <p class="section-subtitle">Register early &mdash; slots are limited at every camp to ensure quality one-on-one time with each attendee</p>
+    </div>
+    <div class="camps-grid">
+
+      <!-- Camp 1 — Featured / Active -->
+      <article class="camp-card reveal">
+        <div class="camp-card-top">
+          <div class="camp-badge-pill"><i class="fas fa-star" aria-hidden="true"></i> Featured</div>
+          <div class="camp-date-display"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Sunday, 5 January 2026</div>
+          <h3 class="camp-card-title">Zirakpur Health Camp</h3>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-meta">
+            <div class="camp-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>PhysioNutra Clinic, SCO 12, Ananta Square, Gazipur Road, Zirakpur</span></div>
+            <div class="camp-meta-item"><i class="fas fa-clock" aria-hidden="true"></i><span>10:00 AM &ndash; 4:00 PM</span></div>
+            <div class="camp-meta-item"><i class="fas fa-users" aria-hidden="true"></i><span>Open to all ages &mdash; no appointment needed (registration preferred)</span></div>
+          </div>
+          <div class="camp-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Free Health Assessment</li>
+              <li>Posture &amp; Spine Analysis</li>
+              <li>Pain &amp; Injury Screening</li>
+              <li>Expert Consultation</li>
+              <li>Personalised Exercise Plan</li>
+            </ul>
+          </div>
+          <a href="tel:+919417791833" class="camp-register-btn">Register Now &mdash; Free</a>
+          <p class="camp-spots"><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Only 15 spots remaining!</p>
+        </div>
+      </article>
+
+      <!-- Camp 2 — Upcoming -->
+      <article class="camp-card reveal">
+        <div class="camp-card-top orange">
+          <div class="camp-badge-pill free"><i class="fas fa-calendar" aria-hidden="true"></i> Upcoming</div>
+          <div class="camp-date-display"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Sunday, 8 March 2026</div>
+          <h3 class="camp-card-title">Panchkula Health Camp</h3>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-meta">
+            <div class="camp-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>PhysioNutra Branch Clinic, Sector 20, Panchkula</span></div>
+            <div class="camp-meta-item"><i class="fas fa-clock" aria-hidden="true"></i><span>10:00 AM &ndash; 4:00 PM</span></div>
+            <div class="camp-meta-item"><i class="fas fa-users" aria-hidden="true"></i><span>Special focus: senior citizen screening</span></div>
+          </div>
+          <div class="camp-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Free Health Assessment</li>
+              <li>Senior Citizen Screening</li>
+              <li>Back &amp; Joint Pain Evaluation</li>
+              <li>Balance &amp; Fall Risk Check</li>
+              <li>Home Exercise Plan</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/919417791833?text=I%20want%20to%20register%20for%20the%20Panchkula%20health%20camp%20on%20March%208." class="camp-register-btn" rel="noopener" target="_blank">Pre-Register via WhatsApp</a>
+          <p class="camp-spots" style="color:var(--muted)">Registration opening soon</p>
+        </div>
+      </article>
+
+      <!-- Camp 3 — Upcoming -->
+      <article class="camp-card reveal">
+        <div class="camp-card-top blue">
+          <div class="camp-badge-pill free"><i class="fas fa-building" aria-hidden="true"></i> Corporate</div>
+          <div class="camp-date-display"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Saturday, 4 April 2026</div>
+          <h3 class="camp-card-title">Chandigarh Corporate Camp</h3>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-meta">
+            <div class="camp-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>IT Park Area, Chandigarh (venue to be confirmed)</span></div>
+            <div class="camp-meta-item"><i class="fas fa-clock" aria-hidden="true"></i><span>2:00 PM &ndash; 6:00 PM</span></div>
+            <div class="camp-meta-item"><i class="fas fa-users" aria-hidden="true"></i><span>Office workers, tech professionals, remote workers</span></div>
+          </div>
+          <div class="camp-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Workplace Ergonomics Check</li>
+              <li>Tech Neck &amp; Desk Pain Assessment</li>
+              <li>Wrist &amp; Shoulder Screening</li>
+              <li>Desk Exercise Demonstrations</li>
+              <li>Stress &amp; Tension Management</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/919417791833?text=I%20want%20to%20register%20for%20the%20Chandigarh%20corporate%20camp%20April%204." class="camp-register-btn" rel="noopener" target="_blank">Pre-Register via WhatsApp</a>
+          <p class="camp-spots" style="color:var(--muted)">Registration opening soon</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFITS ═══ -->
+<section class="benefits-section" aria-labelledby="ben-h2">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Why Attend</span>
+      <h2 class="section-title" id="ben-h2">Why Attend Our Free Health Camps?</h2>
+      <p class="section-subtitle">More than just a free check-up &mdash; a genuine community health service</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-rupee-sign"></i></div><h3>Zero Cost Assessment</h3><p>A complete physiotherapy health assessment worth &#8377;1,000 &mdash; yours at absolutely no charge. No hidden fees, no pressure, no obligation to book any further treatment.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-user-md"></i></div><h3>Expert Physiotherapists</h3><p>Every camp is run by Dr. Tarun Aggarwal and our senior team &mdash; the same specialists who treat patients at our clinic. You receive the same quality of attention and expertise.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-clipboard-list"></i></div><h3>Personalised Recommendations</h3><p>Leave with a customised exercise plan, posture correction tips, and practical advice tailored specifically to your body, lifestyle, and health concerns.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div><h3>Injury Prevention Education</h3><p>Learn evidence-based strategies for preventing common injuries, managing pain at home, and improving your long-term musculoskeletal health through hands-on demonstrations.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-dumbbell"></i></div><h3>Live Exercise Demonstrations</h3><p>Watch and practice key exercises and stretches led by our physiotherapists &mdash; practical, actionable techniques you can apply immediately at home or at work.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-hands-helping"></i></div><h3>Community Health Initiative</h3><p>Our camps are a genuine commitment to public health in Chandigarh Tricity. We believe expert physiotherapy guidance should be accessible to everyone, regardless of budget.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section class="stats-section" aria-labelledby="stats-h2">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Our Impact</span>
+      <h2 class="section-title" id="stats-h2">PhysioNutra Health Camp Impact</h2>
+      <p class="section-subtitle">Over five years of free community health screening across Chandigarh Tricity</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box reveal"><span class="stat-number">25+</span><p>Camps Organised</p></div>
+      <div class="stat-box reveal"><span class="stat-number">2000+</span><p>People Screened</p></div>
+      <div class="stat-box reveal"><span class="stat-number">500+</span><p>Treatments Facilitated</p></div>
+      <div class="stat-box reveal"><span class="stat-number">98%</span><p>Satisfaction Rate</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO SHOULD ATTEND ═══ -->
+<section class="audience-section" aria-labelledby="aud-h2">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Who Should Attend</span>
+      <h2 class="section-title" id="aud-h2">The Free Camp is Open to Everyone</h2>
+      <p class="section-subtitle">From school children to senior citizens &mdash; if you have a body, you can benefit</p>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-laptop"></i></div><div><h3>Office Workers</h3><p>Desk pain, neck stiffness, wrist issues, and poor ergonomics &mdash; common in IT and corporate professionals across Chandigarh and Mohali.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-running"></i></div><div><h3>Athletes &amp; Sports Players</h3><p>Sports injuries, muscle pain, joint problems, and performance screening for footballers, cricketers, and gym-goers.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div><div><h3>Senior Citizens</h3><p>Balance problems, arthritis, fall risk assessment, back pain, and general age-related musculoskeletal screening.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-baby"></i></div><div><h3>New Mothers</h3><p>Postpartum back pain, pelvic floor concerns, diastasis recti, and safe return-to-exercise guidance for new mums.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-home"></i></div><div><h3>Homemakers</h3><p>Repetitive strain injuries, back pain from household tasks, and posture problems from carrying children or sustained bending.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-child"></i></div><div><h3>Teenagers &amp; Students</h3><p>Posture problems from heavy school bags and screen time, scoliosis screening, and sports injury evaluation.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section" aria-labelledby="faq-h2">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">FAQs</span>
+      <h2 class="section-title" id="faq-h2">Free Health Camp &mdash; Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know before attending</p>
+    </div>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Is the physiotherapy health camp really free?<i class="faq-icon" aria-hidden="true">+</i></button>
+        <div class="faq-answer" role="region" hidden>Yes &mdash; completely free. You receive a health assessment, posture analysis, pain screening, and expert consultation worth &#8377;1,000 at absolutely no cost. There are no hidden charges, no registration fees, and no obligation to book any further paid treatment. This is a genuine community health initiative by PhysioNutra Clinic.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">What do I get at the free physiotherapy camp?<i class="faq-icon" aria-hidden="true">+</i></button>
+        <div class="faq-answer" role="region" hidden>At the camp you receive: a complete musculoskeletal health and pain assessment, posture and spinal alignment analysis, injury and pain screening, a one-on-one consultation with a qualified physiotherapist, personalised exercise and wellness recommendations, hands-on physiotherapy technique demonstrations, and injury prevention education. Total value: &#8377;1,000 &mdash; 100% free.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">How do I register for the free camp?<i class="faq-icon" aria-hidden="true">+</i></button>
+        <div class="faq-answer" role="region" hidden>Register by calling +91 94177 91833, WhatsApp-ing us, or filling the form on this page. Slots are limited at every camp &mdash; early registration guarantees your place. Walk-ins are accepted on the day subject to availability, but pre-registration is strongly recommended to avoid disappointment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Where is the free physiotherapy camp held?<i class="faq-icon" aria-hidden="true">+</i></button>
+        <div class="faq-answer" role="region" hidden>The main camp is at PhysioNutra Clinic, SCO 12, Ananta Square, Gazipur Road, Zirakpur. We also hold camps at our Panchkula Sector 20 branch and at community venues in Chandigarh. Check the camp schedule on this page and call +91 94177 91833 to confirm the next location nearest to you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Who should attend the free health camp?<i class="faq-icon" aria-hidden="true">+</i></button>
+        <div class="faq-answer" role="region" hidden>The camp is open to everyone from all age groups &mdash; teenagers, adults, senior citizens, office workers, athletes, new mothers, and homemakers. It is especially useful if you experience back pain, neck pain, joint discomfort, posture problems, sports injuries, or want a general health screening. No referral or prior appointment is needed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Do I need to bring anything to the camp?<i class="faq-icon" aria-hidden="true">+</i></button>
+        <div class="faq-answer" role="region" hidden>No special preparation is needed. Wear comfortable, loose-fitting clothing that allows free movement. If you have any previous reports, X-rays, or MRI scans related to your concern, bring them along as they may help with your assessment. Arrive a few minutes early if possible so you can complete a brief intake form before your session.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RELATED CONTENT ═══ -->
+<section class="related-section" aria-labelledby="rel-h2">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Explore More</span>
+      <h2 class="section-title" id="rel-h2">Explore Our Services &amp; Resources</h2>
+    </div>
+    <div class="related-grid">
+      <a href="/services/acl-treatment-near-me/" class="related-card reveal">
+        <i class="fas fa-running" aria-hidden="true"></i>
+        <h4>ACL Treatment</h4>
+        <p>Expert ACL rehabilitation and return-to-sport protocols for athletes.</p>
+      </a>
+      <a href="/services/women-health-physiotherapy/" class="related-card reveal">
+        <i class="fas fa-venus" aria-hidden="true"></i>
+        <h4>Women's Health Physio</h4>
+        <p>Pelvic floor therapy, postpartum recovery &amp; pregnancy care.</p>
+      </a>
+      <a href="/services/home-physiotherapy-chandigarh/" class="related-card reveal">
+        <i class="fas fa-home" aria-hidden="true"></i>
+        <h4>Home Physiotherapy</h4>
+        <p>Professional physiotherapy delivered to your door across Tricity.</p>
+      </a>
+      <a href="/services/sports-injury-treatment/" class="related-card reveal">
+        <i class="fas fa-dumbbell" aria-hidden="true"></i>
+        <h4>Sports Injury Treatment</h4>
+        <p>Expert treatment for all sports injuries — ligaments, tendons, muscles.</p>
+      </a>
+      <a href="/services/orthopedic-rehabilitation/" class="related-card reveal">
+        <i class="fas fa-bone" aria-hidden="true"></i>
+        <h4>Orthopedic Rehab</h4>
+        <p>Post-surgical and injury rehabilitation for all orthopaedic conditions.</p>
+      </a>
+      <a href="/services/dry-needling/" class="related-card reveal">
+        <i class="fas fa-syringe" aria-hidden="true"></i>
+        <h4>Dry Needling</h4>
+        <p>Advanced trigger point therapy for muscle pain and sports injuries.</p>
+      </a>
+      <a href="/blogs/" class="related-card reveal">
+        <i class="fas fa-book-open" aria-hidden="true"></i>
+        <h4>Health Blog</h4>
+        <p>Expert physiotherapy tips, condition guides, and patient education.</p>
+      </a>
+      <a href="/testimonials/" class="related-card reveal">
+        <i class="fas fa-star" aria-hidden="true"></i>
+        <h4>Patient Testimonials</h4>
+        <p>Real stories from patients who have recovered at PhysioNutra Clinic.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BANNER ═══ -->
+<section class="cta-section" aria-labelledby="cta-h2">
+  <div class="container">
+    <div class="cta-inner">
+      <h2 id="cta-h2">Don't Miss the Next Free Camp!</h2>
+      <p>Slots fill up fast. Register today to secure your free health assessment &mdash; no obligation, no cost, no catch.</p>
+      <div class="cta-buttons">
+        <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call to Register: +91 94177 91833</a>
+        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp to Register</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT + MAP ═══ -->
+<section class="contact-section" aria-labelledby="contact-h2">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title" id="contact-h2">Visit Our Clinic</h2>
+      <p class="section-subtitle">Located in Zirakpur &mdash; 15 min from Chandigarh, 10 min from Mohali, 20 min from Panchkula</p>
+    </div>
+    <div class="contact-map-grid">
+      <div class="contact-details">
+        <h3>Clinic Details</h3>
+        <ul class="contact-info-list">
+          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
+          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
+          <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+          <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+          <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a></div></li>
+          <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
+        </ul>
+        <div class="contact-cta-btns">
+          <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> Get Directions</a>
+          <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.823!2d76.8305!3d30.6387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390feef0b6e3d01b%3A0x7c9a6e3e4d6f9e2a!2sPhysioNutra%20Clinic!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen loading="lazy" title="PhysioNutra Clinic location — Free Physiotherapy Camp Zirakpur"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <a href="/" aria-label="PhysioNutra Clinic Home"><img src="/images/logo.png" alt="PhysioNutra Clinic" style="height:48px;width:auto;filter:brightness(0) invert(1);display:block;margin-bottom:.8rem" loading="lazy"></a>
+        <h3>PhysioNutra Clinic</h3>
+        <p>Free physiotherapy health camps and expert rehabilitation across Chandigarh Tricity &mdash; evidence-based, community-first care.</p>
+        <div class="footer-social" aria-label="Follow us">
+          <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Health Camp Info</h3>
+        <ul class="footer-links">
+          <li><a href="/free-physiotherapy-camps/">Free Health Camps</a></li>
+          <li><a href="/about/">About Dr. Tarun</a></li>
+          <li><a href="/testimonials/">Patient Stories</a></li>
+          <li><a href="/blogs/">Health Blog</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
+          <li><a href="/faqs/">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="/services/acl-treatment-near-me/">ACL Treatment</a></li>
+          <li><a href="/services/women-health-physiotherapy/">Women's Health Physio</a></li>
+          <li><a href="/services/dry-needling/">Dry Needling</a></li>
+          <li><a href="/services/manual-therapy/">Manual Therapy</a></li>
+          <li><a href="/services/home-physiotherapy-chandigarh/">Home Physiotherapy</a></li>
+          <li><a href="/services/sports-injury-treatment/">Sports Injury</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Service Areas</h3>
+        <ul class="footer-links">
+          <li><a href="/physiotherapy/zirakpur/">Zirakpur</a></li>
+          <li><a href="/physiotherapy/chandigarh/">Chandigarh</a></li>
+          <li><a href="/physiotherapy/mohali/">Mohali</a></li>
+          <li><a href="/physiotherapy/panchkula/">Panchkula</a></li>
+          <li><a href="/physiotherapy/kharar/">Kharar</a></li>
+          <li><a href="/physiotherapy/baltana/">Baltana</a></li>
+        </ul>
+        <address style="margin-top:1.2rem;font-style:normal;font-size:.8rem;color:#aaa;line-height:1.7">
+          SCO 12, Ananta Square, Gazipur Road<br>
+          Zirakpur, Punjab 140603<br>
+          <a href="tel:+919417791833" style="color:var(--green)">+91 94177 91833</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="yr"></span> <a href="/">PhysioNutra Clinic</a>. All Rights Reserved. &nbsp;|&nbsp; <a href="/about/">About</a> &nbsp;|&nbsp; <a href="/faqs/">FAQs</a> &nbsp;|&nbsp; <a href="/contact/">Contact</a> &nbsp;|&nbsp; <a href="/blogs/">Blog</a></p>
+      <p style="margin-top:.4rem">Free Physiotherapy Health Camp Chandigarh | Zirakpur &middot; Mohali &middot; Panchkula &middot; Chandigarh</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING BUTTONS ═══ -->
+<div class="floating-buttons" aria-label="Quick contact">
+  <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+</div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+/* ── Header height ── */
+function setHeaderH(){var h=document.querySelector('header');if(h)document.documentElement.style.setProperty('--header-h',h.offsetHeight+'px')}
+setHeaderH();window.addEventListener('resize',setHeaderH);window.addEventListener('orientationchange',function(){setTimeout(setHeaderH,150)});
+
+/* ── Mobile menu ── */
+var tog=document.querySelector('.mobile-menu-toggle'),menu=document.getElementById('mainMenu');
+if(tog&&menu){
+  tog.addEventListener('click',function(e){e.stopPropagation();var o=menu.classList.toggle('active');this.setAttribute('aria-expanded',String(o))});
+  document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!tog.contains(e.target)){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}});
+  menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}})});
+}
+document.querySelectorAll('.has-dropdown>a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('active')}})});
+
+/* ── FAQ accordion ── */
+document.querySelectorAll('.faq-btn').forEach(function(b){b.addEventListener('click',function(){var it=this.closest('.faq-item'),op=it.classList.contains('open'),ans=it.querySelector('.faq-answer');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-btn').setAttribute('aria-expanded','false');i.querySelector('.faq-answer').hidden=true});if(!op){it.classList.add('open');this.setAttribute('aria-expanded','true');ans.hidden=false}})});
+
+/* ── Form ── */
+var af=document.getElementById('appointment-form'),fs=document.getElementById('form-success');
+if(af&&fs){af.addEventListener('submit',function(){setTimeout(function(){af.style.display='none';fs.style.display='block'},400);if(typeof gtag!=='undefined')gtag('event','form_submit',{'event_category':'lead','event_label':'Free Camp Registration'})});}
+
+/* ── Reading bar ── */
+var bar=document.getElementById('reading-bar');
+window.addEventListener('scroll',function(){if(!bar)return;var s=document.body.scrollTop||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight,pct=h?Math.round((s/h)*100):0;bar.style.width=pct+'%';bar.setAttribute('aria-valuenow',pct)});
+
+/* ── Back to top ── */
+var btt=document.getElementById('backToTop');
+window.addEventListener('scroll',function(){if(btt)btt.classList.toggle('visible',window.scrollY>400)});
+if(btt)btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+/* ── Reveal ── */
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+/* ── GA4 tracking ── */
+document.querySelectorAll('a[href^="tel:"],a[href*="wa.me"]').forEach(function(l){l.addEventListener('click',function(){if(typeof gtag!=='undefined')gtag('event','camp_registration_click',{'event_category':this.href.includes('wa.me')?'whatsapp':'phone','event_label':'Free Camp Page'})})});
+
+/* ── Footer year ── */
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
