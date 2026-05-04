@@ -193,13 +193,14 @@ nav a:hover,nav a.active{color:var(--green)}
 .mobile-menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#333;padding:4px}
 
 /* ═══ BREADCRUMBS ═══ */
-.breadcrumbs{background:#f0f0ea;padding:.7rem 0;border-bottom:1px solid var(--border);margin-top:var(--header-h)}
-.breadcrumbs-list{display:flex;list-style:none;gap:.4rem;flex-wrap:wrap;align-items:center}
-.breadcrumbs-list li::after{content:'›';color:var(--muted);margin-left:.4rem;font-size:.85rem}
+.breadcrumbs{background:#f0f0ea;padding:.45rem 0;border-bottom:1px solid var(--border);margin-top:var(--header-h,64px)}
+.breadcrumbs-list{display:flex;flex-direction:row;flex-wrap:nowrap;list-style:none;gap:0;align-items:center;white-space:nowrap;overflow:hidden}
+.breadcrumbs-list li{display:inline-flex;align-items:center;flex-shrink:0}
+.breadcrumbs-list li::after{content:'›';color:var(--muted);font-size:.85rem;padding:0 .35rem;flex-shrink:0}
 .breadcrumbs-list li:last-child::after{display:none}
-.breadcrumbs-list a{color:var(--mid);font-size:.82rem;transition:color .2s}
+.breadcrumbs-list a{color:var(--mid);font-size:.82rem;transition:color .2s;white-space:nowrap}
 .breadcrumbs-list a:hover{color:var(--green)}
-.breadcrumbs-list span{color:var(--muted);font-size:.82rem}
+.breadcrumbs-list span{color:var(--muted);font-size:.82rem;white-space:nowrap}
 
 /* ═══ HERO ═══ */
 .hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 55%,#3a7a32 100%);color:#fff;padding:72px 0 60px;position:relative;overflow:hidden}
@@ -414,9 +415,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
   .hero h1{font-size:2.2rem}
 }
 @media(max-width:768px){
-  :root{--header-h:105px}
-  .header-contact .header-contact-item:nth-child(2),.header-contact .header-contact-item:nth-child(3){display:none}
-  .header-social{gap:.5rem}
+  /* Hide top bar entirely on mobile — saves ~38px */
+  .header-top{display:none}
+  /* Tighten main header row */
+  .header-main{padding:.55rem 0}
   .mobile-menu-toggle{display:block}
   nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}
   nav ul.active{display:flex}
@@ -427,8 +429,9 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
   .has-dropdown.active .dropdown-menu{display:block}
   .has-dropdown>a::after{content:' +';color:var(--green);font-weight:bold}
   .has-dropdown.active>a::after{content:' −'}
-  .logo{height:48px}.tagline{font-size:.7rem}
-  .hero{padding:44px 0 36px}
+  .logo{height:46px}.tagline{font-size:.7rem}
+  /* Hero — no extra top padding, breadcrumb sits right above */
+  .hero{padding:28px 0 30px}
   .hero h1{font-size:1.75rem}
   .hero-stats{grid-template-columns:repeat(2,1fr);gap:.7rem}
   .hero-buttons{flex-direction:column}
@@ -446,11 +449,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
 }
 @media(max-width:480px){
   .container{padding:0 14px}
-  .logo{height:44px}.tagline{display:none}
+  .logo{height:42px}.tagline{display:none}
   .hero h1{font-size:1.5rem}
   .footer-grid{grid-template-columns:1fr}
   .location-grid{grid-template-columns:1fr 1fr}
-  .header-contact .header-contact-item:nth-child(n+2){display:none}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
 }
 </style>
@@ -532,8 +534,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <div class="container">
     <ol class="breadcrumbs-list">
-      <li><a href="/">Home</a></li>
-      <li><span aria-current="page">About Us</span></li>
+      <li><a href="/">Home</a></li><li><span aria-current="page">About Us</span></li>
     </ol>
   </div>
 </nav>
@@ -875,7 +876,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
     <div class="faq-inner">
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">Who is the founder of PhysioNutra Clinic?<i class="faq-icon" aria-hidden="true">+</i></button>
-        <div class="faq-answer" hidden>PhysioNutra Clinic was founded by Dr. Tarun Garg, a Senior Physiotherapist with 10+ years of experience specialising in ACL rehabilitation, sports injuries, orthopedic rehabilitation, and musculoskeletal conditions. Dr. Garg holds a BPT and MPT in Sports &amp; Musculoskeletal Physiotherapy and is a Certified Manual Therapist and Dry Needling Specialist.</div>
+        <div class="faq-answer" hidden>PhysioNutra Clinic was founded by Dr. Tarun Garg, a Senior Physiotherapist with 10+ years of experience specialising in ACL rehabilitation, sports injuries, orthopedic rehabilitation, and musculoskeletal conditions. Dr. Aggarwal holds a BPT and MPT in Sports &amp; Musculoskeletal Physiotherapy and is a Certified Manual Therapist and Dry Needling Specialist.</div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">Where is PhysioNutra Clinic located?<i class="faq-icon" aria-hidden="true">+</i></button>
