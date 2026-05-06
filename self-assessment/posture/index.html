@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5">
+<meta name="theme-color" content="#7ad16c">
+<link rel="icon" href="/favicon.png" type="image/png">
+<title>Posture Assessment Tool | PhysioNutra Clinic Chandigarh</title>
+<meta name="description" content="Free online posture assessment. Check for forward head posture, rounded shoulders, and pelvic tilt. Get a personalised report from PhysioNutra Clinic.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://physionutraclinic.com/self-assessment/posture/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Posture Self-Assessment Tool","description":"Free posture assessment tool covering forward head posture, rounded shoulders, and pelvic tilt.","url":"https://physionutraclinic.com/self-assessment/posture/","provider":{"@type":"MedicalBusiness","name":"PhysioNutra Clinic","telephone":"+919417791833"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',Arial,sans-serif;line-height:1.7;color:#1a1a1a;background:#fafaf8;-webkit-font-smoothing:antialiased}
+:root{--green:#7ad16c;--green-dark:#5ab04a;--green-light:#eaf6e7;--dark:#1a1a1a;--mid:#555;--muted:#888;--border:#e8e8e4;--bg:#fafaf8;--radius:12px;--radius-lg:18px}
+.container{max-width:780px;margin:0 auto;padding:0 20px}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.topnav{background:#fff;border-bottom:1px solid var(--border);padding:.8rem 0;position:sticky;top:0;z-index:100}
+.topnav-inner{display:flex;align-items:center;justify-content:space-between}
+.topnav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--dark)}
+.topnav-logo span{color:var(--green)}
+.topnav-back{font-size:.83rem;color:var(--mid);display:flex;align-items:center;gap:.4rem}
+.topnav-back:hover{color:var(--green)}
+
+/* HERO */
+.tool-hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 55%,#3a7a32 100%);color:#fff;padding:48px 0 36px;text-align:center}
+.tool-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(122,209,108,.15);border:1px solid rgba(122,209,108,.35);color:var(--green);padding:.3rem .9rem;border-radius:50px;font-size:.74rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1rem}
+.tool-hero h1{font-family:'DM Serif Display',serif;font-size:2.2rem;font-weight:400;margin-bottom:.7rem}
+.tool-hero p{font-size:.97rem;color:rgba(255,255,255,.82);max-width:520px;margin:0 auto 1.2rem}
+.hero-meta{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.hero-meta-item{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:rgba(255,255,255,.75)}
+
+/* PROGRESS */
+.progress-wrap{background:#fff;border-bottom:1px solid var(--border);padding:.8rem 0}
+.progress-inner{display:flex;align-items:center;gap:1rem}
+.progress-bar-bg{flex:1;height:6px;background:var(--border);border-radius:50px;overflow:hidden}
+.progress-bar-fill{height:100%;background:var(--green);border-radius:50px;transition:width .4s ease}
+.progress-text{font-size:.78rem;color:var(--muted);white-space:nowrap}
+
+/* CARD */
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;margin:1.5rem 0}
+.card-section-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}
+.card h2{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:var(--dark);margin-bottom:.5rem}
+.card-desc{color:var(--mid);font-size:.9rem;margin-bottom:1.5rem;line-height:1.7}
+
+/* QUESTION */
+.q-block{margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border)}
+.q-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.q-text{font-size:.95rem;font-weight:600;color:var(--dark);margin-bottom:.8rem;display:flex;gap:.6rem;align-items:flex-start}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--green);color:#fff;border-radius:50%;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:.1rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all .2s;font-size:.88rem;color:var(--mid)}
+.opt:hover{border-color:var(--green);background:var(--green-light);color:var(--dark)}
+.opt.selected{border-color:var(--green);background:var(--green-light);color:var(--dark)}
+.opt input[type=radio]{accent-color:var(--green);width:16px;height:16px;flex-shrink:0}
+
+/* BUTTONS */
+.btn-row{display:flex;gap:.8rem;margin-top:1.5rem;flex-wrap:wrap}
+.btn{padding:12px 28px;border-radius:50px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-secondary{background:#fff;color:var(--mid);border:1.5px solid var(--border)}
+.btn-secondary:hover{border-color:var(--green);color:var(--dark)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+/* RESULT */
+.result-wrap{display:none}
+.result-score-card{border-radius:var(--radius-lg);padding:2rem;text-align:center;margin-bottom:1.5rem}
+.result-score-card.low{background:#eaf6e7;border:1px solid #b6deb0}
+.result-score-card.moderate{background:#fff8e1;border:1px solid #ffd54f}
+.result-score-card.high{background:#fdecea;border:1px solid #f5a9a9}
+.score-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.score-label.low{color:#3B6D11}
+.score-label.moderate{color:#854F0B}
+.score-label.high{color:#a32d2d}
+.score-title{font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;margin-bottom:.5rem}
+.score-title.low{color:#2d5a27}
+.score-title.moderate{color:#6d3d0b}
+.score-title.high{color:#7a1f1f}
+.score-desc{font-size:.9rem;line-height:1.7}
+.score-desc.low{color:#3B6D11}
+.score-desc.moderate{color:#854F0B}
+.score-desc.high{color:#a32d2d}
+
+.findings-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;margin-bottom:1.2rem}
+.findings-card h3{font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:1rem}
+.finding-item{display:flex;align-items:flex-start;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--mid)}
+.finding-item:last-child{border-bottom:none}
+.finding-item i{margin-top:.15rem;flex-shrink:0;font-size:.9rem}
+.fi-ok{color:#3B6D11}
+.fi-warn{color:#BA7517}
+.fi-bad{color:#a32d2d}
+
+.reco-card{background:var(--green-light);border:1px solid rgba(122,209,108,.4);border-radius:var(--radius-lg);padding:1.8rem;margin-bottom:1.2rem}
+.reco-card h3{font-size:1rem;font-weight:600;color:#2d5a27;margin-bottom:.8rem}
+.reco-item{display:flex;align-items:flex-start;gap:.7rem;padding:.4rem 0;font-size:.87rem;color:#3B6D11}
+.reco-item i{color:var(--green);flex-shrink:0;margin-top:.15rem}
+
+.cta-card{background:linear-gradient(135deg,#1a2e1a,#2d5a27);border-radius:var(--radius-lg);padding:2rem;text-align:center;color:#fff;margin-bottom:1.5rem}
+.cta-card h3{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:.5rem}
+.cta-card p{font-size:.88rem;color:rgba(255,255,255,.8);margin-bottom:1.2rem}
+.cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn-wa{background:#25D366;color:#fff;padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s}
+.btn-wa:hover{background:#1da851;transform:translateY(-2px)}
+.btn-call-w{background:var(--green);color:#fff;padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s}
+.btn-call-w:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-retake{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;cursor:pointer;font-family:inherit;transition:all .3s}
+.btn-retake:hover{background:rgba(255,255,255,.1)}
+
+/* DISCLAIMER */
+.disclaimer{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:2rem}
+.disclaimer i{color:var(--green)}
+
+/* FOOTER */
+.tool-footer{background:#1a1a1a;color:#ccc;padding:1.5rem 0;text-align:center;font-size:.8rem}
+.tool-footer a{color:var(--green)}
+
+/* STEP HIDE */
+.step{display:none}
+.step.active{display:block}
+
+@media(max-width:600px){
+  .tool-hero h1{font-size:1.6rem}
+  .card{padding:1.4rem}
+  .btn{padding:11px 20px;font-size:.85rem}
+  .hero-meta{gap:.8rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Tool navigation">
+  <div class="container">
+    <div class="topnav-inner">
+      <div class="topnav-logo">Physio<span>Nutra</span></div>
+      <a href="/self-assessment/" class="topnav-back"><i class="fas fa-arrow-left"></i> All Tools</a>
+    </div>
+  </div>
+</nav>
+
+<div class="tool-hero">
+  <div class="container">
+    <div class="tool-badge"><i class="fas fa-user-check"></i> Free Assessment</div>
+    <h1>Posture Assessment</h1>
+    <p>Find out if you have forward head posture, rounded shoulders, or pelvic imbalance — and what to do about it.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><i class="fas fa-clock"></i> 3–4 minutes</div>
+      <div class="hero-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div>
+      <div class="hero-meta-item"><i class="fas fa-shield-alt"></i> 100% free</div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-wrap">
+  <div class="container">
+    <div class="progress-inner">
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div>
+      <div class="progress-text" id="progressText">0 of 12</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- STEP 1 -->
+  <div class="step active" id="step1">
+    <div class="card">
+      <div class="card-section-label">Section 1 of 3</div>
+      <h2>Head & Neck Position</h2>
+      <p class="card-desc">These questions assess forward head posture — one of the most common postural problems, especially in desk workers and phone users.</p>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">1</span> When you stand against a wall with heels touching it, does your head naturally touch the wall too?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q1" value="0"> Yes, my head easily touches the wall</label>
+          <label class="opt"><input type="radio" name="q1" value="1"> I have to push my head back slightly to touch it</label>
+          <label class="opt"><input type="radio" name="q1" value="2"> My head is noticeably away from the wall and I can't easily touch it</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">2</span> How many hours per day do you spend looking at a phone or computer screen?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q2" value="0"> Less than 2 hours</label>
+          <label class="opt"><input type="radio" name="q2" value="1"> 2–6 hours</label>
+          <label class="opt"><input type="radio" name="q2" value="2"> More than 6 hours</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">3</span> Do you regularly experience headaches at the back of your head or neck tension?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q3" value="0"> Rarely or never</label>
+          <label class="opt"><input type="radio" name="q3" value="1"> Occasionally (1–2 times a week)</label>
+          <label class="opt"><input type="radio" name="q3" value="2"> Frequently (most days)</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">4</span> Have others commented that you appear to "poke" your chin or head forward?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q4" value="0"> No, never</label>
+          <label class="opt"><input type="radio" name="q4" value="1"> Maybe once or twice</label>
+          <label class="opt"><input type="radio" name="q4" value="2"> Yes, regularly</label>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="goStep(2)">Next: Shoulders <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" id="step2">
+    <div class="card">
+      <div class="card-section-label">Section 2 of 3</div>
+      <h2>Shoulder & Upper Back</h2>
+      <p class="card-desc">Rounded shoulders and a hunched upper back (kyphosis) often develop together with forward head posture.</p>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">5</span> When standing relaxed, where do your palms naturally face?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q5" value="0"> Towards my thighs (thumbs forward)</label>
+          <label class="opt"><input type="radio" name="q5" value="1"> Slightly inward (thumbs at 45°)</label>
+          <label class="opt"><input type="radio" name="q5" value="2"> Mostly backward (towards the back of my thighs)</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">6</span> Can you lie flat on your back on the floor with your arms straight out to the side (like a cross) without your shoulders lifting off the floor?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q6" value="0"> Yes, both shoulders lie flat comfortably</label>
+          <label class="opt"><input type="radio" name="q6" value="1"> One or both shoulders lift slightly</label>
+          <label class="opt"><input type="radio" name="q6" value="2"> Both shoulders lift noticeably off the floor</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">7</span> Do you experience tightness or pain between your shoulder blades during or after desk work?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q7" value="0"> No, rarely</label>
+          <label class="opt"><input type="radio" name="q7" value="1"> Sometimes, mild discomfort</label>
+          <label class="opt"><input type="radio" name="q7" value="2"> Yes, regularly and it affects concentration</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">8</span> How would you describe your upper back appearance when viewed from the side?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q8" value="0"> Relatively straight / upright</label>
+          <label class="opt"><input type="radio" name="q8" value="1"> Slightly rounded</label>
+          <label class="opt"><input type="radio" name="q8" value="2"> Noticeably hunched forward</label>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="goStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="btn btn-primary" onclick="goStep(3)">Next: Pelvis & Lower Back <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" id="step3">
+    <div class="card">
+      <div class="card-section-label">Section 3 of 3</div>
+      <h2>Pelvis & Lower Back</h2>
+      <p class="card-desc">Pelvic tilt — either anterior (arched lower back) or posterior (flat back) — affects everything from lower back pain to knee alignment.</p>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">9</span> When you stand and look in a side-on mirror, does your lower back appear?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q9" value="0"> With a gentle natural curve</label>
+          <label class="opt"><input type="radio" name="q9" value="1"> Excessively arched (bum sticks out, belly pushed forward)</label>
+          <label class="opt"><input type="radio" name="q9" value="2"> Flat or tucked under (bum tucked, flat lower back)</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">10</span> Do you experience lower back pain or stiffness when you have been sitting for more than 30 minutes?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q10" value="0"> No, rarely</label>
+          <label class="opt"><input type="radio" name="q10" value="1"> Occasionally</label>
+          <label class="opt"><input type="radio" name="q10" value="2"> Yes, almost every time I sit for that long</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">11</span> Can you stand on one leg for 10 seconds without swinging your hips significantly to the side?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q11" value="0"> Yes, both sides easily</label>
+          <label class="opt"><input type="radio" name="q11" value="1"> Manageable but I sway noticeably</label>
+          <label class="opt"><input type="radio" name="q11" value="2"> Difficult on one or both sides</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text"><span class="q-num">12</span> Do you regularly sit for more than 6 hours a day (office work, driving, studying)?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q12" value="0"> No, I move around frequently</label>
+          <label class="opt"><input type="radio" name="q12" value="1"> Yes, 4–6 hours seated</label>
+          <label class="opt"><input type="radio" name="q12" value="2"> Yes, more than 6 hours mostly seated</label>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="goStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="btn btn-primary" onclick="showResult()">Get My Results <i class="fas fa-chart-bar"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result-wrap" id="resultWrap">
+    <div id="resultScoreCard" class="result-score-card"></div>
+
+    <div class="findings-card">
+      <h3><i class="fas fa-search" style="color:var(--green);margin-right:.5rem"></i>Your Posture Findings</h3>
+      <div id="findingsList"></div>
+    </div>
+
+    <div class="reco-card">
+      <h3><i class="fas fa-lightbulb" style="margin-right:.5rem"></i>Recommendations</h3>
+      <div id="recoList"></div>
+    </div>
+
+    <div class="cta-card">
+      <h3>Want a Full Posture Correction Plan?</h3>
+      <p>Dr. Tarun Garg can assess your posture in person and design a targeted correction programme — including exercises, ergonomic advice, and manual therapy.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20completed%20the%20posture%20assessment%20and%20would%20like%20a%20consultation." class="btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        <a href="tel:+919417791833" class="btn-call-w"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <button class="btn-retake" onclick="retake()"><i class="fas fa-redo"></i> Retake</button>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This tool is for informational purposes only and does not constitute medical advice or diagnosis. Results are based on self-reported answers. Please consult a qualified physiotherapist for a clinical assessment.
+    </div>
+  </div>
+
+</div>
+
+<footer class="tool-footer">
+  <div class="container">
+    <p>&copy; <span id="yr"></span> <a href="/">PhysioNutra Clinic</a> | SCO 12, Ananta Square, Zirakpur | <a href="tel:+919417791833">+91 94177 91833</a></p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+var totalQ = 12;
+var currentStep = 1;
+var totalSteps = 3;
+var qPerStep = [4, 4, 4];
+
+function updateProgress() {
+  var answered = 0;
+  for (var i = 1; i <= totalQ; i++) {
+    if (document.querySelector('input[name="q' + i + '"]:checked')) answered++;
+  }
+  var pct = Math.round((answered / totalQ) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = answered + ' of ' + totalQ;
+}
+
+document.querySelectorAll('input[type=radio]').forEach(function(r) {
+  r.addEventListener('change', function() {
+    var label = this.closest('.opt');
+    var name = this.name;
+    document.querySelectorAll('input[name="' + name + '"]').forEach(function(x) {
+      x.closest('.opt').classList.remove('selected');
+    });
+    label.classList.add('selected');
+    updateProgress();
+  });
+});
+
+function goStep(n) {
+  var stepFrom = currentStep;
+  var qStart = 0;
+  for (var i = 0; i < stepFrom - 1; i++) qStart += qPerStep[i];
+  var allAnswered = true;
+  for (var j = qStart + 1; j <= qStart + qPerStep[stepFrom - 1]; j++) {
+    if (!document.querySelector('input[name="q' + j + '"]:checked')) {
+      allAnswered = false; break;
+    }
+  }
+  if (n > stepFrom && !allAnswered) {
+    alert('Please answer all questions in this section before continuing.');
+    return;
+  }
+  document.getElementById('step' + currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('step' + currentStep).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateProgress();
+}
+
+function getScore(names) {
+  var s = 0;
+  names.forEach(function(n) {
+    var el = document.querySelector('input[name="' + n + '"]:checked');
+    if (el) s += parseInt(el.value);
+  });
+  return s;
+}
+
+function showResult() {
+  var allAnswered = true;
+  for (var i = 1; i <= totalQ; i++) {
+    if (!document.querySelector('input[name="q' + i + '"]:checked')) { allAnswered = false; break; }
+  }
+  if (!allAnswered) { alert('Please answer all questions before viewing results.'); return; }
+
+  document.getElementById('step3').classList.remove('active');
+  document.getElementById('resultWrap').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('progressBar').style.width = '100%';
+  document.getElementById('progressText').textContent = '12 of 12';
+
+  var headScore = getScore(['q1','q2','q3','q4']);
+  var shoulderScore = getScore(['q5','q6','q7','q8']);
+  var pelvisScore = getScore(['q9','q10','q11','q12']);
+  var total = headScore + shoulderScore + pelvisScore;
+
+  var sc = document.getElementById('resultScoreCard');
+  var level, cls, title, desc;
+  if (total <= 6) {
+    level = 'low'; title = 'Good Posture'; cls = 'low';
+    desc = 'Your posture appears relatively well-aligned. Minor tweaks may still help, especially if you spend long hours at a desk.';
+  } else if (total <= 14) {
+    level = 'moderate'; title = 'Moderate Postural Issues'; cls = 'moderate';
+    desc = 'You have some postural imbalances that are worth addressing now before they cause pain or structural changes. A physiotherapy assessment is recommended.';
+  } else {
+    level = 'high'; title = 'Significant Postural Dysfunction'; cls = 'high';
+    desc = 'Your posture shows multiple areas of concern. Without correction, this can lead to chronic pain, nerve compression, and joint problems. We strongly recommend a clinical assessment.';
+  }
+  sc.className = 'result-score-card ' + cls;
+  sc.innerHTML = '<div class="score-label ' + cls + '">' + (level === 'low' ? 'Result: Healthy' : level === 'moderate' ? 'Result: Needs Attention' : 'Result: Requires Treatment') + '</div><div class="score-title ' + cls + '">' + title + '</div><div class="score-desc ' + cls + '">' + desc + '</div>';
+
+  var findings = [];
+  if (headScore <= 2) findings.push({icon:'fi-ok',ic:'check-circle',text:'Head & neck: good alignment — no significant forward head posture detected'});
+  else if (headScore <= 4) findings.push({icon:'fi-warn',ic:'exclamation-circle',text:'Head & neck: mild forward head posture — common in screen users, correctable with targeted exercises'});
+  else findings.push({icon:'fi-bad',ic:'times-circle',text:'Head & neck: significant forward head posture — can cause headaches, nerve irritation, and neck degeneration'});
+
+  if (shoulderScore <= 2) findings.push({icon:'fi-ok',ic:'check-circle',text:'Shoulders & upper back: well-positioned — no significant rounding detected'});
+  else if (shoulderScore <= 4) findings.push({icon:'fi-warn',ic:'exclamation-circle',text:'Shoulders & upper back: mild rounding — tight chest muscles and weak mid-back muscles likely'});
+  else findings.push({icon:'fi-bad',ic:'times-circle',text:'Shoulders & upper back: significant rounding — increased kyphosis risk, needs manual therapy and strengthening'});
+
+  if (pelvisScore <= 2) findings.push({icon:'fi-ok',ic:'check-circle',text:'Pelvis & lower back: good alignment and stability detected'});
+  else if (pelvisScore <= 4) findings.push({icon:'fi-warn',ic:'exclamation-circle',text:'Pelvis & lower back: pelvic imbalance detected — may be contributing to lower back discomfort'});
+  else findings.push({icon:'fi-bad',ic:'times-circle',text:'Pelvis & lower back: notable pelvic tilt — hip flexor tightness or core weakness likely contributing'});
+
+  var fl = document.getElementById('findingsList');
+  fl.innerHTML = findings.map(function(f) {
+    return '<div class="finding-item"><i class="fas fa-' + f.ic + ' ' + f.icon + '"></i><span>' + f.text + '</span></div>';
+  }).join('');
+
+  var recos = [];
+  if (headScore >= 3) { recos.push('Perform chin tucks 10 reps × 3 sets daily to retrain cervical alignment'); recos.push('Raise your screen to eye level — place laptop on a stand or use an external monitor'); }
+  if (shoulderScore >= 3) { recos.push('Stretch your chest with a doorframe pectoral stretch — hold 30 sec × 3 daily'); recos.push('Strengthen mid-back with band pull-aparts or face pulls — 3 sets of 15 reps'); }
+  if (pelvisScore >= 3) { recos.push('Stretch hip flexors with a kneeling lunge stretch — 30 sec each side, 3× daily'); recos.push('Strengthen your core with dead bugs and glute bridges — 3 sets of 10'); }
+  recos.push('Take a 5-minute movement break every 45 minutes of sitting');
+  recos.push('Sleep with a supportive pillow that keeps your neck in neutral alignment');
+
+  var rl = document.getElementById('recoList');
+  rl.innerHTML = recos.map(function(r) {
+    return '<div class="reco-item"><i class="fas fa-check-circle"></i><span>' + r + '</span></div>';
+  }).join('');
+}
+
+function retake() {
+  document.querySelectorAll('input[type=radio]').forEach(function(r) { r.checked = false; r.closest('.opt').classList.remove('selected'); });
+  document.getElementById('resultWrap').style.display = 'none';
+  currentStep = 1;
+  document.getElementById('step1').classList.add('active');
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
