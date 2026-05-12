@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<!-- FIX 1: lang="en" not "en-IN" for consistency with rest of site -->
+<html lang="en">
 <head>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NHVSMWD6');</script>
+
+<!-- FIX 8: GA4 restored — was missing from document 9 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-45SFLN5B7J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-45SFLN5B7J');</script>
+<!-- Google Ads conversion tracking -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16805203244"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-16805203244');</script>
+<script>gtag('config','AW-16805203244');</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,shrink-to-fit=no">
@@ -17,7 +23,10 @@
 <meta name="robots" content="index,follow,max-snippet:-1,max-video-preview:-1,max-image-preview:large">
 
 <link rel="canonical" href="https://physionutraclinic.com/physiotherapy/zirakpur/">
-<link rel="alternate" hreflang="en-IN" href="https://physionutraclinic.com/physiotherapy/zirakpur/">
+<!-- FIX 2: hreflang="en" not "en-IN" -->
+<link rel="alternate" hreflang="en" href="https://physionutraclinic.com/physiotherapy/zirakpur/">
+<link rel="alternate" hreflang="hi" href="https://physionutraclinic.com/hi/">
+<link rel="alternate" hreflang="pa" href="https://physionutraclinic.com/pa/">
 <link rel="alternate" hreflang="x-default" href="https://physionutraclinic.com/physiotherapy/zirakpur/">
 
 <meta property="og:type" content="website">
@@ -49,7 +58,8 @@
     "@id":"https://physionutraclinic.com/#website",
     "url":"https://physionutraclinic.com/",
     "name":"PhysioNutra Clinic",
-    "inLanguage":"en-IN",
+    <!-- FIX 7: inLanguage as array matching other pages -->
+    "inLanguage":["en","hi","pa"],
     "publisher":{"@id":"https://physionutraclinic.com/#clinic"}
   },
   {
@@ -60,13 +70,14 @@
     "description":"PhysioNutra Clinic's main facility in Zirakpur — expert physiotherapy for back pain, sports injuries, post-surgical rehabilitation, ACL rehab, neuro rehab and more. Class IV Laser, isokinetic testing, dry needling. Led by Dr. Tarun Garg.",
     "datePublished":"2025-01-01",
     "dateModified":"2026-05-10",
-    "inLanguage":"en-IN",
+    "inLanguage":"en",
     "isPartOf":{"@id":"https://physionutraclinic.com/#website"},
     "about":{"@id":"https://physionutraclinic.com/#clinic"},
     "breadcrumb":{"@id":"https://physionutraclinic.com/physiotherapy/zirakpur/#breadcrumb"},
     "speakable":{
       "@type":"SpeakableSpecification",
-      "cssSelector":["#aio-answer","#hero-h1",".hero-subtitle"]
+      <!-- FIX 6: removed duplicate #aio-answer — only the answer-box div keeps that ID -->
+      "cssSelector":["#hero-h1",".hero-subtitle","#answer-box-zirakpur"]
     },
     "primaryImageOfPage":{
       "@type":"ImageObject",
@@ -138,13 +149,7 @@
       ]
     },
     "sameAs":["https://www.facebook.com/people/PhysioNutra/61570467073912/","https://www.instagram.com/physionutra","https://www.linkedin.com/company/physionutra-clinic/","https://youtube.com/@physionutra","https://x.com/physionutra"],
-    "aggregateRating":{
-      "@type":"AggregateRating",
-      "ratingValue":"4.9",
-      "reviewCount":"250",
-      "bestRating":"5",
-      "worstRating":"1"
-    },
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"250","bestRating":"5","worstRating":"1"},
     "review":[
       {"@type":"Review","datePublished":"2025-03-10","author":{"@type":"Person","name":"Rajesh Kumar"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"I had severe back pain for months that no painkiller could fix. Dr. Tarun Garg's assessment identified the root cause — a postural imbalance and weak core. After 10 sessions his treatment completely transformed my life. The nutrition guidance alongside physio made a huge difference."},
       {"@type":"Review","datePublished":"2025-04-02","author":{"@type":"Person","name":"Priya Sharma"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"After my knee replacement surgery the post-surgical programme at PhysioNutra had me walking independently in 5 weeks. The phase-by-phase approach and strength testing gave me real confidence at every stage."},
@@ -168,7 +173,7 @@
       {"@type":"Question","name":"Where is the best physiotherapy clinic in Zirakpur?","acceptedAnswer":{"@type":"Answer","text":"PhysioNutra Clinic at SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603 is rated 4.9 stars from 250+ verified patient reviews. It is the most advanced physiotherapy clinic in Zirakpur with Class IV Laser, isokinetic testing, dry needling, and specialist sports rehab equipment. Led by Dr. Tarun Garg, BPT, MPT, with 10+ years of experience. Call +91 94177 91833 for a free first consultation."}},
       {"@type":"Question","name":"What conditions does PhysioNutra Clinic Zirakpur treat?","acceptedAnswer":{"@type":"Answer","text":"PhysioNutra Clinic Zirakpur treats back pain, sciatica, neck pain, cervical spondylosis, knee pain, osteoarthritis, frozen shoulder, ACL and sports injuries, post-surgical rehabilitation (knee/hip replacement, spinal surgery), stroke rehabilitation, Parkinson's disease, vertigo, plantar fasciitis, slip disc, carpal tunnel, tennis elbow, and more."}},
       {"@type":"Question","name":"How much does physiotherapy cost in Zirakpur?","acceptedAnswer":{"@type":"Answer","text":"Physiotherapy sessions at PhysioNutra Clinic Zirakpur range from ₹500 to ₹1,500 per session depending on treatment type and complexity. A free first consultation is available for all new patients. Home visits range from ₹1,000 to ₹1,500. Call +91 94177 91833 for specific pricing."}},
-      {"@type":"Question","name":"How many physiotherapy sessions will I need in Zirakpur?","acceptedAnswer":{"@type":"Answer","text":"Acute injuries typically need 6–10 sessions. Chronic musculoskeletal conditions require 12–20 sessions. Post-surgical rehabilitation may need 20–40+ sessions over several months. Dr. Tarun Garg provides a clear, personalised plan with a realistic timeline at your first assessment — you will never receive a generic guess."}},
+      {"@type":"Question","name":"How many physiotherapy sessions will I need in Zirakpur?","acceptedAnswer":{"@type":"Answer","text":"Acute injuries typically need 6–10 sessions. Chronic musculoskeletal conditions require 12–20 sessions. Post-surgical rehabilitation may need 20–40+ sessions over several months. Dr. Tarun Garg provides a clear, personalised plan with a realistic timeline at your first assessment."}},
       {"@type":"Question","name":"Do I need a doctor's referral for physiotherapy in Zirakpur?","acceptedAnswer":{"@type":"Answer","text":"No referral is required to book at PhysioNutra Clinic Zirakpur. You can book directly by calling +91 94177 91833. If you have a referral, recent X-rays, MRI, or surgical reports, bring them — they help plan your treatment with greater precision."}},
       {"@type":"Question","name":"Does PhysioNutra offer home physiotherapy from Zirakpur?","acceptedAnswer":{"@type":"Answer","text":"Yes. PhysioNutra provides professional home physiotherapy from Zirakpur to Chandigarh, Mohali, Panchkula, Kharar, Baltana, Dera Bassi, Dhakoli, and Peer Muchalla. Our therapists bring all professional portable equipment for clinic-quality care at your home. Call +91 94177 91833 to book."}},
       {"@type":"Question","name":"What advanced equipment does PhysioNutra Clinic Zirakpur have?","acceptedAnswer":{"@type":"Answer","text":"PhysioNutra Clinic Zirakpur is equipped with Class IV Laser Therapy, isokinetic testing and strengthening equipment, therapeutic ultrasound, TENS and IFT electrotherapy, dry needling, cupping therapy, kinesiology taping, and full sports rehabilitation apparatus — the most comprehensive equipment range of any physiotherapy clinic in the Zirakpur and Tricity region."}},
@@ -219,8 +224,8 @@ button{font-family:inherit}
 /* ══ HEADER ══ */
 #site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1)}
 .hdr-top{background:#1a1a1a;color:#fff;padding:8px 0}
-.hdr-top-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:.5rem}
-.hdr-contacts{display:flex;gap:1.4rem;flex-wrap:nowrap;overflow:hidden}
+.hdr-top-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.hdr-contacts{display:flex;gap:1.4rem;flex-wrap:wrap}
 .hdr-contact-item{display:flex;align-items:center;gap:.4rem;font-size:.82rem;white-space:nowrap}
 .hdr-contact-item a{color:var(--g)}
 .hdr-socials{display:flex;gap:.7rem;flex-shrink:0}
@@ -462,7 +467,8 @@ button{font-family:inherit}
   .contact-grid,.intro-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  :root{--header-h:96px}
+  :root{--header-h:72px}
+  /* FIX 3: header top hidden on mobile OK, but breadcrumbs MUST remain visible for SEO */
   .hdr-top{display:none}
   .hdr-main{padding:.6rem 0}
   .mob-toggle{display:block}
@@ -493,7 +499,8 @@ button{font-family:inherit}
   .section-title{font-size:1.75rem}
   .cta-section h2{font-size:1.8rem}
   .cta-buttons{flex-direction:column;align-items:center}
-  .trust-inner{gap:1rem;justify-content:flex-start;overflow-x:auto;padding-bottom:2px}
+  /* FIX 4: trust inner wraps gracefully on narrow screens */
+  .trust-inner{gap:1rem;justify-content:flex-start;flex-wrap:wrap;overflow-x:auto;padding-bottom:2px}
   .timeline{padding-left:2rem}
   .tl-dot{left:-1.75rem}
 }
@@ -519,7 +526,7 @@ button{font-family:inherit}
         <div class="hdr-contacts">
           <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
           <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a></div>
-          <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+          <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</span></div>
         </div>
         <div class="hdr-socials" aria-label="Social links">
           <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -577,7 +584,7 @@ button{font-family:inherit}
   </div>
 </header>
 
-<!-- BREADCRUMBS -->
+<!-- FIX 3: Breadcrumbs always visible — removed mobile display:none -->
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <div class="container">
     <ol>
@@ -597,7 +604,8 @@ button{font-family:inherit}
       <div class="hero-content">
         <div class="hero-badge"><i class="fas fa-hospital-alt"></i>&nbsp; PhysioNutra Main Clinic — Zirakpur</div>
         <h1 id="hero-h1">Best Physiotherapy in <em>Zirakpur</em><br>— Dr. Tarun Garg</h1>
-        <p class="hero-subtitle" id="aio-answer">State-of-the-art physiotherapy at our main clinic in Zirakpur — Class IV Laser, isokinetic testing, dry needling, and complete sports &amp; post-surgical rehab. 4.9★ · 5,000+ patients · 10+ years. Serving Zirakpur and the entire Tricity region.</p>
+        <!-- FIX 6: hero-subtitle no longer has id="aio-answer" — ID only on answer-box below -->
+        <p class="hero-subtitle">State-of-the-art physiotherapy at our main clinic in Zirakpur — Class IV Laser, isokinetic testing, dry needling, and complete sports &amp; post-surgical rehab. 4.9★ &middot; 5,000+ patients &middot; 10+ years. Serving Zirakpur and the entire Tricity region.</p>
         <div class="hero-stats">
           <div class="stat-item"><span class="stat-num">5,000+</span><span class="stat-label">Patients Treated</span></div>
           <div class="stat-item"><span class="stat-num">4.9★</span><span class="stat-label">Google Rating</span></div>
@@ -612,7 +620,7 @@ button{font-family:inherit}
       <!-- APPOINTMENT FORM -->
       <div class="hero-form-wrap">
         <h2>Book Free Consultation</h2>
-        <p class="sub">Clinic visit or home visit — we call you back</p>
+        <p class="sub">Clinic visit or home visit &mdash; we call you back</p>
         <form id="appt-form" action="https://docs.google.com/forms/d/e/1FAIpQLSecs0syQlexbviX2-GFRHL418tELcBVxDyLnHhORL47eXZscw/formResponse" method="POST" target="hidden_iframe" novalidate>
           <div class="form-group" id="fg-name">
             <label for="f-name">Full Name <span aria-hidden="true" style="color:#e53e3e">*</span></label>
@@ -685,7 +693,8 @@ button{font-family:inherit}
         <p>Led by Dr. Tarun Garg (BPT, MPT — Sports &amp; Musculoskeletal, Certified Manual Therapist, Certified Dry Needling Specialist), every patient receives a comprehensive assessment and a personalised, criteria-based treatment plan. We treat the root cause — not just the symptom — and never advance you through rehabilitation phases on arbitrary timelines.</p>
         <p>Whether you are a Zirakpur resident, or travelling from Chandigarh (15 min), Mohali (10 min), or Panchkula (20 min), our clinic offers the highest standard of physiotherapy care in one convenient, accessible location with ample parking and ground-floor access.</p>
 
-        <div class="answer-box" id="aio-answer" role="note">
+        <!-- FIX 6: Unique ID "answer-box-zirakpur" — no longer duplicates #aio-answer from hero -->
+        <div class="answer-box" id="answer-box-zirakpur" role="note">
           <span class="answer-box-label">Quick Answer — Best Physiotherapy in Zirakpur</span>
           <p>PhysioNutra Clinic is Zirakpur's best-rated physiotherapy clinic — 4.9★ from 250+ patients, led by Dr. Tarun Garg with 10+ years of experience and 5,000+ patients treated. Located at SCO 12, Ananta Square, Gazipur Road, Zirakpur 140603. Treats back pain, neck pain, sports injuries, ACL, post-surgery rehab, neuro conditions &amp; more. Sessions ₹500–₹1,500. Free first consultation. Call +91&nbsp;94177&nbsp;91833.</p>
         </div>
@@ -699,7 +708,7 @@ button{font-family:inherit}
         <li><i class="fas fa-map-marker-alt"></i><div><strong>Branch Clinic:</strong> Sector 20, Panchkula, Haryana 134116</div></li>
         <li><i class="fas fa-phone-alt"></i><div><strong>Phone / WhatsApp:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
         <li><i class="fas fa-envelope"></i><div><strong>Email:</strong> <a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a></div></li>
-        <li><i class="fas fa-clock"></i><div><strong>Hours:</strong> Mon–Sat 9AM–7PM &nbsp;|&nbsp; Sun 10AM–2PM. Evening slots available for working professionals.</div></li>
+        <li><i class="fas fa-clock"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM &nbsp;|&nbsp; Sun 10AM&ndash;2PM. Evening slots available for working professionals.</div></li>
         <li><i class="fas fa-directions"></i><div><strong>Access:</strong> On Gazipur Road (NH-22 accessible) — 15 min from Chandigarh, 10 min from Mohali, 20 min from Panchkula. Ground floor. Ample parking.</div></li>
       </ul>
     </div>
@@ -789,36 +798,12 @@ button{font-family:inherit}
       <p class="section-sub">What sets us apart from every other physiotherapy clinic in Zirakpur and the Tricity region</p>
     </div>
     <div class="why-grid">
-      <div class="why-card reveal">
-        <div class="why-icon"><i class="fas fa-user-md"></i></div>
-        <h3>Led by Dr. Tarun Garg</h3>
-        <p>BPT, MPT (Sports &amp; Musculoskeletal), Certified Manual Therapist, Certified Dry Needling Specialist. Founder of PhysioNutra Clinic. 10+ years of experience with 5,000+ patients treated in Zirakpur and across Tricity.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><i class="fas fa-tools"></i></div>
-        <h3>Most Advanced Equipment in Tricity</h3>
-        <p>Class IV Laser Therapy, isokinetic testing and strengthening, therapeutic ultrasound, TENS/IFT, dry needling, cupping, taping, and full sports rehab bays. No other clinic in Zirakpur matches this range.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><i class="fas fa-clipboard-check"></i></div>
-        <h3>Criteria-Based Rehabilitation</h3>
-        <p>You progress through rehabilitation phases only when you meet objective strength and functional benchmarks — not arbitrary timelines. This evidence-based approach significantly reduces re-injury risk.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><i class="fas fa-user-friends"></i></div>
-        <h3>One-on-One Every Session</h3>
-        <p>Every session is with Dr. Tarun Garg or a senior physiotherapist — never delegated to an assistant. Your programme is reviewed and adjusted individually at every visit.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><i class="fas fa-seedling"></i></div>
-        <h3>Integrated Nutrition &amp; Physio</h3>
-        <p>PhysioNutra uniquely combines physiotherapy with evidence-based nutritional guidance. Anti-inflammatory dietary advice and recovery nutrition support accelerate healing and improve long-term outcomes.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <h3>Best Location in Tricity</h3>
-        <p>On Gazipur Road, Zirakpur — 15 min from Chandigarh, 10 min from Mohali, 20 min from Panchkula. Ground floor access, ample parking, convenient for the entire Tricity region.</p>
-      </div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fas fa-user-md"></i></div><h3>Led by Dr. Tarun Garg</h3><p>BPT, MPT (Sports &amp; Musculoskeletal), Certified Manual Therapist, Certified Dry Needling Specialist. Founder of PhysioNutra Clinic. 10+ years of experience with 5,000+ patients treated in Zirakpur and across Tricity.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fas fa-tools"></i></div><h3>Most Advanced Equipment in Tricity</h3><p>Class IV Laser Therapy, isokinetic testing and strengthening, therapeutic ultrasound, TENS/IFT, dry needling, cupping, taping, and full sports rehab bays. No other clinic in Zirakpur matches this range.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fas fa-clipboard-check"></i></div><h3>Criteria-Based Rehabilitation</h3><p>You progress through rehabilitation phases only when you meet objective strength and functional benchmarks — not arbitrary timelines. This evidence-based approach significantly reduces re-injury risk.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fas fa-user-friends"></i></div><h3>One-on-One Every Session</h3><p>Every session is with Dr. Tarun Garg or a senior physiotherapist — never delegated to an assistant. Your programme is reviewed and adjusted individually at every visit.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fas fa-seedling"></i></div><h3>Integrated Nutrition &amp; Physio</h3><p>PhysioNutra uniquely combines physiotherapy with evidence-based nutritional guidance. Anti-inflammatory dietary advice and recovery nutrition support accelerate healing and improve long-term outcomes.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fas fa-map-marker-alt"></i></div><h3>Best Location in Tricity</h3><p>On Gazipur Road, Zirakpur — 15 min from Chandigarh, 10 min from Mohali, 20 min from Panchkula. Ground floor access, ample parking, convenient for the entire Tricity region.</p></div>
     </div>
   </div>
 </section>
@@ -1028,7 +1013,7 @@ button{font-family:inherit}
           <li><i class="fas fa-phone-alt"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
           <li><i class="fab fa-whatsapp"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
           <li><i class="fas fa-envelope"></i><div><strong>Email:</strong> <a href="mailto:physionutraclinic@gmail.com">physionutraclinic@gmail.com</a></div></li>
-          <li><i class="fas fa-clock"></i><div><strong>Hours:</strong> Mon–Sat 9AM–7PM &nbsp;|&nbsp; Sun 10AM–2PM</div></li>
+          <li><i class="fas fa-clock"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM &nbsp;|&nbsp; Sun 10AM&ndash;2PM</div></li>
         </ul>
         <div class="contact-cta">
           <a href="https://maps.app.goo.gl/LZCjSHdrjuERSAaUA" target="_blank" rel="noopener" class="btn-primary" style="font-size:.86rem;padding:11px 20px"><i class="fas fa-directions"></i> Get Directions</a>
@@ -1104,7 +1089,7 @@ button{font-family:inherit}
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="yr"></span> <a href="/">PhysioNutra Clinic</a>. All Rights Reserved. &nbsp;|&nbsp; <a href="/about/">About</a> &nbsp;|&nbsp; <a href="/faqs/">FAQs</a> &nbsp;|&nbsp; <a href="/contact/">Contact</a> &nbsp;|&nbsp; <a href="/blogs/">Blog</a> &nbsp;|&nbsp; <a href="/testimonials/">Testimonials</a></p>
-      <p style="margin-top:.35rem">Best Physiotherapy in Zirakpur | Dr. Tarun Garg | Chandigarh · Mohali · Panchkula · Tricity</p>
+      <p style="margin-top:.35rem">Best Physiotherapy in Zirakpur | Dr. Tarun Garg | Chandigarh &middot; Mohali &middot; Panchkula &middot; Tricity</p>
     </div>
   </div>
 </footer>
@@ -1121,9 +1106,7 @@ function syncH(){
   var h=document.getElementById('site-header');
   if(h)document.documentElement.style.setProperty('--header-h',h.offsetHeight+'px');
 }
-syncH();
-window.addEventListener('load',syncH);
-window.addEventListener('resize',syncH);
+syncH();window.addEventListener('load',syncH);window.addEventListener('resize',syncH);
 window.addEventListener('orientationchange',function(){setTimeout(syncH,150)});
 
 /* ── Mobile nav ── */
@@ -1138,9 +1121,7 @@ window.addEventListener('orientationchange',function(){setTimeout(syncH,150)});
   });
   document.addEventListener('click',function(e){
     if(nav.classList.contains('open')&&!nav.contains(e.target)&&!tog.contains(e.target)){
-      nav.classList.remove('open');
-      tog.setAttribute('aria-expanded','false');
-      syncH();
+      nav.classList.remove('open');tog.setAttribute('aria-expanded','false');syncH();
     }
   });
   nav.querySelectorAll('a:not(.dd-menu a)').forEach(function(l){
@@ -1161,7 +1142,6 @@ window.addEventListener('orientationchange',function(){setTimeout(syncH,150)});
   var success=document.getElementById('form-success');
   var btn=document.getElementById('submit-btn');
   if(!form||!success||!btn)return;
-
   function validateName(){
     var v=document.getElementById('f-name').value.trim();
     var g=document.getElementById('fg-name');
@@ -1174,19 +1154,14 @@ window.addEventListener('orientationchange',function(){setTimeout(syncH,150)});
     if(!v||!/^[+]?[0-9]{10,13}$/.test(v)){g.classList.add('has-error');return false;}
     g.classList.remove('has-error');return true;
   }
-
   form.addEventListener('submit',function(e){
     var ok=validateName()&validatePhone();
     if(!ok){e.preventDefault();return;}
     btn.disabled=true;
-    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Submitting…';
-    setTimeout(function(){
-      form.style.display='none';
-      success.style.display='block';
-    },600);
+    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Submitting\u2026';
+    setTimeout(function(){form.style.display='none';success.style.display='block';},600);
     if(typeof gtag!=='undefined')gtag('event','form_submit',{'event_category':'lead','event_label':'Zirakpur Location Page'});
   });
-
   document.getElementById('f-name').addEventListener('blur',validateName);
   document.getElementById('f-phone').addEventListener('blur',validatePhone);
 })();
