@@ -116,18 +116,12 @@
     "areaServed":[
       {"@type":"City","name":"Dera Bassi"}
     ],
-    "serviceType":"Home Visit Physiotherapy",
-    "offers":[
-      {"@type":"Offer","name":"Single Home Visit Session","price":"1500","priceCurrency":"INR"},
-      {"@type":"Offer","name":"10-Session Package","price":"13000","priceCurrency":"INR"},
-      {"@type":"Offer","name":"20-Session Package","price":"24000","priceCurrency":"INR"}
-    ]
+    "serviceType":"Home Visit Physiotherapy"
   },
   {
     "@type":"FAQPage",
     "mainEntity":[
       {"@type":"Question","name":"Is there a physiotherapist who does home visits in Dera Bassi?","acceptedAnswer":{"@type":"Answer","text":"Yes. PhysioNutra Clinic provides professional home physiotherapy across all areas of Dera Bassi — including Zirakpur Road, Nabha Road, Railway Road, Bans Road, and surrounding localities. Our certified physiotherapists bring all equipment to your home. Call +91 94177 91833 to book."}},
-      {"@type":"Question","name":"What is the cost of physiotherapy home visits in Dera Bassi?","acceptedAnswer":{"@type":"Answer","text":"Single home visit sessions are ₹1,500, inclusive of all equipment and treatment. Package rates: 10 sessions for ₹13,000 and 20 sessions for ₹24,000. Free first consultation for new patients."}},
       {"@type":"Question","name":"How quickly can a physiotherapist come to my home in Dera Bassi?","acceptedAnswer":{"@type":"Answer","text":"We offer same-day appointments based on availability. For urgent post-surgical or acute pain cases, we often arrange visits within 2–4 hours. Regular appointments are available mornings, evenings, and weekends."}},
       {"@type":"Question","name":"What conditions are treated by home physiotherapy in Dera Bassi?","acceptedAnswer":{"@type":"Answer","text":"We treat back and neck pain, sciatica, knee pain, frozen shoulder, post-surgical rehabilitation, stroke recovery, sports injuries, arthritis, neurological conditions, slip disc, spondylosis, and chronic pain — all at your home in Dera Bassi."}},
       {"@type":"Question","name":"Which areas of Dera Bassi do you cover for home physiotherapy?","acceptedAnswer":{"@type":"Answer","text":"We cover all areas of Dera Bassi including Zirakpur Road, Nabha Road, Railway Road, Bans Road, Chandigarh Road, New Dera Bassi, Old Dera Bassi, the Industrial Area, and surrounding villages."}},
@@ -325,24 +319,6 @@ nav a:hover,nav a.active{color:var(--green)}
 .why-card h3{font-size:1rem;color:var(--dark);margin-bottom:.6rem;font-weight:600}
 .why-card p{color:var(--mid);font-size:.86rem;line-height:1.7}
 
-/* ═══ PRICING ═══ */
-.pricing-section{padding:60px 0;background:var(--bg)}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1020px;margin:2rem auto 0}
-.price-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .3s;position:relative}
-.price-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
-.price-card.featured{border:2px solid var(--green)}
-.popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;padding:4px 18px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
-.price-title{font-size:1.05rem;font-weight:600;color:var(--dark);margin-bottom:.8rem}
-.price-amount{font-family:'DM Serif Display',serif;font-size:2.4rem;color:var(--green);line-height:1;margin-bottom:.3rem}
-.price-duration{font-size:.82rem;color:var(--muted);margin-bottom:1.5rem}
-.price-features{list-style:none;text-align:left;margin:1.5rem 0}
-.price-features li{padding:.45rem 0;color:var(--mid);font-size:.84rem;display:flex;align-items:flex-start;gap:.55rem;border-bottom:1px solid var(--border)}
-.price-features li:last-child{border-bottom:none}
-.price-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:.05rem}
-.price-btn{display:block;width:100%;padding:11px;background:var(--green);color:#fff;border:none;border-radius:50px;font-weight:700;font-size:.9rem;cursor:pointer;text-align:center;transition:all .3s;font-family:inherit;margin-top:.5rem;text-decoration:none}
-.price-btn:hover{background:var(--green-dark);transform:translateY(-1px)}
-.price-note{text-align:center;color:var(--muted);font-size:.8rem;margin-top:1.5rem}
-
 /* ═══ TESTIMONIALS ═══ */
 .testimonials-section{padding:60px 0;background:#fff}
 .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
@@ -432,7 +408,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
 @media(max-width:1023px){
   .hero-grid{grid-template-columns:1fr}
   .hero-form-card{max-width:500px}
-  .services-grid,.why-grid,.testimonials-grid,.pricing-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid,.why-grid,.testimonials-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}
   .conditions-grid{grid-template-columns:repeat(2,1fr)}
   .areas-grid{grid-template-columns:repeat(2,1fr)}
   .related-grid{grid-template-columns:repeat(2,1fr)}
@@ -440,9 +416,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
   .hero h1{font-size:2.2rem}
 }
 @media(max-width:768px){
-  :root{--header-h:105px}
-  .header-contact .header-contact-item:nth-child(2),.header-contact .header-contact-item:nth-child(3){display:none}
-  .header-social{gap:.5rem}
+  :root{--header-h:64px}
+  .header-top{display:none}
+  .header-main{padding:.5rem 0}
+  .breadcrumbs{padding:.4rem 0}
+  .breadcrumbs-list a,.breadcrumbs-list span{font-size:.72rem}
   .mobile-menu-toggle{display:block}
   nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}
   nav ul.active{display:flex}
@@ -461,7 +439,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
   .stat-num{font-size:1.6rem}
   .hero-buttons{flex-direction:column}
   .btn-call,.btn-whatsapp{width:100%;justify-content:center}
-  .services-grid,.why-grid,.testimonials-grid,.pricing-grid,.conditions-grid,.related-grid{grid-template-columns:1fr}
+  .services-grid,.why-grid,.testimonials-grid,.conditions-grid,.related-grid{grid-template-columns:1fr}
   .areas-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .section-title{font-size:1.75rem}
@@ -652,7 +630,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
         <p>Whether you are recovering from surgery, managing chronic back or knee pain, rehabilitating from a stroke, or need elderly care support, Dr. Tarun Garg and his team provide personalised, evidence-based care designed around your home and your goals.</p>
         <div class="answer-box" role="note" aria-label="Quick answer summary">
           <h3>Quick Answer</h3>
-          <p>PhysioNutra Clinic provides home physiotherapy across all areas of Dera Bassi including Zirakpur Road, Nabha Road, Railway Road, Bans Road, and surrounding localities. Single sessions from &#8377;1,500. Same-day appointments available. Contact: +91 94177 91833.</p>
+          <p>PhysioNutra Clinic provides home physiotherapy across all areas of Dera Bassi including Zirakpur Road, Nabha Road, Railway Road, Bans Road, and surrounding localities. Same-day appointments available. Contact: +91 94177 91833.</p>
         </div>
       </div>
       <div>
@@ -863,68 +841,6 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
   </div>
 </section>
 
-<!-- ═══ PRICING ═══ -->
-<section class="pricing-section" aria-labelledby="price-h2" id="pricing">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">Transparent Pricing</span>
-      <h2 class="section-title" id="price-h2">Home Physiotherapy Pricing — Dera Bassi</h2>
-      <p class="section-subtitle">Affordable, all-inclusive pricing with no hidden charges &mdash; all equipment and treatment included in every session</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="price-card reveal">
-        <div class="price-title">Single Home Visit</div>
-        <div class="price-amount">&#8377;1,500</div>
-        <div class="price-duration">Per session &middot; 45&ndash;60 minutes</div>
-        <ul class="price-features">
-          <li>Certified physiotherapist home visit</li>
-          <li>Full assessment on first visit</li>
-          <li>Manual therapy &amp; exercises</li>
-          <li>Electrotherapy if indicated</li>
-          <li>All equipment included</li>
-          <li>Home exercise programme</li>
-          <li>WhatsApp support between visits</li>
-        </ul>
-        <a href="tel:+919417791833" class="price-btn">Book Now</a>
-      </div>
-      <div class="price-card featured reveal">
-        <div class="popular-badge">Most Popular</div>
-        <div class="price-title">10-Session Package</div>
-        <div class="price-amount">&#8377;13,000</div>
-        <div class="price-duration">Save &#8377;2,000 &middot; Flexible Scheduling</div>
-        <ul class="price-features">
-          <li>10 home visit sessions</li>
-          <li>Comprehensive initial assessment</li>
-          <li>Personalised treatment plan</li>
-          <li>Progress tracking &amp; adjustments</li>
-          <li>All modalities &amp; equipment</li>
-          <li>Family training included</li>
-          <li>WhatsApp support throughout</li>
-          <li>Free phone consultations</li>
-        </ul>
-        <a href="tel:+919417791833" class="price-btn">Book Now</a>
-      </div>
-      <div class="price-card reveal">
-        <div class="price-title">20-Session Package</div>
-        <div class="price-amount">&#8377;24,000</div>
-        <div class="price-duration">Save &#8377;6,000 &middot; Best Value</div>
-        <ul class="price-features">
-          <li>20 home visit sessions</li>
-          <li>Intensive rehabilitation programme</li>
-          <li>Regular progress assessments</li>
-          <li>Customised exercise video guides</li>
-          <li>All equipment &amp; modalities</li>
-          <li>Priority scheduling</li>
-          <li>Extended support period</li>
-          <li>Post-treatment follow-up visits</li>
-        </ul>
-        <a href="tel:+919417791833" class="price-btn">Book Now</a>
-      </div>
-    </div>
-    <p class="price-note">All prices include equipment, treatment, and travel to Dera Bassi. Insurance documentation provided for reimbursement claims. Free first consultation for new patients.</p>
-  </div>
-</section>
-
 <!-- ═══ TESTIMONIALS ═══ -->
 <section class="testimonials-section" aria-labelledby="testi-h2">
   <div class="container">
@@ -990,10 +906,6 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">Is there a physiotherapist who does home visits in Dera Bassi?<i class="faq-icon" aria-hidden="true">+</i></button>
         <div class="faq-answer" role="region" hidden>Yes. PhysioNutra Clinic provides professional home physiotherapy across all areas of Dera Bassi including Zirakpur Road, Nabha Road, Railway Road, Bans Road, the Industrial Area, and surrounding villages. Our certified physiotherapists bring complete portable equipment to your home. Call +91 94177 91833 to book.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">What is the cost of physiotherapy home visits in Dera Bassi?<i class="faq-icon" aria-hidden="true">+</i></button>
-        <div class="faq-answer" role="region" hidden>Single home visit sessions are &#8377;1,500, inclusive of all equipment, treatment modalities, and your home exercise programme. Package rates: 10 sessions for &#8377;13,000 (saving &#8377;2,000) and 20 sessions for &#8377;24,000 (saving &#8377;6,000). We provide insurance documentation for reimbursement claims. The first consultation is free for new patients.</div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">How quickly can a physiotherapist come to my home in Dera Bassi?<i class="faq-icon" aria-hidden="true">+</i></button>
