@@ -140,7 +140,9 @@ button{font-family:inherit}
 .hdr-main-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .logo-wrap{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
 .logo-img{height:52px;width:auto}
-.logo-tagline{font-size:.78rem;color:#666;font-style:italic;white-space:nowrap}
+.tagline-stack{display:flex;flex-direction:column;line-height:1.2}
+.tagline-doctor{font-size:.72rem;color:#666;font-style:italic;letter-spacing:.02em}
+.tagline-brand{font-size:1.05rem;font-weight:600;color:#7ad16c}
 
 /* ── Desktop nav ── */
 .site-nav ul{display:flex;list-style:none;gap:1.4rem;align-items:center;margin:0;padding:0}
@@ -476,7 +478,7 @@ button{font-family:inherit}
 
   /* Logo compact */
   .logo-img{height:42px}
-  .logo-tagline{display:none}
+  .tagline-doctor{display:none}
   .nav-cta{padding:7px 14px;font-size:.8rem}
 
   /* Breadcrumb — already nowrap, just ensure container clips */
@@ -550,7 +552,10 @@ button{font-family:inherit}
       <div class="hdr-main-inner">
         <div class="logo-wrap">
           <a href="/" aria-label="PhysioNutra Clinic Home"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" alt="PhysioNutra Clinic" class="logo-img" width="160" height="52" loading="eager"></picture></a>
-          <span class="logo-tagline">Dr Tarun's PhysioNutra Clinic</span>
+          <span class="tagline-stack">
+            <span class="tagline-doctor">Dr Tarun's</span>
+            <span class="tagline-brand">PhysioNutra Clinic</span>
+          </span>
         </div>
         <!-- Hamburger -->
         <button class="mob-toggle" id="mobToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">

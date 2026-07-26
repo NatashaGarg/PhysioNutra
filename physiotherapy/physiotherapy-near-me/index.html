@@ -69,7 +69,9 @@
 .hdr-main-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .logo-wrap{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
 .logo-img{height:52px;width:auto}
-.logo-tagline{font-size:.78rem;color:#666;font-style:italic;white-space:nowrap}
+.tagline-stack{display:flex;flex-direction:column;line-height:1.2}
+.tagline-doctor{font-size:.72rem;color:#666;font-style:italic;letter-spacing:.02em}
+.tagline-brand{font-size:1.05rem;font-weight:600;color:#7ad16c}
 .site-nav ul{display:flex;list-style:none;gap:1.4rem;align-items:center;margin:0;padding:0}
 .site-nav a{color:#333;font-weight:500;font-size:.88rem;transition:color .2s;white-space:nowrap}
 .site-nav a:hover,.site-nav a.active{color:var(--g)}
@@ -201,7 +203,7 @@
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:1023px){.content-layout{grid-template-columns:1fr}.sidebar{position:static;top:auto}.benefit-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.hdr-top{display:none}.hdr-main{padding:.55rem 0}.mob-toggle{display:flex}.site-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid var(--edge);box-shadow:var(--sh2);z-index:100;padding:.5rem 0}.site-nav.open{display:block}.site-nav ul{flex-direction:column;gap:0;padding:0}.site-nav li{border-bottom:1px solid var(--edge);width:100%}.site-nav li:last-child{border:none}.site-nav a{display:block;padding:.85rem 1.2rem;font-size:.92rem}.dd-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:0 0 .4rem;background:#f8f9f8;display:none}.has-dd.open .dd-menu{display:block}.dd-menu a{padding:.65rem 2rem;font-size:.87rem}.logo-img{height:42px}.logo-tagline{display:none}.nav-cta{padding:7px 14px;font-size:.8rem}.container{padding:0 14px}.breadcrumbs li:last-child span{max-width:120px}.benefit-grid{grid-template-columns:1fr}.cond-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-socials{justify-content:center}.cta-box{padding:2rem 1.3rem}.cta-box h2{font-size:1.4rem}.cta-btns{flex-direction:column;align-items:center}.btn-g,.btn-wa{width:100%;max-width:280px;justify-content:center}.hero-btns{flex-direction:column;align-items:center}}
+@media(max-width:768px){.hdr-top{display:none}.hdr-main{padding:.55rem 0}.mob-toggle{display:flex}.site-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid var(--edge);box-shadow:var(--sh2);z-index:100;padding:.5rem 0}.site-nav.open{display:block}.site-nav ul{flex-direction:column;gap:0;padding:0}.site-nav li{border-bottom:1px solid var(--edge);width:100%}.site-nav li:last-child{border:none}.site-nav a{display:block;padding:.85rem 1.2rem;font-size:.92rem}.dd-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:0 0 .4rem;background:#f8f9f8;display:none}.has-dd.open .dd-menu{display:block}.dd-menu a{padding:.65rem 2rem;font-size:.87rem}.logo-img{height:42px}.tagline-doctor{display:none}.nav-cta{padding:7px 14px;font-size:.8rem}.container{padding:0 14px}.breadcrumbs li:last-child span{max-width:120px}.benefit-grid{grid-template-columns:1fr}.cond-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-socials{justify-content:center}.cta-box{padding:2rem 1.3rem}.cta-box h2{font-size:1.4rem}.cta-btns{flex-direction:column;align-items:center}.btn-g,.btn-wa{width:100%;max-width:280px;justify-content:center}.hero-btns{flex-direction:column;align-items:center}}
 @media(max-width:480px){.logo-img{height:38px}.breadcrumbs li:last-child span{max-width:90px}}
 </style>
 </head>
@@ -228,7 +230,10 @@
   <div class="hdr-main"><div class="container"><div class="hdr-main-inner">
     <div class="logo-wrap">
       <a href="/" aria-label="PhysioNutra Home"><picture><source srcset="../../images/logo.webp" type="image/webp"><img src="../../images/logo.png" alt="PhysioNutra Clinic" class="logo-img" width="160" height="52" loading="eager"></picture></a>
-      <span class="logo-tagline">Dr Tarun's PhysioNutra Clinic</span>
+      <span class="tagline-stack">
+            <span class="tagline-doctor">Dr Tarun's</span>
+            <span class="tagline-brand">PhysioNutra Clinic</span>
+          </span>
     </div>
     <button class="mob-toggle" id="mobToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
