@@ -28,7 +28,9 @@
 /* HEADER */
 header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;width:100%}
 .header-top{background:#1a1a1a;color:#fff;padding:8px 0}.header-top-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}.header-contact{display:flex;gap:1.5rem;flex-wrap:wrap}.header-contact-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem}.header-contact-item a{color:var(--green);text-decoration:none}.header-contact-item a:hover{text-decoration:underline}.header-social{display:flex;gap:.8rem}.header-social a{color:var(--green);font-size:1rem;text-decoration:none;transition:color .3s}.header-social a:hover{color:var(--green-dark)}
-.header-main{padding:.8rem 0;position:relative}.header-main-content{display:flex;justify-content:space-between;align-items:center}.logo-section{display:flex;align-items:center;gap:1rem}.logo{height:60px;width:auto}.tagline{font-size:.85rem;color:#666;font-style:italic}.mobile-menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#333;padding:4px}
+.header-main{padding:.8rem 0;position:relative}.header-main-content{display:flex;justify-content:space-between;align-items:center}.logo-section{display:flex;align-items:center;gap:1rem}.logo{height:60px;width:auto}.tagline-stack{display:flex;flex-direction:column;line-height:1.2}
+.tagline-doctor{font-size:.72rem;color:#666;font-style:italic;letter-spacing:.02em}
+.tagline-brand{font-size:1.05rem;font-weight:600;color:#7ad16c}.mobile-menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#333;padding:4px}
 nav ul{display:flex;list-style:none;gap:1.5rem;align-items:center}nav a{text-decoration:none;color:#333;font-weight:500;transition:color .3s;cursor:pointer;font-size:.9rem}nav a:hover{color:var(--green)}.has-dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background:#fff;min-width:220px;box-shadow:0 4px 15px rgba(0,0,0,.15);border-radius:8px;padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s;z-index:1000;list-style:none}.has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;color:#333;font-size:.9rem}.dropdown-menu a:hover{background:#f0f0f0;color:var(--green)}.dropdown-menu i{width:18px;color:var(--green);font-size:.85rem}.cta-nav-btn{padding:9px 22px;background:var(--green);color:#fff!important;border-radius:25px;font-weight:bold;transition:all .3s;white-space:nowrap}.cta-nav-btn:hover{background:var(--green-dark);transform:translateY(-2px)}
 /* HERO */
 .hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 55%,#3a7a32 100%);color:#fff;padding:60px 0 50px;text-align:center;position:relative;overflow:hidden}
@@ -87,13 +89,13 @@ nav ul{display:flex;list-style:none;gap:1.5rem;align-items:center}nav a{text-dec
 footer{background:#1a1a1a;color:#ccc;padding:1.8rem 0;text-align:center;font-size:.82rem}footer a{color:var(--green)}
 /* RESPONSIVE */
 @media(max-width:768px){
-  .header-contact .header-contact-item:nth-child(2),.header-contact .header-contact-item:nth-child(3){display:none}.header-social{gap:.5rem}.mobile-menu-toggle{display:block}.logo{height:48px}.tagline{font-size:.7rem}
+  .header-contact .header-contact-item:nth-child(2),.header-contact .header-contact-item:nth-child(3){display:none}.header-social{gap:.5rem}.mobile-menu-toggle{display:block}.logo{height:48px}.tagline-doctor{font-size:.62rem}.tagline-brand{font-size:.92rem}
   nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}nav ul.active{display:flex}nav li{width:100%;border-bottom:1px solid #eee}nav li:last-child{border-bottom:none}nav a{display:block;padding:.85rem}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding-left:12px;display:none;background:#f9f9f9;border:none}.has-dropdown.active .dropdown-menu{display:block}.has-dropdown>a::after{content:' +';color:var(--green);font-weight:bold}.has-dropdown.active>a::after{content:' −'}
   .hero h1{font-size:1.9rem}.hero-stats{gap:1.2rem}
   .tools-grid{grid-template-columns:1fr}
   .filter-bar{top:57px}
 }
-@media(max-width:480px){.logo{height:44px}.tagline{display:none}.container{padding:0 14px}}
+@media(max-width:480px){.logo{height:44px}.tagline-doctor{display:none}.tagline-brand{font-size:.85rem}.container{padding:0 14px}}
 @media(min-width:769px) and (max-width:1023px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
@@ -122,7 +124,10 @@ footer{background:#1a1a1a;color:#ccc;padding:1.8rem 0;text-align:center;font-siz
       <div class="header-main-content">
         <div class="logo-section">
           <a href="/" aria-label="PhysioNutra Clinic Home"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" alt="PhysioNutra Clinic" class="logo" width="180" height="60" loading="eager"></picture></a>
-          <div class="tagline">Dr Tarun's PhysioNutra Clinic</div>
+          <div class="tagline-stack">
+            <span class="tagline-doctor">Dr Tarun's</span>
+            <span class="tagline-brand">PhysioNutra Clinic</span>
+          </div>
         </div>
         <nav role="navigation" aria-label="Main navigation">
           <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
