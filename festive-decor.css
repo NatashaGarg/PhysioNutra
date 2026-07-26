@@ -1,0 +1,79 @@
+/* PhysioNutra festive header decoration — auto-shown by festive-decor.js */
+
+.festive-strip{position:relative;height:16px;width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:14px;z-index:1002}
+.festive-strip .bulb{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* ── Diwali: warm gold/amber string lights ── */
+body.festival-diwali .festive-strip{background:#2a1a05}
+body.festival-diwali .bulb{background:#ffb347;box-shadow:0 0 6px 2px rgba(255,179,71,.8)}
+body.festival-diwali .bulb:nth-child(3n+1){background:#ff8c42;box-shadow:0 0 6px 2px rgba(255,140,66,.8)}
+body.festival-diwali .bulb:nth-child(4n+2){background:#ffd76a;box-shadow:0 0 6px 2px rgba(255,215,106,.8)}
+@media (prefers-reduced-motion:no-preference){
+  body.festival-diwali .bulb{animation:festive-twinkle 2.4s ease-in-out infinite}
+  body.festival-diwali .bulb:nth-child(2n){animation-delay:.6s}
+  body.festival-diwali .bulb:nth-child(3n){animation-delay:1.2s}
+}
+
+/* ── Christmas / New Year: red, green, gold lights ── */
+body.festival-christmas .festive-strip{background:#0d2b1a}
+body.festival-christmas .bulb{background:#e63946;box-shadow:0 0 6px 2px rgba(230,57,70,.8)}
+body.festival-christmas .bulb:nth-child(3n+1){background:#2a9d5c;box-shadow:0 0 6px 2px rgba(42,157,92,.8)}
+body.festival-christmas .bulb:nth-child(4n+2){background:#ffd76a;box-shadow:0 0 6px 2px rgba(255,215,106,.8)}
+@media (prefers-reduced-motion:no-preference){
+  body.festival-christmas .bulb{animation:festive-twinkle 2.4s ease-in-out infinite}
+  body.festival-christmas .bulb:nth-child(2n){animation-delay:.6s}
+  body.festival-christmas .bulb:nth-child(3n){animation-delay:1.2s}
+}
+
+/* ── Holi: colorful gulal dots, no glow, gentle bounce ── */
+body.festival-holi .festive-strip{background:#fff6e9}
+body.festival-holi .bulb{width:10px;height:10px;box-shadow:none}
+body.festival-holi .bulb:nth-child(5n+1){background:#e63946}
+body.festival-holi .bulb:nth-child(5n+2){background:#2a9d5c}
+body.festival-holi .bulb:nth-child(5n+3){background:#3d8bfd}
+body.festival-holi .bulb:nth-child(5n+4){background:#ffb347}
+body.festival-holi .bulb:nth-child(5n){background:#c86bcf}
+@media (prefers-reduced-motion:no-preference){
+  body.festival-holi .bulb{animation:festive-bounce 1.6s ease-in-out infinite}
+  body.festival-holi .bulb:nth-child(2n){animation-delay:.3s}
+  body.festival-holi .bulb:nth-child(3n){animation-delay:.6s}
+}
+
+@keyframes festive-twinkle{0%,100%{opacity:.45;transform:scale(.85)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes festive-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+/* ── Independence Day / Republic Day: tricolor bunting ── */
+body.festival-tricolor .festive-strip{background:#f7f7f2}
+body.festival-tricolor .bulb{width:11px;height:11px;border-radius:2px;box-shadow:none}
+body.festival-tricolor .bulb:nth-child(3n+1){background:#ff9933}
+body.festival-tricolor .bulb:nth-child(3n+2){background:#f0f0f0;border:1px solid #ccc}
+body.festival-tricolor .bulb:nth-child(3n){background:#138808}
+
+/* ── Dussehra: marigold/victory tones ── */
+body.festival-dussehra .festive-strip{background:#2a1505}
+body.festival-dussehra .bulb{background:#ff7b25;box-shadow:0 0 6px 2px rgba(255,123,37,.8)}
+body.festival-dussehra .bulb:nth-child(3n+1){background:#e63946;box-shadow:0 0 6px 2px rgba(230,57,70,.8)}
+body.festival-dussehra .bulb:nth-child(4n+2){background:#ffb347;box-shadow:0 0 6px 2px rgba(255,179,71,.8)}
+@media (prefers-reduced-motion:no-preference){
+  body.festival-dussehra .bulb{animation:festive-twinkle 2.4s ease-in-out infinite}
+  body.festival-dussehra .bulb:nth-child(2n){animation-delay:.6s}
+  body.festival-dussehra .bulb:nth-child(3n){animation-delay:1.2s}
+}
+
+/* ── Raksha Bandhan: rakhi thread tones ── */
+body.festival-rakhi .festive-strip{background:#fff6e9}
+body.festival-rakhi .bulb{width:10px;height:10px;box-shadow:none}
+body.festival-rakhi .bulb:nth-child(4n+1){background:#a4133c}
+body.festival-rakhi .bulb:nth-child(4n+2){background:#ffb347}
+body.festival-rakhi .bulb:nth-child(4n+3){background:#c86bcf}
+body.festival-rakhi .bulb:nth-child(4n){background:#ffd76a}
+@media (prefers-reduced-motion:no-preference){
+  body.festival-rakhi .bulb{animation:festive-bounce 1.6s ease-in-out infinite}
+  body.festival-rakhi .bulb:nth-child(2n){animation-delay:.3s}
+  body.festival-rakhi .bulb:nth-child(3n){animation-delay:.6s}
+}
+
+@media (max-width:480px){
+  .festive-strip{gap:9px}
+  .festive-strip .bulb{width:6px;height:6px}
+}
