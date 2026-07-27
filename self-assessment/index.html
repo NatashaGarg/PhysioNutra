@@ -26,74 +26,20 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:clip}body{font-family:'DM Sans',Arial,sans-serif;line-height:1.7;color:#1a1a1a;background:#fafaf8;-webkit-font-smoothing:antialiased}:root{--green:#7ad16c;--green-dark:#5ab04a;--green-light:#eaf6e7;--dark:#1a1a1a;--mid:#555;--muted:#888;--border:#e8e8e4;--bg:#fafaf8;--radius:12px;--radius-lg:18px;--shadow:0 4px 20px rgba(0,0,0,.07);--shadow-lg:0 10px 40px rgba(0,0,0,.12)}.container{max-width:1140px;margin:0 auto;padding:0 20px}a{text-decoration:none;color:inherit}
 /* HEADER */
-header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;width:100%}
-.header-top{background:#1a1a1a;color:#fff;padding:8px 0}.header-top-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}.header-contact{display:flex;gap:1.5rem;flex-wrap:wrap}.header-contact-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem}.header-contact-item a{color:var(--green);text-decoration:none}.header-contact-item a:hover{text-decoration:underline}.header-social{display:flex;gap:.8rem}.header-social a{color:var(--green);font-size:1rem;text-decoration:none;transition:color .3s}.header-social a:hover{color:var(--green-dark)}
-.header-main{padding:.8rem 0;position:relative}.header-main-content{display:flex;justify-content:space-between;align-items:center}.logo-section{display:flex;align-items:center;gap:1rem}.logo{height:60px;width:auto}.tagline-stack{display:flex;flex-direction:column;line-height:1.2}
-.tagline-doctor{font-size:.72rem;color:#666;font-style:italic;letter-spacing:.02em}
-.tagline-brand{font-size:1.05rem;font-weight:600;color:#7ad16c}.mobile-menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#333;padding:4px}
-nav ul{display:flex;list-style:none;gap:1.5rem;align-items:center}nav a{text-decoration:none;color:#333;font-weight:500;transition:color .3s;cursor:pointer;font-size:.9rem}nav a:hover{color:var(--green)}.has-dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background:#fff;min-width:220px;box-shadow:0 4px 15px rgba(0,0,0,.15);border-radius:8px;padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s;z-index:1000;list-style:none}.has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;color:#333;font-size:.9rem}.dropdown-menu a:hover{background:#f0f0f0;color:var(--green)}.dropdown-menu i{width:18px;color:var(--green);font-size:.85rem}.cta-nav-btn{padding:9px 22px;background:var(--green);color:#fff!important;border-radius:25px;font-weight:bold;transition:all .3s;white-space:nowrap}.cta-nav-btn:hover{background:var(--green-dark);transform:translateY(-2px)}
-/* HERO */
-.hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 55%,#3a7a32 100%);color:#fff;padding:60px 0 50px;text-align:center;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
-.hero-inner{position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(122,209,108,.15);border:1px solid rgba(122,209,108,.35);color:var(--green);padding:.3rem .9rem;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1rem}
-.hero h1{font-family:'DM Serif Display',serif;font-size:2.7rem;font-weight:400;margin-bottom:.8rem;line-height:1.2}
-.hero h1 em{font-style:normal;color:var(--green)}
-.hero p{font-size:1rem;color:rgba(255,255,255,.82);max-width:600px;margin:0 auto 1.8rem;line-height:1.75}
-.hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-top:.5rem}
-.hero-stat strong{display:block;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--green)}
-.hero-stat span{font-size:.78rem;color:rgba(255,255,255,.72)}
-/* FILTER */
-.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:.9rem 0;position:sticky;top:61px;z-index:99}
-.filter-inner{display:flex;gap:.6rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
-.filter-inner::-webkit-scrollbar{display:none}
-.filter-btn{flex-shrink:0;padding:7px 18px;border:1.5px solid var(--border);border-radius:50px;font-size:.8rem;font-weight:600;cursor:pointer;background:#fff;color:var(--mid);font-family:inherit;transition:all .2s;white-space:nowrap}
-.filter-btn:hover,.filter-btn.active{background:var(--green);border-color:var(--green);color:#fff}
-/* SECTIONS */
-.tools-section{padding:52px 0}
-.section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.4rem}
-.section-title{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--dark);margin-bottom:.5rem;font-weight:400}
-.section-sub{color:var(--mid);font-size:.92rem;margin-bottom:2rem;max-width:680px}
-.section-divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
-/* GRID */
-.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-/* TOOL CARD */
-.tool-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.6rem;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden;text-decoration:none;color:inherit}
-.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--green-dark));opacity:0;transition:opacity .3s}
-.tool-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
-.tool-card:hover::before{opacity:1}
-.tool-card.freemium-card{border-color:rgba(255,193,7,.4)}
-.tool-card.freemium-card::before{background:linear-gradient(90deg,#ffc107,#ff8f00)}
-.new-pill{position:absolute;top:12px;right:12px;background:var(--green);color:#fff;font-size:.65rem;font-weight:700;padding:2px 9px;border-radius:50px;letter-spacing:.04em}
-.freemium-pill{position:absolute;top:12px;right:12px;background:#ffc107;color:#1a1a1a;font-size:.65rem;font-weight:700;padding:2px 9px;border-radius:50px;letter-spacing:.04em}
-.tool-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--green),var(--green-dark));border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;margin-bottom:1rem;flex-shrink:0}
-.tool-icon.gold{background:linear-gradient(135deg,#ffc107,#ff8f00)}
-.tool-card h3{font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:.4rem}
-.tool-card p{color:var(--mid);font-size:.82rem;line-height:1.65;flex:1;margin-bottom:.9rem}
-.tool-meta{display:flex;gap:1rem;margin-bottom:.9rem;flex-wrap:wrap}
-.tool-meta-item{display:flex;align-items:center;gap:.3rem;font-size:.74rem;color:var(--muted)}
-.tool-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--green);font-size:.82rem;font-weight:600;transition:gap .2s}
-.tool-card.freemium-card .tool-link{color:#e65100}
-.tool-card:hover .tool-link{gap:.7rem}
-/* INFO BOX */
-.info-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem 1.8rem;margin-top:2rem;display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap}
-.info-box i{color:var(--green);font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
-/* CTA */
-.cta-section{background:linear-gradient(135deg,#1a2e1a,#2d5a27);color:#fff;padding:52px 0;text-align:center}
-.cta-section h2{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;margin-bottom:.7rem}
-.cta-section p{font-size:.95rem;color:rgba(255,255,255,.82);max-width:560px;margin:0 auto 1.8rem;line-height:1.75}
-.cta-btns{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
-.btn-wa{background:#25D366;color:#fff;padding:12px 26px;border-radius:50px;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s}.btn-wa:hover{background:#1da851;transform:translateY(-2px)}
-.btn-call{background:var(--green);color:#fff;padding:12px 26px;border-radius:50px;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s}.btn-call:hover{background:var(--green-dark);transform:translateY(-2px)}
+header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;width:100%}.header-top{background:#1a1a1a;color:#fff;padding:8px 0}.header-top-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}.header-contact{display:flex;gap:1.5rem;flex-wrap:wrap}.header-contact-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem}.header-contact-item a{color:var(--green);text-decoration:none}.header-contact-item a:hover{text-decoration:underline}.header-social{display:flex;gap:.8rem}.header-social a{color:var(--green);font-size:1rem;text-decoration:none;transition:color.3s}.header-social a:hover{color:var(--green-dark)}.header-main{padding:.8rem 0;position:relative}.header-main-content{display:flex;justify-content:space-between;align-items:center}.logo-section{display:flex;align-items:center;gap:1rem}.logo{height:60px;width:auto}.tagline-stack{display:flex;flex-direction:column;line-height:1.2}.tagline-doctor{font-size:.72rem;color:#666;font-style:italic;letter-spacing:.02em}.tagline-brand{font-size:1.05rem;font-weight:600;color:#7ad16c}.mobile-menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#333;padding:4px}
+nav ul{display:flex;list-style:none;gap:1.5rem;align-items:center}nav a{text-decoration:none;color:#333;font-weight:500;transition:color.3s;cursor:pointer;font-size:.9rem}nav a:hover{color:var(--green)}.has-dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background:#fff;min-width:220px;box-shadow:0 4px 15px rgba(0,0,0,.15);border-radius:8px;padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all.3s;z-index:1000;list-style:none}.has-dropdown:hover.dropdown-menu,.has-dropdown:focus-within.dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;color:#333;font-size:.9rem}.dropdown-menu a:hover{background:#f0f0f0;color:var(--green)}.dropdown-menu i{width:18px;color:var(--green);font-size:.85rem}.cta-nav-btn{padding:9px 22px;background:var(--green);color:#fff!important;border-radius:25px;font-weight:bold;transition:all.3s;white-space:nowrap}.cta-nav-btn:hover{background:var(--green-dark);transform:translateY(-2px)}
+/* HERO */.hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 55%,#3a7a32 100%);color:#fff;padding:60px 0 50px;text-align:center;position:relative;overflow:hidden}.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}.hero-inner{position:relative;z-index:1}.hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(122,209,108,.15);border:1px solid rgba(122,209,108,.35);color:var(--green);padding:.3rem.9rem;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1rem}.hero h1{font-family:'DM Serif Display',serif;font-size:2.7rem;font-weight:400;margin-bottom:.8rem;line-height:1.2}.hero h1 em{font-style:normal;color:var(--green)}.hero p{font-size:1rem;color:rgba(255,255,255,.82);max-width:600px;margin:0 auto 1.8rem;line-height:1.75}.hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-top:.5rem}.hero-stat strong{display:block;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--green)}.hero-stat span{font-size:.78rem;color:rgba(255,255,255,.72)}
+/* FILTER */.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:.9rem 0;position:sticky;top:61px;z-index:99}.filter-inner{display:flex;gap:.6rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}.filter-inner::-webkit-scrollbar{display:none}.filter-btn{flex-shrink:0;padding:7px 18px;border:1.5px solid var(--border);border-radius:50px;font-size:.8rem;font-weight:600;cursor:pointer;background:#fff;color:var(--mid);font-family:inherit;transition:all.2s;white-space:nowrap}.filter-btn:hover,.filter-btn.active{background:var(--green);border-color:var(--green);color:#fff}
+/* SECTIONS */.tools-section{padding:52px 0}.section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.4rem}.section-title{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--dark);margin-bottom:.5rem;font-weight:400}.section-sub{color:var(--mid);font-size:.92rem;margin-bottom:2rem;max-width:680px}.section-divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+/* GRID */.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+/* TOOL CARD */.tool-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.6rem;display:flex;flex-direction:column;transition:all.3s;position:relative;overflow:hidden;text-decoration:none;color:inherit}.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--green-dark));opacity:0;transition:opacity.3s}.tool-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}.tool-card:hover::before{opacity:1}.tool-card.freemium-card{border-color:rgba(255,193,7,.4)}.tool-card.freemium-card::before{background:linear-gradient(90deg,#ffc107,#ff8f00)}.new-pill{position:absolute;top:12px;right:12px;background:var(--green);color:#fff;font-size:.65rem;font-weight:700;padding:2px 9px;border-radius:50px;letter-spacing:.04em}.freemium-pill{position:absolute;top:12px;right:12px;background:#ffc107;color:#1a1a1a;font-size:.65rem;font-weight:700;padding:2px 9px;border-radius:50px;letter-spacing:.04em}.tool-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--green),var(--green-dark));border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;margin-bottom:1rem;flex-shrink:0}.tool-icon.gold{background:linear-gradient(135deg,#ffc107,#ff8f00)}.tool-card h3{font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:.4rem}.tool-card p{color:var(--mid);font-size:.82rem;line-height:1.65;flex:1;margin-bottom:.9rem}.tool-meta{display:flex;gap:1rem;margin-bottom:.9rem;flex-wrap:wrap}.tool-meta-item{display:flex;align-items:center;gap:.3rem;font-size:.74rem;color:var(--muted)}.tool-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--green);font-size:.82rem;font-weight:600;transition:gap.2s}.tool-card.freemium-card.tool-link{color:#e65100}.tool-card:hover.tool-link{gap:.7rem}
+/* INFO BOX */.info-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem 1.8rem;margin-top:2rem;display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap}.info-box i{color:var(--green);font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+/* CTA */.cta-section{background:linear-gradient(135deg,#1a2e1a,#2d5a27);color:#fff;padding:52px 0;text-align:center}.cta-section h2{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;margin-bottom:.7rem}.cta-section p{font-size:.95rem;color:rgba(255,255,255,.82);max-width:560px;margin:0 auto 1.8rem;line-height:1.75}.cta-btns{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}.btn-wa{background:#25D366;color:#fff;padding:12px 26px;border-radius:50px;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:all.3s}.btn-wa:hover{background:#1da851;transform:translateY(-2px)}.btn-call{background:var(--green);color:#fff;padding:12px 26px;border-radius:50px;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:all.3s}.btn-call:hover{background:var(--green-dark);transform:translateY(-2px)}
 /* FOOTER */
 footer{background:#1a1a1a;color:#ccc;padding:1.8rem 0;text-align:center;font-size:.82rem}footer a{color:var(--green)}
 /* RESPONSIVE */
-@media(max-width:768px){
-  .header-contact .header-contact-item:nth-child(2),.header-contact .header-contact-item:nth-child(3){display:none}.header-social{gap:.5rem}.mobile-menu-toggle{display:block}.logo{height:48px}.tagline-doctor{font-size:.62rem}.tagline-brand{font-size:.92rem}
-  nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}nav ul.active{display:flex}nav li{width:100%;border-bottom:1px solid #eee}nav li:last-child{border-bottom:none}nav a{display:block;padding:.85rem}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding-left:12px;display:none;background:#f9f9f9;border:none}.has-dropdown.active .dropdown-menu{display:block}.has-dropdown>a::after{content:' +';color:var(--green);font-weight:bold}.has-dropdown.active>a::after{content:' −'}
-  .hero h1{font-size:1.9rem}.hero-stats{gap:1.2rem}
-  .tools-grid{grid-template-columns:1fr}
-  .filter-bar{top:57px}
+@media(max-width:768px){.header-contact.header-contact-item:nth-child(2),.header-contact.header-contact-item:nth-child(3){display:none}.header-social{gap:.5rem}.mobile-menu-toggle{display:block}.logo{height:48px}.tagline-doctor{font-size:.62rem}.tagline-brand{font-size:.92rem}
+ nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}nav ul.active{display:flex}nav li{width:100%;border-bottom:1px solid #eee}nav li:last-child{border-bottom:none}nav a{display:block;padding:.85rem}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding-left:12px;display:none;background:#f9f9f9;border:none}.has-dropdown.active.dropdown-menu{display:block}.has-dropdown>a::after{content:' +';color:var(--green);font-weight:bold}.has-dropdown.active>a::after{content:' −'}.hero h1{font-size:1.9rem}.hero-stats{gap:1.2rem}.tools-grid{grid-template-columns:1fr}.filter-bar{top:57px}
 }
 @media(max-width:480px){.logo{height:44px}.tagline-doctor{display:none}.tagline-brand{font-size:.85rem}.container{padding:0 14px}}
 @media(min-width:769px) and (max-width:1023px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
@@ -104,299 +50,299 @@ footer{background:#1a1a1a;color:#ccc;padding:1.8rem 0;text-align:center;font-siz
 </head>
 <body>
 <header role="banner">
-  <div class="header-top">
-    <div class="container">
-      <div class="header-top-content">
-        <div class="header-contact">
-          <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
-          <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#"  class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
-          <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
-        </div>
-        <div class="header-social" aria-label="Social media links">
-          <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header-main">
-    <div class="container">
-      <div class="header-main-content">
-        <div class="logo-section">
-          <a href="/" aria-label="PhysioNutra Clinic Home"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" alt="PhysioNutra Clinic" class="logo" width="180" height="60" loading="eager"></picture></a>
-          <div class="tagline-stack">
-            <span class="tagline-doctor">Dr Tarun's</span>
-            <span class="tagline-brand">PhysioNutra Clinic</span>
-          </div>
-        </div>
-        <nav role="navigation" aria-label="Main navigation">
-          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
-          <ul id="mainMenu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About Us</a></li>
-            <li class="has-dropdown">
-              <a href="/services/">Services</a>
-              <ul class="dropdown-menu" aria-label="Services submenu">
-                <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
-                <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
-                <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
-                <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
-                <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
-                <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
-                <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="/physiotherapy/">Locations</a>
-              <ul class="dropdown-menu" aria-label="Locations submenu">
-                <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
-                <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
-                <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
-                <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
-                <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
-                <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
-              </ul>
-            </li>
-            <li><a href="/blogs/">Blog</a></li>
-            <li><a href="/testimonials/">Testimonials</a></li>
-            <li><a href="/self-assessment/">Self-Assessment</a></li>
-            <li><a href="tel:+919417791833" class="cta-nav-btn">Book Now</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
+ <div class="header-top">
+ <div class="container">
+ <div class="header-top-content">
+ <div class="header-contact">
+ <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ </div>
+ <div class="header-social" aria-label="Social media links">
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="header-main">
+ <div class="container">
+ <div class="header-main-content">
+ <div class="logo-section">
+ <a href="/" aria-label="PhysioNutra Clinic Home"><picture><source srcset="./images/logo.webp" type="image/webp"><img src="./images/logo.png" alt="PhysioNutra Clinic" class="logo" width="180" height="60" loading="eager"></picture></a>
+ <div class="tagline-stack">
+ <span class="tagline-doctor">Dr Tarun's</span>
+ <span class="tagline-brand">PhysioNutra Clinic</span>
+ </div>
+ </div>
+ <nav role="navigation" aria-label="Main navigation">
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <ul id="mainMenu">
+ <li><a href="/">Home</a></li>
+ <li><a href="/about/">About Us</a></li>
+ <li class="has-dropdown">
+ <a href="/services/">Services</a>
+ <ul class="dropdown-menu" aria-label="Services submenu">
+ <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ </ul>
+ </li>
+ <li class="has-dropdown">
+ <a href="/physiotherapy/">Locations</a>
+ <ul class="dropdown-menu" aria-label="Locations submenu">
+ <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ </ul>
+ </li>
+ <li><a href="/blogs/">Blog</a></li>
+ <li><a href="/testimonials/">Testimonials</a></li>
+ <li><a href="/self-assessment/">Self-Assessment</a></li>
+ <li><a href="tel:+919417791833" class="cta-nav-btn">Book Now</a></li>
+ </ul>
+ </nav>
+ </div>
+ </div>
+ </div>
 </header>
 
 <section class="hero">
-  <div class="container"><div class="hero-inner">
-    <div class="hero-badge"><i class="fas fa-shield-alt"></i> All free tools — no sign-up required for basic results</div>
-    <h1>Free <em>Physiotherapy</em> Self-Assessment Tools</h1>
-    <p>Answer a few questions about your symptoms and get an instant, personalised report — including likely diagnosis, severity level, and what to do next. Freemium tools include a free PDF report via email.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><strong>17</strong><span>Assessment Tools</span></div>
-      <div class="hero-stat"><strong>3–5 min</strong><span>Per Assessment</span></div>
-      <div class="hero-stat"><strong>12</strong><span>Free Tools</span></div>
-      <div class="hero-stat"><strong>5</strong><span>Free PDF Reports</span></div>
-    </div>
-  </div></div>
+ <div class="container"><div class="hero-inner">
+ <div class="hero-badge"><i class="fas fa-shield-alt"></i> All free tools — no sign-up required for basic results</div>
+ <h1>Free <em>Physiotherapy</em> Self-Assessment Tools</h1>
+ <p>Answer a few questions about your symptoms and get an instant, personalised report — including likely diagnosis, severity level, and what to do next. Freemium tools include a free PDF report via email.</p>
+ <div class="hero-stats">
+ <div class="hero-stat"><strong>17</strong><span>Assessment Tools</span></div>
+ <div class="hero-stat"><strong>3–5 min</strong><span>Per Assessment</span></div>
+ <div class="hero-stat"><strong>12</strong><span>Free Tools</span></div>
+ <div class="hero-stat"><strong>5</strong><span>Free PDF Reports</span></div>
+ </div>
+ </div></div>
 </section>
 
 <div class="filter-bar">
-  <div class="container"><div class="filter-inner">
-    <button class="filter-btn active" onclick="filterTools('all',this)">All Tools (17)</button>
-    <button class="filter-btn" onclick="filterTools('free',this)">Free (12)</button>
-    <button class="filter-btn" onclick="filterTools('freemium',this)">PDF Reports (5)</button>
-    <button class="filter-btn" onclick="filterTools('pain',this)">Pain</button>
-    <button class="filter-btn" onclick="filterTools('posture',this)">Posture</button>
-    <button class="filter-btn" onclick="filterTools('sports',this)">Sports</button>
-    <button class="filter-btn" onclick="filterTools('neuro',this)">Neurological</button>
-    <button class="filter-btn" onclick="filterTools('elderly',this)">Elderly Care</button>
-    <button class="filter-btn" onclick="filterTools('work',this)">Work & Desk</button>
-  </div></div>
+ <div class="container"><div class="filter-inner">
+ <button class="filter-btn active" onclick="filterTools('all',this)">All Tools (17)</button>
+ <button class="filter-btn" onclick="filterTools('free',this)">Free (12)</button>
+ <button class="filter-btn" onclick="filterTools('freemium',this)">PDF Reports (5)</button>
+ <button class="filter-btn" onclick="filterTools('pain',this)">Pain</button>
+ <button class="filter-btn" onclick="filterTools('posture',this)">Posture</button>
+ <button class="filter-btn" onclick="filterTools('sports',this)">Sports</button>
+ <button class="filter-btn" onclick="filterTools('neuro',this)">Neurological</button>
+ <button class="filter-btn" onclick="filterTools('elderly',this)">Elderly Care</button>
+ <button class="filter-btn" onclick="filterTools('work',this)">Work & Desk</button>
+ </div></div>
 </div>
 
 <section class="tools-section">
-  <div class="container">
+ <div class="container">
 
-    <!-- FREE TOOLS -->
-    <span class="section-label">Free Tools — No Sign-up</span>
-    <h2 class="section-title">Condition Assessments</h2>
-    <p class="section-sub">Instant results — answer questions, get your personalised report immediately. No email required.</p>
-    <div class="tools-grid" id="toolsGrid">
+ <!-- FREE TOOLS -->
+ <span class="section-label">Free Tools — No Sign-up</span>
+ <h2 class="section-title">Condition Assessments</h2>
+ <p class="section-sub">Instant results — answer questions, get your personalised report immediately. No email required.</p>
+ <div class="tools-grid" id="toolsGrid">
 
-      <a href="/self-assessment/lower-back-pain/" class="tool-card" data-cat="free pain">
-        <span class="new-pill">Popular</span>
-        <div class="tool-icon"><i class="fas fa-male"></i></div>
-        <h3>Lower Back Pain</h3>
-        <p>Identify whether your pain is muscular, disc-related, or nerve pain — and check for red flags requiring urgent attention.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/lower-back-pain/" class="tool-card" data-cat="free pain">
+ <span class="new-pill">Popular</span>
+ <div class="tool-icon"><i class="fas fa-male"></i></div>
+ <h3>Lower Back Pain</h3>
+ <p>Identify whether your pain is muscular, disc-related, or nerve pain — and check for red flags requiring urgent attention.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/neck-pain/" class="tool-card" data-cat="free pain posture">
-        <div class="tool-icon"><i class="fas fa-head-side-cough"></i></div>
-        <h3>Neck Pain</h3>
-        <p>Assess whether your cervical pain is muscular tension, disc-related, or nerve compression — with tailored advice.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/neck-pain/" class="tool-card" data-cat="free pain posture">
+ <div class="tool-icon"><i class="fas fa-head-side-cough"></i></div>
+ <h3>Neck Pain</h3>
+ <p>Assess whether your cervical pain is muscular tension, disc-related, or nerve compression — with tailored advice.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/knee-pain/" class="tool-card" data-cat="free pain sports elderly">
-        <span class="new-pill">Popular</span>
-        <div class="tool-icon"><i class="fas fa-running"></i></div>
-        <h3>Knee Pain</h3>
-        <p>Differentiate between arthritis, ligament injury, patellofemoral pain, and meniscal problems — with personalised next steps.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/knee-pain/" class="tool-card" data-cat="free pain sports elderly">
+ <span class="new-pill">Popular</span>
+ <div class="tool-icon"><i class="fas fa-running"></i></div>
+ <h3>Knee Pain</h3>
+ <p>Differentiate between arthritis, ligament injury, patellofemoral pain, and meniscal problems — with personalised next steps.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/sciatica/" class="tool-card" data-cat="free pain neuro">
-        <div class="tool-icon"><i class="fas fa-bolt"></i></div>
-        <h3>Sciatica Checker</h3>
-        <p>Determine if your leg pain is true sciatica or referred muscle pain — and assess the urgency of your symptoms.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/sciatica/" class="tool-card" data-cat="free pain neuro">
+ <div class="tool-icon"><i class="fas fa-bolt"></i></div>
+ <h3>Sciatica Checker</h3>
+ <p>Determine if your leg pain is true sciatica or referred muscle pain — and assess the urgency of your symptoms.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/frozen-shoulder/" class="tool-card" data-cat="free pain sports elderly">
-        <div class="tool-icon"><i class="fas fa-snowflake"></i></div>
-        <h3>Frozen Shoulder</h3>
-        <p>Find out which stage of frozen shoulder you are in and what treatment approach is most appropriate right now.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/frozen-shoulder/" class="tool-card" data-cat="free pain sports elderly">
+ <div class="tool-icon"><i class="fas fa-snowflake"></i></div>
+ <h3>Frozen Shoulder</h3>
+ <p>Find out which stage of frozen shoulder you are in and what treatment approach is most appropriate right now.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/sports-injury/" class="tool-card" data-cat="free sports pain">
-        <div class="tool-icon"><i class="fas fa-futbol"></i></div>
-        <h3>Sports Injury Triage</h3>
-        <p>Assess your sports injury type and severity — and find out whether you need urgent care or can manage with physiotherapy.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/sports-injury/" class="tool-card" data-cat="free sports pain">
+ <div class="tool-icon"><i class="fas fa-futbol"></i></div>
+ <h3>Sports Injury Triage</h3>
+ <p>Assess your sports injury type and severity — and find out whether you need urgent care or can manage with physiotherapy.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/posture/" class="tool-card" data-cat="free posture pain">
-        <span class="new-pill">New</span>
-        <div class="tool-icon"><i class="fas fa-user-check"></i></div>
-        <h3>Posture Assessment</h3>
-        <p>Check for forward head posture, rounded shoulders, and pelvic tilt — with a personalised correction plan and exercise guidance.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/posture/" class="tool-card" data-cat="free posture pain">
+ <span class="new-pill">New</span>
+ <div class="tool-icon"><i class="fas fa-user-check"></i></div>
+ <h3>Posture Assessment</h3>
+ <p>Check for forward head posture, rounded shoulders, and pelvic tilt — with a personalised correction plan and exercise guidance.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/shoulder-pain/" class="tool-card" data-cat="free pain sports">
-        <span class="new-pill">New</span>
-        <div class="tool-icon"><i class="fas fa-hand-rock"></i></div>
-        <h3>Shoulder Pain Checker</h3>
-        <p>Identify impingement, rotator cuff injury, frozen shoulder, or AC joint problem — with likely diagnosis and clear next steps.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/shoulder-pain/" class="tool-card" data-cat="free pain sports">
+ <span class="new-pill">New</span>
+ <div class="tool-icon"><i class="fas fa-hand-rock"></i></div>
+ <h3>Shoulder Pain Checker</h3>
+ <p>Identify impingement, rotator cuff injury, frozen shoulder, or AC joint problem — with likely diagnosis and clear next steps.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/ankle-foot-pain/" class="tool-card" data-cat="free pain sports">
-        <span class="new-pill">New</span>
-        <div class="tool-icon"><i class="fas fa-shoe-prints"></i></div>
-        <h3>Ankle &amp; Foot Pain</h3>
-        <p>Screen for plantar fasciitis, Achilles tendinopathy, ankle sprain, or stress fracture — with urgent vs manageable guidance.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/ankle-foot-pain/" class="tool-card" data-cat="free pain sports">
+ <span class="new-pill">New</span>
+ <div class="tool-icon"><i class="fas fa-shoe-prints"></i></div>
+ <h3>Ankle &amp; Foot Pain</h3>
+ <p>Screen for plantar fasciitis, Achilles tendinopathy, ankle sprain, or stress fracture — with urgent vs manageable guidance.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/hip-pain/" class="tool-card" data-cat="free pain elderly">
-        <span class="new-pill">New</span>
-        <div class="tool-icon"><i class="fas fa-walking"></i></div>
-        <h3>Hip Pain Checker</h3>
-        <p>Differentiate bursitis, osteoarthritis, hip impingement, or referred back pain — with age-specific diagnosis and guidance.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/hip-pain/" class="tool-card" data-cat="free pain elderly">
+ <span class="new-pill">New</span>
+ <div class="tool-icon"><i class="fas fa-walking"></i></div>
+ <h3>Hip Pain Checker</h3>
+ <p>Differentiate bursitis, osteoarthritis, hip impingement, or referred back pain — with age-specific diagnosis and guidance.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/headache/" class="tool-card" data-cat="free pain neuro posture work">
-        <span class="new-pill">New</span>
-        <div class="tool-icon"><i class="fas fa-brain"></i></div>
-        <h3>Headache Type Screener</h3>
-        <p>Find out if your headaches are cervicogenic (neck-related), tension-type, or migraine — and whether physiotherapy can help.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/headache/" class="tool-card" data-cat="free pain neuro posture work">
+ <span class="new-pill">New</span>
+ <div class="tool-icon"><i class="fas fa-brain"></i></div>
+ <h3>Headache Type Screener</h3>
+ <p>Find out if your headaches are cervicogenic (neck-related), tension-type, or migraine — and whether physiotherapy can help.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 3–4 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/stroke-rehab/" class="tool-card" data-cat="free neuro elderly">
-        <span class="new-pill">New</span>
-        <div class="tool-icon"><i class="fas fa-heartbeat"></i></div>
-        <h3>Stroke Rehab Readiness</h3>
-        <p>For survivors and caregivers. Assess recovery stage, identify rehab goals, and find out what physiotherapy can achieve right now.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div></div>
-        <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/stroke-rehab/" class="tool-card" data-cat="free neuro elderly">
+ <span class="new-pill">New</span>
+ <div class="tool-icon"><i class="fas fa-heartbeat"></i></div>
+ <h3>Stroke Rehab Readiness</h3>
+ <p>For survivors and caregivers. Assess recovery stage, identify rehab goals, and find out what physiotherapy can achieve right now.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div></div>
+ <span class="tool-link">Start Assessment <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-    </div>
+ </div>
 
-    <hr class="section-divider">
+ <hr class="section-divider">
 
-    <!-- FREEMIUM TOOLS -->
-    <span class="section-label">Freemium Tools — Free PDF Report via Email</span>
-    <h2 class="section-title">Advanced Assessments with Personalised Reports</h2>
-    <p class="section-sub">Complete the assessment instantly for free. Enter your email to receive a detailed personalised PDF report — or skip to view results without it.</p>
+ <!-- FREEMIUM TOOLS -->
+ <span class="section-label">Freemium Tools — Free PDF Report via Email</span>
+ <h2 class="section-title">Advanced Assessments with Personalised Reports</h2>
+ <p class="section-sub">Complete the assessment instantly for free. Enter your email to receive a detailed personalised PDF report — or skip to view results without it.</p>
 
-    <div class="tools-grid">
+ <div class="tools-grid">
 
-      <a href="/self-assessment/acl-risk/" class="tool-card freemium-card" data-cat="freemium sports">
-        <span class="freemium-pill">Free PDF</span>
-        <div class="tool-icon gold"><i class="fas fa-running"></i></div>
-        <h3>ACL Injury Risk Calculator</h3>
-        <p>Athletes: assess your personal ACL injury risk across sport type, biomechanics, gender, and injury history. Get a prevention plan to your inbox.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
-        <span class="tool-link">Calculate My Risk <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/acl-risk/" class="tool-card freemium-card" data-cat="freemium sports">
+ <span class="freemium-pill">Free PDF</span>
+ <div class="tool-icon gold"><i class="fas fa-running"></i></div>
+ <h3>ACL Injury Risk Calculator</h3>
+ <p>Athletes: assess your personal ACL injury risk across sport type, biomechanics, gender, and injury history. Get a prevention plan to your inbox.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
+ <span class="tool-link">Calculate My Risk <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/return-to-sport/" class="tool-card freemium-card" data-cat="freemium sports">
-        <span class="freemium-pill">Free PDF</span>
-        <div class="tool-icon gold"><i class="fas fa-medal"></i></div>
-        <h3>Return-to-Sport Readiness Test</h3>
-        <p>Post-surgery athletes: find out if you are genuinely ready to return to your sport and what criteria you still need to meet for safe clearance.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
-        <span class="tool-link">Test My Readiness <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/return-to-sport/" class="tool-card freemium-card" data-cat="freemium sports">
+ <span class="freemium-pill">Free PDF</span>
+ <div class="tool-icon gold"><i class="fas fa-medal"></i></div>
+ <h3>Return-to-Sport Readiness Test</h3>
+ <p>Post-surgery athletes: find out if you are genuinely ready to return to your sport and what criteria you still need to meet for safe clearance.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
+ <span class="tool-link">Test My Readiness <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/fall-risk/" class="tool-card freemium-card" data-cat="freemium elderly">
-        <span class="freemium-pill">Free PDF</span>
-        <div class="tool-icon gold"><i class="fas fa-user-shield"></i></div>
-        <h3>Elderly Fall Risk Score</h3>
-        <p>For elderly patients and caregivers: assess fall risk across balance, medications, strength, and home environment — get a prevention plan.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
-        <span class="tool-link">Assess Fall Risk <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/fall-risk/" class="tool-card freemium-card" data-cat="freemium elderly">
+ <span class="freemium-pill">Free PDF</span>
+ <div class="tool-icon gold"><i class="fas fa-user-shield"></i></div>
+ <h3>Elderly Fall Risk Score</h3>
+ <p>For elderly patients and caregivers: assess fall risk across balance, medications, strength, and home environment — get a prevention plan.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
+ <span class="tool-link">Assess Fall Risk <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/ergonomics/" class="tool-card freemium-card" data-cat="freemium work posture pain">
-        <span class="freemium-pill">Free PDF</span>
-        <div class="tool-icon gold"><i class="fas fa-desktop"></i></div>
-        <h3>WFH &amp; Desk Ergonomics</h3>
-        <p>IT professionals and desk workers: identify your workstation risk factors and get a personalised setup correction plan and exercise programme.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
-        <span class="tool-link">Assess My Setup <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/ergonomics/" class="tool-card freemium-card" data-cat="freemium work posture pain">
+ <span class="freemium-pill">Free PDF</span>
+ <div class="tool-icon gold"><i class="fas fa-desktop"></i></div>
+ <h3>WFH &amp; Desk Ergonomics</h3>
+ <p>IT professionals and desk workers: identify your workstation risk factors and get a personalised setup correction plan and exercise programme.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
+ <span class="tool-link">Assess My Setup <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-      <a href="/self-assessment/chronic-pain/" class="tool-card freemium-card" data-cat="freemium pain neuro">
-        <span class="freemium-pill">Free PDF</span>
-        <div class="tool-icon gold"><i class="fas fa-heartbeat"></i></div>
-        <h3>Chronic Pain Profile</h3>
-        <p>Living with long-term pain? Build your personal pain profile, understand your pain type and burden, and get a tailored physiotherapy plan.</p>
-        <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
-        <span class="tool-link">Build My Profile <i class="fas fa-arrow-right"></i></span>
-      </a>
+ <a href="/self-assessment/chronic-pain/" class="tool-card freemium-card" data-cat="freemium pain neuro">
+ <span class="freemium-pill">Free PDF</span>
+ <div class="tool-icon gold"><i class="fas fa-heartbeat"></i></div>
+ <h3>Chronic Pain Profile</h3>
+ <p>Living with long-term pain? Build your personal pain profile, understand your pain type and burden, and get a tailored physiotherapy plan.</p>
+ <div class="tool-meta"><div class="tool-meta-item"><i class="fas fa-clock"></i> 4–5 min</div><div class="tool-meta-item"><i class="fas fa-list-ol"></i> 12 questions</div><div class="tool-meta-item"><i class="fas fa-file-pdf"></i> Free PDF</div></div>
+ <span class="tool-link">Build My Profile <i class="fas fa-arrow-right"></i></span>
+ </a>
 
-    </div>
+ </div>
 
-    <div class="info-box">
-      <i class="fas fa-info-circle"></i>
-      <div>
-        <strong style="font-size:.9rem;color:var(--dark)">Disclaimer:</strong>
-        <span style="font-size:.84rem;color:var(--mid)"> All tools are for guidance and informational purposes only. Results are based on self-reported answers and are not a substitute for a clinical assessment by a qualified physiotherapist or doctor. If you are in severe pain or have red-flag symptoms, please contact a healthcare professional immediately.</span>
-      </div>
-    </div>
+ <div class="info-box">
+ <i class="fas fa-info-circle"></i>
+ <div>
+ <strong style="font-size:.9rem;color:var(--dark)">Disclaimer:</strong>
+ <span style="font-size:.84rem;color:var(--mid)"> All tools are for guidance and informational purposes only. Results are based on self-reported answers and are not a substitute for a clinical assessment by a qualified physiotherapist or doctor. If you are in severe pain or have red-flag symptoms, please contact a healthcare professional immediately.</span>
+ </div>
+ </div>
 
-  </div>
+ </div>
 </section>
 
 <section class="cta-section">
-  <div class="container">
-    <h2>Want a Proper Clinical Assessment?</h2>
-    <p>These tools give you a personalised starting point — but nothing replaces a hands-on assessment by Dr. Tarun Garg. Free first consultation at our Zirakpur clinic or via home visit across Chandigarh Tricity.</p>
-    <div class="cta-btns">
-      <a href="https://wa.me/919417791833?text=Hello%2C%20I%20used%20the%20self-assessment%20tools%20and%20would%20like%20a%20consultation." class="btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp for Free Consultation</a>
-      <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt"></i> Call: +91 94177 91833</a>
-    </div>
-  </div>
+ <div class="container">
+ <h2>Want a Proper Clinical Assessment?</h2>
+ <p>These tools give you a personalised starting point — but nothing replaces a hands-on assessment by Dr. Tarun Garg. first consultation at our Zirakpur clinic or via home visit across Chandigarh Tricity.</p>
+ <div class="cta-btns">
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20used%20the%20self-assessment%20tools%20and%20would%20like%20a%20consultation." class="btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp for consultation</a>
+ <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt"></i> Call: +91 94177 91833</a>
+ </div>
+ </div>
 </section>
 
 <footer>
-  <div class="container">
-    <p>&copy; <span id="yr"></span> <a href="/">PhysioNutra Clinic</a> | SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603 | <a href="tel:+919417791833">+91 94177 91833</a></p>
-    <p style="margin-top:.4rem"><a href="/">Home</a> &nbsp;|&nbsp; <a href="/services/">Services</a> &nbsp;|&nbsp; <a href="/physiotherapy/">Locations</a> &nbsp;|&nbsp; <a href="/blogs/">Blog</a> &nbsp;|&nbsp; <a href="/contact/">Contact</a></p>
-  </div>
+ <div class="container">
+ <p>&copy; <span id="yr"></span> <a href="/">PhysioNutra Clinic</a> | SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603 | <a href="tel:+919417791833">+91 94177 91833</a></p>
+ <p style="margin-top:.4rem"><a href="/">Home</a> &nbsp;|&nbsp; <a href="/services/">Services</a> &nbsp;|&nbsp; <a href="/physiotherapy/">Locations</a> &nbsp;|&nbsp; <a href="/blogs/">Blog</a> &nbsp;|&nbsp; <a href="/contact/">Contact</a></p>
+ </div>
 </footer>
 
 <script>
@@ -405,12 +351,12 @@ var tog=document.querySelector('.mobile-menu-toggle'),menu=document.getElementBy
 if(tog&&menu){tog.addEventListener('click',function(e){e.stopPropagation();var o=menu.classList.toggle('active');this.setAttribute('aria-expanded',String(o))});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!tog.contains(e.target)){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}});menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}})});}
 document.querySelectorAll('.has-dropdown>a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('active')}})});
 function filterTools(cat,btn){
-  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
-  btn.classList.add('active');
-  document.querySelectorAll('.tool-card').forEach(function(card){
-    if(cat==='all'||card.dataset.cat.includes(cat)){card.style.display='flex';}
-    else{card.style.display='none';}
-  });
+ document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+ btn.classList.add('active');
+ document.querySelectorAll('.tool-card').forEach(function(card){
+ if(cat==='all'||card.dataset.cat.includes(cat)){card.style.display='flex';}
+ else{card.style.display='none';}
+ });
 }
 </script>
 </body>

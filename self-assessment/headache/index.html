@@ -13,9 +13,9 @@
 /* Header JS */
 var tog=document.querySelector('.mobile-menu-toggle'),menu=document.getElementById('mainMenu');
 if(tog&&menu){
-  tog.addEventListener('click',function(e){e.stopPropagation();var o=menu.classList.toggle('active');this.setAttribute('aria-expanded',String(o))});
-  document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!tog.contains(e.target)){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}});
-  menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}})});
+ tog.addEventListener('click',function(e){e.stopPropagation();var o=menu.classList.toggle('active');this.setAttribute('aria-expanded',String(o))});
+ document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!tog.contains(e.target)){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}});
+ menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}})});
 }
 document.querySelectorAll('.has-dropdown>a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('active')}})});
 
@@ -25,71 +25,20 @@ document.querySelectorAll('.has-dropdown>a').forEach(function(l){l.addEventListe
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'DM Sans',Arial,sans-serif;line-height:1.7;color:#1a1a1a;background:#fafaf8;-webkit-font-smoothing:antialiased}:root{--green:#7ad16c;--green-dark:#5ab04a;--green-light:#eaf6e7;--dark:#1a1a1a;--mid:#555;--muted:#888;--border:#e8e8e4;--bg:#fafaf8;--radius:12px;--radius-lg:18px}.container{max-width:780px;margin:0 auto;padding:0 20px}a{text-decoration:none;color:inherit}
-.topnav{background:#fff;border-bottom:1px solid var(--border);padding:.8rem 0;position:sticky;top:0;z-index:100}.topnav-inner{display:flex;align-items:center;justify-content:space-between}.topnav-back{font-size:.83rem;color:var(--mid);display:flex;align-items:center;gap:.4rem}.topnav-back:hover{color:var(--green)}
-
-
-
-.tool-hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 55%,#3a7a32 100%);color:#fff;padding:48px 0 36px;text-align:center}.tool-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(122,209,108,.15);border:1px solid rgba(122,209,108,.35);color:var(--green);padding:.3rem .9rem;border-radius:50px;font-size:.74rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1rem}.tool-hero h1{font-family:'DM Serif Display',serif;font-size:2.2rem;font-weight:400;margin-bottom:.7rem}.tool-hero p{font-size:.97rem;color:rgba(255,255,255,.82);max-width:520px;margin:0 auto 1.2rem}.hero-meta{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}.hero-meta-item{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:rgba(255,255,255,.75)}
-.progress-wrap{background:#fff;border-bottom:1px solid var(--border);padding:.8rem 0}.progress-inner{display:flex;align-items:center;gap:1rem}.progress-bar-bg{flex:1;height:6px;background:var(--border);border-radius:50px;overflow:hidden}.progress-bar-fill{height:100%;background:var(--green);border-radius:50px;transition:width .4s ease}.progress-text{font-size:.78rem;color:var(--muted);white-space:nowrap}
-.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;margin:1.5rem 0}.card-section-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}.card h2{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:var(--dark);margin-bottom:.5rem}.card-desc{color:var(--mid);font-size:.9rem;margin-bottom:1.5rem;line-height:1.7}
-.q-block{margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border)}.q-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}.q-text{font-size:.95rem;font-weight:600;color:var(--dark);margin-bottom:.8rem;display:flex;gap:.6rem;align-items:flex-start}.q-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--green);color:#fff;border-radius:50%;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:.1rem}.options{display:flex;flex-direction:column;gap:.5rem}.opt{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all .2s;font-size:.88rem;color:var(--mid)}.opt:hover{border-color:var(--green);background:var(--green-light);color:var(--dark)}.opt.selected{border-color:var(--green);background:var(--green-light);color:var(--dark)}.opt input[type=radio]{accent-color:var(--green);width:16px;height:16px;flex-shrink:0}
-.btn-row{display:flex;gap:.8rem;margin-top:1.5rem;flex-wrap:wrap}.btn{padding:12px 28px;border-radius:50px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .3s;display:inline-flex;align-items:center;gap:.5rem}.btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}.btn-secondary{background:#fff;color:var(--mid);border:1.5px solid var(--border)}.btn-secondary:hover{border-color:var(--green);color:var(--dark)}
-.result-wrap{display:none}.result-score-card{border-radius:var(--radius-lg);padding:2rem;text-align:center;margin-bottom:1.5rem}.result-score-card.cerv{background:#eaf6e7;border:1px solid #b6deb0}.result-score-card.tension{background:#e8f4fd;border:1px solid #90caf9}.result-score-card.migraine{background:#fff8e1;border:1px solid #ffd54f}.result-score-card.mixed{background:#f3e5f5;border:1px solid #ce93d8}.result-score-card.urgent{background:#fdecea;border:1px solid #f5a9a9}.score-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}.score-title{font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;margin-bottom:.5rem}.score-desc{font-size:.9rem;line-height:1.7}
-.diag-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;margin-bottom:1.2rem}.diag-card h3{font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:1rem}.diag-item{padding:.8rem 1rem;border-radius:var(--radius);margin-bottom:.6rem;font-size:.88rem}.diag-item.likely{background:#eaf6e7;border:1px solid #b6deb0;color:#2d5a27}.diag-item.possible{background:#fff8e1;border:1px solid #ffd54f;color:#6d3d0b}.diag-label{font-weight:600;margin-bottom:.3rem}.diag-desc{font-size:.82rem;line-height:1.55}
-.physio-box{background:#eaf6e7;border:1px solid #b6deb0;border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.2rem}.physio-box h3{font-size:1rem;font-weight:600;color:#2d5a27;margin-bottom:.6rem}.physio-box p{font-size:.88rem;color:#3B6D11;line-height:1.7}
-.reco-card{background:var(--green-light);border:1px solid rgba(122,209,108,.4);border-radius:var(--radius-lg);padding:1.8rem;margin-bottom:1.2rem}.reco-card h3{font-size:1rem;font-weight:600;color:#2d5a27;margin-bottom:.8rem}.reco-item{display:flex;align-items:flex-start;gap:.7rem;padding:.4rem 0;font-size:.87rem;color:#3B6D11}.reco-item i{color:var(--green);flex-shrink:0;margin-top:.15rem}
-.red-flag-box{background:#fdecea;border:1px solid #f5a9a9;border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.2rem;font-size:.86rem;color:#7a1f1f;line-height:1.6;display:none}
-.cta-card{background:linear-gradient(135deg,#1a2e1a,#2d5a27);border-radius:var(--radius-lg);padding:2rem;text-align:center;color:#fff;margin-bottom:1.5rem}.cta-card h3{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:.5rem}.cta-card p{font-size:.88rem;color:rgba(255,255,255,.8);margin-bottom:1.2rem}.cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}.btn-wa{background:#25D366;color:#fff;padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s}.btn-wa:hover{background:#1da851;transform:translateY(-2px)}.btn-call-w{background:var(--green);color:#fff;padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s}.btn-call-w:hover{background:var(--green-dark);transform:translateY(-2px)}.btn-retake{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;cursor:pointer;font-family:inherit;transition:all .3s}.btn-retake:hover{background:rgba(255,255,255,.1)}
-.disclaimer{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:2rem}
-.tool-footer{background:#1a1a1a;color:#ccc;padding:1.5rem 0;text-align:center;font-size:.8rem}.tool-footer a{color:var(--green)}
-.step{display:none}.step.active{display:block}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'DM Sans',Arial,sans-serif;line-height:1.7;color:#1a1a1a;background:#fafaf8;-webkit-font-smoothing:antialiased}:root{--green:#7ad16c;--green-dark:#5ab04a;--green-light:#eaf6e7;--dark:#1a1a1a;--mid:#555;--muted:#888;--border:#e8e8e4;--bg:#fafaf8;--radius:12px;--radius-lg:18px}.container{max-width:780px;margin:0 auto;padding:0 20px}a{text-decoration:none;color:inherit}.topnav{background:#fff;border-bottom:1px solid var(--border);padding:.8rem 0;position:sticky;top:0;z-index:100}.topnav-inner{display:flex;align-items:center;justify-content:space-between}.topnav-back{font-size:.83rem;color:var(--mid);display:flex;align-items:center;gap:.4rem}.topnav-back:hover{color:var(--green)}.tool-hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d5a27 55%,#3a7a32 100%);color:#fff;padding:48px 0 36px;text-align:center}.tool-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(122,209,108,.15);border:1px solid rgba(122,209,108,.35);color:var(--green);padding:.3rem.9rem;border-radius:50px;font-size:.74rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1rem}.tool-hero h1{font-family:'DM Serif Display',serif;font-size:2.2rem;font-weight:400;margin-bottom:.7rem}.tool-hero p{font-size:.97rem;color:rgba(255,255,255,.82);max-width:520px;margin:0 auto 1.2rem}.hero-meta{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}.hero-meta-item{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:rgba(255,255,255,.75)}.progress-wrap{background:#fff;border-bottom:1px solid var(--border);padding:.8rem 0}.progress-inner{display:flex;align-items:center;gap:1rem}.progress-bar-bg{flex:1;height:6px;background:var(--border);border-radius:50px;overflow:hidden}.progress-bar-fill{height:100%;background:var(--green);border-radius:50px;transition:width.4s ease}.progress-text{font-size:.78rem;color:var(--muted);white-space:nowrap}.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;margin:1.5rem 0}.card-section-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}.card h2{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:var(--dark);margin-bottom:.5rem}.card-desc{color:var(--mid);font-size:.9rem;margin-bottom:1.5rem;line-height:1.7}.q-block{margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border)}.q-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}.q-text{font-size:.95rem;font-weight:600;color:var(--dark);margin-bottom:.8rem;display:flex;gap:.6rem;align-items:flex-start}.q-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--green);color:#fff;border-radius:50%;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:.1rem}.options{display:flex;flex-direction:column;gap:.5rem}.opt{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all.2s;font-size:.88rem;color:var(--mid)}.opt:hover{border-color:var(--green);background:var(--green-light);color:var(--dark)}.opt.selected{border-color:var(--green);background:var(--green-light);color:var(--dark)}.opt input[type=radio]{accent-color:var(--green);width:16px;height:16px;flex-shrink:0}.btn-row{display:flex;gap:.8rem;margin-top:1.5rem;flex-wrap:wrap}.btn{padding:12px 28px;border-radius:50px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all.3s;display:inline-flex;align-items:center;gap:.5rem}.btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}.btn-secondary{background:#fff;color:var(--mid);border:1.5px solid var(--border)}.btn-secondary:hover{border-color:var(--green);color:var(--dark)}.result-wrap{display:none}.result-score-card{border-radius:var(--radius-lg);padding:2rem;text-align:center;margin-bottom:1.5rem}.result-score-card.cerv{background:#eaf6e7;border:1px solid #b6deb0}.result-score-card.tension{background:#e8f4fd;border:1px solid #90caf9}.result-score-card.migraine{background:#fff8e1;border:1px solid #ffd54f}.result-score-card.mixed{background:#f3e5f5;border:1px solid #ce93d8}.result-score-card.urgent{background:#fdecea;border:1px solid #f5a9a9}.score-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}.score-title{font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;margin-bottom:.5rem}.score-desc{font-size:.9rem;line-height:1.7}.diag-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;margin-bottom:1.2rem}.diag-card h3{font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:1rem}.diag-item{padding:.8rem 1rem;border-radius:var(--radius);margin-bottom:.6rem;font-size:.88rem}.diag-item.likely{background:#eaf6e7;border:1px solid #b6deb0;color:#2d5a27}.diag-item.possible{background:#fff8e1;border:1px solid #ffd54f;color:#6d3d0b}.diag-label{font-weight:600;margin-bottom:.3rem}.diag-desc{font-size:.82rem;line-height:1.55}.physio-box{background:#eaf6e7;border:1px solid #b6deb0;border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.2rem}.physio-box h3{font-size:1rem;font-weight:600;color:#2d5a27;margin-bottom:.6rem}.physio-box p{font-size:.88rem;color:#3B6D11;line-height:1.7}.reco-card{background:var(--green-light);border:1px solid rgba(122,209,108,.4);border-radius:var(--radius-lg);padding:1.8rem;margin-bottom:1.2rem}.reco-card h3{font-size:1rem;font-weight:600;color:#2d5a27;margin-bottom:.8rem}.reco-item{display:flex;align-items:flex-start;gap:.7rem;padding:.4rem 0;font-size:.87rem;color:#3B6D11}.reco-item i{color:var(--green);flex-shrink:0;margin-top:.15rem}.red-flag-box{background:#fdecea;border:1px solid #f5a9a9;border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.2rem;font-size:.86rem;color:#7a1f1f;line-height:1.6;display:none}.cta-card{background:linear-gradient(135deg,#1a2e1a,#2d5a27);border-radius:var(--radius-lg);padding:2rem;text-align:center;color:#fff;margin-bottom:1.5rem}.cta-card h3{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:.5rem}.cta-card p{font-size:.88rem;color:rgba(255,255,255,.8);margin-bottom:1.2rem}.cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}.btn-wa{background:#25D366;color:#fff;padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:.5rem;transition:all.3s}.btn-wa:hover{background:#1da851;transform:translateY(-2px)}.btn-call-w{background:var(--green);color:#fff;padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:.5rem;transition:all.3s}.btn-call-w:hover{background:var(--green-dark);transform:translateY(-2px)}.btn-retake{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:11px 24px;border-radius:50px;font-weight:600;font-size:.88rem;cursor:pointer;font-family:inherit;transition:all.3s}.btn-retake:hover{background:rgba(255,255,255,.1)}.disclaimer{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:2rem}.tool-footer{background:#1a1a1a;color:#ccc;padding:1.5rem 0;text-align:center;font-size:.8rem}.tool-footer a{color:var(--green)}.step{display:none}.step.active{display:block}
 @media(max-width:600px){.tool-hero h1{font-size:1.6rem}.card{padding:1.4rem}.btn{padding:11px 20px;font-size:.85rem}.hero-meta{gap:.8rem}}
 
 /* ═══ HEADER ═══ */
-header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;width:100%}
-.header-top{background:#1a1a1a;color:#fff;padding:8px 0}
-.header-top-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
-.header-contact{display:flex;gap:1.5rem;flex-wrap:wrap}
-.header-contact-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem}
-.header-contact-item a{color:#7ad16c;text-decoration:none}
-.header-contact-item a:hover{text-decoration:underline}
-.header-social{display:flex;gap:.8rem}
-.header-social a{color:#7ad16c;font-size:1rem;text-decoration:none;transition:color .3s}
-.header-social a:hover{color:#5ab04a}
-.header-main{padding:.8rem 0;position:relative}
-.header-main-content{display:flex;justify-content:space-between;align-items:center}
-.logo-section{display:flex;align-items:center;gap:1rem}
-.logo{height:60px;width:auto}
-.tagline-stack{display:flex;flex-direction:column;line-height:1.2}
-.tagline-doctor{font-size:.72rem;color:#666;font-style:italic;letter-spacing:.02em}
-.tagline-brand{font-size:1.05rem;font-weight:600;color:#7ad16c}
-.mobile-menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#333;padding:4px}
+header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;width:100%}.header-top{background:#1a1a1a;color:#fff;padding:8px 0}.header-top-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}.header-contact{display:flex;gap:1.5rem;flex-wrap:wrap}.header-contact-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem}.header-contact-item a{color:#7ad16c;text-decoration:none}.header-contact-item a:hover{text-decoration:underline}.header-social{display:flex;gap:.8rem}.header-social a{color:#7ad16c;font-size:1rem;text-decoration:none;transition:color.3s}.header-social a:hover{color:#5ab04a}.header-main{padding:.8rem 0;position:relative}.header-main-content{display:flex;justify-content:space-between;align-items:center}.logo-section{display:flex;align-items:center;gap:1rem}.logo{height:60px;width:auto}.tagline-stack{display:flex;flex-direction:column;line-height:1.2}.tagline-doctor{font-size:.72rem;color:#666;font-style:italic;letter-spacing:.02em}.tagline-brand{font-size:1.05rem;font-weight:600;color:#7ad16c}.mobile-menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#333;padding:4px}
 nav ul{display:flex;list-style:none;gap:1.5rem;align-items:center}
-nav a{text-decoration:none;color:#333;font-weight:500;transition:color .3s;cursor:pointer;font-size:.9rem}
-nav a:hover{color:#7ad16c}
-.has-dropdown{position:relative}
-.dropdown-menu{position:absolute;top:100%;left:0;background:#fff;min-width:220px;box-shadow:0 4px 15px rgba(0,0,0,.15);border-radius:8px;padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s;z-index:1000;list-style:none}
-.has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.dropdown-menu a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;color:#333;font-size:.9rem}
-.dropdown-menu a:hover{background:#f0f0f0;color:#7ad16c}
-.dropdown-menu i{width:18px;color:#7ad16c;font-size:.85rem}
-.cta-nav-btn{padding:9px 22px;background:#7ad16c;color:#fff!important;text-decoration:none;border-radius:25px;font-weight:bold;transition:all .3s;white-space:nowrap}
-.cta-nav-btn:hover{background:#5ab04a;transform:translateY(-2px)}
-@media(max-width:768px){
-  .header-contact .header-contact-item:nth-child(2),.header-contact .header-contact-item:nth-child(3){display:none}
-  .header-social{gap:.5rem}
-  .mobile-menu-toggle{display:block}
-  .logo{height:48px}.tagline-doctor{font-size:.62rem}.tagline-brand{font-size:.92rem}
-  nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}
-  nav ul.active{display:flex}
-  nav li{width:100%;border-bottom:1px solid #eee}
-  nav li:last-child{border-bottom:none}
-  nav a{display:block;padding:.85rem}
-  .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding-left:12px;display:none;background:#f9f9f9;border:none}
-  .has-dropdown.active .dropdown-menu{display:block}
-  .has-dropdown>a::after{content:' +';color:#7ad16c;font-weight:bold}
-  .has-dropdown.active>a::after{content:' −'}
+nav a{text-decoration:none;color:#333;font-weight:500;transition:color.3s;cursor:pointer;font-size:.9rem}
+nav a:hover{color:#7ad16c}.has-dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background:#fff;min-width:220px;box-shadow:0 4px 15px rgba(0,0,0,.15);border-radius:8px;padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all.3s;z-index:1000;list-style:none}.has-dropdown:hover.dropdown-menu,.has-dropdown:focus-within.dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;color:#333;font-size:.9rem}.dropdown-menu a:hover{background:#f0f0f0;color:#7ad16c}.dropdown-menu i{width:18px;color:#7ad16c;font-size:.85rem}.cta-nav-btn{padding:9px 22px;background:#7ad16c;color:#fff!important;text-decoration:none;border-radius:25px;font-weight:bold;transition:all.3s;white-space:nowrap}.cta-nav-btn:hover{background:#5ab04a;transform:translateY(-2px)}
+@media(max-width:768px){.header-contact.header-contact-item:nth-child(2),.header-contact.header-contact-item:nth-child(3){display:none}.header-social{gap:.5rem}.mobile-menu-toggle{display:block}.logo{height:48px}.tagline-doctor{font-size:.62rem}.tagline-brand{font-size:.92rem}
+ nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.7rem;box-shadow:0 4px 10px rgba(0,0,0,.1);gap:0;z-index:999}
+ nav ul.active{display:flex}
+ nav li{width:100%;border-bottom:1px solid #eee}
+ nav li:last-child{border-bottom:none}
+ nav a{display:block;padding:.85rem}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding-left:12px;display:none;background:#f9f9f9;border:none}.has-dropdown.active.dropdown-menu{display:block}.has-dropdown>a::after{content:' +';color:#7ad16c;font-weight:bold}.has-dropdown.active>a::after{content:' −'}
 }
 @media(max-width:480px){.logo{height:44px}.tagline-doctor{display:none}.tagline-brand{font-size:.85rem}}
 
@@ -100,110 +49,110 @@ nav a:hover{color:#7ad16c}
 </head>
 <body>
 <header role="banner">
-  <div class="header-top">
-    <div class="container">
-      <div class="header-top-content">
-        <div class="header-contact">
-          <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
-          <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#"  class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
-          <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
-        </div>
-        <div class="header-social" aria-label="Social media links">
-          <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header-main">
-    <div class="container">
-      <div class="header-main-content">
-        <div class="logo-section">
-          <a href="/" aria-label="PhysioNutra Clinic Home"><picture><source srcset="../../images/logo.webp" type="image/webp"><img src="../../images/logo.png" alt="PhysioNutra Clinic" class="logo" width="180" height="60" loading="eager"></picture></a>
-          <div class="tagline-stack">
-            <span class="tagline-doctor">Dr Tarun's</span>
-            <span class="tagline-brand">PhysioNutra Clinic</span>
-          </div>
-        </div>
-        <nav role="navigation" aria-label="Main navigation">
-          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
-          <ul id="mainMenu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About Us</a></li>
-            <li class="has-dropdown">
-              <a href="/services/">Services</a>
-              <ul class="dropdown-menu" aria-label="Services submenu">
-                <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
-                <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
-                <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
-                <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
-                <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
-                <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
-                <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="/physiotherapy/">Locations</a>
-              <ul class="dropdown-menu" aria-label="Locations submenu">
-                <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
-                <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
-                <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
-                <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
-                <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
-                <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
-              </ul>
-            </li>
-            <li><a href="/blogs/">Blog</a></li>
-            <li><a href="/testimonials/">Testimonials</a></li>
-            <li><a href="/self-assessment/">Self-Assessment</a></li>
-            <li><a href="tel:+919417791833" class="cta-nav-btn">Book Now</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
+ <div class="header-top">
+ <div class="container">
+ <div class="header-top-content">
+ <div class="header-contact">
+ <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ </div>
+ <div class="header-social" aria-label="Social media links">
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="header-main">
+ <div class="container">
+ <div class="header-main-content">
+ <div class="logo-section">
+ <a href="/" aria-label="PhysioNutra Clinic Home"><picture><source srcset="././images/logo.webp" type="image/webp"><img src="././images/logo.png" alt="PhysioNutra Clinic" class="logo" width="180" height="60" loading="eager"></picture></a>
+ <div class="tagline-stack">
+ <span class="tagline-doctor">Dr Tarun's</span>
+ <span class="tagline-brand">PhysioNutra Clinic</span>
+ </div>
+ </div>
+ <nav role="navigation" aria-label="Main navigation">
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <ul id="mainMenu">
+ <li><a href="/">Home</a></li>
+ <li><a href="/about/">About Us</a></li>
+ <li class="has-dropdown">
+ <a href="/services/">Services</a>
+ <ul class="dropdown-menu" aria-label="Services submenu">
+ <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ </ul>
+ </li>
+ <li class="has-dropdown">
+ <a href="/physiotherapy/">Locations</a>
+ <ul class="dropdown-menu" aria-label="Locations submenu">
+ <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ </ul>
+ </li>
+ <li><a href="/blogs/">Blog</a></li>
+ <li><a href="/testimonials/">Testimonials</a></li>
+ <li><a href="/self-assessment/">Self-Assessment</a></li>
+ <li><a href="tel:+919417791833" class="cta-nav-btn">Book Now</a></li>
+ </ul>
+ </nav>
+ </div>
+ </div>
+ </div>
 </header>
 <div class="tool-hero"><div class="container"><div class="tool-badge"><i class="fas fa-user-check"></i> Free Assessment</div><h1>Headache Type Screener</h1><p>Find out if your headaches are cervicogenic (from your neck), tension-type, or migraine — and discover whether physiotherapy can help you.</p><div class="hero-meta"><div class="hero-meta-item"><i class="fas fa-clock"></i> 3–4 minutes</div><div class="hero-meta-item"><i class="fas fa-list-ol"></i> 10 questions</div><div class="hero-meta-item"><i class="fas fa-shield-alt"></i> 100% free</div></div></div></div>
 <div class="progress-wrap"><div class="container"><div class="progress-inner"><div class="progress-bar-bg"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div><div class="progress-text" id="progressText">0 of 10</div></div></div></div>
 <div class="container">
-  <div class="step active" id="step1">
-    <div class="card">
-      <div class="card-section-label">Section 1 of 2</div>
-      <h2>Headache Location & Character</h2>
-      <p class="card-desc">The pattern and location of your headaches are the key to identifying their cause. Answer based on your most typical headache episode.</p>
-      <div class="q-block"><div class="q-text"><span class="q-num">1</span>Where do your headaches usually start or are mainly felt?</div><div class="options"><label class="opt"><input type="radio" name="q1" value="cerv"> Back of the head / base of skull — sometimes spreading to the forehead</label><label class="opt"><input type="radio" name="q1" value="tension"> Like a tight band or pressure around the whole head</label><label class="opt"><input type="radio" name="q1" value="migraine"> One side of the head — throbbing or pulsating</label><label class="opt"><input type="radio" name="q1" value="varies"> Varies — different locations each time</label></div></div>
-      <div class="q-block"><div class="q-text"><span class="q-num">2</span>Do your headaches start or get worse with neck movement or sustained neck positions (e.g. looking down at phone)?</div><div class="options"><label class="opt"><input type="radio" name="q2" value="cerv_yes"> Yes — neck movement or positions clearly trigger or worsen the headache</label><label class="opt"><input type="radio" name="q2" value="cerv_maybe"> Sometimes — there seems to be a connection</label><label class="opt"><input type="radio" name="q2" value="no"> No — headaches are not related to neck position or movement</label></div></div>
-      <div class="q-block"><div class="q-text"><span class="q-num">3</span>Do you also experience neck pain or stiffness alongside the headaches?</div><div class="options"><label class="opt"><input type="radio" name="q3" value="cerv"> Yes — neck pain or stiffness is present with or before the headache</label><label class="opt"><input type="radio" name="q3" value="maybe"> Sometimes mild neck tension</label><label class="opt"><input type="radio" name="q3" value="no"> No, my neck feels fine</label></div></div>
-      <div class="q-block"><div class="q-text"><span class="q-num">4</span>Do your headaches come with any of the following? (select the most notable)</div><div class="options"><label class="opt"><input type="radio" name="q4" value="migraine"> Visual disturbances (flashing lights, zigzag lines), nausea, or vomiting</label><label class="opt"><input type="radio" name="q4" value="tension"> Sensitivity to light or sound but no visual disturbance or vomiting</label><label class="opt"><input type="radio" name="q4" value="cerv"> Dizziness or eye pain on the same side as the headache</label><label class="opt"><input type="radio" name="q4" value="none"> None of the above</label></div></div>
-      <div class="q-block"><div class="q-text"><span class="q-num">5</span>How long do your typical headache episodes last?</div><div class="options"><label class="opt"><input type="radio" name="q5" value="cerv"> Hours to days — tends to fluctuate with neck position / activity</label><label class="opt"><input type="radio" name="q5" value="tension"> 30 minutes to several hours — often associated with stress or fatigue</label><label class="opt"><input type="radio" name="q5" value="migraine"> 4–72 hours — debilitating, need to lie down in a dark room</label><label class="opt"><input type="radio" name="q5" value="varies"> Varies significantly</label></div></div>
-      <div class="btn-row"><button class="btn btn-primary" onclick="goStep(2)">Next: Triggers & History <i class="fas fa-arrow-right"></i></button></div>
-    </div>
-  </div>
-  <div class="step" id="step2">
-    <div class="card">
-      <div class="card-section-label">Section 2 of 2</div>
-      <h2>Triggers, Frequency & History</h2>
-      <p class="card-desc">Understanding what triggers your headaches and how frequent they are helps determine the best management approach.</p>
-      <div class="q-block"><div class="q-text"><span class="q-num">6</span>What most commonly triggers your headaches?</div><div class="options"><label class="opt"><input type="radio" name="q6" value="cerv"> Prolonged desk work, driving, or looking at screens / phone</label><label class="opt"><input type="radio" name="q6" value="tension"> Stress, poor sleep, or skipping meals</label><label class="opt"><input type="radio" name="q6" value="migraine"> Certain foods, hormonal changes, bright lights, or strong smells</label><label class="opt"><input type="radio" name="q6" value="unknown"> I can't identify a consistent trigger</label></div></div>
-      <div class="q-block"><div class="q-text"><span class="q-num">7</span>How often do you get headaches?</div><div class="options"><label class="opt"><input type="radio" name="q7" value="0"> Rarely — less than once a month</label><label class="opt"><input type="radio" name="q7" value="1"> 1–4 times per month</label><label class="opt"><input type="radio" name="q7" value="2"> More than once a week</label><label class="opt"><input type="radio" name="q7" value="3"> Almost daily or daily</label></div></div>
-      <div class="q-block"><div class="q-text"><span class="q-num">8</span>How many hours per day do you typically spend looking at a screen or in a forward head position?</div><div class="options"><label class="opt"><input type="radio" name="q8" value="low"> Less than 3 hours</label><label class="opt"><input type="radio" name="q8" value="mid"> 3–6 hours</label><label class="opt"><input type="radio" name="q8" value="high"> More than 6 hours</label></div></div>
-      <div class="q-block"><div class="q-text"><span class="q-num">9</span>Have you experienced any of these recently? (select most relevant)</div><div class="options"><label class="opt"><input type="radio" name="q9" value="redflag"> Sudden severe "thunderclap" headache, headache with fever/stiff neck, or headache after head injury</label><label class="opt"><input type="radio" name="q9" value="new"> New headache pattern — different from any headaches you've had before</label><label class="opt"><input type="radio" name="q9" value="medication"> Taking headache pain relief more than 10 days per month</label><label class="opt"><input type="radio" name="q9" value="none"> None of the above</label></div></div>
-      <div class="q-block"><div class="q-text"><span class="q-num">10</span>Have you tried physiotherapy or manual therapy for your headaches before?</div><div class="options"><label class="opt"><input type="radio" name="q10" value="never"> No, never tried it</label><label class="opt"><input type="radio" name="q10" value="helped"> Yes — it helped significantly</label><label class="opt"><input type="radio" name="q10" value="partial"> Yes — helped somewhat</label><label class="opt"><input type="radio" name="q10" value="nothelped"> Yes — didn't help much</label></div></div>
-      <div class="btn-row"><button class="btn btn-secondary" onclick="goStep(1)"><i class="fas fa-arrow-left"></i> Back</button><button class="btn btn-primary" onclick="showResult()">Get My Results <i class="fas fa-chart-bar"></i></button></div>
-    </div>
-  </div>
-  <div class="result-wrap" id="resultWrap">
-    <div id="resultScoreCard" class="result-score-card"></div>
-    <div id="redFlagBox" class="red-flag-box"><i class="fas fa-exclamation-triangle"></i> <strong>Urgent:</strong> One of your answers suggests you should seek medical attention promptly. A sudden severe "thunderclap" headache, headache with fever and neck stiffness, or a headache following a head injury all require immediate medical review.</div>
-    <div class="diag-card"><h3><i class="fas fa-stethoscope" style="color:var(--green);margin-right:.5rem"></i>Your Headache Profile</h3><div id="diagList"></div></div>
-    <div id="physioBoxWrap"></div>
-    <div class="reco-card"><h3><i class="fas fa-lightbulb" style="margin-right:.5rem"></i>What to Do Next</h3><div id="recoList"></div></div>
-    <div class="cta-card"><h3>Physiotherapy Can Treat Many Headaches</h3><p>Most people don't know that cervicogenic and tension headaches respond very well to physiotherapy — often better than medication alone. Dr. Tarun Garg assesses and treats headaches at our Zirakpur clinic and via home visits.</p><div class="cta-btns"><a href="https://wa.me/919417791833?text=Hello%2C%20I%20completed%20the%20headache%20screener%20and%20would%20like%20a%20consultation." class="btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Us</a><a href="tel:+919417791833" class="btn-call-w"><i class="fas fa-phone-alt"></i> Call Now</a><button class="btn-retake" onclick="retake()"><i class="fas fa-redo"></i> Retake</button></div></div>
-    <div class="disclaimer"><i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This tool screens headache types for informational purposes only and is not a medical diagnosis. New, severe, or changing headache patterns should always be assessed by a doctor. Physiotherapy is not appropriate for all headache types.</div>
-  </div>
+ <div class="step active" id="step1">
+ <div class="card">
+ <div class="card-section-label">Section 1 of 2</div>
+ <h2>Headache Location & Character</h2>
+ <p class="card-desc">The pattern and location of your headaches are the key to identifying their cause. Answer based on your most typical headache episode.</p>
+ <div class="q-block"><div class="q-text"><span class="q-num">1</span>Where do your headaches usually start or are mainly felt?</div><div class="options"><label class="opt"><input type="radio" name="q1" value="cerv"> Back of the head / base of skull — sometimes spreading to the forehead</label><label class="opt"><input type="radio" name="q1" value="tension"> Like a tight band or pressure around the whole head</label><label class="opt"><input type="radio" name="q1" value="migraine"> One side of the head — throbbing or pulsating</label><label class="opt"><input type="radio" name="q1" value="varies"> Varies — different locations each time</label></div></div>
+ <div class="q-block"><div class="q-text"><span class="q-num">2</span>Do your headaches start or get worse with neck movement or sustained neck positions (e.g. looking down at phone)?</div><div class="options"><label class="opt"><input type="radio" name="q2" value="cerv_yes"> Yes — neck movement or positions clearly trigger or worsen the headache</label><label class="opt"><input type="radio" name="q2" value="cerv_maybe"> Sometimes — there seems to be a connection</label><label class="opt"><input type="radio" name="q2" value="no"> No — headaches are not related to neck position or movement</label></div></div>
+ <div class="q-block"><div class="q-text"><span class="q-num">3</span>Do you also experience neck pain or stiffness alongside the headaches?</div><div class="options"><label class="opt"><input type="radio" name="q3" value="cerv"> Yes — neck pain or stiffness is present with or before the headache</label><label class="opt"><input type="radio" name="q3" value="maybe"> Sometimes mild neck tension</label><label class="opt"><input type="radio" name="q3" value="no"> No, my neck feels fine</label></div></div>
+ <div class="q-block"><div class="q-text"><span class="q-num">4</span>Do your headaches come with any of the following? (select the most notable)</div><div class="options"><label class="opt"><input type="radio" name="q4" value="migraine"> Visual disturbances (flashing lights, zigzag lines), nausea, or vomiting</label><label class="opt"><input type="radio" name="q4" value="tension"> Sensitivity to light or sound but no visual disturbance or vomiting</label><label class="opt"><input type="radio" name="q4" value="cerv"> Dizziness or eye pain on the same side as the headache</label><label class="opt"><input type="radio" name="q4" value="none"> None of the above</label></div></div>
+ <div class="q-block"><div class="q-text"><span class="q-num">5</span>How long do your typical headache episodes last?</div><div class="options"><label class="opt"><input type="radio" name="q5" value="cerv"> Hours to days — tends to fluctuate with neck position / activity</label><label class="opt"><input type="radio" name="q5" value="tension"> 30 minutes to several hours — often associated with stress or fatigue</label><label class="opt"><input type="radio" name="q5" value="migraine"> 4–72 hours — debilitating, need to lie down in a dark room</label><label class="opt"><input type="radio" name="q5" value="varies"> Varies significantly</label></div></div>
+ <div class="btn-row"><button class="btn btn-primary" onclick="goStep(2)">Next: Triggers & History <i class="fas fa-arrow-right"></i></button></div>
+ </div>
+ </div>
+ <div class="step" id="step2">
+ <div class="card">
+ <div class="card-section-label">Section 2 of 2</div>
+ <h2>Triggers, Frequency & History</h2>
+ <p class="card-desc">Understanding what triggers your headaches and how frequent they are helps determine the best management approach.</p>
+ <div class="q-block"><div class="q-text"><span class="q-num">6</span>What most commonly triggers your headaches?</div><div class="options"><label class="opt"><input type="radio" name="q6" value="cerv"> Prolonged desk work, driving, or looking at screens / phone</label><label class="opt"><input type="radio" name="q6" value="tension"> Stress, poor sleep, or skipping meals</label><label class="opt"><input type="radio" name="q6" value="migraine"> Certain foods, hormonal changes, bright lights, or strong smells</label><label class="opt"><input type="radio" name="q6" value="unknown"> I can't identify a consistent trigger</label></div></div>
+ <div class="q-block"><div class="q-text"><span class="q-num">7</span>How often do you get headaches?</div><div class="options"><label class="opt"><input type="radio" name="q7" value="0"> Rarely — less than once a month</label><label class="opt"><input type="radio" name="q7" value="1"> 1–4 times per month</label><label class="opt"><input type="radio" name="q7" value="2"> More than once a week</label><label class="opt"><input type="radio" name="q7" value="3"> Almost daily or daily</label></div></div>
+ <div class="q-block"><div class="q-text"><span class="q-num">8</span>How many hours per day do you typically spend looking at a screen or in a forward head position?</div><div class="options"><label class="opt"><input type="radio" name="q8" value="low"> Less than 3 hours</label><label class="opt"><input type="radio" name="q8" value="mid"> 3–6 hours</label><label class="opt"><input type="radio" name="q8" value="high"> More than 6 hours</label></div></div>
+ <div class="q-block"><div class="q-text"><span class="q-num">9</span>Have you experienced any of these recently? (select most relevant)</div><div class="options"><label class="opt"><input type="radio" name="q9" value="redflag"> Sudden severe "thunderclap" headache, headache with fever/stiff neck, or headache after head injury</label><label class="opt"><input type="radio" name="q9" value="new"> New headache pattern — different from any headaches you've had before</label><label class="opt"><input type="radio" name="q9" value="medication"> Taking headache pain relief more than 10 days per month</label><label class="opt"><input type="radio" name="q9" value="none"> None of the above</label></div></div>
+ <div class="q-block"><div class="q-text"><span class="q-num">10</span>Have you tried physiotherapy or manual therapy for your headaches before?</div><div class="options"><label class="opt"><input type="radio" name="q10" value="never"> No, never tried it</label><label class="opt"><input type="radio" name="q10" value="helped"> Yes — it helped significantly</label><label class="opt"><input type="radio" name="q10" value="partial"> Yes — helped somewhat</label><label class="opt"><input type="radio" name="q10" value="nothelped"> Yes — didn't help much</label></div></div>
+ <div class="btn-row"><button class="btn btn-secondary" onclick="goStep(1)"><i class="fas fa-arrow-left"></i> Back</button><button class="btn btn-primary" onclick="showResult()">Get My Results <i class="fas fa-chart-bar"></i></button></div>
+ </div>
+ </div>
+ <div class="result-wrap" id="resultWrap">
+ <div id="resultScoreCard" class="result-score-card"></div>
+ <div id="redFlagBox" class="red-flag-box"><i class="fas fa-exclamation-triangle"></i> <strong>Urgent:</strong> One of your answers suggests you should seek medical attention promptly. A sudden severe "thunderclap" headache, headache with fever and neck stiffness, or a headache following a head injury all require immediate medical review.</div>
+ <div class="diag-card"><h3><i class="fas fa-stethoscope" style="color:var(--green);margin-right:.5rem"></i>Your Headache Profile</h3><div id="diagList"></div></div>
+ <div id="physioBoxWrap"></div>
+ <div class="reco-card"><h3><i class="fas fa-lightbulb" style="margin-right:.5rem"></i>What to Do Next</h3><div id="recoList"></div></div>
+ <div class="cta-card"><h3>Physiotherapy Can Treat Many Headaches</h3><p>Most people don't know that cervicogenic and tension headaches respond very well to physiotherapy — often better than medication alone. Dr. Tarun Garg assesses and treats headaches at our Zirakpur clinic and via home visits.</p><div class="cta-btns"><a href="https://wa.me/919417791833?text=Hello%2C%20I%20completed%20the%20headache%20screener%20and%20would%20like%20a%20consultation." class="btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Us</a><a href="tel:+919417791833" class="btn-call-w"><i class="fas fa-phone-alt"></i> Call Now</a><button class="btn-retake" onclick="retake()"><i class="fas fa-redo"></i> Retake</button></div></div>
+ <div class="disclaimer"><i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This tool screens headache types for informational purposes only and is not a medical diagnosis. New, severe, or changing headache patterns should always be assessed by a doctor. Physiotherapy is not appropriate for all headache types.</div>
+ </div>
 </div>
 <footer class="tool-footer"><div class="container"><p>&copy; <span id="yr"></span> <a href="/">PhysioNutra Clinic</a> | SCO 12, Ananta Square, Zirakpur | <a href="tel:+919417791833">+91 94177 91833</a></p></div></footer>
 <script>
