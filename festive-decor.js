@@ -37,21 +37,58 @@
   // Format: "YYYY": { festival: "MM-DD", ... }
   // ADD THE NEXT YEAR HERE once it's known (usually announced 1-2 years ahead).
   var LUNAR_DATES = {
-    "2026": { rakhi: "08-28", dussehra: "10-20", diwali: "11-08" },
-    "2027": { holi: "03-23", rakhi: "08-17", dussehra: "10-09", diwali: "10-29" },
-    "2028": { diwali: "10-17" }
-    // 2028 holi/rakhi/dussehra and 2029+ not yet added — extend when known.
+    "2026": {
+      holi: "03-04", shivaratri: "02-15", ramnavami: "03-26",
+      janmashtami: "09-04", ganesh: "09-14", navratri: "10-19",
+      rakhi: "08-28", dussehra: "10-20", diwali: "11-08",
+      karvachauth: "10-29", gurpurab: "11-24", eid: "03-20"
+    },
+    "2027": {
+      holi: "03-23", rakhi: "08-17", dussehra: "10-09", diwali: "10-29",
+      ganesh: "09-04", karvachauth: "10-18", gurpurab: "11-14", eid: "03-10"
+    },
+    "2028": { diwali: "10-17", ganesh: "08-23", karvachauth: "10-07" }
+    // Not all festivals/years are filled in yet — extend as dates are published.
   };
 
   // How many days before/after the peak date each festival's decoration shows.
-  var LUNAR_PADDING = { diwali: 3, holi: 1, dussehra: 1, rakhi: 1 };
+  var LUNAR_PADDING = {
+    diwali: 3, holi: 1, dussehra: 1, rakhi: 1,
+    shivaratri: 1, ramnavami: 1, janmashtami: 1, ganesh: 2,
+    navratri: 2, karvachauth: 1, gurpurab: 1, eid: 1
+  };
 
   // Fixed-calendar festivals: { festival: [month, day, paddingDays] }
   // Independence Day and Republic Day both use the tricolor theme.
   var FIXED_DATES = {
     independence: [8, 15, 1],
-    republic: [1, 26, 1]
+    republic: [1, 26, 1],
+    lohri: [1, 13, 0],
+    sankranti: [1, 14, 1], // occasionally falls on the 15th
+    baisakhi: [4, 14, 1]   // occasionally falls on the 13th
   };
+
+  // Easter Sunday: computed via the Meeus/Jones/Butcher algorithm — this one
+  // DOES have a fixed mathematical formula (unlike the Hindu lunar festivals),
+  // so it's automatic forever. Good Friday (2 days before) is intentionally
+  // NOT decorated — a solemn occasion, not a festive one.
+  function easterSunday(year) {
+    var a = year % 19;
+    var b = Math.floor(year / 100);
+    var c = year % 100;
+    var d = Math.floor(b / 4);
+    var e = b % 4;
+    var f = Math.floor((b + 8) / 25);
+    var g = Math.floor((b - f + 1) / 3);
+    var h = (19 * a + b - d - g + 15) % 30;
+    var i = Math.floor(c / 4);
+    var k = c % 4;
+    var l = (32 + 2 * e + 2 * i - h - k) % 7;
+    var m = Math.floor((a + 11 * h + 22 * l) / 451);
+    var month = Math.floor((h + l - 7 * m + 114) / 31);
+    var day = ((h + l - 7 * m + 114) % 31) + 1;
+    return [month, day];
+  }
 
   var THEME_MAP = {
     independence: "tricolor",
@@ -60,7 +97,19 @@
     dussehra: "dussehra",
     diwali: "diwali",
     christmas: "christmas",
-    holi: "holi"
+    holi: "holi",
+    lohri: "lohri",
+    sankranti: "sankranti",
+    baisakhi: "baisakhi",
+    shivaratri: "shivaratri",
+    ramnavami: "ramnavami",
+    janmashtami: "janmashtami",
+    ganesh: "ganesh",
+    navratri: "navratri",
+    karvachauth: "karvachauth",
+    gurpurab: "gurpurab",
+    eid: "eid",
+    easter: "easter"
   };
 
   function pad(n) { return n < 10 ? "0" + n : "" + n; }
@@ -98,15 +147,30 @@
     return null;
   }
 
+  // When two festivals' windows overlap (e.g. Navratri runs into Dussehra),
+  // this priority order decides which one wins — earlier = higher priority.
+  var LUNAR_PRIORITY = [
+    "dussehra", "diwali", "karvachauth", "navratri", "ganesh",
+    "gurpurab", "eid", "janmashtami", "ramnavami", "shivaratri",
+    "holi", "rakhi"
+  ];
+
   function checkLunarDates(today, year) {
     var thisYear = LUNAR_DATES[String(year)];
-    if (thisYear) {
-      for (var name in thisYear) {
-        var peakISO = year + "-" + thisYear[name];
-        if (withinPadding(today, peakISO, LUNAR_PADDING[name] || 1)) return name;
-      }
+    if (!thisYear) return null;
+    for (var p = 0; p < LUNAR_PRIORITY.length; p++) {
+      var name = LUNAR_PRIORITY[p];
+      if (!(name in thisYear)) continue;
+      var peakISO = year + "-" + thisYear[name];
+      if (withinPadding(today, peakISO, LUNAR_PADDING[name] || 1)) return name;
     }
     return null;
+  }
+
+  function checkEaster(today, year) {
+    var em = easterSunday(year);
+    var peakISO = toISO(year, em[0], em[1]);
+    return withinPadding(today, peakISO, 1) ? "easter" : null;
   }
 
   function warnIfTableStale(year) {
@@ -135,6 +199,7 @@
 
     return checkFixedDates(today, year)
         || checkChristmas(today, year)
+        || checkEaster(today, year)
         || checkLunarDates(today, year);
   }
 
