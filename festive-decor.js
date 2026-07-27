@@ -2,23 +2,13 @@
   PhysioNutra festive header decoration
   ----------------------------------------
   Auto-shows a themed decoration strip during festival/occasion windows,
-  and removes itself automatically once the window ends.
+  and removes itself automatically once the window ends. Supports:
+  Independence Day, Republic Day, Raksha Bandhan, Dussehra, Diwali,
+  Christmas/New Year, and Holi.
 
-  TWO KINDS OF DATES HANDLED DIFFERENTLY:
-
-  1. FIXED-CALENDAR festivals (Independence Day, Republic Day, Christmas/
-     New Year) — these fall on the same date every single year. Computed
-     automatically below, forever. NEVER need updating.
-
-  2. LUNAR-CALENDAR festivals (Diwali, Holi, Dussehra, Raksha Bandhan) —
-     these shift dates every year based on moon-sighting calculations
-     that have no fixed formula. There is no way to compute these
-     purely in JS. LUNAR_DATES below is a verified lookup table,
-     currently filled in for 2026-2028. When the table runs out for a
-     year, the script safely does nothing for those festivals (no
-     error, no wrong guess) and logs a console reminder to add the
-     next year's dates — look them up on drikpanchang.com when that
-     happens.
+  No manual add/remove needed each year — just update FESTIVAL_DATES
+  below once a year (most of these shift on the lunar calendar; only
+  Independence Day and Republic Day are fixed).
 
   MANUAL OVERRIDE (for testing or early/late activation):
     - URL:  yoursite.com/?festival=diwali      (forces Diwali on)
@@ -30,66 +20,19 @@
 (function () {
   "use strict";
 
-  // ── Permanent manual override (null = auto by date) ──
-  var FORCE_FESTIVAL = null; // e.g. "diwali", "christmas", "holi", or "none"
-
-  // ── Lunar-calendar festival peak dates, verified against drikpanchang.com ──
-  // Format: "YYYY": { festival: "MM-DD", ... }
-  // ADD THE NEXT YEAR HERE once it's known (usually announced 1-2 years ahead).
-  var LUNAR_DATES = {
-    "2026": {
-      holi: "03-04", shivaratri: "02-15", ramnavami: "03-26",
-      janmashtami: "09-04", ganesh: "09-14", navratri: "10-19",
-      rakhi: "08-28", dussehra: "10-20", diwali: "11-08",
-      karvachauth: "10-29", gurpurab: "11-24", eid: "03-20"
-    },
-    "2027": {
-      holi: "03-23", rakhi: "08-17", dussehra: "10-09", diwali: "10-29",
-      ganesh: "09-04", karvachauth: "10-18", gurpurab: "11-14", eid: "03-10"
-    },
-    "2028": { diwali: "10-17", ganesh: "08-23", karvachauth: "10-07" }
-    // Not all festivals/years are filled in yet — extend as dates are published.
+  // ── 1. Update these once a year ── (Diwali/Holi/Dussehra/Rakhi shift dates on the lunar calendar; Independence Day & Republic Day are fixed)
+  var FESTIVAL_DATES = {
+    independence: { start: "2026-08-14", end: "2026-08-16" },
+    rakhi:        { start: "2026-08-27", end: "2026-08-28" },
+    dussehra:     { start: "2026-10-19", end: "2026-10-21" },
+    diwali:       { start: "2026-11-05", end: "2026-11-12" },
+    christmas:    { start: "2026-12-20", end: "2027-01-02" },
+    republic:     { start: "2027-01-25", end: "2027-01-27" },
+    holi:         { start: "2027-03-01", end: "2027-03-04" }
   };
 
-  // How many days before/after the peak date each festival's decoration shows.
-  var LUNAR_PADDING = {
-    diwali: 3, holi: 1, dussehra: 1, rakhi: 1,
-    shivaratri: 1, ramnavami: 1, janmashtami: 1, ganesh: 2,
-    navratri: 2, karvachauth: 1, gurpurab: 1, eid: 1
-  };
-
-  // Fixed-calendar festivals: { festival: [month, day, paddingDays] }
-  // Independence Day and Republic Day both use the tricolor theme.
-  var FIXED_DATES = {
-    independence: [8, 15, 1],
-    republic: [1, 26, 1],
-    lohri: [1, 13, 0],
-    sankranti: [1, 14, 1], // occasionally falls on the 15th
-    baisakhi: [4, 14, 1]   // occasionally falls on the 13th
-  };
-
-  // Easter Sunday: computed via the Meeus/Jones/Butcher algorithm — this one
-  // DOES have a fixed mathematical formula (unlike the Hindu lunar festivals),
-  // so it's automatic forever. Good Friday (2 days before) is intentionally
-  // NOT decorated — a solemn occasion, not a festive one.
-  function easterSunday(year) {
-    var a = year % 19;
-    var b = Math.floor(year / 100);
-    var c = year % 100;
-    var d = Math.floor(b / 4);
-    var e = b % 4;
-    var f = Math.floor((b + 8) / 25);
-    var g = Math.floor((b - f + 1) / 3);
-    var h = (19 * a + b - d - g + 15) % 30;
-    var i = Math.floor(c / 4);
-    var k = c % 4;
-    var l = (32 + 2 * e + 2 * i - h - k) % 7;
-    var m = Math.floor((a + 11 * h + 22 * l) / 451);
-    var month = Math.floor((h + l - 7 * m + 114) / 31);
-    var day = ((h + l - 7 * m + 114) % 31) + 1;
-    return [month, day];
-  }
-
+  // Some festivals share the same visual theme (Independence Day and
+  // Republic Day both use the tricolor bunting look).
   var THEME_MAP = {
     independence: "tricolor",
     republic: "tricolor",
@@ -97,93 +40,11 @@
     dussehra: "dussehra",
     diwali: "diwali",
     christmas: "christmas",
-    holi: "holi",
-    lohri: "lohri",
-    sankranti: "sankranti",
-    baisakhi: "baisakhi",
-    shivaratri: "shivaratri",
-    ramnavami: "ramnavami",
-    janmashtami: "janmashtami",
-    ganesh: "ganesh",
-    navratri: "navratri",
-    karvachauth: "karvachauth",
-    gurpurab: "gurpurab",
-    eid: "eid",
-    easter: "easter"
+    holi: "holi"
   };
 
-  function pad(n) { return n < 10 ? "0" + n : "" + n; }
-
-  function toISO(y, m, d) {
-    return y + "-" + pad(m) + "-" + pad(d);
-  }
-
-  function withinPadding(today, peakISO, paddingDays) {
-    var peak = new Date(peakISO + "T00:00:00");
-    var start = new Date(peak); start.setDate(start.getDate() - paddingDays);
-    var end = new Date(peak); end.setDate(end.getDate() + paddingDays);
-    var t = new Date(today + "T00:00:00");
-    return t >= start && t <= end;
-  }
-
-  function checkFixedDates(today, year) {
-    for (var name in FIXED_DATES) {
-      var cfg = FIXED_DATES[name];
-      var peakISO = toISO(year, cfg[0], cfg[1]);
-      if (withinPadding(today, peakISO, cfg[2])) return name;
-    }
-    return null;
-  }
-
-  function checkChristmas(today, year) {
-    // Dec 20 (this year) through Jan 2 (next year) — spans the year boundary.
-    var start = toISO(year, 12, 20);
-    var end = toISO(year + 1, 1, 2);
-    if (today >= start && today <= end) return "christmas";
-    // Also check Dec 20 of the PREVIOUS year, in case today is early January.
-    var prevStart = toISO(year - 1, 12, 20);
-    var prevEnd = toISO(year, 1, 2);
-    if (today >= prevStart && today <= prevEnd) return "christmas";
-    return null;
-  }
-
-  // When two festivals' windows overlap (e.g. Navratri runs into Dussehra),
-  // this priority order decides which one wins — earlier = higher priority.
-  var LUNAR_PRIORITY = [
-    "dussehra", "diwali", "karvachauth", "navratri", "ganesh",
-    "gurpurab", "eid", "janmashtami", "ramnavami", "shivaratri",
-    "holi", "rakhi"
-  ];
-
-  function checkLunarDates(today, year) {
-    var thisYear = LUNAR_DATES[String(year)];
-    if (!thisYear) return null;
-    for (var p = 0; p < LUNAR_PRIORITY.length; p++) {
-      var name = LUNAR_PRIORITY[p];
-      if (!(name in thisYear)) continue;
-      var peakISO = year + "-" + thisYear[name];
-      if (withinPadding(today, peakISO, LUNAR_PADDING[name] || 1)) return name;
-    }
-    return null;
-  }
-
-  function checkEaster(today, year) {
-    var em = easterSunday(year);
-    var peakISO = toISO(year, em[0], em[1]);
-    return withinPadding(today, peakISO, 1) ? "easter" : null;
-  }
-
-  function warnIfTableStale(year) {
-    var maxConfiguredYear = Math.max.apply(null, Object.keys(LUNAR_DATES).map(Number));
-    if (year > maxConfiguredYear && window.console && console.warn) {
-      console.warn(
-        "[festive-decor] Lunar festival dates aren't configured past " +
-        maxConfiguredYear + ". Add " + year +
-        " dates (Diwali/Holi/Dussehra/Raksha Bandhan) to LUNAR_DATES in " +
-        "festive-decor.js — look them up at drikpanchang.com."
-      );
-    }
-  }
+  // ── 2. Permanent manual override (null = auto by date) ──
+  var FORCE_FESTIVAL = null; // e.g. "diwali", "christmas", "holi", or "none"
 
   function getUrlOverride() {
     var params = new URLSearchParams(window.location.search);
@@ -191,16 +52,12 @@
   }
 
   function activeFestivalByDate() {
-    var now = new Date();
-    var year = now.getFullYear();
-    var today = toISO(year, now.getMonth() + 1, now.getDate());
-
-    warnIfTableStale(year);
-
-    return checkFixedDates(today, year)
-        || checkChristmas(today, year)
-        || checkEaster(today, year)
-        || checkLunarDates(today, year);
+    var today = new Date().toISOString().slice(0, 10);
+    for (var name in FESTIVAL_DATES) {
+      var range = FESTIVAL_DATES[name];
+      if (today >= range.start && today <= range.end) return name;
+    }
+    return null;
   }
 
   function resolveFestival() {
