@@ -42,7 +42,25 @@
 <meta name="ICBM" content="30.6620,76.8140">
 
 <!-- ═══ GTM only — GA4 fires through GTM, not separately ═══ -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NHVSMWD6');</script>
+<!-- FIX 13: GTM loads on first user interaction or after 3.5s, whichever is first -->
+<script>
+window.dataLayer=window.dataLayer||[];
+(function(w,d,s,l,i){
+  var loaded=false;
+  function loadGTM(){
+    if(loaded)return;loaded=true;
+    w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+    events.forEach(function(ev){d.removeEventListener(ev,loadGTM,{passive:true});});
+    clearTimeout(fallback);
+  }
+  var events=['scroll','click','touchstart','keydown','mousemove'];
+  events.forEach(function(ev){d.addEventListener(ev,loadGTM,{passive:true,once:true});});
+  var fallback=setTimeout(loadGTM,3500);
+})(window,document,'script','dataLayer','GTM-NHVSMWD6');
+</script>
 
 <!-- ═══ Schema @graph — all entities in one block (SEO/AEO/AIO/GEO) ═══ -->
 <script type="application/ld+json">
@@ -157,7 +175,6 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <script src="/festive-decor.js" defer></script>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHVSMWD6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="reading-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
