@@ -49,8 +49,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></noscript>
+<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
+<noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
+</noscript>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%}body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.75;color:#222;background:#f6f7f5;-webkit-font-smoothing:antialiased;overflow-x:clip}img{max-width:100%;height:auto;display:block}a{text-decoration:none;color:inherit}button{font-family:inherit}
 :root{--g:#5db84e;--gd:#3e9430;--gl:#edf7eb;--ink:#111;--body:#3d3d3d;--muted:#6b7280;--edge:#e2e6df;--surface:#fff;--bg:#f6f7f5;--r:10px;--rl:16px;--sh:0 2px 12px rgba(0,0,0,.06);--sh2:0 8px 32px rgba(0,0,0,.1);--header-h:0px}.container{max-width:1180px;margin:0 auto;padding:0 20px;width:100%}.skip-link{position:absolute;top:-50px;left:0;background:var(--g);color:#fff;padding:10px 18px;font-weight:700;z-index:9999;border-radius:0 0 8px 0;transition:top.2s;font-size:.9rem}.skip-link:focus{top:0}
