@@ -21,9 +21,164 @@
   src:url('/fonts/dm-sans-latin-600-normal.woff2') format('woff2');
 }
 @font-face{
+  font-family:'DM Sans';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url('/fonts/dm-sans-latin-700-normal.woff2') format('woff2');
+}
+@font-face{
   font-family:'DM Serif Display';
   font-style:normal;
   font-weight:400;
   font-display:swap;
   src:url('/fonts/dm-serif-display-latin-400-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'DM Serif Display';
+  font-style:italic;
+  font-weight:400;
+  font-display:swap;
+  src:url('/fonts/dm-serif-display-latin-400-italic.woff2') format('woff2');
+}
+
+/* Used by blogs/* pages (Plus Jakarta Sans template) */
+@font-face{
+  font-family:'Plus Jakarta Sans';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('/fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Plus Jakarta Sans';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('/fonts/plus-jakarta-sans-latin-500-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Plus Jakarta Sans';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('/fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Plus Jakarta Sans';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url('/fonts/plus-jakarta-sans-latin-700-normal.woff2') format('woff2');
+}
+
+/* Used by hi/index.html (Hindi page) */
+@font-face{
+  font-family:'Noto Sans Devanagari';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('/fonts/noto-sans-devanagari-devanagari-400-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans Devanagari';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('/fonts/noto-sans-devanagari-devanagari-500-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans Devanagari';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('/fonts/noto-sans-devanagari-devanagari-600-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans Devanagari';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url('/fonts/noto-sans-devanagari-devanagari-700-normal.woff2') format('woff2');
+}
+
+/* Used by pa/index.html (Punjabi page) */
+@font-face{
+  font-family:'Noto Sans Gurmukhi';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('/fonts/noto-sans-gurmukhi-gurmukhi-400-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans Gurmukhi';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('/fonts/noto-sans-gurmukhi-gurmukhi-500-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans Gurmukhi';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('/fonts/noto-sans-gurmukhi-gurmukhi-600-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans Gurmukhi';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url('/fonts/noto-sans-gurmukhi-gurmukhi-700-normal.woff2') format('woff2');
+}
+
+/* Used by blogs/* and some physiotherapy/* pages (different template) */
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+  src:url('/fonts/fraunces-latin-300-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url('/fonts/fraunces-latin-700-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Fraunces';
+  font-style:italic;
+  font-weight:300;
+  font-display:swap;
+  src:url('/fonts/fraunces-latin-300-italic.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Outfit';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('/fonts/outfit-latin-400-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Outfit';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('/fonts/outfit-latin-500-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Outfit';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('/fonts/outfit-latin-600-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Outfit';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url('/fonts/outfit-latin-700-normal.woff2') format('woff2');
 }
