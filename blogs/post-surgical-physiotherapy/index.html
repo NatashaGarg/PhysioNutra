@@ -236,7 +236,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ FONTS ═══ -->
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;1,300&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- FIX 17b: Self-hosted Fraunces/Outfit fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-latin-300-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 <!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
 <style>
 .icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}

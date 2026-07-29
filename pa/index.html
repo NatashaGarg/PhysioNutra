@@ -150,7 +150,9 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Fonts ═══ -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- FIX 17f: Self-hosted Noto Sans Gurmukhi -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-gurmukhi-gurmukhi-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */

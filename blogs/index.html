@@ -62,7 +62,9 @@ window.dataLayer=window.dataLayer||[];
  {"@type":"Blog","@id":"https://physionutraclinic.com/blogs/#blog","url":"https://physionutraclinic.com/blogs/","name":"PhysioNutra Clinic Blog","description":"Expert physiotherapy advice, treatment guides, and wellness articles from Dr. Tarun Garg and the PhysioNutra Clinic team.","publisher":{"@id":"https://physionutraclinic.com/#clinic"},"author":{"@id":"https://physionutraclinic.com/#dr-tarun"}}
 ]}
 </script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- FIX 17c: Self-hosted DM Serif Display + Plus Jakarta Sans -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/plus-jakarta-sans-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%}

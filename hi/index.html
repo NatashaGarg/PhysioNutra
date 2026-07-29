@@ -164,7 +164,9 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Preconnect & Fonts ═══ -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<!-- FIX 17e: Self-hosted Noto Sans Devanagari + DM Serif Display -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-devanagari-devanagari-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
