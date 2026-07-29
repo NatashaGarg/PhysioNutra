@@ -192,18 +192,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Preconnect & Fonts ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
+<!-- FIX 17: Self-hosted fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -304,6 +296,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 .u-static-map-label{font-weight:600;font-size:1.05rem}
 .u-static-map-sub{font-size:.85rem;color:#4a7a63}
 </style>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -317,17 +313,17 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="header-top-content">
  <div class="header-contact">
- <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
  </div>
  <div style="display:flex;align-items:center;gap:1.1rem">
  <div class="header-social" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -344,32 +340,32 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  </div>
  <nav role="navigation" aria-label="Main navigation">
- <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
  <ul id="mainMenu">
  <li><a href="/">Home</a></li>
  <li><a href="/about/">About Us</a></li>
  <li class="has-dropdown">
  <a href="/services/" aria-current="page">Services</a>
  <ul class="dropdown-menu" aria-label="Services submenu">
- <li><a href="/services/cardiac-rehabilitation/"><i class="fas fa-heartbeat"></i>Cardiac Rehabilitation</a></li>
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/cardiac-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg>Cardiac Rehabilitation</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dropdown">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dropdown-menu" aria-label="Locations submenu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
  </ul>
  </li>
  <li><a href="/blogs/">Blog</a></li>
@@ -400,7 +396,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="hero-grid">
  <div class="hero-content">
- <div class="hero-badge"><i class="fas fa-heart" aria-hidden="true"></i> Certified Cardiac Rehab Specialists</div>
+ <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg> Certified Cardiac Rehab Specialists</div>
  <h1 id="hero-h1">Cardiac Rehabilitation in <em>Chandigarh Tricity</em> &mdash; Expert Heart Recovery</h1>
  <p class="hero-subtitle">Post heart attack, bypass surgery &amp; heart disease recovery programs &mdash; safe, supervised, and personalised. Serving Zirakpur, Chandigarh, Mohali &amp; Panchkula with clinic and home visits.</p>
  <div class="hero-stats">
@@ -409,8 +405,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
  </div>
  <div class="hero-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20cardiac%20rehabilitation." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20cardiac%20rehabilitation." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  <!-- Appointment Form -->
@@ -445,7 +441,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <button type="submit" class="submit-btn">Book Consultation</button>
  </form>
  <div class="form-success" id="form-success" role="alert">
- <i class="fas fa-check-circle" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"></i>
+ <svg class="icon" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
  Thank you! Our cardiac rehab specialist will call you shortly.
  </div>
  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Form submission target"></iframe>
@@ -458,11 +454,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <div class="trust-strip" aria-label="Trust indicators">
  <div class="container">
  <div class="trust-inner">
- <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
- <div class="trust-item"><i class="fas fa-home" aria-hidden="true"></i> Home Visits Available</div>
- <div class="trust-item"><i class="fas fa-heartbeat" aria-hidden="true"></i> Continuous Vitals Monitoring</div>
- <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
- <div class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> Cardiologist-Approved Protocols</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> Certified Physiotherapists</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg> Home Visits Available</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heartbeat"></use></svg> Continuous Vitals Monitoring</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 4.9&#9733; Google Rating</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg> Cardiologist-Approved Protocols</div>
  </div>
  </div>
 </div>
@@ -482,7 +478,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p>Cardiac rehabilitation in Chandigarh Tricity is available at PhysioNutra Clinic, Zirakpur. The clinic provides all 4 phases of cardiac rehab — post heart attack, bypass surgery, angioplasty recovery, and long-term heart health maintenance. Home visits available across Chandigarh, Mohali, Panchkula, and Zirakpur. Contact: +91 94177 91833.</p>
  </div>
  <div class="warning-box" role="note">
- <h4><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Important Safety Note</h4>
+ <h4><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-exclamation-triangle"></use></svg> Important Safety Note</h4>
  <p>All cardiac rehabilitation programmes require prior medical clearance from your cardiologist or physician. We work closely with your medical team to ensure safe, effective recovery from day one.</p>
  </div>
  </div>
@@ -490,14 +486,14 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <span class="section-label">Signs You Need Cardiac Rehab</span>
  <h3 style="font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:1rem">Common reasons patients come to us</h3>
  <ul class="symptom-list" role="list">
- <li><i class="fas fa-heart" aria-hidden="true"></i> Recent heart attack (myocardial infarction)</li>
- <li><i class="fas fa-heart" aria-hidden="true"></i> Bypass surgery (CABG) recovery</li>
- <li><i class="fas fa-heart" aria-hidden="true"></i> Angioplasty or stent placement</li>
- <li><i class="fas fa-heart" aria-hidden="true"></i> Shortness of breath during daily activities</li>
- <li><i class="fas fa-heart" aria-hidden="true"></i> Heart failure or chronic angina</li>
- <li><i class="fas fa-heart" aria-hidden="true"></i> Fear and anxiety about physical activity after a cardiac event</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg> Recent heart attack (myocardial infarction)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg> Bypass surgery (CABG) recovery</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg> Angioplasty or stent placement</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg> Shortness of breath during daily activities</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg> Heart failure or chronic angina</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg> Fear and anxiety about physical activity after a cardiac event</li>
  </ul>
- <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><i class="fas fa-info-circle" style="color:var(--green)" aria-hidden="true"></i> &nbsp;Cardiac rehab reduces cardiovascular mortality by up to 25% and significantly improves exercise capacity and quality of life. Book your assessment today.</p>
+ <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><svg class="icon" style="color:var(--green)" aria-hidden="true"><use href="/icons.svg#fa-info-circle"></use></svg> &nbsp;Cardiac rehab reduces cardiovascular mortality by up to 25% and significantly improves exercise capacity and quality of life. Book your assessment today.</p>
  </div>
  </div>
  </div>
@@ -512,15 +508,15 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">Our programme helps patients recovering from a wide range of cardiac conditions</p>
  </div>
  <div class="who-grid">
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-heart" aria-hidden="true"></i></div><span>Post Heart Attack (Myocardial Infarction)</span></div>
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-procedures" aria-hidden="true"></i></div><span>Post Bypass Surgery (CABG)</span></div>
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-syringe" aria-hidden="true"></i></div><span>Post Angioplasty / Stent Placement</span></div>
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></div><span>Heart Valve Surgery Recovery</span></div>
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-lungs" aria-hidden="true"></i></div><span>Chronic Heart Failure Management</span></div>
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Angina (Chest Pain) Management</span></div>
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-exchange-alt" aria-hidden="true"></i></div><span>Heart Transplant Recovery</span></div>
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div><span>Pacemaker / ICD Implantation</span></div>
- <div class="who-item reveal"><div class="who-icon"><i class="fas fa-user-friends" aria-hidden="true"></i></div><span>Elderly Heart Patients &amp; Geriatric Care</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg></div><span>Post Heart Attack (Myocardial Infarction)</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-procedures"></use></svg></div><span>Post Bypass Surgery (CABG)</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-syringe"></use></svg></div><span>Post Angioplasty / Stent Placement</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heartbeat"></use></svg></div><span>Heart Valve Surgery Recovery</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-lungs"></use></svg></div><span>Chronic Heart Failure Management</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg></div><span>Angina (Chest Pain) Management</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-exchange-alt"></use></svg></div><span>Heart Transplant Recovery</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bolt"></use></svg></div><span>Pacemaker / ICD Implantation</span></div>
+ <div class="who-item reveal"><div class="who-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-friends"></use></svg></div><span>Elderly Heart Patients &amp; Geriatric Care</span></div>
  </div>
  </div>
 </section>
@@ -535,28 +531,28 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="location-grid">
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Cardiac Rehab in Zirakpur</h3>
  <p>Our main clinic. Full cardiac rehabilitation facility with monitoring equipment, resistance training stations, and dedicated recovery bays.</p>
- <a href="/physiotherapy/zirakpur/" class="location-link">Explore Zirakpur <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/zirakpur/" class="location-link">Explore Zirakpur <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Cardiac Rehab in Chandigarh</h3>
  <p>In-clinic and home cardiac physiotherapy across all Chandigarh sectors. Just 15 minutes from Sector 17.</p>
- <a href="/physiotherapy/chandigarh/" class="location-link">Explore Chandigarh <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/chandigarh/" class="location-link">Explore Chandigarh <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Cardiac Rehab in Mohali</h3>
  <p>Expert heart recovery programmes for Mohali patients &mdash; all phases covered at our clinic or via home visits.</p>
- <a href="/physiotherapy/mohali/" class="location-link">Explore Mohali <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/mohali/" class="location-link">Explore Mohali <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Cardiac Rehab in Panchkula</h3>
  <p>Evidence-based cardiac rehabilitation for Panchkula patients. Branch clinic at Sector 20 plus home visits across all sectors.</p>
- <a href="/physiotherapy/panchkula/" class="location-link">Explore Panchkula <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/panchkula/" class="location-link">Explore Panchkula <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  </div>
  </div>
@@ -638,32 +634,32 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="components-grid">
  <article class="component-card reveal">
- <div class="component-icon" aria-hidden="true"><i class="fas fa-heartbeat"></i></div>
+ <div class="component-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div>
  <h3>Supervised Exercise Training</h3>
  <p>Individualised cardiovascular and strength training sessions with continuous heart rate and blood pressure monitoring. Includes treadmill walking, stationary cycling, arm ergometry, and progressive resistance work tailored to your condition.</p>
  </article>
  <article class="component-card reveal">
- <div class="component-icon" aria-hidden="true"><i class="fas fa-apple-alt"></i></div>
+ <div class="component-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-apple-alt"></use></svg></div>
  <h3>Nutritional Counselling</h3>
  <p>Heart-healthy eating plans, weight management strategies, and dietary modifications to lower cholesterol, blood pressure, and blood sugar. Our integrated nutritional approach supports both physical recovery and long-term cardiovascular risk reduction.</p>
  </article>
  <article class="component-card reveal">
- <div class="component-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
+ <div class="component-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg></div>
  <h3>Stress Management</h3>
  <p>Relaxation techniques, mindfulness-based breathing, and cognitive coping strategies to reduce cardiac stress load. Psychological wellbeing is a key determinant of long-term cardiac outcomes and quality of life.</p>
  </article>
  <article class="component-card reveal">
- <div class="component-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+ <div class="component-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-graduation-cap"></use></svg></div>
  <h3>Patient Education</h3>
  <p>Comprehensive education on your specific cardiac condition, medications, warning signs, activity guidelines, and self-monitoring techniques. Empowering you with knowledge is central to lifelong heart health management.</p>
  </article>
  <article class="component-card reveal">
- <div class="component-icon" aria-hidden="true"><i class="fas fa-home"></i></div>
+ <div class="component-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div>
  <h3>Home-Based Cardiac Rehab</h3>
  <p>For patients who cannot easily travel to the clinic, our therapists provide monitored home sessions with professional equipment. Ideal during early recovery phases and for elderly patients. Available across the Tricity region.</p>
  </article>
  <article class="component-card reveal">
- <div class="component-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+ <div class="component-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-users"></use></svg></div>
  <h3>Psychosocial Support</h3>
  <p>Structured support for anxiety, depression, and fear of activity — conditions affecting up to 40% of post-cardiac patients. We integrate psychological readiness tools and confidence-building strategies throughout all phases.</p>
  </article>
@@ -680,12 +676,12 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">Evidence-based improvements in health, stamina, and quality of life</p>
  </div>
  <div class="benefits-grid">
- <div class="benefit-card reveal"><i class="fas fa-heartbeat" aria-hidden="true"></i><h3>Reduced Mortality Risk</h3><p>Up to 25% reduction in cardiovascular death risk for patients who complete a structured cardiac rehab programme.</p></div>
- <div class="benefit-card reveal"><i class="fas fa-shield-alt" aria-hidden="true"></i><h3>Fewer Re-Hospitalisations</h3><p>Significantly reduced risk of readmission for cardiac complications and secondary cardiac events.</p></div>
- <div class="benefit-card reveal"><i class="fas fa-running" aria-hidden="true"></i><h3>Better Exercise Capacity</h3><p>Increased stamina, endurance, and ability to perform daily activities — walking, climbing stairs, and more — without fatigue.</p></div>
- <div class="benefit-card reveal"><i class="fas fa-pills" aria-hidden="true"></i><h3>Optimised Medication Management</h3><p>Better understanding and compliance with cardiac medications, and in some cases, potential reduction in dosage over time.</p></div>
- <div class="benefit-card reveal"><i class="fas fa-smile" aria-hidden="true"></i><h3>Enhanced Quality of Life</h3><p>Improved mental health, confidence, reduced anxiety, and ability to return to normal activities, work, and family life.</p></div>
- <div class="benefit-card reveal"><i class="fas fa-chart-line" aria-hidden="true"></i><h3>Risk Factor Control</h3><p>Better management of blood pressure, cholesterol, blood sugar, weight, and other modifiable cardiovascular risk factors.</p></div>
+ <div class="benefit-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heartbeat"></use></svg><h3>Reduced Mortality Risk</h3><p>Up to 25% reduction in cardiovascular death risk for patients who complete a structured cardiac rehab programme.</p></div>
+ <div class="benefit-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg><h3>Fewer Re-Hospitalisations</h3><p>Significantly reduced risk of readmission for cardiac complications and secondary cardiac events.</p></div>
+ <div class="benefit-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg><h3>Better Exercise Capacity</h3><p>Increased stamina, endurance, and ability to perform daily activities — walking, climbing stairs, and more — without fatigue.</p></div>
+ <div class="benefit-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-pills"></use></svg><h3>Optimised Medication Management</h3><p>Better understanding and compliance with cardiac medications, and in some cases, potential reduction in dosage over time.</p></div>
+ <div class="benefit-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-smile"></use></svg><h3>Enhanced Quality of Life</h3><p>Improved mental health, confidence, reduced anxiety, and ability to return to normal activities, work, and family life.</p></div>
+ <div class="benefit-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-chart-line"></use></svg><h3>Risk Factor Control</h3><p>Better management of blood pressure, cholesterol, blood sugar, weight, and other modifiable cardiovascular risk factors.</p></div>
  </div>
  </div>
 </section>
@@ -837,42 +833,42 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="related-grid">
  <a href="/blogs/cardiac-rehabilitation-guide/" class="related-card reveal">
- <i class="fas fa-book-open" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-book-open"></use></svg>
  <h4>Cardiac Rehab Guide</h4>
  <p>Complete evidence-based guide to heart recovery &mdash; phases, exercises, milestones.</p>
  </a>
  <a href="/services/home-physiotherapy-chandigarh/" class="related-card reveal">
- <i class="fas fa-home" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg>
  <h4>Home Physiotherapy</h4>
  <p>Professional physiotherapy delivered to your door across the Tricity region.</p>
  </a>
  <a href="/services/orthopedic-rehabilitation/" class="related-card reveal">
- <i class="fas fa-bone" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bone"></use></svg>
  <h4>Orthopedic Rehabilitation</h4>
  <p>Post-surgical and injury rehabilitation for all orthopaedic conditions.</p>
  </a>
  <a href="/services/neurological-rehabilitation/" class="related-card reveal">
- <i class="fas fa-brain" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-brain"></use></svg>
  <h4>Neurological Rehabilitation</h4>
  <p>Specialist rehab for stroke, Parkinson&rsquo;s, and neurological conditions.</p>
  </a>
  <a href="/blogs/post-surgical-physiotherapy/" class="related-card reveal">
- <i class="fas fa-procedures" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-procedures"></use></svg>
  <h4>Post-Surgical Recovery</h4>
  <p>What to expect after surgery &mdash; expert guidance on phases and milestones.</p>
  </a>
  <a href="/services/geriatric-physiotherapy/" class="related-card reveal">
- <i class="fas fa-user-friends" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-friends"></use></svg>
  <h4>Geriatric Physiotherapy</h4>
  <p>Specialist physiotherapy for elderly patients and age-related conditions.</p>
  </a>
  <a href="/services/manual-therapy/" class="related-card reveal">
- <i class="fas fa-hands" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-hands"></use></svg>
  <h4>Manual Therapy</h4>
  <p>Hands-on physiotherapy for pain relief, mobility, and functional recovery.</p>
  </a>
  <a href="/blogs/" class="related-card reveal">
- <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-calendar-alt"></use></svg>
  <h4>All Blog Articles</h4>
  <p>Expert physiotherapy tips, condition guides, and patient education resources.</p>
  </a>
@@ -887,8 +883,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h2 id="cta-h2">Ready to Start Your Heart Recovery?</h2>
  <p>Don&rsquo;t let a cardiac event define your future. Our expert team is ready to help you rebuild strength, confidence, and a healthier life &mdash; with a safe, evidence-based programme designed just for you.</p>
  <div class="cta-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20cardiac%20rehabilitation%20consultation." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20cardiac%20rehabilitation%20consultation." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -906,21 +902,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="contact-details">
  <h3>Clinic Details</h3>
  <ul class="contact-info-list">
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
- <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
- <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
- <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
- <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
  </ul>
  <div class="contact-cta-btns">
- <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> Get Directions</a>
- <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now</a>
+ <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg> Get Directions</a>
+ <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call Now</a>
  </div>
  </div>
  <div class="map-frame">
  <a href="https://www.google.com/maps/dir/?api=1&destination=30.6387,76.8305" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Tap to open directions</span>
       </a>
@@ -940,11 +936,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert cardiac rehabilitation and heart recovery programmes across Chandigarh Tricity &mdash; evidence-based protocols, personalised care, proven results.</p>
  <div class="footer-social" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -996,10 +992,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20cardiac%20rehabilitation." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20cardiac%20rehabilitation." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height CSS var ── */

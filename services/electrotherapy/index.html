@@ -191,18 +191,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Preconnect & Fonts ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
+<!-- FIX 17: Self-hosted fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -303,6 +295,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 .u-static-map-label{font-weight:600;font-size:1.05rem}
 .u-static-map-sub{font-size:.85rem;color:#4a7a63}
 </style>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -316,17 +312,17 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="header-top-content">
  <div class="header-contact">
- <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
  </div>
  <div style="display:flex;align-items:center;gap:1.1rem">
  <div class="header-social" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -343,32 +339,32 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  </div>
  <nav role="navigation" aria-label="Main navigation">
- <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
  <ul id="mainMenu">
  <li><a href="/">Home</a></li>
  <li><a href="/about/">About Us</a></li>
  <li class="has-dropdown">
  <a href="/services/" aria-current="page">Services</a>
  <ul class="dropdown-menu" aria-label="Services submenu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/electrotherapy/"><i class="fas fa-bolt"></i>Electrotherapy</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/electrotherapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg>Electrotherapy</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dropdown">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dropdown-menu" aria-label="Locations submenu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
  </ul>
  </li>
  <li><a href="/blogs/">Blog</a></li>
@@ -399,7 +395,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="hero-grid">
  <div class="hero-content">
- <div class="hero-badge"><i class="fas fa-bolt" aria-hidden="true"></i> Advanced Electrotherapy Specialists</div>
+ <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bolt"></use></svg> Advanced Electrotherapy Specialists</div>
  <h1 id="hero-h1">Electrotherapy in <em>Chandigarh Tricity</em> &mdash; TENS, IFT, LASER &amp; More</h1>
  <p class="hero-subtitle">Drug-free, evidence-based pain relief using TENS, IFT, Ultrasound, LASER &amp; EMS therapy &mdash; at our Zirakpur clinic or in your home across Chandigarh, Mohali &amp; Panchkula.</p>
  <div class="hero-stats">
@@ -408,8 +404,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
  </div>
  <div class="hero-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20electrotherapy." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20electrotherapy." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  <!-- Appointment Form -->
@@ -446,7 +442,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <button type="submit" class="submit-btn">Get a Consultation</button>
  </form>
  <div class="form-success" id="form-success" role="alert">
- <i class="fas fa-check-circle" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"></i>
+ <svg class="icon" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
  Thank you! Our electrotherapy specialist will call you shortly.
  </div>
  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Form submission target"></iframe>
@@ -459,11 +455,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <div class="trust-strip" aria-label="Trust indicators">
  <div class="container">
  <div class="trust-inner">
- <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
- <div class="trust-item"><i class="fas fa-home" aria-hidden="true"></i> Home Visits Available</div>
- <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i> Same-Day Appointments</div>
- <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
- <div class="trust-item"><i class="fas fa-pills" aria-hidden="true"></i> 100% Drug-Free Treatment</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> Certified Physiotherapists</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg> Home Visits Available</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg> Same-Day Appointments</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 4.9&#9733; Google Rating</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-pills"></use></svg> 100% Drug-Free Treatment</div>
  </div>
  </div>
 </div>
@@ -494,14 +490,14 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <span class="section-label">Is Electrotherapy Right for You?</span>
  <h3 style="font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:1rem">Signs you may benefit from electrotherapy</h3>
  <ul class="symptom-list" style="list-style:none" role="list">
- <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><i class="fas fa-exclamation-circle" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"></i> Persistent back, neck, or joint pain not responding to rest</li>
- <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><i class="fas fa-exclamation-circle" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"></i> Muscle weakness or wasting after injury or surgery</li>
- <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><i class="fas fa-exclamation-circle" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"></i> Nerve pain, tingling, or numbness (sciatica, neuropathy)</li>
- <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><i class="fas fa-exclamation-circle" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"></i> Inflammation and swelling around joints or tendons</li>
- <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><i class="fas fa-exclamation-circle" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"></i> Slow-healing soft tissue injuries (tendons, ligaments, muscles)</li>
- <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem"><i class="fas fa-exclamation-circle" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"></i> Reliance on pain medications with unwanted side effects</li>
+ <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><svg class="icon" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"><use href="/icons.svg#fa-exclamation-circle"></use></svg> Persistent back, neck, or joint pain not responding to rest</li>
+ <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><svg class="icon" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"><use href="/icons.svg#fa-exclamation-circle"></use></svg> Muscle weakness or wasting after injury or surgery</li>
+ <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><svg class="icon" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"><use href="/icons.svg#fa-exclamation-circle"></use></svg> Nerve pain, tingling, or numbness (sciatica, neuropathy)</li>
+ <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><svg class="icon" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"><use href="/icons.svg#fa-exclamation-circle"></use></svg> Inflammation and swelling around joints or tendons</li>
+ <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid var(--border)"><svg class="icon" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"><use href="/icons.svg#fa-exclamation-circle"></use></svg> Slow-healing soft tissue injuries (tendons, ligaments, muscles)</li>
+ <li style="padding:.45rem 0;color:var(--mid);font-size:.93rem;display:flex;align-items:flex-start;gap:.6rem"><svg class="icon" style="color:var(--green);flex-shrink:0;margin-top:.15rem" aria-hidden="true"><use href="/icons.svg#fa-exclamation-circle"></use></svg> Reliance on pain medications with unwanted side effects</li>
  </ul>
- <p class="info-note"><i class="fas fa-info-circle" style="color:var(--green)" aria-hidden="true"></i> &nbsp;Electrotherapy is contraindicated with pacemakers, over active cancer sites, during pregnancy, and in epilepsy. Our physiotherapist conducts a full safety screening before every first session.</p>
+ <p class="info-note"><svg class="icon" style="color:var(--green)" aria-hidden="true"><use href="/icons.svg#fa-info-circle"></use></svg> &nbsp;Electrotherapy is contraindicated with pacemakers, over active cancer sites, during pregnancy, and in epilepsy. Our physiotherapist conducts a full safety screening before every first session.</p>
  </div>
  </div>
  </div>
@@ -517,7 +513,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="modalities-grid">
  <article class="modality-card reveal">
- <div class="modality-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+ <div class="modality-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div>
  <h3>TENS Therapy</h3>
  <h4>Transcutaneous Electrical Nerve Stimulation</h4>
  <p>Low-voltage electrical currents delivered via skin electrodes that block pain signals to the brain and trigger natural endorphin release for lasting relief.</p>
@@ -529,7 +525,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="modality-card reveal">
- <div class="modality-icon" aria-hidden="true"><i class="fas fa-wave-square"></i></div>
+ <div class="modality-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-wave-square"></use></svg></div>
  <h3>IFT Therapy</h3>
  <h4>Interferential Therapy</h4>
  <p>Medium-frequency currents from two channels that intersect deep within tissues, providing stronger, deeper pain relief than TENS with less skin discomfort.</p>
@@ -541,7 +537,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="modality-card reveal">
- <div class="modality-icon" aria-hidden="true"><i class="fas fa-assistive-listening-systems"></i></div>
+ <div class="modality-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-assistive-listening-systems"></use></svg></div>
  <h3>Ultrasound Therapy</h3>
  <h4>Therapeutic Ultrasound</h4>
  <p>High-frequency sound waves generate deep thermal and mechanical effects that accelerate tissue repair, reduce scar formation, and relieve muscle spasm.</p>
@@ -553,7 +549,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="modality-card reveal">
- <div class="modality-icon" aria-hidden="true"><i class="fas fa-sun"></i></div>
+ <div class="modality-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-sun"></use></svg></div>
  <h3>LASER Therapy</h3>
  <h4>Class IV Low-Level Laser Therapy (LLLT)</h4>
  <p>Specific wavelengths of light penetrate tissues to stimulate cellular metabolism, reduce inflammation, and accelerate healing without heat or discomfort.</p>
@@ -565,7 +561,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="modality-card reveal">
- <div class="modality-icon" aria-hidden="true"><i class="fas fa-dumbbell"></i></div>
+ <div class="modality-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dumbbell"></use></svg></div>
  <h3>EMS Therapy</h3>
  <h4>Electrical Muscle Stimulation</h4>
  <p>Electrical impulses cause targeted muscle contractions to prevent atrophy, rebuild strength, and restore normal neuromuscular control after injury or surgery.</p>
@@ -577,7 +573,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="modality-card reveal">
- <div class="modality-icon" aria-hidden="true"><i class="fas fa-layer-group"></i></div>
+ <div class="modality-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-layer-group"></use></svg></div>
  <h3>Combination Therapy</h3>
  <h4>Multimodal Electrotherapy Programme</h4>
  <p>Strategic combination of two or more modalities within a single session, alongside manual therapy and exercise, for superior outcomes in complex conditions.</p>
@@ -601,12 +597,12 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">A scientifically validated, drug-free approach to pain and recovery</p>
  </div>
  <div class="benefits-grid">
- <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-heart-broken"></i></div><div><h3>Effective Pain Relief</h3><p>Immediate and lasting pain reduction through endorphin stimulation and pain-signal blocking — without medication.</p></div></div>
- <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-fire-alt"></i></div><div><h3>Reduces Inflammation</h3><p>Decreases swelling and tissue inflammation, accelerating the natural healing response in injured structures.</p></div></div>
- <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-heartbeat"></i></div><div><h3>Improves Circulation</h3><p>Enhanced blood flow delivers oxygen and nutrients to injured areas while clearing metabolic waste products.</p></div></div>
- <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-running"></i></div><div><h3>Muscle Strengthening</h3><p>EMS prevents atrophy and rebuilds functional strength in muscles weakened by injury, immobilisation, or surgery.</p></div></div>
- <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-clock"></i></div><div><h3>Faster Healing</h3><p>Accelerates cellular repair processes for a quicker return to normal activities, work, and sport.</p></div></div>
- <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-pills"></i></div><div><h3>Drug-Free &amp; Safe</h3><p>Avoid the side effects and dependency risks of long-term pain medications with a natural, evidence-based alternative.</p></div></div>
+ <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heart-broken"></use></svg></div><div><h3>Effective Pain Relief</h3><p>Immediate and lasting pain reduction through endorphin stimulation and pain-signal blocking — without medication.</p></div></div>
+ <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-fire-alt"></use></svg></div><div><h3>Reduces Inflammation</h3><p>Decreases swelling and tissue inflammation, accelerating the natural healing response in injured structures.</p></div></div>
+ <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div><div><h3>Improves Circulation</h3><p>Enhanced blood flow delivers oxygen and nutrients to injured areas while clearing metabolic waste products.</p></div></div>
+ <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><div><h3>Muscle Strengthening</h3><p>EMS prevents atrophy and rebuilds functional strength in muscles weakened by injury, immobilisation, or surgery.</p></div></div>
+ <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg></div><div><h3>Faster Healing</h3><p>Accelerates cellular repair processes for a quicker return to normal activities, work, and sport.</p></div></div>
+ <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-pills"></use></svg></div><div><h3>Drug-Free &amp; Safe</h3><p>Avoid the side effects and dependency risks of long-term pain medications with a natural, evidence-based alternative.</p></div></div>
  </div>
  </div>
 </section>
@@ -620,22 +616,22 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">Electrotherapy is effective across a wide range of musculoskeletal, neurological, and post-surgical conditions</p>
  </div>
  <div class="conditions-grid">
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Chronic Back &amp; Neck Pain</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Knee &amp; Hip Arthritis</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Sciatica &amp; Nerve Pain</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Sports Injuries</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Muscle Strains &amp; Sprains</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Frozen Shoulder</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Tennis &amp; Golfer&rsquo;s Elbow</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Tendonitis &amp; Bursitis</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Post-Surgical Pain</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Carpal Tunnel Syndrome</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Plantar Fasciitis</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Fibromyalgia</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Peripheral Neuropathy</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Post-Fracture Rehabilitation</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Muscle Atrophy &amp; Weakness</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>Wound Healing &amp; Scar Tissue</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Chronic Back &amp; Neck Pain</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Knee &amp; Hip Arthritis</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Sciatica &amp; Nerve Pain</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Sports Injuries</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Muscle Strains &amp; Sprains</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Frozen Shoulder</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Tennis &amp; Golfer&rsquo;s Elbow</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Tendonitis &amp; Bursitis</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Post-Surgical Pain</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Carpal Tunnel Syndrome</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Plantar Fasciitis</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Fibromyalgia</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Peripheral Neuropathy</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Post-Fracture Rehabilitation</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Muscle Atrophy &amp; Weakness</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>Wound Healing &amp; Scar Tissue</span></div>
  </div>
  </div>
 </section>
@@ -749,28 +745,28 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="location-grid">
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Electrotherapy in Zirakpur</h3>
  <p>Our main clinic. State-of-the-art electrotherapy facility with TENS, IFT, Class IV LASER, ultrasound, and EMS equipment on-site.</p>
- <a href="/physiotherapy/zirakpur/" class="location-link">Explore Zirakpur <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/zirakpur/" class="location-link">Explore Zirakpur <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Electrotherapy in Chandigarh</h3>
  <p>In-clinic and home-visit electrotherapy for all Chandigarh sectors. Just 15 minutes from sector 17 to our main clinic.</p>
- <a href="/physiotherapy/chandigarh/" class="location-link">Explore Chandigarh <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/chandigarh/" class="location-link">Explore Chandigarh <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Electrotherapy in Mohali</h3>
  <p>Expert electrotherapy for Mohali residents &mdash; clinic appointments 10 minutes away, plus convenient home visits across all phases.</p>
- <a href="/physiotherapy/mohali/" class="location-link">Explore Mohali <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/mohali/" class="location-link">Explore Mohali <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Electrotherapy in Panchkula</h3>
  <p>Evidence-based electrotherapy for Panchkula patients. Branch clinic at Sector 20 plus home visits across all sectors.</p>
- <a href="/physiotherapy/panchkula/" class="location-link">Explore Panchkula <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/panchkula/" class="location-link">Explore Panchkula <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  </div>
  </div>
@@ -883,42 +879,42 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="related-grid">
  <a href="/services/manual-therapy/" class="related-card reveal">
- <i class="fas fa-hands" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-hands"></use></svg>
  <h4>Manual Therapy</h4>
  <p>Hands-on joint mobilisation and soft tissue techniques — frequently combined with electrotherapy.</p>
  </a>
  <a href="/services/dry-needling/" class="related-card reveal">
- <i class="fas fa-syringe" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-syringe"></use></svg>
  <h4>Dry Needling</h4>
  <p>Advanced trigger point therapy for muscle pain, often paired with TENS for enhanced relief.</p>
  </a>
  <a href="/services/acl-treatment-near-me/" class="related-card reveal">
- <i class="fas fa-running" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>
  <h4>ACL Treatment</h4>
  <p>EMS and ultrasound are cornerstones of our evidence-based ACL rehabilitation programme.</p>
  </a>
  <a href="/services/sports-injury-treatment/" class="related-card reveal">
- <i class="fas fa-trophy" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-trophy"></use></svg>
  <h4>Sports Injury Treatment</h4>
  <p>IFT and LASER accelerate recovery from ligament, tendon, and muscle sports injuries.</p>
  </a>
  <a href="/services/orthopedic-rehabilitation/" class="related-card reveal">
- <i class="fas fa-bone" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bone"></use></svg>
  <h4>Orthopedic Rehab</h4>
  <p>Electrotherapy integrated into comprehensive post-surgical and orthopaedic recovery plans.</p>
  </a>
  <a href="/services/home-physiotherapy-chandigarh/" class="related-card reveal">
- <i class="fas fa-home" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg>
  <h4>Home Physiotherapy</h4>
  <p>Portable electrotherapy equipment delivered to your door across Tricity.</p>
  </a>
  <a href="/blogs/pain-management-physiotherapy/" class="related-card reveal">
- <i class="fas fa-book-open" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-book-open"></use></svg>
  <h4>Pain Management Guide</h4>
  <p>Evidence-based approaches to chronic and acute pain — including the role of electrotherapy.</p>
  </a>
  <a href="/blogs/" class="related-card reveal">
- <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-calendar-alt"></use></svg>
  <h4>All Blog Articles</h4>
  <p>Expert physiotherapy tips, condition guides, and patient education resources.</p>
  </a>
@@ -933,8 +929,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h2 id="cta-h2">Ready to Live Pain-Free?</h2>
  <p>Stop managing pain with medication alone. Our expert electrotherapy team will assess your condition and design a personalised, drug-free treatment plan that delivers real, lasting results.</p>
  <div class="cta-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20electrotherapy%20consultation." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20electrotherapy%20consultation." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -952,21 +948,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="contact-details">
  <h3>Clinic Details</h3>
  <ul class="contact-info-list">
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
- <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
- <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
- <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
- <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
  </ul>
  <div class="contact-cta-btns">
- <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> Get Directions</a>
- <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now</a>
+ <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg> Get Directions</a>
+ <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call Now</a>
  </div>
  </div>
  <div class="map-frame">
  <a href="https://www.google.com/maps/dir/?api=1&destination=30.6387,76.8305" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Tap to open directions</span>
       </a>
@@ -986,11 +982,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Advanced electrotherapy and physiotherapy services across Chandigarh Tricity &mdash; evidence-based, drug-free, and personalised care.</p>
  <div class="footer-social" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -1043,10 +1039,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20electrotherapy." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20electrotherapy." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height CSS var ── */

@@ -185,18 +185,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Preconnect & Fonts ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
+<!-- FIX 17: Self-hosted fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -297,6 +289,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 .u-static-map-label{font-weight:600;font-size:1.05rem}
 .u-static-map-sub{font-size:.85rem;color:#4a7a63}
 </style>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -310,17 +306,17 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="header-top-content">
  <div class="header-contact">
- <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
  </div>
  <div style="display:flex;align-items:center;gap:1.1rem">
  <div class="header-social" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -337,31 +333,31 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  </div>
  <nav role="navigation" aria-label="Main navigation">
- <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
  <ul id="mainMenu">
  <li><a href="/">Home</a></li>
  <li><a href="/about/">About Us</a></li>
  <li class="has-dropdown">
  <a href="/services/" aria-current="page">Services</a>
  <ul class="dropdown-menu" aria-label="Services submenu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dropdown">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dropdown-menu" aria-label="Locations submenu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
  </ul>
  </li>
  <li><a href="/blogs/">Blog</a></li>
@@ -392,7 +388,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="hero-grid">
  <div class="hero-content">
- <div class="hero-badge"><i class="fas fa-home" aria-hidden="true"></i> Professional Doorstep Physiotherapy</div>
+ <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg> Professional Doorstep Physiotherapy</div>
  <h1 id="hero-h1">Home Physiotherapy in <em>Chandigarh Tricity</em> &mdash; Expert Care at Your Door</h1>
  <p class="hero-subtitle">Post-surgery rehab, elderly care, stroke recovery &amp; pain relief &mdash; all delivered to your home. Serving Zirakpur, Chandigarh, Mohali &amp; Panchkula with same-day appointments.</p>
  <div class="hero-stats">
@@ -401,8 +397,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
  </div>
  <div class="hero-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20home%20physiotherapy%20in%20Chandigarh%20Tricity." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20home%20physiotherapy%20in%20Chandigarh%20Tricity." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  <!-- Appointment Form -->
@@ -439,7 +435,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <button type="submit" class="submit-btn">Request a Home Visit</button>
  </form>
  <div class="form-success" id="form-success" role="alert">
- <i class="fas fa-check-circle" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"></i>
+ <svg class="icon" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
  Thank you! Our physiotherapist will call you shortly to confirm.
  </div>
  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Form submission target"></iframe>
@@ -452,11 +448,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <div class="trust-strip" aria-label="Trust indicators">
  <div class="container">
  <div class="trust-inner">
- <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
- <div class="trust-item"><i class="fas fa-home" aria-hidden="true"></i> All Equipment Brought to You</div>
- <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i> Same-Day Appointments</div>
- <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
- <div class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> Evidence-Based Protocols</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> Certified Physiotherapists</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg> All Equipment Brought to You</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg> Same-Day Appointments</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 4.9&#9733; Google Rating</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg> Evidence-Based Protocols</div>
  </div>
  </div>
 </div>
@@ -480,14 +476,14 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <span class="section-label">Key Advantages</span>
  <h3 style="font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:1rem">Why patients prefer home physiotherapy</h3>
  <ul class="benefit-list" role="list">
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> No travel stress — treatment in your familiar, comfortable environment</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Family members can observe and learn assistance techniques</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> One-on-one focused attention without clinic distractions</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Reduced infection risk, especially post-surgery</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Exercises designed around your actual home environment</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Higher treatment adherence and faster recovery outcomes</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> No travel stress — treatment in your familiar, comfortable environment</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Family members can observe and learn assistance techniques</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> One-on-one focused attention without clinic distractions</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Reduced infection risk, especially post-surgery</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Exercises designed around your actual home environment</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Higher treatment adherence and faster recovery outcomes</li>
  </ul>
- <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><i class="fas fa-info-circle" style="color:var(--green)" aria-hidden="true"></i>&nbsp; Research consistently shows patients treated at home have better adherence and equivalent or superior outcomes compared to clinic-only care &mdash; especially for elderly and post-surgical populations.</p>
+ <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><svg class="icon" style="color:var(--green)" aria-hidden="true"><use href="/icons.svg#fa-info-circle"></use></svg>&nbsp; Research consistently shows patients treated at home have better adherence and equivalent or superior outcomes compared to clinic-only care &mdash; especially for elderly and post-surgical populations.</p>
  </div>
  </div>
  </div>
@@ -503,28 +499,28 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="location-grid">
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Home Physio in Zirakpur</h3>
  <p>Covering all residential sectors — Peer Muchalla, Baltana, Dhakoli, VIP Road, Gazipur Road, Pabhat Road, and all societies. Our main clinic is also here for those who prefer in-clinic sessions.</p>
- <a href="/physiotherapy/zirakpur/" class="location-link">Explore Zirakpur <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/zirakpur/" class="location-link">Explore Zirakpur <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Home Physio in Chandigarh</h3>
  <p>All sectors covered across Chandigarh — including Sector 17, 22, 35, 43, and surrounding areas. Just 15 minutes from our Zirakpur clinic.</p>
- <a href="/physiotherapy/chandigarh/" class="location-link">Explore Chandigarh <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/chandigarh/" class="location-link">Explore Chandigarh <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Home Physio in Mohali</h3>
  <p>Serving all phases of Mohali including Phase 1–11, Aerocity, and IT City. Expert home visits reaching you within 20 minutes of booking.</p>
- <a href="/physiotherapy/mohali/" class="location-link">Explore Mohali <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/mohali/" class="location-link">Explore Mohali <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Home Physio in Panchkula</h3>
  <p>All Panchkula sectors covered, plus Kalka Road, Pinjore, and Barwala. Branch clinic at Sector 20 for convenient in-clinic visits too.</p>
- <a href="/physiotherapy/panchkula/" class="location-link">Explore Panchkula <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/panchkula/" class="location-link">Explore Panchkula <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  </div>
  </div>
@@ -540,7 +536,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="services-grid">
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-procedures"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-procedures"></use></svg></div>
  <h3>Post-Surgical Rehabilitation</h3>
  <ul>
  <li>Knee &amp; hip replacement recovery</li>
@@ -553,7 +549,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-user-injured"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-injured"></use></svg></div>
  <h3>Elderly &amp; Geriatric Care</h3>
  <ul>
  <li>Fall prevention and balance training</li>
@@ -566,7 +562,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg></div>
  <h3>Neurological Rehabilitation</h3>
  <ul>
  <li>Stroke recovery and relearning</li>
@@ -579,7 +575,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-heartbeat"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div>
  <h3>Chronic Pain Management</h3>
  <ul>
  <li>Chronic back and neck pain</li>
@@ -592,7 +588,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-running"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <h3>Sports Injury Recovery</h3>
  <ul>
  <li>Muscle strains and ligament sprains</li>
@@ -605,7 +601,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-bone"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg></div>
  <h3>Orthopedic Conditions</h3>
  <ul>
  <li>Frozen shoulder (adhesive capsulitis)</li>
@@ -630,12 +626,12 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">What sets PhysioNutra apart from other home physiotherapy providers in Chandigarh Tricity</p>
  </div>
  <div class="why-grid">
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-certificate"></i></div><h3>Senior Certified Therapists</h3><p>Every home visit is conducted by Dr. Tarun Garg or a senior certified physiotherapist &mdash; never a fresh graduate or technician. You get genuine expertise at your door.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-toolbox"></i></div><h3>Complete Equipment Brought</h3><p>We bring portable TENS/IFT, therapeutic ultrasound, resistance bands, therapy balls, hot/cold packs, and all assessment tools. You arrange nothing; we arrive fully equipped.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-clipboard-check"></i></div><h3>Personalised Treatment Plans</h3><p>Every patient receives a customised programme based on their condition, home environment, daily activities, and goals. No generic protocols — your rehab fits your life.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div><h3>Family Involvement</h3><p>We actively train family members and caregivers in assistance techniques, exercise guidance, and safety measures — turning your home into a continuous rehabilitation environment.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-clock"></i></div><h3>Flexible Scheduling</h3><p>Morning, evening, and weekend appointments available. We work around your schedule and the patient&rsquo;s best treatment times &mdash; not the other way around.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-comments"></i></div><h3>Ongoing WhatsApp Support</h3><p>Between visits, reach your physiotherapist directly via WhatsApp for questions, exercise guidance, and progress updates. Continuity of care between every session.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-certificate"></use></svg></div><h3>Senior Certified Therapists</h3><p>Every home visit is conducted by Dr. Tarun Garg or a senior certified physiotherapist &mdash; never a fresh graduate or technician. You get genuine expertise at your door.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-toolbox"></use></svg></div><h3>Complete Equipment Brought</h3><p>We bring portable TENS/IFT, therapeutic ultrasound, resistance bands, therapy balls, hot/cold packs, and all assessment tools. You arrange nothing; we arrive fully equipped.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clipboard-check"></use></svg></div><h3>Personalised Treatment Plans</h3><p>Every patient receives a customised programme based on their condition, home environment, daily activities, and goals. No generic protocols — your rehab fits your life.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-friends"></use></svg></div><h3>Family Involvement</h3><p>We actively train family members and caregivers in assistance techniques, exercise guidance, and safety measures — turning your home into a continuous rehabilitation environment.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg></div><h3>Flexible Scheduling</h3><p>Morning, evening, and weekend appointments available. We work around your schedule and the patient&rsquo;s best treatment times &mdash; not the other way around.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-comments"></use></svg></div><h3>Ongoing WhatsApp Support</h3><p>Between visits, reach your physiotherapist directly via WhatsApp for questions, exercise guidance, and progress updates. Continuity of care between every session.</p></div>
  </div>
  </div>
 </section>
@@ -694,22 +690,22 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="areas-outer reveal">
  <h3>&#128205; Complete Tricity Coverage</h3>
  <div class="areas-grid">
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Peer Muchalla</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Baltana</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Dhakoli</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Zirakpur (all sectors)</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Chandigarh Sectors 1&ndash;50</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Mohali Phase 1&ndash;11</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Panchkula Sectors 1&ndash;26</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> VIP Road</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Pabhat Road</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Nabha Road</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Aerocity Mohali</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Kharar</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Dera Bassi</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Pinjore</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Singhpura</div>
- <div class="area-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Lohgarh</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Peer Muchalla</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Baltana</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Dhakoli</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Zirakpur (all sectors)</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Chandigarh Sectors 1&ndash;50</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Mohali Phase 1&ndash;11</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Panchkula Sectors 1&ndash;26</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> VIP Road</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Pabhat Road</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Nabha Road</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Aerocity Mohali</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Kharar</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Dera Bassi</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Pinjore</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Singhpura</div>
+ <div class="area-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Lohgarh</div>
  </div>
  <p class="also-serving"><strong>Also serving:</strong> Gazipur Road, Ambala Highway corridor, Mullanpur, New Chandigarh, and all surrounding residential societies. Not sure if we cover your area? Call us &mdash; chances are we do.</p>
  </div>
@@ -726,42 +722,42 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="equipment-grid">
  <div class="equip-card reveal">
- <i class="fas fa-bolt" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bolt"></use></svg>
  <h4>TENS / IFT Machine</h4>
  <p>Electrical pain relief and muscle stimulation for acute and chronic conditions</p>
  </div>
  <div class="equip-card reveal">
- <i class="fas fa-wave-square" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-wave-square"></use></svg>
  <h4>Therapeutic Ultrasound</h4>
  <p>Deep tissue healing for soft tissue injuries, inflammation, and post-surgical recovery</p>
  </div>
  <div class="equip-card reveal">
- <i class="fas fa-dumbbell" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-dumbbell"></use></svg>
  <h4>Resistance Bands &amp; Tools</h4>
  <p>Progressive resistance for strength building and functional rehabilitation exercises</p>
  </div>
  <div class="equip-card reveal">
- <i class="fas fa-hands" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-hands"></use></svg>
  <h4>Manual Therapy Tools</h4>
  <p>Massage, mobilisation, and manipulation instruments for joint and soft tissue treatment</p>
  </div>
  <div class="equip-card reveal">
- <i class="fas fa-thermometer-half" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-thermometer-half"></use></svg>
  <h4>Hot &amp; Cold Packs</h4>
  <p>Thermal therapy for pain relief, swelling management, and muscle relaxation</p>
  </div>
  <div class="equip-card reveal">
- <i class="fas fa-ruler-combined" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-ruler-combined"></use></svg>
  <h4>Assessment Tools</h4>
  <p>Goniometers, dynamometers, and functional testing tools for accurate progress tracking</p>
  </div>
  <div class="equip-card reveal">
- <i class="fas fa-circle" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-circle"></use></svg>
  <h4>Therapy Balls &amp; Rolls</h4>
  <p>Balance, proprioception, and core stability training aids for neurological and ortho rehab</p>
  </div>
  <div class="equip-card reveal">
- <i class="fas fa-syringe" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-syringe"></use></svg>
  <h4>Dry Needling Kit</h4>
  <p>Myofascial trigger point needling for muscle pain, tension, and referred pain patterns</p>
  </div>
@@ -876,42 +872,42 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="related-grid">
  <a href="/services/acl-treatment-near-me/" class="related-card reveal">
- <i class="fas fa-running" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>
  <h4>ACL Rehabilitation</h4>
  <p>Post-surgical and non-surgical ACL rehab with return-to-sport protocols.</p>
  </a>
  <a href="/services/orthopedic-rehabilitation/" class="related-card reveal">
- <i class="fas fa-bone" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bone"></use></svg>
  <h4>Orthopedic Rehabilitation</h4>
  <p>Post-surgical and injury rehab for all orthopaedic conditions.</p>
  </a>
  <a href="/services/neurological-rehabilitation/" class="related-card reveal">
- <i class="fas fa-brain" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-brain"></use></svg>
  <h4>Neurological Rehabilitation</h4>
  <p>Stroke, Parkinson&rsquo;s, and neurological condition management.</p>
  </a>
  <a href="/services/sports-injury-treatment/" class="related-card reveal">
- <i class="fas fa-trophy" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-trophy"></use></svg>
  <h4>Sports Injury Treatment</h4>
  <p>Expert treatment for all sports injuries — ligaments, tendons, muscles.</p>
  </a>
  <a href="/blogs/post-surgical-physiotherapy/" class="related-card reveal">
- <i class="fas fa-procedures" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-procedures"></use></svg>
  <h4>Post-Surgical Recovery Guide</h4>
  <p>What to expect after surgery — expert guidance on phases and milestones.</p>
  </a>
  <a href="/services/dry-needling/" class="related-card reveal">
- <i class="fas fa-syringe" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-syringe"></use></svg>
  <h4>Dry Needling</h4>
  <p>Advanced trigger point therapy for muscle pain and sports injuries.</p>
  </a>
  <a href="/services/manual-therapy/" class="related-card reveal">
- <i class="fas fa-hands" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-hands"></use></svg>
  <h4>Manual Therapy</h4>
  <p>Hands-on joint mobilisation and manipulation for pain and stiffness.</p>
  </a>
  <a href="/blogs/" class="related-card reveal">
- <i class="fas fa-book-open" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-book-open"></use></svg>
  <h4>All Blog Articles</h4>
  <p>Expert physiotherapy tips, condition guides, and patient education resources.</p>
  </a>
@@ -926,8 +922,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h2 id="cta-h2">Ready to Book Your Home Physiotherapy Visit?</h2>
  <p>Don&rsquo;t let pain, surgery recovery, or mobility challenges keep you from getting the care you need. Our expert team comes to you &mdash; same-day appointments available across Chandigarh, Mohali, Panchkula, and Zirakpur.</p>
  <div class="cta-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20home%20physiotherapy%20visit." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20home%20physiotherapy%20visit." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -945,21 +941,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="contact-details">
  <h3>Clinic Details</h3>
  <ul class="contact-info-list">
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
- <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
- <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
- <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
- <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
  </ul>
  <div class="contact-cta-btns">
- <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> Get Directions</a>
- <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now</a>
+ <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg> Get Directions</a>
+ <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call Now</a>
  </div>
  </div>
  <div class="map-frame">
  <a href="https://www.google.com/maps/dir/?api=1&destination=30.6387,76.8305" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Tap to open directions</span>
       </a>
@@ -979,11 +975,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Professional home physiotherapy across Chandigarh Tricity &mdash; expert therapists, complete equipment, and evidence-based care delivered to your doorstep.</p>
  <div class="footer-social" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -1034,10 +1030,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20home%20physiotherapy%20in%20Chandigarh%20Tricity." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20home%20physiotherapy%20in%20Chandigarh%20Tricity." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height CSS var ── */

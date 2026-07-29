@@ -176,18 +176,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Preconnect & Fonts ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
+<!-- FIX 17: Self-hosted fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -284,6 +276,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 .u-static-map-label{font-weight:600;font-size:1.05rem}
 .u-static-map-sub{font-size:.85rem;color:#4a7a63}
 </style>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -297,17 +293,17 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="header-top-content">
  <div class="header-contact">
- <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
  </div>
  <div style="display:flex;align-items:center;gap:1.1rem">
  <div class="header-social" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -324,31 +320,31 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  </div>
  <nav role="navigation" aria-label="Main navigation">
- <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
  <ul id="mainMenu">
  <li><a href="/">Home</a></li>
  <li><a href="/about/">About Us</a></li>
  <li class="has-dropdown">
  <a href="/services/" aria-current="page">Services</a>
  <ul class="dropdown-menu" aria-label="Services submenu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dropdown">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dropdown-menu" aria-label="Locations submenu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
  </ul>
  </li>
  <li><a href="/blogs/">Blog</a></li>
@@ -379,7 +375,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="hero-grid">
  <div class="hero-content">
- <div class="hero-badge"><i class="fas fa-home" aria-hidden="true"></i> Mohali's Trusted Home Physio Service</div>
+ <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg> Mohali's Trusted Home Physio Service</div>
  <h1 id="hero-h1">Home Physiotherapy in <em>Mohali</em> &mdash; Expert Care at Your Doorstep</h1>
  <p class="hero-subtitle">Certified physiotherapists visit you across all Mohali phases &mdash; with professional equipment, personalised treatment plans, and clinic-quality care. Phase 1 to Phase 11 and beyond, all covered.</p>
  <div class="hero-stats">
@@ -388,8 +384,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
  </div>
  <div class="hero-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20home%20physiotherapy%20in%20Mohali." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20home%20physiotherapy%20in%20Mohali." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  <!-- Appointment Form -->
@@ -426,7 +422,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <button type="submit" class="submit-btn">Book a Home Visit</button>
  </form>
  <div class="form-success" id="form-success" role="alert">
- <i class="fas fa-check-circle" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"></i>
+ <svg class="icon" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
  Thank you! Our physiotherapist will call you shortly.
  </div>
  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Form submission target"></iframe>
@@ -439,11 +435,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <div class="trust-strip" aria-label="Trust indicators">
  <div class="container">
  <div class="trust-inner">
- <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
- <div class="trust-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> All Mohali Phases Covered</div>
- <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i> Same-Day Appointments</div>
- <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
- <div class="trust-item"><i class="fas fa-briefcase-medical" aria-hidden="true"></i> Equipment Provided</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> Certified Physiotherapists</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg> All Mohali Phases Covered</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg> Same-Day Appointments</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 4.9&#9733; Google Rating</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-briefcase-medical"></use></svg> Equipment Provided</div>
  </div>
  </div>
 </div>
@@ -466,14 +462,14 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <span class="section-label">Why Choose Home Visits?</span>
  <h3 style="font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:1rem">Key advantages of home physiotherapy in Mohali</h3>
  <ul class="benefit-list" role="list">
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> No travel hassle &mdash; especially valuable in Mohali's peak traffic hours</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Functional rehab in your actual home environment accelerates recovery</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Family and caregivers can observe and learn to assist between sessions</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> All professional equipment brought to your door — TENS, ultrasound, bands</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Flexible evening and weekend scheduling around Mohali work hours</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Clinically equivalent to in-clinic care for most conditions</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> No travel hassle &mdash; especially valuable in Mohali's peak traffic hours</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Functional rehab in your actual home environment accelerates recovery</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Family and caregivers can observe and learn to assist between sessions</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> All professional equipment brought to your door — TENS, ultrasound, bands</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Flexible evening and weekend scheduling around Mohali work hours</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Clinically equivalent to in-clinic care for most conditions</li>
  </ul>
- <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><i class="fas fa-info-circle" style="color:var(--green)" aria-hidden="true"></i> &nbsp;Unsure if home physiotherapy suits your condition? Call us for a phone consultation and we will advise the best care pathway for you.</p>
+ <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><svg class="icon" style="color:var(--green)" aria-hidden="true"><use href="/icons.svg#fa-info-circle"></use></svg> &nbsp;Unsure if home physiotherapy suits your condition? Call us for a phone consultation and we will advise the best care pathway for you.</p>
  </div>
  </div>
  </div>
@@ -489,7 +485,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="services-grid">
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-procedures"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-procedures"></use></svg></div>
  <h3>Post-Surgical Rehabilitation</h3>
  <ul>
  <li>Knee &amp; hip replacement recovery</li>
@@ -501,7 +497,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-user-injured"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-injured"></use></svg></div>
  <h3>Elderly Care &amp; Mobility</h3>
  <ul>
  <li>Fall prevention programmes</li>
@@ -513,7 +509,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg></div>
  <h3>Neurological Rehabilitation</h3>
  <ul>
  <li>Stroke (CVA) rehabilitation</li>
@@ -525,7 +521,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-bone"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg></div>
  <h3>Back, Neck &amp; Pain Management</h3>
  <ul>
  <li>Chronic back and neck pain</li>
@@ -537,7 +533,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-running"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <h3>Sports Injury Recovery</h3>
  <ul>
  <li>Muscle strains and ligament sprains</li>
@@ -549,7 +545,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </ul>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-heartbeat"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div>
  <h3>Cardiac &amp; Pulmonary Rehab</h3>
  <ul>
  <li>Post-heart attack rehabilitation</li>
@@ -611,21 +607,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">Professional home physiotherapy across all Mohali phases, sectors, and surrounding townships</p>
  </div>
  <div class="sectors-grid">
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Phase 1 &amp; 2</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Phase 3A &amp; 3B</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Phase 4 &amp; 5</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Phase 6 &amp; 7</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Phase 8 &amp; 9</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Phase 10 &amp; 11</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Sector 68&ndash;80</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>IT City Mohali</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Aerocity Mohali</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Kharar</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Dera Bassi</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Landran &amp; Kurali</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Zirakpur Border</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Sunny Enclave</h4></div>
- <div class="sector-card reveal"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><h4>Peer Muchalla</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Phase 1 &amp; 2</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Phase 3A &amp; 3B</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Phase 4 &amp; 5</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Phase 6 &amp; 7</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Phase 8 &amp; 9</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Phase 10 &amp; 11</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Sector 68&ndash;80</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>IT City Mohali</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Aerocity Mohali</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Kharar</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Dera Bassi</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Landran &amp; Kurali</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Zirakpur Border</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Sunny Enclave</h4></div>
+ <div class="sector-card reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><h4>Peer Muchalla</h4></div>
  </div>
  </div>
 </section>
@@ -639,12 +635,12 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">What sets our Mohali home physiotherapy service apart from others in the Tricity region</p>
  </div>
  <div class="why-grid">
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-certificate"></i></div><h3>10+ Years of Clinical Experience</h3><p>Dr. Tarun Garg and his team bring over a decade of hands-on experience across orthopaedic, neurological, and sports physiotherapy. Our Mohali patients receive senior-level expertise at every home visit.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-briefcase-medical"></i></div><h3>Full Professional Equipment</h3><p>TENS/EMS units, portable ultrasound, resistance bands, therabands, hot/cold packs, and portable exercise tools are carried to every visit in Mohali. No additional purchase required by the patient.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div><h3>Dedicated One-on-One Care</h3><p>Every session is with Dr. Tarun or a senior physiotherapist &mdash; never delegated to a junior or assistant. Your programme is reviewed and updated at every visit, not just occasionally.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-clock"></i></div><h3>Same-Day &amp; Flexible Scheduling</h3><p>We understand Mohali's busy lifestyle. Same-day and next-day visits are available, including evenings and Sundays, to fit around your work and family schedule without disruption.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-clipboard-check"></i></div><h3>Evidence-Based Treatment Plans</h3><p>Every programme follows current clinical guidelines. Treatment is tailored to your assessment findings and updated based on objective progress data &mdash; not generic protocols applied to everyone.</p></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-comments"></i></div><h3>Ongoing WhatsApp Support</h3><p>Have a question between sessions? Experiencing unexpected pain? Our Mohali physiotherapy team is available on WhatsApp to advise, guide, and adjust your home exercise programme in real time.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-certificate"></use></svg></div><h3>10+ Years of Clinical Experience</h3><p>Dr. Tarun Garg and his team bring over a decade of hands-on experience across orthopaedic, neurological, and sports physiotherapy. Our Mohali patients receive senior-level expertise at every home visit.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-briefcase-medical"></use></svg></div><h3>Full Professional Equipment</h3><p>TENS/EMS units, portable ultrasound, resistance bands, therabands, hot/cold packs, and portable exercise tools are carried to every visit in Mohali. No additional purchase required by the patient.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-friends"></use></svg></div><h3>Dedicated One-on-One Care</h3><p>Every session is with Dr. Tarun or a senior physiotherapist &mdash; never delegated to a junior or assistant. Your programme is reviewed and updated at every visit, not just occasionally.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg></div><h3>Same-Day &amp; Flexible Scheduling</h3><p>We understand Mohali's busy lifestyle. Same-day and next-day visits are available, including evenings and Sundays, to fit around your work and family schedule without disruption.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clipboard-check"></use></svg></div><h3>Evidence-Based Treatment Plans</h3><p>Every programme follows current clinical guidelines. Treatment is tailored to your assessment findings and updated based on objective progress data &mdash; not generic protocols applied to everyone.</p></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-comments"></use></svg></div><h3>Ongoing WhatsApp Support</h3><p>Have a question between sessions? Experiencing unexpected pain? Our Mohali physiotherapy team is available on WhatsApp to advise, guide, and adjust your home exercise programme in real time.</p></div>
  </div>
  </div>
 </section>
@@ -752,42 +748,42 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="related-grid">
  <a href="/services/acl-treatment-near-me/" class="related-card reveal">
- <i class="fas fa-running" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>
  <h4>ACL Treatment</h4>
  <p>Expert ACL rehabilitation — post-surgery and non-surgical protocols near Mohali.</p>
  </a>
  <a href="/services/orthopedic-rehabilitation/" class="related-card reveal">
- <i class="fas fa-bone" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bone"></use></svg>
  <h4>Orthopedic Rehabilitation</h4>
  <p>Post-surgical and injury rehab for all orthopaedic conditions.</p>
  </a>
  <a href="/services/neurological-rehabilitation/" class="related-card reveal">
- <i class="fas fa-brain" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-brain"></use></svg>
  <h4>Neurological Rehabilitation</h4>
  <p>Specialist neuro rehab — stroke, Parkinson's, and balance disorders.</p>
  </a>
  <a href="/services/sports-injury-treatment/" class="related-card reveal">
- <i class="fas fa-heartbeat" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heartbeat"></use></svg>
  <h4>Sports Injury Treatment</h4>
  <p>Expert treatment for all sports-related injuries across Mohali.</p>
  </a>
  <a href="/physiotherapy/mohali/" class="related-card reveal">
- <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
  <h4>Physiotherapy in Mohali</h4>
  <p>Full guide to physiotherapy services available across all Mohali phases.</p>
  </a>
  <a href="/services/home-physiotherapy-panchkula/" class="related-card reveal">
- <i class="fas fa-home" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg>
  <h4>Home Physio — Panchkula</h4>
  <p>Professional home physiotherapy across all Panchkula sectors.</p>
  </a>
  <a href="/services/home-physiotherapy-chandigarh/" class="related-card reveal">
- <i class="fas fa-home" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg>
  <h4>Home Physio — Chandigarh</h4>
  <p>Doorstep physiotherapy across all Chandigarh sectors.</p>
  </a>
  <a href="/blogs/" class="related-card reveal">
- <i class="fas fa-book-open" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-book-open"></use></svg>
  <h4>Physiotherapy Blog</h4>
  <p>Expert tips, condition guides, and patient education resources.</p>
  </a>
@@ -802,8 +798,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h2 id="cta-h2">Ready to Start Your Recovery at Home in Mohali?</h2>
  <p>Don&rsquo;t let pain or limited mobility disrupt your life. Our expert physiotherapists are ready to visit you &mdash; anywhere across Mohali phases &mdash; and get your recovery started today.</p>
  <div class="cta-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20home%20physiotherapy%20visit%20in%20Mohali." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20home%20physiotherapy%20visit%20in%20Mohali." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -821,21 +817,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="contact-details">
  <h3>Clinic &amp; Contact Details</h3>
  <ul class="contact-info-list">
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Main Clinic (10 min from Mohali):</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
- <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
- <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
- <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
- <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Main Clinic (10 min from Mohali):</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
  </ul>
  <div class="contact-cta-btns">
- <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> Get Directions</a>
- <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now</a>
+ <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg> Get Directions</a>
+ <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call Now</a>
  </div>
  </div>
  <div class="map-frame">
  <a href="https://www.google.com/maps/dir/?api=1&destination=30.6387,76.8305" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Tap to open directions</span>
       </a>
@@ -855,11 +851,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert home physiotherapy across all Mohali phases &mdash; certified therapists, evidence-based protocols, professional care at your doorstep.</p>
  <div class="footer-social" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -910,10 +906,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20home%20physiotherapy%20in%20Mohali." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20home%20physiotherapy%20in%20Mohali." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height CSS var ── */

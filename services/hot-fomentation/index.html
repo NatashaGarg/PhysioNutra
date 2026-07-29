@@ -211,18 +211,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Preconnect & Fonts ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
+<!-- FIX 17: Self-hosted fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -326,6 +318,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 .u-static-map-label{font-weight:600;font-size:1.05rem}
 .u-static-map-sub{font-size:.85rem;color:#4a7a63}
 </style>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -339,17 +335,17 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="header-top-content">
  <div class="header-contact">
- <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
  </div>
  <div style="display:flex;align-items:center;gap:1.1rem">
  <div class="header-social" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -366,32 +362,32 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  </div>
  <nav role="navigation" aria-label="Main navigation">
- <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
  <ul id="mainMenu">
  <li><a href="/">Home</a></li>
  <li><a href="/about/">About Us</a></li>
  <li class="has-dropdown">
  <a href="/services/" aria-current="page">Services</a>
  <ul class="dropdown-menu" aria-label="Services submenu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/hot-fomentation/"><i class="fas fa-fire"></i>Hot Fomentation</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/hot-fomentation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-fire"></use></svg>Hot Fomentation</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dropdown">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dropdown-menu" aria-label="Locations submenu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
  </ul>
  </li>
  <li><a href="/blogs/">Blog</a></li>
@@ -422,7 +418,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="hero-grid">
  <div class="hero-content">
- <div class="hero-badge"><i class="fas fa-fire-alt" aria-hidden="true"></i> Professional Thermotherapy Specialists</div>
+ <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-fire-alt"></use></svg> Professional Thermotherapy Specialists</div>
  <h1 id="hero-h1">Hot Fomentation Therapy in <em>Chandigarh Tricity</em> &mdash; Expert Heat Treatment</h1>
  <p class="hero-subtitle">Professional moist heat therapy for rapid pain relief, deep muscle relaxation &amp; accelerated recovery &mdash; at our Zirakpur clinic or at your home across Chandigarh, Mohali &amp; Panchkula.</p>
  <div class="hero-stats">
@@ -431,8 +427,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
  </div>
  <div class="hero-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20hot%20fomentation%20therapy." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20hot%20fomentation%20therapy." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  <!-- Appointment Form -->
@@ -469,7 +465,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <button type="submit" class="submit-btn">Get a Consultation</button>
  </form>
  <div class="form-success" id="form-success" role="alert">
- <i class="fas fa-check-circle" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"></i>
+ <svg class="icon" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
  Thank you! Our heat therapy specialist will call you shortly.
  </div>
  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Form submission target"></iframe>
@@ -482,11 +478,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <div class="trust-strip" aria-label="Trust indicators">
  <div class="container">
  <div class="trust-inner">
- <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
- <div class="trust-item"><i class="fas fa-home" aria-hidden="true"></i> Home Visits Available</div>
- <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i> Same-Day Appointments</div>
- <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
- <div class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> Evidence-Based Protocols</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> Certified Physiotherapists</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg> Home Visits Available</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg> Same-Day Appointments</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 4.9&#9733; Google Rating</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg> Evidence-Based Protocols</div>
  </div>
  </div>
 </div>
@@ -510,14 +506,14 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <span class="section-label">Conditions Responding Well to Heat</span>
  <h3 style="font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:1rem">Signs that hot fomentation may help you</h3>
  <ul class="symptom-list" role="list">
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Chronic stiffness worse in the morning or after rest</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Persistent muscle aches, tightness, or spasms</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Arthritis pain and joint stiffness (non-acute)</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Neck and back pain lasting more than 3 months</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Frozen shoulder or restricted joint movement</li>
- <li><i class="fas fa-check-circle" aria-hidden="true"></i> Old sports injuries with residual tightness</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Chronic stiffness worse in the morning or after rest</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Persistent muscle aches, tightness, or spasms</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Arthritis pain and joint stiffness (non-acute)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Neck and back pain lasting more than 3 months</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Frozen shoulder or restricted joint movement</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Old sports injuries with residual tightness</li>
  </ul>
- <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><i class="fas fa-info-circle" style="color:var(--green)" aria-hidden="true"></i> &nbsp;Note: Hot fomentation is not recommended for acute injuries (first 48&ndash;72 hours), open wounds, or active infection. Our physiotherapists assess every patient before treatment. Book an assessment today.</p>
+ <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><svg class="icon" style="color:var(--green)" aria-hidden="true"><use href="/icons.svg#fa-info-circle"></use></svg> &nbsp;Note: Hot fomentation is not recommended for acute injuries (first 48&ndash;72 hours), open wounds, or active infection. Our physiotherapists assess every patient before treatment. Book an assessment today.</p>
  </div>
  </div>
  </div>
@@ -533,22 +529,22 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="science-grid">
  <div class="science-card reveal">
- <div class="science-icon" aria-hidden="true"><i class="fas fa-heartbeat"></i></div>
+ <div class="science-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div>
  <h3>Vasodilation</h3>
  <p>Heat causes blood vessels to dilate, increasing local blood flow by up to 150%. This enhanced circulation delivers oxygen and nutrients to damaged tissue while flushing out inflammatory waste products and metabolites that cause pain.</p>
  </div>
  <div class="science-card reveal">
- <div class="science-icon" aria-hidden="true"><i class="fas fa-dumbbell"></i></div>
+ <div class="science-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dumbbell"></use></svg></div>
  <h3>Muscle Relaxation</h3>
  <p>Warmth reduces muscle spindle activity — the sensory receptors responsible for maintaining muscle tone. This directly reduces muscle guarding and spasm, providing immediate relief from tension and allowing greater range of motion.</p>
  </div>
  <div class="science-card reveal">
- <div class="science-icon" aria-hidden="true"><i class="fas fa-ban"></i></div>
+ <div class="science-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-ban"></use></svg></div>
  <h3>Pain Gate Mechanism</h3>
  <p>Heat stimulates thermoreceptors (A-delta fibres) which competitively inhibit pain signal transmission via the dorsal horn gate. This is the same principle underlying TENS therapy — heat effectively &ldquo;closes the gate&rdquo; on pain.</p>
  </div>
  <div class="science-card reveal">
- <div class="science-icon" aria-hidden="true"><i class="fas fa-expand-arrows-alt"></i></div>
+ <div class="science-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-expand-arrows-alt"></use></svg></div>
  <h3>Tissue Extensibility</h3>
  <p>At 40&ndash;45&deg;C, collagen fibres become significantly more extensible. Applying stretch or manual therapy immediately after fomentation yields greater gains in flexibility and joint range of motion — a core principle in our combined treatment approach.</p>
  </div>
@@ -566,32 +562,32 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="benefits-grid">
  <article class="benefit-card reveal">
- <div class="benefit-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+ <div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div>
  <h3>Rapid Pain Relief</h3>
  <p>Most patients notice significant pain reduction within 10 minutes of heat application, making it one of the fastest non-pharmacological pain-relief modalities available in physiotherapy.</p>
  </article>
  <article class="benefit-card reveal">
- <div class="benefit-icon" aria-hidden="true"><i class="fas fa-spa"></i></div>
+ <div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spa"></use></svg></div>
  <h3>Deep Muscle Relaxation</h3>
  <p>Penetrating moist heat reaches deeper into muscle tissue than dry heat sources like hot water bottles, releasing chronic tension that topical treatments cannot address.</p>
  </article>
  <article class="benefit-card reveal">
- <div class="benefit-icon" aria-hidden="true"><i class="fas fa-running"></i></div>
+ <div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <h3>Improved Joint Flexibility</h3>
  <p>Heated tissues are significantly more extensible, allowing greater gains from stretching, manual therapy, and exercise. Patients typically gain 20&ndash;30% more range of motion from the same exercises when preceded by fomentation.</p>
  </article>
  <article class="benefit-card reveal">
- <div class="benefit-icon" aria-hidden="true"><i class="fas fa-tint"></i></div>
+ <div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-tint"></use></svg></div>
  <h3>Enhanced Healing Circulation</h3>
  <p>Increased blood flow accelerates tissue repair by delivering growth factors, collagen precursors, and oxygen while removing inflammatory cytokines that impede healing.</p>
  </article>
  <article class="benefit-card reveal">
- <div class="benefit-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+ <div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shield-alt"></use></svg></div>
  <h3>Reduced Morning Stiffness</h3>
  <p>Especially effective for arthritis sufferers, regular heat therapy retrains joint fluid distribution and reduces the prolonged stiffness that makes mornings debilitating.</p>
  </article>
  <article class="benefit-card reveal">
- <div class="benefit-icon" aria-hidden="true"><i class="fas fa-smile"></i></div>
+ <div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-smile"></use></svg></div>
  <h3>Stress & Tension Relief</h3>
  <p>Therapeutic warmth stimulates parasympathetic nervous system activity, reducing cortisol and adrenaline levels. Patients consistently report improved sleep and reduced anxiety after regular sessions.</p>
  </article>
@@ -608,22 +604,22 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">Effective thermotherapy for a wide range of musculoskeletal and pain conditions</p>
  </div>
  <div class="conditions-grid">
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Chronic Back &amp; Neck Pain</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Muscle Spasms &amp; Strains</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Osteoarthritis</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Rheumatoid Arthritis (Non-Acute)</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Frozen Shoulder</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Tennis &amp; Golfer&rsquo;s Elbow</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Fibromyalgia</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Tension Headaches</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Sciatica</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Plantar Fasciitis</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Knee Pain &amp; OA</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Myofascial Pain Syndrome</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Post-Surgical Stiffness</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Old Sports Injuries</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> TMJ Dysfunction</div>
- <div class="condition-item reveal"><i class="fas fa-check" aria-hidden="true"></i> Pre-Exercise Preparation</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Chronic Back &amp; Neck Pain</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Muscle Spasms &amp; Strains</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Osteoarthritis</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Rheumatoid Arthritis (Non-Acute)</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Frozen Shoulder</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Tennis &amp; Golfer&rsquo;s Elbow</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Fibromyalgia</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Tension Headaches</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Sciatica</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Plantar Fasciitis</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Knee Pain &amp; OA</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Myofascial Pain Syndrome</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Post-Surgical Stiffness</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Old Sports Injuries</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> TMJ Dysfunction</div>
+ <div class="condition-item reveal"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Pre-Exercise Preparation</div>
  </div>
  </div>
 </section>
@@ -638,31 +634,31 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="comparison-grid">
  <div class="comparison-card hot reveal">
- <h3><i class="fas fa-fire" aria-hidden="true"></i> Hot Fomentation &mdash; Use For:</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-fire"></use></svg> Hot Fomentation &mdash; Use For:</h3>
  <ul class="comp-list">
- <li><i class="fas fa-check" aria-hidden="true"></i> Chronic pain &amp; persistent stiffness</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Muscle spasms &amp; tension headaches</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Arthritis &amp; joint stiffness</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Before stretching or exercise sessions</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Old injuries past the acute phase (72+ hours)</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Stress-related muscle tightness</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Pre-manual therapy preparation</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Chronic pain &amp; persistent stiffness</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Muscle spasms &amp; tension headaches</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Arthritis &amp; joint stiffness</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Before stretching or exercise sessions</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Old injuries past the acute phase (72+ hours)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Stress-related muscle tightness</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Pre-manual therapy preparation</li>
  </ul>
  </div>
  <div class="comparison-card cold reveal">
- <h3><i class="fas fa-snowflake" aria-hidden="true"></i> Cold Therapy &mdash; Use For:</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-snowflake"></use></svg> Cold Therapy &mdash; Use For:</h3>
  <ul class="comp-list">
- <li><i class="fas fa-check" aria-hidden="true"></i> Acute injuries (first 48&ndash;72 hours)</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Fresh sprains with visible swelling</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Post-workout inflammation</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Immediate trauma response</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Sharp, acute, hot-to-touch pain</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Post-operative swelling (early phase)</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Bursitis during acute flare</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Acute injuries (first 48&ndash;72 hours)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Fresh sprains with visible swelling</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Post-workout inflammation</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Immediate trauma response</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Sharp, acute, hot-to-touch pain</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Post-operative swelling (early phase)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Bursitis during acute flare</li>
  </ul>
  </div>
  </div>
- <p style="text-align:center;color:var(--muted);font-size:.84rem;margin-top:1.5rem"><i class="fas fa-info-circle" style="color:var(--green)"></i>&nbsp; Not sure which is right for you? Call us for an assessment — we&rsquo;ll guide you to the most effective treatment for your specific condition.</p>
+ <p style="text-align:center;color:var(--muted);font-size:.84rem;margin-top:1.5rem"><svg class="icon" aria-hidden="true" style="color:var(--green)"><use href="/icons.svg#fa-info-circle"></use></svg>&nbsp; Not sure which is right for you? Call us for an assessment — we&rsquo;ll guide you to the most effective treatment for your specific condition.</p>
  </div>
 </section>
 
@@ -719,42 +715,42 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="safety-grid">
  <div class="safety-card caution-card reveal">
- <h3><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> When NOT to Use Hot Fomentation</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-exclamation-triangle"></use></svg> When NOT to Use Hot Fomentation</h3>
  <ul class="safety-list">
- <li><i class="fas fa-times" aria-hidden="true"></i> Acute injuries (first 48&ndash;72 hours with swelling)</li>
- <li><i class="fas fa-times" aria-hidden="true"></i> Open wounds, cuts or active skin infection</li>
- <li><i class="fas fa-times" aria-hidden="true"></i> Areas with reduced or absent skin sensation</li>
- <li><i class="fas fa-times" aria-hidden="true"></i> Bleeding disorders or anticoagulant therapy</li>
- <li><i class="fas fa-times" aria-hidden="true"></i> Deep vein thrombosis (DVT)</li>
- <li><i class="fas fa-times" aria-hidden="true"></i> Malignancy over the treatment area</li>
- <li><i class="fas fa-times" aria-hidden="true"></i> Severe peripheral vascular disease</li>
- <li><i class="fas fa-times" aria-hidden="true"></i> Pregnancy (abdominal / lumbar area)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-times"></use></svg> Acute injuries (first 48&ndash;72 hours with swelling)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-times"></use></svg> Open wounds, cuts or active skin infection</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-times"></use></svg> Areas with reduced or absent skin sensation</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-times"></use></svg> Bleeding disorders or anticoagulant therapy</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-times"></use></svg> Deep vein thrombosis (DVT)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-times"></use></svg> Malignancy over the treatment area</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-times"></use></svg> Severe peripheral vascular disease</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-times"></use></svg> Pregnancy (abdominal / lumbar area)</li>
  </ul>
  </div>
  <div class="safety-card reveal">
- <h3><i class="fas fa-shield-alt" aria-hidden="true"></i> Our Safety Protocols</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg> Our Safety Protocols</h3>
  <ul class="safety-list">
- <li><i class="fas fa-check" aria-hidden="true"></i> Comprehensive pre-treatment screening</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Professional hydrocollator packs at 40&ndash;45&deg;C</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Multi-layer protective toweling barrier</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Regular skin checks every 5 minutes</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Certified physiotherapists only</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Sterile, regularly maintained equipment</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Individualised heat intensity per patient</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Clear written post-treatment instructions</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Comprehensive pre-treatment screening</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Professional hydrocollator packs at 40&ndash;45&deg;C</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Multi-layer protective toweling barrier</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Regular skin checks every 5 minutes</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Certified physiotherapists only</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Sterile, regularly maintained equipment</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Individualised heat intensity per patient</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Clear written post-treatment instructions</li>
  </ul>
  </div>
  <div class="safety-card reveal">
- <h3><i class="fas fa-info-circle" aria-hidden="true"></i> What You Will Experience</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-info-circle"></use></svg> What You Will Experience</h3>
  <ul class="safety-list">
- <li><i class="fas fa-check" aria-hidden="true"></i> Soothing, deeply penetrating warmth</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Progressive muscle relaxation within minutes</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Temporary mild skin redness (normal, resolves quickly)</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Improved flexibility and ease of movement</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Pain relief that lasts several hours</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> No downtime — resume normal activities immediately</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Cumulative benefits with regular sessions</li>
- <li><i class="fas fa-check" aria-hidden="true"></i> Comfortable, relaxing treatment experience</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Soothing, deeply penetrating warmth</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Progressive muscle relaxation within minutes</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Temporary mild skin redness (normal, resolves quickly)</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Improved flexibility and ease of movement</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Pain relief that lasts several hours</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> No downtime — resume normal activities immediately</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Cumulative benefits with regular sessions</li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check"></use></svg> Comfortable, relaxing treatment experience</li>
  </ul>
  </div>
  </div>
@@ -771,28 +767,28 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="location-grid">
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Hot Fomentation in Zirakpur</h3>
  <p>Our main clinic. Purpose-built physiotherapy facility with professional hydrocollator units, private treatment bays, and full range of complementary therapies.</p>
- <a href="/physiotherapy/zirakpur/" class="location-link">Explore Zirakpur <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/zirakpur/" class="location-link">Explore Zirakpur <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Hot Fomentation in Chandigarh</h3>
  <p>Clinic and home-visit heat therapy for all Chandigarh sectors. Just 15 minutes from Sector 17. Same-day appointments often available.</p>
- <a href="/physiotherapy/chandigarh/" class="location-link">Explore Chandigarh <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/chandigarh/" class="location-link">Explore Chandigarh <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Hot Fomentation in Mohali</h3>
  <p>Expert heat therapy for Mohali residents &mdash; in-clinic at our Zirakpur facility (10 minutes) or home visits across all Mohali phases.</p>
- <a href="/physiotherapy/mohali/" class="location-link">Explore Mohali <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/mohali/" class="location-link">Explore Mohali <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="location-card reveal">
- <div class="location-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>Hot Fomentation in Panchkula</h3>
  <p>Hot fomentation therapy available at our Sector 20 Panchkula branch and through home visits across all Panchkula sectors and Kalka.</p>
- <a href="/physiotherapy/panchkula/" class="location-link">Explore Panchkula <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/physiotherapy/panchkula/" class="location-link">Explore Panchkula <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  </div>
  </div>
@@ -905,42 +901,42 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="related-grid">
  <a href="/services/manual-therapy/" class="related-card reveal">
- <i class="fas fa-hands" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-hands"></use></svg>
  <h4>Manual Therapy</h4>
  <p>Hands-on joint mobilisation and soft tissue techniques — optimised when preceded by hot fomentation.</p>
  </a>
  <a href="/services/dry-needling/" class="related-card reveal">
- <i class="fas fa-syringe" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-syringe"></use></svg>
  <h4>Dry Needling</h4>
  <p>Advanced trigger point therapy combined with heat therapy for powerful muscle pain relief.</p>
  </a>
  <a href="/services/sports-injury-treatment/" class="related-card reveal">
- <i class="fas fa-running" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>
  <h4>Sports Injury Treatment</h4>
  <p>Complete sports rehabilitation — hot fomentation for chronic and subacute phases.</p>
  </a>
  <a href="/services/home-physiotherapy-chandigarh/" class="related-card reveal">
- <i class="fas fa-home" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg>
  <h4>Home Physiotherapy</h4>
  <p>Professional heat therapy delivered to your door across Tricity — ideal for limited mobility.</p>
  </a>
  <a href="/services/orthopedic-rehabilitation/" class="related-card reveal">
- <i class="fas fa-bone" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bone"></use></svg>
  <h4>Orthopedic Rehabilitation</h4>
  <p>Post-surgical rehab and orthopaedic recovery with thermotherapy as a core modality.</p>
  </a>
  <a href="/blogs/pain-management-physiotherapy/" class="related-card reveal">
- <i class="fas fa-book-open" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-book-open"></use></svg>
  <h4>Pain Management Blog</h4>
  <p>Expert physiotherapy tips, heat therapy guides, and evidence-based pain management advice.</p>
  </a>
  <a href="/services/acl-treatment-near-me/" class="related-card reveal">
- <i class="fas fa-running" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>
  <h4>ACL Treatment</h4>
  <p>ACL rehabilitation uses hot fomentation in later phases to optimise flexibility and strength gains.</p>
  </a>
  <a href="/blogs/" class="related-card reveal">
- <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-calendar-alt"></use></svg>
  <h4>All Blog Articles</h4>
  <p>Expert physiotherapy guides, condition insights, and patient education resources.</p>
  </a>
@@ -955,8 +951,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h2 id="cta-h2">Ready to Experience Drug-Free Pain Relief?</h2>
  <p>Don&rsquo;t let chronic pain or stiffness limit your life. Our expert team is ready to help you feel better with professional hot fomentation therapy — tailored to your condition, safe, and effective.</p>
  <div class="cta-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20hot%20fomentation%20session." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20hot%20fomentation%20session." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -974,21 +970,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="contact-details">
  <h3>Clinic Details</h3>
  <ul class="contact-info-list">
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
- <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
- <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
- <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
- <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
  </ul>
  <div class="contact-cta-btns">
- <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> Get Directions</a>
- <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now</a>
+ <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg> Get Directions</a>
+ <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call Now</a>
  </div>
  </div>
  <div class="map-frame">
  <a href="https://www.google.com/maps/dir/?api=1&destination=30.6387,76.8305" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Tap to open directions</span>
       </a>
@@ -1008,11 +1004,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert hot fomentation and comprehensive physiotherapy across Chandigarh Tricity &mdash; evidence-based treatments, personalised care, and proven results from Dr. Tarun Garg.</p>
  <div class="footer-social" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -1063,10 +1059,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20hot%20fomentation%20therapy." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20hot%20fomentation%20therapy." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height CSS var ── */

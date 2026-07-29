@@ -155,18 +155,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Preconnect & Fonts ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
+<!-- FIX 17: Self-hosted fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -268,6 +260,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 .u-static-map-label{font-weight:600;font-size:1.05rem}
 .u-static-map-sub{font-size:.85rem;color:#4a7a63}
 </style>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 
@@ -280,17 +276,17 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="header-top-content">
  <div class="header-contact">
- <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
  </div>
  <div style="display:flex;align-items:center;gap:1.1rem">
  <div class="header-social" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -307,31 +303,31 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  </div>
  <nav role="navigation" aria-label="Main navigation">
- <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
  <ul id="mainMenu">
  <li><a href="/">Home</a></li>
  <li><a href="/about/">About Us</a></li>
  <li class="has-dropdown">
  <a href="/services/">Services</a>
  <ul class="dropdown-menu" aria-label="Services submenu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dropdown">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dropdown-menu" aria-label="Locations submenu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
  </ul>
  </li>
  <li><a href="/blogs/">Blog</a></li>
@@ -360,7 +356,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <section class="hero" aria-labelledby="hero-h1">
  <div class="container">
  <div class="hero-inner">
- <div class="hero-badge"><i class="fas fa-star" aria-hidden="true"></i> 150+ Verified Patient Reviews</div>
+ <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 150+ Verified Patient Reviews</div>
  <h1 id="hero-h1">Real Patients. Real Results.<br><em>Real Recovery</em> Stories.</h1>
  <p class="hero-subtitle">Hear from patients who recovered from ACL injuries, sports injuries, back pain, and more &mdash; at PhysioNutra Clinic, Zirakpur. Serving Chandigarh, Mohali &amp; Panchkula.</p>
  <div class="hero-rating" aria-label="Overall clinic rating">
@@ -374,9 +370,9 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
  </div>
  <div class="hero-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
- <a href="https://youtube.com/@physionutra" class="btn-youtube" rel="noopener" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i> Watch Stories</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
+ <a href="https://youtube.com/@physionutra" class="btn-youtube" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-youtube"></use></svg> Watch Stories</a>
  </div>
  </div>
  </div>
@@ -386,11 +382,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <div class="trust-strip" aria-label="Trust indicators">
  <div class="container">
  <div class="trust-inner">
- <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
- <div class="trust-item"><i class="fas fa-home" aria-hidden="true"></i> Home Visits Available</div>
- <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i> Same-Day Appointments</div>
- <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
- <div class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> Evidence-Based Protocols</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> Certified Physiotherapists</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg> Home Visits Available</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg> Same-Day Appointments</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 4.9&#9733; Google Rating</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg> Evidence-Based Protocols</div>
  </div>
  </div>
 </div>
@@ -415,28 +411,28 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="ratings-grid">
  <div class="rating-platform reveal">
- <span class="platform-icon" aria-hidden="true" style="color:#4285F4"><i class="fab fa-google" style="font-size:2rem"></i></span>
+ <span class="platform-icon" aria-hidden="true" style="color:#4285F4"><svg class="icon" aria-hidden="true" style="font-size:2rem"><use href="/icons.svg#fa-google"></use></svg></span>
  <div class="platform-name">Google Reviews</div>
  <div class="platform-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
  <div class="platform-score">4.9</div>
  <div class="platform-count">200+ reviews</div>
  </div>
  <div class="rating-platform reveal">
- <span class="platform-icon" aria-hidden="true" style="color:#1877F2"><i class="fab fa-facebook" style="font-size:2rem"></i></span>
+ <span class="platform-icon" aria-hidden="true" style="color:#1877F2"><svg class="icon" aria-hidden="true" style="font-size:2rem"><use href="/icons.svg#fa-facebook"></use></svg></span>
  <div class="platform-name">Facebook</div>
  <div class="platform-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
  <div class="platform-score">4.9</div>
  <div class="platform-count">50+ reviews</div>
  </div>
  <div class="rating-platform reveal">
- <span class="platform-icon" aria-hidden="true" style="color:#FF0000"><i class="fab fa-youtube" style="font-size:2rem"></i></span>
+ <span class="platform-icon" aria-hidden="true" style="color:#FF0000"><svg class="icon" aria-hidden="true" style="font-size:2rem"><use href="/icons.svg#fa-youtube"></use></svg></span>
  <div class="platform-name">YouTube</div>
  <div class="platform-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
  <div class="platform-score">5.0</div>
  <div class="platform-count">Video testimonials</div>
  </div>
  <div class="rating-platform reveal">
- <span class="platform-icon" aria-hidden="true" style="color:#E1306C"><i class="fab fa-instagram" style="font-size:2rem"></i></span>
+ <span class="platform-icon" aria-hidden="true" style="color:#E1306C"><svg class="icon" aria-hidden="true" style="font-size:2rem"><use href="/icons.svg#fa-instagram"></use></svg></span>
  <div class="platform-name">Instagram</div>
  <div class="platform-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
  <div class="platform-score">4.9</div>
@@ -482,8 +478,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">Verified reviews from patients across Chandigarh, Mohali, Panchkula &amp; Zirakpur</p>
  </div>
  <div class="tabs-nav" role="tablist" aria-label="Review type tabs">
- <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="written-pane" id="written-tab-btn" onclick="switchTab('written')"><i class="fas fa-pen-alt"></i> Written Reviews</button>
- <button class="tab-btn" role="tab" aria-selected="false" aria-controls="videos-pane" id="videos-tab-btn" onclick="switchTab('videos')"><i class="fab fa-youtube"></i> Video Testimonials</button>
+ <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="written-pane" id="written-tab-btn" onclick="switchTab('written')"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-pen-alt"></use></svg> Written Reviews</button>
+ <button class="tab-btn" role="tab" aria-selected="false" aria-controls="videos-pane" id="videos-tab-btn" onclick="switchTab('videos')"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg> Video Testimonials</button>
  </div>
 
  <!-- Written Reviews -->
@@ -513,7 +509,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  <!-- Review 2 -->
@@ -529,7 +525,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  <!-- Review 3 -->
@@ -545,7 +541,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  <!-- Review 4 -->
@@ -561,7 +557,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  <!-- Review 5 -->
@@ -577,7 +573,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  <!-- Review 6 -->
@@ -593,7 +589,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  <!-- Review 7 (initially hidden) -->
@@ -609,7 +605,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  <!-- Review 8 (initially hidden) -->
@@ -625,7 +621,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  <!-- Review 9 (initially hidden) -->
@@ -641,16 +637,16 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" class="google-link" target="_blank" rel="noopener">View on Google &#8599;</a>
  </div>
  </div>
- <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Patient <span class="source-badge"><i class="fab fa-google"></i> Google</span></div>
+ <div class="verified-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check-circle"></use></svg> Verified Patient <span class="source-badge"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-google"></use></svg> Google</span></div>
  </article>
 
  </div>
 
  <div class="load-more-wrap">
- <button class="load-more-btn" id="load-more-btn" onclick="loadMore()"><i class="fas fa-plus-circle"></i> &nbsp;Load More Reviews</button>
+ <button class="load-more-btn" id="load-more-btn" onclick="loadMore()"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-plus-circle"></use></svg> &nbsp;Load More Reviews</button>
  </div>
  <div style="text-align:center;margin-top:1.5rem">
- <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="display:inline-flex;font-size:.87rem;padding:11px 24px"><i class="fab fa-google" aria-hidden="true"></i> &nbsp;See All Google Reviews &#8599;</a>
+ <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="display:inline-flex;font-size:.87rem;padding:11px 24px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-google"></use></svg> &nbsp;See All Google Reviews &#8599;</a>
  </div>
  </div>
 
@@ -658,7 +654,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div id="videos-pane" class="tab-pane video-section" role="tabpanel" aria-labelledby="videos-tab-btn">
  <div style="text-align:center;margin-bottom:2.5rem">
  <p style="color:var(--mid);font-size:.95rem;max-width:600px;margin:0 auto 1.2rem">Watch our patients share their recovery journeys in their own words. These authentic stories showcase the life-changing impact of expert physiotherapy care.</p>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener" class="btn-youtube" style="display:inline-flex"><i class="fab fa-youtube" aria-hidden="true"></i> &nbsp;Subscribe to Our Channel</a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener" class="btn-youtube" style="display:inline-flex"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-youtube"></use></svg> &nbsp;Subscribe to Our Channel</a>
  </div>
  <div class="video-grid">
  <div class="video-card reveal">
@@ -668,7 +664,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="video-info">
  <span class="video-condition">ACL Rehabilitation</span>
  <h3>Football Player Returns to Competitive Sport After ACL Reconstruction</h3>
- <div class="video-meta"><span><i class="fas fa-map-marker-alt"></i> Chandigarh</span><span><i class="fas fa-clock"></i> 9-Month Journey</span></div>
+ <div class="video-meta"><span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Chandigarh</span><span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg> 9-Month Journey</span></div>
  <p class="video-description">Rahul shares his complete 9-month ACL rehabilitation journey from injury to return to competitive football.</p>
  </div>
  </div>
@@ -679,7 +675,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="video-info">
  <span class="video-condition">Post-Surgical Recovery</span>
  <h3>Marathon Runner Completes 5K Eight Months After ACL Surgery</h3>
- <div class="video-meta"><span><i class="fas fa-map-marker-alt"></i> Mohali</span><span><i class="fas fa-clock"></i> 8-Month Journey</span></div>
+ <div class="video-meta"><span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Mohali</span><span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg> 8-Month Journey</span></div>
  <p class="video-description">Priya describes how home physiotherapy visits and a structured plan helped her return to running post-ACL reconstruction.</p>
  </div>
  </div>
@@ -690,14 +686,14 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="video-info">
  <span class="video-condition">Sports Injury</span>
  <h3>Cricketer Recovers from Rotator Cuff Injury in 3 Months</h3>
- <div class="video-meta"><span><i class="fas fa-map-marker-alt"></i> Zirakpur</span><span><i class="fas fa-clock"></i> 3-Month Journey</span></div>
+ <div class="video-meta"><span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur</span><span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg> 3-Month Journey</span></div>
  <p class="video-description">Vikram talks about his shoulder rehabilitation journey and dry needling treatment at PhysioNutra Clinic.</p>
  </div>
  </div>
  </div>
  <div class="yt-cta">
  <p>We regularly upload new patient success stories, educational videos, and physiotherapy tips on our YouTube channel.</p>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener" class="btn-youtube" style="display:inline-flex"><i class="fab fa-youtube" aria-hidden="true"></i> &nbsp;Watch All Video Testimonials &#8599;</a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener" class="btn-youtube" style="display:inline-flex"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-youtube"></use></svg> &nbsp;Watch All Video Testimonials &#8599;</a>
  </div>
  </div>
  </div>
@@ -749,22 +745,22 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="related-grid">
  <a href="/services/acl-treatment-near-me/" class="related-card reveal">
- <i class="fas fa-running" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>
  <h4>ACL Treatment</h4>
  <p>Expert ACL rehabilitation — post-surgery, non-surgical &amp; return-to-sport.</p>
  </a>
  <a href="/services/sports-injury-treatment/" class="related-card reveal">
- <i class="fas fa-trophy" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-trophy"></use></svg>
  <h4>Sports Injury Treatment</h4>
  <p>Comprehensive sports injury management for athletes of all levels.</p>
  </a>
  <a href="/services/home-physiotherapy-chandigarh/" class="related-card reveal">
- <i class="fas fa-home" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg>
  <h4>Home Physiotherapy</h4>
  <p>Professional physiotherapy delivered to your door across Tricity.</p>
  </a>
  <a href="/services/orthopedic-rehabilitation/" class="related-card reveal">
- <i class="fas fa-bone" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bone"></use></svg>
  <h4>Orthopedic Rehabilitation</h4>
  <p>Post-surgical and injury rehab for all orthopaedic conditions.</p>
  </a>
@@ -779,8 +775,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h2 id="cta-h2">Join 1,000+ Patients Who Have Recovered at PhysioNutra</h2>
  <p>Your recovery story starts with a single call. Book a consultation and let our expert team create a personalised plan for you &mdash; evidence-based, goal-focused, and built around your life.</p>
  <div class="cta-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20PhysioNutra%20Clinic." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20PhysioNutra%20Clinic." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -798,21 +794,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="contact-details">
  <h3>Clinic Details</h3>
  <ul class="contact-info-list">
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
- <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
- <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
- <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
- <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><div><strong>Email:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
  </ul>
  <div class="contact-cta-btns">
- <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> Get Directions</a>
- <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now</a>
+ <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg> Get Directions</a>
+ <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call Now</a>
  </div>
  </div>
  <div class="map-frame">
  <a href="https://www.google.com/maps/dir/?api=1&destination=30.6387,76.8305" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Tap to open directions</span>
       </a>
@@ -832,11 +828,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert physiotherapy and sports injury rehabilitation across Chandigarh Tricity &mdash; evidence-based protocols, personalised care, proven results.</p>
  <div class="footer-social" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -889,10 +885,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20PhysioNutra%20Clinic." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20PhysioNutra%20Clinic." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height CSS var ── */
