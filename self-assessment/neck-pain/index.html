@@ -23,7 +23,9 @@ window.dataLayer=window.dataLayer||[];
   }
   var events=['scroll','click','touchstart','keydown','mousemove'];
   events.forEach(function(ev){d.addEventListener(ev,loadGTM,{passive:true,once:true});});
-  var fallback=setTimeout(loadGTM,3500);
+  var fallback;
+  if(d.readyState==='complete'){fallback=setTimeout(loadGTM,2000);}
+  else{w.addEventListener('load',function(){fallback=setTimeout(loadGTM,2000);});}
 })(window,document,'script','dataLayer','GTM-NHVSMWD6');
 </script>
 
