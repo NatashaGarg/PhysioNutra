@@ -87,18 +87,7 @@ window.dataLayer=window.dataLayer||[];
 ]}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -171,6 +160,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -182,16 +175,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -216,23 +209,23 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -261,13 +254,13 @@ button{font-family:inherit}
 <section class="blog-hero">
  <div class="container">
  <div class="blog-hero-inner">
- <div class="blog-chip"><i class="fas fa-joint"></i> Joint Health</div>
+ <div class="blog-chip"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-joint"></use></svg> Joint Health</div>
  <h1>Arthritis Management:<br><em>Complete Physiotherapy Guide for OA &amp; RA</em></h1>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 7 Jan 2025</span>
  <span><i class="far fa-clock"></i> 15 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
  </div>
  </div>
  </div>
@@ -371,12 +364,12 @@ button{font-family:inherit}
  <p>Physiotherapy is the <strong>first-line, non-surgical treatment</strong> for arthritis, recommended universally in international clinical guidelines. Here is what the evidence shows it achieves:</p>
 
  <div class="treat-grid">
- <div class="treat-card reveal"><div class="t-icon"><i class="fas fa-running"></i></div><h4>Pain Relief = Medication</h4><p>Supervised exercise provides equivalent pain relief to NSAIDs for knee and hip OA — without the gastrointestinal and cardiovascular side effects of long-term medication.</p></div>
- <div class="treat-card reveal"><div class="t-icon"><i class="fas fa-dumbbell"></i></div><h4>Stronger Supporting Muscles</h4><p>Quadriceps weakness accelerates knee OA progression. Strengthening muscles around affected joints reduces cartilage load and protects the joint during daily activities.</p></div>
- <div class="treat-card reveal"><div class="t-icon"><i class="fas fa-walking"></i></div><h4>Improved Function</h4><p>Patients gain meaningful improvements in walking distance, stair climbing, balance, and independence — reducing the need for surgical intervention.</p></div>
- <div class="treat-card reveal"><div class="t-icon"><i class="fas fa-heartbeat"></i></div><h4>Slowed Progression</h4><p>For RA, regular physiotherapy during stable disease phases prevents joint deformity, maintains mobility, and reduces long-term functional decline.</p></div>
- <div class="treat-card reveal"><div class="t-icon"><i class="fas fa-brain"></i></div><h4>Self-Management Skills</h4><p>Education in joint protection, activity pacing, and home exercise gives you control — reducing dependence on healthcare visits and medication over time.</p></div>
- <div class="treat-card reveal"><div class="t-icon"><i class="fas fa-leaf"></i></div><h4>Weight &amp; Lifestyle</h4><p>Every kilogram lost reduces knee joint stress by approximately 4 kg per step. Physiotherapy-led exercise combined with dietary guidance achieves meaningful, sustained weight loss.</p></div>
+ <div class="treat-card reveal"><div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><h4>Pain Relief = Medication</h4><p>Supervised exercise provides equivalent pain relief to NSAIDs for knee and hip OA — without the gastrointestinal and cardiovascular side effects of long-term medication.</p></div>
+ <div class="treat-card reveal"><div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dumbbell"></use></svg></div><h4>Stronger Supporting Muscles</h4><p>Quadriceps weakness accelerates knee OA progression. Strengthening muscles around affected joints reduces cartilage load and protects the joint during daily activities.</p></div>
+ <div class="treat-card reveal"><div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-walking"></use></svg></div><h4>Improved Function</h4><p>Patients gain meaningful improvements in walking distance, stair climbing, balance, and independence — reducing the need for surgical intervention.</p></div>
+ <div class="treat-card reveal"><div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div><h4>Slowed Progression</h4><p>For RA, regular physiotherapy during stable disease phases prevents joint deformity, maintains mobility, and reduces long-term functional decline.</p></div>
+ <div class="treat-card reveal"><div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg></div><h4>Self-Management Skills</h4><p>Education in joint protection, activity pacing, and home exercise gives you control — reducing dependence on healthcare visits and medication over time.</p></div>
+ <div class="treat-card reveal"><div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-leaf"></use></svg></div><h4>Weight &amp; Lifestyle</h4><p>Every kilogram lost reduces knee joint stress by approximately 4 kg per step. Physiotherapy-led exercise combined with dietary guidance achieves meaningful, sustained weight loss.</p></div>
  </div>
 
  <h2>Exercise Therapy for Arthritis</h2>
@@ -406,7 +399,7 @@ button{font-family:inherit}
 
  <div class="hc-grid">
  <div class="hc-card hc-cold">
- <h4><i class="fas fa-snowflake"></i> &nbsp;Use Cold / Ice When:</h4>
+ <h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-snowflake"></use></svg> &nbsp;Use Cold / Ice When:</h4>
  <ul>
  <li>Joint is visibly swollen and feels warm to touch</li>
  <li>Immediately after exercise to reduce post-activity soreness</li>
@@ -415,7 +408,7 @@ button{font-family:inherit}
  </ul>
  </div>
  <div class="hc-card hc-hot">
- <h4><i class="fas fa-fire-alt"></i> &nbsp;Use Heat When:</h4>
+ <h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-fire-alt"></use></svg> &nbsp;Use Heat When:</h4>
  <ul>
  <li>Joint feels stiff but is not actively inflamed</li>
  <li>Before exercise to loosen up muscles and joints</li>
@@ -513,8 +506,8 @@ button{font-family:inherit}
  <h2>Start Managing Your Arthritis Today</h2>
  <p>Expert evidence-based arthritis physiotherapy at PhysioNutra Clinic, Zirakpur. Serving Chandigarh, Mohali &amp; Panchkula. Home visits available.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-g"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20arthritis%20management%20physiotherapy." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-g"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20arthritis%20management%20physiotherapy." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -531,12 +524,12 @@ button{font-family:inherit}
  <!-- Related -->
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid">
- <a href="/blogs/spondylitis-treatment/" class="related-card"><div class="ri"><i class="fas fa-bone"></i></div><h4>Spondylitis Treatment</h4><p>Complete guide to ankylosing and cervical spondylitis management.</p></a>
- <a href="/blogs/chronic-back-pain-management/" class="related-card"><div class="ri"><i class="fas fa-heartbeat"></i></div><h4>Chronic Back Pain</h4><p>Long-term management for persistent spinal conditions.</p></a>
- <a href="/services/orthopedic-rehabilitation/" class="related-card"><div class="ri"><i class="fas fa-procedures"></i></div><h4>Orthopedic Rehab</h4><p>Post-surgical and joint replacement rehabilitation.</p></a>
- <a href="/services/manual-therapy/" class="related-card"><div class="ri"><i class="fas fa-hands"></i></div><h4>Manual Therapy</h4><p>Hands-on joint mobilisation and soft tissue techniques.</p></a>
- <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-hand-holding-heart"></i></div><h4>Pain Management</h4><p>Drug-free physiotherapy pain relief approaches.</p></a>
- <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><i class="fas fa-home"></i></div><h4>Home Physiotherapy</h4><p>Physio at home for patients with mobility limitations.</p></a>
+ <a href="/blogs/spondylitis-treatment/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg></div><h4>Spondylitis Treatment</h4><p>Complete guide to ankylosing and cervical spondylitis management.</p></a>
+ <a href="/blogs/chronic-back-pain-management/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div><h4>Chronic Back Pain</h4><p>Long-term management for persistent spinal conditions.</p></a>
+ <a href="/services/orthopedic-rehabilitation/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-procedures"></use></svg></div><h4>Orthopedic Rehab</h4><p>Post-surgical and joint replacement rehabilitation.</p></a>
+ <a href="/services/manual-therapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h4>Manual Therapy</h4><p>Hands-on joint mobilisation and soft tissue techniques.</p></a>
+ <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-holding-heart"></use></svg></div><h4>Pain Management</h4><p>Drug-free physiotherapy pain relief approaches.</p></a>
+ <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h4>Home Physiotherapy</h4><p>Physio at home for patients with mobility limitations.</p></a>
  </div>
 
  <!-- Disclaimer -->
@@ -559,11 +552,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert arthritis and joint physiotherapy across Chandigarh Tricity. Evidence-based, personalised care for OA, RA, and all musculoskeletal conditions.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -592,10 +585,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -606,10 +599,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20arthritis%20management%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20arthritis%20management%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 (function(){

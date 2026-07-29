@@ -89,18 +89,7 @@ window.dataLayer=window.dataLayer||[];
 ]}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 /* ══ RESET & BASE ══ */
@@ -186,6 +175,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -197,16 +190,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -231,23 +224,23 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -276,13 +269,13 @@ button{font-family:inherit}
 <section class="blog-hero">
  <div class="container">
  <div class="blog-hero-inner">
- <div class="blog-chip"><i class="fas fa-shield-alt"></i> Chronic Pain Care</div>
+ <div class="blog-chip"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shield-alt"></use></svg> Chronic Pain Care</div>
  <h1>Pain Management Physiotherapy:<br><em>Drug-Free, Evidence-Based Chronic Pain Relief</em></h1>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 07 Oct 2025</span>
  <span><i class="far fa-clock"></i> 13 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
  </div>
  </div>
  </div>
@@ -322,7 +315,7 @@ button{font-family:inherit}
 
  <div class="spectrum-grid reveal">
  <div class="spectrum-card acute">
- <h4><i class="fas fa-bolt"></i> &nbsp;Acute Pain (0–6 Weeks)</h4>
+ <h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg> &nbsp;Acute Pain (0–6 Weeks)</h4>
  <ul>
  <li>Clear tissue injury or inflammatory cause</li>
  <li>Pain proportional to tissue damage</li>
@@ -333,7 +326,7 @@ button{font-family:inherit}
  </ul>
  </div>
  <div class="spectrum-card chronic">
- <h4><i class="fas fa-hourglass-half"></i> &nbsp;Chronic Pain (12+ Weeks)</h4>
+ <h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hourglass-half"></use></svg> &nbsp;Chronic Pain (12+ Weeks)</h4>
  <ul>
  <li>Original tissue injury may have fully healed</li>
  <li>Pain maintained by central sensitisation and movement avoidance</li>
@@ -351,42 +344,42 @@ button{font-family:inherit}
 
  <div class="cause-grid">
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-spine"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg></div>
  <div class="cause-text">
  <h4>Chronic Lower Back Pain</h4>
  <p>The most prevalent chronic pain condition globally. In most cases, chronic LBP is maintained by a combination of muscular deconditioning, habitual movement compensations, central sensitisation, and progressive fear of movement — not ongoing structural damage. Treatment targets each of these drivers systematically: graded exercise, manual therapy, pain neuroscience education, and postural retraining. Full resolution is achievable in the majority of cases with appropriate physiotherapy.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-head-side-virus"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-head-side-virus"></use></svg></div>
  <div class="cause-text">
  <h4>Cervicogenic Headache &amp; Neck Pain</h4>
  <p>Cervicogenic headache — head pain originating from the upper cervical spine and its musculature — is among the most frequently misdiagnosed chronic pain conditions. The pain is typically unilateral, begins in the neck and radiates to the forehead or temple, and is reproduced by specific neck movements. Patients are often treated for migraine or tension headache without benefit because the true source — a dysfunctional C1–C3 segment — is never assessed. Manual therapy targeting the upper cervical spine produces excellent outcomes in properly diagnosed cervicogenic headache.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-fire"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-fire"></use></svg></div>
  <div class="cause-text">
  <h4>Fibromyalgia &amp; Widespread Chronic Pain</h4>
  <p>Fibromyalgia is a central sensitisation disorder characterised by widespread musculoskeletal pain, fatigue, sleep disruption, and heightened sensitivity to pressure and stimuli. While it has no structural cause, it is a real and measurable neurological condition — not psychological or imagined. The most effective physiotherapy treatment combines graded aerobic exercise (beginning at a level well below the patient's pain threshold and progressing very slowly), pain neuroscience education to change unhelpful pain beliefs, gentle manual therapy for local trigger points, and sleep and activity pacing strategies. Medication is largely ineffective for fibromyalgia; physiotherapy-led rehabilitation is the primary evidence-supported treatment.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-knee"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-knee"></use></svg></div>
  <div class="cause-text">
  <h4>Chronic Joint Pain — Knee, Hip, Shoulder</h4>
  <p>Osteoarthritis, chronic rotator cuff tendinopathy, hip bursitis, and patellofemoral pain syndrome all share a common feature in their chronic stages: the structural finding on imaging frequently does not correlate with the patient's level of pain or functional limitation. This is because chronic joint pain is amplified and maintained by muscular weakness, joint proprioceptive loss, and nervous system sensitisation — factors that physiotherapy addresses directly. Progressive resistance training and neuromuscular rehabilitation are now established as first-line treatment for chronic joint pain — more effective than either rest or isolated electrotherapy.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-bolt"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div>
  <div class="cause-text">
  <h4>Neuropathic &amp; Nerve-Related Pain</h4>
  <p>Neuropathic pain — burning, shooting, or electric-shock sensations arising from nerve injury or dysfunction — includes sciatica, peripheral neuropathy, post-surgical nerve sensitisation, and carpal or tarsal tunnel syndromes. The peripheral nerve and its surrounding tissues often develop mechanical sensitivity — loss of the normal capacity to glide freely through adjacent structures — which perpetuates the pain with every movement. Physiotherapy addresses this through neural mobilisation (nerve flossing) to restore nerve extensibility, desensitisation techniques to normalise nervous system sensitivity, and targeted strengthening of muscles that protect the nerve pathway from mechanical compression.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-running"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <div class="cause-text">
  <h4>Chronic Sports &amp; Overuse Injuries</h4>
  <p>Tendinopathy — degeneration of the tendon structure through cumulative overload — is the archetypal chronic sports injury and affects the Achilles, patellar, rotator cuff, and elbow tendons most commonly. Unlike acute tendon tears, tendinopathy does not respond to rest — it requires progressive tendon loading through heavy slow resistance training to stimulate collagen remodelling and restore tissue capacity. Similarly, chronic muscle strains, stress fractures, and iliotibial band syndrome require specific loading protocols rather than passive modality treatment alone. Athletes in the Chandigarh Tricity frequently arrive at PhysioNutra Clinic after months of inappropriate management — significant improvement is typically achievable within 8–12 weeks of correctly targeted tendon rehabilitation.</p>
@@ -414,32 +407,32 @@ button{font-family:inherit}
 
  <div class="treat-grid">
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-hand-paper"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-paper"></use></svg></div>
  <h4>Manual Therapy &amp; Joint Mobilisation</h4>
  <p>Skilled hands-on treatment — graded oscillatory joint mobilisation, high-velocity manipulation where indicated, and soft tissue release — provides both direct mechanical and neurophysiological pain reduction. Manual therapy reduces protective muscle spasm via gate-control inhibition of pain transmission, restores restricted joint range of motion, and delivers proprioceptive input that normalises nervous system excitability. In chronic pain, the neurophysiological effects of manual therapy — descending pain inhibitory pathways activated by skilled touch — are often as important as the direct mechanical joint effect. Manual therapy is used at PhysioNutra Clinic to reduce pain sufficiently to enable active exercise — not as a standalone passive treatment.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-syringe"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div>
  <h4>Dry Needling &amp; Trigger Point Release</h4>
  <p>Dry needling inserts fine sterile monofilament needles directly into myofascial trigger points — hyperirritable nodules within taut muscle bands that generate local and referred pain. The needle provokes a local twitch response: an involuntary fasciculation of the trigger point that resets its local biochemical environment, eliminates the sustained depolarisation maintaining the trigger point activity, and restores normal muscle length. For patients with chronic muscular pain, persistent cervicogenic headache, fibromyalgia tender points, and chronic gluteal or piriformis-related pain, dry needling frequently provides the fastest reduction in pain intensity of any available physiotherapy technique — enabling significantly better participation in subsequent therapeutic exercise.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-atom"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-atom"></use></svg></div>
  <h4>Class IV Laser &amp; Therapeutic Ultrasound</h4>
  <p>Class IV low-level laser therapy delivers photonic energy to deep tissues, stimulating mitochondrial function, accelerating ATP production, reducing local inflammatory mediators, and promoting cellular repair at a depth not achievable with surface electrotherapy. Therapeutic ultrasound generates thermal and non-thermal effects in deeper soft tissues — improving collagen extensibility, reducing intratendinous inflammation, and accelerating tendon healing in chronic tendinopathy. Both modalities are applied at PhysioNutra Clinic as adjuncts to active treatment — used to reduce the tissue-level pain burden sufficiently to allow progressive loading, rather than as primary standalone treatments.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-route"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-route"></use></svg></div>
  <h4>Neural Mobilisation &amp; Nerve Flossing</h4>
  <p>Peripheral nerves must slide freely through the fascial tunnels and adjacent muscles through which they pass — a property known as neural tissue mobility. In chronic pain conditions, intraneural adhesions and increased mechanosensitivity of the nerve can reduce this mobility and create pain with any movement that places the nerve under tension. Neural mobilisation techniques alternately tension and release the nerve along its full length — reducing intraneural pressure, dispersing inflammatory mediators trapped within the nerve sheath, and gradually restoring neural tissue extensibility. This is a core treatment component for all forms of neuropathic pain and nerve compression at PhysioNutra Clinic.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-sliders-h"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-sliders-h"></use></svg></div>
  <h4>McKenzie Method — Directional Exercise</h4>
  <p>The McKenzie Mechanical Diagnosis and Therapy system uses a systematic repeated movement assessment to identify each patient's directional preference — the specific direction of movement that consistently centralises and reduces their pain. When a directional preference is identified, the corresponding exercise (typically lumbar extension for disc-related pain, cervical retraction for neck pain) is prescribed at a high daily frequency — every 1–2 hours of waking — transforming the patient into an active participant in their own pain management. McKenzie exercises are clinically validated for spinal pain and remain among the most effective self-management strategies available, applicable at home throughout the recovery period.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-dumbbell"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dumbbell"></use></svg></div>
  <h4>Graded Exercise Rehabilitation</h4>
  <p>Exercise is the most powerful and evidence-supported intervention for chronic pain of all types. At PhysioNutra Clinic, exercise rehabilitation begins well within the patient's comfortable tolerance and is progressed systematically — not according to a fixed schedule, but according to the patient's response. Beginning with motor relearning of deep stabilisers (transversus abdominis, multifidus, rotator cuff) before integrating these into global functional patterns (bridge, deadlift, pressing, pulling), the programme builds tissue capacity, normalises movement confidence, and drives the neurological changes that reduce central sensitisation. Progressive resistance exercise is also the primary treatment for osteoarthritis and tendinopathy — conditions for which it is now more effective than any passive modality.</p>
  </div>
@@ -447,7 +440,7 @@ button{font-family:inherit}
 
  <!-- HOME VISIT BANNER -->
  <div class="hv-banner reveal">
- <div class="hv-icon"><i class="fas fa-home"></i></div>
+ <div class="hv-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div>
  <div class="hv-text">
  <h3>Home Visit Pain Management Physiotherapy — Chandigarh Tricity</h3>
  <p>Severe chronic pain often makes clinic travel difficult and distressing. PhysioNutra Clinic provides professional home visit physiotherapy for pain management across <strong>Zirakpur, Mohali, Panchkula, Chandigarh, Kharar, Baltana, and Dhakoli</strong>. Home visits also allow Dr. Tarun Garg to directly assess and correct the patient's home environment — workstation ergonomics, sleeping position, lifting habits — that are frequently key drivers of persistent pain. <a href="tel:+919417791833">Call +91 94177 91833</a> or WhatsApp to book a home visit.</p>
@@ -594,8 +587,8 @@ button{font-family:inherit}
  <h2>Get Expert Chronic Pain Management — In Clinic or At Home</h2>
  <p>Specialist pain management physiotherapy at PhysioNutra Clinic, Zirakpur. Drug-free, evidence-based treatment for chronic back pain, sciatica, fibromyalgia, cervicogenic headache, joint pain &amp; neuropathic pain. Home visits available across Chandigarh, Mohali &amp; Panchkula.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-g"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20pain%20management%20physiotherapy." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-g"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20pain%20management%20physiotherapy." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -612,12 +605,12 @@ button{font-family:inherit}
  <!-- Related -->
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid">
- <a href="/blogs/lower-back-pain-management/" class="related-card"><div class="ri"><i class="fas fa-spine"></i></div><h4>Lower Back Pain Management</h4><p>Expert physiotherapy for LBP, sciatica, disc herniation &amp; SI joint dysfunction.</p></a>
- <a href="/blogs/cervical-pain-management/" class="related-card"><div class="ri"><i class="fas fa-head-side-virus"></i></div><h4>Cervical Pain Management</h4><p>Neck pain, cervicogenic headache &amp; cervical spondylosis rehabilitation.</p></a>
- <a href="/services/dry-needling/" class="related-card"><div class="ri"><i class="fas fa-syringe"></i></div><h4>Dry Needling Therapy</h4><p>Advanced trigger point release for muscular and myofascial chronic pain.</p></a>
- <a href="/services/manual-therapy/" class="related-card"><div class="ri"><i class="fas fa-hands"></i></div><h4>Manual Therapy</h4><p>Hands-on joint mobilisation and soft tissue techniques for persistent pain.</p></a>
- <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><i class="fas fa-home"></i></div><h4>Home Physiotherapy</h4><p>Professional chronic pain treatment delivered to your home across Tricity.</p></a>
- <a href="/blogs/spondylitis-treatment/" class="related-card"><div class="ri"><i class="fas fa-procedures"></i></div><h4>Spondylitis Treatment</h4><p>Ankylosing spondylitis and inflammatory spine condition management.</p></a>
+ <a href="/blogs/lower-back-pain-management/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg></div><h4>Lower Back Pain Management</h4><p>Expert physiotherapy for LBP, sciatica, disc herniation &amp; SI joint dysfunction.</p></a>
+ <a href="/blogs/cervical-pain-management/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-head-side-virus"></use></svg></div><h4>Cervical Pain Management</h4><p>Neck pain, cervicogenic headache &amp; cervical spondylosis rehabilitation.</p></a>
+ <a href="/services/dry-needling/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div><h4>Dry Needling Therapy</h4><p>Advanced trigger point release for muscular and myofascial chronic pain.</p></a>
+ <a href="/services/manual-therapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h4>Manual Therapy</h4><p>Hands-on joint mobilisation and soft tissue techniques for persistent pain.</p></a>
+ <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h4>Home Physiotherapy</h4><p>Professional chronic pain treatment delivered to your home across Tricity.</p></a>
+ <a href="/blogs/spondylitis-treatment/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-procedures"></use></svg></div><h4>Spondylitis Treatment</h4><p>Ankylosing spondylitis and inflammatory spine condition management.</p></a>
  </div>
 
  <!-- Disclaimer -->
@@ -640,11 +633,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Specialist chronic pain management physiotherapy across Chandigarh Tricity. Evidence-based, diagnosis-first care for back pain, fibromyalgia, neuropathic pain, joint pain &amp; cervicogenic headache. Home visits available.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -673,10 +666,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -687,10 +680,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20pain%20management%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20pain%20management%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

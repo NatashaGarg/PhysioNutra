@@ -167,10 +167,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Fonts & Icons ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- FIX 17: Self-hosted fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -263,6 +263,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 
@@ -274,17 +278,17 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="header-top-content">
  <div class="header-contact">
- <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
  </div>
  <div style="display:flex;align-items:center;gap:1.1rem">
  <div class="header-social" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -303,31 +307,31 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  </div>
  <nav role="navigation" aria-label="Main navigation">
- <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
  <ul id="mainMenu">
  <li><a href="/">Home</a></li>
  <li><a href="/about/">About Us</a></li>
  <li class="has-dropdown">
  <a href="/services/">Services</a>
  <ul class="dropdown-menu" aria-label="Services submenu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dropdown">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dropdown-menu" aria-label="Locations submenu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
  </ul>
  </li>
  <li><a href="/blogs/">Blog</a></li>
@@ -357,14 +361,14 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <section class="hero" aria-labelledby="hero-h1">
  <div class="container">
  <div class="hero-inner">
- <div class="hero-badge"><i class="fas fa-clipboard-check" aria-hidden="true"></i> Free Self-Assessment Tool</div>
+ <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clipboard-check"></use></svg> Free Self-Assessment Tool</div>
  <h1 id="hero-h1"><em>Sciatica</em> Self-Assessment Quiz</h1>
  <p class="hero-subtitle">Answer 7 clinical questions and get an instant personalised assessment — including severity rating, possible conditions, and recommended next steps.</p>
  <div class="hero-badges">
- <span class="hero-badge-item"><i class="fas fa-bolt" aria-hidden="true"></i> Takes 2 Minutes</span>
- <span class="hero-badge-item"><i class="fas fa-user-md" aria-hidden="true"></i> By Dr. Tarun Garg</span>
- <span class="hero-badge-item"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Flags Emergency Signs</span>
- <span class="hero-badge-item"><i class="fas fa-lock" aria-hidden="true"></i> 100% Private</span>
+ <span class="hero-badge-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bolt"></use></svg> Takes 2 Minutes</span>
+ <span class="hero-badge-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-md"></use></svg> By Dr. Tarun Garg</span>
+ <span class="hero-badge-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-exclamation-triangle"></use></svg> Flags Emergency Signs</span>
+ <span class="hero-badge-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-lock"></use></svg> 100% Private</span>
  </div>
  </div>
  </div>
@@ -374,11 +378,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <div class="trust-strip" aria-label="Trust indicators">
  <div class="container">
  <div class="trust-inner">
- <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
- <div class="trust-item"><i class="fas fa-home" aria-hidden="true"></i> Home Visits Available</div>
- <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i> Same-Day Appointments</div>
- <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
- <div class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> Evidence-Based Protocols</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> Certified Physiotherapists</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg> Home Visits Available</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg> Same-Day Appointments</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 4.9&#9733; Google Rating</div>
+ <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg> Evidence-Based Protocols</div>
  </div>
  </div>
 </div>
@@ -441,8 +445,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h2 id="cta-h2">Ready to Relieve Your Sciatica?</h2>
  <p>Don't let sciatic nerve pain limit your life. Book a consultation with Dr. Tarun Garg and get a personalised, evidence-based treatment plan.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-call-w"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20completed%20the%20sciatica%20assessment%20and%20would%20like%20to%20book%20an%20appointment." class="btn-wa-w" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-call-w"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20completed%20the%20sciatica%20assessment%20and%20would%20like%20to%20book%20an%20appointment." class="btn-wa-w" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -461,11 +465,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Zirakpur&rsquo;s premier physiotherapy centre — evidence-based protocols, personalised care, proven results across Chandigarh Tricity.</p>
  <div class="footer-social" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -518,10 +522,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20completed%20the%20sciatica%20assessment%20and%20would%20like%20to%20book%20an%20appointment." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20completed%20the%20sciatica%20assessment%20and%20would%20like%20to%20book%20an%20appointment." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ════════════════════════════════════
@@ -677,13 +681,13 @@ function renderQuestion(){
  }).join('')}
  </fieldset>
  <div class="btn-group">
- ${currentStep>0?`<button class="btn-back" onclick="previousQuestion()" aria-label="Previous question"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</button>`:''}
+ ${currentStep>0?`<button class="btn-back" onclick="previousQuestion()" aria-label="Previous question"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-left"></use></svg> Back</button>`:''}
  <button class="btn-next" ${!answered?'disabled':''} onclick="nextQuestion()" aria-label="${currentStep===questions.length-1?'See your results':'Next question'}">
- ${currentStep===questions.length-1?'<i class="fas fa-chart-bar" aria-hidden="true"></i> See My Results':'Next <i class="fas fa-arrow-right" aria-hidden="true"></i>'}
+ ${currentStep===questions.length-1?'<svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-chart-bar"></use></svg> See My Results':'Next <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg>'}
  </button>
  </div>
  <div class="tip-box">
- <i class="fas fa-lightbulb" aria-hidden="true"></i>
+ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-lightbulb"></use></svg>
  <p><strong>Did you know?</strong> ${q.tip}</p>
  </div>
  </div>`;
@@ -706,7 +710,7 @@ function renderResults(){
 
  ${emergency?`
  <div class="alert-emergency" role="alert">
- <h4><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Emergency Symptoms Detected</h4>
+ <h4><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-exclamation-triangle"></use></svg> Emergency Symptoms Detected</h4>
  <p>Your symptoms include signs that require <strong>immediate emergency medical attention</strong>. Bladder/bowel changes or foot drop alongside sciatica may indicate cauda equina syndrome. Go to the nearest emergency room now. Do not wait for a physiotherapy appointment.</p>
  </div>`:''}
 
@@ -716,17 +720,17 @@ function renderResults(){
  </div>
 
  <div class="result-block">
- <h3><i class="fas fa-search" aria-hidden="true"></i> What This Means</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-search"></use></svg> What This Means</h3>
  <p>${r.description}</p>
  </div>
 
  <div class="result-block">
- <h3><i class="fas fa-clipboard-list" aria-hidden="true"></i> Our Recommendation</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clipboard-list"></use></svg> Our Recommendation</h3>
  <p style="font-weight:600;color:var(--dark)">${r.recommendation}</p>
  </div>
 
  <div class="result-block">
- <h3><i class="fas fa-hand-holding-medical" aria-hidden="true"></i> How We Treat Sciatica at PhysioNutra</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-hand-holding-medical"></use></svg> How We Treat Sciatica at PhysioNutra</h3>
  <div class="treatment-list">
  <div class="treatment-item">Sciatic nerve mobilisation</div>
  <div class="treatment-item">McKenzie method</div>
@@ -746,12 +750,12 @@ function renderResults(){
  </div>
 
  <div class="cta-buttons">
- <a href="tel:+919417791833" class="cta-btn cta-phone"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hi%2C%20I%20completed%20the%20sciatica%20assessment.%20My%20score%20was%20${score}.%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="cta-btn cta-whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="cta-btn cta-phone"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hi%2C%20I%20completed%20the%20sciatica%20assessment.%20My%20score%20was%20${score}.%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="cta-btn cta-whatsapp"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
 
  <div class="result-block" style="margin-top:14px">
- <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Visit Us</h3>
+ <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg> Visit Us</h3>
  <p>
  <strong>Main Clinic:</strong> SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603<br>
  <strong>Branch:</strong> Sector 20, Panchkula, Haryana<br>
@@ -765,7 +769,7 @@ function renderResults(){
  <p>This assessment is for educational and informational purposes only. It is not a substitute for professional medical diagnosis or advice. Always consult a qualified physiotherapist or doctor for an accurate evaluation of your condition. If you are experiencing bladder/bowel changes, foot drop, or bilateral leg symptoms, seek emergency medical care immediately.</p>
  </div>
 
- <button class="restart-btn" onclick="restartQuiz()"><i class="fas fa-redo" aria-hidden="true"></i> Retake Assessment</button>
+ <button class="restart-btn" onclick="restartQuiz()"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-redo"></use></svg> Retake Assessment</button>
  </div>`;
 }
 

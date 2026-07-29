@@ -86,18 +86,7 @@ window.dataLayer=window.dataLayer||[];
 ]}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 /* ══ RESET & BASE ══ */
@@ -179,6 +168,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -190,16 +183,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -224,23 +217,23 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -269,13 +262,13 @@ button{font-family:inherit}
 <section class="blog-hero">
  <div class="container">
  <div class="blog-hero-inner">
- <div class="blog-chip"><i class="fas fa-brain"></i> Neurological Rehabilitation &amp; Stroke Recovery</div>
+ <div class="blog-chip"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg> Neurological Rehabilitation &amp; Stroke Recovery</div>
  <h1>Stroke Rehabilitation:<br><em>Neuroplasticity, Functional Recovery &amp; Return to Independence</em></h1>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 15 Nov 2025</span>
  <span><i class="far fa-clock"></i> 14 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
  </div>
  </div>
  </div>
@@ -299,7 +292,7 @@ button{font-family:inherit}
 
  <!-- Emergency recognition -->
  <div class="emergency-box" role="alert">
- <div class="emergency-title"><i class="fas fa-exclamation-triangle"></i> Recognise Stroke — Act Immediately Using the FAST Signs</div>
+ <div class="emergency-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-exclamation-triangle"></use></svg> Recognise Stroke — Act Immediately Using the FAST Signs</div>
  <ul>
  <li><strong>Face:</strong> Sudden drooping on one side when attempting to smile</li>
  <li><strong>Arms:</strong> One arm drifts down when both are raised simultaneously</li>
@@ -420,32 +413,32 @@ button{font-family:inherit}
 
  <div class="treat-grid">
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-walking"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-walking"></use></svg></div>
  <h4>Gait Retraining &amp; Treadmill Training</h4>
  <p>Gait retraining systematically corrects the asymmetries, compensatory patterns, and safety limitations that characterise post-stroke walking. Treadmill training with partial body weight support allows early gait practice before sufficient lower limb strength and balance have developed for safe overground walking, exploiting the repetitive, rhythmic nature of treadmill walking to drive spinal and cortical motor programmes. Overground progression adds real-world challenges: uneven surfaces, obstacles, turns, and dual-task demands.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-hand-paper"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-paper"></use></svg></div>
  <h4>Constraint-Induced Movement Therapy (CIMT)</h4>
  <p>CIMT addresses learned non-use of the paretic upper limb — the maladaptive suppression of the affected arm that becomes habitual when the intact limb is used for all tasks. By restraining the unaffected limb during several hours of intensive structured upper limb training daily, CIMT forces engagement of the paretic arm, reversing cortical suppression and driving functional recovery. Evidence supports meaningful improvements in arm function in patients with at least minimal residual wrist and finger extension.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-bolt"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div>
  <h4>Functional Electrical Stimulation (FES)</h4>
  <p>FES delivers precisely timed electrical impulses to paretic muscles to produce functionally useful contractions during task performance — most commonly activating the dorsiflexors during the swing phase of gait to address foot drop, or stimulating the wrist and finger extensors during reaching tasks. When combined with voluntary effort, FES produces greater cortical reorganisation than passive electrical stimulation or voluntary effort alone, exploiting the Hebbian plasticity mechanism: neurons that fire together wire together.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-eye"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-eye"></use></svg></div>
  <h4>Mirror Therapy</h4>
  <p>Mirror therapy positions a mirror sagittally so that the patient views the reflection of their unaffected limb moving — creating the visual illusion that the paretic limb is performing the same movement. This visual feedback activates the motor cortex of the affected hemisphere, supporting motor relearning in patients with significant upper limb paresis where active movement is minimal. Mirror therapy is most effective when combined with task-specific active practice and is particularly valuable for hand rehabilitation and neglect management.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-balance-scale"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-balance-scale"></use></svg></div>
  <h4>Postural Control &amp; Balance Rehabilitation</h4>
  <p>Post-stroke balance rehabilitation progresses systematically from supported sitting through unsupported sitting, standing with support, supported standing on challenging surfaces, unsupported standing, and finally dynamic balance challenges including reactive responses to perturbation. Balance training specifically targets the automatic postural adjustments that protect against falls during reaching, walking on uneven terrain, and dual-task activities — the real-world balance demands that a clinic chair-based programme alone cannot prepare the patient for.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-hands"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div>
  <h4>Spasticity Management &amp; Stretching</h4>
  <p>Untreated spasticity leads to progressive contracture, pain, and loss of functional range of motion. Physiotherapy addresses spasticity through inhibitory positioning, sustained end-range stretching with adequate hold times, splinting where contracture risk is high, and facilitated active movement to maintain active muscle control in antagonist groups. Where physiotherapy alone is insufficient, referral for botulinum toxin injections to specific spastic muscle groups allows subsequent physiotherapy to achieve the functional gains that were previously blocked by excessive tone.</p>
  </div>
@@ -532,8 +525,8 @@ button{font-family:inherit}
  <h2>Begin Your Stroke Recovery — The Earlier, The Better</h2>
  <p>Specialist neurological physiotherapy at PhysioNutra Clinic, Zirakpur. Gait retraining, constraint-induced movement therapy, functional electrical stimulation, spasticity management &amp; home physiotherapy. Serving Chandigarh, Mohali &amp; Panchkula.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-g"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20stroke%20rehabilitation." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-g"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20stroke%20rehabilitation." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -550,12 +543,12 @@ button{font-family:inherit}
  <!-- Related -->
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid">
- <a href="/services/neurological-rehabilitation/" class="related-card"><div class="ri"><i class="fas fa-brain"></i></div><h4>Neurological Rehabilitation</h4><p>Full-spectrum neuro rehab for stroke, Parkinson's, spinal cord injury &amp; other neurological conditions.</p></a>
- <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><i class="fas fa-home"></i></div><h4>Home Physiotherapy</h4><p>Specialist stroke rehabilitation delivered in your home across Chandigarh Tricity.</p></a>
- <a href="/blogs/sports-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-running"></i></div><h4>Sports Physiotherapy</h4><p>Evidence-based sports injury rehabilitation &amp; criteria-based return-to-sport programming.</p></a>
- <a href="/blogs/slip-disc-treatment/" class="related-card"><div class="ri"><i class="fas fa-spine"></i></div><h4>Slip Disc Treatment</h4><p>McKenzie Method &amp; core rehabilitation for lumbar disc herniation.</p></a>
- <a href="/services/manual-therapy/" class="related-card"><div class="ri"><i class="fas fa-hands"></i></div><h4>Manual Therapy</h4><p>Hands-on physiotherapy for joint mobility, pain, and neuromuscular function.</p></a>
- <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-heartbeat"></i></div><h4>Pain Management</h4><p>Physiotherapy-led chronic and acute pain management programmes.</p></a>
+ <a href="/services/neurological-rehabilitation/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg></div><h4>Neurological Rehabilitation</h4><p>Full-spectrum neuro rehab for stroke, Parkinson's, spinal cord injury &amp; other neurological conditions.</p></a>
+ <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h4>Home Physiotherapy</h4><p>Specialist stroke rehabilitation delivered in your home across Chandigarh Tricity.</p></a>
+ <a href="/blogs/sports-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><h4>Sports Physiotherapy</h4><p>Evidence-based sports injury rehabilitation &amp; criteria-based return-to-sport programming.</p></a>
+ <a href="/blogs/slip-disc-treatment/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg></div><h4>Slip Disc Treatment</h4><p>McKenzie Method &amp; core rehabilitation for lumbar disc herniation.</p></a>
+ <a href="/services/manual-therapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h4>Manual Therapy</h4><p>Hands-on physiotherapy for joint mobility, pain, and neuromuscular function.</p></a>
+ <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div><h4>Pain Management</h4><p>Physiotherapy-led chronic and acute pain management programmes.</p></a>
  </div>
 
  <!-- Disclaimer -->
@@ -578,11 +571,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert stroke rehabilitation and neurological physiotherapy across Chandigarh Tricity. Neuroplasticity-based recovery programmes, gait retraining, constraint-induced movement therapy, and home physiotherapy for stroke survivors at every stage of recovery.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -611,10 +604,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -625,10 +618,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20stroke%20rehabilitation." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20stroke%20rehabilitation." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

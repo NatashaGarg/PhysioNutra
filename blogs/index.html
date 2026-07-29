@@ -62,18 +62,7 @@ window.dataLayer=window.dataLayer||[];
  {"@type":"Blog","@id":"https://physionutraclinic.com/blogs/#blog","url":"https://physionutraclinic.com/blogs/","name":"PhysioNutra Clinic Blog","description":"Expert physiotherapy advice, treatment guides, and wellness articles from Dr. Tarun Garg and the PhysioNutra Clinic team.","publisher":{"@id":"https://physionutraclinic.com/#clinic"},"author":{"@id":"https://physionutraclinic.com/#dr-tarun"}}
 ]}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%}
@@ -128,6 +117,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar"></div>
@@ -138,16 +131,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -172,29 +165,29 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/cupping-therapy/"><i class="fas fa-spa"></i>Cupping Therapy</a></li>
- <li><a href="/services/electrotherapy/"><i class="fas fa-bolt"></i>Electrotherapy</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/geriatric-physiotherapy/"><i class="fas fa-user-friends"></i>Geriatric Physio</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/cupping-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spa"></use></svg>Cupping Therapy</a></li>
+ <li><a href="/services/electrotherapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg>Electrotherapy</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/geriatric-physiotherapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-friends"></use></svg>Geriatric Physio</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
- <li><a href="/physiotherapy/dera-bassi/"><i class="fas fa-map-marker-alt"></i>Dera Bassi</a></li>
- <li><a href="/physiotherapy/home-physiotherapy-sessions/"><i class="fas fa-home"></i>Home Sessions</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
+ <li><a href="/physiotherapy/dera-bassi/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Dera Bassi</a></li>
+ <li><a href="/physiotherapy/home-physiotherapy-sessions/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Sessions</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -246,7 +239,7 @@ button{font-family:inherit}
  </div>
  <div class="search-wrap" role="search">
  <input type="text" id="blogSearch" class="search-input" placeholder="Search articles…" aria-label="Search blog articles">
- <button class="search-btn" id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+ <button class="search-btn" id="searchBtn" aria-label="Search"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-search"></use></svg></button>
  </div>
  </div>
  </div>
@@ -264,7 +257,7 @@ button{font-family:inherit}
  <span class="featured-label">Featured Article</span>
  <h3><a href="/blogs/physiotherapy-vs-painkillers/">Physiotherapy vs Painkillers: Which Actually Heals Chronic Pain?</a></h3>
  <p>A science-backed comparison of physiotherapy and painkillers for chronic pain. Why physiotherapy produces lasting healing while painkillers only mask symptoms — with side-by-side evidence table.</p>
- <a href="/blogs/physiotherapy-vs-painkillers/" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/physiotherapy-vs-painkillers/" class="read-more">Read Full Guide <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </div>
 
@@ -279,7 +272,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Nov 2024</span><span><i class="far fa-clock"></i>10 min</span></div>
  <h3><a href="/blogs/sciatica-pain-relief/">Sciatica Pain Relief: Causes, Treatment &amp; Recovery</a></h3>
  <p class="blog-card-excerpt">Comprehensive guide to sciatica treatment including nerve root symptoms, physiotherapy solutions, exercises, and cost in Chandigarh Tricity.</p>
- <a href="/blogs/sciatica-pain-relief/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/sciatica-pain-relief/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -289,7 +282,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Nov 2024</span><span><i class="far fa-clock"></i>9 min</span></div>
  <h3><a href="/blogs/slip-disc-treatment/">Slip Disc Treatment: Non-Surgical Solutions &amp; Recovery</a></h3>
  <p class="blog-card-excerpt">Complete guide to herniated disc treatment with physiotherapy, targeted exercises, and pain management strategies without surgery.</p>
- <a href="/blogs/slip-disc-treatment/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/slip-disc-treatment/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -299,7 +292,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Jan 2025</span><span><i class="far fa-clock"></i>14 min</span></div>
  <h3><a href="/blogs/spondylitis-treatment/">Spondylitis Treatment: Complete Guide to Ankylosing Spondylitis &amp; Relief</a></h3>
  <p class="blog-card-excerpt">Expert guide to ankylosing spondylitis, cervical and lumbar spondylitis — exercises, physiotherapy, and long-term management. 70–80% achieve lasting relief.</p>
- <a href="/blogs/spondylitis-treatment/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/spondylitis-treatment/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -309,7 +302,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Oct 2024</span><span><i class="far fa-clock"></i>7 min</span></div>
  <h3><a href="/blogs/chronic-back-pain-management/">How to Manage Chronic Back Pain Effectively</a></h3>
  <p class="blog-card-excerpt">Evidence-based strategies for chronic back pain relief including targeted exercises, posture correction, and comprehensive physiotherapy protocols.</p>
- <a href="/blogs/chronic-back-pain-management/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/chronic-back-pain-management/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -319,7 +312,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Oct 2024</span><span><i class="far fa-clock"></i>8 min</span></div>
  <h3><a href="/blogs/lower-back-pain-management/">Lower Back Pain Management: Lumbar-Specific Guide</a></h3>
  <p class="blog-card-excerpt">Targeted strategies for lumbar pain — causes, specific exercises, postural corrections, and physiotherapy approaches for lasting relief.</p>
- <a href="/blogs/lower-back-pain-management/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/lower-back-pain-management/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -329,7 +322,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Sep 2025</span><span><i class="far fa-clock"></i>6 min</span></div>
  <h3><a href="/blogs/backpain/">Back Pain &amp; Physiotherapy: Why Self-Care Beats Surgery</a></h3>
  <p class="blog-card-excerpt">Why physiotherapy and self-care are the most effective solutions for back pain — exercises, posture tips, and when to see a physiotherapist.</p>
- <a href="/blogs/backpain/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/backpain/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -339,7 +332,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>2025</span><span><i class="far fa-clock"></i>8 min</span></div>
  <h3><a href="/blogs/cervical-pain-management/">Cervical Pain Management: Neck Pain Relief Guide</a></h3>
  <p class="blog-card-excerpt">Expert guide to cervical spondylitis and neck pain — causes, posture correction, physiotherapy exercises, and tech-neck prevention.</p>
- <a href="/blogs/cervical-pain-management/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/cervical-pain-management/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -349,7 +342,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Jan 2025</span><span><i class="far fa-clock"></i>5 min</span></div>
  <h3><a href="/blogs/plantar-fasciitis-treatment/">Plantar Fasciitis Treatment: Heel Pain Relief Guide</a></h3>
  <p class="blog-card-excerpt">Effective treatment for heel pain — stretches, exercises, orthotics, dry needling, and physiotherapy techniques for lasting plantar fasciitis relief.</p>
- <a href="/blogs/plantar-fasciitis-treatment/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/plantar-fasciitis-treatment/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -359,7 +352,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Jan 2025</span><span><i class="far fa-clock"></i>9 min</span></div>
  <h3><a href="/blogs/pain-management-physiotherapy/">Pain Management with Physiotherapy: Drug-Free Guide</a></h3>
  <p class="blog-card-excerpt">Comprehensive physiotherapy pain management — evidence-based techniques for chronic, acute, and post-surgical pain without medication dependence.</p>
- <a href="/blogs/pain-management-physiotherapy/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/pain-management-physiotherapy/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -369,7 +362,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Nov 2024</span><span><i class="far fa-clock"></i>7 min</span></div>
  <h3><a href="/blogs/acl-tear-rehabilitation/">ACL Tear Rehabilitation: Complete Recovery Guide</a></h3>
  <p class="blog-card-excerpt">Expert guide to ACL injury recovery — post-surgery physiotherapy phases, exercises, return-to-sport criteria, and timeline.</p>
- <a href="/blogs/acl-tear-rehabilitation/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/acl-tear-rehabilitation/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -379,7 +372,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Jan 2025</span><span><i class="far fa-clock"></i>6 min</span></div>
  <h3><a href="/blogs/sports-physiotherapy/">Sports Physiotherapy: Faster Recovery for Athletes</a></h3>
  <p class="blog-card-excerpt">Sports-specific rehabilitation techniques, injury prevention strategies, and performance optimisation for athletes of all levels.</p>
- <a href="/blogs/sports-physiotherapy/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/sports-physiotherapy/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -389,7 +382,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>2025</span><span><i class="far fa-clock"></i>6 min</span></div>
  <h3><a href="/blogs/ankle-sprain-treatment/">Ankle Sprain Treatment: Recovery &amp; Prevention Guide</a></h3>
  <p class="blog-card-excerpt">Complete guide to ankle sprain rehabilitation — RICE protocol, physiotherapy exercises, taping techniques, and return-to-sport programme.</p>
- <a href="/blogs/ankle-sprain-treatment/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/ankle-sprain-treatment/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -399,7 +392,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Oct 2024</span><span><i class="far fa-clock"></i>5 min</span></div>
  <h3><a href="/blogs/shin-splints-management/">Shin Splints Management: Runner's Complete Guide</a></h3>
  <p class="blog-card-excerpt">Effective shin splints treatment and prevention — causes, physiotherapy exercises, training load management, and return-to-running strategies.</p>
- <a href="/blogs/shin-splints-management/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/shin-splints-management/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -409,7 +402,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Nov 2024</span><span><i class="far fa-clock"></i>8 min</span></div>
  <h3><a href="/blogs/frozen-shoulder-treatment-chandigarh/">Frozen Shoulder Treatment in Chandigarh</a></h3>
  <p class="blog-card-excerpt">Expert treatment for adhesive capsulitis — stages, physiotherapy techniques, exercises, and complete recovery timeline. Serving Zirakpur and Tricity.</p>
- <a href="/blogs/frozen-shoulder-treatment-chandigarh/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/frozen-shoulder-treatment-chandigarh/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -419,7 +412,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Oct 2024</span><span><i class="far fa-clock"></i>6 min</span></div>
  <h3><a href="/blogs/knee-osteoarthritis-blog/">Understanding Knee Osteoarthritis: Treatment Guide</a></h3>
  <p class="blog-card-excerpt">Comprehensive guide to knee OA — symptoms, grading, physiotherapy treatments, exercises, and non-surgical pain relief strategies.</p>
- <a href="/blogs/knee-osteoarthritis-blog/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/knee-osteoarthritis-blog/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -429,7 +422,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Nov 2024</span><span><i class="far fa-clock"></i>6 min</span></div>
  <h3><a href="/blogs/arthritis-management/">Arthritis Management: Living Well with Joint Pain</a></h3>
  <p class="blog-card-excerpt">Effective strategies for managing arthritis pain through physiotherapy, joint-protection exercises, and lifestyle modifications.</p>
- <a href="/blogs/arthritis-management/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/arthritis-management/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -439,7 +432,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Nov 2024</span><span><i class="far fa-clock"></i>7 min</span></div>
  <h3><a href="/blogs/ulnar-nerve-impingement-treatment/">Ulnar Nerve Impingement Treatment Guide</a></h3>
  <p class="blog-card-excerpt">Comprehensive guide to cubital tunnel syndrome and ulnar nerve compression — symptoms, physiotherapy, exercises, and nerve gliding techniques.</p>
- <a href="/blogs/ulnar-nerve-impingement-treatment/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/ulnar-nerve-impingement-treatment/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -449,7 +442,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Oct 2024</span><span><i class="far fa-clock"></i>6 min</span></div>
  <h3><a href="/blogs/tech-neck-physiotherapy-treatment/">Tech Neck: Physiotherapy Treatment &amp; Prevention</a></h3>
  <p class="blog-card-excerpt">Expert guide to tech neck (forward head posture) — exercises, postural correction, ergonomic advice, and physiotherapy for screen-related neck pain.</p>
- <a href="/blogs/tech-neck-physiotherapy-treatment/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/tech-neck-physiotherapy-treatment/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -459,7 +452,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Jan 2025</span><span><i class="far fa-clock"></i>8 min</span></div>
  <h3><a href="/blogs/stroke-rehabilitation/">Stroke Rehabilitation: Recovery Through Physiotherapy</a></h3>
  <p class="blog-card-excerpt">Comprehensive stroke recovery programme — mobility training, neuroplasticity exercises, strength building, and functional restoration strategies.</p>
- <a href="/blogs/stroke-rehabilitation/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/stroke-rehabilitation/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -469,7 +462,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Jan 2025</span><span><i class="far fa-clock"></i>6 min</span></div>
  <h3><a href="/blogs/post-surgical-physiotherapy/">Post-Surgical Physiotherapy: Essential Recovery Guide</a></h3>
  <p class="blog-card-excerpt">Complete guide to post-surgery rehabilitation for faster recovery and optimal outcomes after orthopaedic and other procedures.</p>
- <a href="/blogs/post-surgical-physiotherapy/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/post-surgical-physiotherapy/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -479,7 +472,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Jan 2025</span><span><i class="far fa-clock"></i>5 min</span></div>
  <h3><a href="/blogs/vertigo-treatment/">Vertigo Treatment: Vestibular Rehabilitation Guide</a></h3>
  <p class="blog-card-excerpt">Expert treatment for vertigo and dizziness — Epley manoeuvre, vestibular rehabilitation exercises, and balance training.</p>
- <a href="/blogs/vertigo-treatment/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/vertigo-treatment/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -489,7 +482,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Nov 2024</span><span><i class="far fa-clock"></i>5 min</span></div>
  <h3><a href="/blogs/when-to-see-a-physiotherapist/">When to See a Physiotherapist: 10 Clear Signs</a></h3>
  <p class="blog-card-excerpt">Not sure if you need physiotherapy? This guide covers 10 clear signs you should book an appointment — don't wait for pain to become chronic.</p>
- <a href="/blogs/when-to-see-a-physiotherapist/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/when-to-see-a-physiotherapist/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -499,7 +492,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>2025</span><span><i class="far fa-clock"></i>5 min</span></div>
  <h3><a href="/blogs/best-physiotherapy-clinic-in-tricity/">Best Physiotherapy Clinic in Tricity: What to Look For</a></h3>
  <p class="blog-card-excerpt">How to choose the right physiotherapy clinic in Chandigarh, Mohali, or Panchkula — qualifications, equipment, specialisation, and patient experience.</p>
- <a href="/blogs/best-physiotherapy-clinic-in-tricity/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/best-physiotherapy-clinic-in-tricity/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -509,7 +502,7 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>2025</span><span><i class="far fa-clock"></i>6 min</span></div>
  <h3><a href="/blogs/advanced-clinical-technology-vs-home-physiotherapy/">Clinical Technology vs Home Physiotherapy: Which Is Better?</a></h3>
  <p class="blog-card-excerpt">Comparing in-clinic advanced equipment (laser, ultrasound, TENS) with home physiotherapy — when each is appropriate and how to choose.</p>
- <a href="/blogs/advanced-clinical-technology-vs-home-physiotherapy/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/advanced-clinical-technology-vs-home-physiotherapy/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
@@ -519,14 +512,14 @@ button{font-family:inherit}
  <div class="blog-card-meta"><span><i class="far fa-calendar"></i>Oct 2025</span><span><i class="far fa-clock"></i>10 min</span></div>
  <h3><a href="/blogs/physiotherapy-vs-painkillers/">Physiotherapy vs Painkillers: Which Actually Heals?</a></h3>
  <p class="blog-card-excerpt">Science-backed comparison of physiotherapy and painkillers — mechanisms, evidence, side effects, and why physiotherapy produces lasting results.</p>
- <a href="/blogs/physiotherapy-vs-painkillers/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+ <a href="/blogs/physiotherapy-vs-painkillers/" class="read-more">Read More <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </div>
  </article>
 
  </div>
 
  <div class="no-results" id="noResults">
- <i class="fas fa-search"></i>
+ <svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-search"></use></svg>
  <p>No articles found for your search. Try a different keyword or browse all articles.</p>
  </div>
 
@@ -557,7 +550,7 @@ button{font-family:inherit}
  <div class="sw sw-cta reveal">
  <h3>Need Expert Care?</h3>
  <p>Book a first consultation with Dr. Tarun Garg. Same-day appointments available. Home visits across Chandigarh Tricity.</p>
- <a href="tel:+919417791833" class="sw-cta-btn"><i class="fas fa-phone-alt"></i> Book Appointment</a>
+ <a href="tel:+919417791833" class="sw-cta-btn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> Book Appointment</a>
  </div>
 
  <div class="sw reveal">
@@ -601,33 +594,33 @@ button{font-family:inherit}
  <div class="sw reveal">
  <h3>Our Services</h3>
  <ul class="svc-list">
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/taping-techniques/"><i class="fas fa-band-aid"></i>Taping Techniques</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/taping-techniques/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-band-aid"></use></svg>Taping Techniques</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
  </ul>
  </div>
 
  <div class="sw reveal">
  <h3>Service Locations</h3>
  <ul class="svc-list">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
- <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+ <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
  </ul>
  </div>
 
  <div class="sw reveal" style="background:var(--gl);border:1px solid rgba(93,184,78,.3)">
  <h3>Free Self-Assessment</h3>
  <p style="font-size:.87rem;color:var(--body);line-height:1.7;margin-bottom:1rem">Not sure if you need physiotherapy? Take our free 2-minute online assessment for 12 common conditions.</p>
- <a href="/self-assessment/" class="sw-cta-btn" style="background:var(--gd);display:block;text-align:center;padding:10px 20px;color:#fff;border-radius:50px;font-weight:700;font-size:.87rem"><i class="fas fa-clipboard-check"></i> Start Assessment</a>
+ <a href="/self-assessment/" class="sw-cta-btn" style="background:var(--gd);display:block;text-align:center;padding:10px 20px;color:#fff;border-radius:50px;font-weight:700;font-size:.87rem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clipboard-check"></use></svg> Start Assessment</a>
  </div>
 
  </aside>
@@ -643,11 +636,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Zirakpur's leading physiotherapy clinic — expert treatment for pain relief, injury recovery, sports rehab, and wellness by Dr. Tarun Garg.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -676,10 +669,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact Us</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  <h3 style="margin-top:1.2rem">Service Areas</h3>
  <ul class="footer-links">
  <li><a href="/physiotherapy/chandigarh/">Chandigarh</a></li>
@@ -697,10 +690,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

@@ -236,11 +236,11 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ FONTS ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;1,300&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 
 <style>
 /* ════════════════════════════════════
@@ -414,6 +414,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 
 <body>
@@ -426,16 +430,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM &nbsp;|&nbsp; Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM &nbsp;|&nbsp; Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter / X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -462,29 +466,29 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu" role="menu">
- <li><a href="/services/acl-treatment-near-me/" role="menuitem"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/" role="menuitem"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/" role="menuitem"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/" role="menuitem"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/" role="menuitem"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/" role="menuitem"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/" role="menuitem"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu" role="menu">
- <li><a href="/physiotherapy/chandigarh/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
  <li><a href="/testimonials/">Testimonials</a></li>
  <li><a href="/faqs/">FAQs</a></li>
- <li><a href="tel:+919417791833" class="nav-cta"><i class="fas fa-phone-alt" style="font-size:.75rem"></i> Book Now</a></li>
+ <li><a href="tel:+919417791833" class="nav-cta"><svg class="icon" aria-hidden="true" style="font-size:.75rem"><use href="/icons.svg#fa-phone-alt"></use></svg> Book Now</a></li>
  </ul>
  </nav>
  </div>
@@ -514,15 +518,15 @@ button{font-family:inherit}
  <div class="hero-dots" aria-hidden="true"><span></span><span></span><span></span></div>
  <div class="container">
  <div class="blog-hero-inner">
- <div class="hero-chip" aria-hidden="true"><i class="fas fa-hospital-user"></i> Post-Surgical &amp; Orthopaedic Physiotherapy</div>
+ <div class="hero-chip" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hospital-user"></use></svg> Post-Surgical &amp; Orthopaedic Physiotherapy</div>
  <h1 id="hero-heading">After Surgery,<br><em>Your Real Recovery Begins</em></h1>
  <p class="hero-desc">A friendly, honest guide to what post-surgical physiotherapy actually involves — what happens in each phase, how long it takes, what exercises you'll do, and why skipping it is the most common recovery mistake.</p>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 7 Oct 2025</span>
  <span><i class="far fa-clock"></i> 12 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg, MPT</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
- <span><i class="fas fa-sync-alt"></i> Updated May 2026</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-sync-alt"></use></svg> Updated May 2026</span>
  </div>
  <div class="hero-badges" aria-hidden="true">
  <span class="hero-badge">⭐ 4.9 / 5 Clinic Rating</span>
@@ -551,13 +555,13 @@ button{font-family:inherit}
 
  <!-- AIO ANSWER BOX -->
  <div class="answer-box" role="note" aria-label="Quick answer summary">
- <span class="answer-label"><i class="fas fa-bolt" aria-hidden="true"></i> Quick Answer</span>
+ <span class="answer-label"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bolt"></use></svg> Quick Answer</span>
  <p>Post-surgical physiotherapy is the structured rehabilitation programme that begins after your operation and guides your body back to full function. It covers <strong>4 phases</strong>: controlling pain and swelling, restoring movement, rebuilding strength, and returning to normal activity. Without it, surgery outcomes are significantly worse — muscle wasting, joint stiffness, scar tissue problems, and poor function are common in people who simply rest. Timelines vary by surgery: <strong>joint replacements need 3–6 months</strong>, <strong>ACL reconstruction needs 9–12 months</strong>, and <strong>arthroscopic procedures 6–8 weeks</strong>. Dr. Tarun Garg at PhysioNutra Clinic, Zirakpur provides specialist post-operative rehabilitation for patients across Chandigarh, Mohali, and Panchkula. Call <a href="tel:+919417791833">+91 94177 91833</a>.</p>
  </div>
 
  <!-- TABLE OF CONTENTS -->
  <nav class="toc-card reveal" aria-label="Table of contents">
- <div class="toc-title"><i class="fas fa-list-ul" aria-hidden="true"></i> What's In This Guide</div>
+ <div class="toc-title"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-list-ul"></use></svg> What's In This Guide</div>
  <ol class="toc-list">
  <li><a href="#why-physio">Why physio after surgery matters</a></li>
  <li><a href="#surgery-types">Which surgeries need rehab</a></li>
@@ -585,12 +589,12 @@ button{font-family:inherit}
  <p>When you have surgery, several things happen simultaneously: muscles go into protective inhibition (they switch off to guard the area), inflammation causes stiffness, and scar tissue begins forming around the surgical site. Without guided movement and progressive loading, that scar tissue can become restrictive, muscles stay weak, and the joint never regains its full range or strength — even if the surgery itself went perfectly.</p>
 
  <div class="callout callout-amber reveal">
- <div class="callout-title"><i class="fas fa-triangle-exclamation"></i> The Most Common Post-Surgery Mistake</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-triangle-exclamation"></use></svg> The Most Common Post-Surgery Mistake</div>
  <p>Believing that pain going away means you are healed. Pain typically settles weeks before the tissues are fully repaired, the muscles are fully rebuilt, and the neuromuscular control system is fully restored. Returning to full activity based on pain alone — without completing structured rehabilitation — is the leading reason people re-injure the same area or develop chronic pain after surgery.</p>
  </div>
 
  <div class="callout callout-blue reveal">
- <div class="callout-title"><i class="fas fa-chart-bar"></i> What the Research Shows</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chart-bar"></use></svg> What the Research Shows</div>
  <ul>
  <li>Structured physiotherapy after orthopaedic surgery produces <strong>30–40% better functional outcomes</strong> at one year compared to passive recovery</li>
  <li>Guided ACL rehabilitation reduces re-injury rates by <strong>over 50%</strong> compared to unsupervised recovery</li>
@@ -605,25 +609,25 @@ button{font-family:inherit}
 
  <div class="surgery-grid">
  <div class="surgery-card reveal">
- <div class="surgery-icon" aria-hidden="true"><i class="fas fa-bone"></i></div>
+ <div class="surgery-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg></div>
  <h4>Joint Replacement Surgery</h4>
  <p>Total knee replacement (TKR), total hip replacement (THR), and shoulder arthroplasty. Achieving full range, strength, and safe gait mechanics requires months of structured rehabilitation.</p>
  <span class="surgery-tag">⏱ 3–6 months rehab</span>
  </div>
  <div class="surgery-card reveal">
- <div class="surgery-icon" aria-hidden="true"><i class="fas fa-running"></i></div>
+ <div class="surgery-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <h4>Ligament &amp; Tendon Reconstruction</h4>
  <p>ACL reconstruction, PCL repair, meniscus surgery, rotator cuff repair, and Achilles tendon reconstruction — all require phase-specific loading that respects tissue healing timelines.</p>
  <span class="surgery-tag">⏱ 6–12 months rehab</span>
  </div>
  <div class="surgery-card reveal">
- <div class="surgery-icon" aria-hidden="true"><i class="fas fa-spine"></i></div>
+ <div class="surgery-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg></div>
  <h4>Spinal Surgery</h4>
  <p>After discectomy, laminectomy, or spinal fusion, restoring safe movement mechanics, core stability, and daily function requires specialist post-operative guidance to avoid compromising the repair site.</p>
  <span class="surgery-tag">⏱ 3–6 months rehab</span>
  </div>
  <div class="surgery-card reveal">
- <div class="surgery-icon" aria-hidden="true"><i class="fas fa-syringe"></i></div>
+ <div class="surgery-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div>
  <h4>Arthroscopic &amp; Fracture Procedures</h4>
  <p>Minimally invasive knee or shoulder arthroscopy, and post-fixation fracture rehabilitation after ORIF or complex fractures — smaller procedures still need structured rehab for full functional outcomes.</p>
  <span class="surgery-tag">⏱ 6–12 weeks rehab</span>
@@ -710,7 +714,7 @@ button{font-family:inherit}
  </div>
 
  <div class="callout callout-amber reveal">
- <div class="callout-title"><i class="fas fa-triangle-exclamation"></i> Important Exercise Safety Rules</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-triangle-exclamation"></use></svg> Important Exercise Safety Rules</div>
  <ul>
  <li>Some muscle ache after exercising is expected. <strong>Sharp, joint-based, or worsening pain means stop immediately.</strong></li>
  <li>If swelling increases significantly after a session, you've done too much — reduce the load at the next session</li>
@@ -776,7 +780,7 @@ button{font-family:inherit}
  </div>
 
  <div class="callout callout-green reveal">
- <div class="callout-title"><i class="fas fa-lightbulb"></i> A Note on These Timelines</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-lightbulb"></use></svg> A Note on These Timelines</div>
  <p>These are averages for patients who actively engage with their rehabilitation. Individual factors — age, tissue quality, general health, how closely you follow your home programme — all influence your actual timeline. With consistent, expert-guided rehabilitation at PhysioNutra Clinic, many patients recover ahead of these averages. The key is not rushing the phases.</p>
  </div>
 
@@ -825,7 +829,7 @@ button{font-family:inherit}
  </ul>
 
  <div class="callout callout-teal reveal">
- <div class="callout-title"><i class="fas fa-calendar-check"></i> When to Book Your First Appointment</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-calendar-check"></use></svg> When to Book Your First Appointment</div>
  <ul>
  <li><strong>Joint replacements (TKR / THR):</strong> Physio starts in hospital Day 1–2. Continue outpatient sessions as soon as you are discharged.</li>
  <li><strong>ACL / ligament reconstruction:</strong> Book your first outpatient session for 1–2 weeks post-surgery once the wound is sealed.</li>
@@ -840,22 +844,22 @@ button{font-family:inherit}
 
  <div class="stories-grid">
  <div class="story-card reveal" itemscope itemtype="https://schema.org/Review">
- <div class="story-name"><i class="fas fa-user-circle" aria-hidden="true"></i> Rajinder S., 64 <span>TKR — Chandigarh</span></div>
+ <div class="story-name"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-circle"></use></svg> Rajinder S., 64 <span>TKR — Chandigarh</span></div>
  <p itemprop="reviewBody">"I was terrified after my knee replacement that I'd never walk properly again. Dr. Tarun started with me very gently and built up the programme week by week. By month three I was walking without my stick. By month five I was managing the stairs at Shimla on a family trip. I genuinely didn't think that would be possible."</p>
  <meta itemprop="reviewRating" content="5">
  </div>
  <div class="story-card reveal" itemscope itemtype="https://schema.org/Review">
- <div class="story-name"><i class="fas fa-user-circle" aria-hidden="true"></i> Neha P., 28 <span>ACL Reconstruction — Mohali</span></div>
+ <div class="story-name"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-circle"></use></svg> Neha P., 28 <span>ACL Reconstruction — Mohali</span></div>
  <p itemprop="reviewBody">"Coming back from ACL surgery is mentally as hard as it is physically. Dr. Tarun explained every phase and why we were doing each exercise. I never felt pushed too fast. At month nine I passed all the return-to-sport tests and was back training. The structured approach made all the difference — I trusted the process."</p>
  <meta itemprop="reviewRating" content="5">
  </div>
  <div class="story-card reveal" itemscope itemtype="https://schema.org/Review">
- <div class="story-name"><i class="fas fa-user-circle" aria-hidden="true"></i> Harpreet K., 52 <span>L4-L5 Discectomy — Panchkula</span></div>
+ <div class="story-name"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-circle"></use></svg> Harpreet K., 52 <span>L4-L5 Discectomy — Panchkula</span></div>
  <p itemprop="reviewBody">"After my spinal surgery I was nervous about every movement — what if I put pressure on the wrong place? The physiotherapy gave me a clear map. Dr. Tarun showed me safe ways to move, sit, and gradually get stronger. Four months on, I'm back to my morning walks and gardening. The fear is completely gone."</p>
  <meta itemprop="reviewRating" content="5">
  </div>
  <div class="story-card reveal" itemscope itemtype="https://schema.org/Review">
- <div class="story-name"><i class="fas fa-user-circle" aria-hidden="true"></i> Gurpreet M., 47 <span>Rotator Cuff Repair — Zirakpur</span></div>
+ <div class="story-name"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-circle"></use></svg> Gurpreet M., 47 <span>Rotator Cuff Repair — Zirakpur</span></div>
  <p itemprop="reviewBody">"My shoulder surgeon said the surgery was successful but warned me that the rehab would make or break the outcome. He was right. The first 6 weeks were slow and careful — but essential. By week 16 I had full range back. Dr. Tarun's patience and the progressive plan meant I never re-injured it during recovery."</p>
  <meta itemprop="reviewRating" content="5">
  </div>
@@ -944,8 +948,8 @@ button{font-family:inherit}
  <h2>Start Your Recovery the Right Way</h2>
  <p>Your surgery was an investment in your health. Protect it with expert post-operative physiotherapy. Dr. Tarun Garg at PhysioNutra Clinic provides personalised, phase-based rehabilitation for all orthopaedic and surgical procedures — from your first post-op session right through to full return to activity. Serving Zirakpur, Chandigarh, Mohali, and Panchkula. Home visits available.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-green"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20post-surgical%20physiotherapy%20rehabilitation." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-green"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20post-surgical%20physiotherapy%20rehabilitation." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -963,32 +967,32 @@ button{font-family:inherit}
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid" aria-label="Related content">
  <a href="/blogs/acl-tear-rehabilitation/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-running"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <h4>ACL Tear Rehabilitation Guide</h4>
  <p>Phase-by-phase recovery from ACL reconstruction to return to sport.</p>
  </a>
  <a href="/blogs/ankle-sprain-treatment/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-shoe-prints"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shoe-prints"></use></svg></div>
  <h4>Ankle Sprain Treatment</h4>
  <p>Complete guide to ankle sprain grades, RICE protocol, and rehab exercises.</p>
  </a>
  <a href="/services/orthopedic-rehabilitation/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-bone"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg></div>
  <h4>Orthopaedic Rehabilitation</h4>
  <p>Specialist rehab for all orthopaedic conditions and post-surgical recovery.</p>
  </a>
  <a href="/services/manual-therapy/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-hands"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div>
  <h4>Manual Therapy</h4>
  <p>Expert joint mobilisation and soft tissue techniques for surgical recovery.</p>
  </a>
  <a href="/blogs/pain-management-physiotherapy/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-hand-holding-heart"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-holding-heart"></use></svg></div>
  <h4>Pain Management</h4>
  <p>Drug-free physiotherapy approaches to managing post-operative pain.</p>
  </a>
  <a href="/services/home-physiotherapy-chandigarh/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-house-medical"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-house-medical"></use></svg></div>
  <h4>Home Physiotherapy</h4>
  <p>Post-surgical physiotherapy delivered to your home across the Tricity.</p>
  </a>
@@ -996,7 +1000,7 @@ button{font-family:inherit}
 
  <!-- DISCLAIMER -->
  <div class="callout callout-grey" style="margin-top:2.2rem" role="note" aria-label="Medical disclaimer">
- <div class="callout-title"><i class="fas fa-circle-info"></i> Medical Disclaimer</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-circle-info"></use></svg> Medical Disclaimer</div>
  <p>This article is intended for general information and education only. It does not constitute medical advice, a clinical diagnosis, or a personalised post-operative treatment plan. Every surgical procedure and patient is different — what applies generally may not apply to your specific surgery or health status. Always follow your surgeon's specific instructions and do not begin any rehabilitation exercise programme without clearance from your surgical team and guidance from a qualified, registered physiotherapist. If you experience unexpected pain, wound complications, fever, or significant swelling after surgery, seek medical attention promptly.</p>
  </div>
 
@@ -1014,11 +1018,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Specialist post-surgical and orthopaedic physiotherapy across Chandigarh Tricity. Evidence-based rehabilitation from Day 1 post-op to full return to activity.</p>
  <div class="footer-socials" aria-label="Follow PhysioNutra">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter / X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -1046,10 +1050,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact Us</h3>
- <p style="margin-bottom:.55rem"><i class="fas fa-map-marker-alt" style="color:var(--green);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.55rem"><i class="fas fa-phone-alt" style="color:var(--green);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--green)">+91 94177 91833</a></p>
- <p style="margin-bottom:.55rem"><i class="fas fa-envelope" style="color:var(--green);margin-right:.4rem"></i><a href="#" style="color:var(--green)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--green);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM &nbsp;|&nbsp; Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.55rem"><svg class="icon" aria-hidden="true" style="color:var(--green);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.55rem"><svg class="icon" aria-hidden="true" style="color:var(--green);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--green)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.55rem"><svg class="icon" aria-hidden="true" style="color:var(--green);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--green)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--green);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM &nbsp;|&nbsp; Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -1061,10 +1065,10 @@ button{font-family:inherit}
 
 <!-- FLOATING BUTTONS -->
 <div class="float-btns" aria-label="Quick contact options">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20post-surgical%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20post-surgical%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Scroll back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Scroll back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height sync ── */

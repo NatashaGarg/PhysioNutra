@@ -88,18 +88,7 @@ window.dataLayer=window.dataLayer||[];
 ]}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 /* ══ RESET & BASE ══ */
@@ -181,6 +170,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -192,16 +185,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -226,23 +219,23 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -271,13 +264,13 @@ button{font-family:inherit}
 <section class="blog-hero">
  <div class="container">
  <div class="blog-hero-inner">
- <div class="blog-chip"><i class="fas fa-spine"></i> Spinal Rehabilitation &amp; Back Pain</div>
+ <div class="blog-chip"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg> Spinal Rehabilitation &amp; Back Pain</div>
  <h1>Slip Disc (Herniated Disc):<br><em>Complete Physiotherapy Guide &amp; Return-to-Activity Recovery</em></h1>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 15 Jan 2025</span>
  <span><i class="far fa-clock"></i> 14 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
  </div>
  </div>
  </div>
@@ -440,32 +433,32 @@ button{font-family:inherit}
  <h3>Manual Therapy &amp; Specialised Techniques</h3>
  <div class="treat-grid">
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-compress-arrows-alt"></use></svg></div>
  <h4>McKenzie Method (MDT) — Directional Loading</h4>
  <p>The McKenzie Method is the most extensively researched physiotherapy approach for lumbar disc herniation, with a body of evidence spanning four decades. Its core principle — directional preference — states that for each patient there is a specific movement direction that causes the leg pain to centralise and diminish, and that repeated movements in this direction accelerate the mechanical retraction of disc material and the decompression of the affected nerve root. For the majority (approximately 70%) of lumbar disc herniations, the directional preference is extension — prone press-ups (lying face down and pressing the upper body upward), sustained prone lying, and standing backward bending all progressively centralise leg pain by redistributing intradiscal pressure anteriorly, away from the posterior nerve root. The patient is trained to perform these directional exercises independently at home — typically 10 repetitions every 2–3 hours — creating a continuous therapeutic mechanical stimulus throughout the day far exceeding what clinic attendance alone can deliver. This self-management principle is a fundamental strength of MDT: patients who understand and apply their directional preference gain rapid control over their own symptoms rather than depending on passive treatment sessions.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-hand-paper"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-paper"></use></svg></div>
  <h4>Spinal Decompression &amp; Manual Traction</h4>
  <p>Manual lumbar traction and mechanical spinal decompression create a distractive force along the longitudinal axis of the spine, transiently reducing intradiscal pressure and creating a negative pressure differential within the disc. This negative intradiscal pressure has two therapeutic effects: it generates a pressure gradient that encourages retraction of herniated nuclear material back toward the central disc, and it promotes diffusion of fluid and nutrients into the disc from the adjacent endplates — improving the biological environment for disc healing. Traction is applied in a graduated, position-optimised manner — typically with the lumbar spine in a small degree of flexion or extension depending on the patient's directional preference — progressing from gentle manual traction to mechanical traction at therapeutic load levels. Research supports manual traction as an effective short-term pain-reducing adjunct to exercise therapy in lumbar radiculopathy, with the greatest benefit in patients with positive distraction tests and whose symptoms ease in traction.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-wave-square"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-wave-square"></use></svg></div>
  <h4>Neural Mobilisation (Nerve Flossing)</h4>
  <p>When a disc herniation compresses a nerve root, the resulting inflammation and mechanical irritation sensitise the neural tissue — the nerve and its sheath become adherent to adjacent structures and lose their normal capacity to glide freely through the intervertebral foramen and along their course into the limb. This restricted neural mobility — assessed clinically through the slump test and straight leg raise — compounds the pain and disability of disc herniation by adding a neurodynamic restriction that persists even as the disc protrusion reduces. Neural mobilisation techniques — specifically nerve flossing exercises that alternately tension and release the sciatic or femoral nerve through coordinated limb and trunk movements — restore neural gliding, reduce mechanosensitivity of the nerve root, and significantly accelerate recovery of sensory and motor function in the affected limb. Sciatic nerve flossing (alternating ankle dorsiflexion and knee extension while maintaining a slumped posture) is prescribed as a home exercise from the subacute phase onward — gently and rhythmically, never into strong pain, to progressively restore neural mobility without provoking inflammatory flare.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-syringe"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div>
  <h4>Dry Needling — Paraspinal &amp; Gluteal Muscles</h4>
  <p>Lumbar disc herniation invariably produces a protective paraspinal muscle spasm response — particularly in the multifidus, erector spinae, quadratus lumborum, and piriformis. While this muscular guarding is an initially adaptive pain-protective response, it creates a secondary pain source through myofascial trigger points and generates sustained compressive loading of the already-compromised disc — a counterproductive mechanical cycle. Dry needling of the hypertonic paraspinal muscles and piriformis directly releases trigger points, restores normal resting muscle length, and eliminates the secondary myofascial pain component that often obscures the primary discogenic pain pattern. The needle-induced local twitch response also produces a central analgesic effect through endorphin release and descending pain inhibition, meaningfully reducing pain levels in the first week of treatment and allowing earlier progression to therapeutic exercise — the most important component of long-term recovery.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-bolt"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div>
  <h4>Interferential Therapy &amp; TENS</h4>
  <p>Interferential therapy delivers medium-frequency alternating currents that penetrate deep spinal tissues with significantly lower impedance than low-frequency currents, producing analgesia at the level of the nerve root through gate-control inhibition and endogenous opioid release. It also stimulates local blood flow and reduces perineural oedema in the inflammatory phase of disc herniation — particularly valuable in the first two to three weeks when nerve root inflammation is maximal. TENS applied to the dermatome of the affected nerve root provides reliable, non-pharmacological pain relief that allows patients to remain active and compliant with their exercise programme during the acute and subacute phases when pain is most likely to inhibit rehabilitation participation. These electrophysical modalities are adjuncts, not primary treatments — their role is pain management to facilitate exercise, not independent therapeutic agents.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-shoe-prints"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shoe-prints"></use></svg></div>
  <h4>Posture &amp; Ergonomic Rehabilitation</h4>
  <p>Since sustained lumbar flexion is the primary mechanical driver of annular damage in most lumbar disc herniations, correction of sitting posture and workplace ergonomics is both a therapeutic and preventive intervention of the highest importance. Patients are assessed in their habitual sitting position — nearly universally revealing a posteriorly tilted pelvis, flat lumbar spine, and protruding head posture that places continuous posterior annular stress through all waking hours. Correction involves restoration of lumbar lordosis through pelvic tilting, optimisation of chair height, lumbar support roll prescription, and workstation setup adjustment. Patients are taught the critical distinction between supported lumbar lordosis (which reduces intradiscal pressure and posterior annular stress) and unsupported kyphosis (which continuously aggravates the injured disc). This ergonomic correction often produces as dramatic an improvement in daily symptoms as any clinic treatment, because it eliminates the continuous provocative loading that prevents healing between sessions.</p>
  </div>
@@ -563,8 +556,8 @@ button{font-family:inherit}
  <h2>Recover from Slip Disc Without Surgery</h2>
  <p>Expert lumbar disc rehabilitation at PhysioNutra Clinic, Zirakpur. McKenzie Method assessment, neural mobilisation, core stabilisation, spinal decompression &amp; structured return-to-activity programmes. Serving Chandigarh, Mohali &amp; Panchkula. Home visits available.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-g"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20slip%20disc%20treatment." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-g"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20slip%20disc%20treatment." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -581,12 +574,12 @@ button{font-family:inherit}
  <!-- Related -->
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid">
- <a href="/blogs/shin-splints-management/" class="related-card"><div class="ri"><i class="fas fa-running"></i></div><h4>Shin Splints (MTSS)</h4><p>Complete physiotherapy guide for medial tibial stress syndrome and return-to-run.</p></a>
- <a href="/services/manual-therapy/" class="related-card"><div class="ri"><i class="fas fa-hands"></i></div><h4>Manual Therapy</h4><p>Spinal joint mobilisation, manipulation and hands-on disc rehabilitation techniques.</p></a>
- <a href="/services/dry-needling/" class="related-card"><div class="ri"><i class="fas fa-syringe"></i></div><h4>Dry Needling</h4><p>Trigger point dry needling for paraspinal and gluteal muscle spasm relief.</p></a>
- <a href="/blogs/sciatica-pain-relief/" class="related-card"><div class="ri"><i class="fas fa-bolt"></i></div><h4>Sciatica Pain Relief</h4><p>Physiotherapy for sciatic nerve pain — neural mobilisation and disc rehabilitation.</p></a>
- <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><i class="fas fa-home"></i></div><h4>Home Physiotherapy</h4><p>Professional slip disc rehabilitation delivered to your home across Tricity.</p></a>
- <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-hand-holding-heart"></i></div><h4>Pain Management</h4><p>Drug-free physiotherapy for chronic spinal and musculoskeletal pain.</p></a>
+ <a href="/blogs/shin-splints-management/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><h4>Shin Splints (MTSS)</h4><p>Complete physiotherapy guide for medial tibial stress syndrome and return-to-run.</p></a>
+ <a href="/services/manual-therapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h4>Manual Therapy</h4><p>Spinal joint mobilisation, manipulation and hands-on disc rehabilitation techniques.</p></a>
+ <a href="/services/dry-needling/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div><h4>Dry Needling</h4><p>Trigger point dry needling for paraspinal and gluteal muscle spasm relief.</p></a>
+ <a href="/blogs/sciatica-pain-relief/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div><h4>Sciatica Pain Relief</h4><p>Physiotherapy for sciatic nerve pain — neural mobilisation and disc rehabilitation.</p></a>
+ <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h4>Home Physiotherapy</h4><p>Professional slip disc rehabilitation delivered to your home across Tricity.</p></a>
+ <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-holding-heart"></use></svg></div><h4>Pain Management</h4><p>Drug-free physiotherapy for chronic spinal and musculoskeletal pain.</p></a>
  </div>
 
  <!-- Disclaimer -->
@@ -609,11 +602,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert spinal and slip disc physiotherapy across Chandigarh Tricity. Evidence-based, personalised care for lumbar disc herniation, sciatica, spinal stenosis, and all back pain conditions — without surgery in the vast majority of cases.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -642,10 +635,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -656,10 +649,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20slip%20disc%20treatment." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20slip%20disc%20treatment." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

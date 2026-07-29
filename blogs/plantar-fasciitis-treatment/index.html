@@ -89,18 +89,7 @@ window.dataLayer=window.dataLayer||[];
 ]}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 /* ══ RESET & BASE ══ */
@@ -186,6 +175,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -197,16 +190,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -231,23 +224,23 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -276,13 +269,13 @@ button{font-family:inherit}
 <section class="blog-hero">
  <div class="container">
  <div class="blog-hero-inner">
- <div class="blog-chip"><i class="fas fa-shoe-prints"></i> Heel Pain &amp; Foot Care</div>
+ <div class="blog-chip"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shoe-prints"></use></svg> Heel Pain &amp; Foot Care</div>
  <h1>Plantar Fasciitis:<br><em>Expert Physiotherapy, Heel Pain Relief &amp; Full Recovery</em></h1>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 07 Oct 2025</span>
  <span><i class="far fa-clock"></i> 13 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
  </div>
  </div>
  </div>
@@ -324,42 +317,42 @@ button{font-family:inherit}
 
  <div class="cause-grid">
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-ruler-vertical"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-ruler-vertical"></use></svg></div>
  <div class="cause-text">
  <h4>Calf and Achilles Complex Tightness</h4>
  <p>Restricted ankle dorsiflexion — the ability to bend the foot upward — is the single most consistently identified risk factor for plantar fasciitis in clinical research. When ankle dorsiflexion is limited by tight gastrocnemius or soleus muscles, the foot compensates by pronating (flattening inward) to achieve forward progression during walking. This compensatory pronation places abnormal tensile strain on the medial band of the plantar fascia with every step, progressively overloading the calcaneal attachment. Addressing calf and Achilles flexibility is therefore the foundational component of plantar fasciitis rehabilitation — not simply a supplementary exercise.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-walking"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-walking"></use></svg></div>
  <div class="cause-text">
  <h4>Biomechanical Gait Faults</h4>
  <p>Excessive foot pronation, supination, reduced ankle dorsiflexion during the loading response phase, early heel rise, and altered hip mechanics all modify the force distribution through the plantar fascia during gait. These patterns are rarely correctable through insoles alone — they require active gait retraining alongside targeted strengthening of the hip abductors, external rotators, and intrinsic foot muscles. Gait assessment at PhysioNutra Clinic identifies which specific mechanics are driving abnormal plantar fascial loading in each individual patient.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-running"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <div class="cause-text">
  <h4>Rapid Increase in Activity Load</h4>
  <p>The most common precipitating event for plantar fasciitis in otherwise healthy, active individuals is a sudden, significant increase in walking or running volume — a new exercise programme, a long-distance trek, a change of job to one requiring prolonged standing, or resumption of exercise after a period of inactivity. The plantar fascia, like all connective tissues, adapts slowly to increased mechanical demand. When load is increased faster than the tissue can adapt, cumulative microdamage accumulates at the enthesis. The widely recognised 10% rule — increasing activity volume by no more than 10% per week — exists precisely to prevent this pattern.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-shoe-prints"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shoe-prints"></use></svg></div>
  <div class="cause-text">
  <h4>Footwear and Surface Factors</h4>
  <p>Barefoot walking on hard floors, wearing flat footwear with no arch support, or transitioning suddenly to minimalist shoes all increase the strain placed on the plantar fascia. Conversely, wearing overly rigid orthotics can reduce the intrinsic foot muscle activation that provides dynamic arch support, creating dependency and long-term weakness. The Indian domestic environment — marble and stone tile flooring, frequent barefoot walking — creates a particularly high-risk loading pattern for the plantar fascia, and is a modifiable factor that is directly addressed during home visit physiotherapy at PhysioNutra Clinic.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-dumbbell"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dumbbell"></use></svg></div>
  <div class="cause-text">
  <h4>Intrinsic Foot Muscle Weakness</h4>
  <p>The intrinsic foot muscles — flexor digitorum brevis, abductor hallucis, lumbricals, and interossei — are the active stabilisers of the medial longitudinal arch. When these muscles are weak or poorly coordinated (as they frequently are in patients who have worn supportive footwear throughout their lives), the plantar fascia must carry the entire passive load of arch maintenance with every step. Progressive intrinsic foot strengthening — not simply passive arch supports — is an essential component of long-term plantar fasciitis recovery and recurrence prevention.</p>
  </div>
  </div>
  <div class="cause-card reveal">
- <div class="cause-icon"><i class="fas fa-weight"></i></div>
+ <div class="cause-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-weight"></use></svg></div>
  <div class="cause-text">
  <h4>Body Weight and Systemic Factors</h4>
  <p>Each kilogram of body weight adds approximately 1.25–1.5 kg of force through the plantar fascia with every walking step. Elevated BMI is therefore a significant independent risk factor for plantar fasciitis, and weight management is a legitimate and important component of the overall treatment strategy for affected patients. Systemic conditions that impair collagen quality — including diabetes mellitus, inflammatory arthritis, and thyroid dysfunction — also increase susceptibility to plantar fascia pathology and may prolong recovery if not co-managed.</p>
@@ -385,7 +378,7 @@ button{font-family:inherit}
 
  <div class="si-grid reveal">
  <div class="si-card symptoms">
- <h4><i class="fas fa-exclamation-triangle"></i> &nbsp;Classic Plantar Fasciitis Symptoms</h4>
+ <h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-exclamation-triangle"></use></svg> &nbsp;Classic Plantar Fasciitis Symptoms</h4>
  <ul>
  <li>Sharp, stabbing heel pain with the very first steps on waking — the most characteristic symptom</li>
  <li>Pain that initially eases after 5–10 minutes of walking as tissue warms up</li>
@@ -397,7 +390,7 @@ button{font-family:inherit}
  </ul>
  </div>
  <div class="si-card tests">
- <h4><i class="fas fa-clipboard-check"></i> &nbsp;How We Confirm the Diagnosis</h4>
+ <h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clipboard-check"></use></svg> &nbsp;How We Confirm the Diagnosis</h4>
  <ul>
  <li>Palpation of the medial calcaneal tubercle — sharp localised tenderness reproducing the patient's pain</li>
  <li>Windlass test — passive great toe extension reproduces heel pain by tensioning the plantar fascia</li>
@@ -415,32 +408,32 @@ button{font-family:inherit}
 
  <div class="treat-grid">
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-wave-square"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-wave-square"></use></svg></div>
  <h4>Extracorporeal Shockwave Therapy (ESWT)</h4>
  <p>Shockwave therapy is the most evidence-supported intervention for chronic plantar fasciitis that has failed to respond to 3 or more months of conventional physiotherapy. High-energy radial shockwaves delivered to the calcaneal enthesis stimulate neovascularisation in avascular degenerated tissue, break down calcific deposits within the fascia, and restart the biological healing process that chronic degeneration has stalled. Clinical evidence consistently demonstrates 70–80% success rates in appropriately selected chronic cases. At PhysioNutra Clinic, ESWT is integrated within a comprehensive rehabilitation programme — not used as an isolated injection-substitute.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-syringe"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div>
  <h4>Dry Needling</h4>
  <p>Trigger point dry needling applied to the hypertonic bands within the gastrocnemius, soleus, flexor digitorum longus, and intrinsic foot muscles reduces the resting tension transmitted to the plantar fascia via the Achilles-plantar fascia continuum. Direct needling of the plantar fascia enthesis itself — an advanced technique — provokes a local tissue response that can accelerate healing in subacute and chronic presentations. Dry needling at PhysioNutra Clinic is performed by Dr. Tarun Garg with millimetre-precise anatomical accuracy and is combined with therapeutic exercise for optimal outcomes.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-hand-paper"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-paper"></use></svg></div>
  <h4>Manual Therapy and Fascial Release</h4>
  <p>Skilled deep tissue massage and fascial release applied longitudinally along the plantar fascia reduces intraneural pressure, improves local tissue extensibility, and directly reduces the protective muscle guarding that develops around a painful enthesis. Joint mobilisation of the talocrural joint, subtalar joint, and midfoot restores the three-dimensional movement freedom that allows the foot to distribute loads evenly rather than concentrating them at a single point on the calcaneus. Ankle and midfoot mobilisation is particularly effective for patients with restricted dorsiflexion as a primary contributing factor.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-band-aid"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-band-aid"></use></svg></div>
  <h4>Low-Dye and Kinesiology Taping</h4>
  <p>Low-Dye taping — a specific rigid taping technique that supports the medial longitudinal arch and limits calcaneal eversion — provides immediate, clinically measurable reduction in plantar fascial tension and is one of the most effective short-term pain management tools for acute plantar fasciitis. Applied correctly at the start of the treatment course, it allows patients to remain mobile and begin rehabilitation exercises with significantly reduced pain. Kinesiology taping is used in the sub-acute phase to facilitate intrinsic foot muscle activation and provide proprioceptive feedback without the movement restriction of rigid taping.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-moon"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-moon"></use></svg></div>
  <h4>Night Splinting</h4>
  <p>The characteristic morning heel pain of plantar fasciitis arises because the plantar fascia contracts and shortens during sleep in a non-weightbearing position. The first step of the day re-stretches this contracted tissue with a sudden, high-load elongation at the calcaneal enthesis. A dorsiflexion night splint maintains the ankle and toes in a position of gentle stretch during sleep, keeping the plantar fascia at its functional length overnight and dramatically reducing first-step pain. Night splinting is most effective when used consistently for 4–8 weeks alongside the daytime rehabilitation programme.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-walking"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-walking"></use></svg></div>
  <h4>Gait Retraining and Load Management</h4>
  <p>Correcting the specific gait pattern that is generating excessive plantar fascial load is the most important long-term intervention for both recovery and recurrence prevention. Depending on the individual's gait analysis findings, this may involve reducing step length, increasing step rate (cadence), cueing forefoot or midfoot landing pattern, improving hip extension, or correcting contralateral pelvic drop. These changes reduce peak plantar fascial forces per step and distribute loading more evenly across the foot's structures. Gait retraining is progressive — changes are introduced gradually to prevent overload of structures adapting to new mechanics.</p>
  </div>
@@ -448,7 +441,7 @@ button{font-family:inherit}
 
  <!-- HOME VISIT BANNER -->
  <div class="hv-banner reveal">
- <div class="hv-icon"><i class="fas fa-home"></i></div>
+ <div class="hv-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div>
  <div class="hv-text">
  <h3>Home Visit Physiotherapy for Heel Pain — Zirakpur Tricity</h3>
  <p>For patients with severe acute plantar fasciitis who cannot travel comfortably, or who want the significant added benefit of in-home environment assessment — including flooring surfaces, daily barefoot walking habits, footwear, and occupation-specific loading — PhysioNutra Clinic provides professional home visit physiotherapy across <strong>Zirakpur, Mohali, Panchkula, Chandigarh, Kharar, Baltana, and Dhakoli</strong>. Dr. Tarun Garg and the PhysioNutra team bring all necessary treatment equipment directly to you. <a href="tel:+919417791833">Call +91 94177 91833</a> or WhatsApp to schedule a home visit.</p>
@@ -591,8 +584,8 @@ button{font-family:inherit}
  <h2>End Your Heel Pain — Expert Plantar Fasciitis Physiotherapy</h2>
  <p>Specialist plantar fasciitis and heel pain physiotherapy at PhysioNutra Clinic, Zirakpur. Accurate diagnosis, non-surgical treatment with shockwave therapy, dry needling, gait correction &amp; progressive rehabilitation. Home visits available across Chandigarh, Mohali &amp; Panchkula.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-g"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20plantar%20fasciitis%20heel%20pain%20physiotherapy." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-g"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20plantar%20fasciitis%20heel%20pain%20physiotherapy." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -609,12 +602,12 @@ button{font-family:inherit}
  <!-- Related -->
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid">
- <a href="/blogs/ankle-sprain-treatment/" class="related-card"><div class="ri"><i class="fas fa-walking"></i></div><h4>Ankle Sprain Treatment</h4><p>Complete rehabilitation guide for ankle sprains, ligament injuries &amp; instability.</p></a>
- <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><i class="fas fa-home"></i></div><h4>Home Physiotherapy</h4><p>Professional heel pain treatment delivered to your home across the Tricity.</p></a>
- <a href="/blogs/lower-back-pain-management/" class="related-card"><div class="ri"><i class="fas fa-spine"></i></div><h4>Lower Back Pain Management</h4><p>Expert guide to LBP, sciatica, SI joint dysfunction &amp; spinal rehabilitation.</p></a>
- <a href="/services/manual-therapy/" class="related-card"><div class="ri"><i class="fas fa-hands"></i></div><h4>Manual Therapy</h4><p>Hands-on joint mobilisation and soft tissue techniques for foot &amp; heel pain.</p></a>
- <a href="/blogs/sports-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-running"></i></div><h4>Sports Physiotherapy</h4><p>Specialised rehabilitation for athletes managing foot and ankle conditions.</p></a>
- <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-hand-holding-heart"></i></div><h4>Pain Management</h4><p>Drug-free physiotherapy approaches to persistent musculoskeletal pain.</p></a>
+ <a href="/blogs/ankle-sprain-treatment/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-walking"></use></svg></div><h4>Ankle Sprain Treatment</h4><p>Complete rehabilitation guide for ankle sprains, ligament injuries &amp; instability.</p></a>
+ <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h4>Home Physiotherapy</h4><p>Professional heel pain treatment delivered to your home across the Tricity.</p></a>
+ <a href="/blogs/lower-back-pain-management/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg></div><h4>Lower Back Pain Management</h4><p>Expert guide to LBP, sciatica, SI joint dysfunction &amp; spinal rehabilitation.</p></a>
+ <a href="/services/manual-therapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h4>Manual Therapy</h4><p>Hands-on joint mobilisation and soft tissue techniques for foot &amp; heel pain.</p></a>
+ <a href="/blogs/sports-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><h4>Sports Physiotherapy</h4><p>Specialised rehabilitation for athletes managing foot and ankle conditions.</p></a>
+ <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-holding-heart"></use></svg></div><h4>Pain Management</h4><p>Drug-free physiotherapy approaches to persistent musculoskeletal pain.</p></a>
  </div>
 
  <!-- Disclaimer -->
@@ -637,11 +630,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Specialist plantar fasciitis and heel pain physiotherapy across Chandigarh Tricity. Evidence-based, diagnosis-first care for foot pain, heel spurs, Achilles tendinopathy, and chronic heel conditions. Home visits available.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -670,10 +663,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -684,10 +677,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20plantar%20fasciitis%20heel%20pain%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20plantar%20fasciitis%20heel%20pain%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

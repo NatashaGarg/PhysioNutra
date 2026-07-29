@@ -88,18 +88,7 @@ window.dataLayer=window.dataLayer||[];
 ]}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 /* ══ RESET & BASE ══ */
@@ -181,6 +170,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -192,16 +185,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -226,23 +219,23 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -271,13 +264,13 @@ button{font-family:inherit}
 <section class="blog-hero">
  <div class="container">
  <div class="blog-hero-inner">
- <div class="blog-chip"><i class="fas fa-hand-paper"></i> Peripheral Nerve Rehabilitation</div>
+ <div class="blog-chip"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-paper"></use></svg> Peripheral Nerve Rehabilitation</div>
  <h1>Ulnar Nerve Impingement<br><em>(Cubital Tunnel Syndrome): Complete Physiotherapy Guide &amp; Recovery Programme</em></h1>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 7 Oct 2025</span>
  <span><i class="far fa-clock"></i> 13 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
  </div>
  </div>
  </div>
@@ -441,32 +434,32 @@ button{font-family:inherit}
  <h3>Core Treatment Techniques</h3>
  <div class="treat-grid">
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-wave-square"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-wave-square"></use></svg></div>
  <h4>Ulnar Nerve Gliding — The Primary Intervention</h4>
  <p>Nerve gliding exercises — also called neurodynamic mobilisation or nerve flossing — are the central treatment for cubital tunnel syndrome and the most evidence-supported physiotherapy technique for peripheral nerve entrapment. The ulnar nerve requires the ability to glide approximately 10–15 mm longitudinally within its canal as the elbow moves through its range of motion. When sustained compression or perineural fibrosis restricts this gliding capacity, neural tension accumulates with elbow movement, perpetuating the ischaemia and mechanical irritation responsible for the condition. Ulnar nerve gliding exercises restore this normal excursion through a carefully controlled sequence of coordinated limb movements that alternately tension and release the nerve — the "slider" technique — gradually freeing it from adhesions and reducing its mechanosensitivity. The specific protocol begins with gentle seated sliders (alternating between elbow extension with wrist extension and elbow flexion with wrist neutral), progressing to the full ULNT3 position as sensitivity decreases. Ten to fifteen slow, rhythmic repetitions, twice daily, performed to the point of mild neural awareness but never into sharp or radiating pain — the critical dosing principle that separates therapeutic from provocative neurodynamic loading.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-hand-paper"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-paper"></use></svg></div>
  <h4>Elbow Joint Mobilisation &amp; Soft Tissue Release</h4>
  <p>Stiffness of the medial elbow joint and tightness of the surrounding soft tissues — particularly the medial collateral ligament complex and the two heads of flexor carpi ulnaris through which the ulnar nerve passes — contribute to the mechanical environment that compresses the nerve. Manual therapy directed at the medial elbow achieves two goals: improving joint mobility so that normal elbow range of motion can be restored without requiring end-range positions that maximally stress the nerve, and releasing the fascial and soft tissue restrictions that may be physically tethering the nerve as it courses through the forearm musculature. Accessory mobilisations of the humeroulnar and humeroradial joints in grades I–III restore normal joint mechanics and reduce the secondary pain contribution of mechanical joint irritation. Soft tissue work targeting the flexor-pronator muscle mass reduces the compression on the nerve between the two heads of flexor carpi ulnaris — a recognised secondary entrapment site that compounds the primary cubital tunnel compression in some patients.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-user-cog"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-cog"></use></svg></div>
  <h4>Postural &amp; Ergonomic Correction</h4>
  <p>Since the primary driver of cubital tunnel syndrome is sustained elbow flexion and direct elbow compression, eliminating these provocative postures from daily life is the most powerful single conservative intervention available. At PhysioNutra, every patient receives a systematic review of the four highest-risk daily contexts: sleep position (elbow position during the night), workstation setup (keyboard height, armrest position, monitor position), driving position (elbow resting on door), and phone use habits (duration of calls and angle of elbow during calls). Specific corrections are prescribed for each: an elbow extension night splint or a simple elbow-straightening wrap for sleep; raising the keyboard tray to allow the elbows to remain in a more extended position during typing; removing or padding the car armrest to eliminate medial epicondyle pressure; and use of speakerphone or a headset to eliminate prolonged elbow flexion during calls. These ergonomic corrections often produce a 30–50% reduction in symptoms within the first two weeks — before any significant nerve rehabilitation effect has been achieved — because they simply remove the ongoing compression that was preventing the nerve from recovering.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-dumbbell"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dumbbell"></use></svg></div>
  <h4>Intrinsic Hand Muscle Rehabilitation</h4>
  <p>When ulnar nerve compression has produced measurable intrinsic hand muscle weakness, targeted hand muscle rehabilitation is required alongside nerve decompression — because recovery of nerve function and recovery of muscle strength are not the same process and do not occur on the same timeline. Nerve compression first produces demyelination (slowing of nerve conduction without axon loss), which is rapidly reversible. It then produces axon loss, which requires slow nerve regeneration (1 mm per day from the site of compression) and concurrent muscle retraining to restore strength and coordination. Intrinsic muscle rehabilitation for cubital tunnel syndrome follows a graduated progression: beginning with low-resistance, high-repetition isolation exercises for the interossei (finger spreading and adduction against a rubber band) and hypothenar muscles (little finger opposition exercises), advancing through precision grip tasks and fine motor coordination exercises (picking small objects, manipulating coins) to functionally loaded tasks matching the patient's occupational and recreational demands. This rehabilitation is sustained well beyond the resolution of sensory symptoms — motor recovery lags significantly and patients who stop rehabilitation when tingling resolves frequently develop persistent weakness.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-bolt"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div>
  <h4>Dry Needling &amp; Electrotherapy Adjuncts</h4>
  <p>Dry needling of the flexor carpi ulnaris, flexor digitorum profundus, and medial forearm muscles targeting active trigger points decompresses the secondary entrapment of the ulnar nerve between the heads of flexor carpi ulnaris and reduces the myofascial tension that contributes to perineural pressure in the proximal forearm. The local twitch response and the post-needling muscle relaxation achieved mechanically reduce the compressive force on the nerve in the forearm segment — an adjunct that is particularly valuable in patients with significant forearm muscle tightness contributing to their presentation. Interferential therapy and TENS directed to the medial elbow region provide perineural analgesia, reduce local oedema in the acute phase of nerve irritation, and improve the patient's comfort during nerve gliding exercises — facilitating earlier and more effective engagement with the active rehabilitation components that drive long-term recovery. Pulsed ultrasound at therapeutic frequency over the cubital tunnel has been used clinically to promote perineural tissue extensibility, though evidence for ultrasound specifically in peripheral nerve entrapment is less robust than for nerve gliding and postural correction.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-moon"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-moon"></use></svg></div>
  <h4>Elbow Extension Splinting — Night &amp; Activity</h4>
  <p>A custom or prefabricated elbow extension splint positioned to maintain the elbow at 30–45 degrees of flexion during sleep is one of the most evidence-supported non-exercise interventions for cubital tunnel syndrome. The rationale is direct and compelling: most patients with cubital tunnel syndrome wake with the most intense tingling of the day, caused by hours of sustained maximum elbow flexion during sleep. Preventing this nightly compression allows the perineural oedema to reduce, the nerve's blood supply to recover, and the inflammatory process to begin resolving — without any active rehabilitation. Research comparing elbow splinting against nerve gliding exercises in mild-to-moderate cubital tunnel syndrome shows both to be effective, with combination therapy producing the best outcomes. The splint does not need to be rigid or uncomfortable — a simple foam wrap or towel secured to prevent full elbow flexion is sufficient for many patients. Activity splinting during specific provocative tasks (prolonged driving, extended computer work) is prescribed on a case-by-case basis.</p>
  </div>
@@ -564,8 +557,8 @@ button{font-family:inherit}
  <h2>Recover from Ulnar Nerve Impingement Without Surgery</h2>
  <p>Expert cubital tunnel syndrome rehabilitation at PhysioNutra Clinic, Zirakpur. Nerve gliding assessment, elbow decompression, intrinsic hand muscle rehabilitation, postural correction &amp; structured return-to-activity. Serving Chandigarh, Mohali &amp; Panchkula. Home visits available.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-g"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20ulnar%20nerve%20impingement%20treatment." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-g"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20ulnar%20nerve%20impingement%20treatment." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -582,12 +575,12 @@ button{font-family:inherit}
  <!-- Related -->
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid">
- <a href="/blogs/slip-disc-treatment/" class="related-card"><div class="ri"><i class="fas fa-spine"></i></div><h4>Slip Disc Treatment</h4><p>Complete physiotherapy guide for herniated disc — McKenzie Method &amp; nerve rehabilitation.</p></a>
- <a href="/services/manual-therapy/" class="related-card"><div class="ri"><i class="fas fa-hands"></i></div><h4>Manual Therapy</h4><p>Elbow joint mobilisation, soft tissue release &amp; nerve decompression techniques.</p></a>
- <a href="/services/dry-needling/" class="related-card"><div class="ri"><i class="fas fa-syringe"></i></div><h4>Dry Needling</h4><p>Trigger point dry needling for flexor-pronator muscle tightness relief.</p></a>
- <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-hand-holding-heart"></i></div><h4>Pain Management</h4><p>Drug-free physiotherapy for chronic upper limb and nerve pain conditions.</p></a>
- <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><i class="fas fa-home"></i></div><h4>Home Physiotherapy</h4><p>Professional nerve rehabilitation delivered to your home across Tricity.</p></a>
- <a href="/blogs/sports-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-running"></i></div><h4>Sports Physiotherapy</h4><p>Return-to-sport rehabilitation for throwing athletes and racket sport players.</p></a>
+ <a href="/blogs/slip-disc-treatment/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg></div><h4>Slip Disc Treatment</h4><p>Complete physiotherapy guide for herniated disc — McKenzie Method &amp; nerve rehabilitation.</p></a>
+ <a href="/services/manual-therapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h4>Manual Therapy</h4><p>Elbow joint mobilisation, soft tissue release &amp; nerve decompression techniques.</p></a>
+ <a href="/services/dry-needling/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div><h4>Dry Needling</h4><p>Trigger point dry needling for flexor-pronator muscle tightness relief.</p></a>
+ <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-holding-heart"></use></svg></div><h4>Pain Management</h4><p>Drug-free physiotherapy for chronic upper limb and nerve pain conditions.</p></a>
+ <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h4>Home Physiotherapy</h4><p>Professional nerve rehabilitation delivered to your home across Tricity.</p></a>
+ <a href="/blogs/sports-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><h4>Sports Physiotherapy</h4><p>Return-to-sport rehabilitation for throwing athletes and racket sport players.</p></a>
  </div>
 
  <!-- Disclaimer -->
@@ -610,11 +603,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert peripheral nerve and upper limb physiotherapy across Chandigarh Tricity. Evidence-based, personalised care for cubital tunnel syndrome, ulnar nerve entrapment, carpal tunnel syndrome, and all nerve-related upper limb conditions — without surgery in the vast majority of cases.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -643,10 +636,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -657,10 +650,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20ulnar%20nerve%20impingement%20treatment." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20ulnar%20nerve%20impingement%20treatment." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

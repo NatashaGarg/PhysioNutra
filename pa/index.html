@@ -150,18 +150,7 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Fonts ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -250,6 +239,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 .u-static-map-label{font-weight:600;font-size:1.05rem}
 .u-static-map-sub{font-size:.85rem;color:#4a7a63}
 </style>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -263,9 +256,9 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="container">
  <div class="header-top-content">
  <div class="header-contact">
- <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>ਸੋਮ&ndash;ਸ਼ਨੀ: 9AM&ndash;7PM | ਐਤਵਾਰ: 10AM&ndash;2PM</span></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>ਸੋਮ&ndash;ਸ਼ਨੀ: 9AM&ndash;7PM | ਐਤਵਾਰ: 10AM&ndash;2PM</span></div>
  </div>
  <div style="display:flex;align-items:center;gap:1rem">
  <div class="lang-switcher" aria-label="ਭਾਸ਼ਾ ਚੁਣੋ">
@@ -275,10 +268,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <a href="/hi/" class="lang-btn" hreflang="hi">हिंदी</a>
  </div>
  <div class="header-social" aria-label="ਸੋਸ਼ਲ ਮੀਡੀਆ">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
  </div>
  </div>
  </div>
@@ -295,7 +288,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  </div>
  <nav role="navigation" aria-label="ਮੁੱਖ ਨੇਵੀਗੇਸ਼ਨ">
- <button class="mobile-menu-toggle" aria-label="ਮੀਨੂ ਖੋਲ੍ਹੋ" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+ <button class="mobile-menu-toggle" aria-label="ਮੀਨੂ ਖੋਲ੍ਹੋ" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
  <ul id="mainMenu">
  <li><a href="/pa/">ਘਰ</a></li>
  <li><a href="/about/">ਸਾਡੇ ਬਾਰੇ</a></li>
@@ -317,18 +310,18 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 <section class="hero" aria-labelledby="hero-h1">
  <div class="container">
  <div class="hero-inner">
- <div class="hero-badge"><i class="fas fa-certificate" aria-hidden="true"></i> ਪ੍ਰਮਾਣਿਤ ਫਿਜ਼ੀਓਥੈਰੇਪਿਸਟ — ਟ੍ਰਾਈਸਿਟੀ</div>
+ <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> ਪ੍ਰਮਾਣਿਤ ਫਿਜ਼ੀਓਥੈਰੇਪਿਸਟ — ਟ੍ਰਾਈਸਿਟੀ</div>
  <h1 id="hero-h1">ਟ੍ਰਾਈਸਿਟੀ ਵਿੱਚ <em>ਸਭ ਤੋਂ ਵਧੀਆ</em> ਫਿਜ਼ੀਓਥੈਰੇਪੀ ਕਲੀਨਿਕ</h1>
  <p class="hero-subtitle">ਮਾਹਰ ਦਰਦ ਪ੍ਰਬੰਧਨ, ਖੇਡ ਸੱਟਾਂ ਦਾ ਇਲਾਜ ਅਤੇ ਪੁਨਰਵਾਸ ਸੇਵਾਵਾਂ — ਕਲੀਨਿਕ ਵਿੱਚ ਅਤੇ ਤੁਹਾਡੇ ਘਰ ਆ ਕੇ ਵੀ। ਜ਼ਿਰਕਪੁਰ, ਚੰਡੀਗੜ੍ਹ, ਮੋਹਾਲੀ ਅਤੇ ਪੰਚਕੂਲਾ ਵਿੱਚ ਸੇਵਾਵਾਂ ਉਪਲਬਧ।</p>
  <div class="hero-features">
- <div class="hero-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 10+ ਸਾਲ ਦਾ ਤਜਰਬਾ</div>
- <div class="hero-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 5000+ ਸੰਤੁਸ਼ਟ ਮਰੀਜ਼</div>
- <div class="hero-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> ਘਰ ਆ ਕੇ ਇਲਾਜ ਉਪਲਬਧ</div>
+ <div class="hero-feature"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> 10+ ਸਾਲ ਦਾ ਤਜਰਬਾ</div>
+ <div class="hero-feature"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> 5000+ ਸੰਤੁਸ਼ਟ ਮਰੀਜ਼</div>
+ <div class="hero-feature"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> ਘਰ ਆ ਕੇ ਇਲਾਜ ਉਪਲਬਧ</div>
  
  </div>
  <div class="hero-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> ਹੁਣੇ ਫ਼ੋਨ ਕਰੋ</a>
- <a href="https://wa.me/919417791833?text=ਸਤ%20ਸ੍ਰੀ%20ਅਕਾਲ%2C%20ਮੈਂ%20ਫਿਜ਼ੀਓਥੈਰੇਪੀ%20ਅਪੌਇੰਟਮੈਂਟ%20ਬੁੱਕ ਕਰਨਾ%20ਚਾਹੁੰਦਾ%20ਹਾਂ" class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp ਕਰੋ</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> ਹੁਣੇ ਫ਼ੋਨ ਕਰੋ</a>
+ <a href="https://wa.me/919417791833?text=ਸਤ%20ਸ੍ਰੀ%20ਅਕਾਲ%2C%20ਮੈਂ%20ਫਿਜ਼ੀਓਥੈਰੇਪੀ%20ਅਪੌਇੰਟਮੈਂਟ%20ਬੁੱਕ ਕਰਨਾ%20ਚਾਹੁੰਦਾ%20ਹਾਂ" class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp ਕਰੋ</a>
  </div>
  </div>
  </div>
@@ -356,58 +349,58 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="services-grid">
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-hands"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div>
  <h3>ਮੈਨੂਅਲ ਥੈਰੇਪੀ</h3>
  <p>ਹੱਥਾਂ ਨਾਲ ਕੀਤਾ ਜਾਣ ਵਾਲਾ ਮਾਹਰ ਇਲਾਜ ਜੋ ਦਰਦ ਘਟਾਉਂਦਾ ਅਤੇ ਜੋੜਾਂ ਦੀ ਗਤੀਸ਼ੀਲਤਾ ਵਧਾਉਂਦਾ ਹੈ।</p>
- <a href="/services/manual-therapy/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/services/manual-therapy/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-running"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <h3>ਖੇਡ ਸੱਟਾਂ ਦਾ ਇਲਾਜ</h3>
  <p>ਖਿਡਾਰੀਆਂ ਲਈ ਵਿਸ਼ੇਸ਼ ਪੁਨਰਵਾਸ ਪ੍ਰੋਗਰਾਮ — ਤੇਜ਼ ਰਿਕਵਰੀ ਅਤੇ ਖੇਡ ਵਿੱਚ ਵਾਪਸੀ ਲਈ।</p>
- <a href="/services/sports-injury-treatment/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/services/sports-injury-treatment/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-home"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div>
  <h3>ਘਰ ਆ ਕੇ ਫਿਜ਼ੀਓਥੈਰੇਪੀ</h3>
  <p>ਤੁਹਾਡੇ ਘਰ ਵਿੱਚ ਹੀ ਕਲੀਨਿਕ ਵਰਗਾ ਉੱਚ ਪੱਧਰ ਦਾ ਇਲਾਜ — ਆਰਾਮ ਅਤੇ ਸਹੂਲਤ ਨਾਲ।</p>
- <a href="/services/home-physiotherapy-chandigarh/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/services/home-physiotherapy-chandigarh/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-procedures"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-procedures"></use></svg></div>
  <h3>ਸਰਜਰੀ ਤੋਂ ਬਾਅਦ ਪੁਨਰਵਾਸ</h3>
  <p>ਸਰਜਰੀ ਤੋਂ ਬਾਅਦ ਤੇਜ਼ ਅਤੇ ਸੁਰੱਖਿਅਤ ਰਿਕਵਰੀ ਲਈ ਮਾਹਰ ਪੁਨਰਵਾਸ ਪ੍ਰੋਗਰਾਮ।</p>
- <a href="/blogs/post-surgical-physiotherapy/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/blogs/post-surgical-physiotherapy/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-syringe"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div>
  <h3>ਡ੍ਰਾਈ ਨੀਡਲਿੰਗ</h3>
  <p>ਮਾਸਪੇਸ਼ੀਆਂ ਦੇ ਦਰਦ ਅਤੇ ਟ੍ਰਿਗਰ ਪੌਇੰਟਸ ਲਈ ਅਸਰਦਾਰ ਇਲਾਜ — ਤੇਜ਼ ਰਾਹਤ ਲਈ।</p>
- <a href="/services/dry-needling/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/services/dry-needling/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div>
  <h3>ਇਲੈਕਟ੍ਰੋਥੈਰੇਪੀ</h3>
  <p>TENS, IFT, ਅਲਟਰਾਸਾਊਂਡ ਅਤੇ LASER ਥੈਰੇਪੀ — ਦਵਾਈਆਂ ਤੋਂ ਬਿਨਾਂ ਦਰਦ ਰਾਹਤ ਲਈ।</p>
- <a href="/services/electrotherapy/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/services/electrotherapy/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg></div>
  <h3>ਨਿਊਰੋਲੌਜੀਕਲ ਪੁਨਰਵਾਸ</h3>
  <p>ਸਟ੍ਰੋਕ, ਅਧਰੰਗ ਅਤੇ ਪਾਰਕਿੰਸਨ ਵਰਗੀਆਂ ਸਥਿਤੀਆਂ ਲਈ ਮਾਹਰ ਪੁਨਰਵਾਸ।</p>
- <a href="/services/neurological-rehabilitation/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/services/neurological-rehabilitation/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-bone"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg></div>
  <h3>ਆਰਥੋਪੈਡਿਕ ਪੁਨਰਵਾਸ</h3>
  <p>ਹੱਡੀਆਂ, ਜੋੜਾਂ ਅਤੇ ਮਾਸਪੇਸ਼ੀਆਂ ਦੀਆਂ ਸਮੱਸਿਆਵਾਂ ਲਈ ਵਿਆਪਕ ਇਲਾਜ।</p>
- <a href="/services/orthopedic-rehabilitation/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/services/orthopedic-rehabilitation/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  <article class="service-card reveal">
- <div class="service-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+ <div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-friends"></use></svg></div>
  <h3>ਬਜ਼ੁਰਗਾਂ ਲਈ ਫਿਜ਼ੀਓਥੈਰੇਪੀ</h3>
  <p>ਬਜ਼ੁਰਗਾਂ ਲਈ ਵਿਸ਼ੇਸ਼ ਦੇਖਭਾਲ — ਗਿਰਨ ਤੋਂ ਬਚਾਅ, ਗਤੀਸ਼ੀਲਤਾ ਅਤੇ ਜੀਵਨ ਦੀ ਗੁਣਵੱਤਾ ਵਿੱਚ ਸੁਧਾਰ।</p>
- <a href="/services/geriatric-physiotherapy/" class="service-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <a href="/services/geriatric-physiotherapy/" class="service-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></a>
  </article>
  </div>
  </div>
@@ -422,18 +415,18 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">ਵੱਖ-ਵੱਖ ਮਾਸਕੁਲੋਸਕੈਲੇਟਲ ਅਤੇ ਨਿਊਰੋਲੌਜੀਕਲ ਸਥਿਤੀਆਂ ਲਈ ਮਾਹਰ ਦੇਖਭਾਲ</p>
  </div>
  <div class="conditions-grid">
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਕਮਰ ਅਤੇ ਗਰਦਨ ਦਾ ਦਰਦ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਗੋਡੇ ਦਾ ਦਰਦ ਅਤੇ ਗਠੀਆ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਫ੍ਰੋਜ਼ਨ ਸ਼ੋਲਡਰ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਸਾਇਟਿਕਾ ਦਰਦ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਸਲਿਪ ਡਿਸਕ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਸਪੌਂਡਲਾਈਟਿਸ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਟੈਨਿਸ ਐਲਬੋ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਪਲਾਂਟਰ ਫੈਸਾਇਟਿਸ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਖੇਡ ਦੀਆਂ ਸੱਟਾਂ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਸਟ੍ਰੋਕ ਪੁਨਰਵਾਸ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ACL ਸੱਟ</span></div>
- <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><i class="fas fa-check"></i></div><span>ਵਰਟੀਗੋ (ਚੱਕਰ)</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਕਮਰ ਅਤੇ ਗਰਦਨ ਦਾ ਦਰਦ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਗੋਡੇ ਦਾ ਦਰਦ ਅਤੇ ਗਠੀਆ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਫ੍ਰੋਜ਼ਨ ਸ਼ੋਲਡਰ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਸਾਇਟਿਕਾ ਦਰਦ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਸਲਿਪ ਡਿਸਕ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਸਪੌਂਡਲਾਈਟਿਸ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਟੈਨਿਸ ਐਲਬੋ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਪਲਾਂਟਰ ਫੈਸਾਇਟਿਸ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਖੇਡ ਦੀਆਂ ਸੱਟਾਂ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਸਟ੍ਰੋਕ ਪੁਨਰਵਾਸ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ACL ਸੱਟ</span></div>
+ <div class="condition-item reveal"><div class="condition-dot" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg></div><span>ਵਰਟੀਗੋ (ਚੱਕਰ)</span></div>
  </div>
  </div>
 </section>
@@ -448,40 +441,40 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  </div>
  <div class="location-grid">
  <a href="/physiotherapy/zirakpur/" class="location-card reveal">
- <div class="location-icon-wrap" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>ਜ਼ਿਰਕਪੁਰ</h3>
  <p>ਸਾਡਾ ਮੁੱਖ ਕਲੀਨਿਕ। ਕਲੀਨਿਕ ਅਤੇ ਘਰ ਆ ਕੇ ਦੋਵੇਂ ਸੇਵਾਵਾਂ ਉਪਲਬਧ।</p>
- <span class="location-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+ <span class="location-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></span>
  </a>
  <a href="/physiotherapy/chandigarh/" class="location-card reveal">
- <div class="location-icon-wrap" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>ਚੰਡੀਗੜ੍ਹ</h3>
  <p>ਸਾਰੇ ਸੈਕਟਰਾਂ ਵਿੱਚ ਘਰ ਆ ਕੇ ਇਲਾਜ। ਕਲੀਨਿਕ ਸਿਰਫ਼ 15 ਮਿੰਟ ਦੂਰ।</p>
- <span class="location-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+ <span class="location-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></span>
  </a>
  <a href="/physiotherapy/mohali/" class="location-card reveal">
- <div class="location-icon-wrap" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>ਮੋਹਾਲੀ</h3>
  <p>ਫੇਜ਼ 1-11 ਵਿੱਚ ਘਰ ਆ ਕੇ ਇਲਾਜ। ਕਲੀਨਿਕ 10 ਮਿੰਟ ਦੀ ਦੂਰੀ 'ਤੇ।</p>
- <span class="location-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+ <span class="location-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></span>
  </a>
  <a href="/physiotherapy/panchkula/" class="location-card reveal">
- <div class="location-icon-wrap" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>ਪੰਚਕੂਲਾ</h3>
  <p>ਸੈਕਟਰ 20 ਵਿੱਚ ਬ੍ਰਾਂਚ ਕਲੀਨਿਕ ਅਤੇ ਸਾਰੇ ਸੈਕਟਰਾਂ ਵਿੱਚ ਘਰ ਆ ਕੇ ਸੇਵਾ।</p>
- <span class="location-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+ <span class="location-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></span>
  </a>
  <a href="/physiotherapy/kharar/" class="location-card reveal">
- <div class="location-icon-wrap" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>ਖਰੜ</h3>
  <p>ਖਰੜ ਅਤੇ ਆਲੇ-ਦੁਆਲੇ ਘਰ ਆ ਕੇ ਇਲਾਜ ਦੀ ਸੇਵਾ ਉਪਲਬਧ।</p>
- <span class="location-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+ <span class="location-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></span>
  </a>
  <a href="/physiotherapy/dera-bassi/" class="location-card reveal">
- <div class="location-icon-wrap" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="location-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg></div>
  <h3>ਡੇਰਾ ਬੱਸੀ</h3>
  <p>ਡੇਰਾ ਬੱਸੀ ਅਤੇ ਬਲਟਾਣਾ ਵਿੱਚ ਘਰ ਆ ਕੇ ਫਿਜ਼ੀਓਥੈਰੇਪੀ ਸੇਵਾ ਉਪਲਬਧ।</p>
- <span class="location-link">ਹੋਰ ਜਾਣੋ <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+ <span class="location-link">ਹੋਰ ਜਾਣੋ <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-arrow-right"></use></svg></span>
  </a>
  </div>
  </div>
@@ -496,12 +489,12 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <p class="section-subtitle">ਟ੍ਰਾਈਸਿਟੀ ਵਿੱਚ ਅਸੀਂ ਫਿਜ਼ੀਓਥੈਰੇਪੀ ਲਈ ਪਹਿਲੀ ਪਸੰਦ ਕਿਉਂ ਹਾਂ</p>
  </div>
  <div class="why-grid">
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-user-md"></i></div><div><h3>ਤਜਰਬੇਕਾਰ ਫਿਜ਼ੀਓਥੈਰੇਪਿਸਟ</h3><p>ਡਾ. ਤਰੁਣ ਗਰਗ ਅਤੇ ਉਨ੍ਹਾਂ ਦੀ ਟੀਮ ਕੋਲ 10+ ਸਾਲਾਂ ਦਾ ਤਜਰਬਾ ਹੈ। ਹਰ ਮਰੀਜ਼ ਦਾ ਇਲਾਜ ਮਾਹਰ ਫਿਜ਼ੀਓਥੈਰੇਪਿਸਟ ਖੁਦ ਕਰਦੇ ਹਨ।</p></div></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-heartbeat"></i></div><div><h3>ਵਿਅਕਤੀਗਤ ਦੇਖਭਾਲ</h3><p>ਹਰ ਮਰੀਜ਼ ਲਈ ਵੱਖਰੀ ਇਲਾਜ ਯੋਜਨਾ ਬਣਾਈ ਜਾਂਦੀ ਹੈ ਜੋ ਉਨ੍ਹਾਂ ਦੀ ਵਿਸ਼ੇਸ਼ ਸਮੱਸਿਆ ਅਤੇ ਟੀਚਿਆਂ ਅਨੁਸਾਰ ਹੁੰਦੀ ਹੈ।</p></div></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-tools"></i></div><div><h3>ਆਧੁਨਿਕ ਉਪਕਰਣ</h3><p>LASER ਥੈਰੇਪੀ, ਅਲਟਰਾਸਾਊਂਡ, TENS, IFT ਅਤੇ ਹੋਰ ਨਵੀਨਤਮ ਉਪਕਰਣਾਂ ਨਾਲ ਇਲਾਜ।</p></div></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-home"></i></div><div><h3>ਘਰ ਆ ਕੇ ਸੇਵਾ</h3><p>ਪੂਰੇ ਟ੍ਰਾਈਸਿਟੀ ਵਿੱਚ ਘਰ ਆ ਕੇ ਫਿਜ਼ੀਓਥੈਰੇਪੀ — ਖਾਸ ਕਰਕੇ ਬਜ਼ੁਰਗਾਂ ਅਤੇ ਸਰਜਰੀ ਤੋਂ ਬਾਅਦ ਦੇ ਮਰੀਜ਼ਾਂ ਲਈ।</p></div></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-clock"></i></div><div><h3>ਲਚਕਦਾਰ ਸਮਾਂ</h3><p>ਸੋਮਵਾਰ ਤੋਂ ਸ਼ਨੀਵਾਰ ਸਵੇਰੇ 9 ਤੋਂ ਸ਼ਾਮ 7 ਅਤੇ ਐਤਵਾਰ ਨੂੰ ਵੀ ਸੇਵਾਵਾਂ ਉਪਲਬਧ ਹਨ।</p></div></div>
- <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><i class="fas fa-rupee-sign"></i></div><div><h3>ਕਿਫਾਇਤੀ ਮੁੱਲ</h3><p>ਉੱਚ ਗੁਣਵੱਤਾ ਦੇ ਇਲਾਜ ਲਈ ਵਾਜਬ ਕੀਮਤਾਂ — ਕੋਈ ਲੁਕਵੇਂ ਖ਼ਰਚੇ ਨਹੀਂ।</p></div></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-md"></use></svg></div><div><h3>ਤਜਰਬੇਕਾਰ ਫਿਜ਼ੀਓਥੈਰੇਪਿਸਟ</h3><p>ਡਾ. ਤਰੁਣ ਗਰਗ ਅਤੇ ਉਨ੍ਹਾਂ ਦੀ ਟੀਮ ਕੋਲ 10+ ਸਾਲਾਂ ਦਾ ਤਜਰਬਾ ਹੈ। ਹਰ ਮਰੀਜ਼ ਦਾ ਇਲਾਜ ਮਾਹਰ ਫਿਜ਼ੀਓਥੈਰੇਪਿਸਟ ਖੁਦ ਕਰਦੇ ਹਨ।</p></div></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div><div><h3>ਵਿਅਕਤੀਗਤ ਦੇਖਭਾਲ</h3><p>ਹਰ ਮਰੀਜ਼ ਲਈ ਵੱਖਰੀ ਇਲਾਜ ਯੋਜਨਾ ਬਣਾਈ ਜਾਂਦੀ ਹੈ ਜੋ ਉਨ੍ਹਾਂ ਦੀ ਵਿਸ਼ੇਸ਼ ਸਮੱਸਿਆ ਅਤੇ ਟੀਚਿਆਂ ਅਨੁਸਾਰ ਹੁੰਦੀ ਹੈ।</p></div></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-tools"></use></svg></div><div><h3>ਆਧੁਨਿਕ ਉਪਕਰਣ</h3><p>LASER ਥੈਰੇਪੀ, ਅਲਟਰਾਸਾਊਂਡ, TENS, IFT ਅਤੇ ਹੋਰ ਨਵੀਨਤਮ ਉਪਕਰਣਾਂ ਨਾਲ ਇਲਾਜ।</p></div></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><div><h3>ਘਰ ਆ ਕੇ ਸੇਵਾ</h3><p>ਪੂਰੇ ਟ੍ਰਾਈਸਿਟੀ ਵਿੱਚ ਘਰ ਆ ਕੇ ਫਿਜ਼ੀਓਥੈਰੇਪੀ — ਖਾਸ ਕਰਕੇ ਬਜ਼ੁਰਗਾਂ ਅਤੇ ਸਰਜਰੀ ਤੋਂ ਬਾਅਦ ਦੇ ਮਰੀਜ਼ਾਂ ਲਈ।</p></div></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg></div><div><h3>ਲਚਕਦਾਰ ਸਮਾਂ</h3><p>ਸੋਮਵਾਰ ਤੋਂ ਸ਼ਨੀਵਾਰ ਸਵੇਰੇ 9 ਤੋਂ ਸ਼ਾਮ 7 ਅਤੇ ਐਤਵਾਰ ਨੂੰ ਵੀ ਸੇਵਾਵਾਂ ਉਪਲਬਧ ਹਨ।</p></div></div>
+ <div class="why-card reveal"><div class="why-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-rupee-sign"></use></svg></div><div><h3>ਕਿਫਾਇਤੀ ਮੁੱਲ</h3><p>ਉੱਚ ਗੁਣਵੱਤਾ ਦੇ ਇਲਾਜ ਲਈ ਵਾਜਬ ਕੀਮਤਾਂ — ਕੋਈ ਲੁਕਵੇਂ ਖ਼ਰਚੇ ਨਹੀਂ।</p></div></div>
  </div>
  </div>
 </section>
@@ -595,8 +588,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h2 id="cta-h2">ਆਪਣੀ ਰਿਕਵਰੀ ਅੱਜ ਹੀ ਸ਼ੁਰੂ ਕਰੋ</h2>
  <p>ਦਰਦ ਤੋਂ ਮੁਕਤ ਜ਼ਿੰਦਗੀ ਵੱਲ ਪਹਿਲਾ ਕਦਮ ਚੁੱਕੋ। ਸਾਡੀ ਮਾਹਰ ਟੀਮ ਤੁਹਾਡੀ ਮਦਦ ਲਈ ਤਿਆਰ ਹੈ — ਕਲੀਨਿਕ ਵਿੱਚ ਜਾਂ ਤੁਹਾਡੇ ਘਰ ਆ ਕੇ।</p>
  <div class="cta-buttons">
- <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> ਕਾਲ ਕਰੋ: +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=ਸਤ%20ਸ੍ਰੀ%20ਅਕਾਲ%2C%20ਮੈਂ%20ਫਿਜ਼ੀਓਥੈਰੇਪੀ%20ਅਪੌਇੰਟਮੈਂਟ%20ਬੁੱਕ%20ਕਰਨਾ%20ਚਾਹੁੰਦਾ%20ਹਾਂ" class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp 'ਤੇ ਬੁੱਕ ਕਰੋ</a>
+ <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> ਕਾਲ ਕਰੋ: +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=ਸਤ%20ਸ੍ਰੀ%20ਅਕਾਲ%2C%20ਮੈਂ%20ਫਿਜ਼ੀਓਥੈਰੇਪੀ%20ਅਪੌਇੰਟਮੈਂਟ%20ਬੁੱਕ%20ਕਰਨਾ%20ਚਾਹੁੰਦਾ%20ਹਾਂ" class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp 'ਤੇ ਬੁੱਕ ਕਰੋ</a>
  </div>
  </div>
  </div>
@@ -614,21 +607,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <div class="contact-details">
  <h3>ਕਲੀਨਿਕ ਦਾ ਵੇਰਵਾ</h3>
  <ul class="contact-info-list">
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>ਮੁੱਖ ਕਲੀਨਿਕ:</strong><br>SCO 12, ਅਨੰਤ ਸਕੁਆਇਰ, ਗਜ਼ੀਪੁਰ ਰੋਡ<br>ਜ਼ਿਰਕਪੁਰ, ਪੰਜਾਬ 140603</div></li>
- <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>ਬ੍ਰਾਂਚ ਕਲੀਨਿਕ:</strong><br>ਸੈਕਟਰ 20, ਪੰਚਕੂਲਾ, ਹਰਿਆਣਾ 134116</div></li>
- <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>ਫ਼ੋਨ:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
- <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
- <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>ਈਮੇਲ:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
- <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>ਸਮਾਂ:</strong> ਸੋਮ&ndash;ਸ਼ਨੀ 9AM&ndash;7PM | ਐਤਵਾਰ 10AM&ndash;2PM</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>ਮੁੱਖ ਕਲੀਨਿਕ:</strong><br>SCO 12, ਅਨੰਤ ਸਕੁਆਇਰ, ਗਜ਼ੀਪੁਰ ਰੋਡ<br>ਜ਼ਿਰਕਪੁਰ, ਪੰਜਾਬ 140603</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>ਬ੍ਰਾਂਚ ਕਲੀਨਿਕ:</strong><br>ਸੈਕਟਰ 20, ਪੰਚਕੂਲਾ, ਹਰਿਆਣਾ 134116</div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><div><strong>ਫ਼ੋਨ:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><div><strong>ਈਮੇਲ:</strong> <a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
+ <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><div><strong>ਸਮਾਂ:</strong> ਸੋਮ&ndash;ਸ਼ਨੀ 9AM&ndash;7PM | ਐਤਵਾਰ 10AM&ndash;2PM</div></li>
  </ul>
  <div class="contact-cta-btns">
- <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> ਰਸਤਾ ਦੱਸੋ</a>
- <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> ਹੁਣੇ ਫ਼ੋਨ ਕਰੋ</a>
+ <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg> ਰਸਤਾ ਦੱਸੋ</a>
+ <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> ਹੁਣੇ ਫ਼ੋਨ ਕਰੋ</a>
  </div>
  </div>
  <div class="map-frame">
  <a href="https://www.google.com/maps/dir/?api=1&destination=30.6387,76.8305" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Tap to open directions</span>
       </a>
@@ -648,11 +641,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
  <h3>ਫਿਜ਼ੀਓਨੂਤਰਾ ਕਲੀਨਿਕ</h3>
  <p>ਟ੍ਰਾਈਸਿਟੀ ਵਿੱਚ ਮਾਹਰ ਫਿਜ਼ੀਓਥੈਰੇਪੀ ਸੇਵਾਵਾਂ — ਵਿਅਕਤੀਗਤ ਦੇਖਭਾਲ ਅਤੇ ਆਧੁਨਿਕ ਇਲਾਜ ਨਾਲ ਸਰਵੋਤਮ ਰਿਕਵਰੀ।</p>
  <div class="footer-social" aria-label="ਸੋਸ਼ਲ ਮੀਡੀਆ">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -704,10 +697,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}.footer-grid{display:g
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="ਤੇਜ਼ ਸੰਪਰਕ">
- <a href="https://wa.me/919417791833?text=ਸਤ%20ਸ੍ਰੀ%20ਅਕਾਲ%2C%20ਮੈਂ%20ਫਿਜ਼ੀਓਥੈਰੇਪੀ%20ਬਾਰੇ%20ਜਾਣਕਾਰੀ%20ਚਾਹੁੰਦਾ%20ਹਾਂ" class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="WhatsApp 'ਤੇ ਗੱਲ ਕਰੋ"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="ਫ਼ੋਨ ਕਰੋ"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=ਸਤ%20ਸ੍ਰੀ%20ਅਕਾਲ%2C%20ਮੈਂ%20ਫਿਜ਼ੀਓਥੈਰੇਪੀ%20ਬਾਰੇ%20ਜਾਣਕਾਰੀ%20ਚਾਹੁੰਦਾ%20ਹਾਂ" class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="WhatsApp 'ਤੇ ਗੱਲ ਕਰੋ"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="ਫ਼ੋਨ ਕਰੋ"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="ਉੱਪਰ ਜਾਓ"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="ਉੱਪਰ ਜਾਓ"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

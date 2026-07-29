@@ -237,11 +237,11 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ FONTS ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;1,300&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 
 <style>
 /* ════════════════════════════════════
@@ -557,6 +557,10 @@ button { font-family:inherit; }
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 
 <body>
@@ -569,16 +573,16 @@ button { font-family:inherit; }
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM &nbsp;|&nbsp; Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM &nbsp;|&nbsp; Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social media links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter / X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -605,29 +609,29 @@ button { font-family:inherit; }
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu" role="menu">
- <li><a href="/services/acl-treatment-near-me/" role="menuitem"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/" role="menuitem"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/" role="menuitem"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/" role="menuitem"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/" role="menuitem"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/" role="menuitem"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/" role="menuitem"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu" role="menu">
- <li><a href="/physiotherapy/chandigarh/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/" role="menuitem"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/" role="menuitem"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
  <li><a href="/testimonials/">Testimonials</a></li>
  <li><a href="/faqs/">FAQs</a></li>
- <li><a href="tel:+919417791833" class="nav-cta"><i class="fas fa-phone-alt" style="font-size:.75rem"></i> Book Now</a></li>
+ <li><a href="tel:+919417791833" class="nav-cta"><svg class="icon" aria-hidden="true" style="font-size:.75rem"><use href="/icons.svg#fa-phone-alt"></use></svg> Book Now</a></li>
  </ul>
  </nav>
  </div>
@@ -660,15 +664,15 @@ button { font-family:inherit; }
  <div class="hero-dots" aria-hidden="true"><span></span><span></span><span></span></div>
  <div class="container">
  <div class="blog-hero-inner">
- <div class="hero-chip" aria-hidden="true"><i class="fas fa-running"></i> Sports &amp; Orthopaedic Physiotherapy</div>
+ <div class="hero-chip" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg> Sports &amp; Orthopaedic Physiotherapy</div>
  <h1 id="hero-heading">Ankle Sprain:<br><em>The Complete Recovery Guide</em></h1>
  <p class="hero-desc">Rolled your ankle? This friendly, easy-to-follow guide explains what's actually happening inside your ankle, what to do right now, and how to get back on your feet — properly.</p>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 15 Jan 2025</span>
  <span><i class="far fa-clock"></i> 11 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg, MPT</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
- <span><i class="fas fa-sync-alt"></i> Updated May 2026</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-sync-alt"></use></svg> Updated May 2026</span>
  </div>
  <div class="hero-badges" aria-hidden="true">
  <span class="hero-badge">⭐ 4.9 / 5 Clinic Rating</span>
@@ -697,13 +701,13 @@ button { font-family:inherit; }
 
  <!-- AIO ANSWER BOX — optimised for Google AI Overviews, voice search & featured snippets -->
  <div class="answer-box" role="note" aria-label="Quick answer summary">
- <span class="answer-label"><i class="fas fa-bolt" aria-hidden="true"></i> Quick Answer</span>
+ <span class="answer-label"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bolt"></use></svg> Quick Answer</span>
  <p>An ankle sprain happens when the ligaments around your ankle are overstretched or torn — usually when the foot rolls inward. There are 3 grades of severity: <strong>Grade 1</strong> (mild, 1–2 weeks recovery), <strong>Grade 2</strong> (partial tear, 3–6 weeks), and <strong>Grade 3</strong> (complete rupture, 8–12 weeks). First-aid follows the <strong>RICE protocol</strong> — Rest, Ice, Compression, Elevation. With proper physiotherapy, over <strong>95% of ankle sprains heal completely</strong> without surgery. Skipping rehab is the main reason ankles stay weak or keep getting re-injured. If you're in Zirakpur, Chandigarh, Mohali, or Panchkula — Dr. Tarun Garg at PhysioNutra Clinic can help. Call <a href="tel:+919417791833">+91 94177 91833</a>.</p>
  </div>
 
  <!-- TABLE OF CONTENTS -->
  <nav class="toc-card reveal" aria-label="Table of contents">
- <div class="toc-title"><i class="fas fa-list-ul" aria-hidden="true"></i> What's In This Guide</div>
+ <div class="toc-title"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-list-ul"></use></svg> What's In This Guide</div>
  <ol class="toc-list">
  <li><a href="#what-is-ankle-sprain">What is an ankle sprain?</a></li>
  <li><a href="#grades">The 3 grades of severity</a></li>
@@ -733,7 +737,7 @@ button { font-family:inherit; }
  <p>The good news? Most sprains don't need surgery. The not-so-good news? They do need proper care — because a "just walk it off" approach is exactly how a simple sprain becomes a recurring problem.</p>
 
  <div class="callout callout-blue reveal">
- <div class="callout-title"><i class="fas fa-info-circle"></i> Did You Know?</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-info-circle"></use></svg> Did You Know?</div>
  <ul>
  <li>Ankle sprains make up roughly <strong>40% of all sports injuries</strong> worldwide</li>
  <li>Basketball, football, and trail running carry the highest risk</li>
@@ -773,7 +777,7 @@ button { font-family:inherit; }
  <p>However, the following symptoms mean you should get assessed urgently — there may be a fracture or more serious injury involved:</p>
 
  <div class="callout callout-red reveal">
- <div class="callout-title"><i class="fas fa-exclamation-triangle"></i> Seek Immediate Assessment If You Have</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-exclamation-triangle"></use></svg> Seek Immediate Assessment If You Have</div>
  <ul>
  <li>You genuinely cannot put <strong>any weight</strong> on the foot at all</li>
  <li>Bone tenderness directly over the fibula (outer ankle bone) or along the inner ankle</li>
@@ -792,29 +796,29 @@ button { font-family:inherit; }
 
  <div class="rice-grid">
  <div class="rice-card reveal">
- <div class="rice-icon-wrap" aria-hidden="true"><i class="fas fa-stop-circle"></i></div>
+ <div class="rice-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-stop-circle"></use></svg></div>
  <h4>R — Rest</h4>
  <p>Stop the activity that caused the injury. If walking causes sharp pain, use crutches or avoid walking altogether for the first 24–48 hours. Rest doesn't mean lying completely still — gentle, pain-free toe and foot movements are actually helpful to keep blood circulating.</p>
  </div>
  <div class="rice-card reveal">
- <div class="rice-icon-wrap" aria-hidden="true"><i class="fas fa-snowflake"></i></div>
+ <div class="rice-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-snowflake"></use></svg></div>
  <h4>I — Ice</h4>
  <p>Wrap an ice pack (or a bag of frozen peas) in a thin cloth. Apply to the swollen area for <strong>15–20 minutes every 2–3 hours</strong> for the first 72 hours. Never put ice directly on skin — it can cause ice burns. Ice reduces swelling and naturally numbs the pain.</p>
  </div>
  <div class="rice-card reveal">
- <div class="rice-icon-wrap" aria-hidden="true"><i class="fas fa-band-aid"></i></div>
+ <div class="rice-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-band-aid"></use></svg></div>
  <h4>C — Compression</h4>
  <p>Wrap a firm elastic bandage around your ankle in a figure-of-eight pattern, starting at the forefoot and working upward. It should feel snug but not tight enough to cut off circulation. Check that your toes feel warm and normal. Remove the bandage at night.</p>
  </div>
  <div class="rice-card reveal">
- <div class="rice-icon-wrap" aria-hidden="true"><i class="fas fa-arrow-up"></i></div>
+ <div class="rice-icon-wrap" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-up"></use></svg></div>
  <h4>E — Elevation</h4>
  <p>Prop your ankle up above heart level whenever you're resting — ideally using pillows on a sofa or bed. This uses gravity to help drain the fluid causing the swelling. Combine it with gentle ankle pumping movements (flex and point your foot slowly) to keep circulation moving.</p>
  </div>
  </div>
 
  <div class="callout callout-green reveal">
- <div class="callout-title"><i class="fas fa-arrow-up-right-dots"></i> The Upgraded Version: POLICE Protocol</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-arrow-up-right-dots"></use></svg> The Upgraded Version: POLICE Protocol</div>
  <p>Modern sports medicine has added two important ideas to the classic RICE approach:</p>
  <ul style="margin-top:.6rem">
  <li><strong>Protection</strong> — Use a brace, splint, or crutches to guard the ankle from re-injury during the first few days. This doesn't mean zero movement — just protection from painful loading.</li>
@@ -906,7 +910,7 @@ button { font-family:inherit; }
  </div>
 
  <div class="callout callout-amber reveal">
- <div class="callout-title"><i class="fas fa-triangle-exclamation"></i> Exercise Safety — Please Read This</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-triangle-exclamation"></use></svg> Exercise Safety — Please Read This</div>
  <ul>
  <li>A little aching during exercise is normal. <strong>Sharp, worsening, or stabbing pain means stop immediately.</strong></li>
  <li>If your ankle swells more than usual after a session, you've done too much — reduce the load next time</li>
@@ -954,7 +958,7 @@ button { font-family:inherit; }
  </div>
 
  <div class="callout callout-green reveal">
- <div class="callout-title"><i class="fas fa-lightbulb"></i> A Realistic Note on Timelines</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-lightbulb"></use></svg> A Realistic Note on Timelines</div>
  <p>These are averages with proper care. Without physiotherapy, healing takes significantly longer and is often incomplete. With expert guided rehabilitation, recovery is typically <strong>30–40% faster</strong> than rest alone — and more importantly, the ankle comes back stronger, not just pain-free.</p>
  </div>
 
@@ -990,7 +994,7 @@ button { font-family:inherit; }
  <p>Once you've had one ankle sprain, the risk of another one goes up significantly — but it's very much a manageable risk with the right ongoing habits.</p>
 
  <div class="callout callout-green reveal">
- <div class="callout-title"><i class="fas fa-shield-halved"></i> Long-Term Prevention — What Actually Works</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shield-halved"></use></svg> Long-Term Prevention — What Actually Works</div>
  <ul>
  <li><strong>Keep doing balance exercises</strong> — 2–3 times a week for at least 3–6 months post-injury. Proprioception takes months to fully restore.</li>
  <li><strong>Wear a brace for sport</strong> — For Grade 2–3 sprains, a functional ankle brace during sport for 6–12 months reduces re-injury risk by 50–70%. It's not a sign of weakness; it's smart recovery.</li>
@@ -1005,22 +1009,22 @@ button { font-family:inherit; }
 
  <div class="stories-grid" itemscope itemtype="https://schema.org/ItemList">
  <div class="story-card reveal" itemprop="itemListElement" itemscope itemtype="https://schema.org/Review">
- <div class="story-name"><i class="fas fa-user-circle" aria-hidden="true"></i> Arjun S., 26 <span>Basketball — Chandigarh</span></div>
+ <div class="story-name"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-circle"></use></svg> Arjun S., 26 <span>Basketball — Chandigarh</span></div>
  <p itemprop="reviewBody">"Three weeks after rolling my ankle in a match, it still wasn't right. Dr. Tarun found I had real peroneal weakness and poor balance on that side. Six weeks of structured rehab later, I was back playing — and honestly better than before. I now do the balance work twice a week and haven't had a problem since."</p>
  <meta itemprop="reviewRating" content="5">
  </div>
  <div class="story-card reveal" itemprop="itemListElement" itemscope itemtype="https://schema.org/Review">
- <div class="story-name"><i class="fas fa-user-circle" aria-hidden="true"></i> Priya M., 42 <span>Recurrent Sprains — Panchkula</span></div>
+ <div class="story-name"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-circle"></use></svg> Priya M., 42 <span>Recurrent Sprains — Panchkula</span></div>
  <p itemprop="reviewBody">"I'd sprained the same ankle four times in two years and thought I just had 'weak ankles.' Dr. Tarun explained that my proprioceptive system had never been properly retrained after the first injury. After 8 weeks focusing on balance and peroneal control, I've been sprain-free for over a year. I only wish I'd come sooner."</p>
  <meta itemprop="reviewRating" content="5">
  </div>
  <div class="story-card reveal" itemprop="itemListElement" itemscope itemtype="https://schema.org/Review">
- <div class="story-name"><i class="fas fa-user-circle" aria-hidden="true"></i> Vikram K., 34 <span>Grade 3 Rupture — Mohali</span></div>
+ <div class="story-name"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-circle"></use></svg> Vikram K., 34 <span>Grade 3 Rupture — Mohali</span></div>
  <p itemprop="reviewBody">"Coming out of the boot after a complete tear, my ankle was stiff, swollen, and I was genuinely scared to walk on uneven ground. The four-phase programme at PhysioNutra was exactly what I needed — one step at a time. By week 12 I was back to hiking in the hills. The early ultrasound sessions made a huge difference to how quickly the stiffness cleared."</p>
  <meta itemprop="reviewRating" content="5">
  </div>
  <div class="story-card reveal" itemprop="itemListElement" itemscope itemtype="https://schema.org/Review">
- <div class="story-name"><i class="fas fa-user-circle" aria-hidden="true"></i> Simran K., 31 <span>Runner — Zirakpur</span></div>
+ <div class="story-name"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-circle"></use></svg> Simran K., 31 <span>Runner — Zirakpur</span></div>
  <p itemprop="reviewBody">"I sprained my ankle 6 weeks before a half marathon and was devastated. Dr. Tarun put together a rapid but safe rehab plan. I made it to the race — not my fastest, but I finished without any ankle trouble. The guidance on when to push and when to back off made all the difference."</p>
  <meta itemprop="reviewRating" content="5">
  </div>
@@ -1108,8 +1112,8 @@ button { font-family:inherit; }
  <h2>Ready to Recover Properly?</h2>
  <p>Don't let a badly managed ankle sprain turn into months of recurring pain and instability. Dr. Tarun Garg at PhysioNutra Clinic provides thorough assessment and personalised rehabilitation — from the day of injury right through to full return to sport or activity. Serving Zirakpur, Chandigarh, Mohali, and Panchkula. Home visits available.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-green"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20help%20with%20ankle%20sprain%20physiotherapy." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-green"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20help%20with%20ankle%20sprain%20physiotherapy." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -1127,32 +1131,32 @@ button { font-family:inherit; }
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid" aria-label="Related content">
  <a href="/blogs/sports-physiotherapy/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-running"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div>
  <h4>Sports Physiotherapy Guide</h4>
  <p>How physiotherapy helps athletes prevent injury and recover faster.</p>
  </a>
  <a href="/services/sports-injury-treatment/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-kit-medical"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-kit-medical"></use></svg></div>
  <h4>Sports Injury Treatment</h4>
  <p>Specialist assessment and treatment for all sports-related injuries.</p>
  </a>
  <a href="/blogs/acl-tear-rehabilitation/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-bone"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg></div>
  <h4>ACL Tear Rehabilitation</h4>
  <p>Phase-by-phase guide to ACL recovery and return to sport.</p>
  </a>
  <a href="/services/manual-therapy/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-hands"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div>
  <h4>Manual Therapy</h4>
  <p>Expert hands-on joint mobilisation and soft tissue treatment.</p>
  </a>
  <a href="/blogs/pain-management-physiotherapy/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-hand-holding-heart"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-holding-heart"></use></svg></div>
  <h4>Pain Management</h4>
  <p>Drug-free physiotherapy for acute and chronic pain conditions.</p>
  </a>
  <a href="/services/home-physiotherapy-chandigarh/" class="related-card">
- <div class="r-icon" aria-hidden="true"><i class="fas fa-house-medical"></i></div>
+ <div class="r-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-house-medical"></use></svg></div>
  <h4>Home Physiotherapy</h4>
  <p>Professional physiotherapy at your doorstep across the Tricity.</p>
  </a>
@@ -1160,7 +1164,7 @@ button { font-family:inherit; }
 
  <!-- DISCLAIMER -->
  <div class="callout callout-grey" style="margin-top:2.2rem" role="note" aria-label="Medical disclaimer">
- <div class="callout-title"><i class="fas fa-circle-info"></i> Medical Disclaimer</div>
+ <div class="callout-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-circle-info"></use></svg> Medical Disclaimer</div>
  <p>This article is for general information and education only. It is not a substitute for professional medical advice, a clinical diagnosis, or a personalised treatment plan. Every ankle injury is different — what's appropriate for one person may not be right for another. If you are concerned about your symptoms, are experiencing worsening pain, or have suffered a significant injury, please seek assessment from a qualified physiotherapist or doctor. Never begin a rehabilitation exercise programme without guidance from a registered health professional.</p>
  </div>
 
@@ -1178,11 +1182,11 @@ button { font-family:inherit; }
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Evidence-based physiotherapy for ankle sprains, sports injuries, and orthopaedic rehabilitation across Chandigarh Tricity.</p>
  <div class="footer-socials" aria-label="Follow PhysioNutra">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter / X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -1211,10 +1215,10 @@ button { font-family:inherit; }
  </div>
  <div class="footer-section">
  <h3>Contact Us</h3>
- <p style="margin-bottom:.55rem"><i class="fas fa-map-marker-alt" style="color:var(--green);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.55rem"><i class="fas fa-phone-alt" style="color:var(--green);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--green)">+91 94177 91833</a></p>
- <p style="margin-bottom:.55rem"><i class="fas fa-envelope" style="color:var(--green);margin-right:.4rem"></i><a href="#" style="color:var(--green)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--green);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM &nbsp;|&nbsp; Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.55rem"><svg class="icon" aria-hidden="true" style="color:var(--green);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.55rem"><svg class="icon" aria-hidden="true" style="color:var(--green);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--green)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.55rem"><svg class="icon" aria-hidden="true" style="color:var(--green);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--green)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--green);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM &nbsp;|&nbsp; Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -1226,10 +1230,10 @@ button { font-family:inherit; }
 
 <!-- FLOATING CONTACT BUTTONS -->
 <div class="float-btns" aria-label="Quick contact options">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20ankle%20sprain%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20ankle%20sprain%20physiotherapy." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Scroll back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Scroll back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height sync ── */

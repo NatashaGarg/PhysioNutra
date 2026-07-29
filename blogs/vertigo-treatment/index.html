@@ -86,18 +86,7 @@ window.dataLayer=window.dataLayer||[];
 ]}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 /* ══ RESET & BASE ══ */
@@ -181,6 +170,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -192,16 +185,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -226,23 +219,23 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -271,13 +264,13 @@ button{font-family:inherit}
 <section class="blog-hero">
  <div class="container">
  <div class="blog-hero-inner">
- <div class="blog-chip"><i class="fas fa-dizzy"></i> Vestibular Rehabilitation &amp; Balance Disorders</div>
+ <div class="blog-chip"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dizzy"></use></svg> Vestibular Rehabilitation &amp; Balance Disorders</div>
  <h1>Vertigo Treatment:<br><em>BPPV, Epley Manoeuvre &amp; Vestibular Rehabilitation</em></h1>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 5 Nov 2025</span>
  <span><i class="far fa-clock"></i> 12 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
  </div>
  </div>
  </div>
@@ -301,7 +294,7 @@ button{font-family:inherit}
 
  <!-- Red flag warning -->
  <div class="warning-box" role="alert">
- <div class="warning-title"><i class="fas fa-exclamation-triangle"></i> Red Flag Symptoms — Seek Emergency Medical Attention Immediately</div>
+ <div class="warning-title"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-exclamation-triangle"></use></svg> Red Flag Symptoms — Seek Emergency Medical Attention Immediately</div>
  <ul>
  <li><strong>Sudden severe headache</strong> unlike any previously experienced, arising with the onset of dizziness</li>
  <li><strong>Diplopia</strong> (double vision), sudden vision loss, or new visual field disturbance</li>
@@ -378,7 +371,7 @@ button{font-family:inherit}
  <p>The Epley manoeuvre is the most studied and most effective non-surgical treatment in vestibular medicine. Developed by otolaryngologist Dr. John Epley in 1992, it exploits the anatomy of the posterior semicircular canal: by moving the head through a precise sequence of positions while the patient lies flat, the displaced otoconia are guided from the canal back through the common crus and into the utricle, where they settle and can no longer generate the false rotational signals that cause vertigo. When performed correctly on a correctly diagnosed patient, the Epley manoeuvre resolves BPPV in the great majority of patients with posterior canal involvement in a single session.</p>
 
  <div class="steps-card reveal">
- <h3><i class="fas fa-sync-alt" style="color:var(--g);margin-right:.5rem"></i>The Epley Manoeuvre — Posterior Canal BPPV (Right Ear)</h3>
+ <h3><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.5rem"><use href="/icons.svg#fa-sync-alt"></use></svg>The Epley Manoeuvre — Posterior Canal BPPV (Right Ear)</h3>
  <ol class="step-list">
  <li><span class="step-num">1</span>The patient sits upright on the examination table with the head rotated 45° to the right (towards the affected ear). The physiotherapist supports the head throughout.</li>
  <li><span class="step-num">2</span>The patient is lowered quickly to the supine position with the head hanging approximately 20–30° below the horizontal (Dix-Hallpike position, right ear down). A burst of rotatory nystagmus and vertigo typically confirms the diagnosis and indicates correct positioning. This position is held for 30–60 seconds or until nystagmus subsides.</li>
@@ -441,32 +434,32 @@ button{font-family:inherit}
 
  <div class="treat-grid">
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-sync-alt"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-sync-alt"></use></svg></div>
  <h4>Canalith Repositioning (Epley &amp; Semont)</h4>
  <p>The definitive treatment for BPPV, performed following formal Dix-Hallpike or supine roll test diagnosis. The Epley manoeuvre is used for posterior canal BPPV; the Semont manoeuvre is an alternative when patient positioning constraints apply. Horizontal canal BPPV requires the Barbecue Roll or Gufoni manoeuvre, selected based on whether the variant is geotropic or apogeotropic on the supine roll test.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-eye"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-eye"></use></svg></div>
  <h4>Vestibulo-Ocular Reflex (VOR) Retraining</h4>
  <p>The VOR is the rapid reflexive eye movement that stabilises the visual image during head movement. When vestibular neuritis or bilateral hypofunction impairs the VOR, patients experience oscillopsia — visual blurring during movement — and reduced dynamic visual acuity. VOR×1 and VOR×2 exercises, performed at progressively higher head velocities across multiple planes, drive adaptive VOR gain changes that gradually restore gaze stability.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-balance-scale"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-balance-scale"></use></svg></div>
  <h4>Sensory Organisation Training</h4>
  <p>Stable balance requires the brain to correctly weight and integrate three sensory inputs: visual, vestibular, and somatosensory (proprioceptive). After vestibular injury, the brain often over-relies on vision, leading to imbalance in visually complex or low-light environments. Sensory organisation training progressively challenges the patient with conditions that remove or conflict visual and somatosensory inputs, forcing increasing reliance on vestibular signals and improving integration across all three systems.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-walking"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-walking"></use></svg></div>
  <h4>Habituation Training</h4>
  <p>Habituation exercises involve repeated, controlled exposure to the specific movements or environments that provoke dizziness — gradually reducing the symptomatic response through central adaptation. The principle is well-established: repeated sub-maximal stimulation of the vestibular system reduces its perceptual gain over time, making previously provocative activities progressively less distressing. Habituation is most effective for motion-sensitivity and visual vertigo rather than acute BPPV, and is dosed carefully to avoid over-stimulation.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-head-side-virus"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-head-side-virus"></use></svg></div>
  <h4>Gaze Stabilisation in Complex Environments</h4>
  <p>Real-world gaze challenges — reading a moving display board, navigating a busy supermarket, tracking a moving object in a crowd — place demands on the vestibular system that clinical exercises alone cannot fully replicate. Rehabilitation progressively incorporates real-environment challenges: walking in populated areas, scanning while moving, and activities that require simultaneous motor and visual demands, ensuring that rehabilitation gains translate into the functional independence that patients actually need.</p>
  </div>
  <div class="treat-card reveal">
- <div class="t-icon"><i class="fas fa-shield-alt"></i></div>
+ <div class="t-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shield-alt"></use></svg></div>
  <h4>Fall Prevention &amp; Safety Programming</h4>
  <p>Vestibular disorders significantly elevate fall risk — a consequence of impaired balance, delayed postural responses, and spatial disorientation. Fall prevention programming at PhysioNutra Clinic addresses reactive balance responses through perturbation training, environmental hazard assessment, footwear advice, and targeted strengthening of the hip and ankle muscles that execute protective stepping reactions. For older patients, falls prevention is often the primary functional goal that determines the shape of the entire rehabilitation programme.</p>
  </div>
@@ -558,8 +551,8 @@ button{font-family:inherit}
  <h2>Accurate Diagnosis. Effective Treatment. Faster Recovery.</h2>
  <p>Specialist vestibular assessment at PhysioNutra Clinic, Zirakpur. BPPV canalith repositioning, vestibular rehabilitation, gaze stabilisation &amp; Meniere's management. Serving Chandigarh, Mohali &amp; Panchkula.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-g"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20vertigo%20treatment." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-g"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20vertigo%20treatment." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -576,12 +569,12 @@ button{font-family:inherit}
  <!-- Related -->
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid">
- <a href="/services/neurological-rehabilitation/" class="related-card"><div class="ri"><i class="fas fa-brain"></i></div><h4>Neurological Rehabilitation</h4><p>Full-spectrum neuro rehab for stroke, Parkinson's, spinal cord injury &amp; neurological balance disorders.</p></a>
- <a href="/blogs/stroke-rehabilitation/" class="related-card"><div class="ri"><i class="fas fa-heartbeat"></i></div><h4>Stroke Rehabilitation</h4><p>Neuroplasticity-based recovery, gait retraining &amp; constraint-induced movement therapy after stroke.</p></a>
- <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><i class="fas fa-home"></i></div><h4>Home Physiotherapy</h4><p>Specialist vestibular rehabilitation delivered in your home across Chandigarh Tricity.</p></a>
- <a href="/blogs/slip-disc-treatment/" class="related-card"><div class="ri"><i class="fas fa-spine"></i></div><h4>Slip Disc Treatment</h4><p>McKenzie Method &amp; core rehabilitation for lumbar disc herniation.</p></a>
- <a href="/services/manual-therapy/" class="related-card"><div class="ri"><i class="fas fa-hands"></i></div><h4>Manual Therapy</h4><p>Hands-on physiotherapy for joint mobility, pain, and neuromuscular function.</p></a>
- <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-stethoscope"></i></div><h4>Pain Management</h4><p>Physiotherapy-led chronic and acute pain management programmes.</p></a>
+ <a href="/services/neurological-rehabilitation/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg></div><h4>Neurological Rehabilitation</h4><p>Full-spectrum neuro rehab for stroke, Parkinson's, spinal cord injury &amp; neurological balance disorders.</p></a>
+ <a href="/blogs/stroke-rehabilitation/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div><h4>Stroke Rehabilitation</h4><p>Neuroplasticity-based recovery, gait retraining &amp; constraint-induced movement therapy after stroke.</p></a>
+ <a href="/services/home-physiotherapy-chandigarh/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h4>Home Physiotherapy</h4><p>Specialist vestibular rehabilitation delivered in your home across Chandigarh Tricity.</p></a>
+ <a href="/blogs/slip-disc-treatment/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg></div><h4>Slip Disc Treatment</h4><p>McKenzie Method &amp; core rehabilitation for lumbar disc herniation.</p></a>
+ <a href="/services/manual-therapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h4>Manual Therapy</h4><p>Hands-on physiotherapy for joint mobility, pain, and neuromuscular function.</p></a>
+ <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-stethoscope"></use></svg></div><h4>Pain Management</h4><p>Physiotherapy-led chronic and acute pain management programmes.</p></a>
  </div>
 
  <!-- Disclaimer -->
@@ -604,11 +597,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Expert vertigo treatment and vestibular rehabilitation across Chandigarh Tricity. BPPV diagnosis, Epley manoeuvre, gaze stabilisation, balance retraining and Meniere's management for patients at every stage of their vestibular recovery.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -637,10 +630,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -651,10 +644,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20vertigo%20treatment." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20need%20information%20about%20vertigo%20treatment." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

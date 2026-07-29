@@ -154,18 +154,10 @@ window.dataLayer=window.dataLayer||[];
 </script>
 
 <!-- ═══ Preconnect & Fonts ═══ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
+<!-- FIX 17: Self-hosted fonts — no more external requests to fonts.googleapis.com / fonts.gstatic.com -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 /* ═══ RESET & BASE ═══ */
@@ -489,6 +481,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
 .u-static-map-label{font-weight:600;font-size:1.05rem}
 .u-static-map-sub{font-size:.85rem;color:#4a7a63}
 </style>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -502,17 +498,17 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
     <div class="container">
       <div class="header-top-content">
         <div class="header-contact">
-          <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
-          <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#"  class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
-          <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#"  class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
         </div>
         <div style="display:flex;align-items:center;gap:1.1rem">
           <div class="header-social" aria-label="Social media links">
-            <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+            <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+            <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+            <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+            <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
           </div>
         </div>
       </div>
@@ -529,31 +525,31 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
           </div>
         </div>
         <nav role="navigation" aria-label="Main navigation">
-          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
           <ul id="mainMenu">
             <li><a href="/">Home</a></li>
             <li><a href="/about/">About Us</a></li>
             <li class="has-dropdown">
               <a href="/services/">Services</a>
               <ul class="dropdown-menu" aria-label="Services submenu">
-                <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
-                <li><a href="/services/women-health-physiotherapy/"><i class="fas fa-venus"></i>Women's Health</a></li>
-                <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
-                <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
-                <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
-                <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
-                <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+                <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+                <li><a href="/services/women-health-physiotherapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-venus"></use></svg>Women's Health</a></li>
+                <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+                <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+                <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+                <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+                <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
               </ul>
             </li>
             <li class="has-dropdown">
               <a href="/physiotherapy/">Locations</a>
               <ul class="dropdown-menu" aria-label="Locations submenu">
-                <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
-                <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
-                <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
-                <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
-                <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
-                <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+                <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+                <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+                <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+                <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+                <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+                <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
               </ul>
             </li>
             <li><a href="/blogs/">Blog</a></li>
@@ -583,8 +579,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <div class="free-badge"><i class="fas fa-gift" aria-hidden="true"></i> 100% Free &mdash; No Obligation</div>
-        <div class="hero-badge"><i class="fas fa-calendar-check" aria-hidden="true"></i> Next Camp: 5 January 2026</div>
+        <div class="free-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-gift"></use></svg> 100% Free &mdash; No Obligation</div>
+        <div class="hero-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-calendar-check"></use></svg> Next Camp: 5 January 2026</div>
         <h1 id="hero-h1">Free Physiotherapy <em>Health Camp</em> in Chandigarh Tricity</h1>
         <p class="hero-subtitle">Get a FREE health assessment, posture analysis, pain screening &amp; expert physiotherapy consultation &mdash; worth &#8377;1,000. Open to all. Limited slots available at each camp.</p>
         <div class="hero-stats">
@@ -593,8 +589,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
           <div class="stat-item"><span class="stat-num">98%</span><span class="stat-label">Satisfaction Rate</span></div>
         </div>
         <div class="hero-buttons">
-          <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Register: +91 94177 91833</a>
-          <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp to Register</a>
+          <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Register: +91 94177 91833</a>
+          <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp to Register</a>
         </div>
       </div>
 
@@ -631,9 +627,9 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
           </div>
           <button type="submit" class="submit-btn">Reserve My Free Spot</button>
         </form>
-        <div class="spots-warning"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Only 15 slots remaining for Jan 5 camp</div>
+        <div class="spots-warning"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-exclamation-triangle"></use></svg> Only 15 slots remaining for Jan 5 camp</div>
         <div class="form-success" id="form-success" role="alert">
-          <i class="fas fa-check-circle" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"></i>
+          <svg class="icon" style="font-size:1.3rem;display:block;margin-bottom:.4rem" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
           Your spot is reserved! We will call to confirm your time slot.
         </div>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Form submission target"></iframe>
@@ -646,11 +642,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
 <div class="trust-strip" aria-label="Trust indicators">
   <div class="container">
     <div class="trust-inner">
-      <div class="trust-item"><i class="fas fa-gift" aria-hidden="true"></i> Completely Free</div>
-      <div class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> Certified Physiotherapists</div>
-      <div class="trust-item"><i class="fas fa-users" aria-hidden="true"></i> Open to All Ages</div>
-      <div class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> 4.9&#9733; Google Rating</div>
-      <div class="trust-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Tricity Coverage</div>
+      <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-gift"></use></svg> Completely Free</div>
+      <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg> Certified Physiotherapists</div>
+      <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-users"></use></svg> Open to All Ages</div>
+      <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> 4.9&#9733; Google Rating</div>
+      <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg> Tricity Coverage</div>
     </div>
   </div>
 </div>
@@ -663,7 +659,7 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
         <h3>&#127881; Next Camp: 5 January 2026 &mdash; Zirakpur</h3>
         <p>PhysioNutra Clinic, Ananta Square &nbsp;&middot;&nbsp; 10:00 AM &ndash; 4:00 PM &nbsp;&middot;&nbsp; FREE entry</p>
       </div>
-      <a href="tel:+919417791833" class="alert-btn"><i class="fas fa-phone-alt" aria-hidden="true"></i> Register Now</a>
+      <a href="tel:+919417791833" class="alert-btn"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Register Now</a>
     </div>
   </div>
 </div>
@@ -689,15 +685,15 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
         <span class="section-label">What's Included</span>
         <h3 style="font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:1rem">Everything you receive at the camp &mdash; completely free</h3>
         <ul class="includes-list" role="list">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Complete musculoskeletal health assessment</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Posture and spinal alignment analysis</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Pain and injury screening</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Expert one-on-one consultation with a physiotherapist</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Personalised exercise and wellness recommendations</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Hands-on physiotherapy technique demonstrations</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Injury prevention education and Q&amp;A session</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Complete musculoskeletal health assessment</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Posture and spinal alignment analysis</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Pain and injury screening</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Expert one-on-one consultation with a physiotherapist</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Personalised exercise and wellness recommendations</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Hands-on physiotherapy technique demonstrations</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg> Injury prevention education and Q&amp;A session</li>
         </ul>
-        <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><i class="fas fa-info-circle" style="color:var(--green)" aria-hidden="true"></i> &nbsp;Total value: <strong>&#8377;1,000</strong> &mdash; completely free of charge. No hidden fees, no obligation, no upselling. Pure community service.</p>
+        <p style="font-size:.84rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)"><svg class="icon" style="color:var(--green)" aria-hidden="true"><use href="/icons.svg#fa-info-circle"></use></svg> &nbsp;Total value: <strong>&#8377;1,000</strong> &mdash; completely free of charge. No hidden fees, no obligation, no upselling. Pure community service.</p>
       </div>
     </div>
   </div>
@@ -716,15 +712,15 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
       <!-- Camp 1 — Featured / Active -->
       <article class="camp-card reveal">
         <div class="camp-card-top">
-          <div class="camp-badge-pill"><i class="fas fa-star" aria-hidden="true"></i> Featured</div>
-          <div class="camp-date-display"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Sunday, 5 January 2026</div>
+          <div class="camp-badge-pill"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg> Featured</div>
+          <div class="camp-date-display"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-calendar-alt"></use></svg> Sunday, 5 January 2026</div>
           <h3 class="camp-card-title">Zirakpur Health Camp</h3>
         </div>
         <div class="camp-card-body">
           <div class="camp-meta">
-            <div class="camp-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>PhysioNutra Clinic, SCO 12, Ananta Square, Gazipur Road, Zirakpur</span></div>
-            <div class="camp-meta-item"><i class="fas fa-clock" aria-hidden="true"></i><span>10:00 AM &ndash; 4:00 PM</span></div>
-            <div class="camp-meta-item"><i class="fas fa-users" aria-hidden="true"></i><span>Open to all ages &mdash; no appointment needed (registration preferred)</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><span>PhysioNutra Clinic, SCO 12, Ananta Square, Gazipur Road, Zirakpur</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>10:00 AM &ndash; 4:00 PM</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-users"></use></svg><span>Open to all ages &mdash; no appointment needed (registration preferred)</span></div>
           </div>
           <div class="camp-includes">
             <h4>What's Included</h4>
@@ -737,22 +733,22 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
             </ul>
           </div>
           <a href="tel:+919417791833" class="camp-register-btn">Register Now &mdash; Free</a>
-          <p class="camp-spots"><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Only 15 spots remaining!</p>
+          <p class="camp-spots"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-exclamation-circle"></use></svg> Only 15 spots remaining!</p>
         </div>
       </article>
 
       <!-- Camp 2 — Upcoming -->
       <article class="camp-card reveal">
         <div class="camp-card-top orange">
-          <div class="camp-badge-pill free"><i class="fas fa-calendar" aria-hidden="true"></i> Upcoming</div>
-          <div class="camp-date-display"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Sunday, 8 March 2026</div>
+          <div class="camp-badge-pill free"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-calendar"></use></svg> Upcoming</div>
+          <div class="camp-date-display"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-calendar-alt"></use></svg> Sunday, 8 March 2026</div>
           <h3 class="camp-card-title">Panchkula Health Camp</h3>
         </div>
         <div class="camp-card-body">
           <div class="camp-meta">
-            <div class="camp-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>PhysioNutra Branch Clinic, Sector 20, Panchkula</span></div>
-            <div class="camp-meta-item"><i class="fas fa-clock" aria-hidden="true"></i><span>10:00 AM &ndash; 4:00 PM</span></div>
-            <div class="camp-meta-item"><i class="fas fa-users" aria-hidden="true"></i><span>Special focus: senior citizen screening</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><span>PhysioNutra Branch Clinic, Sector 20, Panchkula</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>10:00 AM &ndash; 4:00 PM</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-users"></use></svg><span>Special focus: senior citizen screening</span></div>
           </div>
           <div class="camp-includes">
             <h4>What's Included</h4>
@@ -772,15 +768,15 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
       <!-- Camp 3 — Upcoming -->
       <article class="camp-card reveal">
         <div class="camp-card-top blue">
-          <div class="camp-badge-pill free"><i class="fas fa-building" aria-hidden="true"></i> Corporate</div>
-          <div class="camp-date-display"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Saturday, 4 April 2026</div>
+          <div class="camp-badge-pill free"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-building"></use></svg> Corporate</div>
+          <div class="camp-date-display"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-calendar-alt"></use></svg> Saturday, 4 April 2026</div>
           <h3 class="camp-card-title">Chandigarh Corporate Camp</h3>
         </div>
         <div class="camp-card-body">
           <div class="camp-meta">
-            <div class="camp-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>IT Park Area, Chandigarh (venue to be confirmed)</span></div>
-            <div class="camp-meta-item"><i class="fas fa-clock" aria-hidden="true"></i><span>2:00 PM &ndash; 6:00 PM</span></div>
-            <div class="camp-meta-item"><i class="fas fa-users" aria-hidden="true"></i><span>Office workers, tech professionals, remote workers</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><span>IT Park Area, Chandigarh (venue to be confirmed)</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>2:00 PM &ndash; 6:00 PM</span></div>
+            <div class="camp-meta-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-users"></use></svg><span>Office workers, tech professionals, remote workers</span></div>
           </div>
           <div class="camp-includes">
             <h4>What's Included</h4>
@@ -810,12 +806,12 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
       <p class="section-subtitle">More than just a free check-up &mdash; a genuine community health service</p>
     </div>
     <div class="benefits-grid">
-      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-rupee-sign"></i></div><h3>Zero Cost Assessment</h3><p>A complete physiotherapy health assessment worth &#8377;1,000 &mdash; yours at absolutely no charge. No hidden fees, no pressure, no obligation to book any further treatment.</p></div>
-      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-user-md"></i></div><h3>Expert Physiotherapists</h3><p>Every camp is run by Dr. Tarun Aggarwal and our senior team &mdash; the same specialists who treat patients at our clinic. You receive the same quality of attention and expertise.</p></div>
-      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-clipboard-list"></i></div><h3>Personalised Recommendations</h3><p>Leave with a customised exercise plan, posture correction tips, and practical advice tailored specifically to your body, lifestyle, and health concerns.</p></div>
-      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div><h3>Injury Prevention Education</h3><p>Learn evidence-based strategies for preventing common injuries, managing pain at home, and improving your long-term musculoskeletal health through hands-on demonstrations.</p></div>
-      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-dumbbell"></i></div><h3>Live Exercise Demonstrations</h3><p>Watch and practice key exercises and stretches led by our physiotherapists &mdash; practical, actionable techniques you can apply immediately at home or at work.</p></div>
-      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><i class="fas fa-hands-helping"></i></div><h3>Community Health Initiative</h3><p>Our camps are a genuine commitment to public health in Chandigarh Tricity. We believe expert physiotherapy guidance should be accessible to everyone, regardless of budget.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-rupee-sign"></use></svg></div><h3>Zero Cost Assessment</h3><p>A complete physiotherapy health assessment worth &#8377;1,000 &mdash; yours at absolutely no charge. No hidden fees, no pressure, no obligation to book any further treatment.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-md"></use></svg></div><h3>Expert Physiotherapists</h3><p>Every camp is run by Dr. Tarun Aggarwal and our senior team &mdash; the same specialists who treat patients at our clinic. You receive the same quality of attention and expertise.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clipboard-list"></use></svg></div><h3>Personalised Recommendations</h3><p>Leave with a customised exercise plan, posture correction tips, and practical advice tailored specifically to your body, lifestyle, and health concerns.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-graduation-cap"></use></svg></div><h3>Injury Prevention Education</h3><p>Learn evidence-based strategies for preventing common injuries, managing pain at home, and improving your long-term musculoskeletal health through hands-on demonstrations.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dumbbell"></use></svg></div><h3>Live Exercise Demonstrations</h3><p>Watch and practice key exercises and stretches led by our physiotherapists &mdash; practical, actionable techniques you can apply immediately at home or at work.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands-helping"></use></svg></div><h3>Community Health Initiative</h3><p>Our camps are a genuine commitment to public health in Chandigarh Tricity. We believe expert physiotherapy guidance should be accessible to everyone, regardless of budget.</p></div>
     </div>
   </div>
 </section>
@@ -846,12 +842,12 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
       <p class="section-subtitle">From school children to senior citizens &mdash; if you have a body, you can benefit</p>
     </div>
     <div class="audience-grid">
-      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-laptop"></i></div><div><h3>Office Workers</h3><p>Desk pain, neck stiffness, wrist issues, and poor ergonomics &mdash; common in IT and corporate professionals across Chandigarh and Mohali.</p></div></div>
-      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-running"></i></div><div><h3>Athletes &amp; Sports Players</h3><p>Sports injuries, muscle pain, joint problems, and performance screening for footballers, cricketers, and gym-goers.</p></div></div>
-      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div><div><h3>Senior Citizens</h3><p>Balance problems, arthritis, fall risk assessment, back pain, and general age-related musculoskeletal screening.</p></div></div>
-      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-baby"></i></div><div><h3>New Mothers</h3><p>Postpartum back pain, pelvic floor concerns, diastasis recti, and safe return-to-exercise guidance for new mums.</p></div></div>
-      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-home"></i></div><div><h3>Homemakers</h3><p>Repetitive strain injuries, back pain from household tasks, and posture problems from carrying children or sustained bending.</p></div></div>
-      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><i class="fas fa-child"></i></div><div><h3>Teenagers &amp; Students</h3><p>Posture problems from heavy school bags and screen time, scoliosis screening, and sports injury evaluation.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-laptop"></use></svg></div><div><h3>Office Workers</h3><p>Desk pain, neck stiffness, wrist issues, and poor ergonomics &mdash; common in IT and corporate professionals across Chandigarh and Mohali.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><div><h3>Athletes &amp; Sports Players</h3><p>Sports injuries, muscle pain, joint problems, and performance screening for footballers, cricketers, and gym-goers.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-friends"></use></svg></div><div><h3>Senior Citizens</h3><p>Balance problems, arthritis, fall risk assessment, back pain, and general age-related musculoskeletal screening.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-baby"></use></svg></div><div><h3>New Mothers</h3><p>Postpartum back pain, pelvic floor concerns, diastasis recti, and safe return-to-exercise guidance for new mums.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><div><h3>Homemakers</h3><p>Repetitive strain injuries, back pain from household tasks, and posture problems from carrying children or sustained bending.</p></div></div>
+      <div class="audience-card reveal"><div class="audience-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-child"></use></svg></div><div><h3>Teenagers &amp; Students</h3><p>Posture problems from heavy school bags and screen time, scoliosis screening, and sports injury evaluation.</p></div></div>
     </div>
   </div>
 </section>
@@ -902,42 +898,42 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
     </div>
     <div class="related-grid">
       <a href="/services/acl-treatment-near-me/" class="related-card reveal">
-        <i class="fas fa-running" aria-hidden="true"></i>
+        <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>
         <h4>ACL Treatment</h4>
         <p>Expert ACL rehabilitation and return-to-sport protocols for athletes.</p>
       </a>
       <a href="/services/women-health-physiotherapy/" class="related-card reveal">
-        <i class="fas fa-venus" aria-hidden="true"></i>
+        <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-venus"></use></svg>
         <h4>Women's Health Physio</h4>
         <p>Pelvic floor therapy, postpartum recovery &amp; pregnancy care.</p>
       </a>
       <a href="/services/home-physiotherapy-chandigarh/" class="related-card reveal">
-        <i class="fas fa-home" aria-hidden="true"></i>
+        <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg>
         <h4>Home Physiotherapy</h4>
         <p>Professional physiotherapy delivered to your door across Tricity.</p>
       </a>
       <a href="/services/sports-injury-treatment/" class="related-card reveal">
-        <i class="fas fa-dumbbell" aria-hidden="true"></i>
+        <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-dumbbell"></use></svg>
         <h4>Sports Injury Treatment</h4>
         <p>Expert treatment for all sports injuries — ligaments, tendons, muscles.</p>
       </a>
       <a href="/services/orthopedic-rehabilitation/" class="related-card reveal">
-        <i class="fas fa-bone" aria-hidden="true"></i>
+        <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bone"></use></svg>
         <h4>Orthopedic Rehab</h4>
         <p>Post-surgical and injury rehabilitation for all orthopaedic conditions.</p>
       </a>
       <a href="/services/dry-needling/" class="related-card reveal">
-        <i class="fas fa-syringe" aria-hidden="true"></i>
+        <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-syringe"></use></svg>
         <h4>Dry Needling</h4>
         <p>Advanced trigger point therapy for muscle pain and sports injuries.</p>
       </a>
       <a href="/blogs/" class="related-card reveal">
-        <i class="fas fa-book-open" aria-hidden="true"></i>
+        <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-book-open"></use></svg>
         <h4>Health Blog</h4>
         <p>Expert physiotherapy tips, condition guides, and patient education.</p>
       </a>
       <a href="/testimonials/" class="related-card reveal">
-        <i class="fas fa-star" aria-hidden="true"></i>
+        <svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg>
         <h4>Patient Testimonials</h4>
         <p>Real stories from patients who have recovered at PhysioNutra Clinic.</p>
       </a>
@@ -952,8 +948,8 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
       <h2 id="cta-h2">Don't Miss the Next Free Camp!</h2>
       <p>Slots fill up fast. Register today to secure your free health assessment &mdash; no obligation, no cost, no catch.</p>
       <div class="cta-buttons">
-        <a href="tel:+919417791833" class="btn-call"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call to Register: +91 94177 91833</a>
-        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="btn-whatsapp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp to Register</a>
+        <a href="tel:+919417791833" class="btn-call"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call to Register: +91 94177 91833</a>
+        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="btn-whatsapp" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp to Register</a>
       </div>
     </div>
   </div>
@@ -971,21 +967,21 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
       <div class="contact-details">
         <h3>Clinic Details</h3>
         <ul class="contact-info-list">
-          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
-          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
-          <li><i class="fas fa-phone-alt" aria-hidden="true"></i><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
-          <li><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
-          <li><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="#"  class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
-          <li><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Main Clinic:</strong><br>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603</div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg><div><strong>Branch Clinic:</strong><br>Sector 20, Panchkula, Haryana 134116</div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><div><strong>Phone:</strong> <a href="tel:+919417791833">+91 94177 91833</a></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg><div><strong>WhatsApp:</strong> <a href="https://wa.me/919417791833" rel="noopener" target="_blank">+91 94177 91833</a></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><div><strong>Email:</strong> <a href="#"  class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><div><strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM</div></li>
         </ul>
         <div class="contact-cta-btns">
-          <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-directions" aria-hidden="true"></i> Get Directions</a>
-          <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now</a>
+          <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-call" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg> Get Directions</a>
+          <a href="tel:+919417791833" class="btn-whatsapp" style="font-size:.87rem;padding:11px 22px"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call Now</a>
         </div>
       </div>
       <div class="map-frame">
         <a href="https://www.google.com/maps/dir/?api=1&destination=30.6387,76.8305" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Tap to open directions</span>
       </a>
@@ -1005,11 +1001,11 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
         <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
         <p>Free physiotherapy health camps and expert rehabilitation across Chandigarh Tricity &mdash; evidence-based, community-first care.</p>
         <div class="footer-social" aria-label="Follow us">
-          <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+          <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+          <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+          <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+          <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
         </div>
       </div>
       <div class="footer-section">
@@ -1060,10 +1056,10 @@ footer{background:var(--dark);color:#fff;padding:52px 0 0}
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
-  <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20register%20for%20the%20free%20physiotherapy%20health%20camp." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+  <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */

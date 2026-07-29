@@ -91,18 +91,7 @@ window.dataLayer=window.dataLayer||[];
 ]}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- FIX 12: Only Solid + Brands styles are used — loading just these instead of 'all.min.css' drops unused icon-style CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -173,6 +162,10 @@ button{font-family:inherit}
 <!-- festive-decor -->
 <link rel="stylesheet" href="/festive-decor.css">
 <script src="/festive-decor.js" defer></script>
+<!-- FIX 18: Font Awesome CDN removed — replaced by a local SVG sprite (/icons.svg) -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 </head>
 <body>
 <div id="rbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -184,16 +177,16 @@ button{font-family:inherit}
  <div class="container">
  <div class="hdr-top-inner">
  <div class="hdr-contacts">
- <div class="hdr-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
- <div class="hdr-contact-item"><i class="fas fa-envelope"></i><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
- <div class="hdr-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+ <div class="hdr-contact-item"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-clock"></use></svg><span>Mon–Sat 9AM–7PM | Sun 10AM–2PM</span></div>
  </div>
  <div class="hdr-socials" aria-label="Social links">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  </div>
@@ -218,23 +211,23 @@ button{font-family:inherit}
  <li class="has-dd">
  <a href="/services/">Services</a>
  <ul class="dd-menu">
- <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
- <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
- <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
- <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
- <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
- <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
- <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+ <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+ <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+ <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+ <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+ <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+ <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+ <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
  </ul>
  </li>
  <li class="has-dd">
  <a href="/physiotherapy/">Locations</a>
  <ul class="dd-menu">
- <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
- <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
- <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
- <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
- <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
+ <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+ <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+ <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+ <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+ <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
  </ul>
  </li>
  <li><a href="/blogs/" class="active" aria-current="page">Blog</a></li>
@@ -263,13 +256,13 @@ button{font-family:inherit}
 <section class="blog-hero">
  <div class="container">
  <div class="blog-hero-inner">
- <div class="blog-chip"><i class="fas fa-pills"></i> Chronic Pain</div>
+ <div class="blog-chip"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-pills"></use></svg> Chronic Pain</div>
  <h1>Physiotherapy vs Painkillers:<br><em>Which Actually Heals Chronic Pain?</em></h1>
  <div class="blog-meta">
  <span><i class="far fa-calendar-alt"></i> 7 Oct 2025</span>
  <span><i class="far fa-clock"></i> 10 min read</span>
  <span><i class="far fa-user"></i> Dr. Tarun Garg</span>
- <span><i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab</span>
+ <span><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg> Zirakpur, Punjab</span>
  </div>
  </div>
  </div>
@@ -321,10 +314,10 @@ button{font-family:inherit}
  <p>This is the information patients often don't receive upfront. Long-term painkiller use carries measurable, documented health risks that most chronic pain patients are not adequately warned about:</p>
 
  <div class="risk-grid">
- <div class="risk-card reveal"><h4><i class="fas fa-stomach"></i>Gastrointestinal Damage</h4><p>NSAIDs are a leading cause of stomach ulcers, gastritis, and GI bleeding — risks that increase significantly with duration of use.</p></div>
- <div class="risk-card reveal"><h4><i class="fas fa-kidneys"></i>Kidney &amp; Liver Strain</h4><p>Prolonged use of NSAIDs and acetaminophen can cause chronic kidney disease and liver damage, particularly with pre-existing conditions.</p></div>
- <div class="risk-card reveal"><h4><i class="fas fa-heart"></i>Cardiovascular Risk</h4><p>Certain NSAIDs (especially diclofenac and rofecoxib) increase risk of heart attack and stroke with long-term use — particularly in patients over 60.</p></div>
- <div class="risk-card reveal"><h4><i class="fas fa-brain"></i>Opioid Dependency</h4><p>Prescription opioids carry a high risk of physical and psychological dependence — a growing concern in chronic pain management.</p></div>
+ <div class="risk-card reveal"><h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-stomach"></use></svg>Gastrointestinal Damage</h4><p>NSAIDs are a leading cause of stomach ulcers, gastritis, and GI bleeding — risks that increase significantly with duration of use.</p></div>
+ <div class="risk-card reveal"><h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-kidneys"></use></svg>Kidney &amp; Liver Strain</h4><p>Prolonged use of NSAIDs and acetaminophen can cause chronic kidney disease and liver damage, particularly with pre-existing conditions.</p></div>
+ <div class="risk-card reveal"><h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heart"></use></svg>Cardiovascular Risk</h4><p>Certain NSAIDs (especially diclofenac and rofecoxib) increase risk of heart attack and stroke with long-term use — particularly in patients over 60.</p></div>
+ <div class="risk-card reveal"><h4><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Opioid Dependency</h4><p>Prescription opioids carry a high risk of physical and psychological dependence — a growing concern in chronic pain management.</p></div>
  </div>
 
  <h2>How Physiotherapy Actually Heals</h2>
@@ -333,12 +326,12 @@ button{font-family:inherit}
  <p>A qualified physiotherapist conducts a detailed assessment to identify exactly <em>why</em> you have pain — which muscle is weak, which joint is stiff, what movement pattern is overloading a structure. Treatment then directly corrects those deficits.</p>
 
  <div class="benefit-grid">
- <div class="benefit-card reveal"><div class="b-icon"><i class="fas fa-search"></i></div><h4>Root Cause Diagnosis</h4><p>Identifies the specific structural or movement fault causing your pain — not just where it hurts.</p></div>
- <div class="benefit-card reveal"><div class="b-icon"><i class="fas fa-dumbbell"></i></div><h4>Therapeutic Exercise</h4><p>Targeted strengthening corrects muscle imbalances and stabilises painful joints permanently.</p></div>
- <div class="benefit-card reveal"><div class="b-icon"><i class="fas fa-hands"></i></div><h4>Manual Therapy</h4><p>Joint mobilisation and soft tissue work restore movement and reduce structural stiffness.</p></div>
- <div class="benefit-card reveal"><div class="b-icon"><i class="fas fa-graduation-cap"></i></div><h4>Pain Science Education</h4><p>Understanding the neuroscience of chronic pain reduces central sensitisation and retrains pain responses.</p></div>
- <div class="benefit-card reveal"><div class="b-icon"><i class="fas fa-syringe"></i></div><h4>Advanced Modalities</h4><p>Dry needling, electrotherapy, ultrasound, and cupping address acute discomfort while deep healing occurs.</p></div>
- <div class="benefit-card reveal"><div class="b-icon"><i class="fas fa-shield-alt"></i></div><h4>Relapse Prevention</h4><p>Patients gain the knowledge and exercises to manage future flare-ups independently — reducing long-term healthcare dependency.</p></div>
+ <div class="benefit-card reveal"><div class="b-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-search"></use></svg></div><h4>Root Cause Diagnosis</h4><p>Identifies the specific structural or movement fault causing your pain — not just where it hurts.</p></div>
+ <div class="benefit-card reveal"><div class="b-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-dumbbell"></use></svg></div><h4>Therapeutic Exercise</h4><p>Targeted strengthening corrects muscle imbalances and stabilises painful joints permanently.</p></div>
+ <div class="benefit-card reveal"><div class="b-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h4>Manual Therapy</h4><p>Joint mobilisation and soft tissue work restore movement and reduce structural stiffness.</p></div>
+ <div class="benefit-card reveal"><div class="b-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-graduation-cap"></use></svg></div><h4>Pain Science Education</h4><p>Understanding the neuroscience of chronic pain reduces central sensitisation and retrains pain responses.</p></div>
+ <div class="benefit-card reveal"><div class="b-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div><h4>Advanced Modalities</h4><p>Dry needling, electrotherapy, ultrasound, and cupping address acute discomfort while deep healing occurs.</p></div>
+ <div class="benefit-card reveal"><div class="b-icon"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-shield-alt"></use></svg></div><h4>Relapse Prevention</h4><p>Patients gain the knowledge and exercises to manage future flare-ups independently — reducing long-term healthcare dependency.</p></div>
  </div>
 
  <h2>Side-by-Side Comparison</h2>
@@ -348,19 +341,19 @@ button{font-family:inherit}
  <thead>
  <tr>
  <th>Factor</th>
- <th class="th-physio"><i class="fas fa-running"></i> Physiotherapy</th>
- <th class="th-pills"><i class="fas fa-pills"></i> Painkillers</th>
+ <th class="th-physio"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg> Physiotherapy</th>
+ <th class="th-pills"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-pills"></use></svg> Painkillers</th>
  </tr>
  </thead>
  <tbody>
- <tr><td>Mechanism</td><td class="td-physio"><i class="fas fa-check icon-good"></i>Fixes the structural cause of pain</td><td class="td-pills"><i class="fas fa-times icon-bad"></i>Blocks pain signals only</td></tr>
- <tr><td>Speed of relief</td><td class="td-physio"><i class="fas fa-check icon-good"></i>4–8 sessions; cumulative improvement</td><td class="td-pills"><i class="fas fa-check icon-good"></i>30–60 minutes (acute relief)</td></tr>
- <tr><td>Duration of effect</td><td class="td-physio"><i class="fas fa-check icon-good"></i>Permanent — structural correction</td><td class="td-pills"><i class="fas fa-times icon-bad"></i>Temporary — returns when dose wears off</td></tr>
- <tr><td>Side effects</td><td class="td-physio"><i class="fas fa-check icon-good"></i>Minimal — muscle soreness initially</td><td class="td-pills"><i class="fas fa-times icon-bad"></i>GI damage, kidney/liver risk, dependency</td></tr>
- <tr><td>Functional improvement</td><td class="td-physio"><i class="fas fa-check icon-good"></i>Yes — strength, mobility, posture restored</td><td class="td-pills"><i class="fas fa-times icon-bad"></i>No functional change</td></tr>
- <tr><td>Recurrence prevention</td><td class="td-physio"><i class="fas fa-check icon-good"></i>High — corrects the underlying cause</td><td class="td-pills"><i class="fas fa-times icon-bad"></i>Low — cause remains untreated</td></tr>
- <tr><td>Dependency risk</td><td class="td-physio"><i class="fas fa-check icon-good"></i>None — builds self-management skills</td><td class="td-pills"><i class="fas fa-times icon-bad"></i>High with opioids; moderate with NSAIDs</td></tr>
- <tr><td>Cost over time</td><td class="td-physio"><i class="fas fa-check icon-good"></i>Lower — finite course of treatment</td><td class="td-pills"><i class="fas fa-times icon-bad"></i>Higher — ongoing, indefinite expense</td></tr>
+ <tr><td>Mechanism</td><td class="td-physio"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>Fixes the structural cause of pain</td><td class="td-pills"><svg class="icon icon-bad" aria-hidden="true" ><use href="/icons.svg#fa-times"></use></svg>Blocks pain signals only</td></tr>
+ <tr><td>Speed of relief</td><td class="td-physio"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>4–8 sessions; cumulative improvement</td><td class="td-pills"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>30–60 minutes (acute relief)</td></tr>
+ <tr><td>Duration of effect</td><td class="td-physio"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>Permanent — structural correction</td><td class="td-pills"><svg class="icon icon-bad" aria-hidden="true" ><use href="/icons.svg#fa-times"></use></svg>Temporary — returns when dose wears off</td></tr>
+ <tr><td>Side effects</td><td class="td-physio"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>Minimal — muscle soreness initially</td><td class="td-pills"><svg class="icon icon-bad" aria-hidden="true" ><use href="/icons.svg#fa-times"></use></svg>GI damage, kidney/liver risk, dependency</td></tr>
+ <tr><td>Functional improvement</td><td class="td-physio"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>Yes — strength, mobility, posture restored</td><td class="td-pills"><svg class="icon icon-bad" aria-hidden="true" ><use href="/icons.svg#fa-times"></use></svg>No functional change</td></tr>
+ <tr><td>Recurrence prevention</td><td class="td-physio"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>High — corrects the underlying cause</td><td class="td-pills"><svg class="icon icon-bad" aria-hidden="true" ><use href="/icons.svg#fa-times"></use></svg>Low — cause remains untreated</td></tr>
+ <tr><td>Dependency risk</td><td class="td-physio"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>None — builds self-management skills</td><td class="td-pills"><svg class="icon icon-bad" aria-hidden="true" ><use href="/icons.svg#fa-times"></use></svg>High with opioids; moderate with NSAIDs</td></tr>
+ <tr><td>Cost over time</td><td class="td-physio"><svg class="icon icon-good" aria-hidden="true" ><use href="/icons.svg#fa-check"></use></svg>Lower — finite course of treatment</td><td class="td-pills"><svg class="icon icon-bad" aria-hidden="true" ><use href="/icons.svg#fa-times"></use></svg>Higher — ongoing, indefinite expense</td></tr>
  </tbody>
  </table>
  </div>
@@ -432,8 +425,8 @@ button{font-family:inherit}
  <h2>Break Free from Painkiller Dependence</h2>
  <p>Evidence-based, drug-free chronic pain management at PhysioNutra Clinic, Zirakpur. Serving Chandigarh, Mohali &amp; Panchkula. Home visits available.</p>
  <div class="cta-btns">
- <a href="tel:+919417791833" class="btn-g"><i class="fas fa-phone-alt"></i> +91 94177 91833</a>
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20am%20looking%20for%20a%20long-term%20solution%20for%20chronic%20pain%20instead%20of%20painkillers." class="btn-wa" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+ <a href="tel:+919417791833" class="btn-g"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone-alt"></use></svg> +91 94177 91833</a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20am%20looking%20for%20a%20long-term%20solution%20for%20chronic%20pain%20instead%20of%20painkillers." class="btn-wa" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
  </div>
  </div>
  </div>
@@ -450,12 +443,12 @@ button{font-family:inherit}
  <!-- Related -->
  <h2>Related Articles &amp; Services</h2>
  <div class="related-grid">
- <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><i class="fas fa-hand-holding-heart"></i></div><h4>Pain Management Physiotherapy</h4><p>Comprehensive guide to drug-free chronic pain relief.</p></a>
- <a href="/blogs/backpain/" class="related-card"><div class="ri"><i class="fas fa-heartbeat"></i></div><h4>Back Pain &amp; Physiotherapy</h4><p>Why self-care and physio beat surgery for back pain.</p></a>
- <a href="/blogs/chronic-back-pain-management/" class="related-card"><div class="ri"><i class="fas fa-spine"></i></div><h4>Chronic Back Pain</h4><p>Long-term strategies for persistent back conditions.</p></a>
- <a href="/blogs/sciatica-pain-relief/" class="related-card"><div class="ri"><i class="fas fa-bolt"></i></div><h4>Sciatica Relief</h4><p>Nerve pain — physio vs medication comparison.</p></a>
- <a href="/blogs/knee-osteoarthritis-blog/" class="related-card"><div class="ri"><i class="fas fa-running"></i></div><h4>Knee Osteoarthritis</h4><p>Drug-free knee pain management approaches.</p></a>
- <a href="/services/dry-needling/" class="related-card"><div class="ri"><i class="fas fa-syringe"></i></div><h4>Dry Needling</h4><p>Advanced drug-free pain relief technique.</p></a>
+ <a href="/blogs/pain-management-physiotherapy/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hand-holding-heart"></use></svg></div><h4>Pain Management Physiotherapy</h4><p>Comprehensive guide to drug-free chronic pain relief.</p></a>
+ <a href="/blogs/backpain/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heartbeat"></use></svg></div><h4>Back Pain &amp; Physiotherapy</h4><p>Why self-care and physio beat surgery for back pain.</p></a>
+ <a href="/blogs/chronic-back-pain-management/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-spine"></use></svg></div><h4>Chronic Back Pain</h4><p>Long-term strategies for persistent back conditions.</p></a>
+ <a href="/blogs/sciatica-pain-relief/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bolt"></use></svg></div><h4>Sciatica Relief</h4><p>Nerve pain — physio vs medication comparison.</p></a>
+ <a href="/blogs/knee-osteoarthritis-blog/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><h4>Knee Osteoarthritis</h4><p>Drug-free knee pain management approaches.</p></a>
+ <a href="/services/dry-needling/" class="related-card"><div class="ri"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div><h4>Dry Needling</h4><p>Advanced drug-free pain relief technique.</p></a>
  </div>
 
  <!-- Note on duplicate URL -->
@@ -484,11 +477,11 @@ button{font-family:inherit}
  <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
  <p>Evidence-based, drug-free chronic pain management across Chandigarh Tricity. Led by Dr. Tarun Garg.</p>
  <div class="footer-socials" aria-label="Follow us">
- <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
- <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
- <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+ <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+ <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+ <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+ <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
  </div>
  </div>
  <div class="footer-section">
@@ -517,10 +510,10 @@ button{font-family:inherit}
  </div>
  <div class="footer-section">
  <h3>Contact</h3>
- <p style="margin-bottom:.5rem"><i class="fas fa-map-marker-alt" style="color:var(--g);margin-right:.4rem"></i>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
- <p style="margin-bottom:.5rem"><i class="fas fa-phone-alt" style="color:var(--g);margin-right:.4rem"></i><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
- <p style="margin-bottom:.5rem"><i class="fas fa-envelope" style="color:var(--g);margin-right:.4rem"></i><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
- <p><i class="fas fa-clock" style="color:var(--g);margin-right:.4rem"></i>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-map-marker-alt"></use></svg>SCO 12, Ananta Square, Gazipur Road, Zirakpur, Punjab 140603</p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833" style="color:var(--g)">+91 94177 91833</a></p>
+ <p style="margin-bottom:.5rem"><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" style="color:var(--g)" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></p>
+ <p><svg class="icon" aria-hidden="true" style="color:var(--g);margin-right:.4rem"><use href="/icons.svg#fa-clock"></use></svg>Mon–Sat: 9AM–7PM | Sun: 10AM–2PM</p>
  </div>
  </div>
  <div class="footer-bottom">
@@ -531,10 +524,10 @@ button{font-family:inherit}
 </footer>
 
 <div class="float-btns" aria-label="Quick contact">
- <a href="https://wa.me/919417791833?text=Hello%2C%20I%20am%20looking%20for%20a%20long-term%20solution%20for%20chronic%20pain%20instead%20of%20painkillers." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
- <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><i class="fas fa-phone"></i></a>
+ <a href="https://wa.me/919417791833?text=Hello%2C%20I%20am%20looking%20for%20a%20long-term%20solution%20for%20chronic%20pain%20instead%20of%20painkillers." class="float-btn fb-wa" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+ <a href="tel:+919417791833" class="float-btn fb-ph" aria-label="Call"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height — JS only ── */
