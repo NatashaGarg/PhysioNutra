@@ -222,15 +222,10 @@ window.dataLayer=window.dataLayer||[];
 <link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
 <link rel="stylesheet" href="/fonts.css">
-<!-- FIX 12: Only Solid + Brands styles are used on this page (no Regular/Light/Duotone) — loading just these instead of 'all.min.css' drops unused icon-style CSS from the payload -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" media="print" onload="this.media='all'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-</noscript>
+<!-- FIX 18: Font Awesome CDN fully removed — replaced by a local 17.5KB SVG sprite (/icons.svg) covering exactly the 33 icons this site uses. Zero external requests, no unused icon-style CSS. -->
+<style>
+.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
+</style>
 
 <link rel="stylesheet" href="styles_min.css">
 <!-- FIX 14: Scoped styles for the static map card that replaced the Google Maps iframe -->
@@ -543,9 +538,9 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
     <div class="container">
       <div class="header-top-content">
         <div class="header-contact">
-          <div class="header-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:+919417791833">+91 94177 91833</a></div>
-          <div class="header-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="#"  class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
-          <div class="header-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
+          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
+          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#"  class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
+          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM</span></div>
         </div>
         <div class="u-flex-gap">
           <div class="language-switcher" aria-label="Language selector">
@@ -555,11 +550,11 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
           </div>
           <div class="header-social" aria-label="Social media links">
             <!-- FIX 8: Correct Facebook URL (was personal profile, now brand page) -->
-            <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+            <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+            <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+            <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+            <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
           </div>
         </div>
       </div>
@@ -582,35 +577,35 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
           </div>
         </div>
         <nav role="navigation" aria-label="Main navigation">
-          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><i class="fas fa-bars"></i></button>
+          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bars"></use></svg></button>
           <ul id="mainMenu">
             <li><a href="/">Home</a></li>
             <li><a href="/about/">About Us</a></li>
             <li class="has-dropdown">
               <a href="/services/">Services</a>
               <ul class="dropdown-menu" aria-label="Services submenu">
-                <li><a href="/services/acl-treatment-near-me/"><i class="fas fa-running"></i>ACL Treatment</a></li>
-                <li><a href="/services/dry-needling/"><i class="fas fa-syringe"></i>Dry Needling</a></li>
-                <li><a href="/services/manual-therapy/"><i class="fas fa-hands"></i>Manual Therapy</a></li>
-                <li><a href="/services/sports-injury-treatment/"><i class="fas fa-running"></i>Sports Injury</a></li>
-                <li><a href="/services/orthopedic-rehabilitation/"><i class="fas fa-bone"></i>Orthopedic Rehab</a></li>
-                <li><a href="/services/neurological-rehabilitation/"><i class="fas fa-brain"></i>Neuro Rehab</a></li>
-                <li><a href="/services/home-physiotherapy-chandigarh/"><i class="fas fa-home"></i>Home Physiotherapy</a></li>
+                <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
+                <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
+                <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
+                <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
+                <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
+                <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
+                <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
                 <!-- FIX 9: Added missing high-traffic service links -->
-                <li><a href="/services/geriatric-physiotherapy/"><i class="fas fa-user-md"></i>Geriatric Care</a></li>
-                <li><a href="/services/women-health-physiotherapy/"><i class="fas fa-heart"></i>Women's Health</a></li>
-                <li><a href="/services/pediatric-physiotherapy/"><i class="fas fa-child"></i>Paediatric Physio</a></li>
+                <li><a href="/services/geriatric-physiotherapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-md"></use></svg>Geriatric Care</a></li>
+                <li><a href="/services/women-health-physiotherapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-heart"></use></svg>Women's Health</a></li>
+                <li><a href="/services/pediatric-physiotherapy/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-child"></use></svg>Paediatric Physio</a></li>
               </ul>
             </li>
             <li class="has-dropdown">
               <a href="/physiotherapy/">Locations</a>
               <ul class="dropdown-menu" aria-label="Locations submenu">
-                <li><a href="/physiotherapy/chandigarh/"><i class="fas fa-map-marker-alt"></i>Chandigarh</a></li>
-                <li><a href="/physiotherapy/mohali/"><i class="fas fa-map-marker-alt"></i>Mohali</a></li>
-                <li><a href="/physiotherapy/zirakpur/"><i class="fas fa-map-marker-alt"></i>Zirakpur</a></li>
-                <li><a href="/physiotherapy/panchkula/"><i class="fas fa-map-marker-alt"></i>Panchkula</a></li>
-                <li><a href="/physiotherapy/kharar/"><i class="fas fa-map-marker-alt"></i>Kharar</a></li>
-                <li><a href="/physiotherapy/baltana/"><i class="fas fa-map-marker-alt"></i>Baltana</a></li>
+                <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
+                <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
+                <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
+                <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
+                <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
+                <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
               </ul>
             </li>
             <li><a href="/blogs/">Blog</a></li>
@@ -634,8 +629,8 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
         <h1 id="hero-heading">Best Physiotherapy in Chandigarh Tricity &mdash; Zirakpur, Mohali &amp; Panchkula</h1>
         <p>Expert physiotherapy led by Dr. Tarun Garg &mdash; 10+ years experience, 5,000+ patients. Treatment for pain relief, sports injuries, post-surgery rehab &amp; more. Home visits &amp; clinic across Tricity.</p>
         <div class="hero-buttons">
-          <a href="tel:+919417791833" class="btn-primary"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
-          <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="btn-secondary" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+          <a href="tel:+919417791833" class="btn-primary"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+          <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="btn-secondary" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
         </div>
         <div class="hero-stats">
           <div class="stat-item"><span class="stat-number">5000+</span><span class="stat-label">Patients Treated</span></div>
@@ -679,7 +674,7 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
           <button type="submit" class="submit-btn">Book Consultation</button>
         </form>
         <div class="form-success" id="form-success" role="alert">
-          <i class="fas fa-check-circle u-check-icon" aria-hidden="true"></i>
+          <svg class="icon u-check-icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
           Thank you! We will call you shortly to confirm your appointment.
         </div>
       </div>
@@ -691,11 +686,11 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
 <section class="trust-badges-section" aria-label="Trust indicators">
   <div class="container">
     <div class="trust-badges-inner">
-      <div class="trust-badge"><i class="fas fa-certificate" aria-hidden="true"></i><p>Certified Physiotherapists</p></div>
-      <div class="trust-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i><p>100% Safe Treatment</p></div>
-      <div class="trust-badge"><i class="fas fa-clock" aria-hidden="true"></i><p>Same Day Appointments</p></div>
-      <div class="trust-badge"><i class="fas fa-home" aria-hidden="true"></i><p>Home Visits Available</p></div>
-      <div class="trust-badge"><i class="fas fa-star" aria-hidden="true"></i><p>4.9&#9733; Google Rating</p></div>
+      <div class="trust-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-certificate"></use></svg><p>Certified Physiotherapists</p></div>
+      <div class="trust-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-shield-alt"></use></svg><p>100% Safe Treatment</p></div>
+      <div class="trust-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><p>Same Day Appointments</p></div>
+      <div class="trust-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg><p>Home Visits Available</p></div>
+      <div class="trust-badge"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-star"></use></svg><p>4.9&#9733; Google Rating</p></div>
     </div>
   </div>
 </section>
@@ -706,12 +701,12 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
     <h2 class="section-title" id="services-heading">Our Expert Physiotherapy Services</h2>
     <p class="section-subtitle">Comprehensive physiotherapy solutions for all your recovery and wellness needs across Chandigarh, Mohali, Panchkula &amp; Zirakpur</p>
     <div class="services-grid">
-      <article class="service-card"><div class="service-icon" aria-hidden="true"><i class="fas fa-running"></i></div><h3>Sports Physiotherapy</h3><p>Specialised treatment for athletes and sports injuries in Tricity. Return to peak performance faster with evidence-based protocols.</p><a href="/blogs/sports-physiotherapy/" class="service-link">Learn More &rarr;</a></article>
-      <article class="service-card"><div class="service-icon" aria-hidden="true"><i class="fas fa-fire"></i></div><h3>Pain Management</h3><p>Effective, drug-free solutions for chronic pain, back pain, neck pain, and joint pain relief with no side effects.</p><a href="/blogs/pain-management-physiotherapy/" class="service-link">Learn More &rarr;</a></article>
-      <article class="service-card"><div class="service-icon" aria-hidden="true"><i class="fas fa-procedures"></i></div><h3>Post-Surgical Recovery</h3><p>Accelerated rehabilitation after knee replacement, hip replacement, ACL repair, and spinal surgeries. Home visits from day 1.</p><a href="/blogs/post-surgical-physiotherapy/" class="service-link">Learn More &rarr;</a></article>
-      <article class="service-card"><div class="service-icon" aria-hidden="true"><i class="fas fa-syringe"></i></div><h3>Dry Needling</h3><p>Advanced trigger point therapy for rapid pain relief and muscle recovery, highly effective for chronic conditions.</p><a href="/services/dry-needling/" class="service-link">Learn More &rarr;</a></article>
-      <article class="service-card"><div class="service-icon" aria-hidden="true"><i class="fas fa-hands"></i></div><h3>Manual Therapy</h3><p>Expert hands-on techniques including joint mobilisation and myofascial release for immediate, lasting pain relief.</p><a href="/services/manual-therapy/" class="service-link">Learn More &rarr;</a></article>
-      <article class="service-card"><div class="service-icon" aria-hidden="true"><i class="fas fa-home"></i></div><h3>Home Physiotherapy</h3><p>Professional treatment delivered to your doorstep across Chandigarh, Mohali, Panchkula, Zirakpur &amp; Kharar.</p><a href="/services/home-physiotherapy-chandigarh/" class="service-link">Learn More &rarr;</a></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-running"></use></svg></div><h3>Sports Physiotherapy</h3><p>Specialised treatment for athletes and sports injuries in Tricity. Return to peak performance faster with evidence-based protocols.</p><a href="/blogs/sports-physiotherapy/" class="service-link">Learn More &rarr;</a></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-fire"></use></svg></div><h3>Pain Management</h3><p>Effective, drug-free solutions for chronic pain, back pain, neck pain, and joint pain relief with no side effects.</p><a href="/blogs/pain-management-physiotherapy/" class="service-link">Learn More &rarr;</a></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-procedures"></use></svg></div><h3>Post-Surgical Recovery</h3><p>Accelerated rehabilitation after knee replacement, hip replacement, ACL repair, and spinal surgeries. Home visits from day 1.</p><a href="/blogs/post-surgical-physiotherapy/" class="service-link">Learn More &rarr;</a></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-syringe"></use></svg></div><h3>Dry Needling</h3><p>Advanced trigger point therapy for rapid pain relief and muscle recovery, highly effective for chronic conditions.</p><a href="/services/dry-needling/" class="service-link">Learn More &rarr;</a></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-hands"></use></svg></div><h3>Manual Therapy</h3><p>Expert hands-on techniques including joint mobilisation and myofascial release for immediate, lasting pain relief.</p><a href="/services/manual-therapy/" class="service-link">Learn More &rarr;</a></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h3>Home Physiotherapy</h3><p>Professional treatment delivered to your doorstep across Chandigarh, Mohali, Panchkula, Zirakpur &amp; Kharar.</p><a href="/services/home-physiotherapy-chandigarh/" class="service-link">Learn More &rarr;</a></article>
     </div>
   </div>
 </section>
@@ -750,12 +745,12 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
     <p class="section-subtitle">Your trusted partner in health and recovery across Chandigarh Tricity — led by Dr. Tarun Garg</p>
     <div class="features-grid">
       <!-- FIX 2: All "Dr. Tarun" references now say "Dr. Tarun Garg" -->
-      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><i class="fas fa-user-md"></i></div><h3>Led by Dr. Tarun Garg</h3><p>Senior Physiotherapist with 10+ years experience and proven outcomes across 5,000+ patients in Chandigarh Tricity.</p></div>
-      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><i class="fas fa-home"></i></div><h3>Home &amp; Clinic Services</h3><p>Convenient treatment at our Zirakpur clinic or professional home visits across Chandigarh, Mohali, and Panchkula.</p></div>
-      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><i class="fas fa-tools"></i></div><h3>Advanced Equipment</h3><p>Class IV Laser Therapy, therapeutic ultrasound, isokinetic testing, TENS, dry needling, and state-of-the-art rehab equipment.</p></div>
-      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><i class="fas fa-user-check"></i></div><h3>One-on-One Care</h3><p>Dedicated individual attention every session — never group therapy. Personalised treatment plans for your specific goals.</p></div>
-      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><i class="fas fa-calendar-check"></i></div><h3>Flexible Scheduling</h3><p>Morning, evening, and weekend appointments for working professionals and busy families across Tricity.</p></div>
-      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><i class="fas fa-rupee-sign"></i></div><h3>Transparent Pricing</h3><p>Quality physiotherapy at fair pricing &mdash; &#8377;500 to &#8377;1,500 per session. No hidden costs.</p></div>
+      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-md"></use></svg></div><h3>Led by Dr. Tarun Garg</h3><p>Senior Physiotherapist with 10+ years experience and proven outcomes across 5,000+ patients in Chandigarh Tricity.</p></div>
+      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-home"></use></svg></div><h3>Home &amp; Clinic Services</h3><p>Convenient treatment at our Zirakpur clinic or professional home visits across Chandigarh, Mohali, and Panchkula.</p></div>
+      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-tools"></use></svg></div><h3>Advanced Equipment</h3><p>Class IV Laser Therapy, therapeutic ultrasound, isokinetic testing, TENS, dry needling, and state-of-the-art rehab equipment.</p></div>
+      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-user-check"></use></svg></div><h3>One-on-One Care</h3><p>Dedicated individual attention every session — never group therapy. Personalised treatment plans for your specific goals.</p></div>
+      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-calendar-check"></use></svg></div><h3>Flexible Scheduling</h3><p>Morning, evening, and weekend appointments for working professionals and busy families across Tricity.</p></div>
+      <div class="feature-card"><div class="feature-icon" aria-hidden="true"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-rupee-sign"></use></svg></div><h3>Transparent Pricing</h3><p>Quality physiotherapy at fair pricing &mdash; &#8377;500 to &#8377;1,500 per session. No hidden costs.</p></div>
     </div>
   </div>
 </section>
@@ -863,8 +858,8 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
       <h2 id="cta-heading">Ready to Start Your Recovery Journey?</h2>
       <p>Book your consultation today and experience expert physiotherapy care across Chandigarh Tricity that gets lasting results.</p>
       <div class="hero-buttons u-justify-center">
-        <a href="tel:+919417791833" class="btn-primary"><i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +91 94177 91833</a>
-        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="btn-secondary" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+        <a href="tel:+919417791833" class="btn-primary"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg> Call: +91 94177 91833</a>
+        <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="btn-secondary" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
       </div>
     </div>
   </div>
@@ -877,7 +872,7 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
     <p class="section-subtitle">Located in Zirakpur &mdash; 15 min from Chandigarh, 10 min from Mohali, 20 min from Panchkula</p>
     <div class="map-grid u-map-grid">
       <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="u-map-embed-wrap u-static-map-card" aria-label="Open PhysioNutra Clinic location in Google Maps (opens in a new tab)">
-        <i class="fas fa-map-marker-alt u-static-map-icon" aria-hidden="true"></i>
+        <svg class="icon u-static-map-icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>
         <span class="u-static-map-label">View PhysioNutra Clinic on Google Maps</span>
         <span class="u-static-map-sub">Zirakpur, Punjab &middot; Tap to open directions</span>
       </a>
@@ -894,7 +889,7 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
           <strong>Email:</strong> <a href="#" class="u-link-green js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Contact via email</a><br><br>
           <strong>Hours:</strong> Mon&ndash;Sat 9AM&ndash;7PM | Sun 10AM&ndash;2PM
         </address>
-        <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-primary u-directions-btn"><i class="fas fa-directions" aria-hidden="true"></i>&nbsp; Get Directions</a>
+        <a href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener" class="btn-primary u-directions-btn"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-directions"></use></svg>&nbsp; Get Directions</a>
       </div>
     </div>
   </div>
@@ -913,11 +908,11 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
         <p>Best physiotherapy clinic in Chandigarh Tricity. Led by Dr. Tarun Garg with 10+ years experience. Serving Zirakpur, Chandigarh, Mohali &amp; Panchkula.</p>
         <div class="footer-social" aria-label="Follow us">
           <!-- FIX 8: Correct brand Facebook URL throughout -->
-          <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-facebook-f"></use></svg></a>
+          <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-twitter"></use></svg></a>
+          <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-instagram"></use></svg></a>
+          <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-youtube"></use></svg></a>
+          <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
         </div>
       </div>
       <div class="footer-section">
@@ -983,10 +978,10 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
 
 <!-- ═══ FLOATING BUTTONS ═══ -->
 <div class="floating-buttons" aria-label="Quick contact">
-  <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20PhysioNutra%20Clinic." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/919417791833?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20PhysioNutra%20Clinic." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-whatsapp"></use></svg></a>
+  <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-phone"></use></svg></a>
 </div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true" ><use href="/icons.svg#fa-chevron-up"></use></svg></button>
 
 <script>
 /* ── Header height ── */
