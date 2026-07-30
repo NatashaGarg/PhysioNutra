@@ -73,6 +73,18 @@ body.festival-rakhi .bulb:nth-child(4n){background:#ffd76a}
   body.festival-rakhi .bulb:nth-child(3n){animation-delay:.6s}
 }
 
+/* ── Guru Purnima: saffron & white, gentle reverent glow ── */
+body.festival-guru-purnima .festive-strip{background:#fdf3e2}
+body.festival-guru-purnima .bulb{width:9px;height:9px;box-shadow:none}
+body.festival-guru-purnima .bulb:nth-child(3n+1){background:#ff9933;box-shadow:0 0 5px 1px rgba(255,153,51,.6)}
+body.festival-guru-purnima .bulb:nth-child(3n+2){background:#fff8ec;border:1px solid #e8c98a}
+body.festival-guru-purnima .bulb:nth-child(3n){background:#d4a017;box-shadow:0 0 5px 1px rgba(212,160,23,.6)}
+@media (prefers-reduced-motion:no-preference){
+  body.festival-guru-purnima .bulb{animation:festive-twinkle 3s ease-in-out infinite}
+  body.festival-guru-purnima .bulb:nth-child(2n){animation-delay:.7s}
+  body.festival-guru-purnima .bulb:nth-child(3n){animation-delay:1.4s}
+}
+
 @media (max-width:480px){
   .festive-strip{gap:9px}
   .festive-strip .bulb{width:6px;height:6px}

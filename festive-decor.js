@@ -4,7 +4,7 @@
   Auto-shows a themed decoration strip during festival/occasion windows,
   and removes itself automatically once the window ends. Supports:
   Independence Day, Republic Day, Raksha Bandhan, Dussehra, Diwali,
-  Christmas/New Year, and Holi.
+  Christmas/New Year, Holi, and Guru Purnima.
 
   No manual add/remove needed each year — just update FESTIVAL_DATES
   below once a year (most of these shift on the lunar calendar; only
@@ -20,8 +20,16 @@
 (function () {
   "use strict";
 
-  // ── 1. Update these once a year ── (Diwali/Holi/Dussehra/Rakhi shift dates on the lunar calendar; Independence Day & Republic Day are fixed)
+  // ── 1. Update these once a year ── (Diwali/Holi/Dussehra/Rakhi/Guru Purnima shift dates
+  // on the lunar calendar; Independence Day & Republic Day are fixed). Each festival can hold
+  // a single {start,end} range OR an array of ranges — an array is handy for keeping this
+  // year's AND next year's window both defined ahead of time, so nothing breaks if you forget
+  // to update it right on the boundary. Old/past ranges are harmless and can be pruned anytime.
   var FESTIVAL_DATES = {
+    guruPurnima: [
+      { start: "2026-07-29", end: "2026-07-30" }, // Guru Purnima 2026 = Wed, 29 Jul 2026
+      { start: "2027-07-17", end: "2027-07-18" }  // Guru Purnima 2027 = Sun, 18 Jul 2027
+    ],
     independence: { start: "2026-08-14", end: "2026-08-16" },
     rakhi:        { start: "2026-08-27", end: "2026-08-28" },
     dussehra:     { start: "2026-10-19", end: "2026-10-21" },
@@ -40,7 +48,8 @@
     dussehra: "dussehra",
     diwali: "diwali",
     christmas: "christmas",
-    holi: "holi"
+    holi: "holi",
+    guruPurnima: "guru-purnima"
   };
 
   // ── 2. Permanent manual override (null = auto by date) ──
@@ -51,11 +60,18 @@
     return params.get("festival"); // null if not present
   }
 
+  function isDateInRange(today, range) {
+    return today >= range.start && today <= range.end;
+  }
+
   function activeFestivalByDate() {
     var today = new Date().toISOString().slice(0, 10);
     for (var name in FESTIVAL_DATES) {
-      var range = FESTIVAL_DATES[name];
-      if (today >= range.start && today <= range.end) return name;
+      var entry = FESTIVAL_DATES[name];
+      var ranges = Array.isArray(entry) ? entry : [entry];
+      for (var i = 0; i < ranges.length; i++) {
+        if (isDateInRange(today, ranges[i])) return name;
+      }
     }
     return null;
   }
