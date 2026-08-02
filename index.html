@@ -644,43 +644,156 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
         </div>
       </div>
       <div class="appointment-form" role="form" aria-labelledby="form-heading">
-        <h2 id="form-heading">Book Consultation</h2>
-        <form id="appointment-form" action="https://docs.google.com/forms/d/e/1FAIpQLSecs0syQlexbviX2-GFRHL418tELcBVxDyLnHhORL47eXZscw/formResponse" method="POST" novalidate>
-          <div class="form-group">
-            <label for="name">Full Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="name" name="entry.1869350848" required placeholder="Enter your name" autocomplete="name">
+        <div id="consult-india">
+          <h2 id="form-heading">Book Consultation</h2>
+          <form id="appointment-form" action="https://docs.google.com/forms/d/e/1FAIpQLSecs0syQlexbviX2-GFRHL418tELcBVxDyLnHhORL47eXZscw/formResponse" method="POST" novalidate>
+            <div class="form-group">
+              <label>How would you like to consult?</label>
+              <div style="display:flex;gap:14px;margin-top:4px">
+                <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.9rem">
+                  <input type="radio" name="mode-india" value="clinic" checked> Visit Clinic In-Person
+                </label>
+                <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.9rem">
+                  <input type="radio" name="mode-india" value="online"> Online Video Consultation
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="entry.1869350848" required placeholder="Enter your name" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+              <input type="tel" id="phone" name="entry.1797725802" required placeholder="+91 00000 00000" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span class="u-muted">(optional)</span></label>
+              <input type="email" id="email" name="entry.350143632" placeholder="your@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="service">Select Service</label>
+              <select id="service" name="entry.2005620554">
+                <option value="">Choose a service</option>
+                <option>Sports Physiotherapy</option>
+                <option>Pain Management</option>
+                <option>Sciatica Treatment</option>
+                <option>Frozen Shoulder</option>
+                <option>Post-Surgical Recovery</option>
+                <option>Dry Needling</option>
+                <option>Home Visit</option>
+                <option>Knee Pain</option>
+                <option>Back Pain</option>
+                <option>Neurological Rehab</option>
+                <option>ACL Rehabilitation</option>
+                <option>Elderly Care</option>
+              </select>
+            </div>
+            <div id="india-online-extras" hidden>
+              <div class="form-group">
+                <label for="slot">Preferred Time Slot</label>
+                <select id="slot"></select>
+              </div>
+              <div class="form-group">
+                <label>Preferred Video Platform</label>
+                <div style="display:flex;gap:8px;margin-top:4px">
+                  <label style="display:flex;align-items:center;gap:4px;font-weight:400;font-size:.85rem"><input type="radio" name="platform-india" value="Zoom" checked> Zoom</label>
+                  <label style="display:flex;align-items:center;gap:4px;font-weight:400;font-size:.85rem"><input type="radio" name="platform-india" value="Google Meet"> Google Meet</label>
+                  <label style="display:flex;align-items:center;gap:4px;font-weight:400;font-size:.85rem"><input type="radio" name="platform-india" value="WhatsApp"> WhatsApp</label>
+                </div>
+              </div>
+              <div class="payment-note" style="background:#fff8ec;border:1px solid #eddcb0;border-radius:8px;padding:10px 12px;margin:0 0 1rem;font-size:.82rem;color:#6b4a12">
+                <span id="payment-note-text">A ₹500 advance payment is required to confirm your booking.</span><br>
+                <a href="https://rzp.io/rzp/JCEjmH6" target="_blank" rel="noopener" class="submit-btn" style="display:inline-block;margin-top:8px;text-decoration:none;text-align:center;padding:8px 14px;font-size:.85rem;width:auto">Pay ₹500 Advance</a>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Book Consultation</button>
+          </form>
+          <div class="form-success" id="form-success" role="alert">
+            <svg class="icon u-check-icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
+            Thank you! We will call you shortly to confirm your appointment.
           </div>
-          <div class="form-group">
-            <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
-            <input type="tel" id="phone" name="entry.1797725802" required placeholder="+91 00000 00000" autocomplete="tel">
+        </div>
+
+        <div id="consult-foreign" hidden>
+          <h2 id="form-heading-foreign">Book Online Consultation</h2>
+          <p class="u-note" style="margin-top:-.6rem;margin-bottom:1.2rem;font-size:.85rem;color:#666">Video consultation with Dr. Tarun Garg, available worldwide</p>
+          <form id="appointment-form-foreign" action="https://docs.google.com/forms/d/e/1FAIpQLSecs0syQlexbviX2-GFRHL418tELcBVxDyLnHhORL47eXZscw/formResponse" method="POST" novalidate>
+            <div class="form-group">
+              <label for="name-f">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name-f" required placeholder="Enter your full name" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email-f">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email-f" required placeholder="name@example.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="country-f">Country</label>
+              <select id="country-f">
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+                <option>Australia</option>
+                <option>United Arab Emirates</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="phone-f">WhatsApp or Phone Number <span aria-hidden="true">*</span></label>
+              <div style="display:flex;gap:8px">
+                <select id="phone-code-f" style="width:90px;flex-shrink:0">
+                  <option>+1</option>
+                  <option>+44</option>
+                  <option>+61</option>
+                  <option>+971</option>
+                  <option>Other</option>
+                </select>
+                <input type="tel" id="phone-f" required placeholder="000 000 0000" style="flex:1">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service-f">Reason for Consultation</label>
+              <select id="service-f">
+                <option value="">Choose a reason</option>
+                <option>Back or Neck Pain</option>
+                <option>Sports Injury</option>
+                <option>Post-Surgical Recovery</option>
+                <option>Frozen Shoulder</option>
+                <option>General Physiotherapy Advice</option>
+                <option>Nutrition Consultation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label style="display:flex;align-items:center;gap:6px;font-weight:400;font-size:.85rem">
+                <input type="checkbox" id="emergency-f"> This is an emergency / same-day consultation
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="tz-f">Your Timezone</label>
+              <select id="tz-f"></select>
+            </div>
+            <div class="form-group">
+              <label id="slot-label-f" for="slot-f">Preferred Time Slot (24+ hrs from now, 30 min)</label>
+              <select id="slot-f"></select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Video Platform</label>
+              <div style="display:flex;gap:8px;margin-top:4px">
+                <label style="display:flex;align-items:center;gap:4px;font-weight:400;font-size:.85rem"><input type="radio" name="platform-f" value="Zoom" checked> Zoom</label>
+                <label style="display:flex;align-items:center;gap:4px;font-weight:400;font-size:.85rem"><input type="radio" name="platform-f" value="Google Meet"> Google Meet</label>
+                <label style="display:flex;align-items:center;gap:4px;font-weight:400;font-size:.85rem"><input type="radio" name="platform-f" value="WhatsApp"> WhatsApp</label>
+              </div>
+            </div>
+            <p id="fee-note-f" style="background:#f5f5f0;border-radius:8px;padding:8px 10px;font-size:.78rem;color:#666;margin:0 0 1rem">Consultation fee: USD 35, billed in your local currency at checkout.</p>
+            <div class="payment-note" style="background:#fff8ec;border:1px solid #eddcb0;border-radius:8px;padding:10px 12px;margin:0 0 1rem;font-size:.82rem;color:#6b4a12">
+              <span id="payment-note-text-f">Full payment of USD 35 is required in advance to confirm your booking.</span><br>
+              <a id="pay-link-f" href="https://rzp.io/rzp/LeMxOdZf" target="_blank" rel="noopener" class="submit-btn" style="display:inline-block;margin-top:8px;text-decoration:none;text-align:center;padding:8px 14px;font-size:.85rem;width:auto">Pay USD 35 Now</a>
+            </div>
+            <button type="submit" class="submit-btn">Book Online Consultation</button>
+          </form>
+          <div class="form-success" id="form-success-foreign" role="alert" hidden>
+            <svg class="icon u-check-icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
+            Thank you! We will email you shortly to confirm your video consultation.
           </div>
-          <div class="form-group">
-            <label for="email">Email <span class="u-muted">(optional)</span></label>
-            <input type="email" id="email" name="entry.350143632" placeholder="your@email.com" autocomplete="email">
-          </div>
-          <div class="form-group">
-            <label for="service">Select Service</label>
-            <select id="service" name="entry.2005620554">
-              <option value="">Choose a service</option>
-              <option>Sports Physiotherapy</option>
-              <option>Pain Management</option>
-              <option>Sciatica Treatment</option>
-              <option>Frozen Shoulder</option>
-              <option>Post-Surgical Recovery</option>
-              <option>Dry Needling</option>
-              <option>Home Visit</option>
-              <option>Knee Pain</option>
-              <option>Back Pain</option>
-              <option>Neurological Rehab</option>
-              <option>ACL Rehabilitation</option>
-              <option>Elderly Care</option>
-            </select>
-          </div>
-          <button type="submit" class="submit-btn">Book Consultation</button>
-        </form>
-        <div class="form-success" id="form-success" role="alert">
-          <svg class="icon u-check-icon" aria-hidden="true"><use href="/icons.svg#fa-check-circle"></use></svg>
-          Thank you! We will call you shortly to confirm your appointment.
         </div>
       </div>
     </div>
@@ -1002,16 +1115,8 @@ if(tog&&menu){
 }
 document.querySelectorAll('.has-dropdown>a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('active')}})});
 
-/* ── Appointment form (fetch-based, no iframe needed) ── */
-var af=document.getElementById('appointment-form'),fs=document.getElementById('form-success');
-if(af&&fs){af.addEventListener('submit',function(e){
-  e.preventDefault();
-  var data=new FormData(af);
-  fetch(af.action,{method:'POST',mode:'no-cors',body:data}).finally(function(){
-    af.style.display='none';fs.style.display='block';
-    if(typeof gtag!=='undefined')gtag('event','form_submit',{'event_category':'lead','event_label':'Homepage Appointment Form'});
-  });
-})}
+/* Appointment form submission is now handled by geo-consult-form.js
+   (shared slot-booking backend for both India and foreign forms) */
 
 /* ── YouTube lite embeds ── */
 document.querySelectorAll('.yt-lite').forEach(function(l){
@@ -1046,5 +1151,6 @@ adjMap();window.addEventListener('resize',adjMap);
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 <script src="/festive-decor.js"></script>
+<script src="/geo-consult-form.js"></script>
 </body>
 </html>
