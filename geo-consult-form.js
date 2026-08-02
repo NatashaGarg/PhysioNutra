@@ -255,7 +255,8 @@
       var payload = {
         name: name, phone: phone, email: email, country: "India",
         service: service, slotMs: slotMs, slotLabel: slotLabel,
-        platform: platform, emergency: false, fee: "\u20b9500 advance"
+        platform: platform, emergency: false, fee: "\u20b9500 advance",
+        amountPaise: 50000, currency: "INR"
       };
 
       submitBooking(payload).then(function (result) {
@@ -270,6 +271,16 @@
 
           form.style.display = "none";
           success.style.display = "block";
+          var successText = document.getElementById("form-success-text");
+          var payWrap = document.getElementById("india-pay-now-wrap");
+          var payLink = document.getElementById("india-pay-now");
+          if (result.paymentLink && payWrap && payLink) {
+            if (successText) successText.textContent = "Booking received! Complete your \u20b9500 advance payment below to confirm your slot.";
+            payLink.href = result.paymentLink;
+            payWrap.style.display = "block";
+          } else if (successText) {
+            successText.textContent = "Booking received! Please complete your \u20b9500 advance payment using the link we shared earlier to confirm your slot.";
+          }
           if (typeof gtag !== "undefined") {
             gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Appointment Form" });
           }
@@ -375,7 +386,8 @@
       var payload = {
         name: name, phone: phoneCode + " " + phone, email: email, country: country,
         service: service, slotMs: slotMs, slotLabel: slotLabel + " (tz ref: " + tz + ")",
-        platform: platform, emergency: !!isEmergency, fee: isEmergency ? "USD 50" : "USD 35"
+        platform: platform, emergency: !!isEmergency, fee: isEmergency ? "USD 50" : "USD 35",
+        amountPaise: isEmergency ? 5000 : 3500, currency: "USD"
       };
 
       submitBooking(payload).then(function (result) {
@@ -393,6 +405,17 @@
 
           form.style.display = "none";
           success.hidden = false;
+          var successText = document.getElementById("form-success-foreign-text");
+          var payWrap = document.getElementById("foreign-pay-now-wrap");
+          var payLink = document.getElementById("foreign-pay-now");
+          var feeLabel = isEmergency ? "USD 50" : "USD 35";
+          if (result.paymentLink && payWrap && payLink) {
+            if (successText) successText.textContent = "Booking received! Complete your " + feeLabel + " payment below to confirm your video consultation.";
+            payLink.href = result.paymentLink;
+            payWrap.style.display = "block";
+          } else if (successText) {
+            successText.textContent = "Booking received! Please complete your " + feeLabel + " payment using the link we shared earlier to confirm your video consultation.";
+          }
           if (typeof gtag !== "undefined") {
             gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Online Consultation Form" });
           }
