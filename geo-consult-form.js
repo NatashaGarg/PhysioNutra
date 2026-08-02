@@ -112,8 +112,8 @@
   // Clinic is India-based and does not observe DST, so IST = UTC+5:30 always.
   var CLINIC_TZ = "Asia/Kolkata";
   var CLINIC_UTC_OFFSET_MS = (5 * 60 + 30) * 60000;
-  var BUSINESS_START_HOUR = 10; // 10:00 AM IST
-  var BUSINESS_END_HOUR = 18;   // 6:00 PM IST (exclusive)
+  var BUSINESS_START_MIN = 9 * 60;        // 9:00 AM IST
+  var BUSINESS_END_MIN = 20 * 60 + 30;    // 8:30 PM IST (last slot starts at 8:00 PM)
   var SLOT_MINUTES = 30;
 
   function istPartsFromDate(d) {
@@ -142,13 +142,13 @@
 
     for (var d = 0; d < daysToScan; d++) {
       var dayParts = d === 0 ? todayIst : addDaysToIstDate(todayIst, d);
-      for (var h = BUSINESS_START_HOUR; h < BUSINESS_END_HOUR; h++) {
-        for (var m = 0; m < 60; m += SLOT_MINUTES) {
-          var slotMs = istDateToUTCms(dayParts.year, dayParts.month, dayParts.day, h, m);
-          if (slotMs < minMs) continue;
-          if (bookedSlots[String(slotMs)]) continue; // already booked by someone (India or foreign)
-          slots.push(slotMs);
-        }
+      for (var t = BUSINESS_START_MIN; t < BUSINESS_END_MIN; t += SLOT_MINUTES) {
+        var h = Math.floor(t / 60);
+        var m = t % 60;
+        var slotMs = istDateToUTCms(dayParts.year, dayParts.month, dayParts.day, h, m);
+        if (slotMs < minMs) continue;
+        if (bookedSlots[String(slotMs)]) continue; // already booked by someone (India or foreign)
+        slots.push(slotMs);
       }
       if (!isEmergency && slots.length >= 80) break;
     }
