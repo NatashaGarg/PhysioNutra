@@ -29,7 +29,7 @@
   "use strict";
 
   // ⚠ REPLACE THIS with your deployed Apps Script Web App URL (ends in /exec)
-  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxjDCDi2HdV2CxEXQ3iH4N1JiX1MZj-M4G5Vp3cXiRuAA0kGiWZxzr6hcUVFLyeGTax/exec";
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjM1zEvNAbPf7DhVQauGPrJxuoHouXSJ6hVjifFyj0fzXAVTExSRoifh4kTbJmn1wt/exec";
 
   var CACHE_KEY = "pn_visitor_country";
   var FETCH_TIMEOUT_MS = 3000;
