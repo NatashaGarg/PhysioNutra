@@ -108,15 +108,21 @@
 
   // Creating a per-booking payment link involves this script calling out to
   // Razorpay's API, which can take several seconds. That round trip
-  // occasionally gets interrupted (slow connection, etc.) even though the
+  // occasionally gets interrupted (slow connection, a known Google quirk
+  // with anonymous Apps Script Web App responses, etc.) even though the
   // backend finishes the booking successfully a moment later. To avoid
   // showing someone a false "something went wrong" for a booking that
   // actually went through, we: (1) allow a generous 20s timeout before
-  // giving up, and (2) if a request does fail, automatically retry once —
-  // and if that retry comes back "slot_taken", treat it as evidence the
-  // FIRST attempt actually succeeded (since the sheet writes are guarded by
-  // a lock, this is the most likely explanation), and tell the person their
-  // booking is fine rather than showing a scary error.
+  // giving up, and (2) if a request does fail, look up the REAL record for
+  // this slot directly (rather than guessing) — if it exists, we recover
+  // the actual bookingId and paymentLink instead of just inferring success.
+  function lookupBookingBySlot(slotMs) {
+    var url = APPS_SCRIPT_URL + "?lookupSlot=" + encodeURIComponent(slotMs);
+    return fetchWithTimeout_(url, {}, 10000)
+      .then(function (res) { return res.json(); })
+      .catch(function () { return { found: false }; });
+  }
+
   function submitBooking(payload) {
     if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf("PASTE_YOUR") === 0) {
       return Promise.resolve({ ok: false, reason: "not_configured" });
@@ -128,18 +134,23 @@
     }
 
     return attempt().catch(function () {
-      // First attempt failed (timeout/network hiccup) — wait briefly, retry once.
-      return new Promise(function (resolve) { setTimeout(resolve, 1500); })
-        .then(attempt)
-        .then(function (retryResult) {
-          if (!retryResult.ok && retryResult.reason === "slot_taken") {
-            // Very likely the FIRST attempt actually succeeded and booked this
-            // slot — surface that as a soft-success rather than an error.
-            return { ok: true, likelyDuplicate: true };
-          }
-          return retryResult;
-        })
-        .catch(function () { return { ok: false, reason: "network_error" }; });
+      // First attempt's response didn't come back — check the sheet directly
+      // for the real record before assuming failure.
+      return lookupBookingBySlot(payload.slotMs).then(function (found) {
+        if (found.found) {
+          return { ok: true, recovered: true, bookingId: found.bookingId, paymentLink: found.paymentLink };
+        }
+        // Genuinely not found yet — wait briefly (in case it's still mid-flight), retry the lookup once more.
+        return new Promise(function (resolve) { setTimeout(resolve, 2500); })
+          .then(function () { return lookupBookingBySlot(payload.slotMs); })
+          .then(function (found2) {
+            if (found2.found) {
+              return { ok: true, recovered: true, bookingId: found2.bookingId, paymentLink: found2.paymentLink };
+            }
+            // Still nothing — try submitting fresh once more (maybe it truly never went through).
+            return attempt().catch(function () { return { ok: false, reason: "network_error" }; });
+          });
+      });
     });
   }
 
@@ -401,6 +412,10 @@
       var country = document.getElementById("country-f").value;
       var phoneCode = document.getElementById("phone-code-f").value;
       var phone = document.getElementById("phone-f").value;
+      // If "Other" was chosen in the code dropdown, don't prepend the literal
+      // word "Other" to the phone number — just use what they typed as-is
+      // (they may have included their own country code manually).
+      var fullPhone = (phoneCode === "Other" ? "" : phoneCode + " ") + phone;
       var service = document.getElementById("service-f").value;
       var tz = document.getElementById("tz-f").value;
       var slotSelect = document.getElementById("slot-f");
@@ -417,7 +432,7 @@
       }
 
       var payload = {
-        name: name, phone: phoneCode + " " + phone, email: email, country: country,
+        name: name, phone: fullPhone, email: email, country: country,
         service: service, slotMs: slotMs, slotLabel: slotLabel + " (tz ref: " + tz + ")",
         platform: platform, emergency: !!isEmergency, fee: isEmergency ? "USD 50" : "USD 35",
         amountPaise: isEmergency ? 5000 : 3500, currency: "USD"
@@ -431,7 +446,7 @@
             " | Country: " + country + " | Slot: " + slotLabel + " (tz ref: " + tz + ")" + " | Platform: " + platform;
           var gform = new FormData();
           gform.append("entry.1869350848", name);
-          gform.append("entry.1797725802", phoneCode + " " + phone);
+          gform.append("entry.1797725802", fullPhone);
           gform.append("entry.350143632", email);
           gform.append("entry.2005620554", serviceNote);
           fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).catch(function () {});
