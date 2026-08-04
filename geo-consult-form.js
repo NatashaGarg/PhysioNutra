@@ -335,7 +335,6 @@
     var slotLabel = document.getElementById("slot-label-f");
     var feeNote = document.getElementById("fee-note-f");
     var paymentNote = document.getElementById("payment-note-text-f");
-    var payLink = document.getElementById("pay-link-f");
 
     function refresh() {
       var isEmergency = !!(checkbox && checkbox.checked);
@@ -344,9 +343,8 @@
         ? "Consultation fee: USD 50 (same-day/emergency), billed in your local currency at checkout."
         : "Consultation fee: USD 35, billed in your local currency at checkout.";
       if (paymentNote) paymentNote.textContent = isEmergency
-        ? "This is a same-day/emergency booking. Full payment of USD 50 is required in advance to confirm your slot."
-        : "Full payment of USD 35 is required in advance to confirm your booking.";
-      if (payLink) payLink.textContent = isEmergency ? "Pay USD 50 Now" : "Pay USD 35 Now";
+        ? "This is a same-day/emergency booking. Full payment of USD 50 is required in advance to confirm your slot. You'll get a secure payment link right after you submit."
+        : "Full payment of USD 35 is required in advance to confirm your booking. You'll get a secure payment link right after you submit.";
       populateForeignSlots();
     }
 
