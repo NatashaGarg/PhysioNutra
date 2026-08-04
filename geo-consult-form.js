@@ -99,13 +99,48 @@
       });
   }
 
+  function fetchWithTimeout_(url, options, timeoutMs) {
+    var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+    var timeoutId = controller ? setTimeout(function () { controller.abort(); }, timeoutMs) : null;
+    var opts = Object.assign({}, options, controller ? { signal: controller.signal } : {});
+    return fetch(url, opts).finally(function () { if (timeoutId) clearTimeout(timeoutId); });
+  }
+
+  // Creating a per-booking payment link involves this script calling out to
+  // Razorpay's API, which can take several seconds. That round trip
+  // occasionally gets interrupted (slow connection, etc.) even though the
+  // backend finishes the booking successfully a moment later. To avoid
+  // showing someone a false "something went wrong" for a booking that
+  // actually went through, we: (1) allow a generous 20s timeout before
+  // giving up, and (2) if a request does fail, automatically retry once —
+  // and if that retry comes back "slot_taken", treat it as evidence the
+  // FIRST attempt actually succeeded (since the sheet writes are guarded by
+  // a lock, this is the most likely explanation), and tell the person their
+  // booking is fine rather than showing a scary error.
   function submitBooking(payload) {
     if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf("PASTE_YOUR") === 0) {
       return Promise.resolve({ ok: false, reason: "not_configured" });
     }
-    return fetch(APPS_SCRIPT_URL, { method: "POST", body: JSON.stringify(payload) })
-      .then(function (res) { return res.json(); })
-      .catch(function () { return { ok: false, reason: "network_error" }; });
+
+    function attempt() {
+      return fetchWithTimeout_(APPS_SCRIPT_URL, { method: "POST", body: JSON.stringify(payload) }, 20000)
+        .then(function (res) { return res.json(); });
+    }
+
+    return attempt().catch(function () {
+      // First attempt failed (timeout/network hiccup) — wait briefly, retry once.
+      return new Promise(function (resolve) { setTimeout(resolve, 1500); })
+        .then(attempt)
+        .then(function (retryResult) {
+          if (!retryResult.ok && retryResult.reason === "slot_taken") {
+            // Very likely the FIRST attempt actually succeeded and booked this
+            // slot — surface that as a soft-success rather than an error.
+            return { ok: true, likelyDuplicate: true };
+          }
+          return retryResult;
+        })
+        .catch(function () { return { ok: false, reason: "network_error" }; });
+    });
   }
 
   // ── Time slot generation (shared math, IST clinic hours) ──
@@ -279,7 +314,7 @@
             payLink.href = result.paymentLink;
             payWrap.style.display = "block";
           } else if (successText) {
-            successText.textContent = "Booking received! Please complete your \u20b9500 advance payment using the link we shared earlier to confirm your slot.";
+            successText.textContent = "Booking received! We'll send your \u20b9500 payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or call us to confirm.";
           }
           if (typeof gtag !== "undefined") {
             gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Appointment Form" });
@@ -412,7 +447,7 @@
             payLink.href = result.paymentLink;
             payWrap.style.display = "block";
           } else if (successText) {
-            successText.textContent = "Booking received! Please complete your " + feeLabel + " payment using the link we shared earlier to confirm your video consultation.";
+            successText.textContent = "Booking received! We'll send your " + feeLabel + " payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or contact us to confirm.";
           }
           if (typeof gtag !== "undefined") {
             gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Online Consultation Form" });
