@@ -358,6 +358,12 @@
 
       if (!isOnline) {
         // Original simple flow: no slot, no advance payment, just forward to the Google Form.
+        var clinicBtn = form.querySelector('button[type="submit"]');
+        if (clinicBtn) {
+          if (clinicBtn.disabled) return;
+          clinicBtn.disabled = true;
+          clinicBtn.textContent = "Booking\u2026";
+        }
         var gform = new FormData(form);
         fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).finally(function () {
           form.style.display = "none";
@@ -381,6 +387,14 @@
       if (!slotMs) {
         alert("Please select a time slot.");
         return;
+      }
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        if (submitBtn.disabled) return; // already submitting — ignore extra clicks
+        submitBtn.disabled = true;
+        submitBtn.dataset.originalText = submitBtn.textContent;
+        submitBtn.textContent = "Booking\u2026 this can take a few seconds";
       }
 
       var payload = {
@@ -420,6 +434,10 @@
           populateIndiaSlots();
         } else {
           alert("Something went wrong submitting your booking. Please try again or call us directly.");
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtn.dataset.originalText || "Book Consultation";
         }
       });
     });
@@ -551,6 +569,14 @@
         return;
       }
 
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        if (submitBtn.disabled) return; // already submitting — ignore extra clicks
+        submitBtn.disabled = true;
+        submitBtn.dataset.originalText = submitBtn.textContent;
+        submitBtn.textContent = "Booking\u2026 this can take a few seconds";
+      }
+
       var payload = {
         name: name, phone: fullPhone, email: email, country: country,
         service: service, slotMs: slotMs, slotLabel: slotLabel + " (tz ref: " + tz + ")",
@@ -593,6 +619,10 @@
           populateForeignSlots();
         } else {
           alert("Something went wrong submitting your booking. Please try again or contact us directly.");
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtn.dataset.originalText || "Book Online Consultation";
         }
       });
     });
