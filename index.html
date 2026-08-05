@@ -320,6 +320,22 @@ nav a:hover,nav a.active{color:#7ad16c}
 .form-group input:focus,.form-group select:focus{outline:none;border-color:#7ad16c;box-shadow:0 0 0 3px rgba(122,209,108,.15)}
 .submit-btn{width:100%;padding:14px;background:#7ad16c;color:#fff;border:none;border-radius:50px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .3s;font-family:inherit}
 .submit-btn:hover{background:#5ab04a;transform:translateY(-2px)}
+.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:1rem;font-family:inherit;transition:border-color .3s;background:#fff;resize:vertical}
+.form-group textarea:focus{outline:none;border-color:#7ad16c;box-shadow:0 0 0 3px rgba(122,209,108,.15)}
+.slot-picker{margin-bottom:.3rem}
+.slot-picker-dates{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;margin-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.date-pill{flex:0 0 auto;padding:8px 15px;border:1.5px solid #ddd;border-radius:20px;background:#fff;font-size:.85rem;font-weight:600;color:#444;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit}
+.date-pill:hover{border-color:#7ad16c}
+.date-pill.selected{background:#7ad16c;border-color:#7ad16c;color:#fff}
+.slot-picker-times{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:8px;max-height:230px;overflow-y:auto;padding:2px}
+.time-slot-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 6px;border:1.5px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;font-family:inherit;transition:all .2s;line-height:1.25}
+.time-slot-btn:hover{border-color:#7ad16c;background:#f4fbf2}
+.time-slot-btn.selected{background:#7ad16c;border-color:#7ad16c}
+.time-slot-btn.selected .slot-local,.time-slot-btn.selected .slot-ist{color:#fff}
+.slot-local{font-size:.86rem;font-weight:700;color:#222}
+.slot-ist{font-size:.68rem;color:#888}
+.slot-picker-empty{font-size:.85rem;color:#a33;background:#fdf1f1;border-radius:8px;padding:10px 12px;margin:0}
+@media (max-width:480px){.slot-picker-times{grid-template-columns:repeat(auto-fill,minmax(84px,1fr))}}
 .form-success{display:none;text-align:center;padding:1.5rem;background:#eaf6e7;border-radius:10px;color:#2d5a27;font-weight:600;margin-top:1rem}
 
 /* ═══ TRUST BADGES ═══ */
@@ -690,8 +706,13 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
             </div>
             <div id="india-online-extras" hidden>
               <div class="form-group">
-                <label for="slot">Preferred Time Slot</label>
-                <select id="slot"></select>
+                <label>Preferred Time Slot</label>
+                <div class="slot-picker" id="slot-picker">
+                  <div class="slot-picker-dates" id="slot-dates"></div>
+                  <div class="slot-picker-times" id="slot-times"></div>
+                  <p class="slot-picker-empty" id="slot-empty" hidden></p>
+                </div>
+                <input type="hidden" id="slot" required>
               </div>
               <div class="form-group">
                 <label>Preferred Video Platform</label>
@@ -703,6 +724,10 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
               </div>
               <div class="payment-note" style="background:#fff8ec;border:1px solid #eddcb0;border-radius:8px;padding:10px 12px;margin:0 0 1rem;font-size:.82rem;color:#6b4a12">
                 <span id="payment-note-text">A ₹500 advance payment is required to confirm your booking. You'll get a secure payment link right after you submit.</span>
+              </div>
+              <div class="form-group">
+                <label for="problem">Briefly describe your problem <span class="u-muted">(optional — helps Dr. Tarun assess before your visit)</span></label>
+                <textarea id="problem" rows="3" placeholder="E.g. lower back pain for 2 weeks, worse when bending forward"></textarea>
               </div>
             </div>
             <button type="submit" class="submit-btn">Book Consultation</button>
@@ -774,8 +799,13 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
               <select id="tz-f"></select>
             </div>
             <div class="form-group">
-              <label id="slot-label-f" for="slot-f">Preferred Time Slot (24+ hrs from now, 30 min)</label>
-              <select id="slot-f"></select>
+              <label id="slot-label-f">Preferred Time Slot (24+ hrs from now, 30 min)</label>
+              <div class="slot-picker" id="slot-picker-f">
+                <div class="slot-picker-dates" id="slot-dates-f"></div>
+                <div class="slot-picker-times" id="slot-times-f"></div>
+                <p class="slot-picker-empty" id="slot-empty-f" hidden></p>
+              </div>
+              <input type="hidden" id="slot-f" required>
             </div>
             <div class="form-group">
               <label>Preferred Video Platform</label>
@@ -788,6 +818,10 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
             <p id="fee-note-f" style="background:#f5f5f0;border-radius:8px;padding:8px 10px;font-size:.78rem;color:#666;margin:0 0 1rem">Consultation fee: USD 35, billed in your local currency at checkout.</p>
             <div class="payment-note" style="background:#fff8ec;border:1px solid #eddcb0;border-radius:8px;padding:10px 12px;margin:0 0 1rem;font-size:.82rem;color:#6b4a12">
               <span id="payment-note-text-f">Full payment of USD 35 is required in advance to confirm your booking. You'll get a secure payment link right after you submit.</span>
+            </div>
+            <div class="form-group">
+              <label for="problem-f">Briefly describe your problem <span class="u-muted">(optional — helps Dr. Tarun assess before your visit)</span></label>
+              <textarea id="problem-f" rows="3" placeholder="E.g. shoulder pain since a fall 3 weeks ago, limited range of motion"></textarea>
             </div>
             <button type="submit" class="submit-btn">Book Online Consultation</button>
           </form>
