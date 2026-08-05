@@ -599,7 +599,7 @@
           fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).catch(function () {});
 
           form.style.display = "none";
-          success.hidden = false;
+          success.style.display = "block";
           var successText = document.getElementById("form-success-foreign-text");
           var payWrap = document.getElementById("foreign-pay-now-wrap");
           var payLink = document.getElementById("foreign-pay-now");
