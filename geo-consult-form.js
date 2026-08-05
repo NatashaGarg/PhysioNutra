@@ -158,8 +158,9 @@
   // Clinic is India-based and does not observe DST, so IST = UTC+5:30 always.
   var CLINIC_TZ = "Asia/Kolkata";
   var CLINIC_UTC_OFFSET_MS = (5 * 60 + 30) * 60000;
-  var BUSINESS_START_MIN = 9 * 60;        // 9:00 AM IST
-  var BUSINESS_END_MIN = 20 * 60 + 30;    // 8:30 PM IST (last slot starts at 8:00 PM)
+  var BUSINESS_START_MIN = 9 * 60;              // 9:00 AM IST (both audiences)
+  var INDIA_BUSINESS_END_MIN = 20 * 60 + 30;    // 8:30 PM IST (last slot starts at 8:00 PM) — in-clinic/video hours
+  var FOREIGN_BUSINESS_END_MIN = 23 * 60;       // 11:00 PM IST (last slot starts at 10:30 PM) — wider window for overseas time zones
   var SLOT_MINUTES = 30;
 
   function istPartsFromDate(d) {
@@ -179,7 +180,8 @@
     return istPartsFromDate(new Date(anchorMs + days * 86400000));
   }
 
-  function generateSlots(isEmergency) {
+  function generateSlots(isEmergency, businessEndMin) {
+    var endMin = businessEndMin || INDIA_BUSINESS_END_MIN;
     var nowMs = Date.now();
     var todayIst = istPartsFromDate(new Date());
     var minMs = isEmergency ? nowMs : nowMs + 24 * 60 * 60000;
@@ -188,7 +190,7 @@
 
     for (var d = 0; d < daysToScan; d++) {
       var dayParts = d === 0 ? todayIst : addDaysToIstDate(todayIst, d);
-      for (var t = BUSINESS_START_MIN; t < BUSINESS_END_MIN; t += SLOT_MINUTES) {
+      for (var t = BUSINESS_START_MIN; t < endMin; t += SLOT_MINUTES) {
         var h = Math.floor(t / 60);
         var m = t % 60;
         var slotMs = istDateToUTCms(dayParts.year, dayParts.month, dayParts.day, h, m);
@@ -201,42 +203,123 @@
     return slots;
   }
 
-  function formatSlotLabel(ms, displayTz) {
-    var d = new Date(ms);
-    var istStr = new Intl.DateTimeFormat("en-US", {
-      timeZone: CLINIC_TZ, weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", hour12: true
-    }).format(d);
-    var localStr = "";
-    try {
-      localStr = new Intl.DateTimeFormat("en-US", { timeZone: displayTz, hour: "numeric", minute: "2-digit", hour12: true }).format(d);
-    } catch (e) {}
-    return istStr + " IST" + (localStr && displayTz !== CLINIC_TZ ? " (" + localStr + " your time)" : "");
+  function istDayKey(ms) {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: CLINIC_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(ms));
   }
 
-  function fillSlotSelect(select, slots, displayTz, emptyText) {
-    select.innerHTML = "";
-    if (!slots.length) {
-      var empty = document.createElement("option");
-      empty.value = "";
-      empty.textContent = emptyText;
-      select.appendChild(empty);
+  function groupSlotsByIstDay(slots) {
+    var map = {};
+    var order = [];
+    slots.forEach(function (ms) {
+      var key = istDayKey(ms);
+      if (!map[key]) { map[key] = []; order.push(key); }
+      map[key].push(ms);
+    });
+    return order.map(function (key) { return { key: key, slots: map[key] }; });
+  }
+
+  function dayPillLabel(key, sampleMs) {
+    var todayKey = istDayKey(Date.now());
+    var tomorrowKey = istDayKey(Date.now() + 86400000);
+    if (key === todayKey) return "Today";
+    if (key === tomorrowKey) return "Tomorrow";
+    return new Intl.DateTimeFormat("en-US", { timeZone: CLINIC_TZ, weekday: "short", month: "short", day: "numeric" }).format(new Date(sampleMs));
+  }
+
+  function istTimeStr(ms) {
+    return new Intl.DateTimeFormat("en-US", { timeZone: CLINIC_TZ, hour: "numeric", minute: "2-digit", hour12: true }).format(new Date(ms));
+  }
+
+  function localTimeStr(ms, displayTz) {
+    try {
+      return new Intl.DateTimeFormat("en-US", { timeZone: displayTz, hour: "numeric", minute: "2-digit", hour12: true }).format(new Date(ms));
+    } catch (e) {
+      return "";
+    }
+  }
+
+  // Renders a "pick a day, then pick a time" widget instead of a long scrolling
+  // dropdown. Already-booked slots never reach here — they're filtered out of
+  // `slots` upstream by generateSlots(). Selection is stored on a hidden
+  // <input> (value = slot ms, data-label = human label used in the booking
+  // payload/notes) so the rest of the submit logic doesn't need to change shape.
+  function renderSlotPicker(opts) {
+    var datesEl = document.getElementById(opts.datesEl);
+    var timesEl = document.getElementById(opts.timesEl);
+    var emptyEl = opts.emptyEl ? document.getElementById(opts.emptyEl) : null;
+    var hiddenInput = document.getElementById(opts.hiddenInput);
+    if (!datesEl || !timesEl || !hiddenInput) return;
+
+    hiddenInput.value = "";
+    hiddenInput.removeAttribute("data-label");
+
+    if (!opts.slots.length) {
+      datesEl.innerHTML = "";
+      timesEl.innerHTML = "";
+      if (emptyEl) { emptyEl.hidden = false; emptyEl.textContent = opts.emptyText || "No slots available right now — please call us directly"; }
       return;
     }
-    slots.forEach(function (ms) {
-      var opt = document.createElement("option");
-      opt.value = String(ms);
-      opt.textContent = formatSlotLabel(ms, displayTz);
-      select.appendChild(opt);
+    if (emptyEl) emptyEl.hidden = true;
+
+    var groups = groupSlotsByIstDay(opts.slots);
+
+    function selectSlot(btn, ms, label) {
+      timesEl.querySelectorAll(".time-slot-btn.selected").forEach(function (b) { b.classList.remove("selected"); });
+      btn.classList.add("selected");
+      hiddenInput.value = String(ms);
+      hiddenInput.setAttribute("data-label", label);
+    }
+
+    function renderTimesForGroup(idx) {
+      var g = groups[idx];
+      timesEl.innerHTML = "";
+      hiddenInput.value = "";
+      hiddenInput.removeAttribute("data-label");
+      g.slots.forEach(function (ms) {
+        var ist = istTimeStr(ms);
+        var showBoth = opts.alwaysShowBoth || (opts.displayTz && opts.displayTz !== CLINIC_TZ);
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "time-slot-btn";
+        var label;
+        if (showBoth) {
+          var local = localTimeStr(ms, opts.displayTz);
+          btn.innerHTML = '<span class="slot-local">' + (local || ist) + '</span><span class="slot-ist">' + ist + ' IST</span>';
+          label = (local ? local + " your time" : ist) + " (" + ist + " IST)";
+        } else {
+          btn.innerHTML = '<span class="slot-local">' + ist + '</span>';
+          label = ist + " IST";
+        }
+        btn.addEventListener("click", function () { selectSlot(btn, ms, label); });
+        timesEl.appendChild(btn);
+      });
+    }
+
+    datesEl.innerHTML = "";
+    groups.forEach(function (g, idx) {
+      var pill = document.createElement("button");
+      pill.type = "button";
+      pill.className = "date-pill" + (idx === 0 ? " selected" : "");
+      pill.textContent = dayPillLabel(g.key, g.slots[0]);
+      pill.addEventListener("click", function () {
+        datesEl.querySelectorAll(".date-pill.selected").forEach(function (b) { b.classList.remove("selected"); });
+        pill.classList.add("selected");
+        renderTimesForGroup(idx);
+      });
+      datesEl.appendChild(pill);
     });
+    renderTimesForGroup(0);
   }
 
   // ── India form: timezone + slots ──
 
   function populateIndiaSlots() {
-    var select = document.getElementById("slot");
-    if (!select) return;
-    var slots = generateSlots(false);
-    fillSlotSelect(select, slots, CLINIC_TZ, "No slots available right now — please call us directly");
+    var slots = generateSlots(false, INDIA_BUSINESS_END_MIN);
+    renderSlotPicker({
+      datesEl: "slot-dates", timesEl: "slot-times", emptyEl: "slot-empty",
+      hiddenInput: "slot", slots: slots, displayTz: CLINIC_TZ, alwaysShowBoth: false,
+      emptyText: "No slots available right now — please call us directly"
+    });
   }
 
   function wireIndiaModeToggle() {
@@ -287,11 +370,13 @@
       }
 
       // Online consultation flow: needs a slot + goes through the shared booking backend.
-      var slotSelect = document.getElementById("slot");
-      var slotMs = slotSelect ? slotSelect.value : "";
-      var slotLabel = slotSelect && slotSelect.selectedIndex >= 0 ? slotSelect.options[slotSelect.selectedIndex].textContent : "-";
+      var slotInput = document.getElementById("slot");
+      var slotMs = slotInput ? slotInput.value : "";
+      var slotLabel = slotInput ? (slotInput.getAttribute("data-label") || "-") : "-";
       var platformRadio = document.querySelector('input[name="platform-india"]:checked');
       var platform = platformRadio ? platformRadio.value : "-";
+      var problemEl = document.getElementById("problem");
+      var problem = problemEl ? problemEl.value.trim() : "";
 
       if (!slotMs) {
         alert("Please select a time slot.");
@@ -302,7 +387,7 @@
         name: name, phone: phone, email: email, country: "India",
         service: service, slotMs: slotMs, slotLabel: slotLabel,
         platform: platform, emergency: false, fee: "\u20b9500 advance",
-        amountPaise: 50000, currency: "INR"
+        amountPaise: 50000, currency: "INR", problem: problem
       };
 
       submitBooking(payload).then(function (result) {
@@ -312,7 +397,7 @@
           gform.append("entry.1869350848", name);
           gform.append("entry.1797725802", phone);
           gform.append("entry.350143632", email);
-          gform.append("entry.2005620554", "[Online] " + service + " | Slot: " + slotLabel + " | Platform: " + platform);
+          gform.append("entry.2005620554", "[Online] " + service + " | Slot: " + slotLabel + " | Platform: " + platform + (problem ? " | Problem: " + problem : ""));
           fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).catch(function () {});
 
           form.style.display = "none";
@@ -342,13 +427,24 @@
 
   // ── Foreign form: timezone + slots + emergency toggle ──
 
+  // Best-guess timezone per country in the "Country" dropdown, so selecting a
+  // country auto-updates "Your Timezone" — the person can still override it
+  // manually (large countries like the US span several zones).
+  var COUNTRY_TZ_MAP = {
+    "United States": "America/New_York",
+    "United Kingdom": "Europe/London",
+    "Canada": "America/Toronto",
+    "Australia": "Australia/Sydney",
+    "United Arab Emirates": "Asia/Dubai"
+  };
+
   function populateTimezone() {
     var select = document.getElementById("tz-f");
     if (!select) return;
     var detected = "";
     try { detected = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
     var common = [
-      "America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles",
+      "America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles", "America/Toronto",
       "Europe/London", "Europe/Berlin", "Asia/Dubai", "Australia/Sydney"
     ];
     if (detected && common.indexOf(detected) === -1) common.unshift(detected);
@@ -362,17 +458,37 @@
     });
   }
 
+  function applyCountryTzDefault() {
+    var countrySelect = document.getElementById("country-f");
+    var tzSelect = document.getElementById("tz-f");
+    if (!countrySelect || !tzSelect) return;
+    var mapped = COUNTRY_TZ_MAP[countrySelect.value];
+    if (mapped) {
+      var hasOption = Array.prototype.some.call(tzSelect.options, function (o) { return o.value === mapped; });
+      if (!hasOption) {
+        var opt = document.createElement("option");
+        opt.value = mapped;
+        opt.textContent = mapped;
+        tzSelect.appendChild(opt);
+      }
+      tzSelect.value = mapped;
+    }
+    populateForeignSlots();
+  }
+
   function populateForeignSlots() {
-    var select = document.getElementById("slot-f");
     var tzSelect = document.getElementById("tz-f");
     var emergencyCheckbox = document.getElementById("emergency-f");
-    if (!select) return;
     var isEmergency = !!(emergencyCheckbox && emergencyCheckbox.checked);
     var displayTz = (tzSelect && tzSelect.value) || (function () {
       try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; } catch (e) { return "UTC"; }
     })();
-    var slots = generateSlots(isEmergency);
-    fillSlotSelect(select, slots, displayTz, "No same-day slots left today — please WhatsApp us directly");
+    var slots = generateSlots(isEmergency, FOREIGN_BUSINESS_END_MIN);
+    renderSlotPicker({
+      datesEl: "slot-dates-f", timesEl: "slot-times-f", emptyEl: "slot-empty-f",
+      hiddenInput: "slot-f", slots: slots, displayTz: displayTz, alwaysShowBoth: true,
+      emptyText: "No same-day slots left today — please WhatsApp us directly"
+    });
   }
 
   function wireForeignEmergencyAndSlots() {
@@ -396,6 +512,8 @@
 
     if (checkbox) checkbox.addEventListener("change", refresh);
     if (tzSelect) tzSelect.addEventListener("change", populateForeignSlots);
+    var countrySelect = document.getElementById("country-f");
+    if (countrySelect) countrySelect.addEventListener("change", applyCountryTzDefault);
     refresh();
   }
 
@@ -418,13 +536,15 @@
       var fullPhone = (phoneCode === "Other" ? "" : phoneCode + " ") + phone;
       var service = document.getElementById("service-f").value;
       var tz = document.getElementById("tz-f").value;
-      var slotSelect = document.getElementById("slot-f");
-      var slotMs = slotSelect ? slotSelect.value : "";
-      var slotLabel = slotSelect && slotSelect.selectedIndex >= 0 ? slotSelect.options[slotSelect.selectedIndex].textContent : "-";
+      var slotInput = document.getElementById("slot-f");
+      var slotMs = slotInput ? slotInput.value : "";
+      var slotLabel = slotInput ? (slotInput.getAttribute("data-label") || "-") : "-";
       var platform = form.querySelector('input[name="platform-f"]:checked');
       platform = platform ? platform.value : "";
       var emergencyCheckbox = document.getElementById("emergency-f");
       var isEmergency = emergencyCheckbox && emergencyCheckbox.checked;
+      var problemEl = document.getElementById("problem-f");
+      var problem = problemEl ? problemEl.value.trim() : "";
 
       if (!slotMs) {
         alert("Please select a time slot.");
@@ -435,7 +555,7 @@
         name: name, phone: fullPhone, email: email, country: country,
         service: service, slotMs: slotMs, slotLabel: slotLabel + " (tz ref: " + tz + ")",
         platform: platform, emergency: !!isEmergency, fee: isEmergency ? "USD 50" : "USD 35",
-        amountPaise: isEmergency ? 5000 : 3500, currency: "USD"
+        amountPaise: isEmergency ? 5000 : 3500, currency: "USD", problem: problem
       };
 
       submitBooking(payload).then(function (result) {
@@ -443,7 +563,8 @@
           bookedSlots[String(slotMs)] = true;
           // Also forward to the original Google Form (folded into one note field) for existing notifications.
           var serviceNote = (isEmergency ? "[EMERGENCY/SAME-DAY, USD 50] " : "[Online, USD 35] ") + (service || "General consultation") +
-            " | Country: " + country + " | Slot: " + slotLabel + " (tz ref: " + tz + ")" + " | Platform: " + platform;
+            " | Country: " + country + " | Slot: " + slotLabel + " (tz ref: " + tz + ")" + " | Platform: " + platform +
+            (problem ? " | Problem: " + problem : "");
           var gform = new FormData();
           gform.append("entry.1869350848", name);
           gform.append("entry.1797725802", fullPhone);
