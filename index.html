@@ -729,6 +729,33 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
                 <label for="problem">Briefly describe your problem <span class="u-muted">(optional — helps Dr. Tarun assess before your visit)</span></label>
                 <textarea id="problem" rows="3" placeholder="E.g. lower back pain for 2 weeks, worse when bending forward"></textarea>
               </div>
+              <div class="form-group">
+                <label>Medical history <span class="u-muted">(check any that apply)</span></label>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px">
+                  <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition" value="Diabetes"> Diabetes</label>
+                  <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition" value="Hypertension/BP"> Hypertension / BP</label>
+                  <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition" value="Heart condition"> Heart condition</label>
+                  <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition" value="Pregnancy"> Pregnancy</label>
+                  <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition" value="On blood thinners"> On blood thinners</label>
+                  <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition" value="Previous surgery (this area)"> Previous surgery (this area)</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="medhistory">Current medications, allergies, or other medical history <span class="u-muted">(optional)</span></label>
+                <textarea id="medhistory" rows="2" placeholder="E.g. taking metformin daily, allergic to ibuprofen"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Emergency contact <span class="u-muted">(optional)</span></label>
+                <div style="display:flex;gap:8px">
+                  <input type="text" id="ec-name" placeholder="Name" style="flex:1">
+                  <input type="tel" id="ec-phone" placeholder="Phone number" style="flex:1">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="report">Upload a medical report or scan <span class="u-muted">(optional — PDF or photo, max 8MB)</span></label>
+                <input type="file" id="report" accept=".pdf,.jpg,.jpeg,.png,.webp">
+                <p id="report-status" style="font-size:.78rem;color:#666;margin:4px 0 0"></p>
+              </div>
             </div>
             <button type="submit" class="submit-btn">Book Consultation</button>
           </form>
@@ -822,6 +849,33 @@ footer{background:#1a1a1a;color:#fff;padding:55px 0 0}
             <div class="form-group">
               <label for="problem-f">Briefly describe your problem <span class="u-muted">(optional — helps Dr. Tarun assess before your visit)</span></label>
               <textarea id="problem-f" rows="3" placeholder="E.g. shoulder pain since a fall 3 weeks ago, limited range of motion"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Medical history <span class="u-muted">(check any that apply)</span></label>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px">
+                <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition-f" value="Diabetes"> Diabetes</label>
+                <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition-f" value="Hypertension/BP"> Hypertension / BP</label>
+                <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition-f" value="Heart condition"> Heart condition</label>
+                <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition-f" value="Pregnancy"> Pregnancy</label>
+                <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition-f" value="On blood thinners"> On blood thinners</label>
+                <label style="display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem"><input type="checkbox" name="condition-f" value="Previous surgery (this area)"> Previous surgery (this area)</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="medhistory-f">Current medications, allergies, or other medical history <span class="u-muted">(optional)</span></label>
+              <textarea id="medhistory-f" rows="2" placeholder="E.g. taking metformin daily, allergic to ibuprofen"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Emergency contact <span class="u-muted">(optional)</span></label>
+              <div style="display:flex;gap:8px">
+                <input type="text" id="ec-name-f" placeholder="Name" style="flex:1">
+                <input type="tel" id="ec-phone-f" placeholder="Phone number" style="flex:1">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="report-f">Upload a medical report or scan <span class="u-muted">(optional — PDF or photo, max 8MB)</span></label>
+              <input type="file" id="report-f" accept=".pdf,.jpg,.jpeg,.png,.webp">
+              <p id="report-status-f" style="font-size:.78rem;color:#666;margin:4px 0 0"></p>
             </div>
             <button type="submit" class="submit-btn">Book Online Consultation</button>
           </form>

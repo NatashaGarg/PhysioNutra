@@ -129,7 +129,8 @@
     }
 
     function attempt() {
-      return fetchWithTimeout_(APPS_SCRIPT_URL, { method: "POST", body: JSON.stringify(payload) }, 20000)
+      var timeoutMs = payload.fileData ? 45000 : 20000; // uploads need more headroom
+      return fetchWithTimeout_(APPS_SCRIPT_URL, { method: "POST", body: JSON.stringify(payload) }, timeoutMs)
         .then(function (res) { return res.json(); });
     }
 
@@ -340,6 +341,38 @@
     refresh();
   }
 
+  function getCheckedConditions_(name) {
+    var boxes = document.querySelectorAll('input[name="' + name + '"]:checked');
+    var vals = [];
+    boxes.forEach(function (b) { vals.push(b.value); });
+    return vals.join(", ");
+  }
+
+  var MAX_REPORT_BYTES = 8 * 1024 * 1024; // 8MB
+
+  // Reads a <input type="file"> as base64. Resolves to {fileData, fileName,
+  // fileType} if a file was chosen and is within the size limit, resolves to
+  // null if no file was chosen, or rejects with a message if it's too large.
+  function readFileAsBase64_(fileInput) {
+    if (!fileInput || !fileInput.files || !fileInput.files[0]) {
+      return Promise.resolve(null);
+    }
+    var file = fileInput.files[0];
+    if (file.size > MAX_REPORT_BYTES) {
+      return Promise.reject("That file is too large (max 8MB). Please choose a smaller file or compress it.");
+    }
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var result = reader.result || "";
+        var base64 = String(result).split(",")[1] || ""; // strip the "data:...;base64," prefix
+        resolve({ fileData: base64, fileName: file.name, fileType: file.type || "application/octet-stream" });
+      };
+      reader.onerror = function () { reject("Couldn't read that file — please try again or a different file."); };
+      reader.readAsDataURL(file);
+    });
+  }
+
   function wireIndiaFormSubmit() {
     var form = document.getElementById("appointment-form");
     var success = document.getElementById("form-success");
@@ -383,6 +416,13 @@
       var platform = platformRadio ? platformRadio.value : "-";
       var problemEl = document.getElementById("problem");
       var problem = problemEl ? problemEl.value.trim() : "";
+      var conditions = getCheckedConditions_("condition");
+      var medHistoryEl = document.getElementById("medhistory");
+      var medHistory = medHistoryEl ? medHistoryEl.value.trim() : "";
+      var ecName = (document.getElementById("ec-name") || {}).value || "";
+      var ecPhone = (document.getElementById("ec-phone") || {}).value || "";
+      var reportInput = document.getElementById("report");
+      var reportStatus = document.getElementById("report-status");
 
       if (!slotMs) {
         alert("Please select a time slot.");
@@ -397,44 +437,64 @@
         submitBtn.textContent = "Booking\u2026 this can take a few seconds";
       }
 
-      var payload = {
-        name: name, phone: phone, email: email, country: "India",
-        service: service, slotMs: slotMs, slotLabel: slotLabel,
-        platform: platform, emergency: false, fee: "\u20b9500 advance",
-        amountPaise: 50000, currency: "INR", problem: problem
-      };
+      if (reportStatus && reportInput && reportInput.files && reportInput.files[0]) {
+        reportStatus.textContent = "Uploading report\u2026";
+      }
 
-      submitBooking(payload).then(function (result) {
-        if (result.ok) {
-          bookedSlots[String(slotMs)] = true;
-          var gform = new FormData();
-          gform.append("entry.1869350848", name);
-          gform.append("entry.1797725802", phone);
-          gform.append("entry.350143632", email);
-          gform.append("entry.2005620554", "[Online] " + service + " | Slot: " + slotLabel + " | Platform: " + platform + (problem ? " | Problem: " + problem : ""));
-          fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).catch(function () {});
+      readFileAsBase64_(reportInput).then(function (fileInfo) {
+        if (reportStatus) reportStatus.textContent = fileInfo ? "Report attached \u2713" : "";
 
-          form.style.display = "none";
-          success.style.display = "block";
-          var successText = document.getElementById("form-success-text");
-          var payWrap = document.getElementById("india-pay-now-wrap");
-          var payLink = document.getElementById("india-pay-now");
-          if (result.paymentLink && payWrap && payLink) {
-            if (successText) successText.textContent = "Booking received! Complete your \u20b9500 advance payment below to confirm your slot.";
-            payLink.href = result.paymentLink;
-            payWrap.style.display = "block";
-          } else if (successText) {
-            successText.textContent = "Booking received! We'll send your \u20b9500 payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or call us to confirm.";
+        var payload = {
+          name: name, phone: phone, email: email, country: "India",
+          service: service, slotMs: slotMs, slotLabel: slotLabel,
+          platform: platform, emergency: false, fee: "\u20b9500 advance",
+          amountPaise: 50000, currency: "INR", problem: problem,
+          conditions: conditions, medHistory: medHistory,
+          emergencyContactName: ecName, emergencyContactPhone: ecPhone,
+          fileData: fileInfo ? fileInfo.fileData : "",
+          fileName: fileInfo ? fileInfo.fileName : "",
+          fileType: fileInfo ? fileInfo.fileType : ""
+        };
+
+        submitBooking(payload).then(function (result) {
+          if (result.ok) {
+            bookedSlots[String(slotMs)] = true;
+            var gform = new FormData();
+            gform.append("entry.1869350848", name);
+            gform.append("entry.1797725802", phone);
+            gform.append("entry.350143632", email);
+            gform.append("entry.2005620554", "[Online] " + service + " | Slot: " + slotLabel + " | Platform: " + platform + (problem ? " | Problem: " + problem : ""));
+            fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).catch(function () {});
+
+            form.style.display = "none";
+            success.style.display = "block";
+            var successText = document.getElementById("form-success-text");
+            var payWrap = document.getElementById("india-pay-now-wrap");
+            var payLink = document.getElementById("india-pay-now");
+            if (result.paymentLink && payWrap && payLink) {
+              if (successText) successText.textContent = "Booking received! Complete your \u20b9500 advance payment below to confirm your slot.";
+              payLink.href = result.paymentLink;
+              payWrap.style.display = "block";
+            } else if (successText) {
+              successText.textContent = "Booking received! We'll send your \u20b9500 payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or call us to confirm.";
+            }
+            if (typeof gtag !== "undefined") {
+              gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Appointment Form" });
+            }
+          } else if (result.reason === "slot_taken") {
+            alert("Sorry, that slot was just booked by someone else. Please pick another.");
+            populateIndiaSlots();
+          } else {
+            alert("Something went wrong submitting your booking. Please try again or call us directly.");
           }
-          if (typeof gtag !== "undefined") {
-            gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Appointment Form" });
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.originalText || "Book Consultation";
           }
-        } else if (result.reason === "slot_taken") {
-          alert("Sorry, that slot was just booked by someone else. Please pick another.");
-          populateIndiaSlots();
-        } else {
-          alert("Something went wrong submitting your booking. Please try again or call us directly.");
-        }
+        });
+      }).catch(function (fileErrorMsg) {
+        alert(fileErrorMsg);
+        if (reportStatus) reportStatus.textContent = "";
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.textContent = submitBtn.dataset.originalText || "Book Consultation";
@@ -563,6 +623,13 @@
       var isEmergency = emergencyCheckbox && emergencyCheckbox.checked;
       var problemEl = document.getElementById("problem-f");
       var problem = problemEl ? problemEl.value.trim() : "";
+      var conditions = getCheckedConditions_("condition-f");
+      var medHistoryEl = document.getElementById("medhistory-f");
+      var medHistory = medHistoryEl ? medHistoryEl.value.trim() : "";
+      var ecName = (document.getElementById("ec-name-f") || {}).value || "";
+      var ecPhone = (document.getElementById("ec-phone-f") || {}).value || "";
+      var reportInput = document.getElementById("report-f");
+      var reportStatus = document.getElementById("report-status-f");
 
       if (!slotMs) {
         alert("Please select a time slot.");
@@ -577,49 +644,69 @@
         submitBtn.textContent = "Booking\u2026 this can take a few seconds";
       }
 
-      var payload = {
-        name: name, phone: fullPhone, email: email, country: country,
-        service: service, slotMs: slotMs, slotLabel: slotLabel + " (tz ref: " + tz + ")",
-        platform: platform, emergency: !!isEmergency, fee: isEmergency ? "USD 50" : "USD 35",
-        amountPaise: isEmergency ? 5000 : 3500, currency: "USD", problem: problem
-      };
+      if (reportStatus && reportInput && reportInput.files && reportInput.files[0]) {
+        reportStatus.textContent = "Uploading report\u2026";
+      }
 
-      submitBooking(payload).then(function (result) {
-        if (result.ok) {
-          bookedSlots[String(slotMs)] = true;
-          // Also forward to the original Google Form (folded into one note field) for existing notifications.
-          var serviceNote = (isEmergency ? "[EMERGENCY/SAME-DAY, USD 50] " : "[Online, USD 35] ") + (service || "General consultation") +
-            " | Country: " + country + " | Slot: " + slotLabel + " (tz ref: " + tz + ")" + " | Platform: " + platform +
-            (problem ? " | Problem: " + problem : "");
-          var gform = new FormData();
-          gform.append("entry.1869350848", name);
-          gform.append("entry.1797725802", fullPhone);
-          gform.append("entry.350143632", email);
-          gform.append("entry.2005620554", serviceNote);
-          fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).catch(function () {});
+      readFileAsBase64_(reportInput).then(function (fileInfo) {
+        if (reportStatus) reportStatus.textContent = fileInfo ? "Report attached \u2713" : "";
 
-          form.style.display = "none";
-          success.style.display = "block";
-          var successText = document.getElementById("form-success-foreign-text");
-          var payWrap = document.getElementById("foreign-pay-now-wrap");
-          var payLink = document.getElementById("foreign-pay-now");
-          var feeLabel = isEmergency ? "USD 50" : "USD 35";
-          if (result.paymentLink && payWrap && payLink) {
-            if (successText) successText.textContent = "Booking received! Complete your " + feeLabel + " payment below to confirm your video consultation.";
-            payLink.href = result.paymentLink;
-            payWrap.style.display = "block";
-          } else if (successText) {
-            successText.textContent = "Booking received! We'll send your " + feeLabel + " payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or contact us to confirm.";
+        var payload = {
+          name: name, phone: fullPhone, email: email, country: country,
+          service: service, slotMs: slotMs, slotLabel: slotLabel + " (tz ref: " + tz + ")",
+          platform: platform, emergency: !!isEmergency, fee: isEmergency ? "USD 50" : "USD 35",
+          amountPaise: isEmergency ? 5000 : 3500, currency: "USD", problem: problem,
+          conditions: conditions, medHistory: medHistory,
+          emergencyContactName: ecName, emergencyContactPhone: ecPhone,
+          fileData: fileInfo ? fileInfo.fileData : "",
+          fileName: fileInfo ? fileInfo.fileName : "",
+          fileType: fileInfo ? fileInfo.fileType : ""
+        };
+
+        submitBooking(payload).then(function (result) {
+          if (result.ok) {
+            bookedSlots[String(slotMs)] = true;
+            // Also forward to the original Google Form (folded into one note field) for existing notifications.
+            var serviceNote = (isEmergency ? "[EMERGENCY/SAME-DAY, USD 50] " : "[Online, USD 35] ") + (service || "General consultation") +
+              " | Country: " + country + " | Slot: " + slotLabel + " (tz ref: " + tz + ")" + " | Platform: " + platform +
+              (problem ? " | Problem: " + problem : "");
+            var gform = new FormData();
+            gform.append("entry.1869350848", name);
+            gform.append("entry.1797725802", fullPhone);
+            gform.append("entry.350143632", email);
+            gform.append("entry.2005620554", serviceNote);
+            fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).catch(function () {});
+
+            form.style.display = "none";
+            success.style.display = "block";
+            var successText = document.getElementById("form-success-foreign-text");
+            var payWrap = document.getElementById("foreign-pay-now-wrap");
+            var payLink = document.getElementById("foreign-pay-now");
+            var feeLabel = isEmergency ? "USD 50" : "USD 35";
+            if (result.paymentLink && payWrap && payLink) {
+              if (successText) successText.textContent = "Booking received! Complete your " + feeLabel + " payment below to confirm your video consultation.";
+              payLink.href = result.paymentLink;
+              payWrap.style.display = "block";
+            } else if (successText) {
+              successText.textContent = "Booking received! We'll send your " + feeLabel + " payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or contact us to confirm.";
+            }
+            if (typeof gtag !== "undefined") {
+              gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Online Consultation Form" });
+            }
+          } else if (result.reason === "slot_taken") {
+            alert("Sorry, that slot was just booked by someone else. Please pick another.");
+            populateForeignSlots();
+          } else {
+            alert("Something went wrong submitting your booking. Please try again or contact us directly.");
           }
-          if (typeof gtag !== "undefined") {
-            gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Online Consultation Form" });
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.originalText || "Book Online Consultation";
           }
-        } else if (result.reason === "slot_taken") {
-          alert("Sorry, that slot was just booked by someone else. Please pick another.");
-          populateForeignSlots();
-        } else {
-          alert("Something went wrong submitting your booking. Please try again or contact us directly.");
-        }
+        });
+      }).catch(function (fileErrorMsg) {
+        alert(fileErrorMsg);
+        if (reportStatus) reportStatus.textContent = "";
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.textContent = submitBtn.dataset.originalText || "Book Online Consultation";
