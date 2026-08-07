@@ -323,6 +323,24 @@
     });
   }
 
+  // "Home Visit" only makes sense when visiting in-person — it shouldn't be
+  // pickable as a reason for an Online Video Consultation. We don't delete
+  // the <option>, just hide/disable it, so switching back to "Visit Clinic
+  // In-Person" restores it exactly as it was.
+  function toggleHomeVisitOption_(hide) {
+    var serviceSelect = document.getElementById("service");
+    if (!serviceSelect) return;
+    var homeOption = Array.prototype.filter.call(serviceSelect.options, function (o) {
+      return o.textContent.trim() === "Home Visit";
+    })[0];
+    if (!homeOption) return;
+    homeOption.hidden = hide;
+    homeOption.disabled = hide;
+    if (hide && serviceSelect.value === homeOption.value) {
+      serviceSelect.value = ""; // was on "Home Visit" — reset rather than leave an invalid hidden option selected
+    }
+  }
+
   function wireIndiaModeToggle() {
     var radios = document.querySelectorAll('input[name="mode-india"]');
     var extras = document.getElementById("india-online-extras");
@@ -334,6 +352,7 @@
       var isOnline = selected && selected.value === "online";
       extras.hidden = !isOnline;
       if (submitBtn) submitBtn.textContent = isOnline ? "Book Online Consultation" : "Book Consultation";
+      toggleHomeVisitOption_(isOnline);
       if (isOnline) populateIndiaSlots();
     }
 
