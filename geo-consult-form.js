@@ -360,6 +360,19 @@
     refresh();
   }
 
+  // After a booking succeeds, the confirmation (and the "Complete Payment
+  // Now" button) was rendering in place of the form — but if the person had
+  // scrolled down while filling the form, that confirmation was now above
+  // the fold and easy to miss entirely. Scroll it into view so the payment
+  // button is immediately visible without the user having to scroll up.
+  function scrollToSuccess_(el) {
+    if (!el) return;
+    // Wait a tick so display:block has taken effect and the element has a size.
+    setTimeout(function () {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
+
   function getCheckedConditions_(name) {
     var boxes = document.querySelectorAll('input[name="' + name + '"]:checked');
     var vals = [];
@@ -420,6 +433,7 @@
         fetch(form.action, { method: "POST", mode: "no-cors", body: gform }).finally(function () {
           form.style.display = "none";
           success.style.display = "block";
+          scrollToSuccess_(success);
           if (typeof gtag !== "undefined") {
             gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Appointment Form" });
           }
@@ -497,6 +511,7 @@
             } else if (successText) {
               successText.textContent = "Booking received! We'll send your \u20b9500 payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or call us to confirm.";
             }
+            scrollToSuccess_(success);
             if (typeof gtag !== "undefined") {
               gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Appointment Form" });
             }
@@ -709,6 +724,7 @@
             } else if (successText) {
               successText.textContent = "Booking received! We'll send your " + feeLabel + " payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or contact us to confirm.";
             }
+            scrollToSuccess_(success);
             if (typeof gtag !== "undefined") {
               gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Online Consultation Form" });
             }
