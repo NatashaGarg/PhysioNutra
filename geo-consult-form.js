@@ -365,11 +365,20 @@
   // scrolled down while filling the form, that confirmation was now above
   // the fold and easy to miss entirely. Scroll it into view so the payment
   // button is immediately visible without the user having to scroll up.
+  // The site header is `position:fixed`, so it always overlaps the top of
+  // the viewport — a plain scrollIntoView(block:"start") lines the success
+  // box up with the very top of the page, which puts it right behind the
+  // fixed header. We account for the header's actual height so the success
+  // box (and its payment button) lands fully visible below it.
   function scrollToSuccess_(el) {
     if (!el) return;
-    // Wait a tick so display:block has taken effect and the element has a size.
+    // Wait a tick so display:block has taken effect and the element has a size/position.
     setTimeout(function () {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      var header = document.querySelector("header");
+      var headerHeight = header ? header.getBoundingClientRect().height : 0;
+      var extraGap = 16; // small breathing room below the header
+      var targetY = el.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraGap;
+      window.scrollTo({ top: Math.max(targetY, 0), behavior: "smooth" });
     }, 50);
   }
 
