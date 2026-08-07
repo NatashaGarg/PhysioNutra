@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Manage Your Booking — PhysioNutra Clinic</title>
+<style>
+  :root{--green:#7ad16c;--green-dark:#5ab04a;--ink:#1a1a1a;--muted:#666}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f7f8f7;color:var(--ink)}
+  .topbar{background:#000;color:#fff;padding:14px 20px;font-weight:600;font-size:1.05rem}
+  .topbar span{color:var(--green)}
+  .wrap{max-width:640px;margin:0 auto;padding:28px 18px 60px}
+  .card{background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+  h1{font-size:1.35rem;margin:0 0 6px}
+  .muted{color:var(--muted);font-size:.92rem;margin:0 0 22px}
+  .row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #eee;font-size:.94rem}
+  .row:last-child{border-bottom:none}
+  .row b{color:#333;font-weight:600}
+  .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.78rem;font-weight:600}
+  .badge.confirmed{background:#e8f7e5;color:var(--green-dark)}
+  .badge.cancelled{background:#fde8e8;color:#c53030}
+  .section-title{font-weight:700;margin:26px 0 12px;font-size:1.02rem}
+  .date-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .date-pill{border:1.5px solid #ddd;background:#fff;border-radius:20px;padding:7px 14px;font-size:.85rem;cursor:pointer;transition:.2s}
+  .date-pill.selected{background:var(--green);border-color:var(--green);color:#fff;font-weight:600}
+  .time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px;margin-bottom:18px}
+  .time-slot-btn{border:1.5px solid #ddd;background:#fff;border-radius:10px;padding:9px 6px;font-size:.85rem;cursor:pointer;transition:.2s}
+  .time-slot-btn:hover{border-color:var(--green)}
+  .time-slot-btn.selected{background:var(--green);border-color:var(--green);color:#fff;font-weight:600}
+  .btn{border:none;border-radius:28px;padding:13px 22px;font-size:.95rem;font-weight:700;cursor:pointer;transition:.2s}
+  .btn-primary{background:var(--green);color:#fff}
+  .btn-primary:hover{background:var(--green-dark)}
+  .btn-primary:disabled{background:#bcdfb4;cursor:not-allowed}
+  .btn-danger{background:#fff;color:#c53030;border:1.5px solid #f0b8b8}
+  .btn-danger:hover{background:#fde8e8}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+  .msg{padding:14px 16px;border-radius:10px;font-size:.92rem;margin-top:16px}
+  .msg.ok{background:#e8f7e5;color:var(--green-dark)}
+  .msg.error{background:#fde8e8;color:#c53030}
+  .empty{color:var(--muted);font-size:.88rem;padding:10px 0}
+  .loading{color:var(--muted);font-size:.92rem;padding:30px 0;text-align:center}
+  a.home-link{color:var(--green-dark);font-weight:600;text-decoration:none}
+  .meeting-link{word-break:break-all}
+</style>
+</head>
+<body>
+<div class="topbar">PhysioNutra<span>Clinic</span> — Manage Booking</div>
+<div class="wrap">
+  <div class="card" id="app">
+    <div class="loading">Loading your booking…</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ⚠ Must match APPS_SCRIPT_URL in geo-consult-form.js
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjM1zEvNAbPf7DhVQauGPrJxuoHouXSJ6hVjifFyj0fzXAVTExSRoifh4kTbJmn1wt/exec";
+
+  var CLINIC_TZ = "Asia/Kolkata";
+  var CLINIC_UTC_OFFSET_MS = (5 * 60 + 30) * 60000;
+  var BUSINESS_START_MIN = 9 * 60;
+  var BUSINESS_END_MIN = 20 * 60 + 30;
+  var SLOT_MINUTES = 30;
+  var DAYS_AHEAD = 7;
+
+  var app = document.getElementById("app");
+  var params = new URLSearchParams(window.location.search);
+  var bookingId = params.get("id");
+  var token = params.get("token");
+
+  var bookedSlots = {};
+  var selectedNewSlotMs = null;
+  var selectedNewSlotLabel = null;
+
+  function escapeHtml_(s) {
+    var d = document.createElement("div");
+    d.textContent = s == null ? "" : String(s);
+    return d.innerHTML;
+  }
+
+  if (!bookingId || !token) {
+    app.innerHTML = '<h1>Link not recognised</h1><p class="muted">This manage-booking link looks incomplete. Please use the exact link from your confirmation email, or <a class="home-link" href="/">go to the homepage</a> to book/contact us.</p>';
+    return;
+  }
+
+  // ── IST slot math (same rules as the booking form) ──
+  function istPartsFromDate(d) {
+    var fmt = new Intl.DateTimeFormat("en-GB", { timeZone: CLINIC_TZ, year: "numeric", month: "2-digit", day: "2-digit" });
+    var parts = fmt.formatToParts(d);
+    var o = {};
+    parts.forEach(function (p) { o[p.type] = p.value; });
+    return { year: +o.year, month: +o.month, day: +o.day };
+  }
+  function istDateToUTCms(year, month, day, hour, minute) {
+    return Date.UTC(year, month - 1, day, hour, minute) - CLINIC_UTC_OFFSET_MS;
+  }
+  function addDaysToIstDate(parts, days) {
+    var anchorMs = istDateToUTCms(parts.year, parts.month, parts.day, 12, 0);
+    return istPartsFromDate(new Date(anchorMs + days * 86400000));
+  }
+  function istDayKey(ms) {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: CLINIC_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(ms));
+  }
+  function istTimeStr(ms) {
+    return new Intl.DateTimeFormat("en-US", { timeZone: CLINIC_TZ, hour: "numeric", minute: "2-digit", hour12: true }).format(new Date(ms));
+  }
+  function dayPillLabel(key, sampleMs) {
+    var todayKey = istDayKey(Date.now());
+    var tomorrowKey = istDayKey(Date.now() + 86400000);
+    if (key === todayKey) return "Today";
+    if (key === tomorrowKey) return "Tomorrow";
+    return new Intl.DateTimeFormat("en-US", { timeZone: CLINIC_TZ, weekday: "short", month: "short", day: "numeric" }).format(new Date(sampleMs));
+  }
+
+  function generateOpenSlots() {
+    var nowMs = Date.now();
+    var minMs = nowMs + 24 * 60 * 60000; // same 24hr-ahead rule as the booking form
+    var todayIst = istPartsFromDate(new Date());
+    var slots = [];
+    for (var d = 0; d < DAYS_AHEAD; d++) {
+      var dayParts = d === 0 ? todayIst : addDaysToIstDate(todayIst, d);
+      for (var t = BUSINESS_START_MIN; t < BUSINESS_END_MIN; t += SLOT_MINUTES) {
+        var h = Math.floor(t / 60), m = t % 60;
+        var slotMs = istDateToUTCms(dayParts.year, dayParts.month, dayParts.day, h, m);
+        if (slotMs < minMs) continue;
+        if (bookedSlots[String(slotMs)]) continue;
+        slots.push(slotMs);
+      }
+      if (slots.length >= 80) break;
+    }
+    return slots;
+  }
+
+  function groupByDay(slots) {
+    var map = {}, order = [];
+    slots.forEach(function (ms) {
+      var key = istDayKey(ms);
+      if (!map[key]) { map[key] = []; order.push(key); }
+      map[key].push(ms);
+    });
+    return order.map(function (key) { return { key: key, slots: map[key] }; });
+  }
+
+  function fetchBookedSlots() {
+    return fetch(APPS_SCRIPT_URL).then(function (r) { return r.json(); }).then(function (data) {
+      bookedSlots = {};
+      (data.booked || []).forEach(function (ms) { bookedSlots[String(ms)] = true; });
+    }).catch(function () {});
+  }
+
+  function renderRescheduleUI(container) {
+    var wrap = document.createElement("div");
+    wrap.innerHTML =
+      '<div class="section-title">Request a new time</div>' +
+      '<p class="muted" style="margin-top:-6px">Picking a time here sends a request to the clinic — your booking only moves once they approve it.</p>' +
+      '<div class="date-pills" id="mb-dates"></div>' +
+      '<div class="time-grid" id="mb-times"></div>' +
+      '<div class="empty" id="mb-empty" hidden></div>' +
+      '<div class="btn-row">' +
+        '<button class="btn btn-primary" id="mb-confirm-reschedule" disabled>Request This Time</button>' +
+      '</div>' +
+      '<div id="mb-reschedule-msg"></div>';
+    container.appendChild(wrap);
+
+    fetchBookedSlots().then(function () {
+      var slots = generateOpenSlots();
+      var datesEl = document.getElementById("mb-dates");
+      var timesEl = document.getElementById("mb-times");
+      var emptyEl = document.getElementById("mb-empty");
+      var confirmBtn = document.getElementById("mb-confirm-reschedule");
+
+      if (!slots.length) {
+        emptyEl.hidden = false;
+        emptyEl.textContent = "No open slots right now — please WhatsApp or call us directly.";
+        return;
+      }
+
+      var groups = groupByDay(slots);
+
+      function renderTimes(idx) {
+        var g = groups[idx];
+        timesEl.innerHTML = "";
+        selectedNewSlotMs = null;
+        selectedNewSlotLabel = null;
+        confirmBtn.disabled = true;
+        g.slots.forEach(function (ms) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "time-slot-btn";
+          var label = istTimeStr(ms) + " IST";
+          btn.textContent = label;
+          btn.addEventListener("click", function () {
+            timesEl.querySelectorAll(".time-slot-btn.selected").forEach(function (b) { b.classList.remove("selected"); });
+            btn.classList.add("selected");
+            selectedNewSlotMs = ms;
+            selectedNewSlotLabel = dayPillLabel(g.key, ms) + ", " + label;
+            confirmBtn.disabled = false;
+          });
+          timesEl.appendChild(btn);
+        });
+      }
+
+      groups.forEach(function (g, idx) {
+        var pill = document.createElement("button");
+        pill.type = "button";
+        pill.className = "date-pill" + (idx === 0 ? " selected" : "");
+        pill.textContent = dayPillLabel(g.key, g.slots[0]);
+        pill.addEventListener("click", function () {
+          datesEl.querySelectorAll(".date-pill.selected").forEach(function (b) { b.classList.remove("selected"); });
+          pill.classList.add("selected");
+          renderTimes(idx);
+        });
+        datesEl.appendChild(pill);
+      });
+      renderTimes(0);
+
+      confirmBtn.addEventListener("click", function () {
+        if (!selectedNewSlotMs) return;
+        confirmBtn.disabled = true;
+        confirmBtn.textContent = "Sending request…";
+        fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          body: JSON.stringify({ manageAction: "reschedule", bookingId: bookingId, token: token, newSlotMs: selectedNewSlotMs, newSlotLabel: selectedNewSlotLabel })
+        }).then(function (r) { return r.json(); }).then(function (result) {
+          var msgEl = document.getElementById("mb-reschedule-msg");
+          if (result.ok) {
+            msgEl.innerHTML = '<div class="msg ok">Request sent! We\'ve asked the clinic to move your booking to ' + escapeHtml_(selectedNewSlotLabel) + ' — you\'ll get an email once it\'s approved.</div>';
+            confirmBtn.style.display = "none";
+          } else if (result.reason === "slot_taken") {
+            msgEl.innerHTML = '<div class="msg error">That slot was just taken — please pick another.</div>';
+            confirmBtn.disabled = false;
+            confirmBtn.textContent = "Request This Time";
+            fetchBookedSlots().then(function () { location.reload(); });
+          } else if (result.reason === "request_already_pending") {
+            msgEl.innerHTML = '<div class="msg error">You already have a request pending approval — please wait for that to be confirmed first.</div>';
+          } else {
+            msgEl.innerHTML = '<div class="msg error">Something went wrong. Please try again or WhatsApp/call us directly.</div>';
+            confirmBtn.disabled = false;
+            confirmBtn.textContent = "Request This Time";
+          }
+        }).catch(function () {
+          document.getElementById("mb-reschedule-msg").innerHTML = '<div class="msg error">Network error — please try again or contact us directly.</div>';
+          confirmBtn.disabled = false;
+          confirmBtn.textContent = "Request This Time";
+        });
+      });
+    });
+  }
+
+  function render(booking) {
+    var isCancelled = booking.bookingStatus === "Cancelled";
+    var isPending = booking.requestStatus === "Pending";
+    var html =
+      '<h1>Your Booking</h1>' +
+      '<p class="muted">Booking ID: ' + escapeHtml_(booking.bookingId) + '</p>' +
+      '<div class="row"><span>Status</span><b><span class="badge ' + (isCancelled ? "cancelled" : "confirmed") + '">' + (isCancelled ? "Cancelled" : "Confirmed") + '</span></b></div>' +
+      '<div class="row"><span>Name</span><b>' + escapeHtml_(booking.name) + '</b></div>' +
+      '<div class="row"><span>Service</span><b>' + escapeHtml_(booking.service) + '</b></div>' +
+      '<div class="row"><span>Time</span><b>' + escapeHtml_((booking.slotLabel || "-").replace(" (cancelled)", "")) + '</b></div>' +
+      '<div class="row"><span>Platform</span><b>' + escapeHtml_(booking.platform) + '</b></div>';
+
+    if (!isCancelled && booking.meetingLink) {
+      html += '<div class="row"><span>Join link</span><b class="meeting-link"><a class="home-link" href="' + escapeHtml_(booking.meetingLink) + '" target="_blank" rel="noopener">' + escapeHtml_(booking.meetingLink) + '</a></b></div>';
+    }
+
+    app.innerHTML = html;
+
+    if (isCancelled) {
+      var note = document.createElement("p");
+      note.className = "muted";
+      note.style.marginTop = "18px";
+      note.innerHTML = 'This booking has been cancelled. Want to book a new time? <a class="home-link" href="/">Visit the homepage</a>.';
+      app.appendChild(note);
+      return;
+    }
+
+    if (isPending) {
+      var pendingNote = document.createElement("div");
+      pendingNote.className = "msg ok";
+      pendingNote.style.marginTop = "16px";
+      var what = booking.requestType === "Cancel"
+        ? "You've asked to cancel this booking."
+        : "You've asked to move this booking to " + escapeHtml_(booking.requestedNewSlotLabel) + ".";
+      pendingNote.innerHTML = what + ' This is <b>awaiting approval</b> from the clinic — you\'ll get an email as soon as it\'s confirmed. No further changes can be requested until then.';
+      app.appendChild(pendingNote);
+      return; // don't show the reschedule/cancel UI while something is already pending
+    }
+
+    renderRescheduleUI(app);
+
+    var cancelSection = document.createElement("div");
+    cancelSection.innerHTML =
+      '<div class="section-title">Or, request cancellation</div>' +
+      '<div class="btn-row"><button class="btn btn-danger" id="mb-cancel-btn">Request Cancellation</button></div>' +
+      '<div id="mb-cancel-msg"></div>';
+    app.appendChild(cancelSection);
+
+    document.getElementById("mb-cancel-btn").addEventListener("click", function () {
+      if (!window.confirm("Request cancellation of this booking? The clinic will need to approve it before it's final.")) return;
+      var btn = document.getElementById("mb-cancel-btn");
+      btn.disabled = true;
+      btn.textContent = "Sending request…";
+      fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({ manageAction: "cancel", bookingId: bookingId, token: token })
+      }).then(function (r) { return r.json(); }).then(function (result) {
+        var msgEl = document.getElementById("mb-cancel-msg");
+        if (result.ok) {
+          msgEl.innerHTML = '<div class="msg ok">Your cancellation request has been sent to the clinic for approval. You\'ll get an email once it\'s confirmed.</div>';
+          document.getElementById("mb-times") && (document.getElementById("mb-times").parentElement.style.display = "none");
+          btn.style.display = "none";
+        } else if (result.reason === "request_already_pending") {
+          msgEl.innerHTML = '<div class="msg error">You already have a request pending approval — please wait for that to be confirmed first.</div>';
+        } else {
+          msgEl.innerHTML = '<div class="msg error">Something went wrong. Please try again or WhatsApp/call us directly.</div>';
+          btn.disabled = false;
+          btn.textContent = "Request Cancellation";
+        }
+      }).catch(function () {
+        document.getElementById("mb-cancel-msg").innerHTML = '<div class="msg error">Network error — please try again or contact us directly.</div>';
+        btn.disabled = false;
+        btn.textContent = "Request Cancellation";
+      });
+    });
+  }
+
+  fetch(APPS_SCRIPT_URL + "?manage=" + encodeURIComponent(bookingId) + "&token=" + encodeURIComponent(token))
+    .then(function (r) { return r.json(); })
+    .then(function (result) {
+      if (result.ok) {
+        render(result.booking);
+      } else if (result.reason === "invalid_token") {
+        app.innerHTML = '<h1>Link not recognised</h1><p class="muted">This link doesn\'t match our records. Please use the exact link from your confirmation email, or WhatsApp/call us for help.</p>';
+      } else {
+        app.innerHTML = '<h1>Booking not found</h1><p class="muted">We couldn\'t find a booking matching this link. Please use the exact link from your confirmation email, or <a class="home-link" href="/">go to the homepage</a>.</p>';
+      }
+    })
+    .catch(function () {
+      app.innerHTML = '<h1>Something went wrong</h1><p class="muted">We couldn\'t load your booking right now. Please try again shortly, or WhatsApp/call us directly.</p>';
+    });
+})();
+</script>
+</body>
+</html>

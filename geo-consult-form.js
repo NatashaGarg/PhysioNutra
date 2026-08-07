@@ -520,6 +520,9 @@
             } else if (successText) {
               successText.textContent = "Booking received! We'll send your \u20b9500 payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or call us to confirm.";
             }
+            if (successText && email) {
+              successText.textContent += " We've also emailed you a confirmation with your joining link and a link to reschedule or cancel if you need to.";
+            }
             scrollToSuccess_(success);
             if (typeof gtag !== "undefined") {
               gtag("event", "form_submit", { event_category: "lead", event_label: "Homepage Appointment Form" });
@@ -732,6 +735,9 @@
               payWrap.style.display = "block";
             } else if (successText) {
               successText.textContent = "Booking received! We'll send your " + feeLabel + " payment link shortly — if you don't hear from us in a few minutes, please WhatsApp or contact us to confirm.";
+            }
+            if (successText && email) {
+              successText.textContent += " We've also emailed you a confirmation with your joining link and a link to reschedule or cancel if you need to.";
             }
             scrollToSuccess_(success);
             if (typeof gtag !== "undefined") {
