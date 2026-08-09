@@ -22,6 +22,11 @@
 <meta property="og:url" content="https://physionutraclinic.com/online-physiotherapy-consultation/">
 <meta property="og:image" content="https://physionutraclinic.com/images/online-consultation-og.jpg">
 
+<!-- Same fonts as the homepage, so typography matches exactly -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
+
 <!-- If someone arrives here with ?consult=india there is no India form on this
      page — bounce them to the homepage where the India flow lives. -->
 <script>
@@ -105,58 +110,51 @@
 
 <style>
 /* ============================================================
-   DESIGN TOKENS — swap this block for your site stylesheet.
-   Palette chosen to match a healthcare/green brand; align
-   values to your homepage CSS variables when integrating.
+   DESIGN TOKENS — matched to the homepage's live brand values.
    ============================================================ */
 :root{
-  --green:#0e7a5f; --green-dark:#0a5c47; --green-soft:#eaf6f1;
-  --amber:#f59e0b; --ink:#1c2430; --muted:#5b6672;
-  --line:#e3e8ec; --bg:#ffffff; --bg-alt:#f5f8f7;
-  --radius:14px; --shadow:0 6px 24px rgba(16,42,34,.08);
+  --green:#7ad16c; --green-dark:#5ab04a; --green-soft:#eaf6e7;
+  --amber:#ffa500; --ink:#1a1a1a; --muted:#666;
+  --line:#e6e6e6; --bg:#ffffff; --bg-alt:#f9f9f9;
+  --radius:15px; --shadow:0 5px 20px rgba(0,0,0,.08);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--bg)}
+body{font-family:'DM Sans','Open Sans',Arial,sans-serif;color:#333;line-height:1.7;background:var(--bg);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--green);text-decoration:none}
-.container{max-width:1140px;margin:0 auto;padding:0 20px}
-.section{padding:72px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.section{padding:65px 0}
 .section-alt{background:var(--bg-alt)}
-.section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:10px;text-align:center}
+.section h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--ink);margin-bottom:10px;text-align:center}
 .section .sub{color:var(--muted);text-align:center;max-width:720px;margin:0 auto 40px}
 .skip-link{position:absolute;left:-9999px;top:0;background:#fff;padding:10px 16px;z-index:200}
 .skip-link:focus{left:10px}
 #consult-foreign{scroll-margin-top:110px}
 
 /* Buttons */
-.btn{display:inline-block;padding:14px 26px;border-radius:10px;font-weight:700;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:.15s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:all .3s}
 .btn-primary{background:var(--green);color:#fff}
-.btn-primary:hover{background:var(--green-dark)}
-.btn-wa{background:#25d366;color:#fff}
-.btn-wa:hover{background:#1ebe5b}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 5px 15px rgba(122,209,108,.3)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{background:#1da851;transform:translateY(-2px)}
 .btn-ghost{border-color:var(--green);color:var(--green)}
 
-/* Topbar */
-.topbar{background:var(--green-dark);color:#e8f3ef;font-size:.85rem;padding:8px 0}
-.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.topbar a{color:#fff;font-weight:600}
-.topbar .langs a{margin-left:10px;opacity:.9}
-
 /* Header */
-.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:100}
-.site-header .container{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.site-header{position:sticky;top:0;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:100}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink)}
-.brand img{height:44px;width:44px}
-.brand small{display:block;font-weight:500;color:var(--muted);font-size:.72rem}
+.brand img{height:50px;width:50px}
+.brand strong{color:var(--ink)}
+.brand small{display:block;font-weight:400;font-style:italic;color:var(--muted);font-size:.72rem}
 .nav{display:flex;align-items:center;gap:22px}
-.nav > a{color:var(--ink);font-weight:600;font-size:.95rem}
+.nav > a{color:#333;font-weight:500;font-size:.95rem;transition:color .3s}
 .nav > a:hover{color:var(--green)}
 .nav .dropdown{position:relative}
-.nav .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);min-width:240px;padding:8px 0;z-index:120}
+.nav .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,.15);min-width:240px;padding:8px 0;z-index:120}
 .nav .dropdown:hover .dropdown-menu,.nav .dropdown:focus-within .dropdown-menu{display:block}
-.nav .dropdown-menu a{display:block;padding:8px 18px;color:var(--ink);font-size:.9rem}
-.nav .dropdown-menu a:hover{background:var(--green-soft);color:var(--green)}
+.nav .dropdown-menu a{display:block;padding:.7rem 1.2rem;color:#333;font-size:.9rem}
+.nav .dropdown-menu a:hover{background:#f0f0f0;color:var(--green)}
 .burger{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:var(--ink)}
 @media(max-width:1020px){
   .burger{display:block}
@@ -172,7 +170,7 @@ a{color:var(--green);text-decoration:none}
 /* Hero */
 .hero{background:linear-gradient(180deg,var(--green-soft),#fff);padding:64px 0 56px}
 .hero-inner{max-width:820px;margin:0 auto;text-align:center}
-.hero h1{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.2;margin-bottom:16px}
+.hero h1{font-family:'DM Serif Display',serif;font-weight:400;color:var(--ink);font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.2;margin-bottom:16px}
 .hero p{color:var(--muted);font-size:1.1rem;margin-bottom:28px}
 .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
 .stat-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -184,7 +182,7 @@ a{color:var(--green);text-decoration:none}
 
 /* Booking form */
 .booking-wrap{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px}
-.booking-wrap h2{text-align:left}
+.booking-wrap h2{font-family:'DM Serif Display',serif;font-weight:400;color:var(--ink);text-align:left}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-grid .full{grid-column:1/-1}
 label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
@@ -283,36 +281,29 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
 .faq-list details p{color:var(--muted);padding:0 0 18px;font-size:.95rem}
 
 /* CTA band */
-.cta-band{background:var(--green);color:#fff;text-align:center;padding:64px 20px}
-.cta-band h2{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:8px}
-.cta-band p{opacity:.92;margin-bottom:26px}
+.cta-band{background:linear-gradient(135deg,#7ad16c 0%,#5ab04a 100%);color:#fff;text-align:center;padding:65px 20px}
+.cta-band h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:8px}
+.cta-band p{margin-bottom:26px}
 .cta-band .btn-primary{background:#fff;color:var(--green)}
-.cta-band .btn-primary:hover{background:var(--green-soft)}
+.cta-band .btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 5px 15px rgba(255,255,255,.3)}
 
-/* Footer — mirrors homepage footer */
-.site-footer{background:#10241d;color:#c7d4ce;padding:60px 0 0;font-size:.92rem}
+/* Footer — mirrors homepage footer exactly */
+.site-footer{background:#1a1a1a;color:#fff;padding:55px 0 0;font-size:.92rem}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:34px;padding-bottom:44px}
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
-.site-footer h4{color:#fff;margin-bottom:14px;font-size:1rem}
-.site-footer a{color:#c7d4ce;display:block;padding:3px 0}
-.site-footer a:hover{color:#fff}
+.site-footer h4{color:var(--green);margin-bottom:1.2rem;font-weight:600;font-size:1rem}
+.site-footer a{color:#ccc;display:block;padding:3px 0;font-size:.88rem;transition:color .3s}
+.site-footer a:hover{color:var(--green)}
+.site-footer > .container > .footer-grid > div:first-child p{color:#ccc;line-height:1.85;font-size:.88rem}
 .site-footer .brand-foot{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;margin-bottom:12px}
-.site-footer .brand-foot img{height:40px;width:40px}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:18px 0;text-align:center;font-size:.85rem}
+.site-footer .brand-foot img{height:40px;width:40px;filter:brightness(0) invert(1)}
+.footer-bottom{border-top:1px solid #333;padding:1.7rem 0;text-align:center;color:#999;font-size:.87rem}
+.footer-bottom a{color:var(--green)}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
-
-<!-- ══════════ TOPBAR (hours fixed to match the foreign booking window) ══════════ -->
-<div class="topbar">
-  <div class="container">
-    <div><a href="tel:+919417791833">+91 94177 91833</a> &nbsp;|&nbsp; <a href="#">Email us</a></div>
-    <div>Online consultation slots: <strong>9 AM – 11 PM IST</strong> (Mon–Sat) · Sun 10 AM – 2 PM IST</div>
-    <div class="langs"><a href="/">EN</a><a href="/hi/">HI</a><a href="/pa/">PA</a></div>
-  </div>
-</div>
 
 <!-- ══════════ HEADER (same nav as homepage; Book Now → on-page form) ══════════ -->
 <header class="site-header">
