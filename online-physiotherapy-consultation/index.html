@@ -145,8 +145,13 @@ a{color:var(--green);text-decoration:none}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink)}
 .brand img{height:50px;width:50px}
-.brand strong{color:var(--ink)}
-.brand small{display:block;font-weight:400;font-style:italic;color:var(--muted);font-size:.72rem}
+.tagline-stack{display:flex;flex-direction:column;line-height:1.25}
+.tagline-doctor{font-size:.72rem;color:#666;font-style:italic;letter-spacing:.02em}
+.tagline-brand{font-size:1.05rem;font-weight:600}
+.tb-dark{color:#000}
+.tb-green{color:#1ea150}
+.tb-reg{font-size:.7em;vertical-align:super;color:#1ea150}
+.tagline-sub{font-size:.68rem;color:var(--muted)}
 .nav{display:flex;align-items:center;gap:22px}
 .nav > a{color:#333;font-weight:500;font-size:.95rem;transition:color .3s}
 .nav > a:hover{color:var(--green)}
@@ -308,9 +313,13 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
 <!-- ══════════ HEADER (same nav as homepage; Book Now → on-page form) ══════════ -->
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label="PhysioNutra Clinic Home">
       <img src="/images/logo.png" alt="PhysioNutra Clinic logo">
-      <span>Dr Tarun's <strong>PhysioNutra Clinic®</strong><small>Online Consultations — Worldwide</small></span>
+      <div class="tagline-stack">
+        <span class="tagline-doctor">Dr Tarun's</span>
+        <span class="tagline-brand"><span class="tb-dark">Physio</span><span class="tb-green">Nutra</span> <span class="tb-dark">Clinic</span><span class="tb-reg">&reg;</span></span>
+        <span class="tagline-sub">Online Consultations — Worldwide</span>
+      </div>
     </a>
     <nav class="nav" id="main-nav" aria-label="Main navigation">
       <a href="/">Home</a>
@@ -331,14 +340,14 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
         </div>
       </div>
       <div class="dropdown">
-        <a href="/physiotherapy/">Locations ▾</a>
+        <a href="#consult-foreign">Countries We Serve ▾</a>
         <div class="dropdown-menu">
-          <a href="/physiotherapy/chandigarh/">Chandigarh</a>
-          <a href="/physiotherapy/mohali/">Mohali</a>
-          <a href="/physiotherapy/zirakpur/">Zirakpur</a>
-          <a href="/physiotherapy/panchkula/">Panchkula</a>
-          <a href="/physiotherapy/kharar/">Kharar</a>
-          <a href="/physiotherapy/baltana/">Baltana</a>
+          <a href="#consult-foreign">United States</a>
+          <a href="#consult-foreign">United Kingdom</a>
+          <a href="#consult-foreign">Canada</a>
+          <a href="#consult-foreign">Australia</a>
+          <a href="#consult-foreign">United Arab Emirates</a>
+          <a href="#consult-foreign">Germany &amp; Rest of World</a>
         </div>
       </div>
       <a href="/blogs/">Blog</a>
@@ -610,8 +619,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
 <section class="section section-alt">
   <div class="container">
     <div class="doctor-strip">
-      <!-- TODO: replace with real portrait, e.g. /images/dr-tarun-garg.jpg -->
-      <img src="/images/logo.png" alt="Dr. Tarun Garg, Senior Physiotherapist, PhysioNutra Clinic">
+      <!-- ⚠ Replace with Dr. Tarun's real portrait -->
+      <img src="/images/dr-tarun-garg.jpg" alt="Dr. Tarun Garg, Senior Physiotherapist, PhysioNutra Clinic">
       <div>
         <h2 style="text-align:left">Meet Dr. Tarun Garg</h2>
         <p style="color:var(--muted)">Senior Physiotherapist &amp; founder of PhysioNutra Clinic, Zirakpur. Dr. Tarun has guided 5,000+ recoveries over 10+ years — from post-surgical rehabilitation to sports injuries — and now brings that same one-on-one care to patients worldwide over video.</p>
@@ -769,7 +778,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
     <div class="footer-grid">
       <div>
         <div class="brand-foot"><img src="/images/logo.png" alt="PhysioNutra Clinic logo"> PhysioNutra Clinic®</div>
-        <p>Best physiotherapy clinic in Chandigarh Tricity, now also serving patients worldwide online. Led by Dr. Tarun Garg with 10+ years experience.</p>
+        <p>Online physiotherapy consultations with Dr. Tarun Garg, available worldwide — 10+ years experience, 5,000+ patients treated.</p>
       </div>
       <div>
         <h4>Our Services</h4>
@@ -800,22 +809,22 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
         <a href="/services/acl-treatment-near-me/">ACL Rehabilitation</a>
       </div>
       <div>
-        <h4>Contact &amp; Areas</h4>
-        <p>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603<br>Branch: Sector 20, Panchkula</p>
+        <h4>Contact</h4>
+        <p>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603, India</p>
         <a href="tel:+919417791833">+91 94177 91833</a>
         <a href="#">Email us</a>
-        <h4 style="margin-top:16px">Service Areas</h4>
-        <a href="/physiotherapy/chandigarh/">Chandigarh</a>
-        <a href="/physiotherapy/mohali/">Mohali</a>
-        <a href="/physiotherapy/panchkula/">Panchkula</a>
-        <a href="/physiotherapy/zirakpur/">Zirakpur</a>
-        <a href="/physiotherapy/kharar/">Kharar</a>
-        <a href="/physiotherapy/dera-bassi/">Dera Bassi</a>
+        <h4 style="margin-top:16px">Countries We Serve</h4>
+        <a href="#consult-foreign">United States</a>
+        <a href="#consult-foreign">United Kingdom</a>
+        <a href="#consult-foreign">Canada</a>
+        <a href="#consult-foreign">Australia</a>
+        <a href="#consult-foreign">United Arab Emirates</a>
+        <a href="#consult-foreign">Germany &amp; Rest of World</a>
       </div>
     </div>
     <div class="footer-bottom">
       © <a href="/">PhysioNutra Clinic</a>®. All Rights Reserved. &nbsp;|&nbsp; <a href="/about/">About</a> &nbsp;|&nbsp; <a href="/faqs/">FAQs</a> &nbsp;|&nbsp; <a href="/contact/">Contact</a> &nbsp;|&nbsp; <a href="/blogs/">Blog</a><br>
-      Best Physiotherapy in Chandigarh Tricity | Led by Dr. Tarun Garg | Serving Patients Worldwide Online
+      Online Physiotherapy Consultations Worldwide | Led by Dr. Tarun Garg, Based in Zirakpur, India
     </div>
   </div>
 </footer>
