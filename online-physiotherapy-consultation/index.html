@@ -183,7 +183,6 @@ a{color:var(--green);text-decoration:none}
 .stat-chips .chip span{display:block;font-size:.78rem;color:var(--muted);font-weight:500}
 
 /* India notice */
-.india-notice{background:#fff8e6;border:1px solid #f1d48a;color:#6b5310;border-radius:var(--radius);padding:14px 18px;margin:20px auto;max-width:860px;text-align:center}
 
 /* Booking form */
 .booking-wrap{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px}
@@ -378,12 +377,6 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
       <div class="chip">5,000+<span>Patients Treated</span></div>
       <div class="chip">USD 35<span>Starting Fee</span></div>
       <div class="chip">4.9★<span>Google Rating</span></div>
-    </div>
-
-    <!-- Shown only to visitors geo-detected in India (they should book in ₹ on the main site) -->
-    <div class="india-notice" id="india-notice" hidden>
-      It looks like you're browsing from India 🇮🇳 — in-clinic visits and ₹500 video consultations are available on our main site.
-      <a href="/?consult=india"><strong>Go to India booking →</strong></a>
     </div>
   </div>
 </section>
@@ -839,23 +832,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var burger = document.getElementById("burger");
   var nav = document.getElementById("main-nav");
   if (burger && nav) burger.addEventListener("click", function () { nav.classList.toggle("open"); });
-
-  // India-visitor notice: geo-consult-form.js caches the visitor country in
-  // sessionStorage ("pn_visitor_country"). Poll briefly for that result; if
-  // the visitor is in India, surface a banner pointing them to the ₹500 flow
-  // instead of letting them pay USD by mistake.
-  (function () {
-    var notice = document.getElementById("india-notice");
-    if (!notice) return;
-    var tries = 0;
-    var timer = setInterval(function () {
-      tries++;
-      var code = null;
-      try { code = sessionStorage.getItem("pn_visitor_country"); } catch (e) {}
-      if (code) { clearInterval(timer); if (code === "IN") notice.hidden = false; }
-      else if (tries >= 10) clearInterval(timer);
-    }, 500);
-  })();
 
   // Live local-currency estimate on the fee cards (fulfils the "based on
   // today's exchange rate" copy). Free keyless endpoint; hides itself on
