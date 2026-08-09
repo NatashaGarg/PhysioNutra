@@ -1,567 +1,888 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-window.dataLayer=window.dataLayer||[];
-(function(w,d,s,l,i){
-  var loaded=false;
-  function loadGTM(){
-    if(loaded)return;loaded=true;
-    w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-    f.parentNode.insertBefore(j,f);
-    events.forEach(function(ev){d.removeEventListener(ev,loadGTM,{passive:true});});
-    clearTimeout(fallback);
-  }
-  var events=['scroll','click','touchstart','keydown','mousemove'];
-  events.forEach(function(ev){d.addEventListener(ev,loadGTM,{passive:true,once:true});});
-  var fallback;
-  if(d.readyState==='complete'){fallback=setTimeout(loadGTM,2000);}
-  else{w.addEventListener('load',function(){fallback=setTimeout(loadGTM,2000);});}
-})(window,document,'script','dataLayer','GTM-NHVSMWD6');
-</script>
-
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://www.google-analytics.com">
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0,shrink-to-fit=no">
-<meta name="theme-color" content="#7ad16c">
-<link rel="icon" href="/favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Online Physiotherapy Consultation Worldwide | PhysioNutra Clinic</title>
-<meta name="description" content="Book a video physiotherapy consultation with Dr. Tarun Garg from anywhere in the world. Pricing shown in your local currency. Trusted by patients across the USA, UK, Canada, Australia, UAE and beyond.">
-<meta name="keywords" content="online physiotherapy consultation, video physiotherapy consultation worldwide, physiotherapist for NRI, telehealth physiotherapy India, international patient physiotherapy consultation">
-<meta name="robots" content="index,follow,max-snippet:-1,max-video-preview:-1,max-image-preview:large">
-<meta name="author" content="Dr. Tarun Garg, PhysioNutra Clinic">
+<!-- ⚠ INTEGRATION NOTES
+     1. Replace <style> block with your site's shared stylesheet if this page
+        is served inside your template — all section structure mirrors the homepage.
+     2. PASTE your Google Form action URL into <form id="appointment-form-foreign" action="...">.
+     3. Replace /images/online-consultation-og.jpg with a real 1200×630 OG image.
+     4. Keep the same Google Analytics (gtag) snippet as the homepage so booking
+        events keep firing. -->
 
+<title>Online Physiotherapy Consultation — Video Physio in Your Timezone | PhysioNutra</title>
+<meta name="description" content="Video consultation with Dr. Tarun Garg from anywhere in the world — from USD 35. Slots shown in your local timezone, same-day emergency slots available. Book online now.">
 <link rel="canonical" href="https://physionutraclinic.com/online-physiotherapy-consultation/">
-<link rel="alternate" hreflang="en" href="https://physionutraclinic.com/online-physiotherapy-consultation/">
-<link rel="alternate" hreflang="x-default" href="https://physionutraclinic.com/online-physiotherapy-consultation/">
 
 <meta property="og:type" content="website">
+<meta property="og:title" content="Online Physiotherapy Consultation — Wherever You Are in the World">
+<meta property="og:description" content="Video consultation with Dr. Tarun Garg from USD 35. Timezone-matched booking, secure payment, personalised exercise plan.">
 <meta property="og:url" content="https://physionutraclinic.com/online-physiotherapy-consultation/">
-<meta property="og:title" content="Online Physiotherapy Consultation Worldwide | PhysioNutra Clinic">
-<meta property="og:description" content="Video physiotherapy consultation with Dr. Tarun Garg, wherever you are in the world. Pricing shown in your local currency.">
-<meta property="og:image" content="https://physionutraclinic.com/images/og-hero.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="PhysioNutra Clinic">
-<meta property="og:locale" content="en_IN">
+<meta property="og:image" content="https://physionutraclinic.com/images/online-consultation-og.jpg">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@physionutra">
-<meta name="twitter:title" content="Online Physiotherapy Consultation Worldwide | PhysioNutra Clinic">
-<meta name="twitter:description" content="Video physiotherapy consultation with Dr. Tarun Garg, wherever you are in the world.">
-<meta name="twitter:image" content="https://physionutraclinic.com/images/og-hero.jpg">
-
-<meta name="geo.region" content="IN-PB">
-<meta name="geo.placename" content="Zirakpur, Punjab">
-<meta name="geo.position" content="30.638695;76.833101">
-<meta name="ICBM" content="30.638695,76.833101">
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-45SFLN5B7J"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-45SFLN5B7J');</script>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-  {
-    "@type":"WebPage",
-    "@id":"https://physionutraclinic.com/online-physiotherapy-consultation/#webpage",
-    "url":"https://physionutraclinic.com/online-physiotherapy-consultation/",
-    "name":"Online Physiotherapy Consultation Worldwide | PhysioNutra Clinic",
-    "description":"Video physiotherapy consultation with Dr. Tarun Garg for patients anywhere in the world, with pricing shown in the visitor's local currency.",
-    "inLanguage":"en",
-    "isPartOf":{"@id":"https://physionutraclinic.com/#website"},
-    "about":{"@id":"https://physionutraclinic.com/online-physiotherapy-consultation/#service"},
-    "breadcrumb":{"@id":"https://physionutraclinic.com/online-physiotherapy-consultation/#breadcrumb"}
-  },
-  {
-    "@type":"BreadcrumbList",
-    "@id":"https://physionutraclinic.com/online-physiotherapy-consultation/#breadcrumb",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://physionutraclinic.com/"},
-      {"@type":"ListItem","position":2,"name":"Online Physiotherapy Consultation","item":"https://physionutraclinic.com/online-physiotherapy-consultation/"}
-    ]
-  },
-  {
-    "@type":"Service",
-    "@id":"https://physionutraclinic.com/online-physiotherapy-consultation/#service",
-    "serviceType":"Online Physiotherapy Consultation",
-    "name":"Online Physiotherapy Video Consultation",
-    "description":"One-on-one video physiotherapy consultation with Dr. Tarun Garg for patients located anywhere outside India.",
-    "provider":{"@id":"https://physionutraclinic.com/#clinic"},
-    "areaServed":{"@type":"Place","name":"Worldwide"},
-    "availableChannel":{
-      "@type":"ServiceChannel",
-      "serviceUrl":"https://physionutraclinic.com/?consult=foreign",
-      "availableLanguage":["en"]
-    },
-    "offers":[
-      {"@type":"Offer","name":"Standard Online Consultation","priceCurrency":"USD","price":"35","description":"Video physiotherapy consultation, booked 24+ hours in advance. Billed in your local currency at checkout."},
-      {"@type":"Offer","name":"Same-Day / Emergency Online Consultation","priceCurrency":"USD","price":"50","description":"Same-day video physiotherapy consultation for urgent concerns. Billed in your local currency at checkout."}
-    ]
-  },
-  {
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"How does an online physiotherapy consultation with PhysioNutra work?","acceptedAnswer":{"@type":"Answer","text":"You book a time slot in your own timezone, choose a video platform, and pay a small advance fee to confirm. Dr. Tarun Garg then conducts a full assessment over video call, discusses your condition, and provides a personalised home exercise and treatment plan."}},
-      {"@type":"Question","name":"How much does an online physiotherapy consultation cost?","acceptedAnswer":{"@type":"Answer","text":"A standard online consultation is USD 35, booked at least 24 hours in advance. A same-day or emergency consultation is USD 50. The amount is billed in your local currency at checkout — this page shows an estimate in your currency based on current exchange rates."}},
-      {"@type":"Question","name":"Which countries do you provide online physiotherapy consultations for?","acceptedAnswer":{"@type":"Answer","text":"We consult with patients anywhere in the world, subject to timezone availability. Our booking system automatically adjusts appointment slots to your local timezone."}},
-      {"@type":"Question","name":"Is online physiotherapy consultation suitable for NRIs visiting India?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many of our online patients are NRIs who received treatment during a visit to India and want to continue guidance and progress reviews with the same physiotherapist after returning abroad."}},
-      {"@type":"Question","name":"What video platform is used for the consultation?","acceptedAnswer":{"@type":"Answer","text":"You can choose your preferred video calling platform when booking — Zoom, Google Meet, or WhatsApp Video."}},
-      {"@type":"Question","name":"Can Dr. Tarun Garg treat me remotely without a physical examination?","acceptedAnswer":{"@type":"Answer","text":"Online physiotherapy consultation focuses on assessment through movement screening, guided self-tests, and a detailed history, followed by a personalised exercise and self-management plan. For conditions that require hands-on treatment, we will advise you honestly if an in-person visit would serve you better."}}
-    ]
-  }
-]}
+<!-- If someone arrives here with ?consult=india there is no India form on this
+     page — bounce them to the homepage where the India flow lives. -->
+<script>
+(function () {
+  try {
+    if (new URLSearchParams(window.location.search).get("consult") === "india") {
+      window.location.replace("/?consult=india");
+    }
+  } catch (e) {}
+})();
 </script>
 
-<link rel="preload" as="image" href="/images/hero-mobile.webp" media="(max-width:768px)" fetchpriority="high">
-<link rel="preload" as="image" href="/images/hero.webp" media="(min-width:769px)" fetchpriority="high">
-<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin-400-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
-<link rel="stylesheet" href="/fonts.css">
-
-<!-- NOTE: all three of these use ABSOLUTE paths (leading "/"). The homepage's
-     styles_min.css link is missing its leading slash, which works fine at the
-     site root but breaks on any page in a subfolder like this one — this file
-     deliberately uses the corrected absolute version so it renders correctly. -->
-<link rel="stylesheet" href="/styles_min.css">
-<link rel="stylesheet" href="/festive-decor.css">
+<!-- Structured data (bonus ahead of Phase 2 — cheap to include now) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "PhysioNutra Clinic",
+  "url": "https://physionutraclinic.com/",
+  "telephone": "+919417791833",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "SCO 12, Ananta Square, Gazipur Road",
+    "addressLocality": "Zirakpur",
+    "addressRegion": "Punjab",
+    "postalCode": "140603",
+    "addressCountry": "IN"
+  },
+  "founder": { "@type": "Person", "name": "Dr. Tarun Garg", "jobTitle": "Senior Physiotherapist" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "200" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Online Physiotherapy Consultation",
+  "serviceType": "Telehealth physiotherapy consultation",
+  "provider": { "@type": "MedicalBusiness", "name": "PhysioNutra Clinic" },
+  "areaServed": ["Worldwide", "United States", "United Kingdom", "Canada", "Australia", "United Arab Emirates"],
+  "offers": [
+    { "@type": "Offer", "name": "Standard online consultation", "price": "35", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Same-day / emergency consultation", "price": "50", "priceCurrency": "USD" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://physionutraclinic.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Online Physiotherapy Consultation", "item": "https://physionutraclinic.com/online-physiotherapy-consultation/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much does an online physiotherapy consultation cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A standard online consultation is USD 35, booked at least 24 hours in advance. A same-day or emergency consultation is USD 50. The amount is billed in USD via a secure payment link; this page shows an estimate in your local currency based on current exchange rates." } },
+    { "@type": "Question", "name": "Is online physiotherapy as effective as in-person treatment?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For most assessment, exercise prescription, and rehabilitation-guidance needs, yes — video consultations achieve comparable outcomes for guided self-management. Online physiotherapy relies on movement screening, guided self-tests, and detailed history. If your condition needs hands-on treatment, we will tell you honestly that an in-person visit would serve you better." } },
+    { "@type": "Question", "name": "Which countries do you provide online physiotherapy consultations for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We consult with patients anywhere in the world, subject to timezone availability. Our booking calendar runs from 9:00 AM to 11:00 PM IST and automatically converts every slot to your local timezone." } },
+    { "@type": "Question", "name": "What do I need for an online physiotherapy session?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A smartphone, tablet or laptop with a camera, roughly 2 metres of clear space to move, comfortable clothing, and any reports or scans (X-ray, MRI) you already have. We send your video joining link after you book." } },
+    { "@type": "Question", "name": "What video platform is used for the consultation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You choose your preferred platform when booking — Zoom, Google Meet, or WhatsApp Video." } },
+    { "@type": "Question", "name": "Can I reschedule or cancel my online consultation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your confirmation email includes a link to reschedule or cancel. We ask for at least 6 hours' notice so the slot can be released to another patient." } },
+    { "@type": "Question", "name": "How do I pay from outside India?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Right after you book, you receive a secure payment link that accepts international debit and credit cards. The confirmed charge is in USD; your bank converts it to your local currency." } },
+    { "@type": "Question", "name": "Is online physiotherapy consultation suitable for NRIs visiting India?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many of our online patients are NRIs who received treatment during a visit to India and want to continue guidance and progress reviews with the same physiotherapist after returning abroad." } }
+  ]
+}
+</script>
 
 <style>
-.icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-0.125em}
-/* Scoped "gc-" (global consultation) prefix — namespaced so nothing here clashes with styles_min.css */
-.gc-section{padding:60px 0}
-.gc-section-alt{background:#fff}
-.gc-heading{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1rem;color:#1f2d24}
-.gc-lead{max-width:760px;margin:0 auto 2.5rem;text-align:center;color:#555}
-.gc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.gc-card{background:#fff;border:1px solid #e6efe9;border-radius:14px;padding:24px;box-shadow:0 4px 14px rgba(0,0,0,.04)}
-.gc-card h3{font-size:1.05rem;margin-bottom:.5rem;color:#1f6f4a}
-.gc-card p{font-size:.95rem;color:#555;margin:0}
-.gc-steps{counter-reset:gc-step;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-.gc-step{position:relative;padding:24px 20px 20px;background:#eafaf0;border-radius:14px}
-.gc-step::before{counter-increment:gc-step;content:counter(gc-step);position:absolute;top:-14px;left:20px;width:32px;height:32px;border-radius:50%;background:#2f9e63;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
-.gc-step h3{font-size:1rem;margin:8px 0 6px;color:#1f2d24}
-.gc-step p{font-size:.9rem;color:#555;margin:0}
-.gc-pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:820px;margin:0 auto}
-.gc-price-card{background:#fff;border:2px solid #d6ece0;border-radius:16px;padding:28px;text-align:center}
-.gc-price-card.gc-emergency{border-color:#7ad16c}
-.gc-price-card .gc-amount{font-size:2rem;font-weight:700;color:#1f6f4a;margin:8px 0 2px}
-.gc-price-card .gc-amount-usd{font-size:.85rem;color:#888;font-weight:400}
-.gc-price-card .gc-local-note{font-size:.78rem;color:#999;min-height:1.1em;margin-bottom:6px}
-.gc-price-card ul{text-align:left;margin:16px 0 0;padding-left:1.1rem;color:#555;font-size:.92rem;line-height:1.6}
-.gc-note{max-width:760px;margin:2rem auto 0;padding:16px 20px;background:#fff8e6;border:1px solid #f0e2b0;border-radius:10px;font-size:.9rem;color:#6b5b1f}
-.gc-testimonial-strip{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;max-width:820px;margin:0 auto}
-.gc-badge{background:#eafaf0;border-radius:20px;padding:8px 16px;font-size:.85rem;color:#1f6f4a;font-weight:600}
+/* ============================================================
+   DESIGN TOKENS — swap this block for your site stylesheet.
+   Palette chosen to match a healthcare/green brand; align
+   values to your homepage CSS variables when integrating.
+   ============================================================ */
+:root{
+  --green:#0e7a5f; --green-dark:#0a5c47; --green-soft:#eaf6f1;
+  --amber:#f59e0b; --ink:#1c2430; --muted:#5b6672;
+  --line:#e3e8ec; --bg:#ffffff; --bg-alt:#f5f8f7;
+  --radius:14px; --shadow:0 6px 24px rgba(16,42,34,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:var(--green);text-decoration:none}
+.container{max-width:1140px;margin:0 auto;padding:0 20px}
+.section{padding:72px 0}
+.section-alt{background:var(--bg-alt)}
+.section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:10px;text-align:center}
+.section .sub{color:var(--muted);text-align:center;max-width:720px;margin:0 auto 40px}
+.skip-link{position:absolute;left:-9999px;top:0;background:#fff;padding:10px 16px;z-index:200}
+.skip-link:focus{left:10px}
+#consult-foreign{scroll-margin-top:110px}
+
+/* Buttons */
+.btn{display:inline-block;padding:14px 26px;border-radius:10px;font-weight:700;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:.15s}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-wa{background:#25d366;color:#fff}
+.btn-wa:hover{background:#1ebe5b}
+.btn-ghost{border-color:var(--green);color:var(--green)}
+
+/* Topbar */
+.topbar{background:var(--green-dark);color:#e8f3ef;font-size:.85rem;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.topbar a{color:#fff;font-weight:600}
+.topbar .langs a{margin-left:10px;opacity:.9}
+
+/* Header */
+.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:100}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink)}
+.brand img{height:44px;width:44px}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:.72rem}
+.nav{display:flex;align-items:center;gap:22px}
+.nav > a{color:var(--ink);font-weight:600;font-size:.95rem}
+.nav > a:hover{color:var(--green)}
+.nav .dropdown{position:relative}
+.nav .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);min-width:240px;padding:8px 0;z-index:120}
+.nav .dropdown:hover .dropdown-menu,.nav .dropdown:focus-within .dropdown-menu{display:block}
+.nav .dropdown-menu a{display:block;padding:8px 18px;color:var(--ink);font-size:.9rem}
+.nav .dropdown-menu a:hover{background:var(--green-soft);color:var(--green)}
+.burger{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:var(--ink)}
+@media(max-width:1020px){
+  .burger{display:block}
+  .nav{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:16px 20px;border-bottom:1px solid var(--line);gap:14px}
+  .nav.open{display:flex}
+  .nav .dropdown-menu{position:static;display:block;box-shadow:none;border:0;padding-left:14px}
+}
+
+/* Breadcrumb */
+.breadcrumb{font-size:.85rem;color:var(--muted);padding:14px 0}
+.breadcrumb a{color:var(--muted)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--green-soft),#fff);padding:64px 0 56px}
+.hero-inner{max-width:820px;margin:0 auto;text-align:center}
+.hero h1{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.2;margin-bottom:16px}
+.hero p{color:var(--muted);font-size:1.1rem;margin-bottom:28px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+.stat-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.stat-chips .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-weight:700;box-shadow:var(--shadow)}
+.stat-chips .chip span{display:block;font-size:.78rem;color:var(--muted);font-weight:500}
+
+/* India notice */
+.india-notice{background:#fff8e6;border:1px solid #f1d48a;color:#6b5310;border-radius:var(--radius);padding:14px 18px;margin:20px auto;max-width:860px;text-align:center}
+
+/* Booking form */
+.booking-wrap{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px}
+.booking-wrap h2{text-align:left}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-grid .full{grid-column:1/-1}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font-size:.95rem;font-family:inherit;background:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-color:var(--green)}
+.phone-row{display:flex;gap:8px}
+.phone-row select{width:110px;flex:none}
+.check-row{display:flex;align-items:center;gap:10px;font-weight:600;background:var(--green-soft);border-radius:10px;padding:12px 14px}
+.check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.check-grid label{display:flex;align-items:center;gap:8px;font-weight:500;font-size:.88rem;margin:0}
+.platform-row{display:flex;gap:16px;flex-wrap:wrap}
+.platform-row label{display:flex;align-items:center;gap:8px;font-weight:600;margin:0}
+.fee-note{background:var(--green-soft);border-radius:10px;padding:14px 16px;font-size:.9rem}
+.submit-btn{width:100%;padding:16px;font-size:1.05rem}
+.form-success{display:none;background:var(--green-soft);border:1px solid var(--green);border-radius:var(--radius);padding:24px;text-align:center}
+.form-success .pay-btn{display:inline-block;margin-top:14px;background:var(--amber);color:#3b2a00;padding:14px 28px;border-radius:10px;font-weight:800}
+@media(max-width:680px){.form-grid{grid-template-columns:1fr}}
+
+/* Slot picker — class names are FIXED by geo-consult-form.js */
+.slot-picker-label{font-weight:700;margin:18px 0 8px}
+.slot-dates{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.date-pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 18px;font-weight:600;cursor:pointer;font-size:.9rem}
+.date-pill.selected{background:var(--green);border-color:var(--green);color:#fff}
+.slot-times{display:flex;flex-wrap:wrap;gap:8px}
+.time-slot-btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 14px;cursor:pointer;display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:118px;font-family:inherit}
+.time-slot-btn.selected{background:var(--green);border-color:var(--green);color:#fff}
+.time-slot-btn .slot-local{font-weight:700;font-size:.95rem}
+.time-slot-btn .slot-ist{font-size:.72rem;opacity:.75}
+.slot-empty{color:#a33;text-align:center;padding:14px}
+
+/* Card grids */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr}}
+@media(max-width:560px){.grid-4,.grid-2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.card h3{font-size:1.08rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.93rem}
+.card .icon{font-size:1.8rem;margin-bottom:12px}
+
+/* Steps */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px 24px;box-shadow:var(--shadow)}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-16px;left:22px;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:1.02rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.9rem}
+
+/* Fees */
+.price-card{text-align:center}
+.price-card .tier{font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.price-card .price{font-size:2.4rem;font-weight:800;margin:8px 0 2px}
+.price-card .local-est{display:block;color:var(--muted);font-size:.9rem;min-height:1.3em}
+.price-card ul{list-style:none;margin:18px 0;text-align:left}
+.price-card li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.93rem}
+.price-card li::before{content:"✓ ";color:var(--green);font-weight:800}
+.fine-print{color:var(--muted);font-size:.85rem;max-width:760px;margin:26px auto 0;text-align:center}
+.fee-table{width:100%;max-width:640px;margin:30px auto 0;border-collapse:collapse;font-size:.93rem}
+.fee-table th,.fee-table td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+.fee-table th{background:var(--green-soft)}
+
+/* Doctor strip */
+.doctor-strip{display:flex;gap:34px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+.doctor-strip img{width:190px;height:190px;object-fit:cover;border-radius:50%;flex:none;border:4px solid var(--green-soft)}
+.doctor-strip ul{margin:12px 0 0 18px;color:var(--muted);font-size:.95rem}
+@media(max-width:680px){.doctor-strip{flex-direction:column;text-align:center}.doctor-strip ul{text-align:left}}
+
+/* Testimonials */
+.video-card{overflow:hidden;padding:0}
+.video-card a img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.video-card .vc-body{padding:18px 20px}
+.review-card .stars{color:var(--amber);letter-spacing:2px;margin-bottom:8px}
+.review-card blockquote{font-size:.93rem;color:var(--ink);margin-bottom:12px}
+.review-card .who{font-weight:700;font-size:.88rem}
+.review-card .src{font-size:.8rem}
+
+/* Conditions */
+.cond-card{padding:0;overflow:hidden}
+.cond-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.cond-card .cc-body{padding:18px 20px}
+
+/* Checklist section */
+.need-list{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:900px){.need-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.need-list{grid-template-columns:1fr}}
+.need-list .card{text-align:center}
+
+/* FAQ */
+.faq-list{max-width:820px;margin:0 auto}
+.faq-list details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:0 20px;box-shadow:var(--shadow)}
+.faq-list summary{cursor:pointer;font-weight:700;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:14px}
+.faq-list summary::after{content:"+";font-size:1.4rem;color:var(--green);flex:none}
+.faq-list details[open] summary::after{content:"–"}
+.faq-list details p{color:var(--muted);padding:0 0 18px;font-size:.95rem}
+
+/* CTA band */
+.cta-band{background:var(--green);color:#fff;text-align:center;padding:64px 20px}
+.cta-band h2{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:8px}
+.cta-band p{opacity:.92;margin-bottom:26px}
+.cta-band .btn-primary{background:#fff;color:var(--green)}
+.cta-band .btn-primary:hover{background:var(--green-soft)}
+
+/* Footer — mirrors homepage footer */
+.site-footer{background:#10241d;color:#c7d4ce;padding:60px 0 0;font-size:.92rem}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:34px;padding-bottom:44px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+.site-footer h4{color:#fff;margin-bottom:14px;font-size:1rem}
+.site-footer a{color:#c7d4ce;display:block;padding:3px 0}
+.site-footer a:hover{color:#fff}
+.site-footer .brand-foot{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;margin-bottom:12px}
+.site-footer .brand-foot img{height:40px;width:40px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:18px 0;text-align:center;font-size:.85rem}
 </style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to content</a>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<header role="banner">
-  <div class="header-top">
-    <div class="container">
-      <div class="header-top-content">
-        <div class="header-contact">
-          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone-alt"></use></svg><a href="tel:+919417791833">+91 94177 91833</a></div>
-          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-envelope"></use></svg><a href="#" class="js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a></div>
-          <div class="header-contact-item"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-clock"></use></svg><span>Mon&ndash;Sat: 9AM&ndash;7PM | Sun: 10AM&ndash;2PM (IST)</span></div>
-        </div>
-        <div class="u-flex-gap">
-          <div class="language-switcher" aria-label="Language selector">
-            <a href="/" class="lang-btn" hreflang="en">EN</a>
-            <a href="/hi/" class="lang-btn" hreflang="hi">HI</a>
-            <a href="/pa/" class="lang-btn" hreflang="pa">PA</a>
-          </div>
-          <div class="header-social" aria-label="Social media links">
-            <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-facebook-f"></use></svg></a>
-            <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-twitter"></use></svg></a>
-            <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-instagram"></use></svg></a>
-            <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-youtube"></use></svg></a>
-            <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- ══════════ TOPBAR (hours fixed to match the foreign booking window) ══════════ -->
+<div class="topbar">
+  <div class="container">
+    <div><a href="tel:+919417791833">+91 94177 91833</a> &nbsp;|&nbsp; <a href="#">Email us</a></div>
+    <div>Online consultation slots: <strong>9 AM – 11 PM IST</strong> (Mon–Sat) · Sun 10 AM – 2 PM IST</div>
+    <div class="langs"><a href="/">EN</a><a href="/hi/">HI</a><a href="/pa/">PA</a></div>
   </div>
-  <div class="header-main">
-    <div class="container">
-      <div class="header-main-content">
-        <div class="logo-section">
-          <a href="/" aria-label="PhysioNutra Clinic Home">
-            <picture>
-              <source srcset="/images/logo.webp" type="image/webp">
-              <img src="/images/logo.png" alt="PhysioNutra Clinic — Best Physiotherapy Chandigarh Tricity" class="logo" width="180" height="60" loading="eager">
-            </picture>
-          </a>
-          <div class="tagline-stack">
-            <span class="tagline-doctor">Dr Tarun's</span>
-            <span class="tagline-brand"><span class="tb-dark">Physio</span><span class="tb-green">Nutra</span> <span class="tb-dark">Clinic</span><span class="tb-reg">&reg;</span></span>
-          </div>
+</div>
+
+<!-- ══════════ HEADER (same nav as homepage; Book Now → on-page form) ══════════ -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">
+      <img src="/images/logo.png" alt="PhysioNutra Clinic logo">
+      <span>Dr Tarun's <strong>PhysioNutra Clinic®</strong><small>Online Consultations — Worldwide</small></span>
+    </a>
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/about/">About Us</a>
+      <div class="dropdown">
+        <a href="/services/">Services ▾</a>
+        <div class="dropdown-menu">
+          <a href="/services/acl-treatment-near-me/">ACL Treatment</a>
+          <a href="/services/dry-needling/">Dry Needling</a>
+          <a href="/services/manual-therapy/">Manual Therapy</a>
+          <a href="/services/sports-injury-treatment/">Sports Injury</a>
+          <a href="/services/orthopedic-rehabilitation/">Orthopedic Rehab</a>
+          <a href="/services/neurological-rehabilitation/">Neuro Rehab</a>
+          <a href="/services/home-physiotherapy-chandigarh/">Home Physiotherapy</a>
+          <a href="/services/geriatric-physiotherapy/">Geriatric Care</a>
+          <a href="/services/women-health-physiotherapy/">Women's Health</a>
+          <a href="/services/pediatric-physiotherapy/">Paediatric Physio</a>
         </div>
-        <nav role="navigation" aria-label="Main navigation">
-          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bars"></use></svg></button>
-          <ul id="mainMenu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About Us</a></li>
-            <li class="has-dropdown">
-              <a href="/services/">Services</a>
-              <ul class="dropdown-menu" aria-label="Services submenu">
-                <li><a href="/services/acl-treatment-near-me/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>ACL Treatment</a></li>
-                <li><a href="/services/dry-needling/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-syringe"></use></svg>Dry Needling</a></li>
-                <li><a href="/services/manual-therapy/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-hands"></use></svg>Manual Therapy</a></li>
-                <li><a href="/services/sports-injury-treatment/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-running"></use></svg>Sports Injury</a></li>
-                <li><a href="/services/orthopedic-rehabilitation/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-bone"></use></svg>Orthopedic Rehab</a></li>
-                <li><a href="/services/neurological-rehabilitation/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-brain"></use></svg>Neuro Rehab</a></li>
-                <li><a href="/services/home-physiotherapy-chandigarh/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-home"></use></svg>Home Physiotherapy</a></li>
-                <li><a href="/services/geriatric-physiotherapy/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-user-md"></use></svg>Geriatric Care</a></li>
-                <li><a href="/services/women-health-physiotherapy/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-heart"></use></svg>Women's Health</a></li>
-                <li><a href="/services/pediatric-physiotherapy/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-child"></use></svg>Paediatric Physio</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="/physiotherapy/">Locations</a>
-              <ul class="dropdown-menu" aria-label="Locations submenu">
-                <li><a href="/physiotherapy/chandigarh/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>Chandigarh</a></li>
-                <li><a href="/physiotherapy/mohali/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>Mohali</a></li>
-                <li><a href="/physiotherapy/zirakpur/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>Zirakpur</a></li>
-                <li><a href="/physiotherapy/panchkula/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>Panchkula</a></li>
-                <li><a href="/physiotherapy/kharar/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>Kharar</a></li>
-                <li><a href="/physiotherapy/baltana/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-map-marker-alt"></use></svg>Baltana</a></li>
-              </ul>
-            </li>
-            <li><a href="/blogs/">Blog</a></li>
-            <li><a href="/testimonials/">Testimonials</a></li>
-            <li><a href="https://physionutraclinic.com/?consult=foreign#consult-foreign" class="cta-button">Book Now</a></li>
-          </ul>
-        </nav>
       </div>
-    </div>
+      <div class="dropdown">
+        <a href="/physiotherapy/">Locations ▾</a>
+        <div class="dropdown-menu">
+          <a href="/physiotherapy/chandigarh/">Chandigarh</a>
+          <a href="/physiotherapy/mohali/">Mohali</a>
+          <a href="/physiotherapy/zirakpur/">Zirakpur</a>
+          <a href="/physiotherapy/panchkula/">Panchkula</a>
+          <a href="/physiotherapy/kharar/">Kharar</a>
+          <a href="/physiotherapy/baltana/">Baltana</a>
+        </div>
+      </div>
+      <a href="/blogs/">Blog</a>
+      <a href="/testimonials/">Testimonials</a>
+      <a class="btn btn-primary" href="#consult-foreign" style="padding:10px 20px">Book Now</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu">☰</button>
   </div>
 </header>
 
 <main id="main-content">
 
-<!-- ═══ HERO ═══ -->
-<section class="hero-section" aria-labelledby="hero-heading">
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/">Home</a> › <strong>Online Physiotherapy Consultation</strong>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>Online Physiotherapy Consultation — Wherever You Are in the World</h1>
+    <p>Get a video consultation with Dr. Tarun Garg from anywhere on the planet — the same expert care our Tricity patients trust, at a time that fits your timezone, priced in your own currency.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#consult-foreign">Book Online Video Consultation</a>
+      <a class="btn btn-wa" href="https://wa.me/919417791833?text=Hello%2C%20I%27m%20interested%20in%20an%20online%20physiotherapy%20consultation." target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+    <div class="stat-chips">
+      <div class="chip">10+<span>Years Experience</span></div>
+      <div class="chip">5,000+<span>Patients Treated</span></div>
+      <div class="chip">USD 35<span>Starting Fee</span></div>
+      <div class="chip">4.9★<span>Google Rating</span></div>
+    </div>
+
+    <!-- Shown only to visitors geo-detected in India (they should book in ₹ on the main site) -->
+    <div class="india-notice" id="india-notice" hidden>
+      It looks like you're browsing from India 🇮🇳 — in-clinic visits and ₹500 video consultations are available on our main site.
+      <a href="/?consult=india"><strong>Go to India booking →</strong></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BOOKING FORM (embedded — the core Phase-1 fix) ══════════ -->
+<section class="section" id="consult-foreign">
   <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <h1 id="hero-heading">Online Physiotherapy Consultation — Wherever You Are in the World</h1>
-        <p>Get a video consultation with Dr. Tarun Garg from anywhere on the planet — the same expert care our Tricity patients trust, at a time that fits your timezone, priced in your own currency.</p>
-        <div class="hero-buttons">
-          <a href="https://physionutraclinic.com/?consult=foreign#consult-foreign" class="btn-primary">Book Online Video Consultation</a>
-          <a href="https://wa.me/919417791833?text=Hello%2C%20I%27m%20interested%20in%20an%20online%20physiotherapy%20consultation." class="btn-secondary" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
+    <div class="booking-wrap">
+      <h2>Book Your Online Consultation</h2>
+      <p class="sub" style="text-align:left;margin:4px 0 24px">Video consultation with Dr. Tarun Garg, available worldwide. Slots are shown in <strong>your local timezone</strong> automatically.</p>
+
+      <!-- ⚠ PASTE your Google Form action URL below -->
+      <form id="appointment-form-foreign" action="#" method="POST">
+        <div class="form-grid">
+          <div>
+            <label for="name-f">Full Name *</label>
+            <input type="text" id="name-f" name="name-f" required>
+          </div>
+          <div>
+            <label for="email-f">Email *</label>
+            <input type="email" id="email-f" name="email-f" required>
+          </div>
+          <div>
+            <label for="country-f">Country</label>
+            <select id="country-f" name="country-f">
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Canada</option>
+              <option>Australia</option>
+              <option>United Arab Emirates</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="phone-f">WhatsApp or Phone Number *</label>
+            <div class="phone-row">
+              <select id="phone-code-f" name="phone-code-f" aria-label="Country code">
+                <option>+1</option><option>+44</option><option>+61</option><option>+971</option><option>Other</option>
+              </select>
+              <input type="tel" id="phone-f" name="phone-f" required>
+            </div>
+          </div>
+          <div>
+            <label for="service-f">Reason for Consultation</label>
+            <select id="service-f" name="service-f">
+              <option>Choose a reason</option>
+              <option>Back or Neck Pain</option>
+              <option>Sports Injury</option>
+              <option>Post-Surgical Recovery</option>
+              <option>Frozen Shoulder</option>
+              <option>General Physiotherapy Advice</option>
+              <option>Nutrition Consultation</option>
+            </select>
+          </div>
+          <div>
+            <label for="tz-f">Your Timezone</label>
+            <select id="tz-f" name="tz-f"></select>
+          </div>
+
+          <div class="full">
+            <label class="check-row" for="emergency-f">
+              <input type="checkbox" id="emergency-f" name="emergency-f">
+              This is an emergency / same-day consultation
+            </label>
+          </div>
+
+          <div class="full">
+            <div class="slot-picker-label" id="slot-label-f">Preferred Time Slot (24+ hrs from now, 30 min)</div>
+            <div class="slot-dates" id="slot-dates-f"></div>
+            <div class="slot-times" id="slot-times-f"></div>
+            <div class="slot-empty" id="slot-empty-f" hidden></div>
+            <input type="hidden" id="slot-f" name="slot-f">
+          </div>
+
+          <div class="full">
+            <label>Preferred Video Platform</label>
+            <div class="platform-row">
+              <label><input type="radio" name="platform-f" value="Zoom" checked> Zoom</label>
+              <label><input type="radio" name="platform-f" value="Google Meet"> Google Meet</label>
+              <label><input type="radio" name="platform-f" value="WhatsApp"> WhatsApp</label>
+            </div>
+          </div>
+
+          <div class="full fee-note">
+            <div id="fee-note-f">Consultation fee: USD 35, billed in your local currency at checkout.</div>
+            <div id="payment-note-text-f" style="margin-top:6px">Full payment of USD 35 is required in advance to confirm your booking. You'll get a secure payment link right after you submit.</div>
+          </div>
+
+          <div class="full">
+            <label for="problem-f">Briefly describe your problem <small>(optional — helps Dr. Tarun assess before your session)</small></label>
+            <textarea id="problem-f" name="problem-f" rows="3"></textarea>
+          </div>
+
+          <div class="full">
+            <label>Medical history <small>(check any that apply)</small></label>
+            <div class="check-grid">
+              <label><input type="checkbox" name="condition-f" value="Diabetes"> Diabetes</label>
+              <label><input type="checkbox" name="condition-f" value="Hypertension / BP"> Hypertension / BP</label>
+              <label><input type="checkbox" name="condition-f" value="Heart condition"> Heart condition</label>
+              <label><input type="checkbox" name="condition-f" value="Pregnancy"> Pregnancy</label>
+              <label><input type="checkbox" name="condition-f" value="On blood thinners"> On blood thinners</label>
+              <label><input type="checkbox" name="condition-f" value="Previous surgery (this area)"> Previous surgery (this area)</label>
+            </div>
+          </div>
+
+          <div class="full">
+            <label for="medhistory-f">Current medications, allergies, or other medical history <small>(optional)</small></label>
+            <textarea id="medhistory-f" name="medhistory-f" rows="2"></textarea>
+          </div>
+
+          <div>
+            <label for="ec-name-f">Emergency contact name <small>(optional)</small></label>
+            <input type="text" id="ec-name-f" name="ec-name-f">
+          </div>
+          <div>
+            <label for="ec-phone-f">Emergency contact phone <small>(optional)</small></label>
+            <input type="tel" id="ec-phone-f" name="ec-phone-f">
+          </div>
+
+          <div class="full">
+            <label for="report-f">Upload a medical report or scan <small>(optional — PDF or photo, max 8MB)</small></label>
+            <input type="file" id="report-f" name="report-f" accept=".pdf,image/*">
+            <div id="report-status-f" style="font-size:.85rem;color:var(--muted);margin-top:4px"></div>
+          </div>
+
+          <div class="full">
+            <button type="submit" class="btn btn-primary submit-btn">Book Online Consultation</button>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Years Experience</span></div>
-          <div class="stat-item"><span class="stat-number">5000+</span><span class="stat-label">Patients Treated</span></div>
-          <div class="stat-item"><span class="stat-number" id="gc-hero-price">USD 35</span><span class="stat-label" id="gc-hero-price-label">Starting Fee</span></div>
+      </form>
+
+      <div class="form-success" id="form-success-foreign">
+        <h3>🎉 Booking received</h3>
+        <p id="form-success-foreign-text" style="margin-top:8px">Thank you! We will email you shortly to confirm your video consultation.</p>
+        <div id="foreign-pay-now-wrap" style="display:none">
+          <a class="pay-btn" id="foreign-pay-now" href="#" target="_blank" rel="noopener">Complete Payment Now →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ WHO THIS IS FOR ═══ -->
-<section class="gc-section gc-section-alt">
+<!-- ══════════ WHO IT'S FOR ══════════ -->
+<section class="section section-alt">
   <div class="container">
-    <h2 class="gc-heading" style="text-align:center">Who Is Online Consultation For?</h2>
-    <p class="gc-lead">If any of these sound like you, a video consultation with Dr. Tarun Garg can pick up right where in-person care left off — or start fresh, wherever you are.</p>
-    <div class="gc-grid">
-      <div class="gc-card">
-        <h3>Living Outside India</h3>
-        <p>Anywhere in the world, in any timezone — the booking calendar automatically converts available slots to your local time.</p>
-      </div>
-      <div class="gc-card">
-        <h3>Post-Surgical Follow-Up</h3>
-        <p>Had surgery or treatment in India and returned abroad, but still need guidance on exercises, progress checks, or your rehab timeline.</p>
-      </div>
-      <div class="gc-card">
-        <h3>NRIs Visiting India</h3>
-        <p>Started treatment during a trip home and want to continue your recovery plan with the same physiotherapist after you fly back.</p>
-      </div>
-      <div class="gc-card">
-        <h3>Second Opinions</h3>
-        <p>Want an independent assessment of a diagnosis, an existing exercise plan, or whether your current treatment path makes sense.</p>
-      </div>
+    <h2>Who Is Online Consultation For?</h2>
+    <p class="sub">If any of these sound like you, a video consultation with Dr. Tarun Garg can pick up right where in-person care left off — or start fresh, wherever you are.</p>
+    <div class="grid-4">
+      <div class="card"><div class="icon">🌍</div><h3>Living Outside India</h3><p>Anywhere in the world, in any timezone — the booking calendar automatically converts available slots to your local time.</p></div>
+      <div class="card"><div class="icon">🩺</div><h3>Post-Surgical Follow-Up</h3><p>Had surgery or treatment in India and returned abroad, but still need guidance on exercises, progress checks, or your rehab timeline.</p></div>
+      <div class="card"><div class="icon">✈️</div><h3>NRIs Visiting India</h3><p>Started treatment during a trip home and want to continue your recovery plan with the same physiotherapist after you fly back.</p></div>
+      <div class="card"><div class="icon">🔎</div><h3>Second Opinions</h3><p>Want an independent assessment of a diagnosis, an existing exercise plan, or whether your current treatment path makes sense.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ HOW IT WORKS ═══ -->
-<section class="gc-section">
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<section class="section">
   <div class="container">
-    <h2 class="gc-heading" style="text-align:center">How Online Consultation Works</h2>
-    <p class="gc-lead">Four simple steps, from booking to your first video session.</p>
-    <div class="gc-steps">
-      <div class="gc-step">
-        <h3>Pick Your Slot</h3>
-        <p>Select a time in your own timezone — the booking calendar handles the conversion automatically.</p>
-      </div>
-      <div class="gc-step">
-        <h3>Confirm &amp; Pay</h3>
-        <p>Pay the consultation fee securely to lock in your slot — billed in your local currency at checkout.</p>
-      </div>
-      <div class="gc-step">
-        <h3>Video Consultation</h3>
-        <p>Join Dr. Tarun Garg on your preferred platform for a full assessment, discussion, and personalised plan.</p>
-      </div>
-      <div class="gc-step">
-        <h3>Ongoing Guidance</h3>
-        <p>Receive your home exercise plan and follow-up recommendations to track your progress.</p>
-      </div>
+    <h2>How Online Consultation Works</h2>
+    <p class="sub">Four simple steps, from booking to your first video session.</p>
+    <div class="steps">
+      <div class="step"><h3>Pick Your Slot</h3><p>Select a time in your own timezone — the booking calendar handles the conversion automatically.</p></div>
+      <div class="step"><h3>Confirm &amp; Pay</h3><p>Pay the consultation fee securely to lock in your slot — billed in USD, estimated in your local currency.</p></div>
+      <div class="step"><h3>Video Consultation</h3><p>Join Dr. Tarun Garg on your preferred platform for a full assessment, discussion, and personalised plan.</p></div>
+      <div class="step"><h3>Ongoing Guidance</h3><p>Receive your home exercise plan and follow-up recommendations to track your progress.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ PRICING (live local-currency estimate) ═══ -->
-<section class="gc-section gc-section-alt">
+<!-- ══════════ FEES ══════════ -->
+<section class="section section-alt">
   <div class="container">
-    <h2 class="gc-heading" style="text-align:center">Consultation Fees</h2>
-    <p class="gc-lead" id="gc-pricing-lead">Prices below are shown as an estimate in your local currency, based on today's exchange rate. The exact amount you're billed is confirmed in USD at checkout.</p>
-    <div class="gc-pricing">
-      <div class="gc-price-card">
-        <h3>Standard Consultation</h3>
-        <div class="gc-amount" id="gc-price-standard">USD 35</div>
-        <div class="gc-amount-usd" id="gc-price-standard-usd" style="display:none">USD 35.00</div>
-        <p class="gc-local-note" id="gc-price-standard-note"></p>
+    <h2>Consultation Fees</h2>
+    <p class="sub">Prices below are shown as an estimate in your local currency, based on today's exchange rate. The exact amount you're billed is confirmed in USD at checkout.</p>
+    <div class="grid-2" style="max-width:760px;margin:0 auto">
+      <div class="card price-card">
+        <div class="tier">Standard Consultation</div>
+        <div class="price">USD 35</div>
+        <span class="local-est" data-usd="35" hidden></span>
         <ul>
           <li>Book 24+ hours in advance</li>
-          <li>Full video assessment</li>
+          <li>Full 30-minute video assessment</li>
           <li>Personalised exercise plan</li>
+          <li>Follow-up recommendations</li>
         </ul>
+        <a class="btn btn-primary" href="#consult-foreign">Book Standard</a>
       </div>
-      <div class="gc-price-card gc-emergency">
-        <h3>Same-Day / Emergency</h3>
-        <div class="gc-amount" id="gc-price-emergency">USD 50</div>
-        <div class="gc-amount-usd" id="gc-price-emergency-usd" style="display:none">USD 50.00</div>
-        <p class="gc-local-note" id="gc-price-emergency-note"></p>
+      <div class="card price-card">
+        <div class="tier">Same-Day / Emergency</div>
+        <div class="price">USD 50</div>
+        <span class="local-est" data-usd="50" hidden></span>
         <ul>
           <li>Available same day</li>
           <li>Priority scheduling</li>
           <li>Ideal for urgent concerns</li>
+          <li>Personalised exercise plan</li>
+        </ul>
+        <a class="btn btn-primary" href="#consult-foreign">Book Same-Day</a>
+      </div>
+    </div>
+
+    <!-- Crawler/snippet-friendly summary table (AEO) -->
+    <table class="fee-table">
+      <thead><tr><th>Consultation type</th><th>Fee</th><th>Booking window</th></tr></thead>
+      <tbody>
+        <tr><td>Standard online consultation</td><td>USD 35</td><td>24+ hours in advance</td></tr>
+        <tr><td>Same-day / emergency consultation</td><td>USD 50</td><td>Same day, subject to availability</td></tr>
+      </tbody>
+    </table>
+
+    <p class="fine-print">Local-currency amounts are an estimate for your convenience, using a live exchange rate. Your bank or card network may apply a small conversion difference — the confirmed charge always happens in USD via our secure payment provider. Rates by <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>.</p>
+  </div>
+</section>
+
+<!-- ══════════ WHY CHOOSE (online-adapted) ══════════ -->
+<section class="section">
+  <div class="container">
+    <h2>Why Choose PhysioNutra for Online Care?</h2>
+    <p class="sub">The same standards our in-clinic patients know — rebuilt for video.</p>
+    <div class="grid-3">
+      <div class="card"><h3>Led by Dr. Tarun Garg</h3><p>Senior physiotherapist with 10+ years of experience and proven outcomes across 5,000+ patients.</p></div>
+      <div class="card"><h3>One-on-One Video Sessions</h3><p>Every consultation is a dedicated, individual 30-minute session — never group calls, never rushed.</p></div>
+      <div class="card"><h3>Timezone-Matched Booking</h3><p>The calendar automatically converts every available slot to your local time, wherever you are.</p></div>
+      <div class="card"><h3>Evidence-Based Plans</h3><p>You leave every session with a personalised exercise and self-management plan you can follow immediately.</p></div>
+      <div class="card"><h3>Honest Advice</h3><p>If your condition needs hands-on treatment, we'll tell you plainly that an in-person visit would serve you better.</p></div>
+      <div class="card"><h3>Secure Global Payments</h3><p>Confirmed in USD through a secure gateway, with international cards accepted and local-currency estimates up front.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DOCTOR CREDIBILITY STRIP ══════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="doctor-strip">
+      <!-- TODO: replace with real portrait, e.g. /images/dr-tarun-garg.jpg -->
+      <img src="/images/logo.png" alt="Dr. Tarun Garg, Senior Physiotherapist, PhysioNutra Clinic">
+      <div>
+        <h2 style="text-align:left">Meet Dr. Tarun Garg</h2>
+        <p style="color:var(--muted)">Senior Physiotherapist &amp; founder of PhysioNutra Clinic, Zirakpur. Dr. Tarun has guided 5,000+ recoveries over 10+ years — from post-surgical rehabilitation to sports injuries — and now brings that same one-on-one care to patients worldwide over video.</p>
+        <ul>
+          <li>10+ years clinical experience · 5,000+ patients treated</li>
+          <li>Special interests: post-surgical rehab, sports injuries, chronic pain</li>
+          <li>Consultations in English, Hindi &amp; Punjabi</li>
         </ul>
       </div>
     </div>
-    <p class="gc-note">Local-currency amounts are an estimate for your convenience, using a live exchange rate. Your bank or card network may apply a small conversion difference — the confirmed charge always happens in USD via our secure payment provider. <small style="opacity:.7">Rates by <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener nofollow">ExchangeRate-API</a>.</small></p>
   </div>
 </section>
 
-<!-- ═══ TRUST STRIP ═══ -->
-<section class="gc-section">
+<!-- ══════════ TESTIMONIALS (videos + Google reviews) ══════════ -->
+<section class="section">
   <div class="container">
-    <h2 class="gc-heading" style="text-align:center">Trusted Care, From Anywhere</h2>
-    <div class="gc-testimonial-strip">
-      <span class="gc-badge">10+ Years Experience</span>
-      <span class="gc-badge">5,000+ Patients Treated</span>
-      <span class="gc-badge">4.9★ Google Rating</span>
-      <span class="gc-badge">Secure Payment</span>
-      <span class="gc-badge">Timezone-Matched Booking</span>
+    <h2>Patient Success Stories</h2>
+    <p class="sub">Real results from real patients at PhysioNutra Clinic.</p>
+    <div class="grid-3">
+      <div class="card video-card">
+        <a href="/testimonials/"><img src="https://img.youtube.com/vi/3CoZkshKZZI/hqdefault.jpg" alt="Patient recovery video — neck and back pain relief" loading="lazy"></a>
+        <div class="vc-body"><h3>Neck &amp; Back Pain Relief Journey</h3><p>Successful recovery from chronic neck and back pain through physiotherapy at PhysioNutra.</p></div>
+      </div>
+      <div class="card video-card">
+        <a href="/testimonials/"><img src="https://img.youtube.com/vi/oVuxXsN_hFg/hqdefault.jpg" alt="Patient recovery video — shoulder and back pain" loading="lazy"></a>
+        <div class="vc-body"><h3>Shoulder &amp; Back Pain Recovery</h3><p>Complete recovery from shoulder and back pain with expert physiotherapy care.</p></div>
+      </div>
+      <div class="card video-card">
+        <a href="/testimonials/"><img src="https://img.youtube.com/vi/hFU2q-VN-Dc/hqdefault.jpg" alt="Patient recovery video — ankle fracture rehabilitation" loading="lazy"></a>
+        <div class="vc-body"><h3>Ankle Fracture Rehabilitation</h3><p>Successful rehabilitation after ankle fracture with specialised physiotherapy care.</p></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:56px">What Our Patients Say</h2>
+    <p class="sub">4.9★ average on Google from patients across India — and now worldwide.</p>
+    <div class="grid-3">
+      <div class="card review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Dr. Tarun Garg is so understanding and helped improve my muscular health. He helped me reduce my 5 years old pain within 7 sessions. Thank you so much sir!"</blockquote>
+        <div class="who">Mumtaz Ali</div>
+        <a class="src" href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener">View on Google ↗</a>
+      </div>
+      <div class="card review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Dr. Tarun Garg's physiotherapy treatment was amazing for my cervical pain. The treatment worked really well, and he was very supportive. Highly recommended!"</blockquote>
+        <div class="who">Anu Rana</div>
+        <a class="src" href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener">View on Google ↗</a>
+      </div>
+      <div class="card review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Excellent physiotherapy clinic with modern equipment. Professional staff and caring approach. My knee pain improved significantly after treatment here."</blockquote>
+        <div class="who">Rajesh Kumar</div>
+        <a class="src" href="https://maps.app.goo.gl/YLXoSofxCAHx3EaB9" target="_blank" rel="noopener">View on Google ↗</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:30px"><a class="btn btn-ghost" href="/testimonials/">View All Testimonials →</a></p>
+  </div>
+</section>
+
+<!-- ══════════ CONDITIONS TREATED ONLINE (internal linking) ══════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <h2>Conditions We Commonly Treat Online</h2>
+    <p class="sub">Most assessment and rehabilitation guidance translates very well to video. Tap any condition to learn more.</p>
+    <div class="grid-3">
+      <a class="card cond-card" href="/blogs/sciatica-pain-relief/"><img src="/images/conditions/Sciatica.jpg" alt="Sciatica pain relief" loading="lazy"><div class="cc-body"><h3>Sciatica Pain Relief</h3><p>Assessment and guided relief for sciatic nerve pain.</p></div></a>
+      <a class="card cond-card" href="/blogs/frozen-shoulder-treatment-chandigarh/"><img src="/images/conditions/Frozen_shoulder.jpg" alt="Frozen shoulder treatment" loading="lazy"><div class="cc-body"><h3>Frozen Shoulder</h3><p>Restore shoulder movement with a staged exercise plan.</p></div></a>
+      <a class="card cond-card" href="/blogs/knee-osteoarthritis-blog/"><img src="/images/conditions/Knee_Osteoarthritis.jpg" alt="Knee osteoarthritis care" loading="lazy"><div class="cc-body"><h3>Knee Osteoarthritis</h3><p>Reduce arthritis pain and improve mobility without surgery.</p></div></a>
+      <a class="card cond-card" href="/blogs/chronic-back-pain-management/"><img src="/images/conditions/Lowback_pain.jpg" alt="Chronic back pain management" loading="lazy"><div class="cc-body"><h3>Chronic Back Pain</h3><p>Structured plans for lasting relief from back pain.</p></div></a>
+      <a class="card cond-card" href="/blogs/tech-neck-physiotherapy-treatment/"><img src="/images/conditions/CERVICAL_PAIN.jpg" alt="Cervical and tech neck pain" loading="lazy"><div class="cc-body"><h3>Cervical / Tech Neck</h3><p>Neck pain relief with posture correction and exercises.</p></div></a>
+      <a class="card cond-card" href="/blogs/post-surgical-physiotherapy/"><img src="/images/conditions/Knee_Osteoarthritis.jpg" alt="Post-surgical physiotherapy" loading="lazy"><div class="cc-body"><h3>Post-Surgical Recovery</h3><p>Continue your rehab plan after returning abroad.</p></div></a>
     </div>
   </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
-<section class="gc-section gc-section-alt">
+<!-- ══════════ WHAT YOU'LL NEED ══════════ -->
+<section class="section">
   <div class="container">
-    <h2 class="gc-heading" style="text-align:center">Frequently Asked Questions</h2>
+    <h2>What You'll Need for Your Session</h2>
+    <p class="sub">Nothing special — just these four things for a smooth video consultation.</p>
+    <div class="need-list">
+      <div class="card"><div class="icon">📱</div><h3>A Camera Device</h3><p>Smartphone, tablet or laptop with a working camera and microphone.</p></div>
+      <div class="card"><div class="icon">🧍</div><h3>Clear Space</h3><p>About 2 metres of room so Dr. Tarun can watch you move and guide self-tests.</p></div>
+      <div class="card"><div class="icon">📄</div><h3>Your Reports</h3><p>Any X-rays, MRI scans or discharge summaries you already have (upload them when booking).</p></div>
+      <div class="card"><div class="icon">👕</div><h3>Comfortable Clothing</h3><p>Wear something you can move in easily — shorts help for knee/ankle assessments.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="sub">Everything international patients ask us about online consultations.</p>
     <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How does an online physiotherapy consultation with PhysioNutra work?</button>
-        <div class="faq-answer"><p>You book a time slot in your own timezone, choose a video platform, and pay a small advance fee to confirm. Dr. Tarun Garg then conducts a full assessment over video call, discusses your condition, and provides a personalised home exercise and treatment plan.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How much does an online physiotherapy consultation cost?</button>
-        <div class="faq-answer"><p>A standard online consultation is USD 35, booked at least 24 hours in advance. A same-day or emergency consultation is USD 50. The amount is billed in your local currency at checkout — this page shows an estimate in your currency based on current exchange rates.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Which countries do you provide online physiotherapy consultations for?</button>
-        <div class="faq-answer"><p>We consult with patients anywhere in the world, subject to timezone availability. Our booking system automatically adjusts appointment slots to your local timezone.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Is online physiotherapy consultation suitable for NRIs visiting India?</button>
-        <div class="faq-answer"><p>Yes. Many of our online patients are NRIs who received treatment during a visit to India and want to continue guidance and progress reviews with the same physiotherapist after returning abroad.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What video platform is used for the consultation?</button>
-        <div class="faq-answer"><p>You can choose your preferred video calling platform when booking — Zoom, Google Meet, or WhatsApp Video.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Can Dr. Tarun Garg treat me remotely without a physical examination?</button>
-        <div class="faq-answer"><p>Online physiotherapy consultation focuses on assessment through movement screening, guided self-tests, and a detailed history, followed by a personalised exercise and self-management plan. For conditions that require hands-on treatment, we will advise you honestly if an in-person visit would serve you better.</p></div>
-      </div>
+      <details>
+        <summary>How does an online physiotherapy consultation with PhysioNutra work?</summary>
+        <p>You book a time slot in your own timezone, choose a video platform, and pay the consultation fee to confirm. Dr. Tarun Garg then conducts a full assessment over video call, discusses your condition, and provides a personalised home exercise and treatment plan.</p>
+      </details>
+      <details>
+        <summary>How much does an online physiotherapy consultation cost?</summary>
+        <p>A standard online consultation is USD 35, booked at least 24 hours in advance. A same-day or emergency consultation is USD 50. The amount is billed in USD via a secure payment link; this page shows an estimate in your local currency based on current exchange rates.</p>
+      </details>
+      <details>
+        <summary>Is online physiotherapy as effective as in-person treatment?</summary>
+        <p>For assessment, exercise prescription, and rehabilitation guidance, yes — video consultations work very well. Assessment happens through movement screening, guided self-tests, and detailed history. If your condition needs hands-on treatment, we will tell you honestly that an in-person visit would serve you better.</p>
+      </details>
+      <details>
+        <summary>Which countries do you provide online physiotherapy consultations for?</summary>
+        <p>We consult with patients anywhere in the world, subject to timezone availability. Our booking calendar runs 9:00 AM – 11:00 PM IST and automatically converts every slot to your local timezone.</p>
+      </details>
+      <details>
+        <summary>What do I need for an online physiotherapy session?</summary>
+        <p>A camera device, roughly 2 metres of clear space, comfortable clothing, and any reports or scans you already have. Your joining link arrives by email after booking.</p>
+      </details>
+      <details>
+        <summary>Can Dr. Tarun Garg treat me remotely without a physical examination?</summary>
+        <p>Online consultation focuses on assessment through movement screening, guided self-tests, and detailed history, followed by a personalised exercise and self-management plan. For conditions requiring hands-on treatment, we advise honestly if an in-person visit would serve you better.</p>
+      </details>
+      <details>
+        <summary>What video platform is used for the consultation?</summary>
+        <p>You choose when booking — Zoom, Google Meet, or WhatsApp Video.</p>
+      </details>
+      <details>
+        <summary>Is online physiotherapy consultation suitable for NRIs visiting India?</summary>
+        <p>Yes. Many of our online patients are NRIs who received treatment during a visit to India and want to continue guidance and progress reviews with the same physiotherapist after returning abroad.</p>
+      </details>
+      <details>
+        <summary>Can I reschedule or cancel my online consultation?</summary>
+        <p>Yes. Your confirmation email includes a link to reschedule or cancel. We ask for at least 6 hours' notice so the slot can be released to another patient.</p>
+      </details>
+      <details>
+        <summary>How do I pay from outside India?</summary>
+        <p>Right after booking you receive a secure payment link that accepts international debit and credit cards. The confirmed charge is in USD; your bank converts it to your local currency.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- ═══ FINAL CTA ═══ -->
-<section class="gc-section">
-  <div class="container" style="text-align:center">
-    <h2 class="gc-heading">Ready to Book Your Online Consultation?</h2>
-    <p class="gc-lead">Choose a time that works for you, wherever you are.</p>
-    <div class="hero-buttons" style="justify-content:center">
-      <a href="https://physionutraclinic.com/?consult=foreign#consult-foreign" class="btn-primary">Book Online Video Consultation</a>
-      <a href="https://wa.me/919417791833?text=Hello%2C%20I%27m%20interested%20in%20an%20online%20physiotherapy%20consultation." class="btn-secondary" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg> WhatsApp Us</a>
-    </div>
+<!-- ══════════ FINAL CTA ══════════ -->
+<section class="cta-band">
+  <h2>Ready to Book Your Online Consultation?</h2>
+  <p>Choose a time that works for you, wherever you are.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-primary" href="#consult-foreign">Book Online Video Consultation</a>
+    <a class="btn btn-wa" href="https://wa.me/919417791833?text=Hello%2C%20I%27m%20interested%20in%20an%20online%20physiotherapy%20consultation." target="_blank" rel="noopener">WhatsApp Us</a>
   </div>
 </section>
 
 </main>
 
-<footer role="contentinfo">
+<!-- ══════════ FOOTER — full homepage footer for parity + internal links ══════════ -->
+<footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <a href="/" aria-label="PhysioNutra Clinic Home"><picture><source srcset="/images/logo.webp" type="image/webp"><img src="/images/logo.png" alt="PhysioNutra Clinic" class="footer-logo" loading="lazy" width="150" height="52"></picture></a>
-        <h3>PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></h3>
+    <div class="footer-grid">
+      <div>
+        <div class="brand-foot"><img src="/images/logo.png" alt="PhysioNutra Clinic logo"> PhysioNutra Clinic®</div>
         <p>Best physiotherapy clinic in Chandigarh Tricity, now also serving patients worldwide online. Led by Dr. Tarun Garg with 10+ years experience.</p>
-        <div class="footer-social" aria-label="Follow us">
-          <a href="https://www.facebook.com/people/PhysioNutra/61570467073912/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-facebook-f"></use></svg></a>
-          <a href="https://x.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter/X"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-twitter"></use></svg></a>
-          <a href="https://www.instagram.com/physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-instagram"></use></svg></a>
-          <a href="https://youtube.com/@physionutra" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-youtube"></use></svg></a>
-          <a href="https://www.linkedin.com/company/physionutra-clinic/" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-linkedin-in"></use></svg></a>
-        </div>
       </div>
-      <div class="footer-section">
-        <h3>Our Services</h3>
-        <ul class="footer-links">
-          <li><a href="/services/acl-treatment-near-me/">ACL Treatment</a></li>
-          <li><a href="/services/dry-needling/">Dry Needling</a></li>
-          <li><a href="/services/manual-therapy/">Manual Therapy</a></li>
-          <li><a href="/blogs/sports-physiotherapy/">Sports Physiotherapy</a></li>
-          <li><a href="/blogs/pain-management-physiotherapy/">Pain Management</a></li>
-          <li><a href="/services/home-physiotherapy-chandigarh/">Home Physiotherapy</a></li>
-          <li><a href="/services/orthopedic-rehabilitation/">Orthopedic Rehab</a></li>
-          <li><a href="/services/neurological-rehabilitation/">Neuro Rehab</a></li>
-        </ul>
+      <div>
+        <h4>Our Services</h4>
+        <a href="/services/acl-treatment-near-me/">ACL Treatment</a>
+        <a href="/services/dry-needling/">Dry Needling</a>
+        <a href="/services/manual-therapy/">Manual Therapy</a>
+        <a href="/blogs/sports-physiotherapy/">Sports Physiotherapy</a>
+        <a href="/blogs/pain-management-physiotherapy/">Pain Management</a>
+        <a href="/services/home-physiotherapy-chandigarh/">Home Physiotherapy</a>
+        <a href="/services/orthopedic-rehabilitation/">Orthopedic Rehab</a>
+        <a href="/services/neurological-rehabilitation/">Neuro Rehab</a>
+        <a href="/blogs/post-surgical-physiotherapy/">Post-Surgical Rehab</a>
+        <a href="/services/geriatric-physiotherapy/">Geriatric Care</a>
+        <a href="/services/women-health-physiotherapy/">Women's Health</a>
+        <a href="/free-physiotherapy-camps/">Free Physio Camps</a>
       </div>
-      <div class="footer-section">
-        <h3>Contact &amp; Areas</h3>
-        <address class="footer-address">
-          SCO 12, Ananta Square, Gazipur Road<br>
-          Zirakpur, Punjab 140603, India<br>
-          Branch: Sector 20, Panchkula<br>
-          <a href="tel:+919417791833" class="u-link-green">+91 94177 91833</a><br>
-          <a href="#" class="u-link-green js-email" data-user="physionutraclinic" data-domain="gmail.com" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">Email us</a>
-        </address>
+      <div>
+        <h4>Conditions Treated</h4>
+        <a href="/blogs/sciatica-pain-relief/">Sciatica Pain</a>
+        <a href="/blogs/frozen-shoulder-treatment-chandigarh/">Frozen Shoulder</a>
+        <a href="/blogs/knee-osteoarthritis-blog/">Knee Arthritis</a>
+        <a href="/blogs/chronic-back-pain-management/">Back Pain</a>
+        <a href="/blogs/slip-disc-treatment/">Slip Disc</a>
+        <a href="/blogs/stroke-rehabilitation/">Stroke Recovery</a>
+        <a href="/blogs/vertigo-treatment/">Vertigo</a>
+        <a href="/blogs/cervical-pain-management/">Cervical Pain</a>
+        <a href="/blogs/plantar-fasciitis-treatment/">Plantar Fasciitis</a>
+        <a href="/services/acl-treatment-near-me/">ACL Rehabilitation</a>
+      </div>
+      <div>
+        <h4>Contact &amp; Areas</h4>
+        <p>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603<br>Branch: Sector 20, Panchkula</p>
+        <a href="tel:+919417791833">+91 94177 91833</a>
+        <a href="#">Email us</a>
+        <h4 style="margin-top:16px">Service Areas</h4>
+        <a href="/physiotherapy/chandigarh/">Chandigarh</a>
+        <a href="/physiotherapy/mohali/">Mohali</a>
+        <a href="/physiotherapy/panchkula/">Panchkula</a>
+        <a href="/physiotherapy/zirakpur/">Zirakpur</a>
+        <a href="/physiotherapy/kharar/">Kharar</a>
+        <a href="/physiotherapy/dera-bassi/">Dera Bassi</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="yr"></span> <a href="/">PhysioNutra Clinic<sup class="tb-reg-footer">&reg;</sup></a>. All Rights Reserved. &nbsp;|&nbsp; <a href="/about/">About</a> &nbsp;|&nbsp; <a href="/faqs/">FAQs</a> &nbsp;|&nbsp; <a href="/contact/">Contact</a> &nbsp;|&nbsp; <a href="/blogs/">Blog</a></p>
-      <p class="u-footer-tagline">Best Physiotherapy in Chandigarh Tricity | Led by Dr. Tarun Garg | Serving Patients Worldwide Online</p>
+      © <a href="/">PhysioNutra Clinic</a>®. All Rights Reserved. &nbsp;|&nbsp; <a href="/about/">About</a> &nbsp;|&nbsp; <a href="/faqs/">FAQs</a> &nbsp;|&nbsp; <a href="/contact/">Contact</a> &nbsp;|&nbsp; <a href="/blogs/">Blog</a><br>
+      Best Physiotherapy in Chandigarh Tricity | Led by Dr. Tarun Garg | Serving Patients Worldwide Online
     </div>
   </div>
 </footer>
 
-<div class="floating-buttons" aria-label="Quick contact">
-  <a href="https://wa.me/919417791833?text=Hello%2C%20I%27m%20interested%20in%20an%20online%20physiotherapy%20consultation." class="floating-btn whatsapp-btn" rel="noopener" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-whatsapp"></use></svg></a>
-  <a href="tel:+919417791833" class="floating-btn phone-btn" aria-label="Call PhysioNutra Clinic"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-phone"></use></svg></a>
-</div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="/icons.svg#fa-chevron-up"></use></svg></button>
+<!-- ══════════ SCRIPTS ══════════ -->
+<!-- Same booking script as the homepage. Every form ID above matches it exactly. -->
+<script src="/geo-consult-form.js" defer></script>
 
 <script>
-/* ── Header height ── */
-function setHeaderH(){var h=document.querySelector('header');if(h)document.documentElement.style.setProperty('--header-h',h.offsetHeight+'px')}
-setHeaderH();window.addEventListener('resize',setHeaderH);window.addEventListener('orientationchange',function(){setTimeout(setHeaderH,150)});
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile nav toggle
+  var burger = document.getElementById("burger");
+  var nav = document.getElementById("main-nav");
+  if (burger && nav) burger.addEventListener("click", function () { nav.classList.toggle("open"); });
 
-/* ── Mobile menu ── */
-var tog=document.querySelector('.mobile-menu-toggle'),menu=document.getElementById('mainMenu');
-if(tog&&menu){
-  tog.addEventListener('click',function(e){e.stopPropagation();var o=menu.classList.toggle('active');this.setAttribute('aria-expanded',String(o))});
-  document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!tog.contains(e.target)){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}});
-  menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){menu.classList.remove('active');tog.setAttribute('aria-expanded','false')}})});
-}
-document.querySelectorAll('.has-dropdown>a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('active')}})});
+  // India-visitor notice: geo-consult-form.js caches the visitor country in
+  // sessionStorage ("pn_visitor_country"). Poll briefly for that result; if
+  // the visitor is in India, surface a banner pointing them to the ₹500 flow
+  // instead of letting them pay USD by mistake.
+  (function () {
+    var notice = document.getElementById("india-notice");
+    if (!notice) return;
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries++;
+      var code = null;
+      try { code = sessionStorage.getItem("pn_visitor_country"); } catch (e) {}
+      if (code) { clearInterval(timer); if (code === "IN") notice.hidden = false; }
+      else if (tries >= 10) clearInterval(timer);
+    }, 500);
+  })();
 
-/* ── FAQ accordion ── */
-document.querySelectorAll('.faq-question').forEach(function(b){b.addEventListener('click',function(){var it=this.closest('.faq-item'),op=it.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-question').setAttribute('aria-expanded','false')});if(!op){it.classList.add('open');this.setAttribute('aria-expanded','true')}})});
-
-/* ── Back to top ── */
-var btt=document.getElementById('backToTop');
-window.addEventListener('scroll',function(){btt&&btt.classList.toggle('visible',window.scrollY>400)});
-btt&&btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
-
-/* ── Scroll reveal ── */
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.gc-card,.gc-step,.gc-price-card').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(18px)';el.style.transition='opacity .55s ease,transform .55s ease';obs.observe(el)});
-
-/* ── GA4 contact tracking ── */
-document.querySelectorAll('a[href^="tel:"],a[href*="wa.me"]').forEach(function(l){l.addEventListener('click',function(){if(typeof gtag!=='undefined')gtag('event','contact_click',{'event_category':this.href.includes('wa.me')?'whatsapp':'phone','event_label':'Online Consultation Worldwide Page'})})});
-
-/* ── Footer year ── */
-document.getElementById('yr').textContent=new Date().getFullYear();
-
-/* ── Live local-currency price estimate ──
-   Detects the visitor's country/currency (same free lookup used by the
-   booking form on the homepage) and converts the USD 35 / USD 50 fees into
-   an approximate local-currency amount using a free, no-key exchange-rate
-   API. Fails safe: if either lookup fails, the page just keeps showing the
-   plain USD price — nothing breaks. */
-(function () {
-  var STANDARD_USD = 35;
-  var EMERGENCY_USD = 50;
-
-  function setPrice(elId, usdElId, noteId, amount, currencyCode) {
-    var el = document.getElementById(elId);
-    var usdEl = document.getElementById(usdElId);
-    var noteEl = document.getElementById(noteId);
-    if (!el) return;
-    try {
-      var formatted = new Intl.NumberFormat(undefined, { style: "currency", currency: currencyCode, maximumFractionDigits: 0 }).format(amount);
-      el.textContent = formatted;
-      if (usdEl) usdEl.style.display = "block";
-      if (noteEl) noteEl.textContent = "Estimated — billed in USD at checkout";
-    } catch (e) {
-      // Unrecognized currency code — just leave the USD price showing.
-    }
-  }
-
-  function applyLocalCurrency(currencyCode, rate) {
-    if (!currencyCode || currencyCode === "USD" || !rate) return; // nothing to convert, USD stays as-is
-    setPrice("gc-price-standard", "gc-price-standard-usd", "gc-price-standard-note", STANDARD_USD * rate, currencyCode);
-    setPrice("gc-price-emergency", "gc-price-emergency-usd", "gc-price-emergency-note", EMERGENCY_USD * rate, currencyCode);
-
-    var heroPrice = document.getElementById("gc-hero-price");
-    if (heroPrice) {
-      try {
-        heroPrice.textContent = new Intl.NumberFormat(undefined, { style: "currency", currency: currencyCode, maximumFractionDigits: 0 }).format(STANDARD_USD * rate);
-      } catch (e) {}
-    }
-
-    var lead = document.getElementById("gc-pricing-lead");
-    if (lead) lead.textContent = "Prices below are shown as an estimate in " + currencyCode + ", based on today's exchange rate. The exact amount you're billed is confirmed in USD at checkout.";
-  }
-
-  var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
-  var timeoutId = controller ? setTimeout(function () { controller.abort(); }, 4000) : null;
-
-  fetch("https://ipapi.co/json/", { signal: controller ? controller.signal : undefined })
-    .then(function (res) { return res.json(); })
-    .then(function (geo) {
-      var currencyCode = geo && geo.currency ? geo.currency : "";
-      var countryCode = geo && geo.country_code ? geo.country_code : "";
-      if (countryCode === "IN" || !currencyCode || currencyCode === "USD") return; // Indian visitors and USD already fine as-is
-
-      return fetch("https://open.er-api.com/v6/latest/USD")
-        .then(function (res) { return res.json(); })
-        .then(function (fx) {
-          var rate = fx && fx.rates ? fx.rates[currencyCode] : null;
-          if (rate) applyLocalCurrency(currencyCode, rate);
+  // Live local-currency estimate on the fee cards (fulfils the "based on
+  // today's exchange rate" copy). Free keyless endpoint; hides itself on
+  // any failure or for USD visitors.
+  (function () {
+    var els = document.querySelectorAll("[data-usd]");
+    if (!els.length) return;
+    var ccy;
+    try { ccy = new Intl.NumberFormat().resolvedOptions().currency; } catch (e) {}
+    if (!ccy || ccy === "USD") return;
+    fetch("https://open.er-api.com/v6/latest/USD")
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var rate = data && data.rates ? data.rates[ccy] : null;
+        if (!rate) return;
+        els.forEach(function (el) {
+          var val = parseFloat(el.getAttribute("data-usd")) * rate;
+          var txt;
+          try { txt = new Intl.NumberFormat(undefined, { style: "currency", currency: ccy, maximumFractionDigits: 0 }).format(val); }
+          catch (e) { txt = ccy + " " + Math.round(val); }
+          el.textContent = "\u2248 " + txt + " in your currency";
+          el.hidden = false;
         });
-    })
-    .catch(function () {
-      // Geo or exchange-rate lookup failed — page already shows plain USD, nothing to fix.
-    })
-    .finally(function () {
-      if (timeoutId) clearTimeout(timeoutId);
-    });
-})();
+      })
+      .catch(function () {});
+  })();
+});
 </script>
-<script src="/festive-decor.js"></script>
 </body>
 </html>
