@@ -559,7 +559,8 @@
     "United Kingdom": "Europe/London",
     "Canada": "America/Toronto",
     "Australia": "Australia/Sydney",
-    "United Arab Emirates": "Asia/Dubai"
+    "United Arab Emirates": "Asia/Dubai",
+    "Germany": "Europe/Berlin"
   };
 
   function populateTimezone() {
