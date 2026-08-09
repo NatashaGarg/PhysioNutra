@@ -105,8 +105,32 @@
     { "@type": "Question", "name": "How do I pay from outside India?",
       "acceptedAnswer": { "@type": "Answer", "text": "Right after you book, you receive a secure payment link that accepts international debit and credit cards. The confirmed charge is in USD; your bank converts it to your local currency." } },
     { "@type": "Question", "name": "Is online physiotherapy consultation suitable for NRIs visiting India?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many of our online patients are NRIs who received treatment during a visit to India and want to continue guidance and progress reviews with the same physiotherapist after returning abroad." } }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many of our online patients are NRIs who received treatment during a visit to India and want to continue guidance and progress reviews with the same physiotherapist after returning abroad." } },
+    { "@type": "Question", "name": "What happens during an online physiotherapy session?",
+      "acceptedAnswer": { "@type": "Answer", "text": "During your 30-minute video session, Dr. Tarun Garg will take a detailed history, guide you through movement screening and self-tests via camera, assess your condition, and provide a personalised exercise plan with video demonstrations. You'll receive written instructions and can ask questions throughout." } },
+    { "@type": "Question", "name": "Can online physiotherapy diagnose my condition?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Online physiotherapy provides assessment and clinical reasoning based on your symptoms, movement patterns, and medical history. While we cannot provide a formal medical diagnosis (which requires in-person examination), we can identify likely conditions, recommend appropriate exercises, and advise when you should see a local doctor or specialist for further investigation." } },
+    { "@type": "Question", "name": "Is online physiotherapy covered by insurance?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We do not bill insurance directly (US Medicare/Medicaid, UK NHS/private insurers, Canadian provincial plans, Australian Medicare, UAE insurers). We operate on a transparent direct-pay model at USD 35 per session. Many patients find this more affordable than high deductibles or copays, and some may submit receipts to their insurance for potential reimbursement depending on their plan." } }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Online Physiotherapy Consultation",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".hero h1",
+      ".hero p",
+      ".stat-chips .chip",
+      ".fee-table tbody tr",
+      ".faq-list details summary",
+      ".faq-list details p"
+    ]
+  }
 }
 </script>
 
@@ -340,15 +364,15 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
           <a href="/services/pediatric-physiotherapy/">Paediatric Physio</a>
         </div>
       </div>
-      <!-- FIX 2: data-country attributes on nav links -->
+      <!-- Phase 3: Link to dedicated country subpages -->
       <div class="dropdown">
         <a href="#consult-foreign">Countries We Serve ▾</a>
         <div class="dropdown-menu">
-          <a href="#consult-foreign" data-country="United States">United States</a>
-          <a href="#consult-foreign" data-country="United Kingdom">United Kingdom</a>
-          <a href="#consult-foreign" data-country="Canada">Canada</a>
-          <a href="#consult-foreign" data-country="Australia">Australia</a>
-          <a href="#consult-foreign" data-country="United Arab Emirates">United Arab Emirates</a>
+          <a href="/online-physiotherapy/usa/">United States</a>
+          <a href="/online-physiotherapy/united-kingdom/">United Kingdom</a>
+          <a href="/online-physiotherapy/canada/">Canada</a>
+          <a href="/online-physiotherapy/australia/">Australia</a>
+          <a href="/online-physiotherapy/uae/">United Arab Emirates</a>
           <a href="#consult-foreign" data-country="Germany">Germany &amp; Rest of World</a>
         </div>
       </div>
@@ -753,6 +777,18 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
         <summary>How do I pay from outside India?</summary>
         <p>Right after booking you receive a secure payment link that accepts international debit and credit cards. The confirmed charge is in USD; your bank converts it to your local currency.</p>
       </details>
+      <details>
+        <summary>What happens during an online physiotherapy session?</summary>
+        <p>During your 30-minute video session, Dr. Tarun Garg will take a detailed history, guide you through movement screening and self-tests via camera, assess your condition, and provide a personalised exercise plan with video demonstrations. You'll receive written instructions and can ask questions throughout.</p>
+      </details>
+      <details>
+        <summary>Can online physiotherapy diagnose my condition?</summary>
+        <p>Online physiotherapy provides assessment and clinical reasoning based on your symptoms, movement patterns, and medical history. While we cannot provide a formal medical diagnosis (which requires in-person examination), we can identify likely conditions, recommend appropriate exercises, and advise when you should see a local doctor or specialist for further investigation.</p>
+      </details>
+      <details>
+        <summary>Is online physiotherapy covered by insurance?</summary>
+        <p>We do not bill insurance directly (US Medicare/Medicaid, UK NHS/private insurers, Canadian provincial plans, Australian Medicare, UAE insurers). We operate on a transparent direct-pay model at USD 35 per session. Many patients find this more affordable than high deductibles or copays, and some may submit receipts to their insurance for potential reimbursement depending on their plan.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -810,13 +846,13 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
         <p>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603, India</p>
         <a href="tel:+919417791833">+91 94177 91833</a>
         <a href="#">Email us</a>
-        <!-- FIX 2: data-country attributes on footer links + merged Germany -->
+        <!-- Phase 3: Link to dedicated country subpages -->
         <h4 style="margin-top:16px">Countries We Serve</h4>
-        <a href="#consult-foreign" data-country="United States">United States</a>
-        <a href="#consult-foreign" data-country="United Kingdom">United Kingdom</a>
-        <a href="#consult-foreign" data-country="Canada">Canada</a>
-        <a href="#consult-foreign" data-country="Australia">Australia</a>
-        <a href="#consult-foreign" data-country="United Arab Emirates">United Arab Emirates</a>
+        <a href="/online-physiotherapy/usa/">United States</a>
+        <a href="/online-physiotherapy/united-kingdom/">United Kingdom</a>
+        <a href="/online-physiotherapy/canada/">Canada</a>
+        <a href="/online-physiotherapy/australia/">Australia</a>
+        <a href="/online-physiotherapy/uae/">United Arab Emirates</a>
         <a href="#consult-foreign" data-country="Germany">Germany &amp; Rest of World</a>
       </div>
     </div>
