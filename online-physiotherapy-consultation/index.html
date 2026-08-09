@@ -293,7 +293,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
 
 /* Footer — mirrors homepage footer exactly */
 .site-footer{background:#1a1a1a;color:#fff;padding:55px 0 0;font-size:.92rem}
-.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:34px;padding-bottom:44px}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr .85fr .85fr;gap:34px;padding-bottom:44px}
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
 .site-footer h4{color:var(--green);margin-bottom:1.2rem;font-weight:600;font-size:1rem}
@@ -338,15 +338,16 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
           <a href="/services/pediatric-physiotherapy/">Paediatric Physio</a>
         </div>
       </div>
+      <!-- FIX 2: data-country attributes on nav links -->
       <div class="dropdown">
         <a href="#consult-foreign">Countries We Serve ▾</a>
         <div class="dropdown-menu">
-          <a href="#consult-foreign">United States</a>
-          <a href="#consult-foreign">United Kingdom</a>
-          <a href="#consult-foreign">Canada</a>
-          <a href="#consult-foreign">Australia</a>
-          <a href="#consult-foreign">United Arab Emirates</a>
-          <a href="#consult-foreign">Germany &amp; Rest of World</a>
+          <a href="#consult-foreign" data-country="United States">United States</a>
+          <a href="#consult-foreign" data-country="United Kingdom">United Kingdom</a>
+          <a href="#consult-foreign" data-country="Canada">Canada</a>
+          <a href="#consult-foreign" data-country="Australia">Australia</a>
+          <a href="#consult-foreign" data-country="United Arab Emirates">United Arab Emirates</a>
+          <a href="#consult-foreign" data-country="Germany">Germany &amp; Rest of World</a>
         </div>
       </div>
       <a href="/blogs/">Blog</a>
@@ -806,13 +807,14 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
         <p>SCO 12, Ananta Square, Gazipur Road<br>Zirakpur, Punjab 140603, India</p>
         <a href="tel:+919417791833">+91 94177 91833</a>
         <a href="#">Email us</a>
+        <!-- FIX 2: data-country attributes on footer links + merged Germany -->
         <h4 style="margin-top:16px">Countries We Serve</h4>
-        <a href="#consult-foreign">United States</a>
-        <a href="#consult-foreign">United Kingdom</a>
-        <a href="#consult-foreign">Canada</a>
-        <a href="#consult-foreign">Australia</a>
-        <a href="#consult-foreign">United Arab Emirates</a>
-        <a href="#consult-foreign">Germany &amp; Rest of World</a>
+        <a href="#consult-foreign" data-country="United States">United States</a>
+        <a href="#consult-foreign" data-country="United Kingdom">United Kingdom</a>
+        <a href="#consult-foreign" data-country="Canada">Canada</a>
+        <a href="#consult-foreign" data-country="Australia">Australia</a>
+        <a href="#consult-foreign" data-country="United Arab Emirates">United Arab Emirates</a>
+        <a href="#consult-foreign" data-country="Germany">Germany &amp; Rest of World</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -832,6 +834,23 @@ document.addEventListener("DOMContentLoaded", function () {
   var burger = document.getElementById("burger");
   var nav = document.getElementById("main-nav");
   if (burger && nav) burger.addEventListener("click", function () { nav.classList.toggle("open"); });
+
+  // FIX 2: Countries We Serve links — pre-select country in the booking form.
+  // geo-consult-form.js wires its change listener on country-f; dispatching a
+  // 'change' event here then triggers applyCountryTzDefault(), which picks
+  // the right timezone and re-renders the available slots in that timezone.
+  document.querySelectorAll("a[data-country]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var sel = document.getElementById("country-f");
+      if (!sel) return;
+      var c = a.getAttribute("data-country");
+      var exists = Array.prototype.some.call(sel.options, function (o) { return o.value === c; });
+      if (exists) {
+        sel.value = c;
+        sel.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    });
+  });
 
   // Live local-currency estimate on the fee cards (fulfils the "based on
   // today's exchange rate" copy). Free keyless endpoint; hides itself on
