@@ -555,13 +555,13 @@
   // country auto-updates "Your Timezone" — the person can still override it
   // manually (large countries like the US span several zones).
   var COUNTRY_TZ_MAP = {
-    "United States": "America/New_York",
-    "United Kingdom": "Europe/London",
-    "Canada": "America/Toronto",
-    "Australia": "Australia/Sydney",
-    "United Arab Emirates": "Asia/Dubai",
-    "Germany": "Europe/Berlin"
-  };
+  "United States": "America/New_York",
+  "United Kingdom": "Europe/London",
+  "Canada": "America/Toronto",
+  "Australia": "Australia/Sydney",
+  "United Arab Emirates": "Asia/Dubai",
+  "Germany": "Europe/Berlin"
+};
 
   function populateTimezone() {
     var select = document.getElementById("tz-f");
